@@ -1,0 +1,86 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Thu Jul 25 2019 11:59:32 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"basemap": "CartoDB - Dark matter",
+		"scaleParam": {
+			"normalSizeScale": "177165354"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "1000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "16.804541076383455",
+			"lng": "95.97656250000001"
+			},
+		"zoom": "3"
+		},
+	"themes": [{
+			"layer": "World_countries_shp",
+			"field": "event_type",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|STAR|SORT|DOWN|ZEROISVALUE|NEGATIVEISVALUE|AGGREGATE|FAST|RELOCATE|EXACT|SUM|VALUES|SUM|GLOW",
+				"colorscheme": [
+					"1856",
+					"fruit"],
+				"shadow": "false",
+				"dbtable": "themeDataObj_acled",
+				"dbtableUrl": "https://api.acleddata.com/acled/read.csv?terms=accept&limit=0&year=2019&fields=iso%7Ccountry%7Cevent_type%7Cevent_date%7Clatitude%7Clongitude%7Cfatalities%7Cinteraction%7Cactor1",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "latitude|longitude",
+				"child": "true",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "10000",
+				"scale": "1",
+				"sizefield": "fatalities",
+				"valuescale": "1",
+				"centerpart": "max",
+				"gridwidth": "10000",
+				"title": "ACLED Incidents 2019",
+				"snippet": "Events from the <i><b>Armed Conflict Location & Event Data Project (ACLED)</b></i> visualized by Event Type",
+				"description":"data source: <a href='https://www.acleddata.com/' tartget='_blank' >https://www.acleddata.com/</a>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
