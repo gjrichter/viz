@@ -8,12 +8,9 @@ Il Mercato Elettronico della P.A. (MePA) è  un mercato digitale in cui le Ammin
 
 Qui i link alle due visualizzazioni:
 
-[MEPA 2018 flusso forniture](explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/MEPA/ixmaps_project_mepa_ordini_flusso_forniture.json)
-=======
 [MEPA 2018 flusso forniture](http://explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/MEPA/ixmaps_project_mepa_ordini_flusso_forniture.json)
 
-[MEPA 2018 flusso pagamenti](explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/MEPA/ixmaps_project_mepa_ordini_flusso_pagamenti.json)
-
+[MEPA 2018 flusso pagamenti](http://explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/MEPA/ixmaps_project_mepa_ordini_flusso_pagamenti.json)
 
 
 Usando il filtro, accessibile nella barra di strumenti in alto a destra, si può ristringere i dati visualizzati attraverso delle 'faccette' creato dai dati stessi.
