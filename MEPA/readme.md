@@ -9,6 +9,8 @@ Il Mercato Elettronico della P.A. (MePA) è  un mercato digitale in cui le Ammin
 Qui i link alle due visualizzazioni:
 
 [MEPA 2018 flusso forniture](explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/MEPA/ixmaps_project_mepa_ordini_flusso_forniture.json)
+=======
+[MEPA 2018 flusso forniture](http://explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/MEPA/ixmaps_project_mepa_ordini_flusso_forniture.json)
 
 [MEPA 2018 flusso pagamenti](explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/MEPA/ixmaps_project_mepa_ordini_flusso_pagamenti.json)
 
