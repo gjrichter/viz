@@ -52,7 +52,7 @@
 		},
 	"themes": [{
 			"layer": "Regioni_2018",
-			"field": "Regione_PA",
+			"field": "Regione_Fornitore",
 			"field100": "",
 			"style": {
 				"type": "CHART|VECTOR|BEZIER|DASH|POINTER|NOSCALE|EXACT|ORDER|AGGREGATE|FAST|SUM|COUNT",
@@ -85,9 +85,9 @@
 				"dbtableType": "csv",
 				"dbtableExt": "https://s3-eu-west-1.amazonaws.com/data.ixmaps.com/MEPA/process.js",
 				"datacache": "true",
-				"colorfield": "Regione_Fornitore",
-				"lookupfield": "Regione_Fornitore",
-				"lookupfield2": "Regione_PA",
+				"colorfield": "Regione_PA",
+				"lookupfield": "Regione_PA",
+				"lookupfield2": "Regione_Fornitore",
 				"values": [
 					"ABRUZZO",
 					"LAZIO",
@@ -114,13 +114,13 @@
 				"scale": "1",
 				"valuescale": "1",
 				"sizefield":"Valore_economico_Ordini",
-				"title": "MEPA - Valore Economico Ordini 2018",
-				"snippet": "1.) le <b>frecce</b> indicano il flusso delle forniture fuori Regione",
+				"title": "MEPA 2018 - Ordini Valore Economico",
+				"snippet": "1.) le <b>frecce</b> indicano il flusso dei pagamenti verso i fornitori fuori Regione",
 				"splash": "loading and aggregating data ...<br>this may take a bit, please give me some time ..."
 				}
 			},{
 			"layer": "Regioni_2018",
-			"field": "Regione_PA",
+			"field": "Regione_Fornitore",
 			"field100": "",
 			"style": {
 				"type": "CHART|BUBBLE|SIZE|EXACT|AGGREGATE|FAST|SUM|ZEROISVALUE|VALUES",
@@ -147,14 +147,14 @@
 					"#9EDAE5"],
 				"fillopacity": "0.4499999999999999",
 				"shadow": "false",
-				"filter": "WHERE \"fuori regione\" = \"false\"",
+				"filter": "WHERE \"fuori regione\" = \"true\"",
 				"dbtable": "beni_servizi_mepa",
 				"dbtableUrl": "https://s3-eu-west-1.amazonaws.com/data.ixmaps.com/MEPA/ordini-mepa-2018.csv.gz",
 				"dbtableType": "csv",
 				"dbtableExt": "https://s3-eu-west-1.amazonaws.com/data.ixmaps.com/MEPA/process.js",
 				"datacache": "true",
-				"itemfield": "Regione_PA",
-				"lookupfield": "Regione_PA",
+				"itemfield": "Regione_Fornitore",
+				"lookupfield": "Regione_Fornitore",
 				"child": "true",
 				"symbols": [
 					"circle"],
@@ -184,10 +184,11 @@
 				"scale": "1",
 				"sizefield":"Valore_economico_Ordini",
 				"minvalue": "0",
-				"titlefield": "Regione_PA",
+				"titlefield": "Regione_Fornitore",
+				"textcolor":"white",
 				"valuescale": "0.9",
-				"title": "MEPA - Valore Economico Ordini 2018",
-				"snippet": "2.) le <b>palline</b> rappresentano il valore delle forniture entra Regione",
+				"title": "MEPA 2018 - Ordini Valore Economico",
+				"snippet": "2.) le <b>palline</b> rappresentano le entrate da ordini fuori Regione",
 				"splash": "loading and aggregating data ...<br>this may take a bit, please give me some time ..."
 				}
 			}],
