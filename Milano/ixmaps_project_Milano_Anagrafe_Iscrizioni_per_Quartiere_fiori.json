@@ -1,0 +1,87 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Fri Jun 28 2019 18:27:21 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Milano/NIL_OD.svgz",
+		"basemap": "CartoDB - Dark matter",
+		"scaleParam": {
+			"lineScaling": "13.31829497535944",
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "45.47132711834203",
+			"lng": "9.246196746826174"
+			},
+		"zoom": "12"
+		},
+	"themes": [{
+			"layer": "NILZone",
+			"field": "Cittadinanza",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|STAR|SORT|DOWN|AGGREGATE|FAST|HEX|EXACT|SUM|VALUEBACKGROUND|SUM|VALUES|DTEXT",
+				"colorscheme": [
+					"174",
+					"fluo"],
+				"filter":"WHERE \"Cittadinanza\" != \"Italia\"",
+
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://raw.githubusercontent.com/gjrichter/data/master/ds331-popolazione-anagrafe-iscrizioni-quartiere.csv",
+				"dbtableType": "csv",
+				"datacache": "false",
+				"lookupfield": "Quartiere",
+				"sizefield":"Numerosità",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"scale": "1",
+				"rangescale": "1.5",
+				"linewidth": "3",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"centerpart": "max",
+				"clipparts": "0",
+				"title": "Anagrafe Iscrizioni per Quartiere",
+				"snippet": "Stranieri per stato di provenienza"
+				}
+			}],
+	"layerMask": {
+		}
+	}
