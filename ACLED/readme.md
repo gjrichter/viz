@@ -10,9 +10,11 @@ In seguito la descrizione del progetto ACLED preso dal sito <a href="https://www
 
 ## Ci sono due mappe per visualizzare gli eventi del ACLED del 2019:
 
-[ACLED 2019 Incidents by Actor](http://explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/ACLED/ixmaps_project_ACLED_API_Incidents_2019_by_actor.json)
 
 [ACLED 2019 Incidents by Event Type](http://explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/ACLED/ixmaps_project_ACLED_API_Incidents_2019_by_event_type.json)
+
+[ACLED 2019 Incidents by Actor](http://explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/ACLED/ixmaps_project_ACLED_API_Incidents_2019_by_actor.json)
+
 
 Le mappa caricano i dati attraverso l'API di ACLED; la mappa che colora gli ecventi per 'Actor' è un pò impegnativa da caricare;
 si chiede un po' di pazienza.
