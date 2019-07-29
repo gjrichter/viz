@@ -8,6 +8,8 @@ In seguito la descrizione del progetto ACLED preso dal sito <a href="https://www
 
 * "Non-Commercial Licenses - ACLED’s full dataset is available for use free of charge by non-commercial entities and organizations (e.g., non-profit organizations, government agencies, academic institutions) using the data for non-commercial purposes, subject to these Terms of Use. Non-commercial licenses may also be granted to for-profit media outlets or journalists citing ACLED’s content in works of journalism; provided that such works are made available to the general public and benefit public discourse on the topic, subject to ACLED’s prior, written approval."
 
+## Ci sono due mappe per visualizzare gli eventi del ACLED del 2019:
+
 [ACLED 2019 Incidents by Actor](http://explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/ACLED/ixmaps_project_ACLED_API_Incidents_2019_by_actor.json)
 
 [ACLED 2019 Incidents by Event Type](http://explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/ACLED/ixmaps_project_ACLED_API_Incidents_2019_by_event_type.json)
