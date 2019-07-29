@@ -14,3 +14,12 @@ In seguito la descrizione del progetto ACLED preso dal sito <a href="https://www
 
 [ACLED 2019 Incidents by Event Type](http://explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/ACLED/ixmaps_project_ACLED_API_Incidents_2019_by_event_type.json)
 
+Le mappa caricano i dati attraverso l'API di ACLED; la mappa che colora gli ecventi per 'Actor' è un pò impegnativa da caricare;
+si chiede un po' di pazienza.
+
+Una volta caricata, si possono applicare filtri cliccando sui colori o attraverso lo strumento apposito nella barra in alto a destra. 
+
+
+
+
+
