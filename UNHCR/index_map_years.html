@@ -137,6 +137,11 @@ $Log:ixmaps_simple_embed.html,v $
 		</select>
 	</div>
 
+	<div style="position:absolute;top:38px;left:255px;color:#888;font-family:verdana;font-size:28px;font-weight:bold">
+		<span id="showyear" style="display:none">2000</span>
+		<span id="showpop" style="display:none">2000</span>
+	</div>
+
 	<div class="slidecontainer" style="display:none">
 	  <input type="range" min="1" max="57" value="0" class="slider" id="myRange">
 	  <div id="slider-text"></div> 
@@ -146,6 +151,8 @@ $Log:ixmaps_simple_embed.html,v $
 	<!-- ixmaps api ================================================================= -->
 
 	<script type="text/javascript" src = "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/ui/js/htmlgui_api.js" > </script>
+	<script type="text/javascript" src = "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/ui/libs/jquery/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src = "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/data.js/data.js" > </script>
 
 	<!--============================================================================= -->
 
@@ -726,70 +733,32 @@ $Log:ixmaps_simple_embed.html,v $
 		});
 	};
 
-	var tema_curves_all_index = function(index){
-		var fields = "";
-		for ( i=0; i<12; i++ ){
-			var year  = String(2014 + Math.floor((index+i)/12));
-			var month = ((index+i)%12)+1; 
-			fields += (fields.length?"|":"")+year+"M"+(month<10?"0":"")+month;
-		}
-		console.log(fields);
-		return (
-		{
-		"layer": "World_countries_shp0",
-		"field": fields,
-		"field100": "POP",
-		"style": {
-			"type": "CHART|SYMBOL|FIXSIZE|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|TITLE|ZEROISVALUE|AGGREGATE|RECT|GRIDSIZE",
-			"colorscheme": [
-				"#0022ff"],
-			"fillopacity": "0.65",
-			"shadow": "false",
-			"dbtable": "migr_asyappctzm_pivot",
-			"dbtableUrl": "../../app/Eurostat/data/migr_asyappctzm_pivot_firsttime.csv",
-			"dbtableType": "csv",
-			"datacache": "true",
-			"itemfield": "GEO",
-			"lookupfield": "GEO",
-			"child": "true",
-			"symbols": [
-				"circle"],
-			"units": "",
-			"normalsizevalue": "5",
-			"maxvalue":"0.1",
-			"scale": "0.9",
-			"rangescale": "9",
-			"linecolor": "white",
-			"linewidth": "5",
-			"bordercolor": "black",
-			"boxopacity": "0.1",
-			"titlefield": "NAME",
-			"fadenegative": "1",
-			"gridx": "1",
-			"gridwidthpx": "100",
-			"aggregationscale": [
-				"1:1",
-				"250px",
-				"1:5000000",
-				"150px",
-				"1:10000000",
-				"100px",
-				"1:50000000",
-				"50px"],
-			"title": "Asylum seekers"
-			}
-		});
-	};
-
-	// animate curves
+	// animate 
 	//
 
 	var clipTimeout = null;
+	var totalPopulationA = null;
 
 	ixmaps.clip = function(index){
 		var slider = document.getElementById("myRange");
-		var slidiv = slider	.parentElement;
+		var slidiv = slider.parentElement;
 		slidiv.setAttribute("style","display:inline");
+
+		var showyear = document.getElementById("showyear");
+		showyear.setAttribute("style","display:inline");
+		showyear.innerHTML = 1960+index;
+		var showpop = document.getElementById("showpop");
+		showpop.setAttribute("style","display:inline");
+		showpop.innerHTML = "";
+
+		Data.feed({source:"https://s3-eu-west-1.amazonaws.com/data.ixmaps.com/UNHCR/unhcr_popstats_export_persons_of_concern_all.csv",
+				   type:"csv",
+				  }).load(function(data){
+						var mydata = data.pivot({lead:"Year",sum:"Total Population"});
+						totalPopulationA = mydata.column("Total Population").values();
+						var showpop = document.getElementById("showpop");
+						showpop.innerHTML = (totalPopulationA[9]/1000000).toFixed(2) + " million";
+					});
 
 		if ( index == 0 ){
 			ixmaps.setProject(null,JSON.stringify(project_refugees_year('1960')),'themeonly');
@@ -842,12 +811,19 @@ $Log:ixmaps_simple_embed.html,v $
 
 	// Update the current slider value (each time you drag the slider handle)
 	slider.oninput = function() {
+		var showyear = document.getElementById("showyear");
+		showyear.innerHTML = 1960+Number(this.value);
+		var showpop = document.getElementById("showpop");
+		showpop.innerHTML = (totalPopulationA[Number(this.value)+9]/1000000).toFixed(2) + " million";
 		clearTimeout(clipTimeout);
 	}
 	slider.onmouseup = function(){
 		ixmaps.setClipFrame(Number(this.value));
 		}
 
+
+	// make the map 
+	//
 
 	ixmaps.embedMap("map_div",
 				{ 
@@ -872,8 +848,8 @@ $Log:ixmaps_simple_embed.html,v $
 					legend: true
 					}) 
 				   .setLocal("painting map","")  
-				   .setLocal("... processing ...","")  
-				   .setLocal("... actualize ...","")  
+				   .setLocal("... processing ...","...")  
+				   .setLocal("... actualize ...","...")  
 				   .setLocal("... creating theme ...","")  
 				   .setLocal("loading data ...","")
 				   
