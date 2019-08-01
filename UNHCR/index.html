@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html>
+
+<!-- **********************************************************************
+
+ixmaps_simple_embed.html
+
+$Comment: map template for Ricostruzione Trasparente; embedded version
+$Source : ixmaps_comuni_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:ixmaps_comuni_embed.html 1 2017-07-22 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:ixmaps_simple_embed.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="assets/img/favicon.png">
+
+	<title>iXMaps really simple RT template</title>
+
+	<style>
+	.slidecontainer {
+		width: 85%; /* Width of the outside container */
+		position: absolute;
+		left: 7em;
+		bottom: 1.5em;
+	}
+
+	/* The slider itself */
+	.slider {
+		-webkit-appearance: none;  /* Override default CSS styles */
+		appearance: none;
+		width: 100%; /* Full-width */
+		height: 25px; /* Specified height */
+		background: #d3d3d3; /* Grey background */
+		outline: none; /* Remove outline */
+		opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+		-webkit-transition: .2s; /* 0.2 seconds transition on hover */
+		transition: opacity .2s;
+	}
+
+	/* Mouse-over effects */
+	.slider:hover {
+		opacity: 1; /* Fully shown on mouse-over */
+	}
+
+	/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+	.slider::-webkit-slider-thumb {
+		-webkit-appearance: none; /* Override default look */
+		appearance: none;
+		width: 25px; /* Set a specific slider handle width */
+		height: 25px; /* Slider handle height */
+		background: #4CAF50; /* Green background */
+		cursor: pointer; /* Cursor on hover */
+	}
+
+	.slider::-moz-range-thumb {
+		width: 25px; /* Set a specific slider handle width */
+		height: 25px; /* Slider handle height */
+		background: #4CAF50; /* Green background */
+		cursor: pointer; /* Cursor on hover */
+	}
+	.slider {
+		-webkit-appearance: none;
+		width: 100%;
+		height: 15px;
+		border-radius: 5px;   
+		background: rgba(255,255,255,0.1);
+		border: solid #888 0px;
+		outline: none;
+		opacity: 0.7;
+		-webkit-transition: .2s;
+		transition: opacity .2s;
+	}
+
+	.slider::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 14px;
+		height: 14px;
+		border-radius: 0.5em; 
+		background: #4CAF50;
+		cursor: pointer;
+	}
+
+	.slider::-moz-range-thumb {
+		width: 25px;
+		height: 25px;
+		border-radius: 50%;
+		background: #4CAF50;
+		cursor: pointer;
+	}
+	#slider-text {
+		color:white;
+	}
+	</style>
+	<style>
+	select.form-control {
+		background:#000;
+		color:#888;
+		font-size:1.2em;
+		border-radius:5px;
+		padding:0.4em;
+	}
+	select.strong {
+		font-weight:bold;
+		color:#ddd;
+	}
+	</style>
+</head>
+
+<body style="margin:0;padding:0;background:black">
+
+	<div id="map_div"  background="#f8f8f8" onclick="event.stopPropagation();return false;">
+	</div>
+	<div id="footer">
+	</div>
+
+	<div id="themeselect" style="position:absolute;top:20px;left:55px;padding:1em">
+		<select class="form-control" id="theme-classes-select" onchange="eval(document.getElementById('theme-classes-select').value)" >
+			<option value="ixmaps.setProject(null,JSON.stringify(project_refugees_year('1980')),'themeonly');">1980</option>
+			<option value="ixmaps.setProject(null,JSON.stringify(project_refugees_year('1990')),'themeonly');">1990</option>
+			<option value="ixmaps.setProject(null,JSON.stringify(project_refugees_year('2000')),'themeonly');">2000</option>
+			<option value="ixmaps.setProject(null,JSON.stringify(project_refugees_year('2010')),'themeonly');">2010</option>
+			<option value="ixmaps.setProject(null,JSON.stringify(project_refugees_year('2018')),'themeonly');" selected>2018</option>
+			<option value="ixmaps.clip(0);">dal 1960 in poi</option>
+		</select>
+	</div>
+
+	<div class="slidecontainer" style="display:none">
+	  <input type="range" min="1" max="57" value="0" class="slider" id="myRange">
+	  <div id="slider-text"></div> 
+	</div>
+
+
+	<!-- ixmaps api ================================================================= -->
+
+	<script type="text/javascript" src = "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/ui/js/htmlgui_api.js" > </script>
+
+	<!--============================================================================= -->
+
+	<script type="text/javascript" charset="utf-8"> 
+
+		// --------------------------------------------
+		// Temi
+		// --------------------------------------------
+	var project_refugees_year = function(year){
+		var szFilter = "WHERE Year = "+String(year);
+		if ( year == "1960" ){
+			year = "all";
+		}
+		return (
+		{
+		"metadata": {
+			"title": "",
+			"snippet": "",
+			"description": "",
+			"thumbnail": "",
+			"about": "",
+			"created": "Sat Jul 13 2019 20:01:05 GMT+0200 (Ora legale dell’Europa centrale)"
+			},
+		"map": {
+			"map": "",
+			"basemap": "CartoDB - Dark matter",
+			"scaleParam": {
+				"borderScaling": "0.1",
+				"lineScaling": "9.988721231519582",
+				"normalSizeScale": "5000"
+				},
+			"options": {
+				"featurescaling": "true",
+				"objectscaling": "dynamic",
+				"clipmap": "true",
+				"clipmapdynamic": "true",
+				"dynamiclabel": "NOSIZE",
+				"labelspace": "1.0",
+				"checklabeloverlap": "NOSQUEEZE",
+				"dynamiclayer": "true",
+				"dynamictiles": "true",
+				"discardtiles": "false",
+				"loadmultitiles": "true",
+				"loadsilent": "false",
+				"loadexternaldata": "true",
+				"buttonsize": "15",
+				"fastpan": "false",
+				"panborder": "0",
+				"northarrow": "false",
+				"sidebarbuttons": "false",
+				"tooltipdelay": "25",
+				"popupdelay": "25",
+				"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+				"popupalignment": "BOTTOM|LEFT",
+				"transparentbackground": "true",
+				"flushChartDraw": "50000",
+				"mapopacity": "1",
+				"basemapopacity": "1"
+				},
+			"center": {
+				"lat": "32.32427558887655",
+				"lng": "16.435546875000004"
+				},
+			"zoom": "3"
+			},
+		"themes": [{
+				"layer": "Location",
+				"field": "$item$",
+				"field100": "",
+				"style": {
+					"type": "FEATURES|NOLEGEND",
+					"colorscheme": [
+						"5",
+						"white",
+						"blue"],
+					"shadow": "false",
+					"dbtable": "features_refugees",
+					"dbtableUrl": "https://s3-eu-west-1.amazonaws.com/data.ixmaps.com/UNHCR/Refugees_locations.csv",
+					"dbtableType": "csv",
+					"datacache": "true",
+					"itemfield": "id",
+					"lookupfield": "lat|lon",
+					"units": "",
+					"refreshtimeout": "0",
+					"scale": "1",
+					"valuescale": "1",
+					"title": "refugee locations"
+					}
+				},{
+				"layer": "Location",
+				"field": "Origin",
+				"field100": "",
+				"style": {
+					"name":"idp",
+					"type": "CHART|CHART|PIE|CENTERVALUE|SORT|SIZEP2|EXACT|FAST|AGGREGATE|SUM|COUNT",
+					"colorscheme": [
+						"204",
+						"fruit"],
+					"values":[
+						"Tuvalu",
+						"Thailand",
+						"Malta",
+						"Stateless",
+						"Samoa",
+						"Kyrgyzstan",
+						"Brazil",
+						"Zambia",
+						"Andorra",
+						"Yemen",
+						"Mali",
+						"Singapore",
+						"Iran (Islamic Rep. of)",
+						"Puerto Rico",
+						"Oman",
+						"Togo",
+						"Mongolia",
+						"Montenegro",
+						"Poland",
+						"Lebanon",
+						"Croatia",
+						"United Kingdom",
+						"St Vincent",
+						"Angola",
+						"Syrian Arab Rep.",
+						"United Rep. of Tanzania",
+						"Algeria",
+						"Western Sahara",
+						"Kiribati",
+						"Botswana",
+						"Bangladesh",
+						"Bhutan",
+						"Bermuda",
+						"Gibraltar",
+						"Trinidad & Tobago",
+						"Timor-Leste",
+						"Belarus",
+						"Suriname",
+						"Afghanistan",
+						"Iraq",
+						"Tajikistan",
+						"Kenya",
+						"Solomon Islands",
+						"China",
+						"Mauritius",
+						"Lesotho",
+						"Netherlands",
+						"Vanuatu",
+						"Palestinian",
+						"India",
+						"Maldives",
+						"Nepal",
+						"South Africa",
+						"Fiji",
+						"St Kitts",
+						"Micronesia",
+						"Uzbekistan",
+						"Pakistan",
+						"Saudi Arabia",
+						"Saint Lucia",
+						"Romania",
+						"Haiti",
+						"France",
+						"Holy See",
+						"Gambia",
+						"Zimbabwe",
+						"Burundi",
+						"French Polynesia",
+						"Finland",
+						"Albania",
+						"Venezuela (Bolivarian Republic of)",
+						"Uganda",
+						"Sweden",
+						"Japan",
+						"Sierra Leone",
+						"Dominican Rep.",
+						"China, Hong Kong SAR",
+						"Gabon",
+						"Israel",
+						"Morocco",
+						"Monaco",
+						"Armenia",
+						"Lithuania",
+						"Belize",
+						"New Zealand",
+						"Liechtenstein",
+						"United Arab Emirates",
+						"Burkina Faso",
+						"Cayman Islands",
+						"Cook Islands",
+						"Cambodia",
+						"Paraguay",
+						"Senegal",
+						"Rep. of Moldova",
+						"Congo",
+						"Slovenia",
+						"The former Yugoslav Republic of Macedonia",
+						"Seychelles",
+						"Barbados",
+						"Jamaica",
+						"Costa Rica",
+						"Nauru",
+						"Cyprus",
+						"Antigua & Barbuda",
+						"Tunisia",
+						"Latvia",
+						"China, Macao SAR",
+						"Cape Verde",
+						"Luxembourg",
+						"Bulgaria",
+						"Switzerland",
+						"El Salvador",
+						"Dominica",
+						"Tibetan",
+						"Comoros",
+						"Rep. of Korea",
+						"Turkey",
+						"Estonia",
+						"Martinique",
+						"Norway",
+						"Denmark",
+						"Rwanda",
+						"Azerbaijan",
+						"Kuwait",
+						"Viet Nam",
+						"Belgium",
+						"Mauritania",
+						"Eritrea",
+						"Canada",
+						"Mexico",
+						"Serbia and Kosovo (S/RES/1244 (1999))",
+						"Ghana",
+						"Somalia",
+						"Slovakia",
+						"Argentina",
+						"Various",
+						"Chad",
+						"Benin",
+						"Malawi",
+						"Swaziland",
+						"Cameroon",
+						"Hungary",
+						"Sri Lanka",
+						"Libya",
+						"Guyana",
+						"Tonga",
+						"Brunei",
+						"Turkmenistan",
+						"Ukraine",
+						"French Guiana",
+						"Bahrain",
+						"Greece",
+						"Czech Rep.",
+						"Colombia",
+						"Ireland",
+						"Djibouti",
+						"Bolivia (Plurinational State of)",
+						"Malaysia",
+						"Guinea",
+						"San Marino",
+						"Palau",
+						"Niger",
+						"Sao Tome",
+						"Uruguay",
+						"Indonesia",
+						"Mozambique",
+						"Namibia",
+						"Lao People's Dem. Rep.",
+						"Papua New Guinea",
+						"Guinea-Bissau",
+						"Austria",
+						"Ecuador",
+						"Central African Rep.",
+						"Bahamas",
+						"Dem. People's Rep. of Korea",
+						"Equatorial Guinea",
+						"Turks",
+						"Georgia",
+						"Myanmar",
+						"Côte d'Ivoire",
+						"Chile",
+						"Qatar",
+						"Jordan",
+						"Bosnia and Herzegovina",
+						"Peru",
+						"Portugal",
+						"Spain",
+						"Cuba",
+						"Guatemala",
+						"Panama",
+						"United States of America",
+						"Australia",
+						"Liberia",
+						"Kazakhstan",
+						"Nicaragua",
+						"Italy",
+						"Iceland",
+						"Ethiopia",
+						"Honduras",
+						"Dem. Rep. of the Congo",
+						"Nigeria",
+						"Grenada",
+						"Sudan",
+						"Philippines",
+						"Germany",
+						"Egypt",
+						"Madagascar",
+						"Russian Federation"
+					],
+					"filter":szFilter,
+					"fillopacity": "0.6",
+					"shadow": "false",
+					"showdata":"true",
+					"dbtable": "refugees",
+					"dbtableUrl": "https://s3-eu-west-1.amazonaws.com/data.ixmaps.com/UNHCR/unhcr_popstats_export_persons_of_concern_"+year+".csv",
+					"dbtableType": "csv",
+					"datacache": "false",
+					"showdata":"true",
+					"itemfield": "Origin",
+					"lookupfield": "Country / territory of asylum/residence",
+					"units": "person from",
+					"normalsizevalue": "7000",
+					"scale": "1",
+					"rangescale": "20",
+					"sizefield": "Total Population",
+					"linecolor": "none",
+					"valuescale": "1",
+					"title": "Refugees in countries",
+					"splash": "loading and aggregating data ...<br>this may take a bit <br>so please give me some time ..."
+					}
+				},{
+				"layer": "Location",
+				"field": "Country / territory of asylum/residence",
+				"field100": "",
+				"style": {
+					"name":"moving",
+					"type": "CHART|VECTOR|BEZIER|POINTER|GRADIENT|SIZEP2|NOSCALE|EXACT|FAST|AGGREGATE|SUM",
+					"colorscheme": [
+						"190",
+						"fruit"],
+					"values":[
+						"Tuvalu",
+						"Thailand",
+						"Malta",
+						"Stateless",
+						"Samoa",
+						"Kyrgyzstan",
+						"Brazil",
+						"Zambia",
+						"Andorra",
+						"Yemen",
+						"Mali",
+						"Singapore",
+						"Iran (Islamic Rep. of)",
+						"Puerto Rico",
+						"Oman",
+						"Togo",
+						"Mongolia",
+						"Montenegro",
+						"Poland",
+						"Lebanon",
+						"Croatia",
+						"United Kingdom",
+						"St Vincent",
+						"Angola",
+						"Syrian Arab Rep.",
+						"United Rep. of Tanzania",
+						"Algeria",
+						"Western Sahara",
+						"Kiribati",
+						"Botswana",
+						"Bangladesh",
+						"Bhutan",
+						"Bermuda",
+						"Gibraltar",
+						"Trinidad & Tobago",
+						"Timor-Leste",
+						"Belarus",
+						"Suriname",
+						"Afghanistan",
+						"Iraq",
+						"Tajikistan",
+						"Kenya",
+						"Solomon Islands",
+						"China",
+						"Mauritius",
+						"Lesotho",
+						"Netherlands",
+						"Vanuatu",
+						"Palestinian",
+						"India",
+						"Maldives",
+						"Nepal",
+						"South Africa",
+						"Fiji",
+						"St Kitts",
+						"Micronesia",
+						"Uzbekistan",
+						"Pakistan",
+						"Saudi Arabia",
+						"Saint Lucia",
+						"Romania",
+						"Haiti",
+						"France",
+						"Holy See",
+						"Gambia",
+						"Zimbabwe",
+						"Burundi",
+						"French Polynesia",
+						"Finland",
+						"Albania",
+						"Venezuela (Bolivarian Republic of)",
+						"Uganda",
+						"Sweden",
+						"Japan",
+						"Sierra Leone",
+						"Dominican Rep.",
+						"China, Hong Kong SAR",
+						"Gabon",
+						"Israel",
+						"Morocco",
+						"Monaco",
+						"Armenia",
+						"Lithuania",
+						"Belize",
+						"New Zealand",
+						"Liechtenstein",
+						"United Arab Emirates",
+						"Burkina Faso",
+						"Cayman Islands",
+						"Cook Islands",
+						"Cambodia",
+						"Paraguay",
+						"Senegal",
+						"Rep. of Moldova",
+						"Congo",
+						"Slovenia",
+						"The former Yugoslav Republic of Macedonia",
+						"Seychelles",
+						"Barbados",
+						"Jamaica",
+						"Costa Rica",
+						"Nauru",
+						"Cyprus",
+						"Antigua & Barbuda",
+						"Tunisia",
+						"Latvia",
+						"China, Macao SAR",
+						"Cape Verde",
+						"Luxembourg",
+						"Bulgaria",
+						"Switzerland",
+						"El Salvador",
+						"Dominica",
+						"Tibetan",
+						"Comoros",
+						"Rep. of Korea",
+						"Turkey",
+						"Estonia",
+						"Martinique",
+						"Norway",
+						"Denmark",
+						"Rwanda",
+						"Azerbaijan",
+						"Kuwait",
+						"Viet Nam",
+						"Belgium",
+						"Mauritania",
+						"Eritrea",
+						"Canada",
+						"Mexico",
+						"Serbia and Kosovo (S/RES/1244 (1999))",
+						"Ghana",
+						"Somalia",
+						"Slovakia",
+						"Argentina",
+						"Various",
+						"Chad",
+						"Benin",
+						"Malawi",
+						"Swaziland",
+						"Cameroon",
+						"Hungary",
+						"Sri Lanka",
+						"Libya",
+						"Guyana",
+						"Tonga",
+						"Brunei",
+						"Turkmenistan",
+						"Ukraine",
+						"French Guiana",
+						"Bahrain",
+						"Greece",
+						"Czech Rep.",
+						"Colombia",
+						"Ireland",
+						"Djibouti",
+						"Bolivia (Plurinational State of)",
+						"Malaysia",
+						"Guinea",
+						"San Marino",
+						"Palau",
+						"Niger",
+						"Sao Tome",
+						"Uruguay",
+						"Indonesia",
+						"Mozambique",
+						"Namibia",
+						"Lao People's Dem. Rep.",
+						"Papua New Guinea",
+						"Guinea-Bissau",
+						"Austria",
+						"Ecuador",
+						"Central African Rep.",
+						"Bahamas",
+						"Dem. People's Rep. of Korea",
+						"Equatorial Guinea",
+						"Turks",
+						"Georgia",
+						"Myanmar",
+						"Côte d'Ivoire",
+						"Chile",
+						"Qatar",
+						"Jordan",
+						"Bosnia and Herzegovina",
+						"Peru",
+						"Portugal",
+						"Spain",
+						"Cuba",
+						"Guatemala",
+						"Panama",
+						"United States of America",
+						"Australia",
+						"Liberia",
+						"Kazakhstan",
+						"Nicaragua",
+						"Italy",
+						"Iceland",
+						"Ethiopia",
+						"Honduras",
+						"Dem. Rep. of the Congo",
+						"Nigeria",
+						"Grenada",
+						"Sudan",
+						"Philippines",
+						"Germany",
+						"Egypt",
+						"Madagascar",
+						"Russian Federation"
+					],
+					"filter":szFilter,
+					"fillopacity": "1",
+					"shadow": "false",
+					"dbtable": "refugees",
+					"dbtableUrl": "https://s3-eu-west-1.amazonaws.com/data.ixmaps.com/UNHCR/unhcr_popstats_export_persons_of_concern_"+year+".csv",
+					"dbtableType": "csv",
+					"datacache": "false",
+					"lookupfield": "Origin",
+					"lookupfield2": "Country / territory of asylum/residence",
+					"units": "person",
+					"refreshtimeout": "0",
+					"normalsizevalue": "66666",
+					"scale": "1",
+					"rangescale": "20",
+					"sizepow": "0.6",
+					"colorfield": "Origin",
+					"sizefield": "Refugees (incl. refugee-like situations)",
+					"minvalue": "1000",
+					"valuescale": "1",
+					"title": "Refugees in motion",
+					"splash": "loading and aggregating data ...<br>this may take a bit <br>so please give me some time ..."
+					}
+				}],
+		"layerMask": {
+			"World Mercator": {
+				"display": "none"
+				}
+			}
+		});
+	};
+
+	var tema_curves_all_index = function(index){
+		var fields = "";
+		for ( i=0; i<12; i++ ){
+			var year  = String(2014 + Math.floor((index+i)/12));
+			var month = ((index+i)%12)+1; 
+			fields += (fields.length?"|":"")+year+"M"+(month<10?"0":"")+month;
+		}
+		console.log(fields);
+		return (
+		{
+		"layer": "World_countries_shp0",
+		"field": fields,
+		"field100": "POP",
+		"style": {
+			"type": "CHART|SYMBOL|FIXSIZE|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|TITLE|ZEROISVALUE|AGGREGATE|RECT|GRIDSIZE",
+			"colorscheme": [
+				"#0022ff"],
+			"fillopacity": "0.65",
+			"shadow": "false",
+			"dbtable": "migr_asyappctzm_pivot",
+			"dbtableUrl": "../../app/Eurostat/data/migr_asyappctzm_pivot_firsttime.csv",
+			"dbtableType": "csv",
+			"datacache": "true",
+			"itemfield": "GEO",
+			"lookupfield": "GEO",
+			"child": "true",
+			"symbols": [
+				"circle"],
+			"units": "",
+			"normalsizevalue": "5",
+			"maxvalue":"0.1",
+			"scale": "0.9",
+			"rangescale": "9",
+			"linecolor": "white",
+			"linewidth": "5",
+			"bordercolor": "black",
+			"boxopacity": "0.1",
+			"titlefield": "NAME",
+			"fadenegative": "1",
+			"gridx": "1",
+			"gridwidthpx": "100",
+			"aggregationscale": [
+				"1:1",
+				"250px",
+				"1:5000000",
+				"150px",
+				"1:10000000",
+				"100px",
+				"1:50000000",
+				"50px"],
+			"title": "Asylum seekers"
+			}
+		});
+	};
+
+	// animate curves
+	//
+
+	var clipTimeout = null;
+
+	ixmaps.clip = function(index){
+		var slider = document.getElementById("myRange");
+		var slidiv = slider	.parentElement;
+		slidiv.setAttribute("style","display:inline");
+
+		if ( index == 0 ){
+			ixmaps.setProject(null,JSON.stringify(project_refugees_year('1960')),'themeonly');
+		}else{
+			var year = 1960+index;
+			console.log(year);
+			ixmaps.changeThemeStyle(null,'idp'   ,'filter:WHERE Year = '+year,'set');
+			ixmaps.changeThemeStyle(null,'moving','filter:WHERE Year = '+year,'set');
+		}
+		slider.value = index;
+		if ( index < 57 ){
+			//clipTimeout = setTimeout("ixmaps.clip("+(++index)+")",2000);		
+		}else{
+			//setTimeout("ixmaps.clip(0)",100);		
+		}
+	}
+
+	ixmaps.doClipFrame = function(index){
+			clearTimeout(clipTimeout);
+			var year = 1960+index;
+			ixmaps.changeThemeStyle(null,'idp'   ,'filter:WHERE Year = '+year,'set');
+			ixmaps.changeThemeStyle(null,'moving','filter:WHERE Year = '+year,'set');
+	}
+
+	ixmaps.setClipFrame = function(index){
+			clearTimeout(clipTimeout);
+			clipTimeout = setTimeout("ixmaps.doClipFrame("+(index)+")",500);		
+	}
+
+	// timeline slider
+	//
+
+	var slider = document.getElementById("myRange");
+	var output = document.getElementById("slider-text");
+
+	var szHtml = "";
+	var step = 100/58;
+	var gap = 0;
+	for ( i=0; i<57; i++ ){
+		if ( i%10 == 0 ){
+			var year = 1960 + i;
+			szHtml += "<span style='margin-left:"+gap+"%'>"+(year)+"</span>";
+			gap = Math.round(step*10)-3;
+		}
+	}
+	gap = Math.round(step*7);
+	szHtml += "<span style='margin-left:"+gap+"%'>"+(2017)+"</span>";
+
+	output.innerHTML = szHtml;
+
+	// Update the current slider value (each time you drag the slider handle)
+	slider.oninput = function() {
+		clearTimeout(clipTimeout);
+	}
+	slider.onmouseup = function(){
+		ixmaps.setClipFrame(Number(this.value));
+		}
+
+
+	ixmaps.embedMap("map_div",
+				{ 
+					mapService: "leaflet",
+					mapType:	"CartoDB - Dark matter",
+					mapUrl:		"",
+					width:		"100%",
+					height:		(window.innerHeight - 5) + "px",
+					silent:     true,
+					legend:     "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/app/UNHCR/legend.html",
+					mapThemeLegend:	false,
+					mapOpt: {
+						attribution: encodeURI("viz: iXmaps")
+					}
+				},
+				function(map) {
+
+				map.setView([46.49969022433081,13.535156249999972],5) 
+				   .setOptions({
+					objectscaling: "dynamic",
+					autoSwitchInfo: true,
+					legend: true
+					}) 
+				   .setLocal("painting map","")  
+				   .setLocal("... processing ...","")  
+				   .setLocal("... actualize ...","")  
+				   .setLocal("... creating theme ...","")  
+				   .setLocal("loading data ...","")
+				   
+				   .loadProject(project_refugees_year("2018"));
+
+				}
+			);
+
+
+	</script>	
+
+
+  </body>
+</html>
