@@ -6,5 +6,8 @@ Qui i link alla visualizzazione:
 
 :arrow_right: [Milano Iscrizioni Stranieri Anagrafe dal 2013 al 2018](http://explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/Milano/ixmaps_project_Milano_Anagrafe_Iscrizioni_per_Quartiere_fiori.json)
 
+### iscrizioni dal 2013 al 2018 - femmine/maschi per etnie
+[dal 1960 al 2018](https://gjrichter.github.io/viz/Milano/index_map_years.html)
+
 
 
