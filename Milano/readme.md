@@ -11,7 +11,7 @@ Visualizzazione del dataset <a href="http://dati.comune.milano.it/dataset/ds331-
 
 Visualizzazione del dataset <a href="http://dati.comune.milano.it/dataset/ds331-popolazione-anagrafe-iscrizioni-quartiere" target="_blank">popolazione-anagrafe-iscrizioni-quartiere</a> dal portale Open Data di Milano
 
-:arrow_right: [Milano Iscrizioni Stranieri Anagrafe dal 2013 al 2018](http://explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/Milano/ixmaps_project_Milano_Anagrafe_Iscrizioni_per_Quartiere_fiori.json)
+:arrow_right: [Milano Iscrizioni Stranieri Anagrafe dal 2013 al 2018](http://explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/Milano/ixmaps_project_Brain-Drain-Milano_2003-2018.json)
 
 
 
