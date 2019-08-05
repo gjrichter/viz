@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<!-- **********************************************************************
+
+stranieri_FM_2001_2018_dark.html
+
+$Comment: map template for iXMaps; embedded version
+$Source : ixmaps_comuni_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2019/08/03 $
+$Author: guenter richter $
+$Id:ixmaps_comuni_embed.html 1 2018-08-03 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:stranieri_FM_2001_2018_dark.html,v $
+
+********************************************************************** -->
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge"
+        http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1"
+        name="viewport">
+  <meta content=""
+        name="description">
+  <meta content=""
+        name="author">
+  <link href="assets/img/favicon.png"
+        rel="shortcut icon">
+  <style>
+	select.form-control {
+		background:#000;
+		color:#888;
+		font-size:1.2em;
+		border-radius:5px;
+		border:solid #888 1px;
+		padding:0.4em;
+	}
+	select.strong {
+		font-weight:bold;
+		color:#ddd;
+	}
+  </style>
+  <title>iXMaps</title>
+</head>
+<body style="margin:0;paddig:0;background:black">
+  <div background="#f8f8f8"
+       id="map_div"
+       onclick="event.stopPropagation();return false;"></div>
+  <div id="footer"></div>
+  <div id="themeselect"
+       style="position:absolute;top:-3px;left:35px;padding:1em">
+
+    <select class="form-control"
+         id="theme-source-select"
+         onchange="eval(document.getElementById('theme-source-select').value)">
+      <option
+              value="ixmaps.day='5';__setDataSource('../../data/Milano/summedData_pivot_M.csv');">
+        Residenti dal 1998 al 2018 provenienti da
+      </option>
+    </select>
+	
+	<select class="form-control strong"
+         id="theme-type-select"
+         onchange="eval(document.getElementById('theme-type-select').value)">
+      <option value="__setType('ita');" >
+        Italia
+      </option>
+       <option value="__setType('Total');"  selected>
+        Tutte provenience
+      </option>
+	  <option disabled>───────</option>
+      <option value="__setType('noraf');">
+        Nord Africa
+      </option>
+      <option value="__setType('ssaf');" >
+        Sub Sahara Africa
+      </option>
+	  <option disabled>───────</option>
+      <option value="__setType('eastas');" >
+        Est Asia	
+      </option>
+      <option value="__setType('southas');" >
+        Sud Asia
+      </option>
+      <option value="__setType('seas');" >
+        Sud Est Asia
+      </option>
+      <option value="__setType('westas');" >
+        Ouest Asia
+      </option>
+  	  <option disabled>───────</option>
+      <option value="__setType('noram');" >
+        Nord America
+      </option>
+      <option value="__setType('soam');" >
+        Sud America
+      </option>
+	  <option disabled>───────</option>
+      <option value="__setType('eu15');" >
+        Europa 15
+      </option>
+      <option value="__setType('eun13');" >
+        Europa Nuovi 13
+      </option>
+      <option value="__setType('otheu');" >
+        Europa Altri
+      </option>
+	  <option disabled>───────</option>
+      <option value="__setType('ocean');" >
+        Oceania
+      </option>
+      <option value="__setType('other');" >
+        Altri
+      </option>
+	  <option disabled>───────</option>
+    </select>
+  </div>
+
+  <script type="text/javascript" src = "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/ui/js/htmlgui_api.js" > </script>
+
+  <script charset="utf-8"
+        type="text/javascript">
+
+		var __type = "Total";
+
+		var __setType = function(type){
+			__type = type;
+			__makeTheme();
+		}
+
+		__makeTheme = function(){
+
+			var	themesA = themes_curves();
+
+			var theme_curve_1 = themesA[0];
+			var theme_curve_2 = themesA[1];
+
+			theme_curve_1.style.sizefield = __type;
+			theme_curve_2.style.sizefield = __type;
+
+			ixmaps.clearAll();
+
+			ixmaps.newTheme('map','title',theme_curve_1);
+			ixmaps.newTheme('map','title',theme_curve_2);
+		};
+
+		// --------------------------------------------
+		// Temi
+		// --------------------------------------------
+
+		var themes_curves = function() { return (
+			[{
+			"layer": "NILZone",
+			"field": "Anno",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|FIXSIZE|PLOT|LINES|AREA|BOX|LONGTITLE|GRID|GRIDSIZE|EXACT|AGGREGATE|FAST|RECT|RELOCATE|SUM|ZEROISVALUE|NOLEGEND",
+				"colorscheme": [
+					"#0088ff",
+					"#0088ff",
+					"#0088ff",
+					"#0088ff",
+					"#0088ff",
+					"#0088ff",
+					"#0088ff",
+					"#0088ff",
+					"#0088ff",
+					"#0088ff",
+					"#0088ff",
+					"#0088ff",
+					"#0088ff",
+					"#0088ff",
+					"#0088ff",
+					"#0088ff",
+					"#0088ff",
+					"#0088ff",
+					"#0088ff",
+					"#0088ff",
+					"#0088ff",
+					"#0088ff"
+				],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "themeDataObj_M",
+				"dbtableUrl": "https://s3-eu-west-1.amazonaws.com/data.ixmaps.com/Milano/summedData_pivot_M.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"itemfield": "Nil",
+				"lookupfield": "Nil",
+				"symbols": [
+					"circle"],
+				"values": [
+					"1999",
+					"2000",
+					"2001",
+					"2003",
+					"2002",
+					"2004",
+					"2005",
+					"2006",
+					"2007",
+					"2008",
+					"2009",
+					"2010",
+					"2011",
+					"2012",
+					"2013",
+					"2014",
+					"2015",
+					"2016",
+					"2017",
+					"2018"],
+				"label": [
+					"1999",
+					"2000",
+					"2001",
+					"2003",
+					"2002",
+					"2004",
+					"2005",
+					"2006",
+					"2007",
+					"2008",
+					"2009",
+					"2010",
+					"2011",
+					"2012",
+					"2013",
+					"2014",
+					"2015",
+					"2016",
+					"2017",
+					"2018"],
+				"xaxis": [
+					"1999",
+					"2000",
+					" ",
+					" ",
+					" ",
+					" ",
+					"2005",
+					" ",
+					" ",
+					" ",
+					" ",
+					"2010",
+					" ",
+					" ",
+					" ",
+					" ",
+					"2015",
+					" ",
+					" ",
+					"2018"],
+				"units": "",
+				"normalsizevalue": "20",
+				"scale": "0.9",
+				"rangescale": "0.75",
+				"sizefield": "Total",
+				"linewidth": "5",
+				"bordercolor": "none",
+				"boxopacity": "0.01",
+				"valuescale": "1",
+				"aggregationscale": [
+					"1:1","300px",	
+					"1:10000","150px",
+					"1:25000","100px"
+				],	
+				"title": "Residenti mascili dal 1998 al 2018"
+				}
+			},{
+			"layer": "NILZone",
+			"field": "Anno",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|FIXSIZE|PLOT|LINES|AREA|BOX|GRIDSIZE|EXACT|AGGREGATE|FAST|RECT|RELOCATE|SUM|ZEROISVALUE|NOLEGEND",
+				"colorscheme": [
+					"RGB(255,64,71)",
+					"RGB(255,64,71)",
+					"RGB(255,64,71)",
+					"RGB(255,64,71)",
+					"RGB(255,64,71)",
+					"RGB(255,64,71)",
+					"RGB(255,64,71)",
+					"RGB(255,64,71)",
+					"RGB(255,64,71)",
+					"RGB(255,64,71)",
+					"RGB(255,64,71)",
+					"RGB(255,64,71)",
+					"RGB(255,64,71)",
+					"RGB(255,64,71)",
+					"RGB(255,64,71)",
+					"RGB(255,64,71)",
+					"RGB(255,64,71)",
+					"RGB(255,64,71)",
+					"RGB(255,64,71)",
+					"RGB(255,64,71)",
+					"RGB(255,64,71)"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "themeDataObj_F",
+				"dbtableUrl": "https://s3-eu-west-1.amazonaws.com/data.ixmaps.com/Milano/summedData_pivot_F.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"itemfield": "Nil",
+				"lookupfield": "Nil",
+				"titlefield": "Nil",
+				"titleupper": "1:25000",
+				"symbols": [
+					"circle"],
+				"values": [
+					"1999",
+					"2000",
+					"2001",
+					"2003",
+					"2002",
+					"2004",
+					"2005",
+					"2006",
+					"2007",
+					"2008",
+					"2009",
+					"2010",
+					"2011",
+					"2012",
+					"2013",
+					"2014",
+					"2015",
+					"2016",
+					"2017",
+					"2018"],
+				"label": [
+					"1999",
+					"2000",
+					"2001",
+					"2003",
+					"2002",
+					"2004",
+					"2005",
+					"2006",
+					"2007",
+					"2008",
+					"2009",
+					"2010",
+					"2011",
+					"2012",
+					"2013",
+					"2014",
+					"2015",
+					"2016",
+					"2017",
+					"2018"],
+				"xaxis": [
+					"1999",
+					"2000",
+					" ",
+					" ",
+					" ",
+					" ",
+					"2005",
+					" ",
+					" ",
+					" ",
+					" ",
+					"2010",
+					" ",
+					" ",
+					" ",
+					" ",
+					"2015",
+					" ",
+					" ",
+					"2018"],
+				"units": "",
+				"normalsizevalue": "20",
+				"scale": "0.9",
+				"rangescale": "0.75",
+				"sizefield": "Total",
+				"linewidth": "5",
+				"bordercolor": "none",
+				"boxopacity": "0.01",
+				"valuescale": "1",
+				"maxvalue":"inherit",
+				"aggregationscale": [
+					"1:1","300px",	
+					"1:10000","150px",
+					"1:25000","100px"
+				],	
+				"title": "Residenti femminili dal 1998 al 2018"
+				}
+			}] );
+		};
+
+        ixmaps.embedMap("map_div",
+				{ 
+				mapService:  "leaflet",
+				mapType:     "CartoDB - Dark matter",
+				mapUrl:      "",
+				width:       "100%",
+				height:      (window.innerHeight-5)+"px",
+				legend:      "https://s3-eu-west-1.amazonaws.com/data.ixmaps.com/Milano/legend_FM.html",
+				themeLegend: false,
+				mapOpt:      {"attribution":"data: https://www.bluebikes.com/system-data"}
+				},
+				function(map) {
+					map.setView([45.474977822435264,9.225339889526369],13)
+					   .loadMap("https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Milano/NIL_OD.svgz")
+					   .setOptions({
+							flushChartDraw:'50000',
+							objectscaling: "dynamic",
+							autoSwitchInfo: true,
+							panHidden: true
+							}) 
+					   .setScaleParam("normalSizeScale:5000;")
+					   .setLocal("loading data ...","scaricando dati ...")  
+					   .setLocal("... creating theme ...","...");  
+
+					__makeTheme();
+
+				}
+		);
+
+  </script>
+</body>
+</html>
