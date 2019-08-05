@@ -6,7 +6,7 @@ Visualizzazione del dataset <a href="http://dati.comune.milano.it/dataset/ds331-
 <br><br>
 
 
-## Milano - Femmine/MNschi regione e provenienza - iscrizioni dal 1998 al 2018
+## Milano - Femmine/Maschi per regione di provenienza - iscrizioni dal 1998 al 2018
 
 Visualizzazione di un dataset del progetto: <a href="https://github.com/spaghetti-open-data/-milano-melting-pot/" target="_blank"><b><span style="color:#ffffff">milano-melting-pot</span></b></a>, Hackathon track per #SOD19 il raduno Spaghetti Open Data 2019 a Milano. Il dataset <a href="https://github.com/spaghetti-open-data/-milano-melting-pot/blob/master/dati/summedData.csv">summedData.csv</a> contiene il numero degli residenti diviso per maschi e femmine per tuti quartieri di Milano e per gli anni dal 1998 al 2018. La visualizzazione usa due tabelle derivanti di questo dataset che contengono le somme per regione e provenienza o per i maschi o per le femmine.
 
@@ -18,7 +18,7 @@ Visualizzazione di un dataset del progetto: <a href="https://github.com/spaghett
 
 Visualizzazione del dataset <a href="http://dati.comune.milano.it/dataset/ds331-popolazione-anagrafe-iscrizioni-quartiere" target="_blank">popolazione-anagrafe-iscrizioni-quartiere</a> dal portale Open Data di Milano
 
-:arrow_right: [Milano Iscrizioni Stranieri Anagrafe dal 2013 al 2018](http://explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/Milano/ixmaps_project_Brain-Drain-Milano_2003-2018.json)
+:arrow_right: [Milano - Brain Drain](http://explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/Milano/ixmaps_project_Brain-Drain-Milano_2003-2018.json)
 <br><br>
 
 
