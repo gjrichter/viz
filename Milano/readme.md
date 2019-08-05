@@ -1,4 +1,4 @@
-## Milano - Persone con fondo migratorio - iscrizioni all'anagrafe dal 2013 al 2018 - 
+## Milano - Persone con fondo migratorio - iscrizioni all'anagrafe dal 2013 al 2018 
 
 Visualizzazione del dataset <a href="http://dati.comune.milano.it/dataset/ds331-popolazione-anagrafe-iscrizioni-quartiere" target="_blank">popolazione-anagrafe-iscrizioni-quartiere</a> dal portale Open Data di Milano
 
