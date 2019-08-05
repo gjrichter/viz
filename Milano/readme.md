@@ -8,7 +8,7 @@ Visualizzazione del dataset <a href="http://dati.comune.milano.it/dataset/ds331-
 
 ## Milano - Femmine/MNschi regione e provenienza - iscrizioni dal 1998 al 2018
 
-Visualizzazione di un dataset del progetto: <a href="https://github.com/spaghetti-open-data/-milano-melting-pot/" target="_blank"><b><span style="color:#ffffff">milano-melting-pot</span></b></a>, Hackathon track per #SOD19 il raduno Spaghetti Open Data 2019 a Milano. Il <a href="https://github.com/spaghetti-open-data/-milano-melting-pot/blob/master/dati/summedData.csv">dataset</a> contiene il numero degli residenti diviso per maschi e femmine per tuti quartieri di Milano e per gli anni dal 1998 al 2018
+Visualizzazione di un dataset del progetto: <a href="https://github.com/spaghetti-open-data/-milano-melting-pot/" target="_blank"><b><span style="color:#ffffff">milano-melting-pot</span></b></a>, Hackathon track per #SOD19 il raduno Spaghetti Open Data 2019 a Milano. Il <a href="https://github.com/spaghetti-open-data/-milano-melting-pot/blob/master/dati/summedData.csv">dataset summedData.csv</a> contiene il numero degli residenti diviso per maschi e femmine per tuti quartieri di Milano e per gli anni dal 1998 al 2018
 
 La visualizzazione usa due tabelle derivanti di questo dataset che contengono le somme per regione e provenienza o per i maschi o per le femmine
 :arrow_right: [Milano Iscrizioni Femmine/Maschi dal 1998 al 2018](https://gjrichter.github.io/viz/Milano/stranieri_FM_2001_2018_dark.html)
