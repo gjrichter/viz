@@ -26,4 +26,6 @@ Qui i link alle due visualizzazioni:
 
 <img src="https://raw.githubusercontent.com/gjrichter/viz/master/MEPA/filtro_1.png">
 
+>se, per esempio inseriamo open source nel filtro 'bene_servizio', possiamo vedere il seguente sisultato. 
+
 <img src="https://raw.githubusercontent.com/gjrichter/viz/master/MEPA/filtro_2.png">
