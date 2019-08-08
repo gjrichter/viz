@@ -24,4 +24,6 @@ Qui i link alle due visualizzazioni:
 
 >Usando il filtro, accessibile nella barra di strumenti in alto a destra, si può ristringere i dati visualizzati attraverso delle 'faccette' creato dai dati stessi.
 
+<img src="https://raw.githubusercontent.com/gjrichter/viz/master/MEPA/filter_1.png">
 
+<img src="https://raw.githubusercontent.com/gjrichter/viz/master/MEPA/filter_2.png">
