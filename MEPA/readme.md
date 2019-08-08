@@ -16,5 +16,5 @@ Qui i link alle due visualizzazioni:
 Usando il filtro, accessibile nella barra di strumenti in alto a destra, si può ristringere i dati visualizzati attraverso delle 'faccette' creato dai dati stessi.
 
 <a href="http://explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/MEPA/ixmaps_project_mepa_ordini_flusso_forniture.json" >
-<img src="https://raw.githubusercontent.com/gjrichter/elezioni-europee-2019/master/projects/ixmaps_project_Europee_2019_partito_dominante_valutato_e_ciffre_chart_eligendo.png"></a>
+<img src="https://raw.githubusercontent.com/gjrichter/viz/MEPA/screencapture-localhost-ixmaps-dev-rc-ixmaps-app-viewer-2019-08-07-23_40_26_small.png"></a>
 
