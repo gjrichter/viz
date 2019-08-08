@@ -20,7 +20,7 @@ Qui i link alle due visualizzazioni:
 <a href="http://explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/MEPA/ixmaps_project_mepa_ordini_flusso_pagamenti.json" >
 <img src="https://raw.githubusercontent.com/gjrichter/viz/master/MEPA/screencapture-localhost-ixmaps-dev-rc-ixmaps-app-viewer-2019-08-07-23_42_12_small.png"></a>
 
-<br>
+<br><br>
 
 >Usando il filtro, accessibile nella barra di strumenti in alto a destra, si può ristringere i dati visualizzati attraverso delle 'faccette' creato dai dati stessi.
 
