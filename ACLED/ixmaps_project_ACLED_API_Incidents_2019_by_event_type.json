@@ -73,6 +73,7 @@
 				"valuescale": "1",
 				"centerpart": "max",
 				"gridwidth": "10000",
+				"splash":"reading actual 2019 data from ACLED ...",
 				"title": "ACLED Incidents 2019",
 				"snippet": "Events from the <i><b>Armed Conflict Location & Event Data Project (ACLED)</b></i> visualized by Event Type",
 				"description":"data source: <a href='https://www.acleddata.com/' tartget='_blank' >https://www.acleddata.com/</a>"
