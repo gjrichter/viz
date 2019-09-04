@@ -6,9 +6,9 @@
 
 
 
-[CITIbikes  NewYork - Station Status](https://gjrichter.github.io/viz/Bike_Sharing/citibikes_gbfs_status.html)
+[CITIbike  NewYork - Station Status](https://gjrichter.github.io/viz/Bike_Sharing/citibike_gbfs_status.html)
 
-[CITIbikes  NewYork - Station Status - project](https://gjrichter.github.io/viz/Bike_Sharing/citibikes_gbfs_status.html)
+[CITIbike  NewYork - Station Status - project](http://explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/Bike_Sharing/citibike_gbfs_status.json)
 
 
 
