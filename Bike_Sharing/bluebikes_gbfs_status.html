@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<!-- **********************************************************************
+
+bluebikes_gbfs_status.html
+
+$Comment: map template; embedded version
+$Source : bluebikes_gbfs_status.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2019/06/01 $
+$Author: guenter richter $
+$Id:bluebikes_gbfs_status.html 1 2019-06-01 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:bluebikes_gbfs_status.html,v $
+
+********************************************************************** -->
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge"
+        http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1"
+        name="viewport">
+  <meta content=""
+        name="description">
+  <meta content=""
+        name="author">
+  <link href="assets/img/favicon.png"
+        rel="shortcut icon">
+  <title>iXMaps</title>
+</head>
+<body style="margin:0;paddig:0">
+  <div background="#f8f8f8"
+       id="map_div"
+       onclick="event.stopPropagation();return false;"></div>
+  </div>
+
+  <script type="text/javascript" src = "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/ui/js/htmlgui_api.js" > </script>
+
+  <script charset="utf-8"
+        type="text/javascript">
+
+		__makeTheme = function(){
+
+			var	themesA = theme_station_information();
+			var theme_stations = themesA[0];
+			var theme_available = themesA[1];
+
+			ixmaps.clearAll('map');
+			ixmaps.newTheme('map','title',theme_stations);
+			ixmaps.newTheme('map','title',theme_available);
+
+		};
+
+		// --------------------------------------------
+		// Temi
+		// --------------------------------------------
+
+		var theme_station_information = function() { return (
+		    [{
+			"layer": "Station",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|POSITION|NOLEGEND",
+				"dbtable": "bike_stations",
+				"dbtableUrl": "https://gbfs.citibikenyc.com/gbfs/en/station_information.json",
+				"dbtableType": "ext",
+				"dbtableExt": "../../app/Bike_Sharing/databroker_bluebikes_gbfs.js",
+				"datacache": "false",
+				"itemfield": "station_id",
+				"lookupfield": "lat|lon",
+				"title": "Stations",
+				"splash": "loading and aggregating data ...<br>this may rakle a bit ...<br>please give me some time ..."
+				}
+			},{
+			"layer": "Station",
+			"field": "num_ebikes_available|num_bikes_available|num_docks_available",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|CENTER|RINGS|LINEAR|SIZE|FAST|SUM",
+				"colorscheme": [
+					"red",
+					"#39A2E1",
+					"none"],
+				"label":[
+					"e-bikes",
+					"bikes",
+					"empty docks"
+					],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "bike_status",
+				"dbtableUrl": "https://gbfs.citibikenyc.com/gbfs/en/station_status.json",
+				"dbtableType": "ext",
+				"dbtableExt": "../../app/Bike_Sharing/databroker_bluebikes_gbfs.js",
+				"datacache": "false",
+				"refresh":"10",
+				"itemfield": "station_id",
+				"lookupfield": "station_id",
+				"showdata": "true",
+				"units": "",
+				"scale": "2",
+				"valuescale": "1",
+				"linecolor":"#39A2E1",
+				"linewidth":"5",
+				"title": "BlueBikes Docking-Stations",
+				"splash": "loading and aggregating data ...<br>this may take a bit ...<br>please give me some time ..."
+				}
+			}] );
+		};
+
+
+        ixmaps.embedMap("map_div",
+				{ 
+				mapService:  "leaflet",
+				mapType:     "CartoDB - Positron",
+				mapUrl:      "",
+				width:       "100%",
+				height:      (window.innerHeight-5)+"px",
+				legend:      "2",
+				themeLegend: false,
+				mapOpt:      {"attribution":"data: https://www.bluebikes.com/system-data"}
+				},
+				function(map) {
+					map.setView([42.34469359766726,-71.06617927551272],13)
+					   .setOptions({
+							flushChartDraw:'50000',
+							objectscaling: "dynamic",
+							autoSwitchInfo: true,
+							panHidden: false
+							}) 
+					   .setScaleParam("normalSizeScale:5000;")
+					   .setLocal("loading data ...","loading status ...");  
+
+					__makeTheme();
+
+				}
+		);
+
+  </script>
+</body>
+</html>
