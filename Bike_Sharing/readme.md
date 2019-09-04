@@ -14,7 +14,7 @@
 
 [BLUEbikes  Boston - Trip Explorer](https://gjrichter.github.io/viz/Bike_Sharing/bluebikes_trip_explorer_dark.html)
 
-[BLUEbikes  Boston - Trip Explorer Vectors](https://gjrichter.github.io/viz/Bike_Sharing/bluebikes_trip_explorer_dark_vectors.html)
+[BLUEbikes  Boston - Trip Explorer Vector](https://gjrichter.github.io/viz/Bike_Sharing/bluebikes_trip_explorer_dark_vector.html)
 
 
 
