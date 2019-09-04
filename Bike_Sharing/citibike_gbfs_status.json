@@ -1,0 +1,112 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Wed Sep 04 2019 17:20:49 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "",
+		"basemap": "CartoDB - Positron",
+		"scaleParam": {
+			"normalSizeScale": "5000"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "40.732720880700285",
+			"lng": "-73.98491621017459"
+			},
+		"zoom": "14"
+		},
+	"themes": [{
+			"layer": "Station",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND",
+				"colorscheme": [
+					"5",
+					"white",
+					"blue"],
+				"shadow": "false",
+				"dbtable": "bike_stations",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/Bike_Sharing/databroker_citibike_gbfs.js",
+				"datacache": "false",
+				"itemfield": "station_id",
+				"lookupfield": "lat|lon",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuescale": "1",
+				"title": "Stations",
+				"splash": "loading and aggregating data ...<br>this may rakle a bit ...<br>please give me some time ..."
+				}
+			},{
+			"layer": "Station",
+			"field": "num_ebikes_available|num_bikes_available|num_docks_available",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|CENTER|RINGS|LINEAR|SIZE|FAST|SUM",
+				"colorscheme": [
+					"red",
+					"#39A2E1",
+					"none"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "bike_status",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/Bike_Sharing/databroker_citibike_gbfs.js",
+				"datacache": "false",
+				"lookupfield": "station_id",
+				"showdata": "true",
+				"symbols": [
+					"circle"],
+				"label": [
+					"e-bikes",
+					"bikes",
+					"empty docks"],
+				"units": "",
+				"refreshtimeout": "10000",
+				"scale": "2",
+				"linecolor": "#39A2E1",
+				"linewidth": "5",
+				"valuescale": "1",
+				"fadenegative": "1",
+				"title": "<p>Wed Sep 04 2019 09:20:30 </p>",
+				"snippet": "<p><b>Citi Bike</b> - Station Status</p><hr>",
+				"splash": "loading and aggregating data ...<br>this may take a bit ...<br>please give me some time ..."
+				}
+			}],
+	"layerMask": {
+		}
+	}
