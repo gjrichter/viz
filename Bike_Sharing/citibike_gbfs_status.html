@@ -2,18 +2,18 @@
 <html>
 <!-- **********************************************************************
 
-bluebikes_gbfs_status.html
+citibike_gbfs_status.html
 
 $Comment: map template; embedded version
-$Source : bluebikes_gbfs_status.html,v $
+$Source : citibike_gbfs_status.html,v $
 
 $InitialAuthor: guenter richter $
-$InitialDate: 2019/06/01 $
+$InitialDate: 2019/06/22 $
 $Author: guenter richter $
-$Id:bluebikes_gbfs_status.html 1 2019-06-01 00:00:00Z Guenter Richter $
+$Id:citibike_gbfs_status.html 1 2019-07-22 00:00:00Z Guenter Richter $
 
 licensed under CC-BY
-$Log:bluebikes_gbfs_status.html,v $
+$Log:citibike_gbfs_status.html,v $
 
 ********************************************************************** -->
 <head>
@@ -66,7 +66,7 @@ $Log:bluebikes_gbfs_status.html,v $
 				"type": "FEATURES|NOLEGEND",
 				"dbtable": "bike_stations",
 				"dbtableType": "ext",
-				"dbtableExt": "https://gjrichter.github.io/viz/Bike_Sharing/databroker_bluebikes_gbfs.js",
+				"dbtableExt": "https://gjrichter.github.io/viz/Bike_Sharing/databroker_citibike_gbfs.js",
 				"datacache": "false",
 				"itemfield": "station_id",
 				"lookupfield": "lat|lon",
@@ -92,7 +92,7 @@ $Log:bluebikes_gbfs_status.html,v $
 				"shadow": "false",
 				"dbtable": "bike_status",
 				"dbtableType": "ext",
-				"dbtableExt": "https://gjrichter.github.io/viz/Bike_Sharing/databroker_bluebikes_gbfs.js",
+				"dbtableExt": "https://gjrichter.github.io/viz/Bike_Sharing/databroker_citibike_gbfs.js",
 				"datacache": "false",
 				"refresh":"10",
 				"itemfield": "station_id",
@@ -103,7 +103,7 @@ $Log:bluebikes_gbfs_status.html,v $
 				"valuescale": "1",
 				"linecolor":"#39A2E1",
 				"linewidth":"5",
-				"title": "BlueBikes Docking-Stations",
+				"title": "Stations",
 				"splash": "loading and aggregating data ...<br>this may take a bit ...<br>please give me some time ..."
 				}
 			}] );
@@ -119,10 +119,10 @@ $Log:bluebikes_gbfs_status.html,v $
 				height:      (window.innerHeight-5)+"px",
 				legend:      "2",
 				themeLegend: false,
-				mapOpt:      {"attribution":"data: https://www.bluebikes.com/system-data"}
+				mapOpt:      {"attribution":"data: https://www.citibikenyc.com/system-data"}
 				},
 				function(map) {
-					map.setView([42.34469359766726,-71.06617927551272],13)
+					map.setView([40.732720880700285,-73.98491621017459],14)
 					   .setOptions({
 							flushChartDraw:'50000',
 							objectscaling: "dynamic",

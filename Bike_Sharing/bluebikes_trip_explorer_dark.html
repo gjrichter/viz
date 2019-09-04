@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html>
+<!-- **********************************************************************
+
+ixmaps_simple_embed.html
+
+$Comment: map template for Ricostruzione Trasparente; embedded version
+$Source : ixmaps_comuni_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:ixmaps_comuni_embed.html 1 2017-07-22 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:ixmaps_simple_embed.html,v $
+
+********************************************************************** -->
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge"
+        http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1"
+        name="viewport">
+  <meta content=""
+        name="description">
+  <meta content=""
+        name="author">
+  <link href="assets/img/favicon.png"
+        rel="shortcut icon">
+  <style>
+	select.form-control {
+		background-color:rgba(0,0,0,0.5);
+		color:#ddd;
+		font-size:1.2em;
+		border-radius:1px;
+		border-top:0px;
+		border-left:0px;
+		border-right:0px;
+		padding:0.4em;
+		margin-left: 1em;
+	}
+	select.form-control:active {
+		outline: none;
+	}
+	select.form-control:focus {
+		outline: none;
+	}
+	select.form-control > option {
+		background-color: black;
+	}
+  </style>
+  <title>iXMaps</title>
+</head>
+<body style="margin:0;paddig:0;background:black">
+  <div background="#f8f8f8"
+       id="map_div"
+       onclick="event.stopPropagation();return false;"></div>
+  <div id="footer"></div>
+  <div id="themeselect"
+       style="position:absolute;top:-3px;left:1em;padding:1em">
+
+    <select class="form-control"
+         id="theme-source-select"
+         onchange="eval(document.getElementById('theme-source-select').value)">
+      <option
+              value="ixmaps.day='5';__setDataSource('../../data/BikeSharing/Bluebikes/201806-bluebikes-tripdata_1.csv');">
+        1. July 2018 - Friday
+      </option>
+      <option
+              value="ixmaps.day='6';__setDataSource('../../data/BikeSharing/Bluebikes/201806-bluebikes-tripdata_2.csv');">
+        2. July 2018 - Saturday
+      </option>
+      <option
+              value="ixmaps.day='0';__setDataSource('../../data/BikeSharing/Bluebikes/201806-bluebikes-tripdata_3.csv');">
+        3. July 2018 - Sunday
+      </option>
+      <option
+              value="ixmaps.day='0';__setDataSource('../../data/BikeSharing/Bluebikes/201806-bluebikes-tripdata_4.csv');">
+        4. July 2018 - Monday
+      </option>
+      <option
+              value="ixmaps.day='0';__setDataSource('../../data/BikeSharing/Bluebikes/201806-bluebikes-tripdata_5.csv');">
+        5. July 2018 - Tuesday
+      </option>
+      <option
+              value="ixmaps.day='0';__setDataSource('../../data/BikeSharing/Bluebikes/201806-bluebikes-tripdata_6.csv');">
+        6. July 2018 - Wednesday
+      </option>
+      <option
+              value="ixmaps.day='0';__setDataSource('../../data/BikeSharing/Bluebikes/201806-bluebikes-tripdata_7.csv');">
+        7. July 2018 - Thursday
+      </option>
+
+	  <option disabled>───────</option>
+
+      <option
+              value="ixmaps.day='3';__setDataSource('../../data/BikeSharing/Bluebikes/201808-bluebikes-tripdata_1.csv');">
+       1. August 2018 - Wednesday
+      </option>
+      <option
+              value="ixmaps.day='4';__setDataSource('../../data/BikeSharing/Bluebikes/201808-bluebikes-tripdata_2.csv');">
+        2. August 2018 - Thursday
+      </option>
+      <option
+              value="ixmaps.day='5';__setDataSource('../../data/BikeSharing/Bluebikes/201808-bluebikes-tripdata_3.csv');">
+        3. August 2018 - Friday
+      </option>
+      <option
+              value="ixmaps.day='6';__setDataSource('../../data/BikeSharing/Bluebikes/201808-bluebikes-tripdata_4.csv');">
+        4. August 2018 - Saturday
+      </option>
+      <option
+              value="ixmaps.day='0';__setDataSource('../../data/BikeSharing/Bluebikes/201808-bluebikes-tripdata_5.csv');">
+        5. August 2018 - Sunday
+      </option>
+      <option
+              value="ixmaps.day='1';__setDataSource('../../data/BikeSharing/Bluebikes/201808-bluebikes-tripdata_6.csv');">
+        6. August 2018 - Monday
+      </option>
+      <option
+              value="ixmaps.day='2';__setDataSource('../../data/BikeSharing/Bluebikes/201808-bluebikes-tripdata_7.csv');">
+        7. August 2018 - Tuesday
+      </option>
+    </select>
+	
+	<select class="form-control"
+         id="theme-type-select"
+         onchange="eval(document.getElementById('theme-type-select').value)">
+      <option value="__setType('morning');" selected>
+        morning rush (7:00 - 9:59 am)
+      </option>
+      <option value="__setType('evening');" >
+        evening rush (5:00 - 7:59 pm)	
+      </option>
+      <option value="__setType('am');" >
+        AM (6:00 - 11:59 am)
+      </option>
+      <option value="__setType('pm');" >
+        PM (12:00 - 6:00 pm)
+      </option>
+      <option value="__setType('noon');" >
+        noon (11:00 am - 2:00 pm)
+      </option>
+      <option value="__setType('night');" >
+        night (8.00 - 12:59 pm)
+      </option>
+      <option value="__setType('day');" >
+        whole day
+      </option>
+	  <option disabled>───────</option>
+      <option value="__setType('8');" >
+        8:00
+      </option>
+      <option value="__setType('18');" >
+        18:00
+      </option>
+	  <option disabled>───────</option>
+      <option value="__setType('curves');" >
+        24 h curves
+      </option>
+	  <option disabled>───────</option>
+    </select>
+  </div>
+
+  <script type="text/javascript" src = "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/ui/js/htmlgui_api.js" > </script>
+
+
+  <script charset="utf-8"
+        type="text/javascript">
+
+		ixmaps.dataSoure = "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/Bluebikes/201806-bluebikes-tripdata_1.csv";
+		ixmaps.themetype = "morning";
+		ixmaps.day		 = "2";
+		ixmaps.hours	 = "(8,9,10)";
+		ixmaps.datacache = "false";
+
+		__getTheme = function(){
+			switch(ixmaps.themetype){
+				case "morning":
+					return(theme_morning);
+				case "evening":
+					return(theme_evening);
+			}
+		};
+		__setDataSource = function(source) {
+			ixmaps.dataSoure = source;
+			ixmaps.datacache = "false";
+			setTimeout("__makeTheme()",100);
+		};
+		__setDay = function(day) {
+			ixmaps.day = day;
+			ixmaps.datacache = "true";
+			setTimeout("__makeTheme()",100);
+		};
+		__setType = function(type) {
+			ixmaps.themetype = type;
+			ixmaps.datacache = "true";
+			setTimeout("__makeTheme()",100);
+		};
+
+		__makeTheme = function(){
+
+			var	themesA = theme_start_end();
+
+			switch(ixmaps.themetype){
+				case "8":
+					ixmaps.hours = "(8)";
+					break;
+				case "18":
+					ixmaps.hours = "(18)";
+					break;
+				case "morning":
+					ixmaps.hours = "(7,8,9)";
+					break;
+				case "evening":
+					ixmaps.hours = "(17,18,19)";
+					break;
+				case "am":
+					ixmaps.hours = "(6,7,8,9,10,11)";
+					break;
+				case "pm":
+					ixmaps.hours = "(12,14,15,16,17,18)";
+					break;
+				case "noon":
+					ixmaps.hours = "(11,12,13,14)";
+					break;
+				case "night":
+					ixmaps.hours = "(20,21,22,23,24)";
+					break;
+				case "day":
+					ixmaps.hours = "";
+					break;
+				case "curves":
+					ixmaps.hours = "";
+					themesA = theme_start_end_curves();
+					break;
+			}
+
+			if ( ixmaps.themetype == "curves" ){
+
+				var station = ""; //" AND \\\"end station id\\\" = 190";
+
+				var theme_vector_1 = themesA[0];
+				var theme_curves_1 = themesA[1];
+				var theme_curves_2 = themesA[2];
+
+				theme_vector_1.style.dbtableUrl = ixmaps.dataSoure;
+				theme_curves_1.style.dbtableUrl = ixmaps.dataSoure;
+				theme_curves_2.style.dbtableUrl = ixmaps.dataSoure;
+
+				theme_vector_1.style.datacache = ixmaps.datacache;
+				theme_curves_1.style.datacache = ixmaps.datacache;
+				theme_curves_2.style.datacache = ixmaps.datacache;
+
+				if ( ixmaps.hours.length ){
+					theme_vector_1.style.filter = "WHERE \\\"Start Hour\\\" IN "+ixmaps.hours;
+					theme_curves_1.style.filter = "WHERE \\\"Start Hour\\\" IN "+ixmaps.hours;
+					theme_curves_2.style.filter = "WHERE \\\"End Hour\\\" IN "+ixmaps.hours;
+				}else{
+					theme_vector_1.style.filter = station;
+					theme_curves_1.style.filter = station;
+					theme_curves_2.style.filter = station;
+				}
+
+				ixmaps.clearAll('map');
+				//ixmaps.newTheme('map','title',theme_vector_1);
+				ixmaps.newTheme('map','title',theme_curves_1);
+				ixmaps.newTheme('map','title',theme_curves_2);
+
+			}else{
+
+				var theme_vector_1 = themesA[0];
+				var theme_self = themesA[1];
+				var theme_star_1 = themesA[2];
+				var theme_star_2 = themesA[3];
+
+				theme_vector_1.style.dbtableUrl = ixmaps.dataSoure;
+				theme_self.style.dbtableUrl = ixmaps.dataSoure;
+				theme_star_1.style.dbtableUrl = ixmaps.dataSoure;
+				theme_star_2.style.dbtableUrl = ixmaps.dataSoure;
+
+				theme_vector_1.style.datacache = ixmaps.datacache;
+				theme_self.style.datacache = ixmaps.datacache;
+				theme_star_1.style.datacache = ixmaps.datacache;
+				theme_star_2.style.datacache = ixmaps.datacache;
+
+				var station = "";
+				var noself  = " AND \\\"self\\\" = \\\"false\\\"";
+				var self    = " AND \\\"self\\\" = \\\"true\\\""; 
+
+				if ( ixmaps.hours.length ){
+					theme_vector_1.style.filter = "WHERE \\\"Start Hour\\\" IN "+ixmaps.hours+station+noself;
+
+					theme_self.style.filter = "WHERE \\\"Start Hour\\\" IN "+ixmaps.hours+station+self;
+
+					theme_star_1.style.filter = "WHERE \\\"Start Hour\\\" IN "+ixmaps.hours+station+noself;
+					theme_star_2.style.filter = "WHERE \\\"End Hour\\\" IN "+ixmaps.hours+station+noself;
+				}else{
+					theme_vector_1.style.filter = "WHERE \\\"self\\\" = \\\"false\\\""+station;
+
+					theme_self.style.filter = "WHERE \\\"self\\\" = \\\"true\\\""+station;
+
+					theme_star_1.style.filter = "WHERE \\\"self\\\" = \\\"false\\\""+station;
+					theme_star_2.style.filter = "WHERE \\\"self\\\" = \\\"false\\\""+station;
+				}
+
+				var days  = ixmaps.day.length   ? ixmaps.day.split(",").length : 7;
+				var hours = ixmaps.hours.length ? ixmaps.hours.split(",").length : 8;
+				var normalsizevalue = days*hours*3;
+				theme_vector_1.style.normalsizevalue = normalsizevalue*3;
+				theme_self.style.normalsizevalue = normalsizevalue/10;
+				theme_star_1.style.normalsizevalue = normalsizevalue;
+				theme_star_2.style.normalsizevalue = normalsizevalue;
+
+				ixmaps.clearAll('map');
+				if ( (ixmaps.themetype == "evening") || (ixmaps.themetype == "18") || (ixmaps.themetype == "pm") ){
+					ixmaps.newTheme('map','title',theme_vector_1);
+					ixmaps.newTheme('map','title',theme_star_2);
+					ixmaps.newTheme('map','title',theme_star_1);
+					ixmaps.newTheme('map','title',theme_self);
+				}else{
+					ixmaps.newTheme('map','title',theme_vector_1);
+					ixmaps.newTheme('map','title',theme_star_1);
+					ixmaps.newTheme('map','title',theme_star_2);
+					ixmaps.newTheme('map','title',theme_self);
+				}
+			}
+		};
+
+		// --------------------------------------------
+		// Temi
+		// --------------------------------------------
+
+		var theme_start_end = function() { return (
+		    [{
+			"layer": "World Mercator",
+			"field": "end station id",
+			"field100": "",
+			"style": {
+				"type": "CHART|VECTOR|BEZIER|DASH|NOSCALE|EXACT|AGGREGATE|FAST|COUNT",
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"filter": "WHERE \"Start Day\" IN (2) AND \"Start Hour\" IN (7,8,9)",
+				"dbtable": "bike_journey_start_end",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/Bluebikes/201806-bluebikes-tripdata_1.csv",
+				"dbtableType": "ext",
+				"dbtableExt": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/app/Bike_Sharing/databroker_citibike.js",
+				"datacache": "false",
+				"lookupfield2": "end station latitude|end station longitude",
+				"lookupfield": "start station latitude|start station longitude",
+				"units": "",
+				"scale": "1",
+				"normalsizevalue":"1",
+				"rangescale":"0.05",
+				"linecolor": "#ffff00",
+				"title": "Start --> End",
+				"splash": "loading and aggregating data ...<br>this may rakle a bit ...<br>please give me some time ..."
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "end station id",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|SIZE|EXACT|AGGREGATE|FAST|SUM|ZEROISVALUE|COUNT",
+				"colorscheme": [
+					"100",
+					"fruit"],
+				"fillopacity": "0.01",
+				"shadow": "false",
+				"filter": "WHERE \"End Day\" IN (2) AND \"End Hour\" IN (7,8,9)",
+				"dbtable": "bike_journey_start_end",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/Bluebikes/201806-bluebikes-tripdata_1.csv",
+				"dbtableType": "ext",
+				"dbtableExt": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/app/Bike_Sharing/databroker_citibike.js",
+				"datacache": "false",
+				"itemfield": "start station id",
+				"lookupfield": "start station latitude|start station longitude",
+				"child": "true",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"normalsizevalue": "100",
+				"scale": "1",
+				"minvalue": "0",
+				"linewidth": "1.5",
+				"linecolor":"#88ddff",
+				"sizefield":"$item$",
+				"valuescale": "1",
+				"aggregationfield": "start station id",
+				"titlefield": "end station name",
+				"title": "Closed trips",
+				"splash": "loading and aggregating data ...<br>this may take a bit "
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "start station id",
+			"field100": "",
+			"style": {
+				"type": "CHART|PIE|DONUT|STARBURST|DIRECTION|SIZE|EXACT|AGGREGATE|FAST|SUM|ZEROISVALUE|COUNT",
+				"colorscheme": [
+					"100",
+					"fruit"],
+				"opacity": "0.9",
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"filter": "WHERE \"Start Day\" IN (2) AND \"Start Hour\" IN (7,8,9)",
+				"dbtable": "bike_journey_start_end",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/Bluebikes/201806-bluebikes-tripdata_1.csv",
+				"dbtableType": "ext",
+				"dbtableExt": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/app/Bike_Sharing/databroker_citibike.js",
+				"datacache": "false",
+				"lookupfield": "end station latitude|end station longitude",
+				"lookupfield2": "start station latitude|start station longitude",
+				"child": "true",
+				"symbols": [
+					"circle"],
+				"units": "from",
+				"normalsizevalue": "500",
+				"scale": "1",
+				"minvalue": "0",
+				"linecolor": "RGB(129,216,208)",
+				"linewidth": "1",
+				"valuescale": "1",
+				"titlefield": "end station name",
+				"title": "Trip End with direction",
+				"splash": "loading and aggregating data ...<br>this may take a bit <br>so please give me some time ..."
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "end station id",
+			"field100": "",
+			"style": {
+				"type": "CHART|PIE|DONUT|STARBURST|DIRECTION|SIZE|EXACT|AGGREGATE|FAST|SUM|ZEROISVALUE|COUNT",
+				"colorscheme": [
+					"100",
+					"fruit"],
+				"opacity": "0.9",
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"filter": "WHERE \"End Day\" IN (2) AND \"End Hour\" IN (7,8,9)",
+				"dbtable": "bike_journey_start_end",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/Bluebikes/201806-bluebikes-tripdata_1.csv",
+				"dbtableType": "ext",
+				"dbtableExt": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/app/Bike_Sharing/databroker_citibike.js",
+				"datacache": "false",
+				"lookupfield": "start station latitude|start station longitude",
+				"lookupfield2": "end station latitude|end station longitude",
+				"child": "true",
+				"symbols": [
+					"circle"],
+				"units": "to",
+				"normalsizevalue": "500",
+				"scale": "1",
+				"minvalue": "0",
+				"linecolor": "#E80018",
+				"linewidth": "1",
+				"valuescale": "1",
+				"titlefield": "start station name",
+				"title": "Trip start with direction",
+				"splash": "loading and aggregating data ...<br>this may take a bit <br>so please give me some time ..."
+				}
+			}] );
+		};
+
+		var theme_start_end_curves = function() { return (
+		    [{
+			"layer": "World Mercator",
+			"field": "end station id",
+			"field100": "",
+			"style": {
+				"type": "CHART|VECTOR|NOSCALE|EXACT|FAST|COUNT",
+				"colorscheme": [
+					"100",
+					"fruit"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"filter": "WHERE \"Start Day\" IN (2) AND \"Start Hour\" IN (7,8,9)",
+				"dbtable": "bike_journey_start_end",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/Bluebikes/201806-bluebikes-tripdata_1.csv",
+				"dbtableType": "ext",
+				"dbtableExt": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/app/Bike_Sharing/databroker_citibike.js",
+				"datacache": "false",
+				"itemfield": "start station id",
+				"lookupfield": "start station latitude|start station longitude",
+				"units": "",
+				"scale": "1",
+				"linewidth": "0.07",
+				"linecolor": "#ffff00",
+				"title": "Start per hour and station",
+				"splash": "loading and aggregating data ..."
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "Start Hour",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|FIXSIZE|PLOT|LINES|AREA|BOX|GRID|GRIDSIZE|EXACT|AGGREGATE|FAST|RECT|SUM|ZEROISVALUE",
+				"colorscheme": [
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018",
+					"#E80018"],
+				"fillopacity": "0.4",
+				"shadow": "false",
+				"filter": "WHERE \"End Day\" IN (2) AND \"End Hour\" IN (7,8,9)",
+				"dbtable": "bike_journey_start_end",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/Bluebikes/201806-bluebikes-tripdata_1.csv",
+				"dbtableType": "ext",
+				"dbtableExt": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/app/Bike_Sharing/databroker_citibike.js",
+				"datacache": "false",
+				"itemfield": "start station id",
+				"lookupfield": "start station latitude|start station longitude",
+				"child": "true",
+				"symbols": [
+					"circle"],
+				"values": [
+					"0",
+					"1",
+					"2",
+					"3",
+					"4",
+					"5",
+					"6",
+					"7",
+					"8",
+					"9",
+					"10",
+					"11",
+					"12",
+					"13",
+					"14",
+					"15",
+					"16",
+					"17",
+					"18",
+					"19",
+					"20",
+					"21",
+					"22",
+					"23"],
+				"label": [
+					"0:00",
+					"1:00",
+					"2:00",
+					"3:00",
+					"4:00",
+					"5:00",
+					"6:00",
+					"7:00",
+					"8:00",
+					"9:00",
+					"10:00",
+					"11:00",
+					"12:00",
+					"13:00",
+					"14:00",
+					"15:00",
+					"16:00",
+					"17:00",
+					"18:00",
+					"19:00",
+					"20:00",
+					"21:00",
+					"22:00",
+					"23:00"],
+				"xaxis": [
+					"0",
+					"1",
+					"2",
+					"3",
+					"4",
+					"5",
+					"6",
+					"7",
+					"8",
+					"9",
+					"10",
+					"11",
+					"12",
+					"13",
+					"14",
+					"15",
+					"16",
+					"17",
+					"18",
+					"19",
+					"20",
+					"21",
+					"22",
+					"23"],
+				"units": "",
+				"normalsizevalue": "20",
+				"scale": "0.93",
+				"rangescale": "0.8",
+				"minvalue": "0",
+				"linewidth": "5",
+				"bordercolor": "black",
+				"boxopacity": "0.01",
+				"valuescale": "1",
+				"gridwidthpx": "100",
+				"title": "Starts per hour and station",
+				"splash": "let's go theme 1!"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "End Hour",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|FIXSIZE|PLOT|LINES|AREA|BOX|GRID|GRIDSIZE|EXACT|AGGREGATE|FAST|RECT|SUM|ZEROISVALUE",
+				"colorscheme": [
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0",
+					"#81D8D0"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"filter": "WHERE \"End Day\" IN (2) AND \"End Hour\" IN (7,8,9)",
+				"dbtable": "bike_journey_start_end",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/Bluebikes/201806-bluebikes-tripdata_1.csv",
+				"dbtableType": "ext",
+				"dbtableExt": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/app/Bike_Sharing/databroker_citibike.js",
+				"datacache": "false",
+				"itemfield": "end station id",
+				"lookupfield": "end station latitude|end station longitude",
+				"child": "true",
+				"symbols": [
+					"circle"],
+				"values": [
+					"0",
+					"1",
+					"2",
+					"3",
+					"4",
+					"5",
+					"6",
+					"7",
+					"8",
+					"9",
+					"10",
+					"11",
+					"12",
+					"13",
+					"14",
+					"15",
+					"16",
+					"17",
+					"18",
+					"19",
+					"20",
+					"21",
+					"22",
+					"23"],
+				"label": [
+					"0:00",
+					"1:00",
+					"2:00",
+					"3:00",
+					"4:00",
+					"5:00",
+					"6:00",
+					"7:00",
+					"8:00",
+					"9:00",
+					"10:00",
+					"11:00",
+					"12:00",
+					"13:00",
+					"14:00",
+					"15:00",
+					"16:00",
+					"17:00",
+					"18:00",
+					"19:00",
+					"20:00",
+					"21:00",
+					"22:00",
+					"23:00"],
+				"xaxis": [
+					"0",
+					"1",
+					"2",
+					"3",
+					"4",
+					"5",
+					"6",
+					"7",
+					"8",
+					"9",
+					"10",
+					"11",
+					"12",
+					"13",
+					"14",
+					"15",
+					"16",
+					"17",
+					"18",
+					"19",
+					"20",
+					"21",
+					"22",
+					"23"],
+				"units": "",
+				"normalsizevalue": "20",
+				"scale": "0.93",
+				"rangescale": "0.8",
+				"minvalue": "0",
+				"linewidth": "5",
+				"bordercolor": "black",
+				"boxopacity": "0.01",
+				"valuescale": "1",
+				"gridwidthpx": "100",
+				"maxvalue": "inherit",
+				"title": "Returns per hour and station",
+				"splash": "let's go theme 1!"
+				}
+			}] );
+		};
+
+        ixmaps.embedMap("map_div",
+				{ 
+				mapService:  "leaflet",
+				mapType:     "CartoDB - Dark matter",
+				mapUrl:      "",
+				width:       "100%",
+				height:      (window.innerHeight-5)+"px",
+				legend:      "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/app/Bike_Sharing/legend.html",
+				themeLegend: false,
+				mapOpt:      {"attribution":"data: https://www.bluebikes.com/system-data"}
+				},
+				function(map) {
+					map.setView([42.35692162884137,-71.06909751892093],14)
+					   .setOptions({
+							flushChartDraw:'50000',
+							objectscaling: "dynamic",
+							autoSwitchInfo: true,
+							panHidden: true
+							}) 
+					   .setScaleParam("normalSizeScale:5000;")
+					   .setLocal("loading data ...","loading trip data ...");  
+
+					__makeTheme();
+
+				}
+		);
+
+  </script>
+</body>
+</html>
