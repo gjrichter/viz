@@ -53,7 +53,7 @@
 			"field": "dest",
 			"field100": "",
 			"style": {
-				"type": "CHART|VECTOR|BEZIER|POINTER|DASH|GRADIENT|SIZE|AGGREGATE|FAST|EXACT|SUM",
+				"type": "CHART|VECTOR|BEZIER|POINTER|DASH|GRADIENT|GAP|SIZE|AGGREGATE|FAST|EXACT|SUM",
 				"colorscheme": [
 					"4712",
 					"fruit"],
