@@ -30,13 +30,27 @@ $Log:stranieri_FM_2001_2018_dark.html,v $
         rel="shortcut icon">
   <style>
 	select.form-control {
-		background:#000;
+		background-color:rgba(0,0,0,0.5);
 		color:#888;
 		font-size:1.2em;
-		border-radius:5px;
-		border:solid #888 1px;
+		border-radius:1px;
+		border-top:0px;
+		border-left:0px;
+		border-right:0px;
 		padding:0.4em;
+		margin-left: 1em;
 	}
+	select.form-control:active {
+		outline: none;
+	}
+	select.form-control:focus {
+		outline: none;
+	}
+	select.form-control > option {
+		background-color: black;
+	}
+  </style>
+  <style>
 	select.strong {
 		font-weight:bold;
 		color:#ddd;
@@ -259,6 +273,8 @@ $Log:stranieri_FM_2001_2018_dark.html,v $
 				"scale": "0.9",
 				"rangescale": "0.75",
 				"sizefield": "Total",
+				"titlefield": "Nil",
+				"titleupper":"1:10000",
 				"linewidth": "5",
 				"bordercolor": "none",
 				"boxopacity": "0.01",
