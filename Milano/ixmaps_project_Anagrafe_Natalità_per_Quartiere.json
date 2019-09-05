@@ -10,6 +10,7 @@
 	"map": {
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Milano/NIL_OD.svgz",
 		"basemap": "CartoDB - Dark matter",
+		"legend":"https://raw.githubusercontent.com/gjrichter/viz/master/Milano/legenda_natalita.html",
 		"scaleParam": {
 			"lineScaling": "0.7499999999999996",
 			"normalSizeScale": "1528452"
