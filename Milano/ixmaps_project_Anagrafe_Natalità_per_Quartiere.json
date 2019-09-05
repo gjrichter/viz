@@ -133,8 +133,8 @@
 				"valuescale": "1",
 				"gridwidthpx": "150",
 				"titlefield":"Quartiere",
-				"title": "Anagrafe Iscrizioni per Quartiere",
-				"snippet": "Stranieri per stato di provenienza"
+				"title": "Nascite per Quartiere",
+				"snippet": "Genitori entrambi Italiani"
 				}
 		},{
 			"layer": "NILZone",
@@ -219,8 +219,8 @@
 				"boxopacity": "0.01",
 				"valuescale": "1",
 				"gridwidthpx": "150",
-				"title": "Anagrafe Iscrizioni per Quartiere",
-				"snippet": "Stranieri per stato di provenienza"
+				"title": "Nascite per Quartiere",
+				"snippet": "Genitori stranieri/misti"
 				}
 			}],
 	"layerMask": {
