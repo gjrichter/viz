@@ -20,7 +20,7 @@ $Log:ixmaps_simple_embed.html,v $
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="icon" href="https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/favicon.ico">
     <title>iXmaps · Bootstrap</title>
 
     <!--Template based on URL below-->
@@ -77,25 +77,25 @@ $Log:ixmaps_simple_embed.html,v $
             <ul class="navbar-nav mr-auto">
                 <li>
                     <select class="form-control" id="theme-source-select" onchange="eval(document.getElementById('theme-source-select').value)">
-                        <option value="ixmaps.day='5';__setDataSource('../../data/BikeSharing/London/201807-london-tripdata_18.csv');">
+                        <option value="ixmaps.day='5';__setDataSource('https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/London/201807-london-tripdata_18.csv');">
                             18. July 2018 - Wednesday
                         </option>
-                        <option value="ixmaps.day='6';__setDataSource('../../data/BikeSharing/London/201807-london-tripdata_19.csv');">
+                        <option value="ixmaps.day='6';__setDataSource('https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/London/201807-london-tripdata_19.csv');">
                             19. July 2018 - Thursday
                         </option>
-                        <option value="ixmaps.day='0';__setDataSource('../../data/BikeSharing/London/201807-london-tripdata_20.csv');">
+                        <option value="ixmaps.day='0';__setDataSource('https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/London/201807-london-tripdata_20.csv');">
                             20. July 2018 - Friday
                         </option>
-                        <option value="ixmaps.day='0';__setDataSource('../../data/BikeSharing/London/201807-london-tripdata_21.csv');">
+                        <option value="ixmaps.day='0';__setDataSource('https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/London/201807-london-tripdata_21.csv');">
                             21. July 2018 - Saturday
                         </option>
-                        <option value="ixmaps.day='0';__setDataSource('../../data/BikeSharing/London/201807-london-tripdata_22.csv');">
+                        <option value="ixmaps.day='0';__setDataSource('https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/London/201807-london-tripdata_22.csv');">
                             22. July 2018 - Sunday
                         </option>
-                        <option value="ixmaps.day='0';__setDataSource('../../data/BikeSharing/London/201807-london-tripdata_23.csv');">
+                        <option value="ixmaps.day='0';__setDataSource('https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/London/201807-london-tripdata_23.csv');">
                             23. July 2018 - Monday
                         </option>
-                        <option value="ixmaps.day='0';__setDataSource('../../data/BikeSharing/London/201807-london-tripdata_24.csv');">
+                        <option value="ixmaps.day='0';__setDataSource('https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/London/201807-london-tripdata_24.csv');">
                             24. July 2018 - Tuesday
                         </option>
 
@@ -168,12 +168,12 @@ $Log:ixmaps_simple_embed.html,v $
 
     <!-- ixmaps API JavaScript
     ================================================== -->
-    <script src="../../ui/js/htmlgui_api.js" type="text/javascript"></script>
+    <script src="https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/ui/js/htmlgui_api.js" type="text/javascript"></script>
 
     <!-- make the theme JavaScript
     ================================================== -->
     <script charset="utf-8" type="text/javascript">
-        ixmaps.dataSoure = "../../data/BikeSharing/London/201807-london-tripdata_18.csv";
+        ixmaps.dataSoure = "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/London/201807-london-tripdata_18.csv";
         ixmaps.themetype = "morning";
         ixmaps.day = "2";
         ixmaps.hours = "(8,9,10)";
@@ -355,7 +355,7 @@ $Log:ixmaps_simple_embed.html,v $
                         "fillopacity": "0.2",
                         "shadow": "false",
                         "dbtable": "themeDataObj",
-                        "dbtableUrl": "../../data/BikeSharing/London/stations.csv",
+                        "dbtableUrl": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/London/stations.csv",
                         "dbtableType": "csv",
                         "datacache": "true",
                         "itemfield": "Station ID",
@@ -380,9 +380,9 @@ $Log:ixmaps_simple_embed.html,v $
                         "shadow": "false",
                         "filter": "WHERE \"Start Day\" IN (2) AND \"Start Hour\" IN (7,8,9)",
                         "dbtable": "bike_journey_start_end",
-                        "dbtableUrl": "../../data/BikeSharing/London/119JourneyDataExtract18July2018-24July2018.csv",
+                        "dbtableUrl": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/London/119JourneyDataExtract18July2018-24July2018.csv",
                         "dbtableType": "ext",
-                        "dbtableExt": "../../app/Bike_Sharing/databroker_119.js",
+                        "dbtableExt": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/app/Bike_Sharing/databroker_119.js",
                         "datacache": "false",
                         "lookupfield": "StartStation Id",
                         "lookupfield2": "EndStation Id",
@@ -408,9 +408,9 @@ $Log:ixmaps_simple_embed.html,v $
                         "shadow": "false",
                         "filter": "WHERE \"End Day\" IN (2) AND \"End Hour\" IN (7,8,9)",
                         "dbtable": "bike_journey_start_end",
-                        "dbtableUrl": "../../data/BikeSharing/London/119JourneyDataExtract18July2018-24July2018.csv",
+                        "dbtableUrl": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/London/119JourneyDataExtract18July2018-24July2018.csv",
                         "dbtableType": "ext",
-                        "dbtableExt": "../../app/Bike_Sharing/databroker_119.js",
+                        "dbtableExt": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/app/Bike_Sharing/databroker_119.js",
                         "datacache": "false",
                         "lookupfield": "StartStation Id",
                         "child": "true",
@@ -443,9 +443,9 @@ $Log:ixmaps_simple_embed.html,v $
                         "shadow": "false",
                         "filter": "WHERE \"Start Day\" IN (2) AND \"Start Hour\" IN (7,8,9)",
                         "dbtable": "bike_journey_start_end",
-                        "dbtableUrl": "../../data/BikeSharing/London/119JourneyDataExtract18July2018-24July2018.csv",
+                        "dbtableUrl": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/London/119JourneyDataExtract18July2018-24July2018.csv",
                         "dbtableType": "ext",
-                        "dbtableExt": "../../app/Bike_Sharing/databroker_119.js",
+                        "dbtableExt": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/app/Bike_Sharing/databroker_119.js",
                         "datacache": "false",
                         "lookupfield": "EndStation Id",
                         "lookupfield2": "StartStation Id",
@@ -478,9 +478,9 @@ $Log:ixmaps_simple_embed.html,v $
                         "shadow": "false",
                         "filter": "WHERE \"End Day\" IN (2) AND \"End Hour\" IN (7,8,9)",
                         "dbtable": "bike_journey_start_end",
-                        "dbtableUrl": "../../data/BikeSharing/London/119JourneyDataExtract18July2018-24July2018.csv",
+                        "dbtableUrl": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/London/119JourneyDataExtract18July2018-24July2018.csv",
                         "dbtableType": "ext",
-                        "dbtableExt": "../../app/Bike_Sharing/databroker_119.js",
+                        "dbtableExt": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/app/Bike_Sharing/databroker_119.js",
                         "datacache": "false",
                         "lookupfield": "StartStation Id",
                         "lookupfield2": "EndStation Id",
@@ -516,7 +516,7 @@ $Log:ixmaps_simple_embed.html,v $
                         "fillopacity": "0.2",
                         "shadow": "false",
                         "dbtable": "themeDataObj",
-                        "dbtableUrl": "../../data/BikeSharing/London/stations.csv",
+                        "dbtableUrl": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/London/stations.csv",
                         "dbtableType": "csv",
                         "datacache": "true",
                         "itemfield": "Station ID",
@@ -541,9 +541,9 @@ $Log:ixmaps_simple_embed.html,v $
                         "shadow": "false",
                         "filter": "WHERE \"Start Day\" IN (2) AND \"Start Hour\" IN (7,8,9)",
                         "dbtable": "bike_journey_start_end",
-                        "dbtableUrl": "../../data/BikeSharing/London/119JourneyDataExtract18July2018-24July2018.csv",
+                        "dbtableUrl": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/London/119JourneyDataExtract18July2018-24July2018.csv",
                         "dbtableType": "ext",
-                        "dbtableExt": "../../app/Bike_Sharing/databroker_119.js",
+                        "dbtableExt": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/app/Bike_Sharing/databroker_119.js",
                         "datacache": "false",
                         "itemfield": "StartStation Id",
                         "lookupfield": "StartStation Id",
@@ -590,9 +590,9 @@ $Log:ixmaps_simple_embed.html,v $
                         "shadow": "false",
                         "filter": "WHERE \"End Day\" IN (2) AND \"End Hour\" IN (7,8,9)",
                         "dbtable": "bike_journey_start_end",
-                        "dbtableUrl": "../../data/BikeSharing/London/119JourneyDataExtract18July2018-24July2018.csv",
+                        "dbtableUrl": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/London/119JourneyDataExtract18July2018-24July2018.csv",
                         "dbtableType": "ext",
-                        "dbtableExt": "../../app/Bike_Sharing/databroker_119.js",
+                        "dbtableExt": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/app/Bike_Sharing/databroker_119.js",
                         "datacache": "false",
                         "itemfield": "StartStation Id",
                         "lookupfield": "StartStation Id",
@@ -727,9 +727,9 @@ $Log:ixmaps_simple_embed.html,v $
                         "shadow": "false",
                         "filter": "WHERE \"End Day\" IN (2) AND \"End Hour\" IN (7,8,9)",
                         "dbtable": "bike_journey_start_end",
-                        "dbtableUrl": "../../data/BikeSharing/London/119JourneyDataExtract18July2018-24July2018.csv",
+                        "dbtableUrl": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/data/BikeSharing/London/119JourneyDataExtract18July2018-24July2018.csv",
                         "dbtableType": "ext",
-                        "dbtableExt": "../../app/Bike_Sharing/databroker_119.js",
+                        "dbtableExt": "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/app/Bike_Sharing/databroker_119.js",
                         "datacache": "false",
                         "itemfield": "EndStation Id",
                         "lookupfield": "EndStation Id",
@@ -837,7 +837,7 @@ $Log:ixmaps_simple_embed.html,v $
                 mapUrl: "",
                 width: "100%",
                 height: (window.innerHeight - 5) + "px",
-                legend: "../../app/Bike_Sharing/legend_london.html",
+                legend: "https://s3.eu-central-1.amazonaws.com/testrc.ixmaps.com/ixmaps/app/Bike_Sharing/legend_london.html",
                 themeLegend: false,
                 mapOpt: {
                     "attribution": "data: https://cycling.data.tfl.gov.uk"
