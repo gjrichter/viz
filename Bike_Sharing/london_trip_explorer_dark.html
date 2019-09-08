@@ -371,7 +371,7 @@ $Log:ixmaps_simple_embed.html,v $
                     "field": "EndStation Id",
                     "field100": "",
                     "style": {
-                        "type": "CHART|VECTOR|NOSCALE|EXACT|FAST|AGGREGATE|COUNT",
+                        "type": "CHART|VECTOR|NOSCALE|EXACT|FAST|AGGREGATE|COUNT|NOLEGEND",
                         "colorscheme": [
                             "100",
                             "fruit"
@@ -399,7 +399,7 @@ $Log:ixmaps_simple_embed.html,v $
                     "field": "EndStation Id",
                     "field100": "",
                     "style": {
-                        "type": "CHART|BUBBLE|SIZE|EXACT|AGGREGATE|FAST|SUM|ZEROISVALUE|COUNT",
+                        "type": "CHART|BUBBLE|SIZE|EXACT|AGGREGATE|FAST|SUM|ZEROISVALUE|COUNT|NOLEGEND",
                         "colorscheme": [
                             "100",
                             "fruit"
@@ -433,7 +433,7 @@ $Log:ixmaps_simple_embed.html,v $
                     "field": "StartStation Id",
                     "field100": "",
                     "style": {
-                        "type": "CHART|PIE|DONUT|STARBURST|DIRECTION|SIZE|EXACT|AGGREGATE|FAST|SUM|ZEROISVALUE|COUNT",
+                        "type": "CHART|PIE|DONUT|STARBURST|DIRECTION|SIZE|EXACT|AGGREGATE|FAST|SUM|ZEROISVALUE|COUNT|NOLEGEND",
                         "colorscheme": [
                             "100",
                             "RGB(129,216,208)",
@@ -468,7 +468,7 @@ $Log:ixmaps_simple_embed.html,v $
                     "field": "EndStation Id",
                     "field100": "",
                     "style": {
-                        "type": "CHART|PIE|DONUT|STARBURST|DIRECTION|SIZE|EXACT|AGGREGATE|FAST|SUM|ZEROISVALUE|COUNT",
+                        "type": "CHART|PIE|DONUT|STARBURST|DIRECTION|SIZE|EXACT|AGGREGATE|FAST|SUM|ZEROISVALUE|COUNT|NOLEGEND",
                         "colorscheme": [
                             "100",
                             "#E80018",
@@ -833,7 +833,7 @@ $Log:ixmaps_simple_embed.html,v $
 
         ixmaps.embedMap("map_div", {
                 mapService: "leaflet",
-                mapType: "CartoDB - Dark matter",
+                mapType: "black",
                 mapUrl: "",
                 width: "100%",
                 height: (window.innerHeight - 5) + "px",
@@ -844,12 +844,12 @@ $Log:ixmaps_simple_embed.html,v $
                 }
             },
             function(map) {
-                map.setView([51.51536613288439, -0.10831832885742189], 14)
+                map.setView([51.50155667863213,-0.11289596906868837],13)
                     .setOptions({
                         flushChartDraw: '50000',
                         objectscaling: "dynamic",
                         autoSwitchInfo: true,
-                        panHidden: true
+                        panHidden: false
                     })
                     .setScaleParam("normalSizeScale:5000;")
                     .setLocal("loading data ...", "loading trip data ...");
