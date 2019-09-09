@@ -59,6 +59,14 @@ $Log:ixmaps_simple_embed.html,v $
         select.form-control>option {
             background-color: black;
         }
+        
+        .button {
+            border:#888 solid 1px;
+            padding: 0em 0.6em 0.3em 0.6em;
+            border-radius: 20px;
+            width:1em;
+            color:#888;
+        }
 
     </style>
 </head>
@@ -145,7 +153,14 @@ $Log:ixmaps_simple_embed.html,v $
                         <option disabled>───────</option>
                     </select>
 
-                </li>
+               </li>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li style="margin-top:10px">
+                 	<a href="javascript:ixmaps.changeThemeStyle('vector','minvalue:+1','add')" class="button" style="pointer-events:all">-</a>
+ 	                <a href="javascript:ixmaps.changeThemeStyle('vector','minvalue:-1','add')" class="button" style="pointer-events:all">+</a>
+               </li>
+                
+
             </ul>
             <!--
         <form class="form-inline my-2 my-lg-0">
