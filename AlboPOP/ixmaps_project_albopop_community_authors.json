@@ -60,7 +60,7 @@
 				"fillopacity": "0.7",
 				"shadow": "false",
 				"dbtable": "themeDataObj",
-				"dbtableUrl": "http://corsme.herokuapp.com/https://albopop.it/comuni-pa/index.json",
+				"dbtableUrl": "https://corsme.herokuapp.com/https://albopop.it/comuni-pa/index.json",
 				"dbtableType": "json",
 				"datacache": "true",
 				"itemfield": "lat|lng",
