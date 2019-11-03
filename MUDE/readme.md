@@ -13,7 +13,7 @@ Visualizzazione della geolocalizzazione degli progetti post sisma nel Centro Ita
 [Interventi](http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/MUDE/ixmaps_project_MUDE_Centro_Italia_progetti_per_intervento_torri.json)
 
 <a href="http://explore.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/MUDE/ixmaps_project_MUDE_Centro_Italia_progetti_per_intervento_torri.json" >
-<img src="https://raw.githubusercontent.com/gjrichter/viz/master/MUDE/screencapture-localhost-ixmaps-dev-rc-ixmaps-app-viewer-2019-08-07-23_40_26_small.png"></a>
+<img src="https://raw.githubusercontent.com/gjrichter/viz/master/MUDE/Screenshot (39).png"></a>
 
 
 
