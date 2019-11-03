@@ -10,9 +10,9 @@ AlboPOP è un **progetto aperto** al quale chiunque può [contribuire](https://a
 
 Qui una piccola mappa con i contribuenti attuali:
 
-[Communità di AlboPOP](http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/AlboPOP/ixmaps_project_albopop_community_authors.json)
+[Communità di AlboPOP](http://view.ixmaps.com?project=http://raw.githubusercontent.com/gjrichter/viz/master/AlboPOP/ixmaps_project_albopop_community_authors.json)
 
-<a href="http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/AlboPOP/ixmaps_project_albopop_community_authors.json" >
+<a href="http://view.ixmaps.com?project=http://raw.githubusercontent.com/gjrichter/viz/master/AlboPOP/ixmaps_project_albopop_community_authors.json" >
 <img src="https://raw.githubusercontent.com/gjrichter/viz/master/AlboPOP/ixmaps_project_albopop_community_authors.png"></a>
 
 <br><br>
