@@ -1,0 +1,99 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Nov 03 2019 09:43:40 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2018/italia_comuni_2018_s_pro_com.svgz",
+		"basemap": "CartoDB - Positron",
+		"scaleParam": {
+			"labelScaling": "1.3",
+			"normalSizeScale": "1926862"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.049321576177284",
+			"lng": "13.833160400390627"
+			},
+		"zoom": "10"
+		},
+	"themes": [{
+			"layer": "Com2018_pro_com",
+			"field": "% RD 2017",
+			"field100": "% RD 2014",
+			"style": {
+				"type": "CHART|BAR|POINTER|DIFFERENCE|SIZE|VALUES|DTEXT|VALUEBACKGROUND",
+				"colorscheme": [
+					"7",
+					"spectrum",
+					"default",
+					"0",
+					"200"],
+				"fillopacity": "0.9",
+				"shadow": "true",
+				"dbtable": "rifiuti_all",
+				"dbtableType": "ext",
+				"dbtableExt": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISPRA%20Rifiuti/databroker.js",
+				"datacache": "true",
+				"lookupfield": "IstatComune",
+				"showdata": "false",
+				"symbols": [
+					"circle"],
+				"xaxis": [
+					"2014",
+					"2015",
+					"2016",
+					"2017"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"scale": "0.8500000000000006",
+				"rangescale": "0.7200000000000001",
+				"bordercolor": "black",
+				"boxopacity": "0.8",
+				"titlefield": "Comune",
+				"valuescale": "1",
+                "valueupper":"1:250000",
+				"fadenegative": "0.5",
+				"title": "Raccolta Differenziata 2014-2017",
+				"snippet": "Variazioni della percentuale dal 2014 al 2017",
+                "description":"Fonte: <a href='https://www.catasto-rifiuti.isprambiente.it/' target='_blank'>ISPRA - Catasto dei Rifiuti</a>"
+				}
+			}],
+	"layerMask": {
+		"Com2018_pro_com": {
+			"display": "none"
+			}
+		}
+	}

@@ -1,0 +1,95 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Wed Oct 30 2019 22:28:39 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2018/italia_comuni_2018_s_pro_com.svgz",
+		"basemap": "CartoDB - Positron",
+		"scaleParam": {
+			"labelScaling": "2.311111111111111",
+			"normalSizeScale": "1926862"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "42.99912330922247",
+			"lng": "13.692398071289064"
+			},
+		"zoom": "10"
+		},
+	"themes": [{
+			"layer": "Com2018_pro_com",
+			"field": "Totale RU 2017",
+			"field100": "Pop_legale_2011",
+			"style": {
+				"type": "CHART|SYMBOL|QUANTILE|VALUEBACKGROUND|FRACTION|VALUES|DTEXT",
+				"colorscheme": [
+					"25",
+					"spectrum",
+					"default",
+					"200",
+					"0"],
+				"opacity": "0.5",
+				"shadow": "false",
+				"dbtable": "rifiuti_all",
+				"dbtableType": "ext",
+				"dbtableExt": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISPRA%20Rifiuti/databroker.js",
+				"datacache": "true",
+				"lookupfield": "IstatComune",
+				"child": "true",
+				"symbols": [
+					"circle"],
+				"units": "kg",
+				"weights": "1000",
+				"refreshtimeout": "0",
+				"normalsizevalue": "2000",
+				"scale": "1",
+				"textcolor": "black",
+				"titlefield": "Comune",
+				"nodatacolor": "RGB(170,170,170)",
+				"valueupper": "1:250000",
+				"valuescale": "1.4",
+				"valuedecimals": "1",
+				"title": "Rifiuti Urbani 2017",
+				"snippet": "produzione totale (kg) pro capite",
+                "description":"Fonte: <a href='https://www.catasto-rifiuti.isprambiente.it/' target='_blank'>ISPRA - Catasto dei Rifiuti</a>"
+				}
+			}],
+	"layerMask": {
+		"Com2018_pro_com": {
+			"display": "none"
+			}
+		}
+	}

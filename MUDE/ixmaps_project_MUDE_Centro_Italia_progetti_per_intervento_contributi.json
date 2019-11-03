@@ -1,0 +1,122 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Oct 21 2019 17:03:50 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/cratere_2016/ISTAT%202016%20Comuni%20Regioni/italia_comuni_regioni_2016_s_procom_cratere.svgz",
+		"basemap": "ArcGIS - Light Gray Base",
+		"scaleParam": {
+			"normalSizeScale": "5233502"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.07891929985966",
+			"lng": "13.63609313964844"
+			},
+		"zoom": "10"
+		},
+	"themes": [{
+			"layer": "com2011_s",
+			"field": "intervento",
+			"field100": "",
+			"style": {
+				"type": "CHART|PIE|DONUT|FAST|CATEGORICAL|SIZE|VALUEBACKGROUND|BOX|TITLE|COUNT|AGGREGATE|SUM|COUNT",
+				"colorscheme": [
+					"#1F77B4",
+					"#AEC7E8",
+					"#8EC7A8",
+					"#8EC7A8",
+					"#FF7F0E",
+					"#40FF00",
+					"#DB1C29",
+					"#99DF8B",
+					"#FFFFFF"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/RicostruzionePostSisma/contributi_all.csv.gz",
+				"dbtableType": "csv",
+				"dbtableExt": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/RicostruzionePostSisma/process_contributi.js",
+				"datacache": "true",
+				"lookupfield": "Comune",
+				"child": "true",
+				"values": [
+					"Riparazione",
+					"Rafforzamento",
+					"Adeguamento",
+					"Miglioramento",
+					"Delocalizzazione",
+					"Ricostruzione",
+					"Demolizione",
+					"Beni mobili e scorte di attivita produttiva",
+					"altro o non pervenuto"],
+				"label": [
+					"Riparazione",
+					"Riparazione con Rafforzamento",
+					"Riparazione con Miglioramento Sismico",
+					"Riparazione con Adeguamento Sismico",
+					"Delocalizzazione temporanea",
+					"Ricostruzione",
+					"Demolizione",
+					"Beni mobili e scorte di attivita produttiva",
+					"altro o non pervenuto"],
+				"units": "€",
+				"refreshtimeout": "0",
+				"scale": "2.4414062500000004",
+				"valuefield": "Importo contrib. assegnato",
+				"sizefield": "Importo contrib. assegnato",
+				"bordercolor": "red",
+				"borderwidth": "1",
+				"boxopacity": "0.01",
+				"titlefield": "Comune",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"centerpart": "max",
+				"gridwidth": "0",
+				"evidence": "isolate_gray",
+				"title": "MUDE Centro Italia",
+				"snippet": "progetti presenti al 13/06/2019"
+				}
+			}],
+	"layerMask": {
+		"com2011_s": {
+			"display": "none"
+			},
+		"Sagoma": {
+			"display": "none"
+			}
+		}
+	}

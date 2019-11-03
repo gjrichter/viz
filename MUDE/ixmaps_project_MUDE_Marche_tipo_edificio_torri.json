@@ -1,0 +1,104 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Sat Nov 02 2019 10:19:48 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3-eu-west-1.amazonaws.com/cdn.ixmaps.com/ixmaps/maps/svg/maps/ISTAT%202011%20Comuni/italia_comuni_2011_s_procom.svgz",
+		"basemap": "ArcGIS - Light Gray Base",
+		"scaleParam": {
+			"normalSizeScale": "100000"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "100",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.08042388708439",
+			"lng": "13.616180419921877"
+			},
+		"zoom": "10"
+		},
+	"themes": [{
+			"layer": "com2011_s",
+			"field": "edificio",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|CATEGORICAL|SORT|MULTIGRID|BOX|TITLE|DTEXT|VALUEBACKGROUND|COUNT|SIZEP4",
+				"colorscheme": [
+					"#9999FF",
+					"#993366",
+					"#FF55CC"],
+				"fillopacity": "0.7",
+				"shadow": "true",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/RicostruzionePostSisma/contributi_marche.csv.gz",
+				"dbtableType": "csv",
+				"dbtableExt": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/RicostruzionePostSisma/process_contributi.js",
+				"datacache": "true",
+				"lookupfield": "Comune",
+				"symbols": [
+					"square"],
+				"values": [
+					"non abitativo",
+					"abitativo",
+					"chiesa"],
+				"label": [
+					"non abitativo",
+					"abitativo",
+					"chiesa"],
+				"units": "",
+				"legendunits": "               €",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1000000",
+				"scale": "0.375",
+				"valuefield": "Importo contrib. assegnato",
+				"bordercolor": "red",
+				"borderwidth": "1",
+				"boxopacity": "0.1",
+				"boxmargin": "5",
+				"titlefield": "Comune",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "MUDE Marche",
+				"snippet": "progetti presenti al 13/06/2019"
+				}
+			}],
+	"layerMask": {
+		"com2011_s": {
+			"display": "none"
+			},
+		"Sagoma": {
+			"display": "none"
+			}
+		}
+	}

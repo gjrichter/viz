@@ -1,0 +1,109 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Nov 03 2019 13:13:40 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2018/italia_comuni_2018_s_pro_com.svgz",
+		"basemap": "CartoDB - Positron",
+		"scaleParam": {
+			"labelScaling": "1.3",
+			"normalSizeScale": "1926862"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.600284023536325",
+			"lng": "13.068237304687502"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "Com2018_pro_com",
+			"field": "Organica 2017|Carta 2017|Vetro 2017|Metalli 2017|Raee 2017",
+			"field100": "",
+			"style": {
+				"type": "CHART|BAR|POINTER|VALUE|SIZE|OFFSETMEAN|DEVIATION|CLEAR|AGGREGATE|RECT|RELOCATE|NONEGATIVE|BOX|TITLE|VALUES|DTEXT|VALUEBACKGROUND",
+				"colorscheme": [
+					"#CF8E14",
+					"#FFD317",
+					"#99E5D3",
+					"#288FF7",
+					"#FF0D0D"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "rifiuti_all_type",
+				"dbtableType": "ext",
+				"dbtableExt": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISPRA%20Rifiuti/databroker.js",
+				"datacache": "true",
+				"lookupfield": "IstatComune",
+				"showdata": "false",
+				"symbols": [
+					"circle"],
+				"label": [
+					"Organica",
+					"Carta",
+					"Vetro",
+					"Metalli",
+					"RAEE"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"normalsizevalue": "30",
+				"scale": "0.7",
+				"rangescale": "2",
+				"field100min": "100",
+				"maxvalue": "100",
+				"bordercolor": "black",
+				"boxopacity": "0.5",
+				"titlefield": "Comune",
+				"valueupper": "1:100000",
+				"boxupper": "1:100000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "0.5",
+				"gridwidthpx": "20",
+				"dominantfilter": "min",
+				"dominantdfilter": "0",
+				"title": "Frazioni della Raccolta Differenziata sopra alla media",
+				"snippet": "Frazioni della Raccolta Differenziata del 2017 che suprerano la media nazionale",
+				"splash": "caricando dati ...",
+				"description": "Fonte: <a href='https://www.catasto-rifiuti.isprambiente.it/' target='_blank'>ISPRA - Catasto dei Rifiuti</a>"
+				}
+			}],
+	"layerMask": {
+		"Com2018_pro_com": {
+			"display": "none"
+			}
+		}
+	}
