@@ -1,0 +1,89 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Thu Feb 21 2019 09:54:15 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"basemap": "CartoDB - Dark matter",
+		"scaleParam": {
+			"normalSizeScale": "10000000"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "42.22851735620852",
+			"lng": "15.853271484375002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "author",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|STAR|SORT|DOWN|AGGREGATE|RELOCATE|EXACT|SUM|BOX|LONGTITLE|SIZE",
+				"colorscheme": [
+					"63",
+					"fruit"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "http://corsme.herokuapp.com/https://albopop.it/comuni-pa/index.json",
+				"dbtableType": "json",
+				"datacache": "true",
+				"itemfield": "lat|lng",
+				"lookupfield": "lat|lng",
+				"child": "true",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"normalsizevalue": "100",
+				"scale": "3",
+				"boxopacity": "0.01",
+				"titlefield": "title",
+				"boxupper": "1:1000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"centerpart": "max",
+				"gridwidthpx": "25",
+				"title": "Communità AlboPoP"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
