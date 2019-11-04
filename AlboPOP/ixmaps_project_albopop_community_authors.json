@@ -69,7 +69,7 @@
 				"child": "true",
 				"symbols": [
 					"circle"],
-				"units": "",
+				"units": "albi",
 				"normalsizevalue": "100",
 				"scale": "3",
 				"boxopacity": "0.01",
