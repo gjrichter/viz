@@ -38,7 +38,7 @@
 			"popupalignment": "BOTTOM|LEFT",
 			"transparentbackground": "true",
 			"labelscaling": "dynamic",
-			"flushChartDraw": "100",
+			"flushChartDraw": "1000",
 			"mapopacity": "1",
 			"basemapopacity": "1"
 			},
@@ -59,7 +59,7 @@
 					"#993366",
 					"#FF55CC"],
 				"fillopacity": "0.7",
-				"shadow": "true",
+				"shadow": "false",
 				"dbtable": "themeDataObj",
 				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/RicostruzionePostSisma/contributi_all.csv.gz",
 				"dbtableType": "csv",
