@@ -1,0 +1,113 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Tue Nov 05 2019 13:33:04 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "http://public.ixmaps.com.s3-website-eu-west-1.amazonaws.com/stage/maps/svg/maps/ISTAT 2011 Basi Territoriali/marche/istat_bt2011_11_marche.svgz",
+		"basemap": "Stamen - toner-lite",
+		"scaleParam": {
+			"normalSizeScale": "800121"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM",
+			"transparentbackground": "true",
+			"maxThemeCharts": "500000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "42.927142782593414",
+			"lng": "13.894701004028322"
+			},
+		"zoom": "13"
+		},
+	"themes": [{
+			"layer": "SEZ2011",
+			"field": "P14|P15|P16|P17|P18|P19|P20|P21|P22|P23|P24|P25|P26|P27|P28|P29",
+			"field100": "P1",
+			"style": {
+				"type": "CHOROPLETHE|DOMINANT|PERCENTOFMEAN|DOPACITY|SIMPLELEGEND",
+				"colorscheme": [
+					"16",
+					"RGB(143,244,0)",
+					"RGB(150,120,149)",
+					"RGB(116,188,200)",
+					"2colors"],
+				"opacity": "2",
+				"fillopacity": "2",
+				"shadow": "false",
+				"dbtable": "R11_DatiCPA_2011",
+				"datacache": "true",
+				"lookupfield": "SEZ2011",
+				"child": "true",
+				"label": [
+					"meno di 5",
+					"5 - 9",
+					"10 - 14",
+					"15 - 19",
+					"20 - 24",
+					"25 - 29",
+					"30 - 34",
+					"35 - 39",
+					"40 - 44",
+					"45 - 49",
+					"50 - 54",
+					"55 - 59",
+					"60 - 64",
+					"65 - 69",
+					"70 - 74",
+					"> 74"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"alphafield": "P1",
+				"alphafield100": "$density$",
+				"dopacitypow": "2",
+				"dopacityscale": "1",
+				"field100min": "10",
+				"valuescale": "1",
+				"dominantfilter": "min",
+				"dominantdfilter": "0",
+				"title": "15° Censimento ISTAT<br>Fascia età sopra alla media",
+				"snippet": "il colore indica la fascia d'età la quale percentuale supera di più la media regionale",
+                "description":"Fonte: ISTAT"
+				}
+			}],
+	"layerMask": {
+		"prov2001_s": {
+			"display": "none"
+			},
+		"Limite": {
+			"display": "none"
+			},
+		"Limite0": {
+			"display": "none"
+			}
+		}
+	}

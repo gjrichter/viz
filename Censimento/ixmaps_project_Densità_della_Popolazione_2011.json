@@ -1,0 +1,91 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Tue Nov 05 2019 13:31:32 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "http://public.ixmaps.com.s3-website-eu-west-1.amazonaws.com/stage/maps/svg/maps/ISTAT 2011 Basi Territoriali/marche/istat_bt2011_11_marche.svgz",
+		"basemap": "Stamen - toner-lite",
+		"scaleParam": {
+			"normalSizeScale": "800121"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM",
+			"transparentbackground": "true",
+			"maxThemeCharts": "500000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "42.920103519151894",
+			"lng": "13.85830879211426"
+			},
+		"zoom": "13"
+		},
+	"themes": [{
+			"layer": "SEZ2011",
+			"field": "P1",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETHE|QUANTILE|DENSITY|ZEROISVALUE",
+				"colorscheme": [
+					"RGB(255,253,216)",
+					"RGB(255,235,178)",
+					"RGB(254,217,146)",
+					"RGB(252,186,108)",
+					"RGB(249,158,91)",
+					"RGB(232,97,68)",
+					"RGB(181,40,75)",
+					"RGB(149,45,68)"],
+				"shadow": "false",
+				"dbtable": "R11_DatiCPA_2011",
+				"datacache": "true",
+				"lookupfield": "SEZ2011",
+				"child": "true",
+				"values": [],
+				"units": "",
+				"align": "center",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"nodatacolor": "RGB(255,253,216)",
+				"valuescale": "1",
+				"title": "Densità della Popolazione 2011"
+				}
+			}],
+	"layerMask": {
+		"prov2001_s": {
+			"display": "none"
+			},
+		"Limite": {
+			"display": "none"
+			},
+		"Limite0": {
+			"display": "none"
+			}
+		}
+	}

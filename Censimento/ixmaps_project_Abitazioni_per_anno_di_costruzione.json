@@ -1,0 +1,99 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Tue Nov 05 2019 14:14:07 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "http://public.ixmaps.com.s3-website-eu-west-1.amazonaws.com/stage/maps/svg/maps/ISTAT 2011 Basi Territoriali/marche/istat_bt2011_11_marche.svgz",
+		"basemap": "Stamen - toner-lite",
+		"scaleParam": {
+			"normalSizeScale": "800121"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM",
+			"transparentbackground": "true",
+			"maxThemeCharts": "500000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "42.92716670573319",
+			"lng": "13.875233499999988"
+			},
+		"zoom": "13"
+		},
+	"themes": [{
+			"layer": "SEZ2011",
+			"field": "E9|E10|E11|E12|E13|E14|E15",
+			"field100": "E3",
+			"style": {
+				"type": "CHOROPLETHE|DOMINANT|DOPACITY|SIMPLELEGEND",
+				"colorscheme": [
+					"7",
+					"RGB(255,221,221)",
+					"RGB(0,0,221)"],
+				"shadow": "false",
+				"dbtable": "R11_DatiCPA_2011_E",
+				"datacache": "true",
+				"lookupfield": "SEZ2011",
+				"child": "true",
+				"values": [],
+				"label": [
+					"prima del 1919",
+					"1920 - 1945",
+					"1946 - 1961",
+					"1962 - 1971",
+					"1972 - 1981",
+					"1982 - 1991",
+					"dopo il 1991"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"alphafield": "P1",
+				"alphafield100": "$density$",
+				"dopacitypow": "1",
+				"dopacityscale": "50",
+				"valuescale": "1",
+				"dominantfilter": "mean",
+				"dominantdfilter": "0",
+				"title": "15° Censimento ISTAT<br><br>Abitazioni per anno di costruzione",
+                "description":"Fonte: ISTAT"
+				}
+			}],
+	"layerMask": {
+		"prov2001_s": {
+			"display": "none"
+			},
+		"Limite": {
+			"display": "none"
+			},
+		"Limite0": {
+			"display": "none"
+			}
+		}
+	}

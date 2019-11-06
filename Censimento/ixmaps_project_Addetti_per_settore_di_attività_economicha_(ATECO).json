@@ -1,0 +1,156 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Tue Nov 05 2019 17:06:41 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "http://public.ixmaps.com.s3-website-eu-west-1.amazonaws.com/stage/maps/svg/maps/ISTAT 2011 Basi Territoriali/marche/istat_bt2011_11_marche.svgz",
+		"basemap": "CartoDB - Positron",
+		"scaleParam": {
+			"normalSizeScale": "101480"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM",
+			"transparentbackground": "true",
+			"maxThemeCharts": "500000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "42.93631775765237",
+			"lng": "13.859081268310547"
+			},
+		"zoom": "12"
+		},
+	"themes": [{
+			"layer": "SEZ2011",
+			"field": "CATEGORIA",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|STAR|SORT|DOWN|SIZE|EXACT|AGGREGATE|FAST|SUM|NOINLINETEXT|VALUES|CATEGORICAL|GLOW",
+				"colorscheme": [
+					"RGB(0,221,0)",
+					"RGB(221,221,255)",
+					"RGB(170,170,255)",
+					"RGB(238,238,0)",
+					"RGB(0,0,255)",
+					"RGB(102,102,255)",
+					"RGB(255,255,136)",
+					"brown",
+					"RGB(204,255,204)",
+					"red",
+					"RGB(68,248,248)",
+					"RGB(68,208,255)",
+					"RGB(68,216,168)",
+					"RGB(256,116,68)",
+					"RGB(255,0,255)",
+					"orange",
+					"grey",
+					"RGB(255,136,136)",
+					"RGB(85,153,51)",
+					"RGB(221,221,255)"],
+				"shadow": "false",
+				"dbtable": "Censimento_2011_sez_ateco",
+				"dbtableType": "ext",
+				"dbtableExt": "http://public.ixmaps.com.s3-website-eu-west-1.amazonaws.com/stage/app/Istat_basi_territoriali/stories/Istat - 2011 Basi Territoriali/dbbroker_ateco.js",
+				"datacache": "false",
+				"lookupfield": "SEZ2011",
+				"child": "true",
+				"symbols": [
+					"circle"],
+				"values": [
+					"A",
+					"B",
+					"C",
+					"D",
+					"E",
+					"F",
+					"G",
+					"H",
+					"I",
+					"J",
+					"K",
+					"L",
+					"M",
+					"N",
+					"O",
+					"P",
+					"Q",
+					"R",
+					"S",
+					"T"],
+				"label": [
+					"AGRICOLTURA, SILVICOLTURA E PESCA",
+					"ESTRAZIONE DI MINERALI DA CAVE E MINIERE",
+					"ATTIVITÀ MANIFATTURIERE",
+					"FORNITURA DI ENERGIA ELETTRICA, GAS, VAPORE E ARIA CONDIZIONATA",
+					"FORNITURA DI ACQUA, RETI FOGNARIE, ATTIVITÀ DI GESTIONE DEI RIFIUTI E RISANAMENTO",
+					"COSTRUZIONI",
+					"COMMERCIO ALL'INGROSSO E AL DETTAGLIO, RIPARAZIONE DI AUTOVEICOLI E MOTOCICLI",
+					"TRASPORTO E MAGAZZINAGGIO",
+					"ATTIVITÀ DEI SERVIZI DI ALLOGGIO E DI RISTORAZIONE",
+					"SERVIZI DI INFORMAZIONE E COMUNICAZIONE",
+					"ATTIVITÀ FINANZIARIE E ASSICURATIVE",
+					"ATTIVITA' IMMOBILIARI",
+					"ATTIVITÀ PROFESSIONALI, SCIENTIFICHE E TECNICHE",
+					"NOLEGGIO, AGENZIE DI VIAGGIO, SERVIZI DI SUPPORTO ALLE IMPRESE",
+					"AMMINISTRAZIONE PUBBLICA E DIFESA, ASSICURAZIONE SOCIALE OBBLIGATORIA",
+					"ISTRUZIONE",
+					"SANITA' E ASSISTENZA SOCIALE",
+					"ATTIVITÀ ARTISTICHE, SPORTIVE, DI INTRATTENIMENTO E DIVERTIMENTO",
+					"ALTRE ATTIVITÀ DI SERVIZI",
+					"ATTIVITÀ DI FAMIGLIE E CONVIVENZE COME DATORI DI LAVORO PER PERSONALE DOMESTICO, PRODUZIONE DI BENI E SERVIZI INDIFFERENZIATI PER USO PROPRIO DA PARTE DI FAMIGLIE E CONVIVENZE"],
+				"units": "addetti",
+				"align": "center",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1000",
+				"scale": "1",
+				"sizefield": "ADDETTI",
+				"linecolor": [
+					"black"],
+				"nodatacolor": "RGB(255,253,216)",
+				"valuescale": "1",
+				"clipparts": "3",
+				"title": "Addetti per settore di attività economicha (ATECO)"
+				}
+			}],
+	"layerMask": {
+		"SEZ2011": {
+			"display": "none"
+			},
+		"prov2001_s": {
+			"display": "none"
+			},
+		"Limite": {
+			"display": "none"
+			},
+		"Limite0": {
+			"display": "none"
+			}
+		}
+	}

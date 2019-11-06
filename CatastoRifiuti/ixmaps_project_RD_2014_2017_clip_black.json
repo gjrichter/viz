@@ -1,0 +1,96 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Tue Nov 05 2019 10:19:59 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2018/italia_comuni_2018_s_pro_com.svgz",
+		"basemap": "CartoDB - Dark matter",
+		"scaleParam": {
+			"lineScaling": "0.7499999999999991",
+			"labelScaling": "1.3",
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.79488907226601",
+			"lng": "14.661254882812502"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "Com2018_pro_com",
+			"field": "% RD 2014|% RD 2015|% RD 2016|% RD 2017",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|QUANTILE|DOPACITY|CLIP|LOOP",
+				"colorscheme": [
+					"7",
+					"spectrum",
+					"default",
+					"0",
+					"200"],
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "rifiuti_all",
+				"dbtableType": "ext",
+				"dbtableExt": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISPRA%20Rifiuti/databroker.js",
+				"datacache": "true",
+				"lookupfield": "IstatComune",
+				"child": "true",
+				"xaxis": [
+					"2014",
+					"2015",
+					"2016",
+					"2017"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"alphafield": "Pop_legale_2011",
+				"alphafield100": "$density$",
+				"dopacitypow": "1.2800000000000002",
+				"dopacityscale": "17.881393432617188",
+				"titlefield": "Comune",
+				"nodatacolor": "RGB(170,170,170)",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"clipframes": "4",
+				"clipframerate": "24",
+				"title": "Raccolta Differenziata 2014 ... 2017"
+				}
+			}],
+	"layerMask": {
+		}
+	}

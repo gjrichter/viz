@@ -1,0 +1,93 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Tue Nov 05 2019 14:31:18 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "http://public.ixmaps.com.s3-website-eu-west-1.amazonaws.com/stage/maps/svg/maps/ISTAT 2011 Basi Territoriali/marche/istat_bt2011_11_marche.svgz",
+		"basemap": "CartoDB - Positron",
+		"scaleParam": {
+			"normalSizeScale": "800121"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM",
+			"transparentbackground": "true",
+			"maxThemeCharts": "500000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "42.92632576649073",
+			"lng": "13.85727882385254"
+			},
+		"zoom": "13"
+		},
+	"themes": [{
+			"layer": "SEZ2011",
+			"field": "E2",
+			"field100": "E1",
+			"style": {
+				"type": "CHOROPLETHE|INVERT|LOG|DOPACITYMINMAX|DOPACITYMAX|NOZEROTEXT|SIMPLELEGEND",
+				"colorscheme": [
+					"15",
+					"RGB(207,255,51)",
+					"RGB(221,0,0)",
+					"3colors",
+					"RGB(148,204,200)"],
+				"opacity": "1",
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "R11_DatiCPA_2011_E",
+				"datacache": "true",
+				"lookupfield": "SEZ2011",
+				"showdata": "true",
+				"child": "true",
+				"units": "%",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"alphafield": "E1",
+				"alphafield100": "$density$",
+				"dopacitypow": "2",
+				"dopacityscale": "3",
+				"valuescale": "1",
+				"title": "15° Censimento ISTAT<br><br>% edifici non utilizzati",
+                "description":"Fonte: ISTAT"
+				}
+			}],
+	"layerMask": {
+		"prov2001_s": {
+			"display": "none"
+			},
+		"Limite": {
+			"display": "none"
+			},
+		"Limite0": {
+			"display": "none"
+			}
+		}
+	}

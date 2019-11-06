@@ -55,7 +55,7 @@
 			"field": "% RD 2014|% RD 2015|% RD 2016|% RD 2017",
 			"field100": "",
 			"style": {
-				"type": "CHOROPLETH|QUANTILE|VALUES|DTEXT|DOPACITY|CLIP|LOOP",
+				"type": "CHOROPLETH|QUANTILE|DOPACITY|CLIP|LOOP",
 				"colorscheme": [
 					"7",
 					"spectrum",
@@ -84,12 +84,11 @@
 				"dopacityscale": "17.881393432617188",
 				"titlefield": "Comune",
 				"nodatacolor": "RGB(170,170,170)",
-				"valueupper": "1:150000",
 				"valuescale": "1",
 				"valuedecimals": "1",
 				"clipframes": "4",
 				"clipframerate": "24",
-				"title": "Raccolta Differenziata 2017"
+				"title": "Raccolta Differenziata 2014 ... 2017"
 				}
 			}],
 	"layerMask": {

@@ -1,0 +1,90 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Tue Nov 05 2019 16:01:33 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "http://public.ixmaps.com.s3-website-eu-west-1.amazonaws.com/stage/maps/svg/maps/ISTAT 2011 Basi Territoriali/marche/istat_bt2011_11_marche.svgz",
+		"basemap": "CartoDB - Positron",
+		"scaleParam": {
+			"normalSizeScale": "800121"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM",
+			"transparentbackground": "true",
+			"maxThemeCharts": "500000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.34715236003303",
+			"lng": "13.649139404296877"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "SEZ2011",
+			"field": "A3",
+			"field100": "A2",
+			"style": {
+				"type": "CHART|FRACTION|NORMALIZE|QUANTILE|SYMBOL|SIZE||AGGREGATE|SUM",
+				"colorscheme": [
+					"17",
+					"RGB(128,175,155)",
+					"RGB(255,61,98)",
+					"3colors",
+					"RGB(251,205,171)"],
+				"opacity": "0.66",
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "R11_DatiCPA_2011_FAM",
+				"datacache": "true",
+				"lookupfield": "SEZ2011",
+				"child": "true",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1",
+				"scale": "3",
+				"valuescale": "1",
+				"gridwidthpx": "5",
+				"title": "Indice di abitazioni non residenziali",
+				"snippet": "Abitazioni vuote e abitazioni occupate solo da persone non residenti / Abitazioni occupate da almeno una persona residente",
+				"description": "intensità pari densità della superfice delle abitazioni"
+				}
+			}],
+	"layerMask": {
+		"SEZ2011": {
+			"display": "none"
+			},
+		"prov2001_s": {
+			"display": "none"
+			}
+		}
+	}
