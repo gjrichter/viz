@@ -1,0 +1,94 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Nov 03 2019 10:07:51 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2018/italia_comuni_2018_s_pro_com.svgz",
+		"basemap": "Stamen - toner-lite",
+		"scaleParam": {
+			"lineScaling": "9.988721231519573",
+			"labelScaling": "1.3",
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "44.58068656459206",
+			"lng": "11.651000976562502"
+			},
+		"zoom": "10"
+		},
+	"themes": [{
+			"layer": "Com2018_pro_com",
+			"field": "% RD 2017",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|VALUES|DTEXT|VALUEBACKGROUND|DOPACITY",
+				"colorscheme": [
+					"7",
+					"spectrum",
+					"default",
+					"0",
+					"200"],
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "rifiuti_all",
+				"dbtableType": "ext",
+				"dbtableExt": "../../app/databroker.js",
+				"datacache": "true",
+				"lookupfield": "IDComune",
+				"child": "true",
+				"units": "%",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1000",
+				"scale": "1",
+				"alphafield": "Pop_legale_2011",
+				"alphafield100": "$density$",
+				"dopacitypow": "1.2800000000000002",
+				"dopacityscale": "17.881393432617188",
+				"titlefield": "COMUNE",
+				"nodatacolor": "RGB(170,170,170)",
+				"valueupper": "1:150000",
+				"valuescale": "1",
+				"valuedecimals": "1",
+                "splash":"sto caricando ... ",
+				"title": "Raccolta Differenziata 2017",
+                "snippet":"Intensità = densità della popolazione",
+                "description":"Fonte: <a href='https://www.catasto-rifiuti.isprambiente.it/' target='_blank'>ISPRA - Catasto dei Rifiuti</a>"
+				}
+			}],
+	"layerMask": {
+		}
+	}
