@@ -1,0 +1,101 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Tue Nov 05 2019 16:21:35 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"basemap": "CartoDB - Positron",
+		"scaleParam": {
+			"normalSizeScale": "10000000"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "50000",
+			"silent": "false",
+			"legend": "true",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "42.936066401555564",
+			"lng": "13.81805419921875"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "World_countries_shp",
+			"field": "prezzo.1",
+			"field100": "",
+			"style": {
+				"type": "GLOW|CHART|SYMBOL|SIZE|NOOUTLIER|VALUES|QUANTILE|AGGREGATE|FAST|MEAN|RECT|GRIDSIZE|GAP",
+				"colorscheme": [
+					"9",
+					"#56A651",
+					"#794073",
+					"3colors",
+					"#DDA729"],
+				"shadow": "false",
+				"filter": "WHERE descCarburante.1 like GPL",
+				"dbtable": "prezzi_tipo_latlon",
+				"dbtableType": "ext",
+				"dbtableExt": "../../app/MISE/databroker.js",
+				"datacache": "true",
+				"lookupfield": "Latitudine.2|Longitudine.2",
+				"showdata": "true",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"legendunits": " €",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"textcolor": "white",
+				"linecolor": [
+					"none"],
+				"valueupper": "1:500000",
+				"shadowupper": "1:10000",
+				"valuescale": "1",
+				"valuedecimals": "3",
+				"aggregationscale": [
+					"1:1",
+					"30px",
+					"1:500000",
+					"10px",
+					"1:1000000",
+					"5px"],
+				"title": "Prezzo medio per GPL",
+				"splash": "caricando dati attuali dal Ministero dello Sviluppo Economico ..."
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
