@@ -1,7 +1,7 @@
 ## ISPRA - Catasto dei Rifiuti
 
 ## Raccolta Differenziata da 2010 al 2017 
-### riuso del CSV aggregato da OnData 
+### sulla base di un CSV aggregato da OnData 
 
 Visualizzazione del percentuale della Raccolta Differenziata per tutti comuni d'Italia dal 2010 al 2017
 fonte dati: [Ondata](https://github.com/ondata/rifiutiUrbaniComunaliISPRA), ISTAT e ISPRA
