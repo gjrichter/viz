@@ -11,7 +11,7 @@ fonte dati: [Ondata](https://github.com/ondata/rifiutiUrbaniComunaliISPRA), ISTA
 
 
 
-<img src="RD_2010_2017_movie.gif">
+<img src="animazione.gif">
 
 <br><br>
 
