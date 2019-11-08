@@ -1,0 +1,86 @@
+{
+    "metadata": {
+        "title": "",
+        "snippet": "",
+        "description": "",
+        "thumbnail": "",
+        "about": "",
+        "created": "Fri Nov 08 2019 12:23:11 GMT+0100 (Ora standard dell’Europa centrale)"
+    },
+    "map": {
+        "map": "../../maps/svg/maps/generic/mercator.svg",
+        "basemap": "CartoDB - Positron",
+        "scaleParam": {
+            "normalSizeScale": "6920521"
+        },
+        "options": {
+            "featurescaling": "dynamic",
+            "objectscaling": "dynamic",
+            "clipmap": "true",
+            "clipmapdynamic": "true",
+            "dynamiclabel": "NOSIZE",
+            "labelspace": "1.0",
+            "checklabeloverlap": "NOSQUEEZE",
+            "dynamiclayer": "true",
+            "dynamictiles": "true",
+            "discardtiles": "false",
+            "loadmultitiles": "true",
+            "loadsilent": "false",
+            "loadexternaldata": "true",
+            "buttonsize": "15",
+            "fastpan": "false",
+            "panborder": "0",
+            "northarrow": "false",
+            "sidebarbuttons": "false",
+            "tooltipdelay": "250",
+            "popupdelay": "250",
+            "popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+            "popupalignment": "BOTTOM|LEFT",
+            "transparentbackground": "true",
+            "labelscaling": "dynamic",
+            "flushChartDraw": "50000",
+            "mapopacity": "1",
+            "basemapopacity": "1"
+        },
+		"center": {
+			"lat": "43.858296779161854",
+			"lng": "11.392822265625"
+			},
+        "zoom": "6"
+    },
+    "themes": [{
+        "layer": "World Mercator",
+        "field": "$item$",
+        "field100": "",
+        "style": {
+            "type": "CHART|BUBBLE|FAST|AGGREGATE|HEX|SUM|RELOCATE|DOPACITY|VALUES",
+            "colorscheme": [
+					"1",
+					"#eeeeff",
+					"#0000dd"],
+            "fillopacity": "0.7",
+            "shadow": "false",
+            "dbtable": "themeDataObj",
+            "dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ItalyPatent/IT_patent_data_inv.csv.gz",
+            "dbtableType": "csv",
+            "datacache": "true",
+            "lookupfield": "lat|lng",
+            "units": "",
+            "refreshtimeout": "0",
+            "scale": "1",
+            "sizefield": "",
+            "dopacitypow": "2",
+            "dopacityscale": "2",
+            "gridwidthpx": "2",
+            "valuescale": "1",
+            "valuedecimals": "0",
+            "valuesupper": "1:100000",
+            "title": "World Mercator [$item$]"
+        }
+			}],
+    "layerMask": {
+        "World Mercator": {
+            "display": "none"
+        }
+    }
+}

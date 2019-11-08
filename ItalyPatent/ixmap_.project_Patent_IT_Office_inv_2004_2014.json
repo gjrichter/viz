@@ -1,0 +1,128 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Fri Nov 08 2019 13:53:39 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"basemap": "CartoDB - Dark matter",
+		"scaleParam": {
+			"normalSizeScale": "6920521"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.858296779161854",
+			"lng": "11.392822265625"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "patent_office",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|CATEGORICAL|ORDERED|FAST|AGGREGATE|HEX|SUM|RELOCATE|DOPACITY|VALUES",
+                "colorscheme": [
+                    "31",
+                    "kmeans"],
+                "values":[
+                    "IT",
+                    "EP",
+                    "US",
+                    "WO",
+                    "DE",
+                    "FR",
+                    "GB",
+                    "CN",
+                    "FI",
+                    "CA",
+                    "SM",
+                    "ES",
+                    "SE",
+                    "SI",
+                    "CH",
+                    "AT",
+                    "BR",
+                    "JP",
+                    "IE",
+                    "KR",
+                    "PT",
+                    "AU",
+                    "MX",
+                    "IN",
+                    "BE",
+                    "LU",
+                    "NL",
+                    "PL",
+                    "NO",
+                    "GR",
+                    "CL",
+                    "RU",
+                    "CZ",
+                    "BG",
+                    "LT",
+                    "HR",
+                    "LV",
+                    "IL",
+                    "RO"
+                ],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"filter": "WHERE \"ctry_code\" = \"IT\" AND \"filing_date\" BETWEEN 2004 AND 2014",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ItalyPatent/IT_patent_data_inv.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "lat|lng",
+				"units": "",
+				"refreshtimeout": "0",
+                "sizefield":"$item$",
+				"scale": "1",
+                "normalsizevalue":"1000",
+				"dopacitypow": "2",
+				"dopacityscale": "2",
+				"valueupper": "1:100000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridwidthpx": "2",
+				"title": "Brevetti 2004 - 2014"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
