@@ -58,7 +58,7 @@
 					"fruit"],
 				"shadow": "false",
 				"dbtable": "themeDataObj_acled",
-				"dbtableUrl": "https://api.acleddata.com/acled/read.csv?terms=accept&limit=0&year=2019&fields=iso%7Ccountry%7Cevent_type%7Cevent_date%7Clatitude%7Clongitude%7Cfatalities%7Cinteraction%7Cactor1",
+				"dbtableUrl": "https://api.acleddata.com/acled/read.csv?terms=accept&limit=70000&country=Iraq&year=2019&fields=iso%7Ccountry%7Cevent_type%7Cevent_date%7Clatitude%7Clongitude%7Cfatalities%7Cinteraction%7Cactor1",
 				"dbtableType": "csv",
 				"datacache": "true",
 				"lookupfield": "latitude|longitude",

@@ -68,6 +68,7 @@
 				"datacache": "false",
 				"lookupfield": "Quartiere",
 				"sizefield":"Numerosità",
+				"titlefield": "Quartiere",
 				"symbols": [
 					"circle"],
 				"units": "",
