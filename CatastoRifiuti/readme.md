@@ -17,5 +17,5 @@ fonte dati: [Ondata](https://github.com/ondata/rifiutiUrbaniComunaliISPRA), ISTA
 
 [% Raccolta Differenziata dal 2010 al 2017 (curve)](http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/CatastoRifiuti/ixmaps_project_RD_ONDATA_2010-2017_curve_II.json)
 
-![](D:\Repositories\Git\viz\CatastoRifiuti\RD_2010_2017_curve.png)
+<img src="RD_2010_2017_curve.png">
 
