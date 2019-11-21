@@ -1,0 +1,112 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Fri Nov 08 2019 08:35:14 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2018/italia_comuni_2018_s_pro_com.svgz",
+		"basemap": "CartoDB - Positron",
+		"scaleParam": {
+			"labelScaling": "1.3",
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "37.50972584293751",
+			"lng": "14.352264404296875"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "Com2018_pro_com",
+			"field": "2010|2011|2012|2013|2014|2015|2016|2017",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOTVAR|BOX|GRID|TITLE|LINES|AREA|FADE|FIXSIZE|AGGREGATE|RECT|GRIDSIZE|CLEAR",
+				"colorscheme": [
+					"1",
+					"#FEFDDF",
+					"#88BA36",
+					"dynamic",
+					"warm"],
+				"fillopacity": "0.9",
+				"shadow": "false",
+				"dbtable": "rifiuti_all",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/CatastoRifiuti/databroker_rifiuti_ondata_pivot.js",
+				"datacache": "true",
+				"lookupfield": "IDComune",
+				"showdata": "false",
+				"symbols": [
+					"circle"],
+				"xaxis": [
+					"2010",
+					"2011",
+					"2012",
+					"2013",
+					"2014",
+					"2015",
+					"2016",
+					"2017"],
+				"units": "%",
+                "weights":"100",
+				"refreshtimeout": "0",
+				"normalsizevalue": "3",
+				"scale": "0.85",
+				"rangescale": "0.9",
+				"bordercolor": "black",
+				"boxopacity": "0.5",
+				"titlefield": "COMUNE",
+				"boxupper": "1:150000",
+				"valuescale": "1",
+				"fadenegative": "0.5",
+				"aggregationscale": [
+					"1:100",
+					"200px",
+					"1:100000",
+					"120px",
+					"1:500000",
+					"80px"],
+                "splash":"caricando dati &larr; https://raw.githubusercontent.com/ondata/rifiutiUrbaniComunaliISPRA/master/ispraRifiuti.csv",
+				"title": "L'evoluzione della Raccolta Differenziata dal 2010 al 2017",
+				"snippet": "La percentuale della Raccolta Differenziata per ogni Comune d'Italia"
+				}
+			}],
+	"layerMask": {
+		"Com2018_pro_com": {
+			"display": "none"
+			}
+		}
+	}
