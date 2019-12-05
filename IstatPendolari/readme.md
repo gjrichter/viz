@@ -9,15 +9,15 @@ Visualizzazione degli spostamenti per motivi di lavoro o di studio per tutti com
 
 fonte dati: ISTAT 
 
-[Torino (monocolore)](http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/Pendolari/ixmaps_project_pendolari_mono_dash_torino.json)
+[Torino (monocolore)](http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/IstatPendolari/ixmaps_project_pendolari_mono_dash_torino.json)
 
-[Milano](http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/Pendolari/ixmaps_project_pendolari_colori_Milano.json)
+[Milano](http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/IstatPendolari/ixmaps_project_pendolari_colori_Milano.json)
 
-[Puglia](http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/Pendolari/ixmaps_project_pendolari_colori_Puglia.json)
+[Puglia](http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/IstatPendolari/ixmaps_project_pendolari_colori_Puglia.json)
 
-[Sicilia](http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/Pendolari/ixmaps_project_pendolari_colori_Sicilia.json)
+[Sicilia](http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/IstatPendolari/ixmaps_project_pendolari_colori_Sicilia.json)
 
-[Italia](http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/Pendolari/ixmaps_project_pendolari_colori_Italia.json)
+[Italia](http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/IstatPendolari/ixmaps_project_pendolari_colori_Italia.json)
 
 
 
