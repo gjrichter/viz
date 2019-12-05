@@ -11,7 +11,7 @@ fonte dati: ISTAT
 
 [Torino (monocolore)](http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/IstatPendolari/ixmaps_project_pendolari_mono_dash_torino.json)
 
-<a href="http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/IstatPendolari/ixmaps_project_pendolari_mono_dash_torino.json"><img src="Pendolari_2011_Torino_monocolore.png"></a>
+<a href="http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/IstatPendolari/ixmaps_project_pendolari_mono_dash_torino.json"><img src="Pendolari_2011_Torino_monocolore.png" width="500px"></a>
 
 [Milano](http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/IstatPendolari/ixmaps_project_pendolari_colori_Milano.json)
 
