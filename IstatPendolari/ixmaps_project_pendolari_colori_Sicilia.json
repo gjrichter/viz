@@ -64,7 +64,7 @@
 				"dbtable": "pendolari",
 				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/pendo2011_S_aggregato_nome.csv.gz",
 				"dbtableType": "csv",
-				"dbtableExt": "../../projects/Pendolari/process_legend.js",
+				"dbtableExt": "https://gjrichter.github.io/viz/IstatPendolari/process_legend.js",
 				"datacache": "true",
 				"lookupfield": "procom_residenza",
 				"lookupfield2": "procom_lavoro",
