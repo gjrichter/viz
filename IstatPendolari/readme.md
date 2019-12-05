@@ -15,19 +15,19 @@ fonte dati: ISTAT
 
 [Milano](http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/IstatPendolari/ixmaps_project_pendolari_colori_Milano.json)
 
-<img src="Pendolari_2011_Milano.png">
+<a href="http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/IstatPendolari/ixmaps_project_pendolari_colori_Milano.json"><img src="Pendolari_2011_Milano.png" width="500px"></a>
 
 [Puglia](http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/IstatPendolari/ixmaps_project_pendolari_colori_Puglia.json)
 
-<img src="Pendolari_2011_Puglia.png">
+<a href="http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/IstatPendolari/ixmaps_project_pendolari_colori_Puglia.json"><img src="Pendolari_2011_Puglia.png" width="500px"></a>
 
 [Sicilia](http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/IstatPendolari/ixmaps_project_pendolari_colori_Sicilia.json)
 
-<img src="Pendolari_2011_Sicilia.png">
+<a href="http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/IstatPendolari/ixmaps_project_pendolari_colori_Sicilia.json"><img src="Pendolari_2011_Sicilia.png" width="500px"></a>
 
 [Italia](http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/IstatPendolari/ixmaps_project_pendolari_colori_Italia.json)
 
-<img src="Pendolari_2011_Italia.png">
+<a href="http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/IstatPendolari/ixmaps_project_pendolari_colori_Italia.json"><img src="Pendolari_2011_Italia.png" width="500px"></a>
 
 
 
