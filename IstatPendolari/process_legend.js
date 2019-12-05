@@ -1,20 +1,12 @@
 /**********************************************************************
- process.js
-
-$Comment: provides JavaScript to preprocess data
-$Source : process.js,v $
-
-$InitialAuthor: guenter richter $
-$InitialDate: $
-$Author: guenter richter $
-$Id: process.js 8 2014-04-06 00:00:00Z Guenter Richter $
+ process_legend.js
 
 Copyright (c) Guenter Richter
-$Log: process.js,v $
+$Log: process_legend.js,v $
 **********************************************************************/
 
 /** 
- * @fileoverview This file provides processing functions for 
+ * @fileoverview This file provides processing functions for iXMaps theme legend  
  * @author Guenter Richter guenter.richter@medienobjekte.de
  * @version 1.0 
  */
