@@ -1,0 +1,92 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Dec 02 2019 18:48:28 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2011/italia_comuni_2011_g_procom_nsh.svgz",
+		"attribution": "",
+		"basemap": "CartoDB - Dark matter",
+		"scaleParam": {
+			"normalSizeScale": "100000"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "45.4904643369847",
+			"lng": "9.365844726562502"
+			},
+		"zoom": "10"
+		},
+	"themes": [{
+			"layer": "com2011_g",
+			"field": "procom_lavoro",
+			"field100": "",
+			"style": {
+				"type": "POINTER|CHART|CATEGORICAL|VECTOR|BEZIER|GRADIENT|FADEIN|DASH|SIZE|AGGREGATE|FAST|SUM",
+				"colorscheme": [
+					"8093",
+					"fluo"],
+				"fillopacity": "0.9",
+				"shadow": "false",
+				"dbtable": "pendolari",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/pendo2011_S_aggregato_nome.csv.gz",
+				"dbtableType": "csv",
+				"dbtableExt": "../../projects/Pendolari/process_legend.js",
+				"datacache": "true",
+				"lookupfield": "procom_residenza",
+				"lookupfield2": "procom_lavoro",
+				"labelfield": "comune_lavoro",
+				"units": "individui",
+				"refreshtimeout": "0",
+				"normalsizevalue": "15625",
+				"scale": "1",
+				"rangescale": "5",
+				"sizepow": "1",
+				"sizefield": "Numero_di_individui",
+				"minvalue": "20",
+				"valuescale": "1",
+				"maxcharts": "5000",
+				"splash": "... caricando la tabella con i spostamenti, ci sono più di 500000 righe. Datemi un po' di tempo ... ",
+				"title": "Pendolari 2011",
+				"snippet": "Flusso dei spostamenti giornalieri per motivo di lavoro o studio, colorati per comune di lavoro/studio"
+				}
+			}],
+	"layerMask": {
+		"com2011_g": {
+			"display": "none"
+			}
+		}
+	}

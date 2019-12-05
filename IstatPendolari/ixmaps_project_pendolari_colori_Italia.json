@@ -1,0 +1,88 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Dec 02 2019 18:31:38 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2011/italia_comuni_2011_g_procom_nsh.svgz",
+		"attribution": "",
+		"basemap": "CartoDB - Dark matter",
+		"scaleParam": {
+			"normalSizeScale": "100000"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.94141717295212",
+			"lng": "11.4862060546875"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "com2011_g",
+			"field": "procom_lavoro",
+			"field100": "",
+			"style": {
+				"type": "CHART|CATEGORICAL|VECTOR|BEZIER|GRADIENT|FADEIN|DASH|SIZE|AGGREGATE|FAST|SUM",
+				"colorscheme": [
+					"8093",
+					"tableau"],
+				"fillopacity": "0.9",
+				"shadow": "false",
+				"dbtable": "pendolari",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/pendo2011_S_aggregato.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "procom_residenza",
+				"lookupfield2": "procom_lavoro",
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "5000",
+				"scale": "1",
+				"rangescale": "5",
+				"sizepow": "0.6",
+				"sizefield": "Numero_di_individui",
+				"minvalue": "20",
+				"valuescale": "1",
+				"maxcharts": "5000",
+				"title": "World Mercator [$item$]"
+				}
+			}],
+	"layerMask": {
+		"com2011_g": {
+			"display": "none"
+			}
+		}
+	}
