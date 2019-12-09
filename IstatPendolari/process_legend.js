@@ -52,6 +52,7 @@ window.ixmaps.pendolari = window.ixmaps.pendolari || {};
 
 	ixmaps.parentApi.parentApi.htmlgui_onLegendFooter = function() {
 	 	return ("<div class='map-legend-footer' style='margin-top:0.5em;margin-bottom:1.5em'>"+
+				"<p>Fonte: ISTAT Licenza: CC-BY</p>"+
 				"<a href=\"javascript:ixmaps.changeThemeStyle('vector','sizepow:-0.1','add')\" class=\"button\" style=\"pointer-events:all\">"+
 				"(+)</a>&nbsp;particolari&nbsp;"+
 				"<a href=\"javascript:ixmaps.changeThemeStyle('vector','sizepow:0.1','add')\" class=\"button\" style=\"pointer-events:all\">"+
