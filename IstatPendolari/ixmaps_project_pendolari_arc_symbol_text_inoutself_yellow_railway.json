@@ -1,0 +1,301 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Thu Jan 02 2020 11:37:46 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "",
+		"attribution": "data: ISTAT",
+		"basemap": "OpenStreetMap - Osmarenderer",
+		"legend": "",
+		"scaleParam": {
+			"normalSizeScale": "100000"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "false",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "40.23210139800668",
+			"lng": "18.323135375976566"
+			},
+		"zoom": "11"
+		},
+	"themes": [{
+			"layer": "com2011_g",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"1",
+					"RGB(238,238,255)",
+					"RGB(0,0,221)"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "com2011_g",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/IstatPendolari/databroker_centroidi_11X.js",
+				"datacache": "true",
+				"itemfield": "PRO_COM",
+				"lookupfield": "Y|X",
+				"child": "true",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "posizioni comuni 2011"
+				}
+			},{
+			"layer": "com2011_g",
+			"field": "procom_lavoro",
+			"field100": "",
+			"style": {
+				"name":"pendolari_flussi",
+				"type": "CHART|CATEGORICAL|VECTOR|BEZIER|GRADIENT|FADEIN|DASH|POINTER|SIZE|AGGREGATE|FAST|SUM",
+				"colorscheme": [
+					"#880000"],
+				"fillopacity": "0.9",
+				"shadow": "false",
+				"dbtable": "pendolari_matrix",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/pendo2011_S_aggregato.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "procom_residenza",
+				"lookupfield2": "procom_lavoro",
+				"units": "persone",
+				"refreshtimeout": "0",
+				"normalsizevalue": "3276.8",
+				"scale": "1",
+				"rangescale": "5",
+				"sizepow": "1",
+				"sizefield": "Numero_di_individui",
+				"minvalue": "20",
+				"linecolor": [
+					"#880000"],
+				"valuescale": "1",
+				"maxcharts": "1000",
+				"title": "Pendolari 2011",
+				"snippet": "<b>Flusso</b> degli spostamenti casa lavoro/studi per destinazione"
+				}
+			},{
+			"layer": "com2011_g",
+			"field": "procom",
+			"field100": "",
+			"style": {
+				"name":"pendolari_in",
+				"type": "CHART|BUBBLE|CATEGORICAL|SIZE|FAST|SUM",
+				"colorscheme": [
+					"green"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "pendolari",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/pendolari_2011_in_out_self.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "https://gjrichter.github.io/viz/IstatPendolari/process_legend.js",
+				"datacache": "true",
+				"lookupfield": "procom",
+				"units": "persone",
+				"refreshtimeout": "0",
+				"normalsizevalue": "10000",
+				"linecolor": [
+					"green"],
+				"linewidth": "2",
+				"scale": "1",
+				"sizefield": "in",
+				"valuescale": "1",
+				"title": "Pendolari 2011",
+				"snippet": "<b>Arrivi</b> in comune per motivi di lavoro/studi",
+				"splash": "... caricando la tabella con i spostamenti, ci sono più di 500000 righe. Datemi un po' di tempo ... "
+				}
+			},{
+			"layer": "com2011_g",
+			"field": "procom",
+			"field100": "",
+			"style": {
+				"name":"pendolari_out",
+				"type": "CHART|BUBBLE|CATEGORICAL|SIZE|FAST|SUM",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"dbtable": "pendolari",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/pendolari_2011_in_out_self.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "https://gjrichter.github.io/viz/IstatPendolari/process_legend.js",
+				"datacache": "true",
+				"lookupfield": "procom",
+				"units": "persone",
+				"refreshtimeout": "0",
+				"normalsizevalue": "10000",
+				"scale": "1",
+				"sizefield": "out",
+				"linecolor": [
+					"red"],
+				"linewidth": "2",
+				"valuescale": "1",
+				"title": "Pendolari 2011",
+				"snippet": "<b>Uscite</b> dal comune per motivi di lavoro/studi",
+				"splash": "... caricando la tabella con i spostamenti, ci sono più di 500000 righe. Datemi un po' di tempo ... "
+				}
+			},{
+			"layer": "com2011_g",
+			"field": "procom",
+			"field100": "",
+			"style": {
+				"name":"pendolari_self",
+				"type": "CHART|BUBBLE|CATEGORICAL|SIZE|FAST|SUM",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "0.001",
+				"shadow": "false",
+				"dbtable": "pendolari",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/pendolari_2011_in_out_self.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "https://gjrichter.github.io/viz/IstatPendolari/process_legend.js",
+				"datacache": "true",
+				"lookupfield": "procom",
+				"units": "persone",
+				"refreshtimeout": "0",
+				"normalsizevalue": "10000",
+				"scale": "1",
+				"sizefield": "self",
+				"valuefield": "self",
+				"minvalue": "50",
+				"linecolor": [
+					"#dddd00"],
+				"linewidth": "2",
+				"valuescale": "1",
+				"name": "archi",
+				"title": "Pendolari 2011",
+				"snippet": "Spostamenti <b>entro comune</b> per motivi di lavoro/studio ",
+				"splash": "... caricando la tabella con i spostamenti, ci sono più di 500000 righe. Datemi un po' di tempo ... "
+				}
+			},{
+			"layer": "com2011_g",
+			"field": "procom",
+			"field100": "",
+			"style": {
+				"name":"pendolari_out_label",
+				"type": "CHART|SYMBOL|LABEL|TEXTONLY|VALUES|CATEGORICAL|SIZEP3|FAST|SUM|NOLEGEND",
+				"colorscheme": [
+					"red"],
+				"shadow": "false",
+				"dbtable": "pendolari",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/pendolari_2011_in_out_self.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "https://gjrichter.github.io/viz/IstatPendolari/process_legend.js",
+				"datacache": "true",
+				"lookupfield": "procom",
+				"units": "persone",
+				"align": "below|right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1000",
+				"scale": "1",
+				"valuefield": "out",
+				"sizefield": "out",
+				"weights":["-1"],
+				"textfont":"Railway",
+				"linewidth": "2",
+				"valuescale": "1",
+				"title": "Pendolari 2011",
+				"snippet": "Uscite dal comune per motivi di lavoro/studi",
+				"splash": "... caricando la tabella con i spostamenti, ci sono più di 500000 righe. Datemi un po' di tempo ... "
+				}
+			},{
+			"layer": "com2011_g",
+			"field": "procom",
+			"field100": "",
+			"style": {
+				"name":"pendolari_self_label",
+				"type": "CHART|SYMBOL|LABEL|TEXTONLY|VALUES|CATEGORICAL|SIZEP3|FAST|SUM|NOLEGEND",
+				"colorscheme": [
+					"#dddd00"],
+				"shadow": "false",
+				"dbtable": "pendolari",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/pendolari_2011_in_out_self.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "https://gjrichter.github.io/viz/IstatPendolari/process_legend.js",
+				"datacache": "true",
+				"lookupfield": "procom",
+				"units": "persone",
+				"align": "right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1000",
+				"scale": "1",
+				"valuefield": "self",
+				"sizefield": "self",
+				"textfont":"Railway",
+				"linewidth": "2",
+				"valuescale": "1",
+				"title": "Pendolari 2011",
+				"snippet": "Spostamenti entro comune per motivi di lavoro/studio ",
+				"splash": "... caricando la tabella con i spostamenti, ci sono più di 500000 righe. Datemi un po' di tempo ... "
+				}
+			},{
+			"layer": "com2011_g",
+			"field": "procom",
+			"field100": "",
+			"style": {
+				"name":"pendolari_in_label",
+				"type": "CHART|SYMBOL|LABEL|TEXTONLY|VALUES|CATEGORICAL|SIZEP3|FAST|SUM|NOLEGEND",
+				"colorscheme": [
+					"green"],
+				"shadow": "false",
+				"dbtable": "pendolari",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/pendolari_2011_in_out_self.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "https://gjrichter.github.io/viz/IstatPendolari/process_legend.js",
+				"datacache": "true",
+				"lookupfield": "procom",
+				"units": "persone",
+				"align": "top|up",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1000",
+				"scale": "1",
+				"valuefield": "in",
+				"sizefield": "in",
+				"textfont":"Railway",
+				"linewidth": "2",
+				"valuescale": "1",
+				"title": "Pendolari 2011",
+				"snippet": "Arrivi in comune per motivi di lavoro/studi",
+				"splash": "... caricando la tabella con i spostamenti, ci sono più di 500000 righe. Datemi un po' di tempo ... "
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
