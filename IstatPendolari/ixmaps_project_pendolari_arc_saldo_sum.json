@@ -12,7 +12,7 @@
 		"map": "",
 		"attribution": "data: ISTAT",
 		"basemap": "CartoDB - Positron",
-		"legend": "../../app/IstatPendolari/legend_inoutselfsum.html",
+		"legend": "https://gjrichter.github.io/viz/IstatPendolari/legend_inoutselfsum.html",
 		"scaleParam": {
 			"normalSizeScale": "100000"
 			},
