@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="en-us">
+	<meta name="copyright" content="Guenter Richter">
+	<meta name="author" content="service@medienobjekte.de">
+	<meta name="description" content="Interactive &amp; estensible maps in SVG">
+	<meta name="revisit-after" content="30 days">
+	<meta name="distribution" content="Global">
+	<style>
+		.button {
+			font-family: monospace;
+			text-decoration: none;
+			border: #888 solid 1px;
+			padding: 0.2em 0.55em 0.3em 0.55em;
+			border-radius: 20px;
+			width: 1em;
+			color: #888;
+		}
+
+		.toggle .handle {
+			position: relative;
+			top: -20px;
+			left: 0;
+			display: block;
+			width: 50px;
+			height: 27px;
+			background-color: #none;
+			border: #888 solid 1px;
+			border-radius: 19px;
+			-webkit-border-radius: 19px;
+			-moz-border-radius: 19px
+		}
+
+		.toggle .handle:after,
+		.toggle .handle:before {
+			position: absolute;
+			top: 1px;
+			left: 1px;
+			display: block;
+			width: 23px;
+			height: 23px;
+			content: "";
+			background-color: #none;
+			border: #888 solid 1px;
+			border-radius: 30px;
+			-webkit-transition: all .25s ease-in-out;
+			-moz-transition: all .25s ease-in-out;
+			transition: all .25s ease-in-out;
+			-webkit-border-radius: 30px;
+			-moz-border-radius: 30px
+		}
+
+		.toggle input[type=checkbox]:disabled+.handle,
+		.toggle input[type=checkbox]:disabled+.handle:after,
+		.toggle input[type=checkbox]:disabled+.handle:before,
+		.toggle input[type=radio]:disabled+.handle,
+		.toggle input[type=radio]:disabled+.handle:after,
+		.toggle input[type=radio]:disabled+.handle:before {
+			background-color: #e6e9ed;
+			filter: alpha(opacity=60);
+			opacity: .6
+		}
+
+		.toggle input[type=checkbox]:checked+.handle:before,
+		.toggle input[type=radio]:checked+.handle:before {
+			display: none;
+			xxwidth: 50px;
+			background-color: #444
+		}
+
+		.toggle input[type=checkbox]:checked+.handle:after,
+		.toggle input[type=radio]:checked+.handle:after {
+			background-color: #848796;
+			left: 24px;
+		}
+		.ref {
+			text-decoration:underline;	
+		}
+		em {
+			color:black;
+		}
+		
+		.chart-title {
+			font-size:1.2em;
+			line-height:1em;
+			font-weight:300;
+			margin-bottom:0.2em;
+			margin-top:2em
+		}
+	</style>
+
+</head>
+
+<body style="   margin:0px;padding:0px;" onload="">
+	<!-- Container -->
+	<div id="container" style="padding:1em 0;vertical-align:middle;font-size:1.2em;color:#aaa;">
+		<span lang="it">
+			<div>
+				<div style="position:absolute;top:0px;right:20px;pointer-events:none;">
+				</div>
+				<h3 style="margin-bottom:0.5em;color:#000000">Spostamenti giornalieri 2011 </h3>
+				<p>per motivi di lavoro o di studio basato su dati <b><a class="ref" href="https://www.istat.it/it/archivio/139381" target="_blank">ISTAT</a></b> rilevati al 15° Censimento generale della popolazione (9 ottobre 2011)</p>
+				<p><b><span style="color:#000000">archi</span></b> = spostamenti fuori comune</p>
+				<p>cerchi<br>
+					<b><span style="color:green">verde</span></b> = più pendolari in <em>arrivo</em><br>
+					<b><span style="color:red">rosso</span></b> = più pendolari in <em>uscita</em><br>
+					<b><span style="color:#444444">anello nero</span></b> = spostamenti <em>entro comune</em><br>
+				</p>
+				<p style="clear:both;margin-top:0.5em">archi</p>
+				<p class="checkbox" style="margin-top:0.4em;float:left;margin-bottom:-1em">
+					<label class="toggle" style="margin-top:0px;float:left">
+						<span style="margin:0 0.5em 0 3.5em;">animazione</span>
+						<input type="checkbox" id="theme-values-checkbox" checked="checked" onchange="javascript:ixmaps.changeThemeStyle('pendolari_flussi','type:DASH','toggle')">
+						<span class="handle"></span>
+					</label>
+					<label class="toggle" style="margin-top:0px;float:left">
+						<span style="margin:0 0.5em 0 3.5em;">punte</span>
+						<input type="checkbox" id="theme-values-checkbox"  onchange="javascript:ixmaps.changeThemeStyle('pendolari_flussi','type:POINTER','toggle')">
+						<span class=" handle"></span>
+					</label>
+				</p>
+				<p style="clear:both;"></p>
+				<p style="margin-top:0.5em">
+					<a href="javascript:ixmaps.changeThemeStyle('pendolari_flussi','sizepow:-0.1','add')" class="button" style="pointer-events:all">-</a> numnero vettori
+					<a href="javascript:ixmaps.changeThemeStyle('pendolari_flussi','sizepow:0.1','add')" class="button" style="pointer-events:all">+</a>
+					&nbsp;&nbsp;
+					<a href="javascript:ixmaps.changeThemeStyle('pendolari_flussi','normalsizevalue:1.25','factor')" class="button" style="pointer-events:all">-</a> spessore
+					<a href="javascript:ixmaps.changeThemeStyle('pendolari_flussi','normalsizevalue:0.75','factor')" class="button" style="pointer-events:all">+</a>
+				</p>
+				<p style="clear:both;margin-top:1em">simboli</p>
+				<p class="checkbox" style="margin-top:0.4em;float:left;margin-bottom:-1em">
+					<label class="toggle" style="margin-top:0px;float:left">
+						<span style="margin:0 0.5em 0 3.5em;">saldo arrivi/partenze</span>
+						<input type="checkbox" id="theme-values-checkbox" checked="checked" onchange="javascript:ixmaps.toggleTheme('pendolari_saldo')">
+						<span class=" handle"></span>
+					</label>
+					<label class="toggle" style="margin-top:0px;float:left">
+						<span style="margin:0 0.5em 0 3.5em;">entro comune</span>
+						<input type="checkbox" id="theme-values-checkbox" checked="checked" onchange="javascript:ixmaps.toggleTheme('pendolari_self')">
+						<span class=" handle"></span>
+					</label>
+				</p>	
+				<p class="checkbox" style="margin-top:0.4em;float:left;margin-bottom:-1em">
+					<label class="toggle" style="margin-top:0px;float:left">
+						<span style="margin:0 0.5em 0 3.5em;">arrivi/partenze in ciffre</span>
+						<input type="checkbox" id="theme-values-checkbox" checked="checked" onchange="javascript:ixmaps.toggleTheme('pendolari_in_label');ixmaps.toggleTheme('pendolari_out_label');ixmaps.toggleTheme('pendolari_saldo_label')">
+						<span class=" handle"></span>
+					</label>
+				</p>
+				<br>
+				<br>
+				<br>
+
+			</div>
+								 
+			<div id="chart-div" style="clear:both;font-size:1.5em;display:none"></div>	
+																					
+		</span>
+
+	</div>
+	<!-- fine Container -->
+
+	<script type="text/javascript" src="../../../../../data.min.js/data.js"></script>
+	
+	<script>
+		
+		// if this code is loaded, it starts to get a lookup table for pro_com codes -> comune names
+		//
+		var nome_lookup = null;
+		var broker = Data.broker()
+			.addSource("https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2011/comuni_2011.csv.gz","csv")
+			.realize(
+			function(data) {
+			   nome_lookup = data[0].lookupArray("COMUNE", "PRO_COM");
+			}
+		);	
+		
+
+		ixmaps.makeChartHTML = function(szId, szTargetDiv) {
+							   
+        	var __themeObj = ixmaps.getThemeObj(szId.split(":")[0]);
+            var data = ixmaps.getData('map', szId);
+            var szIdA = szId.split(":");
+															  
+			if (data) {
+				$("#" + szTargetDiv).html("");
+				
+				var szHtml = "";
+				szHtml += "<div id='chart-title' class='chart-title'></div>";
+				szHtml += "<div id='chartDiv' style='height:400px;width:400px;overflow:hidden'><svg width='400' height='400' viewBox='-500 -3500 5000 5000'><g id='getchartmenutarget' onmousemove='javascript:ixmaps.onMouseOver();' onmouseout='javascript:ixmaps.onMouseOut();' style='pointer-events:all'></g></svg></div>";
+				$("#" + szTargetDiv).append(szHtml);
+
+				// draw the chart by theme api call 
+
+				 var old_szValueUpper = __themeObj.szValueUpper;
+				__themeObj.szValueUpper = null;
+
+				var szFlag = __themeObj.szFlag.match(/PLOT/) ? "VALUES|XAXIS|ZOOM|BOX|GRID" :
+					(__themeObj.szFlag.match(/POINTER/) ? "VALUES|XAXIS" :
+						"VALUES|XAXIS|ZOOM");
+				
+				if (szId.match(/chart/i)) {
+					var ptNull = __themeObj.drawChart($("#getchartmenutarget")[0], szIdA[1] + "::" + szIdA[3], 30, szFlag);
+				} else {
+					 __themeObj.parent.getChartAll(szId, $("#getchartmenutarget")[0], szFlag);
+				}
+
+				__themeObj.szValueUpper = old_szValueUpper;
+				// size the chart to div extent
+
+				var SVGBox = $("#getchartmenutarget")[0].getBBox();
+				if (SVGBox.width && SVGBox.height) {
+					var scale = Math.max(1, 400 / SVGBox.width);
+					SVGBox.width *= scale;
+					SVGBox.height *= scale;
+					SVGBox.y -= 30;
+					SVGBox.height += 60;
+
+					var size = __themeObj.szFlag.match(/PLOT|HORZ/) ? 400 : 300;
+					var width = size;
+					var height = size / SVGBox.width * SVGBox.height;
+
+					while (height > width) {
+						height *= 0.9;
+					}
+
+					$("#getchartmenutarget")[0].parentNode.setAttribute("height", height);
+					$("#getchartmenutarget")[0].parentNode.setAttribute("viewBox", SVGBox.x + ' ' + SVGBox.y + ' ' + SVGBox.width + ' ' + SVGBox.height);
+				
+				} else {
+					$("#chartDiv").height(0);
+				}
+				
+				if ( __themeObj.szFlag.match(/\b(VECTOR|BEZIER|BUBBLE)\b/) ) {
+
+					szHtml = "";
+
+					var szIdA = szId.split(":");
+					var item = __themeObj.itemA[szIdA[1] + "::" + szIdA[3]];
+					if ( item ) {
+						szHtml += "<div style='margin-top:0.5em'><h3>";
+						var nValue = __themeObj.szSizeField?item.nSize:item.nValuesA[0];
+						var szValue = ixmaps.__formatValue(nValue, 2, "SPACE");
+						var szColor = item.szColor;
+						if (item.szSelectionId) {
+							szHtml += "<span>" + (nome_lookup[item.szSelectionId] || item.szSelectionId);
+							if ( (typeof(item.szSelectionId2) != 'undefined') && (item.szSelectionId2 != 'undefined') ) {
+								console.log(item.szSelectionId2);
+								szHtml += " &rarr; " + (nome_lookup[item.szSelectionId2] || item.szSelectionId2);
+							}
+							szHtml += "</span><br>";
+						}
+						
+						szHtml += "<span style='color:" + (__themeObj.szLineColor||item.szColor) + ";margin-top:0.5em'><b>" + szValue + "</b> " + __themeObj.szUnits + "</span>";
+						szHtml += "</h3>";
+
+						$("#chartDiv").html(szHtml);
+						$("#chartDiv").height("auto");
+					}
+				}
+				var szTmp = __themeObj.szTitle || "";
+				var szTitle = szTmp.length ? "<span style='font-weight:normal'>" + szTmp + "</span><br>" : "";
+				
+				szTmp = __themeObj.szSnippet || "";
+				szTitle = szTmp.length ? "<span style='font-weight:normal'>" + szTmp + "</span><br>" : "";
+
+				szTmp = __themeObj.itemA[szIdA[1] + "::" + szIdA[3]].szTitle || "";
+				szTitle += szTmp.length ? ("<p style='font-weight:normal;font-size:1em;margin-bottom:-0.5em;'>" + szTmp + "</p><br>") : "";
+
+				$("#chart-title").html(szTitle);
+				
+
+				$("#"+szTargetDiv).fadeIn("slow");
+
+			}else{
+				$("#"+szTargetDiv).html("");
+				$("#"+szTargetDiv).hide();
+			}
+		};
+
+		var old_onItemClick = ixmaps.htmlgui_onItemClick;
+		ixmaps.htmlgui_onItemClick = function(item){
+			ixmaps.makeChartHTML(item, "chart-div");
+			return true;	
+		};
+	</script>
+</body>
+
+</html>

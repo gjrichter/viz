@@ -1,0 +1,216 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Thu Jan 09 2020 10:13:02 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "",
+		"attribution": "data: ISTAT",
+		"basemap": "CartoDB - Positron",
+		"legend": "../../app/IstatPendolari/legend_inoutselfsum.html",
+		"scaleParam": {
+			"normalSizeScale": "100000"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "false",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panhidden":"false"
+			},
+		"center": {
+			"lat": "37.45632796865522",
+			"lng": "14.440155029296877"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "com2011_g",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"1",
+					"RGB(238,238,255)",
+					"RGB(0,0,221)"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "com2011_g",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/IstatPendolari/databroker_centroidi_11X.js",
+				"datacache": "true",
+				"itemfield": "PRO_COM",
+				"lookupfield": "Y|X",
+				"child": "true",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "posizioni comuni 2011"
+				}
+			},{
+			"layer": "com2011_g",
+			"field": "procom_lavoro",
+			"field100": "",
+			"style": {
+				"type": "CHART|CATEGORICAL|VECTOR|BEZIER|GRADIENT||DASH|SIZE|AGGREGATE|FAST|SUM",
+				"colorscheme": [
+					"#000000"],
+				"fillopacity": "0.9",
+				"shadow": "false",
+				"dbtable": "pendolari_matrix",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/pendo2011_S_aggregato.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "procom_residenza",
+				"lookupfield2": "procom_lavoro",
+				"units": "persone",
+				"refreshtimeout": "0",
+				"normalsizevalue": "8000.000000000001",
+				"scale": "1",
+				"rangescale": "5",
+				"sizepow": "0.9",
+				"sizefield": "Numero_di_individui",
+				"minvalue": "20",
+				"linecolor": [
+					"#444444"],
+				"valuescale": "1",
+				"maxcharts": "1000",
+				"name": "pendolari_flussi",
+				"title": "Pendolari 2011",
+				"snippet": "<b>Flusso</b> degli spostamenti casa lavoro/studi per destinazione",
+				"splash":"... analizzando più di 500 000 righe ..."
+				}
+			},{
+			"layer": "com2011_g",
+			"field": "procom",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|CATEGORICAL|SIZE|FAST|SUM",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"dbtable": "pendolari",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/pendolari_2011_in_out_self_sum.csv.gz",
+				"dbtableType": "csv",
+				"dbtableExt": "https://gjrichter.github.io/viz/IstatPendolari/process_legend.js",
+				"datacache": "true",
+				"lookupfield": "procom",
+				"units": "persone",
+				"refreshtimeout": "0",
+				"normalsizevalue": "10000",
+				"scale": "1",
+				"sizefield": "self",
+				"linecolor": [
+					"#444444"],
+				"linewidth": "2",
+				"valuescale": "1",
+				"name": "pendolari_self",
+				"title": "Pendolari 2011",
+				"snippet": "Movimenti <b>entro</b> il territorio del <b>comune</b>",
+				"splash": "... caricando la tabella con i spostamenti, ci sono più di 500000 righe. Datemi un po' di tempo ... "
+				}
+			},{
+			"layer": "com2011_g",
+			"field": "saldo",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|SIZE|FAST|NEGATIVEISVALUE|SUM",
+				"colorscheme": [
+					"2",
+					"red",
+					"green"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "pendolari",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/pendolari_2011_in_out_self_sum.csv.gz",
+				"dbtableType": "csv",
+				"dbtableExt": "https://gjrichter.github.io/viz/IstatPendolari/process_legend.js",
+				"datacache": "true",
+				"lookupfield": "procom",
+				"ranges": [
+					"-1000000",
+					"0",
+					"1000000"],
+				"units": "persone",
+				"refreshtimeout": "0",
+				"normalsizevalue": "10000",
+				"scale": "1",
+				"linewidth": "2",
+				"valuescale": "1",
+				"name": "pendolari_saldo",
+				"title": "Pendolari 2011",
+				"snippet": "<b>Saldo</b> di <b>entrate e uscite</b> per motivi di lavoro o studio",
+				"splash": "... caricando la tabella con i spostamenti, ci sono più di 500000 righe. Datemi un po' di tempo ... "
+				}
+			},{
+			"layer": "com2011_g",
+			"field": "saldo",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|VALUES|TEXTONLY|SIZEP4|FAST|NEGATIVEISVALUE|SUM",
+				"colorscheme": [
+					"2",
+					"red",
+					"green"],
+				"align":"below",
+				"shadow": "false",
+				"dbtable": "pendolari",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/pendolari_2011_in_out_self_sum.csv.gz",
+				"dbtableType": "csv",
+				"dbtableExt": "https://gjrichter.github.io/viz/IstatPendolari/process_legend.js",
+				"datacache": "true",
+				"lookupfield": "procom",
+				"ranges": [
+					"-1000000",
+					"0",
+					"1000000"],
+				"units": "persone",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1000",
+				"scale": "1",
+				"valuescale": "1",
+				"valuedecimals":"0",
+				"chartupper":"1:250000",
+				"name": "pendolari_saldo_label",
+				"title": "Pendolari 2011",
+				"snippet": "<b>Saldo</b> di <b>entrate e uscite</b> per motivi di lavoro o studio",
+				"splash": "... caricando la tabella con i spostamenti, ci sono più di 500000 righe. Datemi un po' di tempo ... "
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
