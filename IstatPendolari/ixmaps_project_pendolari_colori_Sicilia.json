@@ -74,7 +74,7 @@
 				"normalsizevalue": "15625",
 				"scale": "1",
 				"rangescale": "5",
-				"sizepow": "0.7",
+				"sizepow": "1.3",
 				"sizefield": "Numero_di_individui",
 				"minvalue": "20",
 				"valuescale": "1",
