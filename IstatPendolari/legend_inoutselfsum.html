@@ -88,7 +88,9 @@
 			line-height:1em;
 			font-weight:300;
 			margin-bottom:0.2em;
-			margin-top:2em
+			margin-top:2em;
+			border-top:#888 solid 1px;
+			padding-top:1em;
 		}
 	</style>
 
@@ -283,6 +285,7 @@
 
 		var old_onItemClick = ixmaps.htmlgui_onItemClick;
 		ixmaps.htmlgui_onItemClick = function(item){
+			ixmaps.makeChartHTML(item, "chart-div");
 			ixmaps.makeChartHTML(item, "chart-div");
 			return true;	
 		};
