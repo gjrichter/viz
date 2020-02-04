@@ -76,7 +76,7 @@
 			"field": "num_ebikes_available|num_bikes_available|num_docks_available",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|CENTER|RINGS|LINEAR|SIZE|FAST|SUM",
+				"type": "CHART|SYMBOL|SEQUENCE|CENTER|RINGS|LINEAR|SIZE||CENTERVALUES|SUM|GAUGE",
 				"colorscheme": [
 					"red",
 					"#39A2E1",

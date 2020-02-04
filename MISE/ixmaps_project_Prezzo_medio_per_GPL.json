@@ -65,7 +65,7 @@
 				"filter": "WHERE descCarburante.1 like GPL",
 				"dbtable": "prezzi_tipo_latlon",
 				"dbtableType": "ext",
-				"dbtableExt": "../../app/MISE/databroker.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/MISE/databroker.js",
 				"datacache": "true",
 				"lookupfield": "Latitudine.2|Longitudine.2",
 				"showdata": "true",

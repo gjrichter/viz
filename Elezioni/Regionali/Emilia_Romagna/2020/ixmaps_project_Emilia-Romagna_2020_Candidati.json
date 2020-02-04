@@ -1,0 +1,101 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"about": "<h1>Elezioni Regionale 2020 Emilia-Romagna</h1><h4>Risultati dei 3 candidati con maggiore successo per comune:<br>- il <b>colore</b> dei <b>territori dei comuni</b> rappresenta il successo harmonizzato dei candidati. Il <b>successo harmonizzato</b> è un indice tra 0 e 1 rispettivo al risultato minimo e massimo del candidato.<br>- le <b>frecce</b> indicano quanto il risultato di un candidato e <b>sopra o sotto le media</b> regionale<br>- <b>intensità</b> e <b>grandzza</b> grafici rappresentano il <b>numero</b> di <b>votatanti</b> per comune<h4>",
+		"created": "Fri Jan 31 2020 11:20:30 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2019/italia_comuni_2019_g_nome_upper_eligendo_ER.svgz",
+		"attribution": "",
+		"basemap": "Stamen - toner-lite",
+		"legend": "",
+		"scaleParam": {
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "44.40631625266138",
+			"lng": "11.049499511718752"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "Com2019_name_upper",
+			"field": "BONACCINI|BORGONZONI|BENINI",
+			"field100": "Total",
+			"style": {
+				"type": "CHOROPLETH|COMPOSECOLOR|SUBTRACTIVE|HORZ|SIMPLELEGEND|DOPACITY|MEAN",
+				"colorscheme": [
+					"#FF0000",
+					"#0000FF",
+					"#FFFF00"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ElezioniRegionaliER2020/candidati_comune.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ElezioniRegionaliER2020/process_data.js",
+				"datacache": "true",
+				"lookupfield": "comune",
+				"symbols": [
+					"circle"],
+				"values": [
+					"BONACCINI",
+					"BORGONZONI",
+					"BENINI"],
+				"label": [
+					"BONACCINI",
+					"BORGONZONI",
+					"BENINI"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"alphafield": "Total",
+				"alphafield100": "$density$",
+				"dopacitypow": "5",
+				"dopacityscale": "2",
+				"linewidth": "0",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"clipparts": "10",
+				"title": "Emilia-Romagna 2020",
+				"snippet": "<b>il colore comune</b> rappresenta il successo harmonizzato dei candidati, l'intensità pari n° elettori",
+				"description": "fonte: Eligendo > Matteo Fortini > <a href='https://github.com/mfortini/ElezioniRegionaliER2020?fbclid=IwAR35rDIT5Joh0xBz4gwY3RZu0dJzznGojLdtnGu9DEpJeo9pg1WtoDJU4d8' target='_blank'>GitHub</a>"
+				}
+			}],
+	"layerMask": {
+		}
+	}

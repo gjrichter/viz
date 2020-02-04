@@ -13,11 +13,11 @@
 		"basemap": "CartoDB - Dark matter",
 		"scaleParam": {
 			"lineScaling": "13.31829497535944",
-			"normalSizeScale": "1528452"
+			"normalSizeScale": "53572"
 			},
 		"options": {
 			"featurescaling": "true",
-			"objectscaling": "true",
+			"objectscaling": "dynamic",
 			"clipmap": "true",
 			"clipmapdynamic": "true",
 			"dynamiclabel": "NOSIZE",
@@ -45,8 +45,8 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "45.47132711834203",
-			"lng": "9.246196746826174"
+			"lat": "45.4541101055869",
+			"lng": "9.239501953125002"
 			},
 		"zoom": "12"
 		},
@@ -81,7 +81,8 @@
 				"centerpart": "max",
 				"clipparts": "0",
 				"title": "Anagrafe Iscrizioni per Quartiere",
-				"snippet": "Stranieri per stato di provenienza"
+				"snippet": "Stranieri per stato di provenienza",
+				"splash":"scaricando dati ..."
 				}
 			}],
 	"layerMask": {

@@ -1,0 +1,97 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Fri Jan 31 2020 11:14:22 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2019/italia_comuni_2019_g_nome_upper_eligendo.svgz",
+		"attribution": "",
+		"basemap": "Stamen - toner-lite",
+		"legend": "",
+		"scaleParam": {
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "44.40337295966717",
+			"lng": "11.049499511718752"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "Com2019_name_upper",
+			"field": "PARTITO DEMOCRATICO|LEGA NORD|MOVIMENTO 5 STELLE BEPPEGRILLO.IT|FRATELLI D'ITALIA - ALLEANZA NAZIONALE|FORZA ITALIA",
+			"field100": "Total",
+			"style": {
+				"type": "CHOROPLETH|HARMONIZE|DOMINANT|HORZ|SORT|SIMPLELEGEND|DOPACITY|MEAN",
+				"colorscheme": [
+					"#FF0000",
+					"#024294",
+					"#F8E127",
+					"#000088",
+					"#23ABE5"],
+				"label": [
+					"PARTITO DEMOCRATICO",
+					"LEGA",
+					"MOVIMENTO 5 STELLE",
+					"FRATELLI D'ITALIA",
+					"FORZA ITALIA"],
+				"fillopacity": "0.7",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ElezioniRegionaliER2014/regionali_23-11-2014_scrutcomur_0.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ElezioniRegionaliER2020/process_data_liste_2014.js",
+				"datacache": "true",
+				"lookupfield": "COMUNE",
+				"units": "*)",
+				"linecolor": "none",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"alphafield": "Total",
+				"alphafield100": "$density$",
+				"dopacitypow": "3",
+				"dopacityscale": "2",
+				"linewidth": "0",
+				"valuescale": "1",
+				"valuedecimals": "2",
+				"title": "Emilia-Romagna 2014",
+				"snippet": "Colore composto dal indice harmonizzato*) del Partito",
+				"description": ")* indice harmonizzato = valore tra 0 e 1 che rappresenta il risultato del partito relativo al minimo e massimo nazionale del partito<br>fonte dati: <a href='https://elezioni.interno.gov.it/report' target='_blank'>Eligendo - Ministero dell'Interno</a>"
+				}
+			}],
+	"layerMask": {
+		}
+	}

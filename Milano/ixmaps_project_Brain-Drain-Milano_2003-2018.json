@@ -53,7 +53,7 @@
 			"field": "dest",
 			"field100": "",
 			"style": {
-				"type": "CHART|VECTOR|BEZIER|POINTER|DASH|GRADIENT|GAP|SIZE|AGGREGATE|FAST|EXACT|SUM",
+				"type": "CHART|VECTOR|BEZIER|SHORT|POINTER|DASH|GRADIENT|GAP|SIZE|AGGREGATE|FAST|EXACT|SUM",
 				"colorscheme": [
 					"4712",
 					"fruit"],
@@ -76,7 +76,8 @@
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"centerpart": "max",
-				"clipparts": "0",
+				"gapsize": "30",
+				"rangescale":"2",
 				"title": "Brain-Drain-Milano 2003-2018",
 				"snippet": "giovani laureati tra 25 e 30 anni",
 				"splash":"caricando 9mB di dati ... un po' di pazienza"

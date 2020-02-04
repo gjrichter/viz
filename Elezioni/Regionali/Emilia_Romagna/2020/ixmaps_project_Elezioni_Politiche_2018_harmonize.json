@@ -1,0 +1,98 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Feb 03 2020 11:09:06 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2018/italia_comuni_2018_s_pro_com_ER.svgz",
+		"attribution": "",
+		"basemap": "Stamen - toner-lite",
+		"legend": "",
+		"scaleParam": {
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "44.40337295966717",
+			"lng": "11.049499511718752"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "Com2018_pro_com",
+			"field": "PARTITO DEMOCRATICO|MOVIMENTO 5 STELLE|LEGA|FORZA ITALIA|FRATELLI D'ITALIA CON GIORGIA MELONI",
+			"field100": "Total",
+			"style": {
+				"type": "CHOROPLETH|HORZ|SORT|COMPOSECOLOR|HARMONIZE|DOPACITYMAX|SIMPLELEGEND",
+				"colorscheme": [
+					"RGB(237,28,36)",
+					"RGB(238,217,36)",
+					"RGB(0,48,160)",
+					"RGB(5,177,240)",
+					"RGB(38,140,204)"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "scrutiniCIComuni_voti",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ElezioniPolitiche2018/Camera2018_scrutini_pivot.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "pro_com",
+				"child": "true",
+				"label": [
+					"PARTITO DEMOCRATICO",
+					"MOVIMENTO 5 STELLE",
+					"LEGA",
+					"FORZA ITALIA",
+					"FRATELLI D'ITALIA"],
+				"units": "%",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"alphafield": "Total",
+				"alphafield100": "$density$",
+				"dopacitypow": "3",
+				"dopacityscale": "2",
+				"linewidth": "0",
+				"valuescale": "1",
+				"valuedecimals": "2",
+				"title": "Elezioni Politiche 2018",
+				"snippet": "Colore composto dal indice harmonizzato*) del Partito",
+				"description": ")* indice harmonizzato = valore tra 0 e 1 che rappresenta il risultato del partito relativo al minimo e massimo nazionale del partito<br>fonte dati: <a href='https://elezioni.interno.gov.it/report' target='_blank'>Eligendo - Ministero dell'Interno</a>"
+				}
+			}],
+	"layerMask": {
+		}
+	}
