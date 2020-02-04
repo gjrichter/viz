@@ -11,11 +11,11 @@ window.ixmaps = window.ixmaps || {};
 
 		ixmaps.prezzi_tipo_latlon = function(){
 
-			Data.feed({source:"https://raw.githubusercontent.com/gjrichter/viz/master/MISE/anagrafica_impianti_attivi.csv",
+			Data.feed({source:"https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/uploads/anagrafica_impianti_attivi.csv.gz",
 					   type:"csv",
 					   parser: {comments: "Estrazione"}
 					  }).load(function(impianti){
-			Data.feed({source:"https://raw.githubusercontent.com/gjrichter/viz/master/MISE/prezzo_alle_8.csv",
+			Data.feed({source:"https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/uploads/prezzo_alle_8.csv.gz",
 					   type:"csv",
 					   parser: {comments: "Estrazione"}
 					  }).load(function(prezzi){
