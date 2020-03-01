@@ -12,7 +12,7 @@
 		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "powered by iXMaps",
 		"basemap": "CartoDB - Positron",
-		"legend": "<h1>COVID-19 - new cases <br> last 28 days</h1><h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a></h4><h4>Eache circle represents the new cases of the past 28 days clockwise from day -27 to today</h4>",
+		"legend": "<h1>COVID-19 - new cases <br> last 28 days</h1><h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a></h4><h4><b>Each circle</b> represents the <b>new cases</b> of the <b>past 28 days</b> clockwise from day -27 to today</h4>",
 		"scaleParam": {
 			"normalSizeScale": "27682087"
 			},
