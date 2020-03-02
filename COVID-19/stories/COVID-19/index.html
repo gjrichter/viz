@@ -14,8 +14,8 @@
 	<!-- BOOTSTRAP CORE STYLE CSS -->
 	<link href="assets/css/bootstrap.css" rel="stylesheet" />
 	<!-- GOOGLE FONT -->
-	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
 
 
 	<link href="assets/css/icomoon.css" rel="stylesheet" />
@@ -104,7 +104,7 @@
 
 			<div class="slide container" style="color:#DEA314">
 				<div class="intro up down">
-					<h3 class="title"><b><br>COVID-19</b> nuovi casi <b>24 ore</b></h3>
+					<h3 class="title"><b><br>COVID-19</b><br> nuovi casi <b>24 ore</b></h3>
 					<h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a></h4>
 					<p></p>
 					<p>
@@ -121,7 +121,7 @@
 
 			<div class="slide container" style="color:#DEA314">
 				<div class="intro up down">
-					<h3 class="title"><b><br>COVID-19</b> nuovi casi <b>28 giorni</b></h3>
+					<h3 class="title"><b><br>COVID-19</b></br> nuovi casi <b>28 giorni</b></h3>
 					<h4>scala:
 						<a href="javascript:ixmaps.changeThemeStyle('actual','type:LOG','add')" title='change scale'>logaritmica</a> / <a href="javascript:ixmaps.changeThemeStyle('actual','type:LOG','remove')" title='change scale'>lineare</a></h4>
 					<h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a></h4>
@@ -140,7 +140,7 @@
 
 			<div class="slide container" style="color:#DEA314">
 				<div class="intro up down">
-					<h3 class="title"><b><br>COVID-19</b> casi confermati <b>28 giorni</b></h3>
+					<h3 class="title"><b><br>COVID-19</br> casi confermati </b>28 giorni</h3>
 					<h4>scala:
 						<a href="javascript:ixmaps.changeThemeStyle('actual','type:LOG','add')" title='change scale'>logaritmica</a> / <a href="javascript:ixmaps.changeThemeStyle('actual','type:LOG','remove')" title='change scale'>lineare</a></h4>
 					<h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a></h4>
@@ -159,7 +159,7 @@
 
 			<div class="slide container" style="color:#DEA314">
 				<div class="intro up down">.
-					<h3 class="title"><b><br>COVID-19</b> nuovi casi 28 giorni</h3>
+					<h3 class="title"><b><br>COVID-19</b><br>nuovi casi <b>28 giorni</b></h3>
 					<h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a></h4>
 					<h4 style="color:#006688">Una visualizazione del sviluppo temporale dei nuovi casi per le unltimi 28 ore</h4>
 					<h4 style="color:#006688">Ogni grafico rappresenta in senso orario giorno per giuorno i nuovi casi per gli ultimi 28 giorni.</h4>
@@ -383,8 +383,9 @@
 			var __slide = null;
 			var __fMoveActive = false;
 
-			var __onChange = function() {
+			__onChange = function() {
 				if (!ixmaps.initialized) {
+					setTimeout("__onChange()",100);
 					return;
 				}
 				if (ixmaps.fMoveToSection) {
@@ -534,11 +535,6 @@
 
 				mymap = map;
 				
-				setTimeout("eval('"+$("#theme_11").attr("href")+"')",1000);
-
-				//mymap.loadProject("https://gjrichter.github.io/viz/COVID-19/projects/ixmaps_project_JHU_CCSEconfirmed_actual_dynamic_2level_light_real_size.json"
-				//map.loadProject("../../../../../dev/rc/ixmaps/projects/Palermo/ixmaps_project_palermo_stranieri_per_cittadinanza_fiori_watercolor_III.json");
-
 			});
 
 		}).fail(function() {

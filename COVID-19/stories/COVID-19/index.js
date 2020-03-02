@@ -302,6 +302,10 @@
 	};
 
 		ixmaps.htmlgui_onItemClick = function(szId){
+			
+			var x = window.location.href.split("/");
+			x.pop();
+			var root = x.join('/');
 
 			if(szId.match(/theme/)){
 				var data = ixmaps.getData('map',szId);
