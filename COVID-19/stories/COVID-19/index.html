@@ -91,7 +91,7 @@
 					<p>
 						<a class="theme button" href='javascript:mymap.loadProject("https://gjrichter.github.io/viz/COVID-19/projects/ixmaps_project_JHU_CCSEconfirmed_actual_dynamic_2level_light_real_size.json","keepView");' style='display:none'>dummy</a><br>
 					</p>
-					<p><b>ingrandisci la mappa</b> per dati particolarizzati per <a href='javascript:ixmaps.setView([43.71950494269109,14.3096923828125],7)'>Province d'Italia</a></p>
+					<p><b>ingrandisci la mappa</b> per dati particolarizzati per <a href='javascript:ixmaps.setView([43.71950494269109,14.3096923828125],7)'><h4>Province d'Italia</h4></a></p>
 					<p><b>scrolla giù</b> per altri visualizzazioni</p>
 				</div>
 			</div>
@@ -175,17 +175,34 @@
 
 		<div class="section">
 
-			<!-- nuovi casi 28 giorni startburst -->
+			<!-- nuovi casi time series -->
 
 			<div class="slide container" style="color:#DEA314">
 				<div class="intro up down">.
 					<h3 class="title"><b><br>COVID-19</b><br>time series <b>23.01.2020</b> to <b>today</b></h3>
 					<h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a></h4>
-					<h4 style="color:#006688">Una visualizazione del sviluppo temporale dei casi confermati</h4>
+					<h4 style="color:#006688">Una visualizazione del sviluppo temporale<br> dei <b>casi confermati cumultivi</b></h4>
 					<h4>scala:
 						<a href="javascript:ixmaps.changeThemeStyle('clip','type:SIZELOG','remove')" title='change scale'>quadratica</a> / <a href="javascript:ixmaps.changeThemeStyle('clip','type:SIZELOG','add')" title='change scale'>logaritmica</a></h4>
 					<p>
 						<a class="theme button" href='javascript:mymap.loadProject("https://gjrichter.github.io/viz/COVID-19/projects/ixmaps_project_JHU_CCSEconfirmed_clip_light.json","keepView");' style='display:none'>dummy</a><br>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	
+		<div class="section">
+
+			<!-- nuovi casi time series DIFF -->
+
+			<div class="slide container" style="color:#DEA314">
+				<div class="intro up down">.
+					<h3 class="title"><b><br>COVID-19</b><br>time series <b>23.01.2020</b> to <b>today</b></h3>
+					<h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a></h4>
+					<h4 style="color:#006688">Una visualizazione del sviluppo temporale<br> dei <b>casi nuovi / giorno</b></h4>
+					<p>
+						<a class="theme button" href='javascript:mymap.loadProject("https://gjrichter.github.io/viz/COVID-19/projects/ixmaps_project_JHU_CCSEconfirmed_clip_light_diff.json","keepView");' style='display:none'>dummy</a><br>
 					</p>
 				</div>
 			</div>
@@ -430,7 +447,7 @@
 				],
 				'navigation': true,
 				'navigationPosition': 'right',
-				'navigationTooltips': ['Situazione attuale', 'ultimi 24 ore', 'nuovi 28 giorni', '28 giorni', 'nuovi 28 giorni', 'Attribuzioni'],
+				'navigationTooltips': ['Situazione attuale', 'ultimi 24 ore', 'nuovi 28 giorni', '28 giorni', 'nuovi 28 giorni', 'serie storica cumulativa','serie storica per giorno','Attribuzioni'],
 
 				'afterLoad': function(a, index, c, d) {
 					__section = index;
