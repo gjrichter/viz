@@ -19,7 +19,6 @@ window.ixmaps.themeDataObj = window.ixmaps.themeDataObj || {};
 		columnsA.shift();
 		columnsA.shift();
 		columnsA.shift();
-		columnsA.shift();
 		
 		// set as data fields in actual theme
 		options.theme.szFields = columnsA.slice().join("|");
