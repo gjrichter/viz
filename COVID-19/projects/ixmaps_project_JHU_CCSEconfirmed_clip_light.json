@@ -66,7 +66,7 @@
 				"dbtable": "themeDataObj",
 				"dbtableUrl": "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv",
 				"dbtableType": "csv",
-				"dbtableExt": "../../projects/COVID-19/process_clip.js",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/process_clip.js",
 				"datacache": "true",
 				"lookupfield": "Lat|Long",
 				"label": [
