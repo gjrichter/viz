@@ -147,7 +147,7 @@
 				"clipframerate": "12",
 				"normalsizevalue":"100",
 				"title": "COVID-19",
-				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
+				"snippet": "<p>new cases day per day</p><br>fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
 				"description": "aggiornato: 3/1/20"
 				}
 			}],
