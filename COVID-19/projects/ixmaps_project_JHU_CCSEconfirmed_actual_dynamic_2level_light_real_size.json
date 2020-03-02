@@ -92,7 +92,7 @@
 				"type": "CHART|AURA|BUBBLE|SIZE|CATEGORICAL|SUM|VALUES",
 				"colorscheme": [
 					"#006688"],
-				"fillopacity": "0.5",
+				"fillopacity": "0.2",
 				"shadow": "false",
 				"filter": "WHERE Country/Region != Others",
 				"dbtable": "themeDataObj",
