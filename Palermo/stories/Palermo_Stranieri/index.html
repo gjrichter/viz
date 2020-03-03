@@ -88,7 +88,7 @@
 			<div class="slide container" style="color:#BB012A">
 				<div class="intro down">
 					<h3 class="title"><b>Palermo - Città Colorata</b></h3>
-					<p>.
+					<p>
 						<a class="theme button" href='javascript:mymap.loadProject("https://gjrichter.github.io/viz/Palermo/projects/ixmaps_project_palermo_stranieri_per_cittadinanza_fiori_watercolor_III.json");' style='display:none'>dummy</a><br>
 					</p>
 					<p>fonte: Città di Palermo, GB Vitrano, A Borruso </p>
@@ -295,8 +295,9 @@
 			var __slide = null;
 			var __fMoveActive = false;
 
-			var __onChange = function() {
+			__onChange = function() {
 				if (!ixmaps.initialized) {
+					setTimeout("__onChange()",100);
 					return;
 				}
 				if (ixmaps.fMoveToSection) {

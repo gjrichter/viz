@@ -76,7 +76,7 @@
 				"valuedecimals": "0",
 				"centerpart": "max",
 				"clipparts": "0",
-				"title": "palermo stranieri per cittadinanza",
+				"title": "Stranieri per cittadinanza",
 				"description":"Fonte: Data.word, gbvitrano, <a href='https://data.world/gbvitrano/popolazione-residente-a-palermo-upl/workspace/file?filename=Dati+%40aborruso.csv' target='_blank'>Popolazione residente a Palermo - 2018 - UPL - official data</a> <a href='javascript:ixmaps.showAbout()'><i class='icon icon-info' style='font-size:1em;color:#888888'/></a> <a href='javascript:ixmaps.loadStoryTool(\"./filter.html\",{frame:true})'><i class='icon icon-filter' style='font-size:1em;color:#888888'/></a>"
 				}
 			}],
