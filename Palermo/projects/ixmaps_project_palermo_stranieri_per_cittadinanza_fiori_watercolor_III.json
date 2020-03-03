@@ -1,0 +1,85 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "<h1>Colori di una Città</h1><p>Visualizzazione di un dataset di Open Data Sicilia basato su dati della città di Palermo</p><p>Il dataset si trova su data.world:<br><a href='https://data.world/gbvitrano/popolazione-residente-a-palermo-upl/workspace/file?filename=Dati+%40aborruso.csv' target='_blank'>Popolazione residente a Palermo - 2018 - UPL - official data</a> <ul><li>clicca sulla legenda per vedere singole provenienze</li><li>clicca sui grafici per vedere i dati</li></ul></p>",
+		"created": "Fri Jun 28 2019 18:48:35 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Palermo/palermo_upl.svgz",
+		"basemap": "Stamen - watercolor",
+		"scaleParam": {
+			"normalSizeScale": "58729"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "38.11693402149081",
+			"lng": "13.373107910156252"
+			},
+		"zoom": "14"
+		},
+	"themes": [{
+			"layer": "Palermo_UPL",
+			"field": "Cittadinaza",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|STAR|SORT|DOWN|AGGREGATE|FAST|EXACT|VALUES|SUM|ZEROISNOTVALUE",
+				"colorscheme": [
+					"129",
+					"kmeans"],
+				"shadow": "true",
+				"filter": "WHERE \"Cittadinaza\" != \"Italiani\" ",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://query.data.world/s/pb5cg7col2al5eudlpwxgsf3iosmz3",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "UPL",
+				"child": "true",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"scale": "1.5",
+				"rangescale": "2",
+				"sizefield": "Residenti",
+				"titlefield": "UPL_nome",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"centerpart": "max",
+				"clipparts": "0",
+				"title": "palermo stranieri per cittadinanza",
+				"description":"Fonte: Data.word, gbvitrano, <a href='https://data.world/gbvitrano/popolazione-residente-a-palermo-upl/workspace/file?filename=Dati+%40aborruso.csv' target='_blank'>Popolazione residente a Palermo - 2018 - UPL - official data</a> <a href='javascript:ixmaps.showAbout()'><i class='icon icon-info' style='font-size:1em;color:#888888'/></a> <a href='javascript:ixmaps.loadStoryTool(\"./filter.html\",{frame:true})'><i class='icon icon-filter' style='font-size:1em;color:#888888'/></a>"
+				}
+			}],
+	"layerMask": {
+		}
+	}
