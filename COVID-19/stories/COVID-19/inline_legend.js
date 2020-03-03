@@ -450,17 +450,25 @@ ixmaps.legend = ixmaps.legend || {};
                 fColorScheme = true;
             }
         }
+		
+		if (themeObj.szFlag.match(/CLIP/)){
+			nSumCount = themeObj.partsA[themeObj.nActualFrame].nSum;		
+		}
         
         // show count sum in legend
         if (nSumCount && !themeObj.szFlag.match(/BAR/) && !(ixmaps.layout == "minimal") ){
             var szSum = ixmaps.__formatValue(nSumCount,nDecimals,"SPACE") + " " + (themeObj.szLegendUnits||themeObj.szUnits||"");
             szHtml += "<div style='font-size:4em;font-weight:light;margin:0.2em 0em 0.7em 0em;'>" + szSum + "</div>";
         }
-        
+  		      
+ 		if (themeObj.szFlag.match(/CLIP/)){
+			return szHtml;
+		}
+		
         // clip legend rows !!
         nRows = Math.min(500, Math.min(colorA.length, labelA.length));
 
-        if (fColorScheme &&
+        if (fColorScheme && !themeObj.szFlag.match(/CLIP/) &&
             ((themeObj.partsA.length > 2) ||
                 themeObj.szLabelA ||
                 themeObj.szFlag.match(/CATEGORICAL/) ||

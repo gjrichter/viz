@@ -58,7 +58,7 @@
 			"field100": "",
 			"style": {
 				"name":"clip",
-				"type": "CHART|VALUES|BUBBLE|SIZELOG|SUM|AURA|CLIP|LOOP|NOLEGEND",
+				"type": "CHART|VALUES|BUBBLE|SIZELOG|SUM|AURA|CLIP|LOOP",
 				"colorscheme": [
 					"#dd0000"],
 				"fillopacity": "0.1",
