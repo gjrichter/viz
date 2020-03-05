@@ -12,7 +12,7 @@
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_uts.svgz",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
-		"legend": "<h3>Visualizzazione di un dataset curato da OnData con serie storiche dei casi di COVID-19 dettagliato per le Province d'Itala.</h3><h3>Il dataset si trova &rarr; <a href='http://blog.ondata.it/coronavirus-abbiamo-trasformato-i-dati-ufficiali-in-formato-machine-readable-ma-chiediamo-alle-istituzioni-di-farlo-da-sole/' target='_blank'><b>qui</b></a></h3><br><h3>La visualizzazione contiene:<ul><li>numero attuale di casi</li><li>serie storica dei casi<br>curve: <a href='javascript:ixmaps.changeThemeStyle(\"curve\",\"type:LOG\",\"toggle\")'>logaritmico&nbsp;o&nbsp;lineare</li></ul></h3>",
+		"legend": "<h3>Visualizzazione di un dataset curato da OnData con serie storiche dei casi di COVID-19 dettagliato per le Province d'Itala.</h3><h3>Il dataset si trova &rarr; <a href='http://blog.ondata.it/coronavirus-abbiamo-trasformato-i-dati-ufficiali-in-formato-machine-readable-ma-chiediamo-alle-istituzioni-di-farlo-da-sole/' target='_blank'><b>qui</b></a></h3><br><h3>La visualizzazione:<ul><li>numero attuale di casi</li><li>serie storica dei casi<br>curve: <a href='javascript:ixmaps.changeThemeStyle(\"curve\",\"type:LOG\",\"toggle\")'>logaritmico&nbsp;o&nbsp;lineare</li></ul></h3>",
 		"item": "",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
