@@ -1,0 +1,164 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Thu Mar 05 2020 11:55:19 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/ISTAT 2019 Province/italia_province_2019_g_cod_uts.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h3>Visualizzazione del dataset di OnData dei casi di COVID-19 per Province</h3><h3><ul><li>numero casi</li><li>storica dei casi <a href='javascript:ixmaps.changeThemeStyle(\"curve\",\"type:LOG\",\"toggle\")'>logaritmico&nbsp;o&nbsp;lineare</li></ul></h3>",
+		"item": "",
+		"scaleParam": {
+			"lineScaling": "4.213991769547325",
+			"normalSizeScale": "2319015"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.70759350405296",
+			"lng": "12.738647460937502"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "Prov2019_nome",
+			"field": "numero",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|LOG|DOPACITYMAX|DTEXT|VALUEBACKGROUND",
+				"colorscheme": [
+					"7",
+					"#FFFDD8",
+					"#ff8800",
+					"3colors",
+					"#FCBA6C"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"filter": "WHERE \"datetime\" = \"2020-03-04\"",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/covid19italia/master/publication/provinceArchivioISTAT.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "codiceISTAT",
+				"lookuptonumber": "true",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"dopacitypow": "3",
+				"dopacityscale": "2",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Casi per Provincia",
+				"snippet": "aggiornato al 2020-03-04"
+				}
+			},{
+			"layer": "Prov2019_nome",
+			"field": "numero",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|VALUES|SIZELOG",
+				"colorscheme": [
+					"red"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"filter": "WHERE \"datetime\" = \"2020-03-04\"",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/covid19italia/master/publication/provinceArchivioISTAT.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "codiceISTAT",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"dopacitypow": "3",
+				"dopacityscale": "2",
+				"textcolor": "#aa2200",
+				"linecolor": [
+					"#880000"],
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Casi per Provincia",
+				"snippet": "aggiornato al 2020-03-04"
+				}
+			},{
+			"layer": "Prov2019_nome",
+			"field": "datetime",
+			"field100": "",
+			"style": {
+				"name":"curve",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|FIXSIZE|AGGREGATE|RECT|COMPATIBLE|CATEGORICAL|SUM|GRIDSIZE",
+				"colorscheme": [
+					"#dd6600"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"filter": "WHERE \"provincia\" NOT \"aggio\"",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/covid19italia/master/publication/provinceArchivioISTAT.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "codiceISTAT",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"values": [
+					"2020-03-02",
+					"2020-03-03",
+					"2020-03-04"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "3",
+				"scale": "0.85",
+				"rangescale": "1.2",
+				"sizefield": "numero",
+				"minvalue": "0",
+				"boxopacity": "0.2",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"aggregationscale": [
+					"1:1",
+					"150px",
+					"1:500000",
+					"100px"],
+				"title": "Giorno per giorno",
+				"snippet": "dal 2020-03-02 al 2020-03-04"
+				}
+			}],
+	"layerMask": {
+		}
+	}
