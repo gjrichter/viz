@@ -9,7 +9,7 @@
 		"created": "Thu Mar 05 2020 11:55:19 GMT+0100 (Ora standard dell’Europa centrale)"
 		},
 	"map": {
-		"map": "../../maps/svg/maps/ISTAT 2019 Province/italia_province_2019_g_cod_uts.svgz",
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_uts.svgz",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
 		"legend": "<h3>Visualizzazione del dataset di OnData dei casi di COVID-19 per Province</h3><h3><ul><li>numero casi</li><li>storica dei casi <a href='javascript:ixmaps.changeThemeStyle(\"curve\",\"type:LOG\",\"toggle\")'>logaritmico&nbsp;o&nbsp;lineare</li></ul></h3>",
