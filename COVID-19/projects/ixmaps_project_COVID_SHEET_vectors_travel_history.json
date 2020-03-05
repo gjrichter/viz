@@ -1,0 +1,133 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Thu Mar 05 2020 18:11:45 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Dark matter",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "55364168"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "29.99300228455108",
+			"lng": "390.84960937500006"
+			},
+		"zoom": "3"
+		},
+	"themes": [{
+			"layer": "Country",
+			"field": "country",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND",
+				"colorscheme": [
+					"red"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "coordiantes",
+				"dbtableUrl": "https://docs.google.com/spreadsheets/d/1itaohdPiAeniCXNlntNztZ_oRvjh0HsGuJXUJWET008/gviz/tq?tqx=out:csv&gid=02",
+				"dbtableType": "csv",
+				"datacache": "false",
+				"itemfield": "country",
+				"lookupfield": "latitude|longitude",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Positions"
+				}
+			},{
+			"layer": "Country",
+			"field": "city",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND",
+				"colorscheme": [
+					"red"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "coordiantes_II",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/cn.csv",
+				"dbtableType": "csv",
+				"datacache": "false",
+				"itemfield": "city",
+				"lookupfield": "lat|lng",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Positions"
+				}
+			},{
+			"layer": "Country",
+			"field": "travel_history_location",
+			"field100": "",
+			"style": {
+				"type": "CHART|VECTOR|FADEIN|DASH|REVERSE|BEZIER|POINTER|CATEGORICAL|FAST|AGGREGATE|SUM|UNDEFINEDISNOTVALUE",
+				"colorscheme": [
+					"203",
+					"harvest"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"filter": "WHERE \"travel_history_location\" LIKE \"*\"",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://docs.google.com/spreadsheets/d/1itaohdPiAeniCXNlntNztZ_oRvjh0HsGuJXUJWET008/gviz/tq?tqx=out:csv&gid=02",
+				"dbtableType": "csv",
+				"datacache": "false",
+				"lookupfield": "latitude|longitude",
+				"lookupfield2": "travel_history_location",
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "100",
+				"scale": "1",
+				"sizepow": "2",
+				"valuescale": "1",
+				"title": "COVID-19 travel history"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
