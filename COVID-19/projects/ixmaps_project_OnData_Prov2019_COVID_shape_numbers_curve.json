@@ -68,7 +68,7 @@
 					"#FCBA6C"],
 				"fillopacity": "0.7",
 				"shadow": "false",
-				"filter": "WHERE \"datetime\" = \"2020-03-05\"",
+				"filter": "WHERE \"datetime\" = \"2020-03-06\"",
 				"dbtable": "themeDataObj",
 				"dbtableUrl": "https://raw.githubusercontent.com/ondata/covid19italia/master/publication/provinceArchivioISTAT.csv",
 				"dbtableType": "csv",
@@ -83,7 +83,7 @@
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"title": "Casi per Provincia",
-				"snippet": "aggiornato al 2020-03-05"
+				"snippet": "aggiornato al 2020-03-06"
 				}
 			},{
 			"layer": "Prov2019_nome",
@@ -95,7 +95,7 @@
 					"red"],
 				"fillopacity": "0.1",
 				"shadow": "false",
-				"filter": "WHERE \"datetime\" = \"2020-03-05\"",
+				"filter": "WHERE \"datetime\" = \"2020-03-06\"",
 				"dbtable": "themeDataObj",
 				"dbtableUrl": "https://raw.githubusercontent.com/ondata/covid19italia/master/publication/provinceArchivioISTAT.csv",
 				"dbtableType": "csv",
@@ -115,7 +115,7 @@
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"title": "Casi per Provincia",
-				"snippet": "aggiornato al 2020-03-05"
+				"snippet": "aggiornato al 2020-03-06"
 				}
 			},{
 			"layer": "Prov2019_nome",
@@ -141,7 +141,8 @@
 					"2020-03-02",
 					"2020-03-03",
 					"2020-03-04",
-					"2020-03-05"
+					"2020-03-05",
+					"2020-03-06"
 				],
 				"units": "",
 				"refreshtimeout": "0",
@@ -160,7 +161,7 @@
 					"1:500000",
 					"100px"],
 				"title": "Giorno per giorno",
-				"snippet": "dal 2020-03-02 al 2020-03-05"
+				"snippet": "dal 2020-03-02 al 2020-03-06"
 				}
 			}],
 	"layerMask": {
