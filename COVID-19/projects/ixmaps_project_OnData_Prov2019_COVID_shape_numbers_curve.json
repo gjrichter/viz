@@ -12,8 +12,9 @@
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_uts.svgz",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
-		"legend": "<h3>Visualizzazione di un dataset curato da OnData con serie storiche dei casi di COVID-19 dettagliato per le Province d'Italia.</h3><h3>Il dataset si trova &rarr; <a href='https://github.com/ondata/covid19italia/blob/master/README.md/' target='_blank'><b>qui</b></a></h3><br><h3>La visualizzazione:<ul><li>numero attuale di casi</li><li>serie storica dei casi<br>curve: <a href='javascript:ixmaps.changeThemeStyle(\"curve\",\"type:LOG\",\"toggle\")'>logaritmico&nbsp;o&nbsp;lineare</li></ul></h3>",
+		"legend": "<h3>Visualizzazione di un dataset curato da OnData con serie storiche dei casi di COVID-19 dettagliato per le Province d'Italia.</h3><h3>Il dataset si trova &rarr; <a href='https://github.com/ondata/covid19italia/blob/master/README.md/' target='_blank'><b>qui</b></a></h3><br><h3>La visualizzazione:<br>- numero attuale di casi<br>- serie storica dei casi<br>curve: <a href='javascript:ixmaps.changeThemeStyle(\"curve\",\"type:LOG\",\"toggle\")'>logaritmico&nbsp;o&nbsp;lineare</h3>",
 		"item": "",
+		"layout":"minimal",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
 			"normalSizeScale": "2319015"
@@ -58,7 +59,7 @@
 			"field": "numero",
 			"field100": "",
 			"style": {
-				"type": "CHOROPLETH|LOG|DOPACITYMAX|DTEXT|VALUEBACKGROUND",
+				"type": "CHOROPLETH|LOG|DOPACITYMAX|DTEXT|VALUEBACKGROUND|SIMPLELEGEND",
 				"colorscheme": [
 					"7",
 					"#FFFDD8",
@@ -89,7 +90,7 @@
 			"field": "numero",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|VALUES|SIZELOG",
+				"type": "CHART|SYMBOL|VALUES|SIZELOG|COMPACTLEGEND",
 				"colorscheme": [
 					"red"],
 				"fillopacity": "0.1",
