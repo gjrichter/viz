@@ -66,10 +66,7 @@
 			user-select: none;
 			/* Likely future */
 		}
-		
-		h3 {
-			margin-right: 2em;
-		}
+
 	</style>
 
 	<!--[if IE]>
@@ -86,12 +83,12 @@
 
 		<div class="section">
 
-			<!-- città colorata -->
+			<!-- incidenti -->
 
 			<div class="slide container" style="color:#BB012A">
 				<div class="intro down">
 					<h3 class="title"><b>Palermo - Città Colorata</b></h3>
-					<p>.
+					<p>
 						<a class="theme button" href='javascript:mymap.loadProject("https://gjrichter.github.io/viz/Palermo/projects/ixmaps_project_palermo_stranieri_per_cittadinanza_fiori_watercolor_III.json");' style='display:none'>dummy</a><br>
 					</p>
 					<p>fonte: Città di Palermo, GB Vitrano, A Borruso </p>
@@ -103,44 +100,12 @@
 
 		<div class="section">
 
-			<!-- pile -->
-
-			<div class="slide container" style="color:#BB012A">
-				<div class="intro up down">
-					<h3 class="title"><b>Cambiamo la grafica per poter aggiungere i residenti italiani...</b></h3>
-					<p>
-						<a class="theme button" href='javascript:mymap.loadProject("https://gjrichter.github.io/viz/Palermo/projects/Palermo/ixmaps_project_palermo_stranieri_per_cittadinanza_fiori_watercolor_III_pile.json");' style='display:none'>dummy</a><br>
-					</p>
-				</div>
-			</div>
-
-
-		</div>
-
-		<div class="section">
-
-			<!-- l'invasione -->
-
-			<div class="slide container" style="color:#BB012A">
-				<div class="intro up down">
-					<h3 class="title"><b>... abbiamo aggiunto i residenti italiani</b></h3>
-					<h3>Ma questo non è una rappresentazione corretta, perche la grandezza delle palline non corrispontìde ai numeri</h3><h3>vediamo come è la relazione esatta ...</h3>
-					<p>
-						<a class="theme button" href='javascript:mymap.loadProject("https://gjrichter.github.io/viz/Palermo/projects/Palermo/ixmaps_project_palermo_stranieri_per_cittadinanza_fiori_watercolor_III_log.json");' style='display:none'>dummy</a><br>
-					</p>
-				</div>
-			</div>
-
-
-		</div>
-
-		<div class="section">
-
-			<!-- l'invasione -->
+			<!-- incidenti -->
 
 			<div class="slide container" style="color:#DEA314">
 				<div class="intro up down">
-					<h3 class="title"><b>Ecco, la popolazione straniera a confronto con i rsidenti italiani</b></h3>
+					<h3 class="title"><b>Popolazione straniera a confronto</b></h3>
+					<p>Residenti di Palermo per provenienza</p>
 					<p>
 						<a class="theme" href='javascript:mymap.loadProject("https://gjrichter.github.io/viz/Palermo/projects/ixmaps_project_palermo_stranieri_per_cittadinanza_fiori_watercolor_III_all.json");' style='display:none'>num_totale</a><br>
 					</p>
@@ -330,8 +295,9 @@
 			var __slide = null;
 			var __fMoveActive = false;
 
-			var __onChange = function() {
+			__onChange = function() {
 				if (!ixmaps.initialized) {
+					setTimeout("__onChange()",100);
 					return;
 				}
 				if (ixmaps.fMoveToSection) {
@@ -347,7 +313,7 @@
 				},
 				'verticalCentered': false,
 				'css3': true,
-				'sectionsColor': ['#DEA314', '#DEA314','#DEA314', '#DD614A', '#DD614A', '#B14A4A'],
+				'sectionsColor': ['#DEA314', '#DD614A', '#B14A4A'],
 				'navigation': true,
 				'navigationPosition': 'right',
 				'navigationTooltips': ['Incidenti', 'Analisi temporali', 'Pericolosità', 'Natura del incidente', 'Attribuzioni'],

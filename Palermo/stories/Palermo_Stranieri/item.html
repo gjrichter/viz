@@ -366,13 +366,14 @@
 				// ---------------------------------------
 				var data = ixmaps.getData('map', szId);
 
-				if (data) {
+				var szHtml = "";
+				
+				if (0 && data) {
 
 					var szTitle = data.nome || "";
 
 					var suffix = "";
 
-					var szHtml = "";
 					szHtml += "<div style='padding-top:1.5em;padding-bottom:1em;overflow:auto'>";
 
 					if (data.length > 1) {
