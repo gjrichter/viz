@@ -6,7 +6,7 @@
 		"description": "",
 		"thumbnail": "",
 		"about": "",
-		"created": "Sun Mar 08 2020 16:22:11 GMT+0100 (Ora standard dell’Europa centrale)"
+		"created": "Sun Mar 08 2020 17:13:35 GMT+0100 (Ora standard dell’Europa centrale)"
 		},
 	"map": {
 		"map": "../../maps/svg/maps/generic/mercator.svg",
@@ -47,8 +47,8 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "43.5565103750476",
-			"lng": "12.804565429687502"
+			"lat": "43.909765943908",
+			"lng": "12.579345703125002"
 			},
 		"zoom": "7"
 		},
@@ -57,11 +57,11 @@
 			"field": "ricoverati_con_sintomi|terapia_intensiva|isolamento_domiciliare|dimessi_guariti|deceduti",
 			"field100": "",
 			"style": {
-				"type": "CHART|PIE|DONUT|THIN|SIZE|REVERSE|SIMPLELEGEND",
+				"type": "CHART|PIE|DONUT|THIN|SIZE|SIMPLELEGEND",
 				"colorscheme": [
 					"8",
 					"tableau"],
-				"fillopacity": "0.8",
+				"fillopacity": "1",
 				"shadow": "false",
 				"dbtable": "themeDataObj",
 				"dbtableUrl": "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv",
@@ -78,11 +78,13 @@
 				"refreshtimeout": "0",
 				"normalsizevalue": "100",
 				"scale": "1",
-				"linewidth": "0.3",
+				"linecolor": [
+					"#aaaaaa"],
+				"linewidth": "0.2",
+				"titlefield": "denominazione_regione",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"evidence": "isolate_gray",
-				"titlefield":"denominazione_regione",
 				"title": "COVID-19<br>Andamento Regioni"
 				}
 			}],
