@@ -1,0 +1,97 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Fri Feb 28 2020 11:07:17 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>COVID-19 - <b>new cases</b> <br> last days</h1><h4>scale: <a href='javascript:ixmaps.changeThemeStyle(\"newcases\",\"type:LOG\",\"add\")' title='change scale'>logarithmic</a> / <a href='javascript:ixmaps.changeThemeStyle(\"newcases\",\"type:LOG\",\"remove\")' title='change scale'>linear</a></h4><h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a></h4>",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "177165354"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.89393401411194",
+			"lng": "11.18408203125"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "",
+			"field100": "",
+			"style": {
+				"name":"newcases",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|FADE|BOX|GRID|LONGTITLE|SIZE|GRIDSIZE|SUM|DIFFERENCE|COMPATIBLE|AGGREGATE|RECT|FIXSIZE|LEGEND",
+				"colorscheme": [
+					"#006688"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "themeDataObj_pcm",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19/databroker_pcm-dpc_province-json.js",
+				"datacache": "false",
+				"lookupfield": "lat|long",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "2",
+				"rangescale": "0.9",
+				"scale": "0.85",
+				"minvalue": "0",
+				"linewidth": "15",
+				"bordercolor": "black",
+				"boxopacity": "0.01",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"gridwidthpx": "150",
+				"titlefield":"denominazione_provincia",
+				"title": "COVID-19 - new cases/day <br> last 28 days",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
