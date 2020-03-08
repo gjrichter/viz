@@ -12,7 +12,7 @@
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_uts.svgz",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
-		"legend": "<h3>Visualizzazione di un dataset curato da OnData con serie storiche dei casi di COVID-19 dettagliato per le Province d'Italia.</h3><h3>Il dataset si trova &rarr; <a href='https://github.com/ondata/covid19italia/blob/master/README.md/' target='_blank'><b>qui</b></a></h3><br><h3>La visualizzazione:<br>- numero attuale di casi<br>- serie storica dei casi<br>curve: <a href='javascript:ixmaps.changeThemeStyle(\"curve\",\"type:LOG\",\"toggle\")'>logaritmico&nbsp;o&nbsp;lineare</h3><bfr><h3 style='color:red'>Nota bene: questo mappa non viene più aggiornata!</h3><h3>Una nuova mappa aggiornata con i dati pubblicati dalla Protezione Civile si trova &rarr;<a href='https://tinyurl.com/una87gw'>qui</a></h3>",
+		"legend": "<h3>Visualizzazione di un dataset curato da OnData con serie storiche dei casi di COVID-19 dettagliato per le Province d'Italia.</h3><h3>Il dataset si trova &rarr; <a href='https://github.com/ondata/covid19italia/blob/master/README.md/' target='_blank'><b>qui</b></a></h3><br><h3>La visualizzazione:<br>- numero attuale di casi<br>- serie storica dei casi<br>curve: <a href='javascript:ixmaps.changeThemeStyle(\"curve\",\"type:LOG\",\"toggle\")'>logaritmico&nbsp;o&nbsp;lineare</h3><bfr><h3 style='color:red'>Nota bene: questa mappa non viene più aggiornata!</h3><h3>Una nuova mappa aggiornata con i dati pubblicati dalla Protezione Civile si trova &rarr;<a href='https://tinyurl.com/una87gw'>qui</a></h3>",
 		"item": "",
 		"layout":"minimal",
 		"scaleParam": {
