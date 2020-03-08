@@ -27,13 +27,13 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.themeDataObj1 = function (theme,options) {
 
 
-		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-province.json";
+		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-province/dpc-covid19-ita-province.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ArcGis Feature service
 		// ----------------------------------------------------------------------------------------------- 
 
-		var myfeed = Data.feed({"source":szUrl,"type":"json"}).load(function(mydata){
+		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(mydata){
 			
 			var pivot = __process(mydata,options);
 	
@@ -72,13 +72,13 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.themeDataObj2 = function (theme,options) {
 
 
-		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-province.json";
+		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-province/dpc-covid19-ita-province.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ArcGis Feature service
 		// ----------------------------------------------------------------------------------------------- 
 
-		var myfeed = Data.feed({"source":szUrl,"type":"json"}).load(function(mydata){
+		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(mydata){
 			
 			var pivot = __process(mydata,options);
 	
@@ -118,13 +118,13 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.themeDataObj3 = function (theme,options) {
 
 
-		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-province.json";
+		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-province/dpc-covid19-ita-province.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ArcGis Feature service
 		// ----------------------------------------------------------------------------------------------- 
 
-		var myfeed = Data.feed({"source":szUrl,"type":"json"}).load(function(mydata){
+		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(mydata){
 			
 			var pivot = __process(mydata,options);
 	
