@@ -332,6 +332,7 @@
 
 			var __onChange = function() {
 				if (!ixmaps.initialized) {
+					setTimeout("__onChange()",100);
 					return;
 				}
 				if (ixmaps.fMoveToSection) {
