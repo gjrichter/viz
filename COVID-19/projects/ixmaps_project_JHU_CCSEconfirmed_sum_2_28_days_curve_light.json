@@ -238,7 +238,7 @@
 				"shadow": "false",
 				"dbtable": "PCM_COVID_SEQUENCE",
 				"dbtableType": "ext",
-				"dbtableExt": "../../projects/COVID-19/databroker_PCM_COVID_Regioni.js",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/databroker_PCM_COVID_Regioni.js",
 				"datacache": "false",
 				"lookupfield": "lat|long",
 				"symbols": [
@@ -276,7 +276,7 @@
 				"shadow": "false",
 				"dbtable": "PCM_COVID_SEQUENCE_INTENSIVE",
 				"dbtableType": "ext",
-				"dbtableExt": "../../projects/COVID-19/databroker_PCM_COVID_Regioni.js",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/databroker_PCM_COVID_Regioni.js",
 				"datacache": "false",
 				"lookupfield": "lat|long",
 				"symbols": [
@@ -314,7 +314,7 @@
 				"shadow": "false",
 				"dbtable": "PCM_COVID_SEQUENCE_RECOVERED",
 				"dbtableType": "ext",
-				"dbtableExt": "../../projects/COVID-19/databroker_PCM_COVID_Regioni.js",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/databroker_PCM_COVID_Regioni.js",
 				"datacache": "false",
 				"lookupfield": "lat|long",
 				"symbols": [
