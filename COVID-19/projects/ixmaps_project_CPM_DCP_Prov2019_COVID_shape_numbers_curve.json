@@ -96,7 +96,7 @@
 					"red"],
 				"fillopacity": "0.1",
 				"shadow": "false",
-				"dbtable": "PCM_COVID_LAST",
+				"dbtable": "PCM_COVID_LAST_2",
 				"dbtableType": "ext",
 				"dbtableExt":"https://gjrichter.github.io/viz/COVID-19/projects/databroker_PCM_COVID.js",
 				"datacache": "false",
