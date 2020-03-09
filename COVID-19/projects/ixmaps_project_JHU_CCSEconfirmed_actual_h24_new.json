@@ -12,7 +12,7 @@
 		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "",
 		"basemap": "CartoDB - Positron",
-		"legend": "<h1>COVID-19 - <b>24 hours</b> <br> new cases</h1><<h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE</h4>",
+		"legend": "<h1>COVID-19 - <b>24 hours</b> <br> new cases</h1><h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE</h4>",
 		"item": "",
 		"scaleParam": {
 			"normalSizeScale": "55364168"
@@ -55,10 +55,38 @@
 		},
 	"themes": [{
 			"layer": "World Mercator",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|DIFFERENCE|VALUES|SIZELOG|SUM",
+				"colorscheme": [
+					"#006688"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "PCM_COVID_LAST_DAY",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19/databroker_PCM_COVID.js",
+				"datacache": "false",
+				"lookupfield": "lat|long",
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "500",
+				"scale": "1",
+				"titlefield": "denominazione_provincia",
+				"linewidth": "2",
+				"valueupper": "1:5000000",
+				"chartupper": "1:10000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "COVID-19 Italia Province",
+				"snippet": "fonte: <a href='http://unwfp.maps.arcgis.com/apps/opsdashboard/index.html#/4f74fc222b7041cd9cc3c52e62af1b8c' target='_blank'>FOA COVID-19 map</a>"
+				}
+			},{
+			"layer": "World Mercator",
 			"field": "2/27/20",
 			"field100": "2/26/20",
 			"style": {
-				"type": "CHART|AURA|BUBBLE|DIFFERENCE|SIZE|SUM|VALUES",
+				"type": "CHART|AURA|BUBBLE|DIFFERENCE|SIZELOG|SUM|VALUES",
 				"colorscheme": [
 					"#006688"],
 				"fillopacity": "0.5",
@@ -76,7 +104,9 @@
 				"linewidth": "0",
 				"valuescale": "1",
 				"valuedecimals": "0",
-				"title": "COVID-19",
+				"chartlower": "1:5000000",
+				"titlefield":"Country/Region",
+				"title": "COVID-19 new cases 24h",
 				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
 				"description":"nuovi casi ultime 24 ore"
 				}
