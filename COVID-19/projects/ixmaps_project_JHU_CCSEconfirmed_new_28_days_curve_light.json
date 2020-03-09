@@ -12,7 +12,7 @@
 		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "",
 		"basemap": "CartoDB - Positron",
-		"legend": "<h1>COVID-19 - <b>new cases</b> <br> last <b>28</b> days</h1><h4>scale: <a href='javascript:ixmaps.changeThemeStyle(\"newcases\",\"type:LOG\",\"add\")' title='change scale'>logarithmic</a> / <a href='javascript:ixmaps.changeThemeStyle(\"newcases\",\"type:LOG\",\"remove\")' title='change scale'>linear</a></h4><h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a></h4>",
+		"legend": "<h1>COVID-19 - <b>new cases</b> <br> last <b>28</b> days</h1><h4>scale: <a href='javascript:ixmaps.changeThemeStyle(\"newcases\",\"type:LOG\",\"add\");ixmaps.changeThemeStyle(\"curve\",\"type:LOG\",\"add\")' title='change scale'>logarithmic</a> / <a href='javascript:ixmaps.changeThemeStyle(\"newcases\",\"type:LOG\",\"remove\");ixmaps.changeThemeStyle(\"curve\",\"type:LOG\",\"remove\")' title='change scale'>linear</a></h4><h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a></h4>",
 		"item": "",
 		"scaleParam": {
 			"normalSizeScale": "177165354"
@@ -105,6 +105,48 @@
 				"aggregationlower": "1:10000000",
 				"title": "COVID-19 - new cases/day <br> last 28 days",
 				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>"
+				}
+			},{
+			"layer": "Prov2019_nome",
+			"field": "placeholder",
+			"field100": "",
+			"style": {
+				"name":"curve",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|FADE|GRID|BOX|LONGTITLE|FIXSIZE|AGGREGATE|RECT|COMPATIBLE|RELOCATE|DIFFERENCE|LOG|SUM|GRIDSIZE|SIMPLELEGEND",
+				"colorscheme": [
+					"#dd8800"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"filter": "WHERE \"denominazione_provincia\" NOT \"aggio\"",
+				"dbtable": "themeDataObj3",
+				"dbtableType": "ext",
+				"dbtableExt":"../../projects/COVID-19/databroker_pcm-dpc_COVID.js",
+				"datacache": "false",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"linewidth":"10",
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "2",
+				"scale": "0.90",
+				"rangescale": "1",
+				"minvalue": "0",
+				"boxopacity": "0.2",
+				"bordercolor":"black",
+				"boxmargin":"10",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"aggregationscale": [
+					"1:1",
+					"150px",
+					"1:500000",
+					"100px"],
+				"chartupper":"1:5000000",
+				"titlefield":"denominazione_provincia",
+				"title": "Giorno per giorno",
+				"snippet": "dal 2020-03-02 al 2020-03-05"
 				}
 			}],
 	"layerMask": {
