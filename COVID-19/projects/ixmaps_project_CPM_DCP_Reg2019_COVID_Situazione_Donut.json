@@ -69,7 +69,7 @@
 				"filter": "WHERE data = \"2020-03-09 18:00:00\"",
 				"dbtable": "PCM_COVID_ACTUAL",
 				"dbtableType": "ext",
-				"dbtableExt": "../../projects/COVID-19/databroker_PCM_COVID_Regioni.js",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/databroker_PCM_COVID_Regioni.js",
 				"datacache": "true",
 				"lookupfield": "lat|long",
 				"symbols": [
