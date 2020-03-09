@@ -1,0 +1,175 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Mar 09 2020 00:42:58 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>COVID-19 - serie storiche Regioni <br></h1><h3>scala: lineare <a href='javascript:ixmaps.changeThemeStyle(\"newcases\",\"type:LOG\",\"add\");ixmaps.changeThemeStyle(\"curve\",\"type:LOG\",\"add\")' title='change scale'>logarithmic</a> </h3><h3>fonte: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile d'Italia</a></h3>",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "13841043"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "44.08363928284644",
+			"lng": "13.743896484375002"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "ricoverati_con_sintomi|terapia_intensiva|isolamento_domiciliare|dimessi_guariti|deceduti",
+			"field100": "",
+			"style": {
+				"name":"curv_1",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|FADE|BOX|LONGTITLE|GRID|SIZE|GRIDSIZE|SUM|AGGREGATE|COMPATIBLE|RECT|FIXSIZE|NOLEGEND",
+				"colorscheme": [
+					"#006688"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "PCM_COVID_SEQUENCE_HOSPITALIZED",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/databroker_PCM_COVID_Regioni.js",
+				"datacache": "false",
+				"lookupfield": "lat|long",
+				"symbols": [
+					"circle"],
+				"normalsizevalue": "2",
+				"scale": "0.85",
+				"rangescale": "0.8",
+				"minvalue": "0",
+				"maxvalue": "3000",
+				"linewidth": "5",
+				"bordercolor": "black",
+				"boxopacity": "0.01",
+				"titlefield": "denominazione_regione",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"aggregationscale": [
+					"1:1",
+					"300px",
+					"1:1000000",
+					"150px"],
+				"title": "COVID-19<br>Situazione Regioni"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "ricoverati_con_sintomi|terapia_intensiva|isolamento_domiciliare|dimessi_guariti|deceduti",
+			"field100": "",
+			"style": {
+				"name":"curv_2",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|FADE|BOX|LONGTITLE|GRID|SIZE|GRIDSIZE|SUM|AGGREGATE|COMPATIBLE|RECT|FIXSIZE|NOLEGEND",
+				"colorscheme": [
+					"#dd6600"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "PCM_COVID_SEQUENCE_INTENSIVE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/databroker_PCM_COVID_Regioni.js",
+				"datacache": "false",
+				"lookupfield": "lat|long",
+				"symbols": [
+					"circle"],
+				"normalsizevalue": "2",
+				"scale": "0.85",
+				"rangescale": "0.8",
+				"minvalue": "0",
+				"maxvalue": "3000",
+				"linewidth": "5",
+				"bordercolor": "black",
+				"boxopacity": "0.01",
+				"titlefield": "denominazione_regione",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"aggregationscale": [
+					"1:1",
+					"300px",
+					"1:1000000",
+					"150px"],
+				"title": "COVID-19<br>Situazione Regioni"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "ricoverati_con_sintomi|terapia_intensiva|isolamento_domiciliare|dimessi_guariti|deceduti",
+			"field100": "",
+			"style": {
+				"name":"curv_3",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|FADE|BOX|LONGTITLE|GRID|SIZE|GRIDSIZE|SUM|AGGREGATE|COMPATIBLE|RECT|FIXSIZE|NOLEGEND",
+				"colorscheme": [
+					"#008866"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "PCM_COVID_SEQUENCE_RECOVERED",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/databroker_PCM_COVID_Regioni.js",
+				"datacache": "false",
+				"lookupfield": "lat|long",
+				"symbols": [
+					"circle"],
+				"normalsizevalue": "2",
+				"scale": "0.85",
+				"rangescale": "0.8",
+				"minvalue": "0",
+				"maxvalue": "3000",
+				"linewidth": "5",
+				"bordercolor": "black",
+				"boxopacity": "0.01",
+				"titlefield": "denominazione_regione",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"aggregationscale": [
+					"1:1",
+					"300px",
+					"1:1000000",
+					"150px"],
+				"title": "COVID-19<br>Situazione Regioni"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
