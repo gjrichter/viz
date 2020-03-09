@@ -155,7 +155,33 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 		
-   
+       ixmaps.PCM_COVID_ACTUAL = function (theme,options) {
+
+
+		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-province/dpc-covid19-ita-province.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(mydata){
+			
+			//alert(mydata.column("data").values()[0]);
+	
+			// -----------------------------------------------------------------------------------------------               
+			// deploy the data
+			// ----------------------------------------------------------------------------------------------- 
+
+			ixmaps.setExternalData(pivot, {
+				type: "dbtable",
+				name: "PCM_COVID_ACTUAL"
+			});
+
+		})
+		.error(function(e){alert("error loading data from:\n"+szUrl)});
+
+	};
+
 })();
 
 /**
