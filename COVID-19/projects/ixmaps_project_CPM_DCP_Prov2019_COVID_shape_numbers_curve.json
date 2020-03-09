@@ -96,7 +96,7 @@
 					"red"],
 				"fillopacity": "0.1",
 				"shadow": "false",
-				"dbtable": "themeDataObj2",
+				"dbtable": "themeDataObj1",
 				"dbtableType": "ext",
 				"dbtableExt":"https://gjrichter.github.io/viz/COVID-19/projects/databroker_pcm-dpc_COVID.js",
 				"datacache": "false",
