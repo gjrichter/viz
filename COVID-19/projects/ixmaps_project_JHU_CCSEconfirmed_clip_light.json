@@ -60,7 +60,7 @@
 				"name":"clip",
 				"type": "CHART|VALUES|BUBBLE|SIZELOG|SUM|AURA|CLIP|LOOP",
 				"colorscheme": [
-					"#dd0000"],
+					"#006688"],
 				"fillopacity": "0.1",
 				"shadow": "false",
 				"filter": "WHERE Country/Region != Others",

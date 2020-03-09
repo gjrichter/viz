@@ -59,7 +59,7 @@
 			"style": {
 				"type": "CHART|VALUES|BUBBLE|SIZEP3|SUM|AURA|CLIP|LOOP",
 				"colorscheme": [
-					"#dd0000"],
+					"#006688"],
 				"fillopacity": "0.8",
 				"shadow": "false",
 				"filter": "WHERE Country/Region != Others AND Province/State != Hubei",
