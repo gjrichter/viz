@@ -65,7 +65,7 @@
 				"shadow": "false",
 				"dbtable": "PCM_COVID_LAST",
 				"dbtableType": "ext",
-				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/databroker_PCM_COVID.js",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/databroker_PCM_COVID_Province.js",
 				"datacache": "false",
 				"lookupfield": "lat|long",
 				"units": "",
