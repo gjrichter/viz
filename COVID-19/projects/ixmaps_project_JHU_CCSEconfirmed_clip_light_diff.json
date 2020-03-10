@@ -62,7 +62,7 @@
 					"#006688"],
 				"fillopacity": "0.8",
 				"shadow": "false",
-				"filter": "WHERE Country/Region != Others AND Province/State != Hubei",
+				"filter": "WHERE Country/Region != Others",
 				"dbtable": "themeDataObj",
 				"dbtableUrl": "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv",
 				"dbtableType": "csv",
