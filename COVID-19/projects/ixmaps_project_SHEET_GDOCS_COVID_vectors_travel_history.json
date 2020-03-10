@@ -100,6 +100,29 @@
 				}
 			},{
 			"layer": "Country",
+			"field": "admin",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND",
+				"colorscheme": [
+					"red"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "coordiantes_III",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/cn.csv",
+				"dbtableType": "csv",
+				"datacache": "false",
+				"itemfield": "city",
+				"lookupfield": "lat|lng",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Positions"
+				}
+			},{
+			"layer": "Country",
 			"field": "travel_history_location",
 			"field100": "",
 			"style": {
