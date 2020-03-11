@@ -48,10 +48,10 @@
 			"panhidden":"false"
 			},
 		"center": {
-			"lat": "32.54681317351517",
-			"lng": "49.74609375000001"
+			"lat": "28.92163128242129",
+			"lng": "21.26953125"
 			},
-		"zoom": "2"
+		"zoom": "3"
 		},
 	"themes": [{
 			"layer": "World Mercator",
