@@ -143,7 +143,7 @@
 				"refreshtimeout": "0",
 				"normalsizevalue": "2",
 				"scale": "0.90",
-				"rangescale": "1",
+				"rangescale": "0.9",
 				"minvalue": "0",
 				"boxopacity": "0.2",
 				"bordercolor":"black",
