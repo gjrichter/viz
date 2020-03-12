@@ -91,6 +91,8 @@ window.ixmaps = window.ixmaps || {};
 		
 			theme.szSizeField = columns[last];
 			theme.szValueField = columns[last];
+			theme.szFields = columns[last];
+			theme.szFieldsA = [columns[last]];
 			
 			theme.szSnippet = "aggiornato al "+columns[last];
 
