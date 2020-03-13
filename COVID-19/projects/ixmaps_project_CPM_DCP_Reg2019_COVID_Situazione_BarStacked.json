@@ -6,7 +6,7 @@
 		"description": "",
 		"thumbnail": "",
 		"about": "",
-		"created": "Fri Mar 13 2020 11:25:46 GMT+0100 (Ora standard dell’Europa centrale)"
+		"created": "Fri Mar 13 2020 10:04:31 GMT+0100 (Ora standard dell’Europa centrale)"
 		},
 	"map": {
 		"map": "../../maps/svg/maps/generic/mercator.svg",
@@ -47,8 +47,8 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "44.512176171071054",
-			"lng": "13.831787109375002"
+			"lat": "44.37883975908861",
+			"lng": "16.589355468750004"
 			},
 		"zoom": "6"
 		},
@@ -57,7 +57,7 @@
 			"field": "dimessi_guariti|isolamento_domiciliare|ricoverati_con_sintomi|terapia_intensiva|deceduti",
 			"field100": "",
 			"style": {
-				"type": "CHART|PIE|DONUT|SIZE|SUM|SIZEP4|SUM",
+				"type": "CHART|BAR|STACKED|SIZE|SUM",
 				"colorscheme": [
 					"#59A14F",
 					"#A0CBE8",
@@ -73,17 +73,17 @@
 				"datacache": "true",
 				"lookupfield": "lat|long",
 				"symbols": [
-					"label"],
+					"circle"],
 				"label": [
-					"dimessi/guariti",
-					"isolamento domiciliare",
-					"ricoverati con sintomi",
-					"terapia intensiva",
+					"dimessi_guariti",
+					"isolamento_domiciliare",
+					"ricoverati_con_sintomi",
+					"terapia_intensiva",
 					"deceduti"],
 				"units": "",
 				"refreshtimeout": "0",
 				"normalsizevalue": "100",
-				"scale": "1.25",
+				"scale": "1",
 				"linewidth": "0.3",
 				"titlefield": "denominazione_regione",
 				"valuescale": "1",

@@ -6,7 +6,7 @@
 		"description": "",
 		"thumbnail": "",
 		"about": "",
-		"created": "Fri Mar 13 2020 11:25:46 GMT+0100 (Ora standard dell’Europa centrale)"
+		"created": "Fri Mar 13 2020 11:20:25 GMT+0100 (Ora standard dell’Europa centrale)"
 		},
 	"map": {
 		"map": "../../maps/svg/maps/generic/mercator.svg",
@@ -57,7 +57,7 @@
 			"field": "dimessi_guariti|isolamento_domiciliare|ricoverati_con_sintomi|terapia_intensiva|deceduti",
 			"field100": "",
 			"style": {
-				"type": "CHART|PIE|DONUT|SIZE|SUM|SIZEP4|SUM",
+				"type": "CHART|BAR|SUM|SIZEP4|3D",
 				"colorscheme": [
 					"#59A14F",
 					"#A0CBE8",
