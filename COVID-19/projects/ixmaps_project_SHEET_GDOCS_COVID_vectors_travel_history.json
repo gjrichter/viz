@@ -129,7 +129,7 @@
 				"type": "CHART|VECTOR|FADEIN|DASH|REVERSE|BEZIER|POINTER|CATEGORICAL|FAST|AGGREGATE|SUM|UNDEFINEDISNOTVALUE",
 				"colorscheme": [
 					"203",
-					"harvest"],
+					"tableau"],
 				"fillopacity": "1",
 				"shadow": "false",
 				"filter": "WHERE \"travel_history_location\" LIKE \"*\"",
