@@ -14,6 +14,7 @@
 		"basemap": "CartoDB - Dark matter",
 		"legend": "",
 		"item": "",
+		"layout":"minimal",
 		"scaleParam": {
 			"normalSizeScale": "55364168"
 			},
@@ -126,7 +127,7 @@
 			"field": "travel_history_location",
 			"field100": "",
 			"style": {
-				"type": "CHART|VECTOR|FADEIN|DASH|REVERSE|BEZIER|POINTER|CATEGORICAL|FAST|AGGREGATE|SUM|UNDEFINEDISNOTVALUE",
+				"type": "CHART|VECTOR|FADEIN|DASH|REVERSE|BEZIER|POINTER|CATEGORICAL|FAST|AGGREGATE|SUM|UNDEFINEDISNOTVALUE|COMPACTLEGEND",
 				"colorscheme": [
 					"203",
 					"tableau"],
