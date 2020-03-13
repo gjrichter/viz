@@ -57,7 +57,7 @@
 			"field": "dimessi_guariti|isolamento_domiciliare|ricoverati_con_sintomi|terapia_intensiva|deceduti",
 			"field100": "",
 			"style": {
-				"type": "CHART|BAR|STACKED|SIZE|SUM",
+				"type": "CHART|BAR|STACKED|SIZEP4|SUM",
 				"colorscheme": [
 					"#59A14F",
 					"#A0CBE8",
@@ -82,8 +82,8 @@
 					"deceduti"],
 				"units": "",
 				"refreshtimeout": "0",
-				"normalsizevalue": "100",
-				"scale": "1",
+				"scale": "1.8",
+				"rangescale": "1.6",
 				"linewidth": "0.3",
 				"titlefield": "denominazione_regione",
 				"valuescale": "1",
