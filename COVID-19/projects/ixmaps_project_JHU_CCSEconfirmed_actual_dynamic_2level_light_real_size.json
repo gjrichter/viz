@@ -60,7 +60,7 @@
 			"style": {
 				"type": "CHART|BUBBLE|VALUES|SIZE|CATEGORICAL|SUM",
 				"colorscheme": [
-					"#006688"],
+					"#DD8800"],
 				"fillopacity": "0.5",
 				"shadow": "false",
 				"dbtable": "PCM_COVID_LAST",
