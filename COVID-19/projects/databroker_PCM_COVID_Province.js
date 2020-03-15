@@ -202,6 +202,68 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 		
+    ixmaps.PCM_COVID_SEQUENCE_MEAN_3 = function (theme,options) {
+
+
+		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-province/dpc-covid19-ita-province.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(mydata){
+			
+			var pivot = __process(mydata,options);
+			console.log("=================================================================================");
+			console.log(pivot);
+	
+			// difference values (mean of 3 days)
+			var records = pivot.records;
+			for (r=0; r<records.length;r++){
+				for (c=1; c<records[r].length-3;c++){
+					records[r][c] = (Number(records[r][c])+Number(records[r+1][c])+Number(records[r+2][c]))/3;
+				}
+			}
+
+			// get the columns with date 
+			var columns = pivot.columnNames();
+			console.log(columns);
+			columns.shift();
+			columns.shift();
+			columns.shift();
+			columns.shift();
+			columns.pop();
+
+			
+			
+			
+			
+			var last = columns.length-1;
+			
+			// and configure the theme
+			theme.szFields = columns.slice().join('|');
+			theme.szFieldsA = columns.slice();
+			
+			// and set the label (for difference 1 less)
+			columns.shift();
+			theme.szLabelA = columns.slice();
+			
+			theme.szSnippet = "dal "+columns[0]+" al "+columns[last-1];
+
+			// -----------------------------------------------------------------------------------------------               
+			// deploy the data
+			// ----------------------------------------------------------------------------------------------- 
+
+			ixmaps.setExternalData(pivot, {
+				type: "dbtable",
+				name: "PCM_COVID_SEQUENCE"
+			});
+
+		})
+		.error(function(e){alert("error loading data from:\n"+szUrl)});
+
+	};
+		
 
 })();
 
