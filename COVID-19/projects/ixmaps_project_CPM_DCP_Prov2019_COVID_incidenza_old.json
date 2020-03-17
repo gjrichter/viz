@@ -1,0 +1,92 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Thu Mar 05 2020 11:55:19 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "https://gjrichter.github.io/viz/COVID-19/projects/legend_pcm_dcp_diff.html",
+		"item": "",
+		"layout":"minimal",
+		"scaleParam": {
+			"lineScaling": "4.213991769547325",
+			"normalSizeScale": "2319015"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.70759350405296",
+			"lng": "12.738647460937502"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "Prov2019_nome",
+			"field": "2020-03-05",
+			"field100": "",
+			"style": {
+				"type": "CHART|BAR|POINTER|VALUES|SIZEP4|COMPACTLEGEND",
+				"colorscheme": [
+					"red"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "PCM_COVID_LAST_DAY_INCID",
+				"dbtableType": "ext",
+				"dbtableExt":"../../projects/COVID-19/databroker_PCM_COVID_Province.js",
+				"datacache": "false",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"symbols": [
+					"label"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "3",
+				"dopacitypow": "3",
+				"dopacityscale": "2",
+				"textcolor": "#aa2200",
+				"linecolor": [
+					"#880000"],
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"titlefield":"denominazione_provincia",
+				"title": "Casi per Provincia",
+				"snippet": "aggiornato al 2020-03-05"
+				}
+			}],
+	"layerMask": {
+		}
+	}
