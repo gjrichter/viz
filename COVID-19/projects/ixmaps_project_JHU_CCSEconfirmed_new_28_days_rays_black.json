@@ -1,0 +1,137 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sat Mar 21 2020 17:56:12 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "powered by iXMaps",
+		"basemap": "CartoDB - Dark matter",
+		"legend": "<h1>COVID-19 - new cases <br> last 28 days</h1><h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a></h4><h4><b>Each circle</b> represents the <b>new cases</b> of the <b>past 28 days</b> clockwise from day -27 to today</h4>",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "27682087"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "35.10193405724608",
+			"lng": "9.316406250000002"
+			},
+		"zoom": "3"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "2/22/20|2/23/20|2/24/20|2/25/20|2/26/20|2/27/20|2/28/20|2/29/20|3/1/20|3/2/20|3/3/20|3/4/20|3/5/20|3/6/20|3/7/20|3/8/20|3/9/20|3/10/20|3/11/20|3/12/20|3/13/20|3/14/20|3/15/20|3/16/20|3/17/20|3/18/20|3/19/20|3/20/20",
+			"field100": "",
+			"style": {
+				"type": "CHART|PIE|STARBURST|XLRAYS|DIFFERENCE|SUM|NOSORT|NOLEGEND",
+				"colorscheme": [
+					"28",
+					"#3288BD",
+					"#D53E4F",
+					"3colors",
+					"#d4d898"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/process_28.js",
+				"datacache": "false",
+				"lookupfield": "Lat|Long",
+				"symbols": [
+					"circle"],
+				"label": [
+					"2/11/20",
+					"2/12/20",
+					"2/13/20",
+					"2/14/20",
+					"2/15/20",
+					"2/16/20",
+					"2/17/20",
+					"2/18/20",
+					"2/19/20",
+					"2/20/20",
+					"2/21/20",
+					"2/22/20",
+					"2/23/20"],
+				"xaxis": [
+					"2/23/20",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					"3/20/20"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "2",
+				"linecolor": [
+					"#006688"],
+				"titlefield": "Country/Region",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "starburst",
+				"title": "COVID-19 - new cases/day <br> last 28 days",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
