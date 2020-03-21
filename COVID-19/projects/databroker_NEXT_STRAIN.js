@@ -90,7 +90,7 @@ window.ixmaps = window.ixmaps || {};
 			}
 		}
 
-		var szUrl = "http://data.nextstrain.org/ncov.json";
+		var szUrl = "https://data.nextstrain.org/ncov.json";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the NEXT STRAIN data json 
@@ -162,7 +162,7 @@ window.ixmaps = window.ixmaps || {};
 			}
 		}
 
-		var szUrl = "http://data.nextstrain.org/ncov.json";
+		var szUrl = "https://data.nextstrain.org/ncov.json";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the NEXT STRAIN data json 
