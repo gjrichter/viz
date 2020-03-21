@@ -1,0 +1,100 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "<h4>Part of a set of COVID-19 visualizations</4><p>relies on 2 data sources:</p><ul><li><a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository</a><br>by Johns Hopkins CSSE</li><li><a href='http://unwfp.maps.arcgis.com/apps/opsdashboard/index.html#/4f74fc222b7041cd9cc3c52e62af1b8c' target='_blank'>COVID-19 outbreak in Italy</a><br> by United Nations World Food Programme</li></ul>",
+		"created": "Sat Mar 21 2020 14:20:19 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "by <a href=\"http://www.ixmaps.com\" target=\"_blank\">iXMaps</a>",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "55364168"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "36.78808138412046",
+			"lng": "12.041015625000002"
+			},
+		"zoom": "3"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "type",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|CENTER|SIZE|CATEGORICAL|AGGREGATE|SUM|VALUES|DTEXT|VALUEBACKGROUND",
+				"colorscheme": [
+					"rgba(68, 170, 221,0.1)",
+					"#88aa00"],
+				"fillopacity": "0.4",
+				"shadow": "false",
+				"filter": "WHERE Country/Region != Others",
+				"dbtable": "CSSE_COVID_LAST_ALL",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/databroker_CSSE_COVID.js",
+				"datacache": "true",
+				"lookupfield": "Lat|Long",
+				"symbols": [
+					"circle"],
+				"values": [
+					"Confirmed",
+					"Recovered"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "5000",
+				"scale": "1.953125",
+				"sizefield": "3/20/20",
+				"linecolor": [
+					"#44aadd"],
+				"linewidth": "5",
+				"titlefield": "Country/Region",
+				"valueupper": "1:10000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "actual",
+				"title": "COVID-19 cases",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
+				"description": "aggiornato: 3/20/20"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
