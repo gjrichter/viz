@@ -1,0 +1,166 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Sun Mar 22 2020 16:57:05 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "Incidenza",
+		"item": "",
+		"scaleParam": {
+			"lineScaling": "4.213991769547325",
+			"normalSizeScale": "4638029"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.072900581493215",
+			"lng": "14.666748046875002"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "Prov2019_nome",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|VALUES|SIZELOG|COMPACTLEGEND",
+				"colorscheme": [
+					"red"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "PCM_COVID_LAST_2",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/databroker_PCM_COVID_Province.js",
+				"datacache": "false",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"align": "top|right",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuefield": "2020-03-21",
+				"sizefield": "2020-03-21",
+				"dopacitypow": "3",
+				"dopacityscale": "2",
+				"textcolor": "#aa2200",
+				"linecolor": [
+					"#880000"],
+				"titlefield": "denominazione_provincia",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Casi per Provincia",
+				"snippet": "aggiornato al 2020-03-21"
+				}
+			},{
+			"layer": "Prov2019_nome",
+			"field": "2020-03-21",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|LOG|DOPACITYMAX|VALUES|DTEXT|VALUEBACKGROUND|SIMPLELEGEND",
+				"colorscheme": [
+					"7",
+					"#FFDDDD",
+					"#ff0000",
+					"2colors"],
+				"fillopacity": "0.3",
+				"shadow": "false",
+				"dbtable": "PCM_COVID_LAST",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/databroker_PCM_COVID_Province.js",
+				"datacache": "false",
+				"lookupfield": "codice_provincia",
+				"lookuptonumber": "true",
+				"units": "casi",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuefield": "2020-03-21",
+				"sizefield": "2020-03-21",
+				"dopacitypow": "3",
+				"dopacityscale": "2",
+				"titlefield": "denominazione_provincia",
+				"valueupper": "1:10000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Casi per Provincia",
+				"snippet": "aggiornato al 2020-03-21"
+				}
+			},{
+			"layer": "Prov2019_nome",
+			"field": "2020-02-24|2020-02-25|2020-02-26|2020-02-27|2020-02-28|2020-02-29|2020-03-01|2020-03-02|2020-03-03|2020-03-04|2020-03-05|2020-03-06|2020-03-07|2020-03-08|2020-03-09|2020-03-10|2020-03-11|2020-03-12|2020-03-13|2020-03-14|2020-03-15|2020-03-16|2020-03-17|2020-03-18|2020-03-19|2020-03-20|2020-03-21",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LOLLIPOP|AREA||GRID|LONGTITLE|BOX|FIXSIZE|AGGREGATE|RECT|COMPATIBLE|SUM|SIMPLELEGEND",
+				"colorscheme": [
+					"#880000"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"filter": "WHERE \"denominazione_provincia\" NOT \"aggio\"",
+				"dbtable": "PCM_COVID_SEQUENCE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/databroker_PCM_COVID_Province.js",
+				"datacache": "false",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "0.7",
+				"scale": "0.07",
+				"rangescale": "1.1",
+				"minvalue": "0",
+				"textcolor": "#880000",
+				"linewidth": "17",
+				"bordercolor": "#880000",
+				"boxopacity": "0",
+				"boxmargin": "10",
+				"titlefield": "denominazione_provincia",
+				"boxupper": "1:1000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"name": "curve",
+				"title": "Giorno per giorno",
+				"snippet": "dal 2020-02-25 al 2020-03-21"
+				}
+			}],
+	"layerMask": {
+		}
+	}
