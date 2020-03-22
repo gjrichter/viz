@@ -81,17 +81,64 @@
 				"normalsizevalue": "5000",
 				"scale": "1.5625",
 				"sizefield": "3/21/20",
+				"textcolor": [
+					"#ffffff"],
 				"linecolor": [
 					"#000000"],
 				"linewidth": "1",
 				"titlefield": "Country/Region",
 				"valueupper": "1:10000000",
+				"chartlower": "1:5000000",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"name": "actual",
 				"title": "COVID-19 cases",
 				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
 				"description": "aggiornato: 3/21/20"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "dimessi_guariti|totale_attualmente_positivi|deceduti",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|RINGS|SORT|UP|CENTER|SIZE|SUM|VALUES|DTEXT|VALUEBACKGROUND",
+				"colorscheme": [
+					"rgba(155, 200, 100,0.9)",
+					"rgba(100, 160, 220,0.5)",
+					"rgba(70, 70, 70,0.5)"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"filter": "WHERE data = \"2020-03-22 17:00:00\"",
+				"dbtable": "PCM_COVID_ACTUAL",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/databroker_PCM_COVID_Regioni.js",
+				"datacache": "true",
+				"lookupfield": "lat|long",
+				"symbols": [
+					"circle"],
+				"label": [
+					"dimessi/guariti",
+					"totale_attualmente_positivi",
+					"deceduti"],
+				"units": "",
+				"textcolor": [
+					"#ffffff"],
+				"linecolor": [
+					"#000000"],
+				"linewidth": "1",
+				"refreshtimeout": "0",
+				"normalsizevalue": "5000",
+				"scale": "1.25",
+				"linewidth": "0.3",
+				"titlefield": "denominazione_regione",
+				"valueupper": "1:2000000",
+				"chartupper": "1:5000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"evidence": "isolate_gray",
+				"title": "COVID-19<br>Situazione Regioni",
+				"snippet": "aggiornato al 2020-03-22 17:00:00"
 				}
 			}],
 	"layerMask": {
