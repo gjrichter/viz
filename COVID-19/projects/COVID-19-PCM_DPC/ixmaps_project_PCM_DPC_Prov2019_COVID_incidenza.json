@@ -1,0 +1,160 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Mon Mar 16 2020 12:12:57 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "Incidenza",
+		"item": "",
+		"scaleParam": {
+			"lineScaling": "4.213991769547325",
+			"normalSizeScale": "4638029"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "44.70380207177488",
+			"lng": "11.123657226562502"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "Prov2019_nome",
+			"field": "2020-03-05",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|QUANTILE|DOPACITYMAX|NOLEGEND",
+				"colorscheme": [
+					"7",
+					"#FFaaaa",
+					"#ff0000"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_LAST_PREVAL",
+				"dbtableType": "ext",
+				"dbtableExt":"https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province.js",
+				"datacache": "false",
+				"lookupfield": "codice_provincia",
+				"lookuptonumber": "true",
+				"units": "casi x 10 000",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"dopacitypow": "2",
+				"dopacityscale": "5",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"valuesupper":"1:1000000",
+				"titlefield":"denominazione_provincia",
+				"title": "Casi per Provincia",
+				"snippet": "aggiornato al 2020-03-05"
+				}
+			},{
+			"layer": "Prov2019_nome",
+			"field": "2020-03-05",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|TEXTONLY|VALUES|SIZEP4|NOLEGEND",
+				"colorscheme": [
+					"gray"],
+				"fillopacity": "0.1",
+				"align":"baseline",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_BEFORE_INCID",
+				"dbtableType": "ext",
+				"dbtableExt":"https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province.js",
+				"datacache": "false",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"symbols": [
+					"label"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"textcolor": "#ffffff",
+				"linecolor": [
+					"#ffffff"],
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"titlefield":"denominazione_provincia",
+				"title": "Casi per Provincia",
+				"snippet": "aggiornato al 2020-03-05"
+				}
+			},{
+			"layer": "Prov2019_nome",
+			"field": "incidenza",
+			"field100": "",
+			"style": {
+				"type": "CHART|BAR|POINTER|VALUES|SIZEP4|BOX|LONGTITLE|NOLEGEND",
+				"colorscheme": [
+					"green","red"],
+				"rangecentervalue":"0",
+				"fadenegative":"0.7",
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_LAST_INCID",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province.js",
+				"datacache": "false",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"symbols": [
+					"label"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "3",
+				"scale": "1",
+				"dopacitypow": "3",
+				"dopacityscale": "2",
+				"textcolor": "#aa2200",
+				"linecolor":"#dd0000",
+				"linewidth":"10",
+				"boxopacity": "0.1",
+				"titlefield": "denominazione_provincia",
+				"boxupper": "1:2000000",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "Casi per Provincia",
+				"snippet": "aggiornato al 2020-03-05"
+				}
+			}],
+	"layerMask": {
+		"Prov2019_nome": {
+			"display": "none"
+			}
+		}
+	}

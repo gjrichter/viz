@@ -1,0 +1,178 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Fri Feb 28 2020 11:41:05 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>COVID-19 - <b>active cases vs recovered </b> <br> last <b>56</b> days</h1><h2>scale: <a href='javascript:ixmaps.changeThemeStyle(\"active\",\"type:LOG\",\"remove\");ixmaps.changeThemeStyle(\"recovered\",\"type:LOG\",\"remove\")'>linear</a> / <a href='javascript:ixmaps.changeThemeStyle(\"active\",\"type:LOG\",\"add\");ixmaps.changeThemeStyle(\"recovered\",\"type:LOG\",\"add\")'>logarithmic</a></h4><h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE</h2>",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "177165354"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "32.24997445586331",
+			"lng": "71.19140625000001"
+			},
+		"zoom": "2"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "1/31/20|2/1/20|2/2/20|2/3/20|2/4/20|2/5/20|2/6/20|2/7/20|2/8/20|2/9/20|2/10/20|2/11/20|2/12/20|2/13/20|2/14/20|2/15/20|2/16/20|2/17/20|2/18/20|2/19/20|2/20/20|2/21/20|2/22/20|2/23/20|2/24/20|2/25/20|2/26/20|2/27/20",
+			"field100": "",
+			"style": {
+				"name":"active",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|FADE|BOX|LONGTITLE|GRID|SIZE|GRIDSIZE|SUM|AGGREGATE|COMPATIBLE|RECT|FIXSIZE|NOLEGEND",
+				"colorscheme": [
+					"rgba(100, 160, 220,1)"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "CSSE_COVID_ALL_28",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
+				"datacache": "false",
+				"filter":"WHERE type = Active",
+				"lookupfield": "Lat|Long",
+				"symbols": [
+					"circle"],
+				"label": [
+					"2/10/20",
+					"2/11/20",
+					"2/12/20",
+					"2/13/20",
+					"2/14/20",
+					"2/15/20",
+					"2/16/20",
+					"2/17/20",
+					"2/18/20",
+					"2/19/20",
+					"2/20/20",
+					"2/21/20",
+					"2/22/20",
+					"2/23/20"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "2",
+				"scale": "0.85",
+				"rangescale": "0.8",
+				"minvalue": "0",
+				"linewidth": "15",
+				"bordercolor": "black",
+				"boxopacity": "0.01",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"maxvalue":"100000",
+				"aggregationscale":[
+					"1:1","250px",
+					"1:5000000","150px"
+				],
+				"maxvalue":"100000",
+				"boxupper":"1:1000000",
+				"titlefield":"Country/Region",
+				"aggregationlower": "1:10000000",
+				"title": "COVID-19 - confirmed cases <br> last 28 days",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "1/31/20|2/1/20|2/2/20|2/3/20|2/4/20|2/5/20|2/6/20|2/7/20|2/8/20|2/9/20|2/10/20|2/11/20|2/12/20|2/13/20|2/14/20|2/15/20|2/16/20|2/17/20|2/18/20|2/19/20|2/20/20|2/21/20|2/22/20|2/23/20|2/24/20|2/25/20|2/26/20|2/27/20",
+			"field100": "",
+			"style": {
+				"name":"recovered",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|FADE|LONGTITLE|GRID|SIZE|GRIDSIZE|SUM|AGGREGATE|COMPATIBLE|RECT|FIXSIZE|NOLEGEND",
+				"colorscheme": [
+					"rgba(155, 200, 100,1)"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "CSSE_COVID_ALL_28_ALT",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
+				"datacache": "false",
+				"filter":"WHERE type = Recovered",
+				"lookupfield": "Lat|Long",
+				"symbols": [
+					"circle"],
+				"label": [
+					"2/10/20",
+					"2/11/20",
+					"2/12/20",
+					"2/13/20",
+					"2/14/20",
+					"2/15/20",
+					"2/16/20",
+					"2/17/20",
+					"2/18/20",
+					"2/19/20",
+					"2/20/20",
+					"2/21/20",
+					"2/22/20",
+					"2/23/20"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "2",
+				"scale": "0.85",
+				"rangescale": "0.8",
+				"minvalue": "0",
+				"linewidth": "15",
+				"bordercolor": "black",
+				"boxopacity": "0.01",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"maxvalue":"100000",
+				"aggregationscale":[
+					"1:1","250px",
+					"1:5000000","150px"
+				],
+				"maxvalue":"100000",
+				"titlefield":"Country/Region",
+				"aggregationlower": "1:10000000",
+				"title": "COVID-19 - confirmed cases <br> last 28 days",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

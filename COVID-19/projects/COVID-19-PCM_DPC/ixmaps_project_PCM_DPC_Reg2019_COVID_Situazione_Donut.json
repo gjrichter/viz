@@ -1,0 +1,102 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Mar 09 2020 15:03:09 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "13841043"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.5565103750476",
+			"lng": "13.419799804687502"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "ricoverati_con_sintomi|terapia_intensiva|isolamento_domiciliare|dimessi_guariti|deceduti",
+			"field100": "",
+			"style": {
+				"type": "CHART|PIE|DONUT|THIN|SIZE|SUM|SIZE|SUM",
+				"colorscheme": [
+					"#4E79A7",
+					"#F28E2B",
+					"#A0CBE8",
+					"#59A14F",
+					"#ffffff"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"filter": "WHERE data = \"2020-03-09 18:00:00\"",
+				"dbtable": "PCM_DPC_COVID_ACTUAL",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DCP/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "true",
+				"lookupfield": "lat|long",
+				"symbols": [
+					"circle"],
+				"label": [
+					"ricoverati_con_sintomi",
+					"terapia_intensiva",
+					"isolamento_domiciliare",
+					"dimessi_guariti",
+					"deceduti"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "100",
+				"scale": "1",
+				"linewidth": "0.3",
+				"titlefield": "denominazione_regione",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"evidence": "isolate_gray",
+				"title": "COVID-19<br>Situazione Regioni"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

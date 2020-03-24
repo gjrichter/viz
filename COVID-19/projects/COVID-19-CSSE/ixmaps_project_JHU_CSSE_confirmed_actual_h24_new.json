@@ -1,0 +1,119 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Fri Feb 28 2020 12:29:52 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>COVID-19 - <b>24 hours</b> <br> new cases</h1><h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE</h4>",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "55364168"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panhidden":"false"
+			},
+		"center": {
+			"lat": "28.459033019728068",
+			"lng": "21.884765625"
+			},
+		"zoom": "3"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|AURA|BUBBLE|DIFFERENCE|VALUES|SIZE|SUM",
+				"colorscheme": [
+					"rgba(100, 160, 220,1)"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_LAST_24H",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province.js",
+				"datacache": "false",
+				"lookupfield": "lat|long",
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1000",
+				"scale": "1",
+				"titlefield": "denominazione_provincia",
+				"linewidth": "0",
+				"valueupper": "1:5000000",
+				"chartupper": "1:10000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "COVID-19 Italia Province",
+				"snippet": "fonte: <a href='http://unwfp.maps.arcgis.com/apps/opsdashboard/index.html#/4f74fc222b7041cd9cc3c52e62af1b8c' target='_blank'>FOA COVID-19 map</a>"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "2/27/20",
+			"field100": "2/26/20",
+			"style": {
+				"type": "CHART|AURA|BUBBLE|DIFFERENCE|SIZE|SUM|VALUES",
+				"colorscheme": [
+					"rgba(100, 160, 220,1)"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"filter": "WHERE Country/Region != Others",
+				"dbtable": "CSSE_COVID_CONFIRMED",
+				"dbtableUrl": "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/process_last_diff.js",
+				"datacache": "false",
+				"lookupfield": "Lat|Long",
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue":"1000",
+				"linewidth": "0",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"chartlower": "1:5000000",
+				"titlefield":"Country/Region",
+				"title": "COVID-19 new cases 24h",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
+				"description":"nuovi casi ultime 24 ore"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
