@@ -64,7 +64,7 @@
 					"#FFDDDD",
 					"#ff0000",
 					"2colors"],
-				"fillopacity": "0.7",
+				"fillopacity": "0.1",
 				"shadow": "false",
 				"dbtable": "PCM_DPC_COVID_LAST",
 				"dbtableType": "ext",
@@ -77,8 +77,8 @@
 				"scale": "1",
 				"valuefield": "2020-03-23",
 				"sizefield": "2020-03-23",
-				"dopacitypow": "3",
-				"dopacityscale": "1",
+				"dopacitypow": "2",
+				"dopacityscale": "3",
 				"titlefield": "denominazione_provincia",
 				"valueupper": "1:1000000",
 				"valuescale": "1",
@@ -125,7 +125,7 @@
 			"style": {
 				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|LOLLIPOP|LONGTITLE|GRID|BOX|GRIDSIZE|FIXSIZE|AGGREGATE|RECT|COMPATIBLE|DIFFERENCE|SUM|SIMPLELEGEND",
 				"colorscheme": [
-					"#880000"],
+					"#dd0000"],
 				"fillopacity": "0.4",
 				"shadow": "false",
 				"filter": "WHERE \"denominazione_provincia\" NOT \"aggio\"",
@@ -158,7 +158,7 @@
 					"200px",
 					"1:1000000",
 					"100px"],
-				"aggregationlower": "1:100000000",
+				"aggregationlower": "1:2500000",
 				"name": "curve",
 				"title": "Giorno per giorno",
 				"snippet": "dal 2020-02-25 al 2020-03-23"

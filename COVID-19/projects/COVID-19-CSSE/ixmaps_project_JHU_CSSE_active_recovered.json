@@ -91,6 +91,7 @@
 				"chartupper": "1:5000000",
 				"valuescale": "1",
 				"valuedecimals": "0",
+				"name": "actual_italy",
 				"fadenegative": "1",
 				"evidence": "isolate_gray",
 				"title": "COVID-19<br>Situazione Regioni",
@@ -98,25 +99,69 @@
 				}
 			},{
 			"layer": "World Mercator",
-			"field": "type",
+			"field": "Deaths|Active_calc|Recovered",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|RINGS|SORT|UP|CENTER|SIZE|CATEGORICAL|AGGREGATE|SUM|VALUES|DTEXT|VALUEBACKGROUND",
+				"type": "CHART|SYMBOL|SEQUENCE|RINGS|SORT|UP|CENTER|SIZE|SUM|VALUES|DTEXT|VALUEBACKGROUND",
 				"colorscheme": [
 					"rgba(70, 70, 70,0.5)",
 					"rgba(100, 160, 220,0.5)",
 					"rgba(155, 200, 100,0.9)"],
 				"fillopacity": "1",
 				"shadow": "false",
-				"filter": "WHERE Country/Region != Others",
-				"dbtable": "CSSE_COVID_LAST_ALL",
+				"filter": "WHERE Country_Region = US",
+				"dbtable": "CSSE_COVID_LAST_DAILY",
 				"dbtableType": "ext",
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
 				"datacache": "true",
-				"lookupfield": "Lat|Long",
+				"lookupfield": "Lat|Long_",
 				"symbols": [
 					"circle"],
-				"values": [
+				"label": [
+					"Deaths",
+					"Active",
+					"Recovered"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "5000",
+				"scale": "0.8",
+				"textcolor": [
+					"#ffffff"],
+				"linecolor": [
+					"#000000"],
+				"linewidth": "1",
+				"titlefield": "Country_Region",
+				"gridwidth": "100px",
+				"valueupper": "1:10000000",
+				"chartupper": "1:5000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "actual_us",
+				"title": "COVID-19 cases",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
+				"description": "aggiornato: 3/21/20"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "Deaths|Active_calc|Recovered",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|RINGS|SORT|UP|CENTER|SIZE|SUM|AGGREGATE|VALUES|DTEXT|VALUEBACKGROUND",
+				"colorscheme": [
+					"rgba(70, 70, 70,0.5)",
+					"rgba(100, 160, 220,0.5)",
+					"rgba(155, 200, 100,0.9)"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"filter": "WHERE Country_Region != Others",
+				"dbtable": "CSSE_COVID_LAST_DAILY",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
+				"datacache": "true",
+				"lookupfield": "Lat|Long_",
+				"symbols": [
+					"circle"],
+				"label": [
 					"Deaths",
 					"Active",
 					"Recovered"],
@@ -124,17 +169,18 @@
 				"refreshtimeout": "0",
 				"normalsizevalue": "5000",
 				"scale": "1.5625",
-				"sizefield": "3/21/20",
 				"textcolor": [
 					"#ffffff"],
 				"linecolor": [
 					"#000000"],
 				"linewidth": "1",
-				"titlefield": "Country/Region",
+				"titlefield": "Country_Region",
+				"gridwidth": "100px",
 				"valueupper": "1:10000000",
 				"chartlower": "1:5000000",
 				"valuescale": "1",
 				"valuedecimals": "0",
+				"gridwidth":"100px",
 				"name": "actual",
 				"title": "COVID-19 cases",
 				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",

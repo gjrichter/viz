@@ -435,6 +435,56 @@ window.ixmaps = window.ixmaps || {};
 		
 	};
 	
+	ixmaps.CSSE_COVID_LAST_DAILY = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		
+		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/";
+
+		new Data.Broker()
+			.addSource(szUrl1, "csv")
+			.realize(
+				function (dataA) {
+
+					var date = dataA[0].columnNames().pop();
+					dateA = date.split("/");
+					date = new Date(Number("20" + dateA[2]), Number(dateA[0]) - 1, Number(dateA[1]), 18);
+					szDate = date.toISOString();
+					dateA = szDate.split("T")[0].split("-");
+					szDate = dateA[1] + "-" + dateA[2] + "-" + dateA[0];
+
+					new Data.Broker()
+						.addSource(szUrl2 + szDate + ".csv", "csv")
+						.realize(
+							function (dataA) {
+								
+								var data = dataA[0];
+								
+								var iConfirmed 	= data.column("Confirmed").index;
+								var iDeaths 	= data.column("Deaths").index;
+								var iRecovered 	= data.column("Recovered").index;
+								var iActive 	= data.column("Active").index;
+								
+								data.addColumn({destination:"Active_calc"},function(row){
+									return(Number(row[iConfirmed]) -
+										   Number(row[iDeaths]) - 
+										   Number(row[iRecovered])
+									);
+								});
+								
+								// -----------------------------------------------------------------------------------------------               
+								// deploy the data
+								// ----------------------------------------------------------------------------------------------- 
+
+								ixmaps.setExternalData(dataA[0], {
+									type: "dbtable",
+									name: options.name
+								});
+
+							});
+				});
+					
+	};
 	
 	
 	
