@@ -78,6 +78,7 @@
 				"chartupper": "1:10000000",
 				"valuescale": "1",
 				"valuedecimals": "0",
+				"name":"new_cases_italy",
 				"title": "COVID-19 Italia Province",
 				"snippet": "fonte: <a href='http://unwfp.maps.arcgis.com/apps/opsdashboard/index.html#/4f74fc222b7041cd9cc3c52e62af1b8c' target='_blank'>FOA COVID-19 map</a>"
 				}
@@ -105,6 +106,7 @@
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"chartlower": "1:5000000",
+				"name":"new_cases",
 				"titlefield":"Country/Region",
 				"title": "COVID-19 new cases 24h",
 				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",

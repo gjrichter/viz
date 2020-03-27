@@ -131,7 +131,7 @@
 					"#000000"],
 				"linewidth": "1",
 				"titlefield": "Country_Region",
-				"gridwidth": "100px",
+				"gridwidth": "150px",
 				"valueupper": "1:10000000",
 				"chartupper": "1:5000000",
 				"valuescale": "1",
@@ -153,7 +153,7 @@
 					"rgba(155, 200, 100,0.9)"],
 				"fillopacity": "1",
 				"shadow": "false",
-				"filter": "WHERE Country_Region != Others",
+				"filter": "WHERE Country_Region != Others AND Lat != 0",
 				"dbtable": "CSSE_COVID_LAST_DAILY",
 				"dbtableType": "ext",
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
@@ -167,24 +167,49 @@
 					"Recovered"],
 				"units": "",
 				"refreshtimeout": "0",
-				"normalsizevalue": "5000",
-				"scale": "1.5625",
+				"normalsizevalue": "10000",
+				"scale": "1.5",
 				"textcolor": [
 					"#ffffff"],
 				"linecolor": [
 					"#000000"],
 				"linewidth": "1",
 				"titlefield": "Country_Region",
-				"gridwidth": "100px",
 				"valueupper": "1:10000000",
 				"chartlower": "1:5000000",
 				"valuescale": "1",
 				"valuedecimals": "0",
-				"gridwidth":"100px",
+				"gridwidth":"40px",
 				"name": "actual",
 				"title": "COVID-19 cases",
 				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
 				"description": "aggiornato: 3/21/20"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOLS|GRIDSIZE|AGGREGATE|FAST|SUM|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "0",
+				"shadow": "false",
+				"filter": "WHERE Country_Region != Others AND Lat != 0",
+				"dbtable": "CSSE_COVID_LAST_DAILY",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
+				"datacache": "true",
+				"lookupfield": "Lat|Long_",
+				"symbols": [
+					"hexagon"],
+				"units": "",
+				"scale": "1",
+				"textcolor": "#884444",
+				"linecolor": "#884444",
+				"valuescale": "1",
+				"gridwidth": "40px",
+				"title": "Grid"
 				}
 			}],
 	"layerMask": {

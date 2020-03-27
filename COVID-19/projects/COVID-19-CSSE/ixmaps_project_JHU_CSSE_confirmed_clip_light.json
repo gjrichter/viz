@@ -54,7 +54,7 @@
 		},
 	"themes": [{
 			"layer": "World Mercator",
-			"field": "$item$",
+			"field": "placeholder",
 			"field100": "",
 			"style": {
 				"name":"clip",
@@ -63,7 +63,7 @@
 					"rgba(100, 160, 220,1)"],
 				"fillopacity": "0.3",
 				"shadow": "false",
-				"filter": "WHERE Country/Region != Others AND type = Active",
+				"filter": "WHERE Country/Region != Others",
 				"dbtable": "CSSE_COVID_ALL_CLIP",
 				"dbtableType": "ext",
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",

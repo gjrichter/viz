@@ -9,9 +9,9 @@ window.ixmaps = window.ixmaps || {};
 
 	ixmaps.CSSE_COVID_LAST = function (theme, options) {
 
-		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
-		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv";
-		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv";
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv";
+		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
 		
 		var broker = new Data.Broker()
 			.addSource(szUrl1, "csv")
@@ -42,9 +42,9 @@ window.ixmaps = window.ixmaps || {};
 
 	ixmaps.CSSE_COVID_LAST_ACTIVE = function (theme, options) {
 
-		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
-		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv";
-		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv";
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv";
+		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
 		
 		var broker = new Data.Broker()
 			.addSource(szUrl1, "csv")
@@ -83,10 +83,10 @@ window.ixmaps = window.ixmaps || {};
 
 	ixmaps.CSSE_COVID_LAST_ALL = function (theme, options) {
 
-		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
-		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv";
-		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv";
-		var szUrl4 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv";
+		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
+		var szUrl4 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
 		
 		var broker = new Data.Broker()
 			.addSource(szUrl1, "csv")
@@ -138,10 +138,10 @@ window.ixmaps = window.ixmaps || {};
 		
 	ixmaps.CSSE_COVID_ALL = function (theme, options) {
 
-		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
-		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv";
-		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv";
-		var szUrl4 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv";
+		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
+		var szUrl4 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
 		
 		var broker = new Data.Broker()
 			.addSource(szUrl1, "csv")
@@ -191,10 +191,10 @@ window.ixmaps = window.ixmaps || {};
 
 	ixmaps.CSSE_COVID_ALL_28 = function (theme, options) {
 
-		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
-		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv";
-		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv";
-		var szUrl4 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv";
+		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
+		var szUrl4 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
 		
 		var broker = new Data.Broker()
 			.addSource(szUrl1, "csv")
@@ -262,87 +262,10 @@ window.ixmaps = window.ixmaps || {};
 	
 	ixmaps.CSSE_COVID_ALL_CLIP = function (theme, options) {
 
-		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
-		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv";
-		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv";
-		var szUrl4 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
-		
-		var broker = new Data.Broker()
-			.addSource(szUrl1, "csv")
-			.addSource(szUrl2, "csv")
-			.addSource(szUrl3, "csv")
-			.addSource(szUrl4, "csv")
-			.realize(
-				function (dataA) {
-
-					data_Confirmed = dataA[0];
-					data_Recovered = dataA[1];
-					data_Deaths = dataA[2];
-					data_Active = dataA[3];
-					
-					var lastDataColumnName = data_Confirmed.columnNames().pop();
-					
-					theme.szDescription = "aggiornato: "+lastDataColumnName;
-					
-					var records = data_Active.records;
-					for ( var r=0; r<records.length; r++){
-						for ( var c=4; c<records[r].length; c++){
-							records[r][c] -= data_Recovered.records[r][c];
-							records[r][c] -= data_Deaths.records[r][c];
-						}
-					}
-
-					data_Confirmed.addColumn({destination:"type"},function(){return "Confirmed";});
-					data_Recovered.addColumn({destination:"type"},function(){return "Recovered";});
-					data_Deaths.addColumn({destination:"type"},function(){return "Deaths";});
-					data_Active.addColumn({destination:"type"},function(){return "Active";});
-					
-					data_Confirmed.append(data_Recovered);
-					data_Confirmed.append(data_Deaths);
-					data_Confirmed.append(data_Active);
-					
-					// get data columns
-					var columnsA = data_Confirmed.columnNames();
-
-					columnsA.shift();
-					columnsA.shift();
-					columnsA.shift();
-					columnsA.shift();
-					columnsA.shift();
-					columnsA.pop();
-
-					// set as data fields in actual theme
-					options.theme.szFields = columnsA.slice().join("|");
-					options.theme.szFieldsA = columnsA.slice();
-
-					options.theme.nClipFrames = columnsA.length;
-
-					// make label 
-					var xAxis = [];
-					for ( i in columnsA ){
-						var dte = new Date(columnsA[i]);
-						xAxis.push(dte.toLocaleDateString());
-					}
-					options.theme.szXaxisA = xAxis; 
-
-					// -----------------------------------------------------------------------------------------------               
-					// deploy the data
-					// ----------------------------------------------------------------------------------------------- 
-
-					ixmaps.setExternalData(data_Confirmed, {
-						type: "dbtable",
-						name: options.name
-					});
-				});
-
-	};
-
-	ixmaps.CSSE_COVID_ALL_MERGE = function (theme, options) {
-
-		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
-		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv";
-		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv";
-		var szUrl4 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv";
+		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
+		var szUrl4 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
 		
 		var broker = new Data.Broker()
 		
@@ -362,24 +285,15 @@ window.ixmaps = window.ixmaps || {};
 					var lastDataColumnName = data_Confirmed.columnNames().pop();
 					
 					theme.szDescription = "aggiornato: "+lastDataColumnName;
-					
-					var records = data_Active.records;
-					for ( var r=0; r<records.length; r++){
-						for ( var c=4; c<records[r].length; c++){
-							records[r][c] -= data_Recovered.records[r][c];
-							records[r][c] -= data_Deaths.records[r][c];
-						}
-					}
-					
+
 					// get data columns
 					var columnsA = data_Confirmed.columnNames();
 					
-					data_Confirmed.addColumn({destination:"position"},function(row){return row[2]+row[3];});
-					data_Recovered.addColumn({destination:"position"},function(row){return row[2]+row[3];});
-					data_Deaths.addColumn({destination:"position"},function(row){return row[2]+row[3];});
-					data_Active.addColumn({destination:"position"},function(row){return row[2]+row[3];});
+					data_Confirmed.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Recovered.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Deaths.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Active.addColumn({destination:"position"},function(row){return row[0]+row[1];});
 
-					console.log(data_Active);
 					var merger = new Data.Merger();
 					merger.addSource(data_Active, {
 						lookup: "position",
@@ -389,14 +303,273 @@ window.ixmaps = window.ixmaps || {};
 						lookup: "position",
                     	columns: columnsA	
 					});
+					merger.addSource(data_Deaths, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.addSource(data_Confirmed, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
 					merger.realize(function (dbTable) {
+						
+						var index_active = dbTable.column("1/22/20.1").index;
+						var index_recovered = dbTable.column("1/22/20.2").index;
+						var index_deaths = dbTable.column("1/22/20.3").index;
+						var days = columnsA.length;
+						
+						var fields = dbTable.fields;
+						var records = dbTable.records;
+						for ( var d=4; d<days; d++ ){
+							console.log(fields[index_active].id+','+fields[index_recovered].id+','+fields[index_deaths].id);
+							for ( var r=0; r<records.length; r++){
+								records[r][index_active] -= records[r][index_recovered];
+								records[r][index_active] -= records[r][index_deaths];
+							}
+							index_active++;
+							index_recovered++;
+							index_deaths++;
+						}
+						
+						columnsA.shift();
+						columnsA.shift();
+						columnsA.shift();
+						columnsA.shift();
+
+						// set as data fields in actual theme
+						
+						fieldsA = [];
+						for ( var i=0; i<columnsA.length; i++ ){
+							fieldsA.push(columnsA[i]+".1");
+						}
+						
+						options.theme.szFields = fieldsA.slice().join("|");
+						options.theme.szFieldsA = fieldsA;
+						
+						options.theme.nClipFrames = columnsA.length;
+						
+						options.theme.szItemField = "Lat.1|Long.1";
+						options.theme.szSelectionField = "Lat.1|Long.1";
+						console.log(options.theme);
+						
+						// make label 
+						var xAxis = [];
+						for ( i in columnsA ){
+							var dte = new Date(columnsA[i].split(".")[0]);
+								xAxis.push(dte.toLocaleDateString());
+						}
+						options.theme.szXaxisA = xAxis; 
+						
+						// -----------------------------------------------------------------------------------------------               
+						// deploy the data
+						// ----------------------------------------------------------------------------------------------- 
+
+						ixmaps.setExternalData(dbTable, {
+							type: "dbtable",
+							name: options.name
+						});
+						
+					});
+					
+				});
+
+	};
+	
+	ixmaps.CSSE_COVID_ALL_CLIP_DIFF = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv";
+		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
+		var szUrl4 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		
+		var broker = new Data.Broker()
+		
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.addSource(szUrl3, "csv")
+			.addSource(szUrl4, "csv")
+			.realize(
+				
+				function (dataA) {
+
+					data_Confirmed = dataA[0];
+					data_Recovered = dataA[1];
+					data_Deaths = dataA[2];
+					data_Active = dataA[3];
+					
+					var lastDataColumnName = data_Confirmed.columnNames().pop();
+					
+					theme.szDescription = "aggiornato: "+lastDataColumnName;
+
+					// get data columns
+					var columnsA = data_Confirmed.columnNames();
+					
+					data_Confirmed.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Recovered.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Deaths.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Active.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+
+					var merger = new Data.Merger();
+					merger.addSource(data_Active, {
+						lookup: "position",
+                    	columns: columnsA
+					});
+					merger.addSource(data_Recovered, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.addSource(data_Deaths, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.addSource(data_Confirmed, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.realize(function (dbTable) {
+						
+						var index_active = dbTable.column("1/22/20.1").index;
+						var index_recovered = dbTable.column("1/22/20.2").index;
+						var index_deaths = dbTable.column("1/22/20.3").index;
+						var days = columnsA.length;
+						
+						var fields = dbTable.fields;
+						var records = dbTable.records;
+						for ( var d=4; d<days; d++ ){
+							console.log(fields[index_active].id+','+fields[index_recovered].id+','+fields[index_deaths].id);
+							for ( var r=0; r<records.length; r++){
+								records[r][index_active] -= records[r][index_recovered];
+								records[r][index_active] -= records[r][index_deaths];
+							}
+							index_active++;
+							index_recovered++;
+							index_deaths++;
+						}
+						
+						columnsA.shift();
+						columnsA.shift();
+						columnsA.shift();
+						columnsA.shift();
+
+						// set as data fields in actual theme
+						
+						fieldsA = [];
+						for ( var i=0; i<columnsA.length; i++ ){
+							fieldsA.push(columnsA[i]+".1");
+						}
+						
+						options.theme.szFields = fieldsA.slice().join("|");
+						options.theme.szFieldsA = fieldsA;
+						
+						options.theme.nClipFrames = columnsA.length-1;
+						
+						options.theme.szItemField = "Lat.1|Long.1";
+						options.theme.szSelectionField = "Lat.1|Long.1";
+						console.log(options.theme);
+						
+						// make label 
+						var xAxis = [];
+						for ( i in columnsA ){
+							var dte = new Date(columnsA[i].split(".")[0]);
+								xAxis.push(dte.toLocaleDateString());
+						}
+						options.theme.szXaxisA = xAxis; 
+						
+						// -----------------------------------------------------------------------------------------------               
+						// deploy the data
+						// ----------------------------------------------------------------------------------------------- 
+
+						ixmaps.setExternalData(dbTable, {
+							type: "dbtable",
+							name: options.name
+						});
+						
+					});
+					
+				});
+
+	};
+
+	ixmaps.CSSE_COVID_ALL_MERGE = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv";
+		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
+		var szUrl4 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		
+		var broker = new Data.Broker()
+		
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.addSource(szUrl3, "csv")
+			.addSource(szUrl4, "csv")
+			.realize(
+				
+				function (dataA) {
+
+					data_Confirmed = dataA[0];
+					data_Recovered = dataA[1];
+					data_Deaths = dataA[2];
+					data_Active = dataA[3];
+					
+					var lastDataColumnName = data_Confirmed.columnNames().pop();
+					
+					theme.szDescription = "aggiornato: "+lastDataColumnName;
+
+					// get data columns
+					var columnsA = data_Confirmed.columnNames();
+					
+					data_Confirmed.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Recovered.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Deaths.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Active.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+
+					console.log(data_Active);
+					
+					var merger = new Data.Merger();
+					merger.addSource(data_Active, {
+						lookup: "position",
+                    	columns: columnsA
+					});
+					merger.addSource(data_Recovered, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.addSource(data_Deaths, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.addSource(data_Confirmed, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.realize(function (dbTable) {
+						
 						console.log(dbTable);
 						
-						columnsA.shift();
-						columnsA.shift();
-						columnsA.shift();
-						columnsA.shift();
+						var index_active = dbTable.column("1/22/20.1").index;
+						var index_recovered = dbTable.column("1/22/20.2").index;
+						var index_deaths = dbTable.column("1/22/20.3").index;
+						var days = columnsA.length;
 						
+						var fields = dbTable.fields;
+						var records = dbTable.records;
+						for ( var d=4; d<days; d++ ){
+							console.log(fields[index_active].id+','+fields[index_recovered].id+','+fields[index_deaths].id);
+							for ( var r=0; r<records.length; r++){
+								records[r][index_active] -= records[r][index_recovered];
+								records[r][index_active] -= records[r][index_deaths];
+							}
+							index_active++;
+							index_recovered++;
+							index_deaths++;
+						}
+						
+						columnsA.shift();
+						columnsA.shift();
+						columnsA.shift();
+						columnsA.shift();
+
 						// set as data fields in actual theme
 						
 						fieldsA = [];

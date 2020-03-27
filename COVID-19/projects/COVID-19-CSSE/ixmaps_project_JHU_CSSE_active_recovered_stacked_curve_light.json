@@ -93,7 +93,7 @@
 					"1:5000000",
 					"150px"],
 				"aggregationlower": "1:10000000",
-				"name": "confirmed",
+				"name": "stacked_curves",
 				"title": "COVID-19 - active cases vs recovered ",
 				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
 				"description": "aggiornato: 3/23/20"
