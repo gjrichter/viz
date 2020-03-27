@@ -198,7 +198,7 @@
 				"filter": "WHERE Country_Region != Others AND Lat != 0",
 				"dbtable": "CSSE_COVID_LAST_DAILY",
 				"dbtableType": "ext",
-				"dbtableExt": "../../projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
 				"datacache": "true",
 				"lookupfield": "Lat|Long_",
 				"symbols": [
