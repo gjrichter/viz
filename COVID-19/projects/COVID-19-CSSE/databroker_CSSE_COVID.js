@@ -40,6 +40,47 @@ window.ixmaps = window.ixmaps || {};
 				});
 	};
 
+	ixmaps.CSSE_COVID_LAST_DIFF_CONFIRMED = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		
+		var broker = new Data.Broker()
+			.addSource(szUrl1, "csv")
+			.realize(
+				function (dataA) {
+
+					data_Confirmed = dataA[0];
+					
+					var columnNamesA = data_Confirmed.columnNames();
+					
+					var records = data_Confirmed.records;
+					for ( var r=0; r<records.length; r++){
+						for ( var c=4; c<records[r].length-1; c++){
+							records[r][c] = records[r][c+1] -records[r][c];
+						}
+					}
+					
+					columnNamesA.pop();
+					var szLastColumn = columnNamesA.pop();
+
+					theme.szDescription = "aggiornato: "+szLastColumn;
+					
+					theme.szFields = szLastColumn;
+					theme.szFieldsA = [szLastColumn];
+
+					// -----------------------------------------------------------------------------------------------               
+					// deploy the data
+					// ----------------------------------------------------------------------------------------------- 
+
+					ixmaps.setExternalData(data_Confirmed, {
+						type: "dbtable",
+						name: options.name
+					});
+				});
+	};
+	
+	
+	
 	ixmaps.CSSE_COVID_LAST_ACTIVE = function (theme, options) {
 
 		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
