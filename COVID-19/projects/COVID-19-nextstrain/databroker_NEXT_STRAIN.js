@@ -37,7 +37,7 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.NEXT_STRAIN_location = function () {
 
 
-		var szUrl = "http://data.nextstrain.org/ncov.json";
+		var szUrl = "https://data.nextstrain.org/ncov.json";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the NEXT STRAIN data json 
@@ -95,7 +95,7 @@ window.ixmaps = window.ixmaps || {};
 
 	ixmaps.NEXT_STRAIN_vectors = function (theme,options) {
 		
-		var szUrl = "http://data.nextstrain.org/ncov.json";
+		var szUrl = "https://data.nextstrain.org/ncov.json";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the NEXT STRAIN data json 
@@ -145,7 +145,7 @@ window.ixmaps = window.ixmaps || {};
 
 	ixmaps.NEXT_STRAIN_vectors_II = function (theme,options) {
 		
-		var szUrl = "http://data.nextstrain.org/ncov.json";
+		var szUrl = "https://data.nextstrain.org/ncov.json";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the NEXT STRAIN data json 
@@ -195,7 +195,7 @@ window.ixmaps = window.ixmaps || {};
 
 	ixmaps.NEXT_STRAIN_vectors_clean = function (theme,options) {
 		
-		var szUrl = "http://data.nextstrain.org/ncov.json";
+		var szUrl = "https://data.nextstrain.org/ncov.json";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the NEXT STRAIN data json 
