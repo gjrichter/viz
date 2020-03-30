@@ -700,6 +700,93 @@ window.ixmaps = window.ixmaps || {};
 					
 	};
 	
+	ixmaps.CSSE_COVID_LAST_DAILY_DIFF = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		
+		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/";
+
+		new Data.Broker()
+			.addSource(szUrl1, "csv")
+			.realize(
+				function (dataA) {
+
+					var date = dataA[0].columnNames().pop();
+					var dateA = date.split("/");
+					var date2 = new Date(Number("20" + dateA[2]), Number(dateA[0]) - 1, Number(dateA[1]), 18);
+					
+						date = dataA[0].columnNames().pop();
+						dateA = date.split("/");
+					var date1 = new Date(Number("20" + dateA[2]), Number(dateA[0]) - 1, Number(dateA[1]), 18);
+					
+					var szDate1 = date1.toISOString();
+					dateA = szDate1.split("T")[0].split("-");
+					szDate1 = dateA[1] + "-" + dateA[2] + "-" + dateA[0];
+					
+					var szDate2 = date2.toISOString();
+					dateA = szDate1.split("T")[0].split("-");
+					szDate2 = dateA[1] + "-" + dateA[2] + "-" + dateA[0];
+
+					new Data.Broker()
+						.addSource(szUrl2 + szDate1 + ".csv", "csv")
+						.addSource(szUrl2 + szDate2 + ".csv", "csv")
+						.realize(
+							function (dataA) {
+								
+								var data = dataA[0];
+								
+								var iConfirmed 	= data.column("Confirmed").index;
+								var iDeaths 	= data.column("Deaths").index;
+								var iRecovered 	= data.column("Recovered").index;
+								var iActive 	= data.column("Active").index;
+								
+								data.addColumn({destination:"Active_calc"},function(row){
+									return(Number(row[iConfirmed]) -
+										   Number(row[iDeaths]) - 
+										   Number(row[iRecovered])
+									);
+								});
+								var iActiveCalc	= data.column("Active_calc").index;
+								
+								var data = dataA[1];
+								
+								data.addColumn({destination:"Active_calc"},function(row){
+									return(Number(row[iConfirmed]) -
+										   Number(row[iDeaths]) - 
+										   Number(row[iRecovered])
+									);
+								});
+								
+								dataA[0].addColumn({destination:"position"},function(row){return row[0]+row[1];});
+								dataA[1].addColumn({destination:"position"},function(row){return row[0]+row[1];});
+
+								var merger = new Data.Merger();
+								merger.addSource(dataA[0], {
+									lookup: "position",
+									columns: columnsA
+								});
+								merger.addSource(dataA[1], {
+									lookup: "position",
+									columns: columnsA	
+								});
+								
+								merger.realize(function (dbTable) {
+																	
+									// -----------------------------------------------------------------------------------------------            
+									// deploy the data
+									// ----------------------------------------------------------------------------------------------- 
+
+									ixmaps.setExternalData(dbTable, {
+										type: "dbtable",
+										name: options.name
+									});
+								});
+
+							});
+				});
+					
+	};
+	
 	
 	
 })();
