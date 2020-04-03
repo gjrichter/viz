@@ -621,6 +621,127 @@ window.ixmaps = window.ixmaps || {};
 						
 						options.theme.szFields = fieldsA.slice().join("|");
 						options.theme.szFieldsA = fieldsA;
+						options.theme.nGridX = 2;
+						
+						options.theme.szItemField = "Lat.1|Long.1";
+						options.theme.szSelectionField = "Lat.1|Long.1";
+						console.log(options.theme);
+						
+						// make label 
+						var xAxis = [];
+						for ( i in columnsA ){
+							var dte = new Date(columnsA[i]);
+							xAxis.push(dte.toLocaleDateString());
+						}
+						//options.theme.szXaxisA = xAxis; 
+						
+						// -----------------------------------------------------------------------------------------------               
+						// deploy the data
+						// ----------------------------------------------------------------------------------------------- 
+
+						ixmaps.setExternalData(dbTable, {
+							type: "dbtable",
+							name: options.name
+						});
+						
+					});
+					
+				});
+		
+	};
+
+	
+	ixmaps.CSSE_COVID_ALL_MERGE_28 = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv";
+		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
+		var szUrl4 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		
+		var broker = new Data.Broker()
+		
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.addSource(szUrl3, "csv")
+			.addSource(szUrl4, "csv")
+			.realize(
+				
+				function (dataA) {
+
+					data_Confirmed = dataA[0];
+					data_Recovered = dataA[1];
+					data_Deaths = dataA[2];
+					data_Active = dataA[3];
+					
+					var lastDataColumnName = data_Confirmed.columnNames().pop();
+					
+					theme.szDescription = "aggiornato: "+lastDataColumnName;
+
+					// get data columns
+					var columnsA = data_Confirmed.columnNames();
+					
+					data_Confirmed.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Recovered.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Deaths.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Active.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+
+					console.log(data_Active);
+					
+					var merger = new Data.Merger();
+					merger.addSource(data_Active, {
+						lookup: "position",
+                    	columns: columnsA
+					});
+					merger.addSource(data_Recovered, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.addSource(data_Deaths, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.addSource(data_Confirmed, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.realize(function (dbTable) {
+						
+						console.log(dbTable);
+						
+						var index_active = dbTable.column("1/22/20.1").index;
+						var index_recovered = dbTable.column("1/22/20.2").index;
+						var index_deaths = dbTable.column("1/22/20.3").index;
+						var days = columnsA.length;
+						
+						var fields = dbTable.fields;
+						var records = dbTable.records;
+						for ( var d=4; d<days; d++ ){
+							console.log(fields[index_active].id+','+fields[index_recovered].id+','+fields[index_deaths].id);
+							for ( var r=0; r<records.length; r++){
+								records[r][index_active] -= records[r][index_recovered];
+								records[r][index_active] -= records[r][index_deaths];
+							}
+							index_active++;
+							index_recovered++;
+							index_deaths++;
+						}
+						
+						columnsA.shift();
+						columnsA.shift();
+						columnsA.shift();
+						columnsA.shift();
+
+						// set as data fields in actual theme
+						
+						fieldsA = [];
+						for ( var i=columnsA.length-28; i<columnsA.length; i++ ){
+							fieldsA.push(columnsA[i]+".1");
+							fieldsA.push(columnsA[i]+".2");
+						}
+						
+						options.theme.szFields = fieldsA.slice().join("|");
+						options.theme.szFieldsA = fieldsA;
+						options.theme.nGridX = 2;
 						
 						options.theme.szItemField = "Lat.1|Long.1";
 						options.theme.szSelectionField = "Lat.1|Long.1";
@@ -649,6 +770,692 @@ window.ixmaps = window.ixmaps || {};
 		
 	};
 	
+	ixmaps.CSSE_COVID_ALL_MERGE_DRA = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv";
+		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
+		var szUrl4 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		
+		var broker = new Data.Broker()
+		
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.addSource(szUrl3, "csv")
+			.addSource(szUrl4, "csv")
+			.realize(
+				
+				function (dataA) {
+
+					data_Confirmed = dataA[0];
+					data_Recovered = dataA[1];
+					data_Deaths = dataA[2];
+					data_Active = dataA[3];
+					
+					var lastDataColumnName = data_Confirmed.columnNames().pop();
+					 
+					theme.szDescription = "aggiornato: "+lastDataColumnName;
+					ixmaps.setTitle("<span style='background:rgba(255,255,255,0.9);padding:0.3em 0.5em;border:solid #888888 0.5px;border-radius:0.2em;font-family:courier new,Raleway,arial,helvetica;font-size:18px;color:#444444'>aggiornato al "+lastDataColumnName+"</span>");
+
+					// get data columns
+					var columnsA = data_Confirmed.columnNames();
+					
+					data_Confirmed.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Recovered.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Deaths.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Active.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+
+					console.log(data_Active);
+					
+					var merger = new Data.Merger();
+					merger.addSource(data_Active, {
+						lookup: "position",
+                    	columns: columnsA
+					});
+					merger.addSource(data_Recovered, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.addSource(data_Deaths, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.addSource(data_Confirmed, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.realize(function (dbTable) {
+						
+						console.log(dbTable);
+						
+						var index_active = dbTable.column("1/22/20.1").index;
+						var index_recovered = dbTable.column("1/22/20.2").index;
+						var index_deaths = dbTable.column("1/22/20.3").index;
+						var days = columnsA.length;
+						
+						var fields = dbTable.fields;
+						var records = dbTable.records;
+						for ( var d=4; d<days; d++ ){
+							console.log(fields[index_active].id+','+fields[index_recovered].id+','+fields[index_deaths].id);
+							for ( var r=0; r<records.length; r++){
+								records[r][index_active] -= records[r][index_recovered];
+								records[r][index_active] -= records[r][index_deaths];
+							}
+							index_active++;
+							index_recovered++;
+							index_deaths++;
+						}
+						
+						columnsA.shift();
+						columnsA.shift();
+						columnsA.shift();
+						columnsA.shift();
+
+						// set as data fields in actual theme
+						
+						fieldsA = [];
+						for ( var i=0; i<columnsA.length; i++ ){
+							fieldsA.push(columnsA[i]+".3");
+							fieldsA.push(columnsA[i]+".1");
+							fieldsA.push(columnsA[i]+".2");
+						}
+						
+						options.theme.szFields = fieldsA.slice().join("|");
+						options.theme.szFieldsA = fieldsA;
+						options.theme.nGridX = 3;
+						
+						options.theme.szItemField = "Lat.1|Long.1";
+						options.theme.szSelectionField = "Lat.1|Long.1";
+						console.log(options.theme);
+						
+						// make label 
+						var xAxis = [];
+						for ( i in columnsA ){
+							var dte = new Date(columnsA[i]);
+							xAxis.push(dte.toLocaleDateString());
+						}
+						//options.theme.szXaxisA = xAxis; 
+						
+						// -----------------------------------------------------------------------------------------------               
+						// deploy the data
+						// ----------------------------------------------------------------------------------------------- 
+
+						ixmaps.setExternalData(dbTable, {
+							type: "dbtable",
+							name: options.name
+						});
+						
+					});
+					
+				});
+		
+	};
+
+	ixmaps.CSSE_COVID_SEQUENCE_DEATHS_ACTIVE_RECOVERED = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv";
+		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
+		var szUrl4 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		
+		var broker = new Data.Broker()
+		
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.addSource(szUrl3, "csv")
+			.addSource(szUrl4, "csv")
+			.realize(
+				
+				function (dataA) {
+
+					data_Confirmed = dataA[0];
+					data_Recovered = dataA[1];
+					data_Deaths = dataA[2];
+					data_Active = dataA[3];
+					
+					var lastDataColumnName = data_Confirmed.columnNames().pop();
+					
+					theme.szDescription = "aggiornato: "+lastDataColumnName;
+
+					// get data columns
+					var columnsA = data_Confirmed.columnNames();
+					
+					data_Confirmed.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Recovered.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Deaths.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Active.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+
+					console.log(data_Active);
+					
+					var merger = new Data.Merger();
+					merger.addSource(data_Active, {
+						lookup: "position",
+                    	columns: columnsA
+					});
+					merger.addSource(data_Recovered, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.addSource(data_Deaths, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.addSource(data_Confirmed, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.realize(function (dbTable) {
+						
+						console.log(dbTable);
+						
+						var index_active = dbTable.column("1/22/20.1").index;
+						var index_recovered = dbTable.column("1/22/20.2").index;
+						var index_deaths = dbTable.column("1/22/20.3").index;
+						var days = columnsA.length;
+						
+						var fields = dbTable.fields;
+						var records = dbTable.records;
+						for ( var d=4; d<days; d++ ){
+							console.log(fields[index_active].id+','+fields[index_recovered].id+','+fields[index_deaths].id);
+							for ( var r=0; r<records.length; r++){
+							}
+							index_active++;
+							index_recovered++;
+							index_deaths++;
+						}
+						
+						columnsA.shift();
+						columnsA.shift();
+						columnsA.shift();
+						columnsA.shift();
+
+						// set as data fields in actual theme
+						
+						fieldsA = [];
+						for ( var i=0; i<columnsA.length; i++ ){
+							fieldsA.push(columnsA[i]+".1");
+						}
+						
+						options.theme.szFields = fieldsA.slice().join("|");
+						options.theme.szFieldsA = fieldsA;
+						
+						options.theme.szItemField = "Lat.1|Long.1";
+						options.theme.szSelectionField = "Lat.1|Long.1";
+						console.log(options.theme);
+						
+						// make label 
+						var xAxis = [];
+						for ( i in columnsA ){
+							var dte = new Date(columnsA[i]);
+							xAxis.push(dte.toLocaleDateString());
+						}
+						//options.theme.szXaxisA = xAxis; 
+						
+						// -----------------------------------------------------------------------------------------------               
+						// deploy the data
+						// ----------------------------------------------------------------------------------------------- 
+
+						ixmaps.setExternalData(dbTable, {
+							type: "dbtable",
+							name: options.name
+						});
+						
+					});
+					
+				});
+		
+	};
+
+	ixmaps.CSSE_COVID_SEQUENCE_DEATHS_ACTIVE = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv";
+		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
+		var szUrl4 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		
+		var broker = new Data.Broker()
+		
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.addSource(szUrl3, "csv")
+			.addSource(szUrl4, "csv")
+			.realize(
+				
+				function (dataA) {
+
+					data_Confirmed = dataA[0];
+					data_Recovered = dataA[1];
+					data_Deaths = dataA[2];
+					data_Active = dataA[3];
+					
+					var lastDataColumnName = data_Confirmed.columnNames().pop();
+					
+					theme.szDescription = "aggiornato: "+lastDataColumnName;
+
+					// get data columns
+					var columnsA = data_Confirmed.columnNames();
+					
+					data_Confirmed.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Recovered.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Deaths.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Active.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+
+					console.log(data_Active);
+					
+					var merger = new Data.Merger();
+					merger.addSource(data_Active, {
+						lookup: "position",
+                    	columns: columnsA
+					});
+					merger.addSource(data_Recovered, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.addSource(data_Deaths, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.addSource(data_Confirmed, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.realize(function (dbTable) {
+						
+						console.log(dbTable);
+						
+						var index_active = dbTable.column("1/22/20.1").index;
+						var index_recovered = dbTable.column("1/22/20.2").index;
+						var index_deaths = dbTable.column("1/22/20.3").index;
+						var days = columnsA.length;
+						
+						var fields = dbTable.fields;
+						var records = dbTable.records;
+						for ( var d=4; d<days; d++ ){
+							console.log(fields[index_active].id+','+fields[index_recovered].id+','+fields[index_deaths].id);
+							for ( var r=0; r<records.length; r++){
+								records[r][index_active] -= records[r][index_recovered];
+							}
+							index_active++;
+							index_recovered++;
+							index_deaths++;
+						}
+						
+						columnsA.shift();
+						columnsA.shift();
+						columnsA.shift();
+						columnsA.shift();
+
+						// set as data fields in actual theme
+						
+						fieldsA = [];
+						for ( var i=0; i<columnsA.length; i++ ){
+							fieldsA.push(columnsA[i]+".1");
+						}
+						
+						options.theme.szFields = fieldsA.slice().join("|");
+						options.theme.szFieldsA = fieldsA;
+						
+						options.theme.szItemField = "Lat.1|Long.1";
+						options.theme.szSelectionField = "Lat.1|Long.1";
+						console.log(options.theme);
+						
+						// make label 
+						var xAxis = [];
+						for ( i in columnsA ){
+							var dte = new Date(columnsA[i]);
+							xAxis.push(dte.toLocaleDateString());
+						}
+						//options.theme.szXaxisA = xAxis; 
+						
+						// -----------------------------------------------------------------------------------------------               
+						// deploy the data
+						// ----------------------------------------------------------------------------------------------- 
+
+						ixmaps.setExternalData(dbTable, {
+							type: "dbtable",
+							name: options.name
+						});
+						
+					});
+					
+				});
+		
+	};
+
+	ixmaps.CSSE_COVID_SEQUENCE_DEATHS = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv";
+		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
+		var szUrl4 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		
+		var broker = new Data.Broker()
+		
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.addSource(szUrl3, "csv")
+			.addSource(szUrl4, "csv")
+			.realize(
+				
+				function (dataA) {
+
+					data_Confirmed = dataA[0];
+					data_Recovered = dataA[1];
+					data_Deaths = dataA[2];
+					data_Active = dataA[3];
+					
+					var lastDataColumnName = data_Confirmed.columnNames().pop();
+					
+					theme.szDescription = "aggiornato: "+lastDataColumnName;
+
+					// get data columns
+					var columnsA = data_Confirmed.columnNames();
+					
+					data_Confirmed.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Recovered.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Deaths.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Active.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+
+					console.log(data_Active);
+					
+					var merger = new Data.Merger();
+					merger.addSource(data_Active, {
+						lookup: "position",
+                    	columns: columnsA
+					});
+					merger.addSource(data_Recovered, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.addSource(data_Deaths, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.addSource(data_Confirmed, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.realize(function (dbTable) {
+						
+						console.log(dbTable);
+						
+						var index_active = dbTable.column("1/22/20.1").index;
+						var index_recovered = dbTable.column("1/22/20.2").index;
+						var index_deaths = dbTable.column("1/22/20.3").index;
+						var days = columnsA.length;
+						
+						var fields = dbTable.fields;
+						var records = dbTable.records;
+						for ( var d=4; d<days; d++ ){
+							console.log(fields[index_active].id+','+fields[index_recovered].id+','+fields[index_deaths].id);
+							for ( var r=0; r<records.length; r++){
+								records[r][index_active] -= records[r][index_recovered];
+							}
+							index_active++;
+							index_recovered++;
+							index_deaths++;
+						}
+						
+						columnsA.shift();
+						columnsA.shift();
+						columnsA.shift();
+						columnsA.shift();
+
+						// set as data fields in actual theme
+						
+						fieldsA = [];
+						for ( var i=0; i<columnsA.length; i++ ){
+							fieldsA.push(columnsA[i]+".3");
+						}
+						
+						options.theme.szFields = fieldsA.slice().join("|");
+						options.theme.szFieldsA = fieldsA;
+						
+						options.theme.szItemField = "Lat.1|Long.1";
+						options.theme.szSelectionField = "Lat.1|Long.1";
+						console.log(options.theme);
+						
+						// make label 
+						var xAxis = [];
+						for ( i in columnsA ){
+							var dte = new Date(columnsA[i]);
+							xAxis.push(dte.toLocaleDateString());
+						}
+						//options.theme.szXaxisA = xAxis; 
+						
+						// -----------------------------------------------------------------------------------------------               
+						// deploy the data
+						// ----------------------------------------------------------------------------------------------- 
+
+						ixmaps.setExternalData(dbTable, {
+							type: "dbtable",
+							name: options.name
+						});
+						
+					});
+					
+				});
+		
+	};
+	
+	ixmaps.CSSE_COVID_SEQUENCE_ACTIVE = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv";
+		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
+		var szUrl4 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		
+		var broker = new Data.Broker()
+		
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.addSource(szUrl3, "csv")
+			.addSource(szUrl4, "csv")
+			.realize(
+				
+				function (dataA) {
+
+					data_Confirmed = dataA[0];
+					data_Recovered = dataA[1];
+					data_Deaths = dataA[2];
+					data_Active = dataA[3];
+					
+					var lastDataColumnName = data_Confirmed.columnNames().pop();
+					
+					theme.szDescription = "aggiornato: "+lastDataColumnName;
+
+					// get data columns
+					var columnsA = data_Confirmed.columnNames();
+					
+					data_Confirmed.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Recovered.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Deaths.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Active.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+
+					console.log(data_Active);
+					
+					var merger = new Data.Merger();
+					merger.addSource(data_Active, {
+						lookup: "position",
+                    	columns: columnsA
+					});
+					merger.addSource(data_Recovered, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.addSource(data_Deaths, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.addSource(data_Confirmed, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.realize(function (dbTable) {
+						
+						console.log(dbTable);
+						
+						var index_active = dbTable.column("1/22/20.1").index;
+						var index_recovered = dbTable.column("1/22/20.2").index;
+						var index_deaths = dbTable.column("1/22/20.3").index;
+						var days = columnsA.length;
+						
+						var fields = dbTable.fields;
+						var records = dbTable.records;
+						for ( var d=4; d<days; d++ ){
+							console.log(fields[index_active].id+','+fields[index_recovered].id+','+fields[index_deaths].id);
+							for ( var r=0; r<records.length; r++){
+								records[r][index_active] -= records[r][index_deaths];
+								records[r][index_active] -= records[r][index_recovered];
+							}
+							index_active++;
+							index_recovered++;
+							index_deaths++;
+						}
+						
+						columnsA.shift();
+						columnsA.shift();
+						columnsA.shift();
+						columnsA.shift();
+
+						// set as data fields in actual theme
+						
+						fieldsA = [];
+						for ( var i=0; i<columnsA.length; i++ ){
+							fieldsA.push(columnsA[i]+".1");
+						}
+						
+						options.theme.szFields = fieldsA.slice().join("|");
+						options.theme.szFieldsA = fieldsA;
+						
+						options.theme.szItemField = "Lat.1|Long.1";
+						options.theme.szSelectionField = "Lat.1|Long.1";
+						console.log(options.theme);
+						
+						// make label 
+						var xAxis = [];
+						for ( i in columnsA ){
+							var dte = new Date(columnsA[i]);
+							xAxis.push(dte.toLocaleDateString());
+						}
+						//options.theme.szXaxisA = xAxis; 
+						
+						// -----------------------------------------------------------------------------------------------               
+						// deploy the data
+						// ----------------------------------------------------------------------------------------------- 
+
+						ixmaps.setExternalData(dbTable, {
+							type: "dbtable",
+							name: options.name
+						});
+						
+					});
+					
+				});
+		
+	};
+	
+	ixmaps.CSSE_COVID_SEQUENCE_CONFIRMED = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv";
+		var szUrl3 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
+		var szUrl4 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		
+		var broker = new Data.Broker()
+		
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.addSource(szUrl3, "csv")
+			.addSource(szUrl4, "csv")
+			.realize(
+				
+				function (dataA) {
+
+					data_Confirmed = dataA[0];
+					data_Recovered = dataA[1];
+					data_Deaths = dataA[2];
+					data_Active = dataA[3];
+					
+					var lastDataColumnName = data_Confirmed.columnNames().pop();
+					
+					theme.szDescription = "aggiornato: "+lastDataColumnName;
+
+					// get data columns
+					var columnsA = data_Confirmed.columnNames();
+					
+					data_Confirmed.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Recovered.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Deaths.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+					data_Active.addColumn({destination:"position"},function(row){return row[0]+row[1];});
+
+					console.log(data_Active);
+					
+					var merger = new Data.Merger();
+					merger.addSource(data_Active, {
+						lookup: "position",
+                    	columns: columnsA
+					});
+					merger.addSource(data_Recovered, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.addSource(data_Deaths, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.addSource(data_Confirmed, {
+						lookup: "position",
+                    	columns: columnsA	
+					});
+					merger.realize(function (dbTable) {
+						
+						console.log(dbTable);
+						
+						
+						columnsA.shift();
+						columnsA.shift();
+						columnsA.shift();
+						columnsA.shift();
+
+						// set as data fields in actual theme
+						
+						fieldsA = [];
+						for ( var i=0; i<columnsA.length; i++ ){
+							fieldsA.push(columnsA[i]+".1");
+						}
+						
+						options.theme.szFields = fieldsA.slice().join("|");
+						options.theme.szFieldsA = fieldsA;
+						
+						options.theme.szItemField = "Lat.1|Long.1";
+						options.theme.szSelectionField = "Lat.1|Long.1";
+						console.log(options.theme);
+						
+						// make label 
+						var xAxis = [];
+						for ( i in columnsA ){
+							var dte = new Date(columnsA[i]);
+							xAxis.push(dte.toLocaleDateString());
+						}
+						//options.theme.szXaxisA = xAxis; 
+						
+						// -----------------------------------------------------------------------------------------------               
+						// deploy the data
+						// ----------------------------------------------------------------------------------------------- 
+
+						ixmaps.setExternalData(dbTable, {
+							type: "dbtable",
+							name: options.name
+						});
+						
+					});
+					
+				});
+		
+	};
+
+
 	ixmaps.CSSE_COVID_LAST_DAILY = function (theme, options) {
 
 		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
@@ -710,12 +1517,14 @@ window.ixmaps = window.ixmaps || {};
 			.addSource(szUrl1, "csv")
 			.realize(
 				function (dataA) {
+					
+					var columnNamesA = dataA[0].columnNames();
 
-					var date = dataA[0].columnNames().pop();
+					var date = columnNamesA.pop();
 					var dateA = date.split("/");
 					var date2 = new Date(Number("20" + dateA[2]), Number(dateA[0]) - 1, Number(dateA[1]), 18);
 					
-						date = dataA[0].columnNames().pop();
+						date = columnNamesA.pop();
 						dateA = date.split("/");
 					var date1 = new Date(Number("20" + dateA[2]), Number(dateA[0]) - 1, Number(dateA[1]), 18);
 					
@@ -724,7 +1533,7 @@ window.ixmaps = window.ixmaps || {};
 					szDate1 = dateA[1] + "-" + dateA[2] + "-" + dateA[0];
 					
 					var szDate2 = date2.toISOString();
-					dateA = szDate1.split("T")[0].split("-");
+					dateA = szDate2.split("T")[0].split("-");
 					szDate2 = dateA[1] + "-" + dateA[2] + "-" + dateA[0];
 
 					new Data.Broker()
@@ -757,21 +1566,39 @@ window.ixmaps = window.ixmaps || {};
 									);
 								});
 								
-								dataA[0].addColumn({destination:"position"},function(row){return row[0]+row[1];});
-								dataA[1].addColumn({destination:"position"},function(row){return row[0]+row[1];});
+								var columnsA = dataA[1].columnNames();
 
+								dataA[0].addColumn({destination:"my_key"},function(row){return row[1]+","+row[2]+","+row[3];});
+								dataA[1].addColumn({destination:"my_key"},function(row){return row[1]+","+row[2]+","+row[3];});
+								
 								var merger = new Data.Merger();
 								merger.addSource(dataA[0], {
-									lookup: "position",
+									lookup: "my_key",
 									columns: columnsA
 								});
 								merger.addSource(dataA[1], {
-									lookup: "position",
+									lookup: "my_key",
 									columns: columnsA	
 								});
 								
 								merger.realize(function (dbTable) {
-																	
+									
+									console.log(dbTable);
+									
+									var iConfirmed1 = dbTable.column("Confirmed.1").index;
+									var iConfirmed2 = dbTable.column("Confirmed.2").index;
+									
+									dbTable.addColumn({destination:"diff"},function(row){
+										return (Number(row[iConfirmed2]) - Number(row[iConfirmed1]));
+									});
+									var iDiff = dbTable.column("diff").index;
+									dbTable.addColumn({destination:"diff_percent"},function(row){
+										if ( Number(row[iDiff]) && (Number(row[iConfirmed1]) > 100 ) ){
+											return (Number(row[iDiff]) / Number(row[iConfirmed1]) * 100);
+										}
+										return 0;
+									});
+									
 									// -----------------------------------------------------------------------------------------------            
 									// deploy the data
 									// ----------------------------------------------------------------------------------------------- 

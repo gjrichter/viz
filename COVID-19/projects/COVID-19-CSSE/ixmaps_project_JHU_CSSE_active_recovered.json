@@ -54,7 +54,33 @@
 		},
 	"themes": [{
 			"layer": "World Mercator",
-			"field": "dimessi_guariti|totale_attualmente_positivi|deceduti",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOLS|GRIDSIZE|AGGREGATE|FAST|SUM|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "0",
+				"shadow": "false",
+				"filter": "WHERE Country_Region != Others AND Lat != 0",
+				"dbtable": "CSSE_COVID_LAST_DAILY",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
+				"datacache": "true",
+				"lookupfield": "Lat|Long_",
+				"symbols": [
+					"hexagon"],
+				"units": "",
+				"scale": "1",
+				"textcolor": "#aaaaaa",
+				"linecolor": "#aaaaaa",
+				"valuescale": "1",
+				"gridwidth": "40px",
+				"title": "Grid"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "dimessi_guariti|totale_positivi|deceduti",
 			"field100": "",
 			"style": {
 				"type": "CHART|SYMBOL|SEQUENCE|RINGS|SORT|UP|CENTER|SIZE|SUM|VALUES|DTEXT|VALUEBACKGROUND|NOLEGEND",
@@ -184,32 +210,6 @@
 				"title": "COVID-19 cases",
 				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
 				"description": "aggiornato: 3/21/20"
-				}
-			},{
-			"layer": "World Mercator",
-			"field": "$item$",
-			"field100": "",
-			"style": {
-				"type": "CHART|SYMBOLS|GRIDSIZE|AGGREGATE|FAST|SUM|NOLEGEND",
-				"colorscheme": [
-					"none"],
-				"fillopacity": "0",
-				"shadow": "false",
-				"filter": "WHERE Country_Region != Others AND Lat != 0",
-				"dbtable": "CSSE_COVID_LAST_DAILY",
-				"dbtableType": "ext",
-				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
-				"datacache": "true",
-				"lookupfield": "Lat|Long_",
-				"symbols": [
-					"hexagon"],
-				"units": "",
-				"scale": "1",
-				"textcolor": "#884444",
-				"linecolor": "#884444",
-				"valuescale": "1",
-				"gridwidth": "40px",
-				"title": "Grid"
 				}
 			}],
 	"layerMask": {
