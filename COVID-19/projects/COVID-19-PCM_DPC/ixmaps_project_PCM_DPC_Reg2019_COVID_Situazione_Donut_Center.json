@@ -6,7 +6,7 @@
 		"description": "",
 		"thumbnail": "",
 		"about": "",
-		"created": "Fri Mar 13 2020 11:26:53 GMT+0100 (Ora standard dell’Europa centrale)"
+		"created": "Fri Apr 03 2020 09:34:03 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
 		"map": "../../maps/svg/maps/generic/mercator.svg",
@@ -47,10 +47,10 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "44.512176171071054",
-			"lng": "13.831787109375002"
+			"lat": "43.84245116699039",
+			"lng": "10.134887695312502"
 			},
-		"zoom": "6"
+		"zoom": "7"
 		},
 	"themes": [{
 			"layer": "World Mercator",
@@ -66,10 +66,10 @@
 					"#ffffff"],
 				"fillopacity": "0.7",
 				"shadow": "false",
-				"filter": "WHERE data = \"2020-03-12 17:00:00\"",
+				"filter": "WHERE data = \"2020-04-02T17:00:00\"",
 				"dbtable": "PCM_DPC_COVID_ACTUAL",
 				"dbtableType": "ext",
-				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DCP/databroker_PCM_DPC_COVID_Regioni.js",
+				"dbtableExt": "../../projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
 				"datacache": "true",
 				"lookupfield": "lat|long",
 				"symbols": [
@@ -83,7 +83,7 @@
 				"units": "",
 				"refreshtimeout": "0",
 				"normalsizevalue": "100",
-				"scale": "1.25",
+				"scale": "1",
 				"linewidth": "0.3",
 				"titlefield": "denominazione_regione",
 				"valuescale": "1",
@@ -92,7 +92,7 @@
 				"centerpart": "max",
 				"evidence": "isolate_gray",
 				"title": "COVID-19<br>Situazione Regioni",
-				"snippet": "aggiornato al 2020-03-12 17:00:00"
+				"snippet": "aggiornato al 2020-04-02T17:00:00"
 				}
 			}],
 	"layerMask": {

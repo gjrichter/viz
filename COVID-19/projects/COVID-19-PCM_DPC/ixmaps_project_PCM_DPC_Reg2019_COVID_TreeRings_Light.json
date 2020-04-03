@@ -6,10 +6,10 @@
 		"description": "",
 		"thumbnail": "",
 		"about": "",
-		"created": "Mon Mar 09 2020 15:03:09 GMT+0100 (Ora standard dell’Europa centrale)"
+		"created": "Sun Mar 22 2020 08:09:02 GMT+0100 (Ora standard dell’Europa centrale)"
 		},
 	"map": {
-		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"map": "",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
 		"legend": "",
@@ -47,8 +47,8 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "43.5565103750476",
-			"lng": "13.419799804687502"
+			"lat": "43.84245116699039",
+			"lng": "10.134887695312502"
 			},
 		"zoom": "7"
 		},
@@ -57,23 +57,21 @@
 			"field": "dimessi_guariti|isolamento_domiciliare|ricoverati_con_sintomi|terapia_intensiva|deceduti",
 			"field100": "",
 			"style": {
-				"type": "CHART|PIE|DONUT|THIN|SIZEP3|SUM",
+				"type": "CHART|PIE|DONUT|XTHIN|SIZEP4||SIMPLELEGEND",
 				"colorscheme": [
 					"#59A14F",
 					"#A0CBE8",
 					"#4E79A7",
 					"#F28E2B",
 					"#ffffff"],
-				"fillopacity": "0.7",
+				"fillopacity": "1",
 				"shadow": "false",
-				"filter": "WHERE data = \"2020-03-09 18:00:00\"",
-				"dbtable": "PCM_DPC_COVID_ACTUAL",
-				"dbtableType": "ext",
-				"dbtableExt": "../../projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv",
+				"dbtableType": "csv",
+				"dbtableExt":"function(data,options){options.theme.szSnippet=data.column('data').values().pop().replace('T',' ');}",
 				"datacache": "true",
 				"lookupfield": "lat|long",
-				"symbols": [
-					"circle"],
 				"label": [
 					"dimessi/guariti",
 					"isolamento domiciliare",
@@ -82,16 +80,16 @@
 					"deceduti"],
 				"units": "",
 				"refreshtimeout": "0",
-				"normalsizevalue": "1000",
+				"normalsizevalue": "100",
 				"scale": "1",
-				"linewidth": "0.3",
+				"linecolor": [
+					"#aaaaaa"],
+				"linewidth": "0.2",
 				"titlefield": "denominazione_regione",
 				"valuescale": "1",
 				"valuedecimals": "0",
-				"fadenegative": "1",
-				"centerpart": "max",
 				"evidence": "isolate_gray",
-				"title": "COVID-19<br>Situazione Regioni"
+				"title": "COVID-19<br>Andamento Regioni"
 				}
 			}],
 	"layerMask": {
