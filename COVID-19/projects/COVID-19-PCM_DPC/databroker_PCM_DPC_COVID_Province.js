@@ -210,6 +210,53 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 
+	ixmaps.PCM_DPC_COVID_LAST_PERCENT = function (theme, options) {
+
+
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-province/dpc-covid19-ita-province.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+			.addSource(szUrl1, "csv")
+			.realize(
+				function (dataA) {
+
+					var mydata = dataA[0];
+					var dataPop = dataA[1];
+					
+					// make pivot: one row x province, data = column 4 ---> 
+					var pivot = __process(mydata, options);
+					
+					var lastColumn = pivot.columnNames().length - 2;
+
+					pivot.addColumn({destination:"diff_percent"},function(row){
+						var last   = (Number(row[lastColumn]  )+Number(row[lastColumn-1])+Number(row[lastColumn-2]))/3;
+						var before = (Number(row[lastColumn-1])+Number(row[lastColumn-2])+Number(row[lastColumn-3]))/3;
+						var diff = last-before;
+						return diff / before * 100;
+				    });
+					
+					// set theme data source 
+					//
+					theme.szFields = "diff_percent";
+					theme.szFieldsA = ["diff_percent"];
+	
+					// -----------------------------------------------------------------------------------------------               
+					// deploy the data
+					// ----------------------------------------------------------------------------------------------- 
+
+					ixmaps.setExternalData(pivot, {
+						type: "dbtable",
+						name: options.name
+					});
+
+				});
+
+	};
+
 	ixmaps.PCM_DPC_COVID_LAST_INCID = function (theme, options) {
 
 
