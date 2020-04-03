@@ -130,7 +130,7 @@
 				"fillopacity": "0.05",
 				"shadow": "false",
 				"filter": "WHERE \"denominazione_provincia\" NOT \"aggio\"",
-				"dbtable": "PCM_COVID_SEQUENCE",
+				"dbtable": "PCM_DPC_COVID_SEQUENCE",
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province.js",
 				"datacache": "false",
