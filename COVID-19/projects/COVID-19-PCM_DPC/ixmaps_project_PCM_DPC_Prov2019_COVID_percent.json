@@ -6,7 +6,7 @@
 		"thumbnail": "",
 		"about": "",
 		"description": "",
-		"created": "Tue Mar 24 2020 11:56:31 GMT+0100 (Ora standard dell’Europa centrale)"
+		"created": "Mon Mar 16 2020 12:12:57 GMT+0100 (Ora standard dell’Europa centrale)"
 		},
 	"map": {
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
@@ -48,8 +48,8 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "44.308126684886126",
-			"lng": "10.772094726562502"
+			"lat": "43.87017822557581",
+			"lng": "11.497192382812502"
 			},
 		"zoom": "7"
 		},
@@ -85,83 +85,87 @@
 				}
 			},{
 			"layer": "Prov2019_nome",
-			"field": "2020-03-23",
-			"field100": "2020-03-22",
+			"field": "incidenza",
+			"field100": "",
 			"style": {
-				"type": "CHART|DIFFERENCE|BUBBLE|VALUES|SIZELOG|COMPACTLEGEND",
+				"type": "CHART|BAR|POINTER|VALUES|SIZEP4|BOX|LONGTITLE|NOLEGEND|DTEXT",
 				"colorscheme": [
-					"red"],
-				"fillopacity": "0.1",
+					"green","red"],
+				"rangecentervalue":"0",
+				"fadenegative":"0.7",
+				"fillopacity": "0.001",
 				"shadow": "false",
-				"dbtable": "PCM_DPC_COVID_LAST_24H",
+				"dbtable": "PCM_DPC_COVID_LAST_PERCENT",
 				"dbtableType": "ext",
 				"dbtableExt": "../../projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province.js",
 				"datacache": "false",
 				"lookupfield": "lat|long",
 				"lookuptonumber": "true",
 				"symbols": [
-					"circle"],
-				"units": "",
+					"label"],
+				"units": "%",
 				"refreshtimeout": "0",
+				"normalsizevalue": "20",
 				"scale": "1",
-				"dopacitypow": "3",
-				"dopacityscale": "2",
 				"textcolor": "#aa2200",
-				"linecolor": [
-					"#880000"],
+				"linecolor":"#dd0000",
+				"linewidth":"3",
+				"boxopacity": "0.1",
+				"itemfield": "codice_provincia",
 				"titlefield": "denominazione_provincia",
-				"valuescale": "1",
-				"valuedecimals": "0",
-				"title": "nuovi casi 24 ore",
+				"boxupper": "1:2000000",
+				"valuescale": "2",
+				"valuedecimals": "1",
+				"title": "nuovi casi x 10000 abitanti",
 				"snippet": "aggiornato al 2020-03-05"
 				}
 			},{
 			"layer": "Prov2019_nome",
-			"field": "$item$",
+			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|LOLLIPOP|LONGTITLE|GRID|BOX|GRIDSIZE|FIXSIZE|AGGREGATE|RECT|COMPATIBLE|DIFFERENCE|SUM|SIMPLELEGEND",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LOLLIPOP|AREA|LINES|GRID|LONGTITLE|BOX|FIXSIZE|AGGREGATE|RECT|SUM|SIMPLELEGEND|DIFFERENCE|RELATIVE",
 				"colorscheme": [
 					"#dd0000"],
-				"fillopacity": "0.4",
+				"fillopacity": "0.05",
 				"shadow": "false",
 				"filter": "WHERE \"denominazione_provincia\" NOT \"aggio\"",
-				"dbtable": "PCM_DPC_COVID_SEQUENCE",
+				"dbtable": "PCM_COVID_SEQUENCE",
 				"dbtableType": "ext",
-				"dbtableExt": "../../projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province.js",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/databroker_PCM_COVID_Province.js",
 				"datacache": "false",
+				"itemfield": "codice_provincia",
 				"lookupfield": "lat|long",
 				"lookuptonumber": "true",
 				"symbols": [
 					"circle"],
 				"units": "",
 				"refreshtimeout": "0",
-				"normalsizevalue": "0.8",
-				"scale": "0.9",
-				"rangescale": "0.8",
+				"normalsizevalue": "0.7",
+				"scale": "0.07",
+				"rangescale": "1.1",
 				"minvalue": "0",
 				"textcolor": "#880000",
-				"linewidth": "5",
-				"bordercolor": "black",
+				"linewidth": "10",
+				"bordercolor": "#880000",
 				"boxopacity": "0",
 				"boxmargin": "10",
-				"itemfield": "codice_provincia",
 				"titlefield": "denominazione_provincia",
 				"boxupper": "1:1000000",
+				"chartupper": "1:1000000",
+				"maxvalue":"100",
+				"field100min":"50",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"fadenegative": "1",
-				"aggregationscale": [
-					"1:1",
-					"150px",
-					"1:1000000",
-					"100px"],
-				"aggregationlower": "1:2500000",
 				"name": "curve",
-				"title": "nuovi casi, giorno per giorno",
-				"snippet": "dal 2020-02-25 al 2020-03-23"
+				"title": "Giorno per giorno",
+				"snippet": "dal 2020-02-25T18:00:00 al 2020-03-28T17:00:00"
 				}
 			}],
 	"layerMask": {
+		"Prov2019_nome": {
+			"display": "none"
+			}
 		}
 	}
