@@ -372,13 +372,13 @@ window.ixmaps = window.ixmaps || {};
 			var indexProCod = data.column("codice_provincia").index;
 
 			data.column('totale_positivi').map(function (value,row) {
-					return value/pop[row[indexProCod].replace(/\-/," ")]*10000;
+					return value/pop[Number(row[indexProCod])]*10000;
 			});
 			data.column('dimessi_guariti').map(function (value,row) {
-					return value/pop[row[indexProCod].replace(/\-/," ")]*10000;
+					return value/pop[Number(row[indexProCod])]*10000;
 			});
 			data.column('deceduti').map(function (value,row) {
-					return value/pop[row[indexProCod].replace(/\-/," ")]*10000;
+					return value/pop[Number(row[indexProCod])]*10000;
 			});
 				
 			var data_Active 	= __get_active(data);
@@ -602,24 +602,24 @@ window.ixmaps = window.ixmaps || {};
 				
 			var dataPop = dataA[1];
 			// make lookupArray: COD_PROV ==> population
-			var pop = dataPop.lookupArray("Value", "Territorio");
+			var pop = dataPop.lookupArray("Value", "COD_PROV");
 				
-			var indexName = data.column("codice_provincia").index;
+			var indexCode = data.column("codice_provincia").index;
 
 			data.column('deceduti').map(function (value,row) {
-					return value/pop[row[indexName].replace(/\-/," ")]*10000;
+					return value/pop[Number(row[indexCode])]*10000;
 			});
 			data.column('isolamento_domiciliare').map(function (value,row) {
-					return value/pop[row[indexName].replace(/\-/," ")]*10000;
+					return value/pop[Number(row[indexCode])]*10000;
 			});
 			data.column('totale_ospedalizzati').map(function (value,row) {
-					return value/pop[row[indexName].replace(/\-/," ")]*10000;
+					return value/pop[Number(row[indexCode])]*10000;
 			});
 			data.column('terapia_intensiva').map(function (value,row) {
-					return value/pop[row[indexName].replace(/\-/," ")]*10000;
+					return value/pop[Number(row[indexCode])]*10000;
 			});
 			data.column('dimessi_guariti').map(function (value,row) {
-					return value/pop[row[indexName].replace(/\-/," ")]*10000;
+					return value/pop[Number(row[indexCode])]*10000;
 			});
 			
 			var data_Deaths 	= __get_deaths(data);

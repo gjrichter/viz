@@ -67,7 +67,7 @@
 				"shadow": "false",
 				"dbtable": "ODS_SICILIA_COVID_SEQUENCE_DHHIR_PREVALENCE",
 				"dbtableType": "ext",
-				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/databroker_ODS_COVID_Sicilia.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-ODS/databroker_ODS_COVID_Sicilia.js",
 				"datacache": "false",
 				"lookupfield": "lat.1|long.1",
 				"symbols": [
