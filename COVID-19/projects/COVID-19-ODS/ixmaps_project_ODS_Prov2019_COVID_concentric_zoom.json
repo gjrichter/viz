@@ -1,0 +1,238 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": ""
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "by <a href=\"http://www.ixmaps.com\" target=\"_blank\">iXMaps</a>",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>COVID-19 - <b>deceduti, attualmente positivi e guariti</b></h1><h4>fonte: <a href='https://github.com/opendatasicilia/COVID-19_Sicilia' target='_blank'>Data Repository di Open Data Sicilia</a> con dati sulla COVID-19 pubblicati dalla Regione Siciliana in formato chiuso</h4><h4><i class='icon icon-radio-checked2' style='color:rgba(100, 100, 100,0.9)'/> deceduti <i class='icon icon-radio-checked2' style='color:rgba(100, 160, 220,0.9)'/> attual. positivi <i class='icon icon-radio-checked2' style='color:rgba(155, 200, 100,0.9)'/> guariti </h4>",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "55364168"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "37.55655375544381",
+			"lng": "14.31243896484375"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "dimessi_guariti|totale_positivi|deceduti",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|RINGS|SORT|UP|CENTER|SIZE|SUM|VALUES|DTEXT|VALUEBACKGROUND",
+				"colorscheme": [
+					"rgba(155, 200, 100,0.9)",
+					"rgba(100, 160, 220,0.5)",
+					"rgba(70, 70, 70,0.5)"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"filter": "WHERE data = \"2020-03-22 17:00:00\"",
+				"dbtable": "ODS_COVID_ACTUAL",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-ODS/databroker_ODS_COVID_Sicilia.js",
+				"datacache": "true",
+				"lookupfield": "lat|long",
+				"symbols": [
+					"circle"],
+				"label": [
+					"dimessi/guariti",
+					"totale_attualmente_positivi",
+					"deceduti"],
+				"units": "",
+				"textcolor": [
+					"#ffffff"],
+				"linecolor": [
+					"#000000"],
+				"linewidth": "1",
+				"refreshtimeout": "0",
+				"normalsizevalue": "200",
+				"scale": "1",
+				"linewidth": "0.3",
+				"titlefield": "denominazione_regione",
+				"valueupper": "1:2000000",
+				"chartupper": "1:2000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "actual_italy",
+				"fadenegative": "1",
+				"title": "COVID-19<br>Situazione Regione Sicilia",
+				"snippet": "aggiornato al 2020-03-22 17:00:00"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "dimessi_guariti|totale_positivi|deceduti",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|RINGS|SORT|UP|CENTER|SIZE|SUM|VALUES|DTEXT|VALUEBACKGROUND|NOLEGEND",
+				"colorscheme": [
+					"rgba(155, 200, 100,0.9)",
+					"rgba(100, 160, 220,0.5)",
+					"rgba(70, 70, 70,0.5)"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"filter": "WHERE data = \"2020-03-22 17:00:00\"",
+				"dbtable": "PCM_DPC_COVID_ACTUAL",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "true",
+				"lookupfield": "lat|long",
+				"symbols": [
+					"circle"],
+				"label": [
+					"dimessi/guariti",
+					"totale_attualmente_positivi",
+					"deceduti"],
+				"units": "",
+				"textcolor": [
+					"#ffffff"],
+				"linecolor": [
+					"#000000"],
+				"linewidth": "1",
+				"refreshtimeout": "0",
+				"normalsizevalue": "20000",
+				"scale": "1.25",
+				"linewidth": "0.3",
+				"titlefield": "denominazione_regione",
+				"valueupper": "1:5000000",
+				"chartupper": "1:5000000",
+				"chartlower": "1:2000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "actual_italy",
+				"fadenegative": "1",
+				"evidence": "isolate_gray",
+				"title": "COVID-19<br>Situazione Regioni",
+				"snippet": "aggiornato al 2020-03-22 17:00:00"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "Deaths|Active_calc|Recovered",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|RINGS|SORT|UP|CENTER|SIZE|SUM|VALUES|DTEXT|VALUEBACKGROUND",
+				"colorscheme": [
+					"rgba(70, 70, 70,0.5)",
+					"rgba(100, 160, 220,0.5)",
+					"rgba(155, 200, 100,0.9)"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"filter": "WHERE Country_Region = US",
+				"dbtable": "CSSE_COVID_LAST_DAILY",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
+				"datacache": "true",
+				"lookupfield": "Lat|Long_",
+				"symbols": [
+					"circle"],
+				"label": [
+					"Deaths",
+					"Active",
+					"Recovered"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "20000",
+				"scale": "0.8",
+				"textcolor": [
+					"#ffffff"],
+				"linecolor": [
+					"#000000"],
+				"linewidth": "1",
+				"titlefield": "Country_Region",
+				"gridwidth": "150px",
+				"valueupper": "1:10000000",
+				"chartupper": "1:5000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "actual_us",
+				"title": "COVID-19 cases",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
+				"description": "aggiornato: 3/21/20"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "Deaths|Active_calc|Recovered",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|RINGS|SORT|UP|CENTER|SIZE|SUM|AGGREGATE|VALUES|DTEXT|VALUEBACKGROUND",
+				"colorscheme": [
+					"rgba(70, 70, 70,0.5)",
+					"rgba(100, 160, 220,0.5)",
+					"rgba(155, 200, 100,0.9)"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"filter": "WHERE Country_Region != Others AND Lat != 0",
+				"dbtable": "CSSE_COVID_LAST_DAILY",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
+				"datacache": "true",
+				"lookupfield": "Lat|Long_",
+				"symbols": [
+					"circle"],
+				"label": [
+					"Deaths",
+					"Active",
+					"Recovered"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "20000",
+				"scale": "1.5",
+				"textcolor": [
+					"#ffffff"],
+				"linecolor": [
+					"#000000"],
+				"linewidth": "1",
+				"titlefield": "Country_Region",
+				"valueupper": "1:20000000",
+				"chartlower": "1:5000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridwidth":"40px",
+				"name": "actual",
+				"title": "COVID-19 cases",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
+				"description": "aggiornato: 3/21/20"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
