@@ -1,0 +1,142 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Apr 12 2020 12:16:41 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>COVID-19 - <b>attualmente positivi e valori storici</b></h1><h4>fonte: <a href='https://github.com/opendatasicilia/COVID-19_Sicilia' target='_blank'>Data Repository di Open Data Sicilia</a> con dati COVID-19 pubblicati dalla Regione Siciliana e il Dipartimento Protezione Civile</h4>",
+		"item": "../../../../projects/COVID-19-ODS/item.html",
+		"scaleParam": {
+			"normalSizeScale": "3000000"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "37.811953859192705",
+			"lng": "14.23828125"
+			},
+		"zoom": "8"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|VALUES|SIZE|COMPACTLEGEND",
+				"colorscheme": [
+					"white"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "ODS_SICILIA_COVID_LAST_ACTIVE",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-ODS/databroker_ODS_COVID_SICILIA.js",
+				"datacache": "false",
+				"itemfield": "codice_provincia",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "100",
+				"scale": "1",
+				"valuefield": "2020-04-11",
+				"sizefield": "2020-04-11",
+				"dopacitypow": "1",
+				"dopacityscale": "5",
+				"textcolor": "#000000",
+				"linecolor": [
+					"#dd0000"],
+				"linewidth": "1",
+				"titlefield": "denominazione_provincia",
+				"valueupper": "1:3000000",
+				"chartupper": "1:3000000",
+				"valuescale": "0.7",
+				"valuedecimals": "0",
+				"title": "Casi per Provincia",
+				"snippet": "aggiornato al 2020-04-10T17:00:00"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "2020-02-24|2020-02-25|2020-02-26|2020-02-27|2020-02-28|2020-02-29|2020-03-01|2020-03-02|2020-03-03|2020-03-04|2020-03-05|2020-03-06|2020-03-07|2020-03-08|2020-03-09|2020-03-10|2020-03-11|2020-03-12|2020-03-13|2020-03-14|2020-03-15|2020-03-16|2020-03-17|2020-03-18|2020-03-19|2020-03-20|2020-03-21|2020-03-22|2020-03-23|2020-03-24|2020-03-25|2020-03-26|2020-03-27|2020-03-28|2020-03-29|2020-03-30|2020-03-31|2020-04-01|2020-04-02|2020-04-03|2020-04-04|2020-04-05|2020-04-06|2020-04-07|2020-04-08|2020-04-09|2020-04-10|2020-04-11",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LOLLIPOP|AREA||GRID|LONGTITLE|BOX|FIXSIZE|AGGREGATE|RECT|COMPATIBLE|SUM|SIZEP4|SIMPLELEGEND",
+				"colorscheme": [
+					"#dd0000"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "ODS_SICILIA_COVID_SEQUENCE_ACTIVE",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-ODS/databroker_ODS_COVID_SICILIA.js",
+				"datacache": "false",
+				"itemfield": "codice_provincia",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"align": "center",
+				"refreshtimeout": "0",
+				"normalsizevalue": "0.7",
+				"scale": "0.01",
+				"rangescale": "1.1",
+				"minvalue": "0",
+				"maxvalue": "auto",
+				"textcolor": "#880000",
+				"linewidth": "17",
+				"bordercolor": "#880000",
+				"boxopacity": "0",
+				"boxmargin": "10",
+				"titlefield": "denominazione_provincia",
+				"chartupper": "1:10000000",
+				"boxupper": "1:10000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"name": "curve",
+				"title": "Giorno per giorno",
+				"snippet": "dal 2020-02-25 al 2020-04-11"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
