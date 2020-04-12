@@ -22,12 +22,12 @@ Gli oggetti JSON sono definiti in questo repository e vengono caricati nel viewe
 
 codice per includere la mappa in una pagina HTML:
 ```javascript
-<iframe id="map" width="100%" height="650" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="../../ixmaps/ui/dispatch.htm?ui=embed&basemap=ll&align=left&legend=1&name=map3&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-ODS/ixmaps_project_ODS_Prov2019_COVID_active_curves.json"></iframe>
+<iframe id="map" width="100%" height="650" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map3&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-ODS/ixmaps_project_ODS_Prov2019_COVID_active_curves.json"></iframe>
 ```
 
 
 
-<iframe id="map" width="100%" height="650" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://embed.ixmaps.com?ui=embed&basemap=ll&align=left&legend=1&name=map3&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-ODS/ixmaps_project_ODS_Prov2019_COVID_active_curves.json"></iframe>
+<iframe id="map" width="100%" height="650" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map3&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-ODS/ixmaps_project_ODS_Prov2019_COVID_active_curves.json"></iframe>
 
 
 
