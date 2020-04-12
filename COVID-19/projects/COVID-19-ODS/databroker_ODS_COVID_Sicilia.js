@@ -240,6 +240,126 @@ window.ixmaps = window.ixmaps || {};
 		return table;
      };   
 	
+ 	/**
+	 * ODS_SICILIA_COVID_LAST_ACTIVE
+	 *
+	 * make a pivot table with one row per provincia
+	 *
+	 * columns: one column for each day 
+	 * types are: active named like 2020-02-24, 2020-02-25, 2020-02-26 
+	 * set actual date in calling theme 
+	 *
+	 * @param theme ixmaps theme object
+	 * @options varie options passed by ixmaps
+	 * @void
+	 */
+	
+   ixmaps.ODS_SICILIA_COVID_LAST_ACTIVE = function (theme,options) {
+
+
+		var szUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(mydata){
+			
+			var pivot = __get_active(mydata,options);
+	
+			// get the columns with date 
+			var columns = pivot.columnNames();
+			columns.shift();
+			columns.shift();
+			columns.shift();
+			columns.shift();
+			columns.pop();
+			
+			var last = columns.length-1;
+		
+			theme.szSizeField = columns[last];
+			theme.szValueField = columns[last];
+
+			var dte = new Date(columns[last]);
+			ixmaps.setTitle("<span style='background:rgba(255,255,255,0.9);padding:0.3em 0.5em;border:solid #888888 0.5px;border-radius:0.2em;font-family:courier new,Raleway,arial,helvetica;font-size:18px;color:#444444'>aggiornato al "+dte.toLocaleDateString()+"</span>","right");
+
+			// -----------------------------------------------------------------------------------------------               
+			// deploy the data
+			// ----------------------------------------------------------------------------------------------- 
+
+			ixmaps.setExternalData(pivot, {
+				type: "dbtable",
+				name: options.name
+			});
+
+		})
+		.error(function(e){alert("error loading data from:\n"+szUrl)});
+
+	};
+
+	/**
+	 * ODS_SICILIA_COVID_SEQUENCE_ACTIVE
+	 *
+	 * make pivot table with one row per provincia
+	 *
+	 * columns: one column for each day and type 
+	 * types are: active named like 2020-02-24, 2020-02-25, 2020-02-26 
+	 *
+	 * @param theme ixmaps theme object
+	 * @options varie options passed by ixmaps
+	 * @void
+	 */
+	
+	ixmaps.ODS_SICILIA_COVID_SEQUENCE_ACTIVE = function (theme, options) {
+
+
+		var szUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(data){
+			
+			var pivot = __get_active(data,options);
+	
+			// get the columns with date 
+			var columns = pivot.columnNames();
+			
+			// get the columns with date 
+			var columns = pivot.columnNames();
+			columns.shift();
+			columns.shift();
+			columns.shift();
+			columns.shift();
+			columns.pop();
+			
+			var last = columns.length-1;
+			
+			// and configure the theme
+			theme.szFields = columns.slice().join('|');
+			theme.szFieldsA = columns.slice();
+			
+			// and set the label (for difference 1 less)
+			columns.shift();
+			theme.szLabelA = columns.slice();
+			
+			theme.szSnippet = "dal "+columns[0]+" al "+columns[last-1];
+
+			// -----------------------------------------------------------------------------------------------               
+			// deploy the data
+			// ----------------------------------------------------------------------------------------------- 
+
+			ixmaps.setExternalData(pivot, {
+				type: "dbtable",
+				name: options.name
+			});
+
+		})
+		.error(function(e){alert("error loading data from:\n"+szUrl)});
+
+	};
+
 	/**
 	 * ODS_SICILIA_COVID_SEQUENCE_DAR
 	 *
