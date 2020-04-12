@@ -9,11 +9,11 @@
 		"created": "Sun Apr 12 2020 12:16:41 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
-		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"map": "",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
 		"legend": "<h1>COVID-19 - <b>attualmente positivi e valori storici</b></h1><h4>fonte: <a href='https://github.com/opendatasicilia/COVID-19_Sicilia' target='_blank'>Data Repository di Open Data Sicilia</a> con dati COVID-19 pubblicati dalla Regione Siciliana e il Dipartimento Protezione Civile</h4>",
-		"item": "../../../../projects/COVID-19-ODS/item.html",
+		"item": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-ODS/item.html",
 		"scaleParam": {
 			"normalSizeScale": "3000000"
 			},
@@ -64,7 +64,7 @@
 				"shadow": "false",
 				"dbtable": "ODS_SICILIA_COVID_LAST_ACTIVE",
 				"dbtableType": "ext",
-				"dbtableExt": "../../projects/COVID-19-ODS/databroker_ODS_COVID_SICILIA.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-ODS/databroker_ODS_COVID_SICILIA.js",
 				"datacache": "false",
 				"itemfield": "codice_provincia",
 				"lookupfield": "lat|long",
