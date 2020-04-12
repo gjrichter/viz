@@ -322,6 +322,7 @@ window.ixmaps = window.ixmaps || {};
 		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(data){
 			
 			var pivot = __get_active(data,options);
+			pivot.column("Total").remove();
 	
 			// get the columns with date 
 			var columns = pivot.columnNames();
@@ -332,17 +333,31 @@ window.ixmaps = window.ixmaps || {};
 			columns.shift();
 			columns.shift();
 			columns.shift();
-			columns.pop();
 			
+			var records = pivot.records;
+			for ( var r=0; r<records.length; r++ ){
+				for ( var c=4; c<records[r].length-3; c++ ){
+					records[r][c] = Math.round((Number(records[r][c]) + Number(records[r][c+1]) + Number(records[r][c+2]))/3);
+ 				}
+			}
+			columns.shift();
+			columns.shift();
+		
 			var last = columns.length-1;
 			
 			// and configure the theme
 			theme.szFields = columns.slice().join('|');
 			theme.szFieldsA = columns.slice();
 			
-			// and set the label (for difference 1 less)
-			columns.shift();
+			for ( var i=0; i<columns.length; i++ ){
+				columns[i] = new Date(columns[i]).toLocaleDateString();
+			}
 			theme.szLabelA = columns.slice();
+			
+			theme.szXaxisA = columns.slice();
+			for ( i=1; i<theme.szXaxisA.length-1; i++ ){
+				theme.szXaxisA[i] = " ";
+			}
 			
 			theme.szSnippet = "dal "+columns[0]+" al "+columns[last-1];
 

@@ -88,7 +88,7 @@
 				"chartupper": "1:3000000",
 				"valuescale": "0.7",
 				"valuedecimals": "0",
-				"title": "Casi per Provincia",
+				"title": "Casi attualmente positivi",
 				"snippet": "aggiornato al 2020-04-10T17:00:00"
 				}
 			},{
@@ -130,8 +130,9 @@
 				"valuedecimals": "0",
 				"fadenegative": "1",
 				"name": "curve",
-				"title": "Giorno per giorno",
-				"snippet": "dal 2020-02-25 al 2020-04-11"
+				"title": "Storico dei casi positivi",
+				"snippet": "dal 2020-02-25 al 2020-04-11",
+				"description": "media di 3 giorni<br>(giorno attuale e 2 giorni precedenti)"
 				}
 			}],
 	"layerMask": {
