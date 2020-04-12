@@ -13,7 +13,7 @@
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
 		"legend": "<h1>COVID-19 - <b>attualmente positivi e valori storici</b></h1><h4>fonte: <a href='https://github.com/opendatasicilia/COVID-19_Sicilia' target='_blank'>Data Repository di Open Data Sicilia</a> con dati COVID-19 pubblicati dalla Regione Siciliana e il Dipartimento Protezione Civile</h4>",
-		"item": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-ODS/item.html",
+		"item": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-ODS/item.html",
 		"scaleParam": {
 			"normalSizeScale": "3000000"
 			},
