@@ -95,7 +95,7 @@
 				"lookupfield": "region",
 				"symbols": [
 					"circle"],
-				"units": "",
+				"units": "%",
 				"xaxis": "2020-02-16| | | | | | | | | | | | | | | | | | | | | | | | | | | |2020-03-15| | | | | | | | | | | | | | | | | | | | | | | | | | | |2020-04-12",
 				"refreshtimeout": "0",
 				"normalsizevalue": "20",
