@@ -376,6 +376,101 @@ window.ixmaps = window.ixmaps || {};
 	};
 
 	/**
+	 * ODS_SICILIA_COVID_SEQUENCE_ACTIVE
+	 *
+	 * make pivot table with one row per provincia
+	 *
+	 * columns: one column for each day and type 
+	 * types are: active named like 2020-02-24, 2020-02-25, 2020-02-26 
+	 *
+	 * @param theme ixmaps theme object
+	 * @options varie options passed by ixmaps
+	 * @void
+	 */
+	
+	ixmaps.ODS_SICILIA_COVID_SEQUENCE_ACTIVE_MARKER = function (theme, options) {
+
+
+		var szUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(data){
+			
+			var pivot = __get_active(data,options);
+			pivot.column("Total").remove();
+	
+			// get the columns with date 
+			var columns = pivot.columnNames();
+			
+			// get the columns with date 
+			var columns = pivot.columnNames();
+			columns.shift();
+			columns.shift();
+			columns.shift();
+			columns.shift();
+			
+			var records = pivot.records;
+			for ( var r=0; r<records.length; r++ ){
+				for ( var c=4; c<records[r].length-3; c++ ){
+					records[r][c] = Math.round((Number(records[r][c]) + Number(records[r][c+1]) + Number(records[r][c+2]))/3);
+ 				}
+			}
+			columns.shift();
+			columns.shift();
+		
+			var last = columns.length-1;
+			
+			// and configure the theme
+			theme.szFields = columns.slice().join('|');
+			theme.szFieldsA = columns.slice();
+			
+			for ( var i=0; i<columns.length; i++ ){
+				columns[i] = new Date(columns[i]).toLocaleDateString();
+			}
+			theme.szLabelA = columns.slice();
+			
+			theme.szXaxisA = columns.slice();
+			for ( i=1; i<theme.szXaxisA.length-1; i++ ){
+				console.log(theme.szXaxisA[i]);
+				if ( theme.szXaxisA[i] == "xx11/3/2020" ){
+					theme.szXaxisA[i] = "a";
+				}else
+				if ( theme.szXaxisA[i] == "xx22/3/2020" ){
+					theme.szXaxisA[i] = "b";
+				}else
+				if ( theme.szXaxisA[i] == "19/3/2020" ){
+					theme.szXaxisA[i] = "s+14";
+				}else
+				if ( theme.szXaxisA[i] == "25/3/2020" ){
+					theme.szXaxisA[i] = "a+14";
+				}else
+				if ( theme.szXaxisA[i] == "5/4/2020" ){
+					theme.szXaxisA[i] = "b+14";
+				}else{
+					theme.szXaxisA[i] = " ";
+				}
+			}
+			
+			theme.szSnippet = "dal "+columns[0]+" al "+columns[last-1];
+
+			// -----------------------------------------------------------------------------------------------               
+			// deploy the data
+			// ----------------------------------------------------------------------------------------------- 
+
+			ixmaps.setExternalData(pivot, {
+				type: "dbtable",
+				name: options.name
+			});
+
+		})
+		.error(function(e){alert("error loading data from:\n"+szUrl)});
+
+	};
+
+	/**
 	 * ODS_SICILIA_COVID_SEQUENCE_DAR
 	 *
 	 * make merged pivot table with one row per sicilia province
