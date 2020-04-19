@@ -12,8 +12,10 @@ window.ixmaps = window.ixmaps || {};
 	// --------------------------------------------------------
 	
 	// GR 30.03.2020 NextStrain switched from division to country 
+	__branch_depth = 0;
 	
-	__one_branch = function (branch, targetA) {
+	__one_branch = function (branch, targetA, depth) {
+		depth = depth||0;
 		var start = branch.node_attrs.country?branch.node_attrs.country.value:"";
 		var childs = branch.children;
 		for (var c in childs) {
@@ -26,10 +28,11 @@ window.ixmaps = window.ixmaps || {};
 					country: (childs[c].node_attrs.country?childs[c].node_attrs.country.value:"-"),
 					recency: (childs[c].node_attrs.recency?childs[c].node_attrs.recency.value:"-"),
 					division_exposure: (childs[c].node_attrs.division_exposure?childs[c].node_attrs.division_exposure.value:"-"),
-					clade_membership: (childs[c].node_attrs.clade_membership?childs[c].node_attrs.clade_membership.value:"-") 
+					clade_membership: (childs[c].node_attrs.clade_membership?childs[c].node_attrs.clade_membership.value:"-"),
+					depth: ("generation-"+depth)
 				});
 			}
-			__one_branch(childs[c], targetA);
+			__one_branch(childs[c], targetA, depth+1);
 		}
 	}
 
