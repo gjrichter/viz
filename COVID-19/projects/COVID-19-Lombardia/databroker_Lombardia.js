@@ -371,8 +371,8 @@ window.ixmaps = window.ixmaps || {};
 	};
 	
 	ixmaps.TA_COVID19_RL_SEQUENCE_ALT = function (theme, options) {
-			ixmaps.TA_COVID19_RL_SEQUENCE(theme, options);
-	}
+			return ixmaps.TA_COVID19_RL_SEQUENCE(theme, options);
+	};
 
 
 	ixmaps.TA_COVID19_RL_VIVO_DECEDUTO = function (theme, options) {
