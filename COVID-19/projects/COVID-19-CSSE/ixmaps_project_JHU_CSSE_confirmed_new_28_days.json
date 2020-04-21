@@ -1,0 +1,97 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Tue Jan 08 2019 13:50:59 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3-eu-west-1.amazonaws.com/cdn.ixmaps.com/ixmaps/maps/svg/maps/world_base_ISO/world_ISO3_small.svgz",
+		"basemap": "CartoDB - Positron",
+		"scaleParam": {
+			"borderScaling": "0.1",
+			"normalSizeScale": "177165354"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1"
+			},
+		"center": {
+			"lat": "15.453680224345835",
+			"lng": "387.77343750000006"
+			},
+		"zoom": "2"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "LONGTITLE|CHART|SYMBOL|PLOT|FIXSIZE|LINES|AREA|LOLLIPOP|BOX|GRID|AGGREGATE|RECT|RELOCATE|GRIDSIZE|DIFFERENCE",
+				"colorscheme": [
+					"14",
+					"RGB(221,0,0)",
+					"RGB(221,0,0)",
+					"dynamic",
+					"cold"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "CSSE_COVID_CONFIRMED_28",
+				"dbtableUrl": "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/process_28.js",
+				"datacache": "false",
+				"lookupfield": "Lat|Long",
+				"child": "true",
+				"units": "",
+				"normalsizevalue": "20",
+				"minvalue":"0",
+				"scale": "0.9",
+				"rangescale": "0.8",
+				"linewidth": "15",
+				"boxopacity": "0.01",
+				"titlefield":"Country/Region",
+				"titleupper": "1:20000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridoffsety":"50",
+				"aggregationscale": [
+					"1:1",
+					"200px",
+					"1:5000000",
+					"150px",
+					"1:10000000",
+					"100px"],
+				"title": "Child Mortality Rate"
+				}
+			}],
+	"layerMask": {
+		}
+	}
