@@ -369,9 +369,12 @@ window.ixmaps = window.ixmaps || {};
 		});
 
 	};
+	
+	ixmaps.TA_COVID19_RL_SEQUENCE_ALT = function (theme, options) {
+			ixmaps.TA_COVID19_RL_SEQUENCE(theme, options);
+	}
 
-	
-	
+
 	ixmaps.TA_COVID19_RL_VIVO_DECEDUTO = function (theme, options) {
 
 		var szUrl1 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/TA_COVID19_RL_small.csv.gz";
