@@ -16,7 +16,7 @@
 		"layout":"minimal",
 		"item": "html",
 		"scaleParam": {
-			"normalSizeScale": "100000000"
+			"normalSizeScale": "50000000"
 			},
 		"options": {
 			"featurescaling": "dynamic",
