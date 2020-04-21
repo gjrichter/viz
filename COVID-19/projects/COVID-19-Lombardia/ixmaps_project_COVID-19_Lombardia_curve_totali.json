@@ -3,23 +3,23 @@
 	"metadata": {
 		"title": "",
 		"snippet": "",
+		"description": "",
 		"thumbnail": "",
 		"about": "",
-		"description": "",
-		"created": "Sun Apr 19 2020 16:00:18 GMT+0200 (Ora legale dell’Europa centrale)"
+		"created": "Mon Apr 20 2020 15:51:56 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_pro_com_Lombardia.svgz",
-		"attribution": "",
+		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
-		"legend": "<h1>COVID-19 Lombardia<br><span style='font-weight:lighter'>casi positivi per comune</span></h1>",
+		"legend": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Lombardia/legend_curve_positivi.html",
 		"item": "",
 		"scaleParam": {
-			"normalSizeScale": "1528452"
+			"normalSizeScale": "177165354"
 			},
 		"options": {
-			"featurescaling": "true",
-			"objectscaling": "true",
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
 			"clipmap": "true",
 			"clipmapdynamic": "true",
 			"dynamiclabel": "NOSIZE",
@@ -47,35 +47,56 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "45.73206686696598",
-			"lng": "9.949493408203127"
+			"lat": "45.24975464648731",
+			"lng": "9.886322021484377"
 			},
 		"zoom": "9"
 		},
 	"themes": [{
 			"layer": "Com2020_pro_com",
-			"field": "$item$",
+			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|USER|AGGREGATE|VALUES|SUM",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|BOX|GRID|LONGTITLE|FIXSIZE|AGGREGATE|RECT|RELOCATE|GRIDSIZE|SUM|NOLELEGEND",
 				"colorscheme": [
-					"red"],
-				"fillopacity": "0.7",
+					"#dd0000"],
+				"fillopacity": "0.3",
 				"shadow": "false",
-				"dbtable": "TA_COVID19_RL_D3",
+				"dbtable": "TA_COVID19_RL_SEQUENCE",
 				"dbtableType": "ext",
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Lombardia/databroker_Lombardia.js",
-				"datacache": "true",
+				"datacache": "false",
 				"lookupfield": "CODICE_COMUNE",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
 				"units": "",
+				"align": "",
 				"refreshtimeout": "0",
-				"scale": "0.8",
-				"sizefield": "",
+				"normalsizevalue": "0.7",
+				"scale": "1.5",
+				"rangescale": "0.8",
+				"minvalue": "0",
+				"maxvalue": "auto",
+				"textcolor": "#880000",
+				"linewidth": "17",
+				"bordercolor": "none",
+				"boxopacity": "0",
+				"boxmargin": "10",
+				"titlefield": "DESCRIZIONE_COMUNE",
+				"boxupper": "1:200000",
 				"valuescale": "1",
 				"valuedecimals": "0",
-				"aggregationfield": "CODICE_COMUNE",
-				"titlefield": "DESCRIZIONE_COMUNE",
-				"title": "casi x comune"
+				"fadenegative": "1",
+				"aggregationscale": [
+					"1:1",
+					"200px",
+					"1:100000",
+					"100px"],
+				"name": "curve",
+				"title": "Giorno per giorno",
+				"snippet": "dal 2020-02-25T18:00:00 al 2020-04-10T17:00:00",
+				"description": "aggiornato: PRO_COM_T"
 				}
 			}],
 	"layerMask": {

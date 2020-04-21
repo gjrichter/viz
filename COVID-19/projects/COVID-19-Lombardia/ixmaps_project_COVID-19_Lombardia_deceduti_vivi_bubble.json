@@ -6,13 +6,13 @@
 		"thumbnail": "",
 		"about": "",
 		"description": "",
-		"created": "Sun Apr 19 2020 16:00:18 GMT+0200 (Ora legale dell’Europa centrale)"
+		"created": "Sun Apr 19 2020 15:05:04 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_pro_com_Lombardia.svgz",
-		"attribution": "",
+		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
-		"legend": "<h1>COVID-19 Lombardia<br><span style='font-weight:lighter'>casi positivi per comune</span></h1>",
+		"legend": "",
 		"item": "",
 		"scaleParam": {
 			"normalSizeScale": "1528452"
@@ -47,35 +47,38 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "45.73206686696598",
-			"lng": "9.949493408203127"
+			"lat": "45.39169956460275",
+			"lng": "10.096435546875002"
 			},
 		"zoom": "9"
 		},
 	"themes": [{
 			"layer": "Com2020_pro_com",
-			"field": "$item$",
+			"field": "VIVO_O_DECEDUTO",
 			"field100": "",
 			"style": {
-				"type": "CHART|USER|AGGREGATE|VALUES|SUM",
+				"type": "CHART|CATEGORICAL|SYMBOL|SEQUENCE|CENTER|SORT|DOWN|AGGREGATE|RECT|SUM|COMPACTLEGEND",
 				"colorscheme": [
-					"red"],
+					"black",
+					"green"],
 				"fillopacity": "0.7",
 				"shadow": "false",
-				"dbtable": "TA_COVID19_RL_D3",
+				"dbtable": "TA_COVID19_RL",
 				"dbtableType": "ext",
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Lombardia/databroker_Lombardia.js",
 				"datacache": "true",
 				"lookupfield": "CODICE_COMUNE",
+				"symbols": [
+					"circle"],
 				"units": "",
 				"refreshtimeout": "0",
-				"scale": "0.8",
-				"sizefield": "",
+				"scale": "4.76837158203125",
+				"sizefield": "$item$",
 				"valuescale": "1",
 				"valuedecimals": "0",
-				"aggregationfield": "CODICE_COMUNE",
-				"titlefield": "DESCRIZIONE_COMUNE",
-				"title": "casi x comune"
+				"gridwidthpx": "40",
+				"title": "Lombardia - Tamponi",
+				"snippet": "dal 20.02.2020 al 14.04.2020" 
 				}
 			}],
 	"layerMask": {

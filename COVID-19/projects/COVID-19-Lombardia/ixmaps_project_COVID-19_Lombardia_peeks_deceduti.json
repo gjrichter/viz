@@ -12,7 +12,7 @@
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_pro_com_Lombardia.svgz",
 		"attribution": "",
 		"basemap": "CartoDB - Positron",
-		"legend": "<h1>COVID-19 Lombardia<br><span style='font-weight:lighter'>casi positivi per comune</span></h1>",
+		"legend": "<h1>COVID-19 Lombardia<br><span style='font-weight:lighter'>deceduti per comune</span></h1>",
 		"item": "",
 		"scaleParam": {
 			"normalSizeScale": "1528452"
@@ -59,7 +59,7 @@
 			"style": {
 				"type": "CHART|USER|AGGREGATE|VALUES|SUM",
 				"colorscheme": [
-					"red"],
+					"black"],
 				"fillopacity": "0.7",
 				"shadow": "false",
 				"dbtable": "TA_COVID19_RL_D3",
@@ -67,6 +67,7 @@
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Lombardia/databroker_Lombardia.js",
 				"datacache": "true",
 				"lookupfield": "CODICE_COMUNE",
+				"filter": "WHERE VIVO_O_DECEDUTO = DECEDUTO",
 				"units": "",
 				"refreshtimeout": "0",
 				"scale": "0.8",
@@ -75,7 +76,7 @@
 				"valuedecimals": "0",
 				"aggregationfield": "CODICE_COMUNE",
 				"titlefield": "DESCRIZIONE_COMUNE",
-				"title": "casi x comune"
+				"title": "deceduti x comune"
 				}
 			}],
 	"layerMask": {
