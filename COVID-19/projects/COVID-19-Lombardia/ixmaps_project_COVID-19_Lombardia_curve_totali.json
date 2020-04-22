@@ -13,7 +13,7 @@
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
 		"legend": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Lombardia/legend_curve_positivi.html",
-		"item": "",
+		"item": "html",
 		"scaleParam": {
 			"normalSizeScale": "177165354"
 			},

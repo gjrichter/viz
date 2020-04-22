@@ -43,8 +43,8 @@ window.ixmaps = window.ixmaps || {};
 		// then calls .setExternalData() to define data and trigger continue of theme
 		//
 		$.when(
-			$.getScript("http://d3js.org/d3.v3.min.js"),
-			$.getScript("../../projects/COVID-19-Lombardia/chart.js"),
+			$.getScript("https://d3js.org/d3.v3.min.js"),
+			$.getScript("https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Lombardia/chart.js"),
 			$.Deferred(function (deferred) {
 				$(deferred.resolve);
 			})
@@ -87,8 +87,8 @@ window.ixmaps = window.ixmaps || {};
 		// then calls .setExternalData() to define data and trigger continue of theme
 		//
 		$.when(
-			$.getScript("http://d3js.org/d3.v3.min.js"),
-			$.getScript("../../projects/COVID-19-Lombardia/chart.js"),
+			$.getScript("https://d3js.org/d3.v3.min.js"),
+			$.getScript("https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Lombardia/chart.js"),
 			$.Deferred(function (deferred) {
 				$(deferred.resolve);
 			})
@@ -175,8 +175,8 @@ window.ixmaps = window.ixmaps || {};
 		// then calls .setExternalData() to define data and trigger continue of theme
 		//
 		$.when(
-			$.getScript("http://d3js.org/d3.v3.min.js"),
-			$.getScript("../../projects/COVID-19-Lombardia/chart.js"),
+			$.getScript("https://d3js.org/d3.v3.min.js"),
+			$.getScript("https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Lombardia/chart.js"),
 			$.Deferred(function (deferred) {
 				$(deferred.resolve);
 			})
@@ -273,8 +273,8 @@ window.ixmaps = window.ixmaps || {};
 		// then calls .setExternalData() to define data and trigger continue of theme
 		//
 		$.when(
-			$.getScript("http://d3js.org/d3.v3.min.js"),
-			$.getScript("../../projects/COVID-19-Lombardia/chart.js"),
+			$.getScript("https://d3js.org/d3.v3.min.js"),
+			$.getScript("https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Lombardia/chart.js"),
 			$.Deferred(function (deferred) {
 				$(deferred.resolve);
 			})
@@ -384,8 +384,8 @@ window.ixmaps = window.ixmaps || {};
 		// then calls .setExternalData() to define data and trigger continue of theme
 		//
 		$.when(
-			$.getScript("http://d3js.org/d3.v3.min.js"),
-			$.getScript("../../projects/COVID-19-Lombardia/chart.js"),
+			$.getScript("https://d3js.org/d3.v3.min.js"),
+			$.getScript("https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Lombardia/chart.js"),
 			$.Deferred(function (deferred) {
 				$(deferred.resolve);
 			})
