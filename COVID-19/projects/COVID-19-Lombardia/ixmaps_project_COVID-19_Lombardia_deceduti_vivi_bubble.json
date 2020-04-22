@@ -61,7 +61,7 @@
 				"colorscheme": [
 					"black",
 					"red"],
-				"fillopacity": "0.7",
+				"fillopacity": "0.5",
 				"shadow": "false",
 				"dbtable": "TA_COVID19_RL",
 				"dbtableType": "ext",
