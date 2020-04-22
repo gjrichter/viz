@@ -9,6 +9,10 @@ fonte: <a href='https://www.apple.com/covid19/mobility' target='_blank'>Apple Ma
 
 <a href="http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-other/ixmaps_project_COVID-19_AppleMobility_driving_walking_transit_black.json"><img src="earthbeat.png" width="500px"></a>
 
+con griglia
+
+<a href="http://view.ixmaps.com?project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-other/ixmaps_project_COVID-19_AppleMobility_driving_walking_transit_black_grid.json"><img src="earthbeat.png" width="500px"></a>
+
 
 
 
