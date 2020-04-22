@@ -57,7 +57,7 @@
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|BOX|GRID|LONGTITLE|FIXSIZE|AGGREGATE|RECT|RELOCATE|GRIDSIZE|SUM|NOLELEGEND",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|BOX|GRID|LONGTITLE|FIXSIZE|AGGREGATE|RECT|RELOCATE|SUM|NOLELEGEND",
 				"colorscheme": [
 					"#dd0000"],
 				"fillopacity": "0.3",
@@ -71,10 +71,10 @@
 				"symbols": [
 					"circle"],
 				"units": "",
-				"align": "",
+				"align": "center|top",
 				"refreshtimeout": "0",
 				"normalsizevalue": "0.7",
-				"scale": "1.5",
+				"scale": "0.01",
 				"rangescale": "0.8",
 				"minvalue": "0",
 				"maxvalue": "auto",
