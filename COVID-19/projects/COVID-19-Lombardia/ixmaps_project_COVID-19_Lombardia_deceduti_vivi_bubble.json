@@ -60,7 +60,7 @@
 				"type": "CHART|CATEGORICAL|SYMBOL|SEQUENCE|CENTER|SORT|DOWN|AGGREGATE|RECT|SUM|COMPACTLEGEND",
 				"colorscheme": [
 					"black",
-					"green"],
+					"red"],
 				"fillopacity": "0.7",
 				"shadow": "false",
 				"dbtable": "TA_COVID19_RL",
