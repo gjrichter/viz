@@ -15,11 +15,11 @@
 		"legend": "",
 		"item": "",
 		"scaleParam": {
-			"normalSizeScale": "1528452"
+			"normalSizeScale": "500000"
 			},
 		"options": {
 			"featurescaling": "true",
-			"objectscaling": "true",
+			"objectscaling": "dynamic",
 			"clipmap": "true",
 			"clipmapdynamic": "true",
 			"dynamiclabel": "NOSIZE",
@@ -60,8 +60,8 @@
 				"type": "CHART|CATEGORICAL|SYMBOL|SEQUENCE|CENTER|SORT|DOWN|AGGREGATE|RECT|SUM|COMPACTLEGEND",
 				"colorscheme": [
 					"black",
-					"#F0AEAC"],
-				"fillopacity": "0.5",
+					"rgba(100, 200, 120,1)"],
+				"fillopacity": "0.7",
 				"shadow": "false",
 				"dbtable": "TA_COVID19_RL",
 				"dbtableType": "ext",
@@ -72,7 +72,8 @@
 					"circle"],
 				"units": "",
 				"refreshtimeout": "0",
-				"scale": "4.76837158203125",
+				"linewidth":"2",
+				"scale": "4",
 				"sizefield": "$item$",
 				"valuescale": "1",
 				"valuedecimals": "0",

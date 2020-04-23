@@ -141,7 +141,6 @@ window.ixmaps = window.ixmaps || {};
 						dbTable.addColumn({
 							destination: "active"
 						}, function (row) {
-							console.log(row);
 							return (Number(row[index_confirmed]) - Number(row[index_recovered]) - Number(row[index_deaths]));
 						})
 
@@ -236,8 +235,6 @@ window.ixmaps = window.ixmaps || {};
 						columns: ["Country/Region", "Lat", "Long", lastDataColumnName]
 					});
 					merger.realize(function (dbTable) {
-
-						console.log(dbTable);
 
 						var index_active = dbTable.column(lastDataColumnName + ".1").index;
 						var index_recovered = dbTable.column(lastDataColumnName + ".2").index;
@@ -525,7 +522,6 @@ window.ixmaps = window.ixmaps || {};
 						var fields = dbTable.fields;
 						var records = dbTable.records;
 						for (var d = 4; d < days; d++) {
-							console.log(fields[index_active].id + ',' + fields[index_recovered].id + ',' + fields[index_deaths].id);
 							for (var r = 0; r < records.length; r++) {
 								records[r][index_active] -= records[r][index_recovered];
 								records[r][index_active] -= records[r][index_deaths];
@@ -554,7 +550,6 @@ window.ixmaps = window.ixmaps || {};
 
 						options.theme.szItemField = "Lat.1|Long.1";
 						options.theme.szSelectionField = "Lat.1|Long.1";
-						console.log(options.theme);
 
 						// make label 
 						var xAxis = [];
@@ -656,7 +651,6 @@ window.ixmaps = window.ixmaps || {};
 						var fields = dbTable.fields;
 						var records = dbTable.records;
 						for (var d = 4; d < days; d++) {
-							console.log(fields[index_active].id + ',' + fields[index_recovered].id + ',' + fields[index_deaths].id);
 							for (var r = 0; r < records.length; r++) {
 								records[r][index_active] -= records[r][index_recovered];
 								records[r][index_active] -= records[r][index_deaths];
@@ -685,7 +679,6 @@ window.ixmaps = window.ixmaps || {};
 
 						options.theme.szItemField = "Lat.1|Long.1";
 						options.theme.szSelectionField = "Lat.1|Long.1";
-						console.log(options.theme);
 
 						// make label 
 						var xAxis = [];
@@ -760,8 +753,6 @@ window.ixmaps = window.ixmaps || {};
 						return row[0] + row[1];
 					});
 
-					console.log(data_Active);
-
 					var merger = new Data.Merger();
 					merger.addSource(data_Active, {
 						lookup: "position",
@@ -781,8 +772,6 @@ window.ixmaps = window.ixmaps || {};
 					});
 					merger.realize(function (dbTable) {
 
-						console.log(dbTable);
-
 						var index_active = dbTable.column("1/22/20.1").index;
 						var index_recovered = dbTable.column("1/22/20.2").index;
 						var index_deaths = dbTable.column("1/22/20.3").index;
@@ -791,7 +780,6 @@ window.ixmaps = window.ixmaps || {};
 						var fields = dbTable.fields;
 						var records = dbTable.records;
 						for (var d = 4; d < days; d++) {
-							console.log(fields[index_active].id + ',' + fields[index_recovered].id + ',' + fields[index_deaths].id);
 							for (var r = 0; r < records.length; r++) {
 								records[r][index_active] -= records[r][index_recovered];
 								records[r][index_active] -= records[r][index_deaths];
@@ -820,7 +808,6 @@ window.ixmaps = window.ixmaps || {};
 
 						options.theme.szItemField = "Lat.1|Long.1";
 						options.theme.szSelectionField = "Lat.1|Long.1";
-						console.log(options.theme);
 
 						// make label 
 						var xAxis = [];
@@ -896,8 +883,6 @@ window.ixmaps = window.ixmaps || {};
 						return row[0] + row[1];
 					});
 
-					console.log(data_Active);
-
 					var merger = new Data.Merger();
 					merger.addSource(data_Active, {
 						lookup: "position",
@@ -917,8 +902,6 @@ window.ixmaps = window.ixmaps || {};
 					});
 					merger.realize(function (dbTable) {
 
-						console.log(dbTable);
-
 						var index_active = dbTable.column("1/22/20.1").index;
 						var index_recovered = dbTable.column("1/22/20.2").index;
 						var index_deaths = dbTable.column("1/22/20.3").index;
@@ -927,7 +910,6 @@ window.ixmaps = window.ixmaps || {};
 						var fields = dbTable.fields;
 						var records = dbTable.records;
 						for (var d = 4; d < days; d++) {
-							console.log(fields[index_active].id + ',' + fields[index_recovered].id + ',' + fields[index_deaths].id);
 							for (var r = 0; r < records.length; r++) {
 								records[r][index_active] -= records[r][index_recovered];
 								records[r][index_active] -= records[r][index_deaths];
@@ -956,7 +938,6 @@ window.ixmaps = window.ixmaps || {};
 
 						options.theme.szItemField = "Lat.1|Long.1";
 						options.theme.szSelectionField = "Lat.1|Long.1";
-						console.log(options.theme);
 
 						// make label 
 						var xAxis = [];
@@ -1029,8 +1010,6 @@ window.ixmaps = window.ixmaps || {};
 						return row[0] + row[1];
 					});
 
-					console.log(data_Active);
-
 					var merger = new Data.Merger();
 					merger.addSource(data_Active, {
 						lookup: "position",
@@ -1050,8 +1029,6 @@ window.ixmaps = window.ixmaps || {};
 					});
 					merger.realize(function (dbTable) {
 
-						console.log(dbTable);
-
 						var index_active = dbTable.column("1/22/20.1").index;
 						var index_recovered = dbTable.column("1/22/20.2").index;
 						var index_deaths = dbTable.column("1/22/20.3").index;
@@ -1060,7 +1037,6 @@ window.ixmaps = window.ixmaps || {};
 						var fields = dbTable.fields;
 						var records = dbTable.records;
 						for (var d = 4; d < days; d++) {
-							console.log(fields[index_active].id + ',' + fields[index_recovered].id + ',' + fields[index_deaths].id);
 							for (var r = 0; r < records.length; r++) {
 								records[r][index_active] -= records[r][index_recovered];
 								records[r][index_active] -= records[r][index_deaths];
@@ -1090,7 +1066,6 @@ window.ixmaps = window.ixmaps || {};
 
 						options.theme.szItemField = "Lat.1|Long.1";
 						options.theme.szSelectionField = "Lat.1|Long.1";
-						console.log(options.theme);
 
 						// make label 
 						var xAxis = [];
@@ -1171,8 +1146,6 @@ window.ixmaps = window.ixmaps || {};
 						return row[0] + row[1];
 					});
 
-					console.log(data_Active);
-
 					var merger = new Data.Merger();
 					merger.addSource(data_Active, {
 						lookup: "position",
@@ -1188,8 +1161,6 @@ window.ixmaps = window.ixmaps || {};
 					});
 					merger.realize(function (dbTable) {
 
-						console.log(dbTable);
-
 						var index_active = dbTable.column("1/22/20.1").index;
 						var index_recovered = dbTable.column("1/22/20.2").index;
 						var index_deaths = dbTable.column("1/22/20.3").index;
@@ -1198,7 +1169,6 @@ window.ixmaps = window.ixmaps || {};
 						var fields = dbTable.fields;
 						var records = dbTable.records;
 						for (var d = 4; d < days; d++) {
-							console.log(fields[index_active].id + ',' + fields[index_recovered].id + ',' + fields[index_deaths].id);
 							for (var r = 0; r < records.length; r++) {
 								records[r][index_active] -= records[r][index_recovered];
 								records[r][index_active] -= records[r][index_deaths];
@@ -1232,7 +1202,6 @@ window.ixmaps = window.ixmaps || {};
 
 						options.theme.szItemField = "Lat.1|Long.1";
 						options.theme.szSelectionField = "Lat.1|Long.1";
-						console.log(options.theme);
 
 						// make label 
 						var xAxis = [];
@@ -1317,8 +1286,6 @@ window.ixmaps = window.ixmaps || {};
 						return row[0] + row[1];
 					});
 
-					console.log(data_Active);
-
 					var merger = new Data.Merger();
 					merger.addSource(data_Active, {
 						lookup: "position",
@@ -1338,8 +1305,6 @@ window.ixmaps = window.ixmaps || {};
 					});
 					merger.realize(function (dbTable) {
 
-						console.log(dbTable);
-
 						var index_active = dbTable.column("1/22/20.1").index;
 						var index_recovered = dbTable.column("1/22/20.2").index;
 						var index_deaths = dbTable.column("1/22/20.3").index;
@@ -1348,7 +1313,6 @@ window.ixmaps = window.ixmaps || {};
 						var fields = dbTable.fields;
 						var records = dbTable.records;
 						for (var d = 4; d < days; d++) {
-							console.log(fields[index_active].id + ',' + fields[index_recovered].id + ',' + fields[index_deaths].id);
 							for (var r = 0; r < records.length; r++) {}
 							index_active++;
 							index_recovered++;
@@ -1372,7 +1336,6 @@ window.ixmaps = window.ixmaps || {};
 
 						options.theme.szItemField = "Lat.1|Long.1";
 						options.theme.szSelectionField = "Lat.1|Long.1";
-						console.log(options.theme);
 
 						// make label 
 						var xAxis = [];
@@ -1447,8 +1410,6 @@ window.ixmaps = window.ixmaps || {};
 						return row[0] + row[1];
 					});
 
-					console.log(data_Active);
-
 					var merger = new Data.Merger();
 					merger.addSource(data_Active, {
 						lookup: "position",
@@ -1468,8 +1429,6 @@ window.ixmaps = window.ixmaps || {};
 					});
 					merger.realize(function (dbTable) {
 
-						console.log(dbTable);
-
 						var index_active = dbTable.column("1/22/20.1").index;
 						var index_recovered = dbTable.column("1/22/20.2").index;
 						var index_deaths = dbTable.column("1/22/20.3").index;
@@ -1478,7 +1437,6 @@ window.ixmaps = window.ixmaps || {};
 						var fields = dbTable.fields;
 						var records = dbTable.records;
 						for (var d = 4; d < days; d++) {
-							console.log(fields[index_active].id + ',' + fields[index_recovered].id + ',' + fields[index_deaths].id);
 							for (var r = 0; r < records.length; r++) {
 								records[r][index_active] -= records[r][index_recovered];
 							}
@@ -1504,7 +1462,6 @@ window.ixmaps = window.ixmaps || {};
 
 						options.theme.szItemField = "Lat.1|Long.1";
 						options.theme.szSelectionField = "Lat.1|Long.1";
-						console.log(options.theme);
 
 						// make label 
 						var xAxis = [];
@@ -1579,8 +1536,6 @@ window.ixmaps = window.ixmaps || {};
 						return row[0] + row[1];
 					});
 
-					console.log(data_Active);
-
 					var merger = new Data.Merger();
 					merger.addSource(data_Active, {
 						lookup: "position",
@@ -1600,8 +1555,6 @@ window.ixmaps = window.ixmaps || {};
 					});
 					merger.realize(function (dbTable) {
 
-						console.log(dbTable);
-
 						var index_active = dbTable.column("1/22/20.1").index;
 						var index_recovered = dbTable.column("1/22/20.2").index;
 						var index_deaths = dbTable.column("1/22/20.3").index;
@@ -1610,7 +1563,6 @@ window.ixmaps = window.ixmaps || {};
 						var fields = dbTable.fields;
 						var records = dbTable.records;
 						for (var d = 4; d < days; d++) {
-							console.log(fields[index_active].id + ',' + fields[index_recovered].id + ',' + fields[index_deaths].id);
 							for (var r = 0; r < records.length; r++) {
 								records[r][index_active] -= records[r][index_recovered];
 							}
@@ -1636,7 +1588,6 @@ window.ixmaps = window.ixmaps || {};
 
 						options.theme.szItemField = "Lat.1|Long.1";
 						options.theme.szSelectionField = "Lat.1|Long.1";
-						console.log(options.theme);
 
 						// make label 
 						var xAxis = [];
@@ -1711,8 +1662,6 @@ window.ixmaps = window.ixmaps || {};
 						return row[0] + row[1];
 					});
 
-					console.log(data_Active);
-
 					var merger = new Data.Merger();
 					merger.addSource(data_Active, {
 						lookup: "position",
@@ -1732,8 +1681,6 @@ window.ixmaps = window.ixmaps || {};
 					});
 					merger.realize(function (dbTable) {
 
-						console.log(dbTable);
-
 						var index_active = dbTable.column("1/22/20.1").index;
 						var index_recovered = dbTable.column("1/22/20.2").index;
 						var index_deaths = dbTable.column("1/22/20.3").index;
@@ -1742,7 +1689,6 @@ window.ixmaps = window.ixmaps || {};
 						var fields = dbTable.fields;
 						var records = dbTable.records;
 						for (var d = 4; d < days; d++) {
-							console.log(fields[index_active].id + ',' + fields[index_recovered].id + ',' + fields[index_deaths].id);
 							for (var r = 0; r < records.length; r++) {
 								records[r][index_active] -= records[r][index_deaths];
 								records[r][index_active] -= records[r][index_recovered];
@@ -1769,7 +1715,6 @@ window.ixmaps = window.ixmaps || {};
 
 						options.theme.szItemField = "Lat.1|Long.1";
 						options.theme.szSelectionField = "Lat.1|Long.1";
-						console.log(options.theme);
 
 						// make label 
 						var xAxis = [];
@@ -1844,8 +1789,6 @@ window.ixmaps = window.ixmaps || {};
 						return row[0] + row[1];
 					});
 
-					console.log(data_Active);
-
 					var merger = new Data.Merger();
 					merger.addSource(data_Active, {
 						lookup: "position",
@@ -1865,9 +1808,6 @@ window.ixmaps = window.ixmaps || {};
 					});
 					merger.realize(function (dbTable) {
 
-						console.log(dbTable);
-
-
 						columnsA.shift();
 						columnsA.shift();
 						columnsA.shift();
@@ -1885,7 +1825,6 @@ window.ixmaps = window.ixmaps || {};
 
 						options.theme.szItemField = "Lat.1|Long.1";
 						options.theme.szSelectionField = "Lat.1|Long.1";
-						console.log(options.theme);
 
 						// make label 
 						var xAxis = [];
@@ -2050,8 +1989,6 @@ window.ixmaps = window.ixmaps || {};
 								});
 
 								merger.realize(function (dbTable) {
-
-									console.log(dbTable);
 
 									var iConfirmed1 = dbTable.column("Confirmed.1").index;
 									var iConfirmed2 = dbTable.column("Confirmed.2").index;
@@ -2269,7 +2206,6 @@ window.ixmaps = window.ixmaps || {};
 					for (var r = 0; r < records.length; r++) {
 						for (var c = 4; c < records[r].length - 1; c++) {
 							records[r][c] = (Number(records[r][c]) > 100) ? ((Number(records[r][c + 1]) - Number(records[r][c])) / Number(records[r][c]) * 100) : 0;
-							console.log(records[r][c]);
 						}
 					}
 					columnNamesA.pop();
@@ -2296,7 +2232,6 @@ window.ixmaps = window.ixmaps || {};
 
 					options.theme.szItemField = "Lat|Long";
 					options.theme.szSelectionField = "Lat|Long";
-					console.log(options.theme);
 
 					// make label 
 					var xAxis = [];
