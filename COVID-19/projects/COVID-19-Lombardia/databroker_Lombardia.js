@@ -6,6 +6,9 @@
 
 window.ixmaps = window.ixmaps || {};
 (function () {
+	
+	//ixmaps.require("https://d3js.org/d3.v3.min.js");
+	//ixmaps.require("https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Lombardia/chart.js");
 
 	ixmaps.TA_COVID19_RL = function (theme, options) {
 

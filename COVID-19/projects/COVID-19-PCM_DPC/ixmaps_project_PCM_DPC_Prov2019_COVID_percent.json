@@ -75,7 +75,7 @@
 				"refreshtimeout": "0",
 				"scale": "1",
 				"dopacitypow": "1",
-				"dopacityscale": "3",
+				"dopacityscale": "1.5",
 				"valuescale": "1",
 				"valuedecimals": "1",
 				"valuesupper":"1:1000000",

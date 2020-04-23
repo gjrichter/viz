@@ -52,6 +52,10 @@
 			},
 		"zoom": "9"
 		},
+	"require":[
+		"https://d3js.org/d3.v3.min.js",
+		"https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Lombardia/chart.js"
+	],
 	"themes": [{
 			"layer": "Com2020_pro_com",
 			"field": "$item$",
