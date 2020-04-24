@@ -73,76 +73,78 @@ window.ixmaps = window.ixmaps || {};
 	// chart type inspired by NYT pinackle maps
 	// --------------------------------------------------
 	
-	ixmaps.testuserdraw = function(SVGDocument,args){
-		return ixmaps.htmlgui_drawChart(SVGDocument,args);
-	}
 	ixmaps.htmlgui_drawChart = function(SVGDocument,args){
 		
 		var szColor = (args.theme.colorScheme[0]);
 
-		var nValue = args.values[(args.theme.nActualFrame||0)];
-		var nMax = Math.max(args.theme.nMax,Math.abs(args.theme.nMin));
-		if ( args.theme.nMinValue && (nValue < args.theme.nMinValue) ){
-			return false;
-		}
-		var rad = args.item?nValue/nMax*args.maxSize*20:args.maxSize/2*20;
-		if ( args.theme.nNormalSizeValue ){
-			rad = args.item?nValue/args.theme.nNormalSizeValue*args.maxSize*20:args.maxSize/2*20;
-		}	
+		if ( 1 ){
 
-		var szOpacity = 1;
-		var szFillOpacity = 0.7;
+			var nValue = args.values[(args.theme.nActualFrame||0)];
+			var nMax = Math.max(args.theme.nMax,Math.abs(args.theme.nMin));
+			if ( args.theme.nMinValue && (nValue < args.theme.nMinValue) ){
+				return false;
+			}
+			var rad = args.item?nValue/nMax*args.maxSize*20:args.maxSize/2*20;
+			if ( args.theme.nNormalSizeValue ){
+				rad = args.item?nValue/args.theme.nNormalSizeValue*args.maxSize*20:args.maxSize/2*20;
+			}	
 
-		if (rad == 0){
-			return false;
-		}
+			var szOpacity = 1;
+			var szFillOpacity = 0.7;
+			
+			if (rad == 0){
+				return false;
+			}
 
-		// use d3 to draw the circle
-		// -------------------------
-		var svg = d3.select(args.target);
+			// use d3 to draw the circle
+			// -------------------------
+			var svg = d3.select(args.target);
+			
+			svg.append("path")
+				.attr("d", "M0,0 l100,"+(-rad)+" l100,"+(rad)+"")
+				.attr("style","fill:url(#"+__myGradientId+");stroke:"+szColor+";stroke-width:20;fill-opacity:"+szFillOpacity+";opacity:"+szOpacity+";");
 
-		svg.append("path")
-			.attr("d", "M0,0 l100,"+(-rad)+" l100,"+(rad)+"")
-			.attr("style","fill:url(#"+__myGradientId+");stroke:"+szColor+";stroke-width:20;fill-opacity:"+szFillOpacity+";opacity:"+szOpacity+";");
+			if ( args.flag.match(/VALUES/) && (rad > 100) ){
 
-		if ( args.flag.match(/VALUES/) && (rad > 100) ){
+				var nFontSize = Math.sqrt(rad)*10;
+				
+				// show only if fontsize is reasonable (fontsize is n * 20)
+				if ( nFontSize > 150 ){
+					var szText = String(nValue);
+					var szTextOpacity = 1; // 0.2 + nValue/nMax;
 
-			var nFontSize = Math.sqrt(rad)*10;
-
-			// show only if fontsize is reasonable (fontsize is n * 20)
-			if ( nFontSize > 150 ){
-				var szText = String(nValue);
-				var szTextOpacity = 1; // 0.2 + nValue/nMax;
-
-				// show the value on top of the peek
-				svg.append("text")
-					.attr("x", 0)
-					.attr("y", -rad-nFontSize*0.4)
-					.attr("style","font-family:arial;font-size:"+nFontSize+"px;text-anchor:middle;fill:none;fill-opacity:"+szTextOpacity+";stroke:white;stroke-width:20px;opacity:"+szOpacity+";pointer-events:none")
-					.text(szText);
-				svg.append("text")
-					.attr("x", 0)
-					.attr("y", -rad-nFontSize*0.4)
-					.attr("style","font-family:arial;font-size:"+nFontSize+"px;text-anchor:middle;fill:#bb0000;fill-opacity:"+szTextOpacity+";stroke:none;opacity:"+szOpacity+";pointer-events:none")
-					.text(szText);
-
-				// is there is a chart title defined, show it below the value
-				if (args.item.szTitle){
-					nFontSize /= 3;
+					// show the value on top of the peek
 					svg.append("text")
 						.attr("x", 0)
-						.attr("y", -rad-nFontSize*0.3)
+						.attr("y", -rad-nFontSize*0.4)
 						.attr("style","font-family:arial;font-size:"+nFontSize+"px;text-anchor:middle;fill:none;fill-opacity:"+szTextOpacity+";stroke:white;stroke-width:20px;opacity:"+szOpacity+";pointer-events:none")
-						.text(args.item.szTitle);
+						.text(szText);
 					svg.append("text")
 						.attr("x", 0)
-						.attr("y", -rad-nFontSize*0.3)
-						.attr("style","font-family:arial;font-size:"+nFontSize+"px;text-anchor:middle;fill:#444444;fill-opacity:"+szTextOpacity+";stroke:none;opacity:"+szOpacity+";pointer-events:none")
-						.text(args.item.szTitle);
+						.attr("y", -rad-nFontSize*0.4)
+						.attr("style","font-family:arial;font-size:"+nFontSize+"px;text-anchor:middle;fill:#bb0000;fill-opacity:"+szTextOpacity+";stroke:none;opacity:"+szOpacity+";pointer-events:none")
+						.text(szText);
+					
+					// is there is a chart title defined, show it below the value
+					if (args.item.szTitle){
+						nFontSize /= 3;
+						svg.append("text")
+							.attr("x", 0)
+							.attr("y", -rad-nFontSize*0.3)
+							.attr("style","font-family:arial;font-size:"+nFontSize+"px;text-anchor:middle;fill:none;fill-opacity:"+szTextOpacity+";stroke:white;stroke-width:20px;opacity:"+szOpacity+";pointer-events:none")
+							.text(args.item.szTitle);
+						svg.append("text")
+							.attr("x", 0)
+							.attr("y", -rad-nFontSize*0.3)
+							.attr("style","font-family:arial;font-size:"+nFontSize+"px;text-anchor:middle;fill:#444444;fill-opacity:"+szTextOpacity+";stroke:none;opacity:"+szOpacity+";pointer-events:none")
+							.text(args.item.szTitle);
+					}
 				}
 			}
+			return {x:0,y:args.item?0:(rad+2*20)};
 		}
-		return {x:0,y:args.item?0:(rad+2*20)};
+		console.log("error");
+		return false;
 	};
 
 /**

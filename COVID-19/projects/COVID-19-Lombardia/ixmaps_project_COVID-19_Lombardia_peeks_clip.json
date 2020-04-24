@@ -1,0 +1,87 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Sun Apr 19 2020 16:00:18 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_pro_com_Lombardia.svgz",
+		"attribution": "",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "45.73206686696598",
+			"lng": "9.949493408203127"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "Com2020_pro_com",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|USER|AGGREGATE|VALUES|SUM|CLIP|LOOP",
+				"colorscheme": [
+					"red"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "TA_COVID19_RL_D3_CLIP",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-Lombardia/databroker_Lombardia.js",
+				"datacache": "true",
+				"lookupfield": "CODICE_COMUNE",
+				"units": "",
+				"refreshtimeout": "0",
+				"clipframerate": "4",
+				"minvalue":"3",
+				"scale": "0.8",
+				"sizefield": "",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"aggregationfield": "CODICE_COMUNE",
+				"title": "Com2017_name_upper [$item$]"
+				}
+			}],
+	"layerMask": {
+		"Com2020_pro_com": {
+			"display": "none"
+			}
+		}
+	}
