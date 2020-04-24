@@ -38,6 +38,9 @@ window.ixmaps = window.ixmaps || {};
 	// here we define the gradient for filling the peeks
 	// --------------------------------------------------
 	
+	ixmaps.testuserdraw_init = function(SVGDocument,args){
+		return ixmaps.htmlgui_initChart(SVGDocument,args);
+	}
 	ixmaps.htmlgui_initChart = function(SVGDocument,args){
 		
 		var szColor = args.theme.colorScheme[0];
