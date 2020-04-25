@@ -6,7 +6,7 @@ La Regione Lombardia pubblica i dati attuali del esito dei tamponi effettuati su
 
 L'associazione onData ha reso pubblico i dati della dashboard in un repository GitHub. I dati si riferiscono allo stato del 14.04.2020 
 
-fonte: <a href=https://github.com/ondata/covid19italia/tree/master/webservices/regioneLombardia' target='_blank'>onData regione Lombardia</a>
+fonte: <a href='https://github.com/ondata/covid19italia/tree/master/webservices/regioneLombardia' target='_blank'>onData regione Lombardia</a>
 
 Qui alcuni visualizzazioni dei data di questo repository.
 
