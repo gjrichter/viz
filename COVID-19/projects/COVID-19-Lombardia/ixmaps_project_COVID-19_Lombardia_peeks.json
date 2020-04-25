@@ -52,7 +52,7 @@
 			},
 		"zoom": "9"
 		},
-	"require":[
+	"required":[
 		"https://d3js.org/d3.v3.min.js",
 		"https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Lombardia/chart.js"
 	],
@@ -64,6 +64,7 @@
 				"type": "CHART|USER|AGGREGATE|VALUES|SUM",
 				"colorscheme": [
 					"red"],
+				"userdraw":"pinnacleChart",
 				"fillopacity": "0.7",
 				"shadow": "false",
 				"dbtable": "TA_COVID19_RL_D3",
