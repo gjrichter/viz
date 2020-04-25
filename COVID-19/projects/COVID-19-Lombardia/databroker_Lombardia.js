@@ -6,9 +6,6 @@
 
 window.ixmaps = window.ixmaps || {};
 (function () {
-	
-	//ixmaps.require("https://d3js.org/d3.v3.min.js");
-	//ixmaps.require("https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Lombardia/chart.js");
 
 	ixmaps.TA_COVID19_RL = function (theme, options) {
 
@@ -41,18 +38,6 @@ window.ixmaps = window.ixmaps || {};
 
 		var szUrl1 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/TA_COVID19_RL_small.csv.gz";
 
-		// load D3.js and USER chart script
-		// load and parse data if script loaded
-		// then calls .setExternalData() to define data and trigger continue of theme
-		//
-		$.when(
-			$.getScript("https://d3js.org/d3.v3.min.js"),
-			$.getScript("https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Lombardia/chart.js"),
-			$.Deferred(function (deferred) {
-				$(deferred.resolve);
-			})
-		).done(function () {
-
 		var broker = new Data.Broker()
 			.addSource(szUrl1, "csv")
 			.realize(
@@ -64,6 +49,13 @@ window.ixmaps = window.ixmaps || {};
 						return Number(value)-3000000;
 					});
 
+					var dateA = data.column("DATA_RICEVIMENTO_TAMPONE").values();
+					var lastData = dateA.pop();
+					date = new Date(lastData.substr(0,4), Number(lastData.substr(4,2))-1, lastData.substr(6,2));
+					lastData = date.toLocaleDateString();
+
+					ixmaps.setTitle("aggiornato al: " + lastData);
+					
 					// -----------------------------------------------------------------------------------------------               
 					// deploy the data
 					// ----------------------------------------------------------------------------------------------- 
@@ -74,28 +66,12 @@ window.ixmaps = window.ixmaps || {};
 					});
 				});
 
-		}).fail(function () {
-			alert("script loading " + arguments[2].toString());
-		});
-
 	};
 
 	
 	ixmaps.TA_COVID19_RL_D3_CLIP = function (theme, options) {
 
 		var szUrl1 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/TA_COVID19_RL_small.csv.gz";
-
-		// load D3.js and USER chart script
-		// load and parse data if script loaded
-		// then calls .setExternalData() to define data and trigger continue of theme
-		//
-		$.when(
-			$.getScript("https://d3js.org/d3.v3.min.js"),
-			$.getScript("https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Lombardia/chart.js"),
-			$.Deferred(function (deferred) {
-				$(deferred.resolve);
-			})
-		).done(function () {
 
 		var broker = new Data.Broker()
 			.addSource(szUrl1, "csv")
@@ -163,27 +139,11 @@ window.ixmaps = window.ixmaps || {};
 					});
 				});
 
-		}).fail(function () {
-			alert("script loading " + arguments[2].toString());
-		});
-
 	};
 
 	ixmaps.TA_COVID19_RL_D3_CLIP_SUM = function (theme, options) {
 
 		var szUrl1 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/TA_COVID19_RL_small.csv.gz";
-
-		// load D3.js and USER chart script
-		// load and parse data if script loaded
-		// then calls .setExternalData() to define data and trigger continue of theme
-		//
-		$.when(
-			$.getScript("https://d3js.org/d3.v3.min.js"),
-			$.getScript("https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Lombardia/chart.js"),
-			$.Deferred(function (deferred) {
-				$(deferred.resolve);
-			})
-		).done(function () {
 
 		var broker = new Data.Broker()
 			.addSource(szUrl1, "csv")
@@ -261,27 +221,9 @@ window.ixmaps = window.ixmaps || {};
 					});
 				});
 
-		}).fail(function () {
-			alert("script loading " + arguments[2].toString());
-		});
-
 	};
 
 	ixmaps.TA_COVID19_RL_SEQUENCE = function (theme, options) {
-
-		var szUrl1 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/TA_COVID19_RL_small.csv.gz";
-
-		// load D3.js and USER chart script
-		// load and parse data if script loaded
-		// then calls .setExternalData() to define data and trigger continue of theme
-		//
-		$.when(
-			$.getScript("https://d3js.org/d3.v3.min.js"),
-			$.getScript("https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Lombardia/chart.js"),
-			$.Deferred(function (deferred) {
-				$(deferred.resolve);
-			})
-		).done(function () {
 
 		var broker = new Data.Broker()
 			.addSource(szUrl1, "csv")
@@ -367,10 +309,6 @@ window.ixmaps = window.ixmaps || {};
 					});
 				});
 
-		}).fail(function () {
-			alert("script loading " + arguments[2].toString());
-		});
-
 	};
 	
 	ixmaps.TA_COVID19_RL_SEQUENCE_ALT = function (theme, options) {
@@ -381,18 +319,6 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.TA_COVID19_RL_VIVO_DECEDUTO = function (theme, options) {
 
 		var szUrl1 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/TA_COVID19_RL_small.csv.gz";
-
-		// load D3.js and USER chart script
-		// load and parse data if script loaded
-		// then calls .setExternalData() to define data and trigger continue of theme
-		//
-		$.when(
-			$.getScript("https://d3js.org/d3.v3.min.js"),
-			$.getScript("https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Lombardia/chart.js"),
-			$.Deferred(function (deferred) {
-				$(deferred.resolve);
-			})
-		).done(function () {
 
 		var broker = new Data.Broker()
 			.addSource(szUrl1, "csv")
@@ -421,15 +347,7 @@ window.ixmaps = window.ixmaps || {};
 					});
 				});
 
-		}).fail(function () {
-			alert("script loading " + arguments[2].toString());
-		});
-
 	};
-
-	
-	
-	
 	
 
 })();
