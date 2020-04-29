@@ -277,12 +277,92 @@ window.ixmaps = window.ixmaps || {};
 			
 			var last = columns.length-1;
 		
+			theme.szFields = columns[last];
+			theme.szFieldsA = [columns[last]];
 			theme.szSizeField = columns[last];
 			theme.szValueField = columns[last];
 
 			var dte = new Date(columns[last]);
 			ixmaps.setTitle("<span style='background:rgba(255,255,255,0.9);padding:0.3em 0.5em;border:solid #888888 0.5px;border-radius:0.2em;font-family:courier new,Raleway,arial,helvetica;font-size:18px;color:#444444'>aggiornato al "+dte.toLocaleDateString()+"</span>","right");
 
+			// -----------------------------------------------------------------------------------------------               
+			// deploy the data
+			// ----------------------------------------------------------------------------------------------- 
+
+			ixmaps.setExternalData(pivot, {
+				type: "dbtable",
+				name: options.name
+			});
+
+		})
+		.error(function(e){alert("error loading data from:\n"+szUrl)});
+
+	};
+
+ 	/**
+	 * ODS_SICILIA_COVID_LAST_ACTIVE_DIFF
+	 *
+	 * make a pivot table with one row per provincia
+	 *
+	 * columns: one column for each day 
+	 * types are: active named like 2020-02-24, 2020-02-25, 2020-02-26 
+	 * set actual date in calling theme 
+	 *
+	 * @param theme ixmaps theme object
+	 * @options varie options passed by ixmaps
+	 * @void
+	 */
+	
+   ixmaps.ODS_SICILIA_COVID_LAST_ACTIVE_DIFF = function (theme,options) {
+
+
+		var szUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(mydata){
+			
+			var pivot = __get_active(mydata,options);
+			pivot.column("Total").remove();
+	
+			// get the columns with date 
+			var columns = pivot.columnNames();
+			columns.shift();
+			columns.shift();
+			columns.shift();
+			columns.shift();
+			
+			var last = columns.length-1;
+
+			var dte = new Date(columns[last]);
+			ixmaps.setTitle("<span style='background:rgba(255,255,255,0.9);padding:0.3em 0.5em;border:solid #888888 0.5px;border-radius:0.2em;font-family:courier new,Raleway,arial,helvetica;font-size:18px;color:#444444'>aggiornato al "+dte.toLocaleDateString()+"</span>","right");
+			
+			var iLast   = pivot.fields.length-1;
+			var iBefore = pivot.fields.length-2;
+			
+			pivot.addColumn({
+				destination: "active_before"
+			}, function (row) {
+				return (Number(row[iBefore]));
+			});
+			
+			pivot.addColumn({
+				destination: "diff"
+			}, function (row) {
+				return (Number(row[iLast]) - Number(row[iBefore]));
+			});
+
+			var iDiff = pivot.column("diff").index;
+			pivot.addColumn({
+				destination: "diff_percent"
+			}, function (row) {
+				if (Number(row[iDiff]) && (Number(row[iBefore]) > 100)) {
+					return (Number(row[iDiff]) / Number(row[iBefore]) * 100);
+				}
+				return 0;
+			});
 			// -----------------------------------------------------------------------------------------------               
 			// deploy the data
 			// ----------------------------------------------------------------------------------------------- 
@@ -977,8 +1057,6 @@ window.ixmaps = window.ixmaps || {};
 		.error(function(e){alert("error loading data from:\n"+szUrl)});
 
 	};
-	
-	
 	
 })();
 

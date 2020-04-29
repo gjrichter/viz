@@ -6,14 +6,14 @@
 		"description": "",
 		"thumbnail": "",
 		"about": "",
-		"created": "Tue Apr 07 2020 10:20:57 GMT+0200 (Ora legale dell’Europa centrale)"
+		"created": "Mon Apr 27 2020 11:34:44 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
 		"map": "",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
-		"legend": "<h1>COVID-19 - <b>Casi</b><br>giorno per giorno</h1><h4>fonte: <a href='https://github.com/opendatasicilia/COVID-19_Sicilia' target='_blank'>Data Repository di Open Data Sicilia</a> con dati sulla COVID-19 pubblicati dalla Regione Siciliana in formato chiuso</h4><h4><i class='icon icon-radio-checked2' style='color:rgba(100, 100, 100,0.9)'/>&nbsp;deceduti <i class='icon icon-radio-checked2' style='color:rgba(180, 200, 220,0.9)'/>&nbsp;isolamento domiciliare <i class='icon icon-radio-checked2' style='color:rgba(100, 160, 220,0.9)'/>&nbsp;ospedalizzati <i class='icon icon-radio-checked2' style='color:rgba(155, 200, 100,0.9)'/> dimessi/guariti </h4>",
-		"item": "",
+		"legend": "<h1>COVID-19 - <b>Evoluzione</b><br>giorno per giorno, numero di casi per categoria e Provincia</h1><h4>fonte: <a href='https://github.com/opendatasicilia/COVID-19_Sicilia' target='_blank'>Data Repository di Open Data Sicilia</a> con dati COVID-19 pubblicati dalla Regione Siciliana in formato chiuso</h4><h4><i class='icon icon-radio-checked2' style='color:rgba(100, 100, 100,0.9)'/>&nbsp;deceduti <i class='icon icon-radio-checked2' style='color:rgba(180, 200, 220,0.9)'/>&nbsp;isolamento domiciliare <i class='icon icon-radio-checked2' style='color:rgba(100, 160, 220,0.9)'/>&nbsp;ospedalizzati <i class='icon icon-radio-checked2' style='color:rgba(155, 200, 100,0.9)'/> dimessi/guariti </h4>",
+		"item": "html",
 		"scaleParam": {
 			"normalSizeScale": "3460260"
 			},
@@ -47,8 +47,8 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "37.53804390907164",
-			"lng": "14.674987792968752"
+			"lat": "37.442154781012306",
+			"lng": "15.260009765625002"
 			},
 		"zoom": "8"
 		},
@@ -57,11 +57,12 @@
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|BAR|STACKED|BOX|LONGTITLE|SUM|FIXSIZE|GRID|XAXIS|SIMPLELEGEND",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|STACKED|AREA|LINES|BOX|LONGTITLE|SUM|FIXSIZE|GRID|SIMPLELEGEND",
 				"colorscheme": [
 					"rgba(100, 100, 100,0.9)",
 					"rgba(180, 200, 220,0.9)",
 					"rgba(100, 160, 220,0.9)",
+					"rgba(250, 160, 80,0.9)",
 					"rgba(155, 200, 100,0.9)"],
 				"fillopacity": "0.9",
 				"shadow": "false",
@@ -72,37 +73,34 @@
 				"lookupfield": "lat.1|long.1",
 				"symbols": [
 					"none"],
-				"label":[
-					"deceduti",
-					"isolamento domiciliare",
-					"ospedalizzati",
-					"dismessi/guariti"
-				],
-				"units": "casi",
+				"label": [
+					"Deceduti",
+					"Isolamento Domiciliare",
+					"Ricoverato con Sintomi",
+					"Terapia Intensiva",
+					"Guarito/Dismesso"],
+				"units": "",
 				"align": "23right",
 				"refreshtimeout": "0",
-				"normalsizevalue": "50000",
-				"scale": "2",
-				"rangescale": "50",
-				"minvalue": "",
+				"normalsizevalue": "1000",
+				"scale": "0.1",
+				"rangescale": "8",
+				"minvalue": "0",
 				"maxvalue": "auto",
-				"linewidth": "0.5",
-				"linecolor": "black",
-				"bordercolor": "black",
-				"boxopacity": "0.2",
-				"boxmargin": "2",
+				"linewidth": "500",
+				"bordercolor": "none",
+				"boxopacity": "0.01",
+				"boxmargin": "20",
 				"titlefield": "denominazione_provincia.1",
 				"valuescale": "1",
-				"valuedecimals": "0",
+				"valuedecimals": "1",
 				"fadenegative": "1",
 				"gridx": "5",
-				"gridoffsetx": "0",
-				"gridoffsety": "0",
 				"aggregationlower": "1:10000000",
-				"name": "stacked_curves",
-				"title": "COVID-19 - Casi",
-				"snippet": "giorno per giorno<br>dal inizio fino ad oggi<br>fonte: <a href='https://github.com/opendatasicilia/COVID-19_Sicilia' target='_blank'>Open Data Sicilia</a>",
-				"description": "aggiornato: 4/1/20"
+				"name": "stacked_curves_provinces_sicilia",
+				"title": "COVID-19 - Evoluzione",
+				"snippet": "giorno per giorno, numero di casi per categoria e Provincia fino ad oggi<br>fonte: <a href='https://github.com/opendatasicilia/COVID-19_Sicilia' target='_blank'>Open Data Sicilia</a>",
+				"description": "dal 24/2/2020 al 26/4/2020"
 				}
 			}],
 	"layerMask": {
