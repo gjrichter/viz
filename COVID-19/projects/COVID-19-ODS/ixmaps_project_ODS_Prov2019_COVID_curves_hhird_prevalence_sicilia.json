@@ -84,7 +84,7 @@
 				"align": "23right",
 				"normalsizevalue": "1000",
 				"scale": "0.1",
-				"rangescale": "3",
+				"rangescale": "10",
 				"minvalue": "0",
 				"maxvalue": "auto",
 				"linewidth": "500",

@@ -106,7 +106,7 @@
 				"scale": "1",
 				"textcolor": "white",
 				"valuescale": "1",
-				"valuedecimals": "1",
+				"valuedecimals": "0",
 				"fadenegative": "1",
 				"title": "Aumento decessi<br>marzo 2020",
 				"snippet": "Numero decessi <b>1-31 Marzo 2020</b> in <b>confronto</b> con la <b>media</b> degli <b>5 anni</b> prima",
