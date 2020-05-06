@@ -21,7 +21,19 @@ codice per includere la mappa in una pagina HTML:
 
 <iframe id="map" width="100%" height="900" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Lombardia/ixmaps_project_COVID-19_Lombardia_peeks.json"></iframe>
 
+codice per includere la mappa in una pagina HTML:
+```javascript
+<iframe id="map" width="100%" height="900" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Lombardia/ixmaps_project_COVID-19_Lombardia_peeks_deceduti.json"></iframe>
+```
 
+
+
+
+<iframe id="map" width="100%" height="900" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Lombardia/ixmaps_project_COVID-19_Lombardia_peeks_deceduti.json"></iframe>
+
+Infine un link ad una mini-storia che sovrappone queste due visualizzazioni.
+
+https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/app/scrollama-master/index_COVID-Lombardia_tamponi.html
 
 
 
