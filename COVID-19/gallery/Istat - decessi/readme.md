@@ -2,7 +2,7 @@
 
 ## Visualizzazioni di dati reso disponibili dall'Istat 
 
-L'Istat ha pubblicato il 4.marzo: 
+il 4. maggio L'Istat ha pubblicato: 
 
 > **[Tavola decessi per 6.866 comuni](https://www.istat.it/it/files//2020/03/Tavola-decessi-per-6.866-comuni-al-31marzo2020.zip)** nel periodo **1 gennaio-31 marzo** per la media degli anni 2015-2019 e per l’anno 2020 per comune di residenza, con approfondimenti per sesso ed età sul mese di marzo.
 
