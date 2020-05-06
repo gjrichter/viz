@@ -1,0 +1,111 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Apr 06 2020 21:05:18 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>COVID-19 - <b>Prevalenza</b><br>casi per 10.000 abitanti</h1><h4>fonte: <a href='https://github.com/opendatasicilia/COVID-19_Sicilia' target='_blank'>Data Repository di Open Data Sicilia</a> con dati sulla COVID-19 pubblicati dalla Regione Siciliana in formato chiuso</h4><h4><i class='icon icon-radio-checked2' style='color:rgba(100, 100, 100,0.9)'/>&nbsp;deceduti <i class='icon icon-radio-checked2' style='color:rgba(180, 200, 220,0.9)'/>&nbsp;isolamento domiciliare <i class='icon icon-radio-checked2' style='color:rgba(100, 160, 220,0.9)'/>&nbsp;ospedalizzati <i class='icon icon-radio-checked2' style='color:rgba(155, 200, 100,0.9)'/> dimessi/guariti </h4>",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "3460260"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "37.53804390907164",
+			"lng": "14.674987792968752"
+			},
+		"zoom": "8"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|STACKED|AREA|LINES|BOX|LONGTITLE|SUM|FIXSIZE|GRID|SIMPLELEGEND",
+				"colorscheme": [
+					"rgba(180, 200, 220,0.9)",
+					"rgba(100, 160, 220,0.9)",
+					"rgba(250, 160, 80,0.9)",
+					"rgba(155, 200, 100,0.9)",
+					"rgba(100, 100, 100,0.9)"],
+				"fillopacity": "0.9",
+				"shadow": "false",
+				"dbtable": "ODS_SICILIA_COVID_SEQUENCE_HHIRD_PREVALENCE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-ODS/databroker_ODS_COVID_Sicilia.js",
+				"datacache": "false",
+				"lookupfield": "lat.1|long.1",
+				"symbols": [
+					"none"],
+				"label": [
+					"Isolamento Domiciliare",
+					"Ricoverato con Sintomi",
+					"Terapia Intensiva",
+					"Guarito/Dismesso",
+					"Deceduti"
+				],
+				"units": "",
+				"align": "23right",
+				"normalsizevalue": "1000",
+				"scale": "0.1",
+				"rangescale": "3",
+				"minvalue": "0",
+				"maxvalue": "auto",
+				"linewidth": "500",
+				"bordercolor": "none",
+				"boxopacity": "0.01",
+				"boxmargin": "20",
+				"titlefield": "denominazione_provincia.1",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"fadenegative": "1",
+				"gridx": "5",
+				"aggregationlower": "1:10000000",
+				"name": "stacked_curves_provinces_sicilia",
+				"title": "COVID-19 - Prevalenza",
+				"snippet": "(casi per 10.000 abitanti)<br>dal inizio fino ad oggi<br>fonte: <a href='https://github.com/opendatasicilia/COVID-19_Sicilia' target='_blank'>Open Data Sicilia</a>",
+				"description": "aggiornato: 4/1/20"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

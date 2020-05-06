@@ -1019,6 +1019,148 @@ window.ixmaps = window.ixmaps || {};
 	};
 
 	/**
+	 * ODS_SICILIA_COVID_SEQUENCE_HHIRD_PREVALENCE
+	 *
+	 * make merged pivot table with one row per sicilia province 
+	 *
+	 * columns: one column for each day and type 
+	 * types are: deaths, quarantene, hospitalized, intensive care, recovered named like 2020-02-24.1, 2020-02-24.2, 2020-02-24.3 
+	 * note: intensive care is actually not present in data
+	 * the values are cases for 10.000 habitants
+	 *
+	 * @param theme ixmaps theme object
+	 * @options vaie options passed by ixmaps
+	 * @void
+	 */
+
+	ixmaps.ODS_SICILIA_COVID_SEQUENCE_HHIRD_PREVALENCE = function (theme, options) {
+
+		var szUrl1 = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES_Province_2019.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+		
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+				
+			function (dataA) {
+					
+			var data = dataA[0];
+				
+			var dataPop = dataA[1];
+			// make lookupArray: COD_PROV ==> population
+			var pop = dataPop.lookupArray("Value", "COD_PROV");
+				
+			var indexCode = data.column("codice_provincia").index;
+
+			data.column('deceduti').map(function (value,row) {
+					return value/pop[Number(row[indexCode])]*10000;
+			});
+			data.column('isolamento_domiciliare').map(function (value,row) {
+					return value/pop[Number(row[indexCode])]*10000;
+			});
+			data.column('totale_ospedalizzati').map(function (value,row) {
+					return value/pop[Number(row[indexCode])]*10000;
+			});
+			data.column('terapia_intensiva').map(function (value,row) {
+					return value/pop[Number(row[indexCode])]*10000;
+			});
+			data.column('dimessi_guariti').map(function (value,row) {
+					return value/pop[Number(row[indexCode])]*10000;
+			});
+			
+			var data_Deaths 	= __get_deaths(data);
+			var data_Home 		= __get_home(data);
+			var data_Symptoms	= __get_hospitalized(data);
+			var data_Intensive	= __get_intensive(data);
+			var data_Recovered 	= __get_recovered(data);
+				
+			data_Deaths.column("Total").remove();
+			data_Home.column("Total").remove();
+			data_Symptoms.column("Total").remove();
+			data_Intensive.column("Total").remove();
+			data_Recovered.column("Total").remove();
+
+			var columnsA = data_Recovered.columnNames();
+
+			var merger = new Data.Merger();
+			merger.addSource(data_Home, {
+				lookup: "denominazione_provincia",
+				columns: columnsA
+			});
+			merger.addSource(data_Symptoms, {
+				lookup: "denominazione_provincia",
+				columns: columnsA
+			});
+			merger.addSource(data_Intensive, {
+				lookup: "denominazione_provincia",
+				columns: columnsA
+			});
+			merger.addSource(data_Recovered, {
+				lookup: "denominazione_provincia",
+				columns: columnsA	
+			});
+			merger.addSource(data_Deaths, {
+				lookup: "denominazione_provincia",
+				columns: columnsA	
+			});
+			merger.realize(function (dbTable) {
+						
+				columnsA.shift();
+				columnsA.shift();
+				columnsA.shift();
+				columnsA.shift();
+
+				// set as data fields in actual theme
+
+				fieldsA = [];
+				for ( var i=0; i<columnsA.length; i++ ){
+					fieldsA.push(columnsA[i]+".1");
+					fieldsA.push(columnsA[i]+".2");
+					fieldsA.push(columnsA[i]+".3");
+					fieldsA.push(columnsA[i]+".4");
+					fieldsA.push(columnsA[i]+".5");
+				}
+						
+				options.theme.szFields = fieldsA.slice().join("|");
+				options.theme.szFieldsA = fieldsA;
+				options.theme.nGridX = 5;
+
+				options.theme.szItemField = "lat.1|long.1";
+				options.theme.szSelectionField = "lat.1|long.1";
+
+				// make label 
+				var xAxis = [];
+				for ( i in columnsA ){
+					xAxis.push(" ");
+				}
+				var dateStart = new Date(columnsA[0]);
+				xAxis[0]=(dateStart.toLocaleDateString());
+				var dateEnd = new Date(columnsA[columnsA.length-1]);
+				xAxis[columnsA.length-1]=(dateEnd.toLocaleDateString());
+				options.theme.szXaxisA = xAxis; 
+
+				options.theme.szDescription = "dal "+dateStart.toLocaleDateString()+" al "+dateEnd.toLocaleDateString();
+				
+				// -----------------------------------------------------------------------------------------------               
+				// deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(dbTable, {
+					type: "dbtable",
+					name: options.name
+				});
+			});
+		});
+		
+	};
+
+	/**
 	 * ODS_COVID_ACTUAL
 	 *
 	 * lod data from Google Doc
