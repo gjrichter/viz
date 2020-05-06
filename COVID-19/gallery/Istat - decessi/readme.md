@@ -11,13 +11,13 @@ Qui una semplice visualizzazioni dei decessi nel mese di marzo 2020 a confronto 
 
 codice per includere la mappa in una pagina HTML:
 ```javascript
-<iframe id="map" width="100%" height="900" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Lombardia/ixmaps_project_COVID-19_Lombardia_peeks.json"></iframe>
+<iframe id="map" width="100%" height="900" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map3&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Istat/ixmaps_project_COVID-19_Istat_decessi_light.json"></iframe>
 ```
 
 
 
 
-<iframe id="map" width="100%" height="900" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Lombardia/ixmaps_project_COVID-19_Lombardia_peeks.json"></iframe>
+<iframe id="map" width="100%" height="900" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map3&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Istat/ixmaps_project_COVID-19_Istat_decessi_light.json"></iframe>
 
 
 
