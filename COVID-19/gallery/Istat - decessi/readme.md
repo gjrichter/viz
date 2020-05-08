@@ -23,6 +23,10 @@ Codice per includere la mappa in una pagina HTML:
 
 
 
+
+
+
+
 Una altra visualizzazioni del **aumento** **percentuale** dei decessi **1-31 marzo 2020** a confronto con la **media** dei decessi  nei anni **2015-2019**.
 
 La visualizzazione rappresenta le percentuali (positivi e negativi) con pinnacoli con rispettiva altezza. 
