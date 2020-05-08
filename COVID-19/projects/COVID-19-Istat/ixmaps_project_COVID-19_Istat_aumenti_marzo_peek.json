@@ -1,0 +1,130 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Fri May 08 2020 13:17:43 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "3460260"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "44.80132682904856",
+			"lng": "12.9364013671875"
+			},
+		"zoom": "7"
+		},
+	"required": [
+		"https://d3js.org/d3.v3.min.js",
+		"https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Istat/chart.js"],
+	"themes": [{
+			"layer": "com2011_g",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"1",
+					"RGB(238,238,255)",
+					"RGB(0,0,221)"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "com2011_g",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/IstatPendolari/databroker_centroidi_municipi.js",
+				"datacache": "true",
+				"itemfield": "PRO_COM",
+				"lookupfield": "geometry",
+				"child": "true",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "posizioni comuni 2011"
+				}
+			},{
+			"layer": "com2011_g",
+			"field": "M+F %",
+			"field100": "",
+			"style": {
+				"type": "CHART|USER|SIZEP4|3D|VALUES",
+				"colorscheme": [
+					"#444444"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"filter": "WHERE \"M+F\" > 10",
+				"dbtable": "IOCONTO_IT_RATIO_03_2020",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/Tavola%20riepilogativa_31MARZO_6.866COMUNI_FM.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "COD_PROVCOM",
+				"lookuptonumber": "true",
+				"userdraw": "pinnacleChart",
+				"rangecentervalue": "0",
+				"label": [
+					"totale"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"normalsizevalue": "2500",
+				"scale": "1.000000000000001",
+				"field100min": "10",
+				"linecolor": [
+					"none"],
+				"linewidth": "2",
+				"boxopacity": "0.3",
+				"titlefield": "NOME_COMUNE",
+				"valueupper": "1:1000000",
+				"boxupper": "1:1000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "0.05",
+				"title": "Aumento decessi<br>marzo 2020",
+				"snippet": "Numero decessi <b>1-31 Marzo 2020</b> in <b>confronto</b> con la <b>media</b> degli <b>5 anni</b> prima<b><br>fonte: <a href='https://www.istat.it/it/archivio/240401#Decessianni20152020-0' target='_blank'>Istat - Tavola decessi per 6.866 comuni </a></b>",
+				"description": "<b>Grafici limitati</b> a comuni con un <b>minimo di 10 decessi</b> nel mese di <b>marzo</b> negli <b>anni precedenti</b>. I decessi degli <b>anni precedenti</b> si riferiscono alla <b>media</b> misurata dal <b>2015</b> al <b>2019</b><br>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
