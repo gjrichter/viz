@@ -23,9 +23,9 @@ Codice per includere la mappa in una pagina HTML:
 
 
 
-Qui una semplice visualizzazioni del **aumento** dei decessi **1-31 marzo 2020** a confronto con la **media** dei decessi  nei anni **2015-2019**.
+Una altra visualizzazioni del **aumento** **percentuale** dei decessi **1-31 marzo 2020** a confronto con la **media** dei decessi  nei anni **2015-2019**.
 
-La visualizzazione rappresenta le due cifre per ogni comune con due cerchi, uno **nero** per la media degli  anni precedenti e uno **rosso** per 2020. 
+La visualizzazione rappresenta le percentuali (positivi e negativi) con pinnacoli con rispettiva altezza. 
 
 
 Codice per includere la mappa in una pagina HTML:
