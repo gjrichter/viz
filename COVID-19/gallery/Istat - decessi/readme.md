@@ -37,7 +37,7 @@ Codice per includere la mappa in una pagina HTML:
 
 
 
-<iframe id="map" width="100%" height="900" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects\COVID-19-Istat/ixmaps_project_COVID-19_Istat_aumenti_marzo_peek.json"></iframe>
+<iframe id="map" width="100%" height="900" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map3&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects\COVID-19-Istat/ixmaps_project_COVID-19_Istat_aumenti_marzo_peek.json"></iframe>
 
 
 
