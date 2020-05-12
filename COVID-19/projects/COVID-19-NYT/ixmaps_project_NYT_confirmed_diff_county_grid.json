@@ -70,7 +70,7 @@
 				"shadow": "false",
 				"dbtable": "NYT_COVID_SEQUENCE_RM7",
 				"dbtableType": "ext",
-				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/COVID-19/projects/COVID-19-NYT/databroker_NYT_COVID.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-NYT/databroker_NYT_COVID.js",
 				"datacache": "false",
 				"lookupfield": "fips",
 				"child": "true",
