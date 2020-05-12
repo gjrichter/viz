@@ -8,4 +8,4 @@ I temi sono:
 2. testi - l'attuale crescita percentuale dei contagi (tamponi con esito positivo)  per il COVID-19
 3. curve - visibile zoomando la mappa - serie storica di questo valore giorno per giorno
 
-Qui il progetto (json) che definisce la mappa ed i temi.
+ il progetto (json) che definisce la mappa ed i temi.
