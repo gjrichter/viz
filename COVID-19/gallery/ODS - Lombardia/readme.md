@@ -33,7 +33,7 @@ codice per includere la mappa in una pagina HTML:
 
 Infine un link ad una mini-storia che sovrappone queste due visualizzazioni.
 
-[https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/app/scrollama-master/index_COVID-Lombardia_tamponi.html](https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/app/scrollama-master/index_COVID-Lombardia_tamponi.html)
+[https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/app/scrollama-master/index_COVID-Lombardia_tamponi_istat.html](https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/app/scrollama-master/index_COVID-Lombardia_tamponi_istat.html)
 
 
 
