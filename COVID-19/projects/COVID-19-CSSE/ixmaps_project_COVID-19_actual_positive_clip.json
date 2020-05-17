@@ -1,0 +1,92 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "<p>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a></p>",
+		"created": "Sun May 17 2020 10:33:04 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "by <a href=\"http://www.ixmaps.com\" target=\"_blank\">iXMaps</a>",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"layout":"minimal",
+		"scaleParam": {
+			"normalSizeScale": "55364168"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "38.61687046392973",
+			"lng": "9.316406250000002"
+			},
+		"zoom": "3"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|VALUES|BUBBLE|SIZE|SUM|AURA|CLIP|LOOP|SIMPLELEGEND",
+				"colorscheme": [
+					"rgba(100, 160, 220,1)"],
+				"fillopacity": "0.3",
+				"shadow": "false",
+				"filter": "WHERE Country/Region != Others AND Lat.1 != 0",
+				"dbtable": "CSSE_COVID_ALL_CLIP",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
+				"datacache": "true",
+				"lookupfield": "Lat.1|Long.1",
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "5000",
+				"scale": "1.953125",
+				"textcolor": "white",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"clipframes": "116",
+				"clipframerate": "12",
+				"name": "clip",
+				"title": "COVID-19<br>actual positive",
+				"description": "<p>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a></p>",
+				"description": "aggiornato: 5/16/20"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
