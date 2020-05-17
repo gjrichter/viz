@@ -2033,7 +2033,6 @@ window.ixmaps = window.ixmaps || {};
 
 				options.theme.szItemField = "lat.1|long.1";
 				options.theme.szSelectionField = "lat.1|long.1";
-				console.log(options.theme);
 
 				// set xaxis 
 				
@@ -2048,6 +2047,8 @@ window.ixmaps = window.ixmaps || {};
 				xAxis[0]=(dte.toLocaleDateString());
 				options.theme.szXaxisA = xAxis; 
 
+				ixmaps.setTitle("aggiornato al: " + xAxis[columnsA.length-1]);
+				
 				// -----------------------------------------------------------------------------------------------               
 				// deploy the data
 				// ----------------------------------------------------------------------------------------------- 
