@@ -1,0 +1,115 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Apr 06 2020 21:05:18 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>COVID-19 - <b>attualmente positivi, guariti e deceduti</b></h1><h2>Evoluzione dei casi giorno per giorno e Regione</h2><h4>fonte: <a href=' https://github.com/pcm-dpc/COVID-19/' target='_blank'>COVID-19 Italia - Monitoraggio situazione</a> Dipartimento della Protezione Civile, Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4><h4><i class='icon icon-radio-checked2' style='color:rgba(180, 200, 220,0.9)'/>&nbsp;isolamento domiciliare <i class='icon icon-radio-checked2' style='color:rgba(100, 160, 220,0.9)'/>&nbsp;ricoverati con sintomi <i class='icon icon-radio-checked2' style='color:rgba(250, 160, 80,0.9)'/>&nbsp;terapia intensiva <i class='icon icon-radio-checked2' style='color:rgba(155, 200, 100,0.9)'/>&nbsp;guariti <i class='icon icon-radio-checked2' style='color:rgba(100, 100, 100,0.9)'/>&nbsp;deceduti </h4>",
+		"item": "html",
+		"scaleParam": {
+			"normalSizeScale": "3460260"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.70759350405296",
+			"lng": "12.54638671875"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|STACKED|AREA|LINES|BOX|LONGTITLE|SUM|FIXSIZE|GRID|SIMPLELEGEND",
+				"colorscheme": [
+					"rgba(180, 200, 220,0.9)",
+					"rgba(100, 160, 220,0.9)",
+					"rgba(250, 160, 80,0.9)",
+					"rgba(155, 200, 100,0.9)",
+					"rgba(100, 100, 100,0.9)"
+					],
+				"fillopacity": "0.9",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_SEQUENCE_HHIRD",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "false",
+				"lookupfield": "lat.1|long.1",
+				"symbols": [
+					"none"],
+				"label": [
+					"Isolamento Domiciliare",
+					"Ricoverato con Sintomi",
+					"Terapia Intensiva",
+					"Guarito/Dismesso",
+					"Deceduti"],
+				"units": "",
+				"align": "23right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1000",
+				"scale": "0.1",
+				"rangescale": "10",
+				"minvalue": "",
+				"maxvalue": "auto",
+				"linewidth": "500",
+				"bordercolor": "none",
+				"boxopacity": "0.013",
+				"boxmargin": "20",
+				"titlefield": "denominazione_regione.1",
+				"timefield": "$item$",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"gridx": "5",
+				"gridoffsetx": "0",
+				"gridoffsety": "0",
+				"aggregationlower": "1:10000000",
+				"name": "stacked_curves",
+				"title": "COVID-19 - active cases vs recovered ",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
+				"description": "aggiornato: 4/1/20"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
