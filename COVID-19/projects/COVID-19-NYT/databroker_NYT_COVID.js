@@ -377,7 +377,8 @@ window.ixmaps = window.ixmaps || {};
 					// and set the label
 					theme.szLabelA = columns.slice();
 					
-					theme.szSnippet = "dal " + columns[0] + " al " + columns[last];
+					theme.szSnippet = "from " + columns[0] + " to " + columns[last];
+					ixmaps.setTitle("<span style='font-family:arial'> last date: " + columns[last]+"</span>");
 					
 					var szXaxisA = [];
 					for ( var i =0; i<columns.length; i++ ){
