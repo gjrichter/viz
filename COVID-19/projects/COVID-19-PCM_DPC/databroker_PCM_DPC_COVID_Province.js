@@ -465,6 +465,8 @@ window.ixmaps = window.ixmaps || {};
 					theme.szFields = "lastperpop";
 					theme.szFieldsA = ["lastperpop"];
 	
+					theme.szTitle = pivot.columnNames()[lastColumn];
+					
 					// -----------------------------------------------------------------------------------------------               
 					// deploy the data
 					// ----------------------------------------------------------------------------------------------- 
