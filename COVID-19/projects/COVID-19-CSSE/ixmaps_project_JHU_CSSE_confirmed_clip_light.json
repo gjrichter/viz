@@ -63,7 +63,7 @@
 					"rgba(100, 160, 220,1)"],
 				"fillopacity": "0.3",
 				"shadow": "false",
-				"filter": "WHERE Country/Region != Others",
+				"filter": "WHERE Country/Region != Others AND Lat != 0",
 				"dbtable": "CSSE_COVID_ALL_CLIP",
 				"dbtableType": "ext",
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
