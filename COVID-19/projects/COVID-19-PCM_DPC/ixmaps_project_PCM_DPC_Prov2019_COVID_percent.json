@@ -12,8 +12,8 @@
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
-		"legend": "Incidenza",
-		"item": "",
+		"legend": "<div style='color:#777777'><h1></h1><h3><b>Tasso di crescita</b></br>nuovi casi in percentuale dei casi cumulativi</h3></div>",
+		"item": "html",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
 			"normalSizeScale": "4638029"

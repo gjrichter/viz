@@ -12,7 +12,7 @@
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
-		"legend": "Incidenza",
+		"legend": "<div style='color:#777777'><h1></h1><h3><b>Casi totali</b></br>casi cumulativi fin'oggi</h3></div>",
 		"item": "",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",

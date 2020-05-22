@@ -12,7 +12,7 @@
 		"map": "",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
-		"legend": "<h1>COVID-19 - <b>attualmente positivi, guariti e deceduti</b></h1><h2>Evoluzione dei casi giorno per giorno e Regione</h2><h4>fonte: <a href=' https://github.com/pcm-dpc/COVID-19/' target='_blank'>COVID-19 Italia - Monitoraggio situazione</a> Dipartimento della Protezione Civile, Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4><h4><i class='icon icon-radio-checked2' style='color:rgba(180, 200, 220,0.9)'/>&nbsp;isolamento domiciliare <i class='icon icon-radio-checked2' style='color:rgba(100, 160, 220,0.9)'/>&nbsp;ricoverati con sintomi <i class='icon icon-radio-checked2' style='color:rgba(250, 160, 80,0.9)'/>&nbsp;terapia intensiva <i class='icon icon-radio-checked2' style='color:rgba(155, 200, 100,0.9)'/>&nbsp;guariti <i class='icon icon-radio-checked2' style='color:rgba(100, 100, 100,0.9)'/>&nbsp;deceduti </h4>",
+		"legend": "<h1><b>positivi, guariti e deceduti</b></h1><h2>Evoluzione dei casi giorno per giorno e Regione</h2><h4>fonte: <a href=' https://github.com/pcm-dpc/COVID-19/' target='_blank'>COVID-19 Italia - Monitoraggio situazione</a> Dipartimento della Protezione Civile, Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4><h4><i class='icon icon-radio-checked2' style='color:rgba(180, 200, 220,0.9)'/>&nbsp;isolamento domiciliare <i class='icon icon-radio-checked2' style='color:rgba(100, 160, 220,0.9)'/>&nbsp;ricoverati con sintomi <i class='icon icon-radio-checked2' style='color:rgba(250, 160, 80,0.9)'/>&nbsp;terapia intensiva <i class='icon icon-radio-checked2' style='color:rgba(155, 200, 100,0.9)'/>&nbsp;guariti <i class='icon icon-radio-checked2' style='color:rgba(100, 100, 100,0.9)'/>&nbsp;deceduti </h4>",
 		"item": "html",
 		"scaleParam": {
 			"normalSizeScale": "3460260"
@@ -42,13 +42,13 @@
 			"popupalignment": "BOTTOM|LEFT",
 			"transparentbackground": "true",
 			"labelscaling": "dynamic",
-			"flushChartDraw": "50000",
+			"flushChartDraw": "1",
 			"mapopacity": "1",
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "43.70759350405296",
-			"lng": "12.54638671875"
+			"lat": "44.742831723317565",
+			"lng": "10.909423828125002"
 			},
 		"zoom": "7"
 		},
@@ -102,8 +102,8 @@
 				"gridoffsety": "0",
 				"aggregationlower": "1:10000000",
 				"name": "stacked_curves",
-				"title": "COVID-19 - active cases vs recovered ",
-				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
+				"title": "COVID-19 - andamento",
+				"snippet": "fonte: <a href=' https://github.com/pcm-dpc/COVID-19/' target='_blank'>Dipartimento della Protezione Civile</a>",
 				"description": "aggiornato: 4/1/20"
 				}
 			}],

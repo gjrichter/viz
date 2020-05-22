@@ -80,7 +80,7 @@
 				"valuedecimals": "1",
 				"valuesupper":"1:1000000",
 				"titlefield":"denominazione_provincia",
-				"title": "Prevalenza",
+				"title": "Casi totali",
 				"snippet": "aggiornato al 2020-03-05"
 				}
 			},{
@@ -151,7 +151,7 @@
 				"units": "",
 				"refreshtimeout": "0",
 				"scale": "1",
-				"normalsizevalue":"100",
+				"normalsizevalue":"50",
 				"textcolor": "#aa2200",
 				"linecolor": [
 					"#880000"],

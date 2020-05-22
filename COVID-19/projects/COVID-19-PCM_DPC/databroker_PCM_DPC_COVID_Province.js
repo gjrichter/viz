@@ -946,15 +946,27 @@ window.ixmaps = window.ixmaps || {};
 					
 					theme.szSnippet = "dal " + columns[0] + " al " + columns[last - 1];
 					
-					var szXaxisA = [];
-					for ( var i =0; i<columns.length; i++ ){
-						szXaxisA.push(" ");
+					theme.szXaxisA = columns.slice();
+					for ( i=1; i<theme.szXaxisA.length-1; i++ ){
+						if ( theme.szXaxisA[i] == "xx11/3/2020" ){
+							theme.szXaxisA[i] = "a";
+						}else
+						if ( theme.szXaxisA[i] == "xx21/3/2020" ){
+							theme.szXaxisA[i] = "b";
+						}else
+						if ( theme.szXaxisA[i] == "xx5/3/2020" ){
+							theme.szXaxisA[i] = "scuola";
+						}else
+						if ( theme.szXaxisA[i] == "11/3/2020" ){
+							theme.szXaxisA[i] = "Dpcm-1";
+						}else
+						if ( theme.szXaxisA[i] == "22/3/2020" ){
+							theme.szXaxisA[i] = "Dpcm-2";
+						}else{
+							theme.szXaxisA[i] = " ";
+						}
 					}
-					szXaxisA[0] = columns[0];
-					szXaxisA[last] = columns[last];
-					theme.szXaxisA = szXaxisA;
-								 
-	
+
 					// -----------------------------------------------------------------------------------------------               
 					// deploy the data
 					// ----------------------------------------------------------------------------------------------- 

@@ -12,8 +12,8 @@
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
-		"legend": "Incidenza",
-		"item": "",
+		"legend": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/legend_pcm_dcp_incidenza.html",
+		"item": "html",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
 			"normalSizeScale": "4638029"
