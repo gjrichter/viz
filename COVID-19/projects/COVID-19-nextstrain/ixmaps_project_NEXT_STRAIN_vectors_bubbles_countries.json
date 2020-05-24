@@ -78,6 +78,7 @@
 				"fadenegative": "1",
 				"centerpart": "max",
 				"evidence": "isolate_gray",
+				"splash":"loading nextstrain data ...",
 				"title": "COVID-19<br>NEXTSTRAIN location",
 				"snippet": "test reading NEXTSTRAIN.json"
 				}
@@ -111,6 +112,7 @@
 				"valuedecimals": "0",
 				"fadenegative": "1",
 				"centerpart": "max",
+				"splash":"loading nextstrain data ...",
 				"title": "COVID-19<br>NEXTSTRAIN location",
 				"snippet": "test reading NEXTSTRAIN.json"
 				}
@@ -144,6 +146,7 @@
 				"valuedecimals": "0",
 				"fadenegative": "1",
 				"centerpart": "max",
+				"splash":"loading nextstrain data ...",
 				"title": "COVID-19<br>NEXTSTRAIN location",
 				"snippet": "test reading NEXTSTRAIN.json"
 				}
