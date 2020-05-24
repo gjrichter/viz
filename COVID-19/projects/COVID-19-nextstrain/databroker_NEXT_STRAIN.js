@@ -40,7 +40,7 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.NEXT_STRAIN_location = function () {
 
 
-		var szUrl = "https://data.nextstrain.org/ncov.json";
+		var szUrl = "https://corsme.herokuapp.com/https://nextstrain.org/charon/getDataset?prefix=/ncov/global";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the NEXT STRAIN data json 
@@ -98,7 +98,7 @@ window.ixmaps = window.ixmaps || {};
 
 	ixmaps.NEXT_STRAIN_vectors = function (theme,options) {
 		
-		var szUrl = "https://data.nextstrain.org/ncov.json";
+		var szUrl = "https://corsme.herokuapp.com/https://nextstrain.org/charon/getDataset?prefix=/ncov/global";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the NEXT STRAIN data json 
@@ -148,7 +148,7 @@ window.ixmaps = window.ixmaps || {};
 
 	ixmaps.NEXT_STRAIN_vectors_II = function (theme,options) {
 		
-		var szUrl = "https://data.nextstrain.org/ncov.json";
+		var szUrl = "https://corsme.herokuapp.com/https://nextstrain.org/charon/getDataset?prefix=/ncov/global";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the NEXT STRAIN data json 
@@ -198,7 +198,7 @@ window.ixmaps = window.ixmaps || {};
 
 	ixmaps.NEXT_STRAIN_vectors_clean = function (theme,options) {
 		
-		var szUrl = "https://data.nextstrain.org/ncov.json";
+		var szUrl = "https://corsme.herokuapp.com/https://nextstrain.org/charon/getDataset?prefix=/ncov/global";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the NEXT STRAIN data json 
