@@ -156,7 +156,7 @@
 				"shadow": "false",
 				"dbtable": "OX_SI_COVID_SEQUENCE_DEATHS",
 				"dbtableType": "ext",
-				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/projects/COVID-19-Oxford-SI/databroker_Oxford_SI.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Oxford-SI/databroker_Oxford_SI.js",
 				"datacache": "true",
 				"lookupfield": "CountryCode",
 				"symbols": [
