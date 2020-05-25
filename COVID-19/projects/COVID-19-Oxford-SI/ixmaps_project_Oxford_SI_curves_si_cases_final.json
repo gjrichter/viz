@@ -1,0 +1,150 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Sun May 24 2020 11:07:25 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3-eu-west-1.amazonaws.com/cdn.ixmaps.com/ixmaps/maps/svg/maps/world_base_ISO/world_ISO3_small.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"borderScaling": "0.1",
+			"objectScaling": "1.7777777777777777",
+			"normalSizeScale": "5775927"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "48.23930899024907",
+			"lng": "17.358398437500004"
+			},
+		"zoom": "5"
+		},
+	"themes": [{
+			"layer": "World_countries_shp0",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|PLOT|FIXSIZE|LINES|AREA|BOX|GRID|TITLE|AGGREGATE|RECT|RELOCATE|MEAN|COMPACTLEGEND",
+				"colorscheme": [
+					"RGB(221,0,0)"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "OX_SI_COVID_SEQUENCE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Oxford-SI/databroker_Oxford_SI.js",
+				"datacache": "true",
+				"lookupfield": "CountryCode",
+				"symbols": [
+					"circle"],
+				"label": [
+					"restriction index"],
+				"units": "",
+				"align": "23right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "20",
+				"scale": "0.02",
+				"rangescale": "0.8",
+				"minvalue": "0",
+				"maxvalue": "100",
+				"linewidth": "50",
+				"bordercolor": "none",
+				"boxopacity": "0.01",
+				"titlefield": "CountryName",
+				"titleupper": "1:20000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"clipframes": "143",
+				"aggregationscale": [
+					"1:1",
+					"200px",
+					"1:500000",
+					"150px",
+					"1:1000000",
+					"50px"],
+				"title": "Restriction measures",
+				"snippet": "dal 01jan2020 al 22may2020"
+				}
+			},{
+			"layer": "World_countries_shp0",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "AREA|FADE|CHART|SYMBOL|PLOT|FIXSIZE|LINES|BOX|GRID|TITLE|AGGREGATE|RECT|RELOCATE|SUM|COMPACTLEGEND|LOG",
+				"colorscheme": [
+					"RGB(0,0,250)"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "OX_SI_COVID_SEQUENCE_CASES",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Oxford-SI/databroker_Oxford_SI.js",
+				"datacache": "true",
+				"lookupfield": "CountryCode",
+				"symbols": [
+					"circle"],
+				"label": [
+					"cases"],
+				"units": "",
+				"align": "23right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "20",
+				"scale": "0.02",
+				"rangescale": "0.8",
+				"minvalue": "0",
+				"maxvalue": "2000000",
+				"linewidth": "50",
+				"bordercolor": "none",
+				"boxopacity": "0.01",
+				"titlefield": "CountryName",
+				"titleupper": "1:20000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"clipframes": "143",
+				"aggregationscale": [
+					"1:1",
+					"200px",
+					"1:500000",
+					"150px",
+					"1:1000000",
+					"50px"],
+				"title": "Cases (logarithmic)",
+				"snippet": "dal 01jan2020 al 22may2020"
+				}
+			}],
+	"layerMask": {
+		}
+	}
