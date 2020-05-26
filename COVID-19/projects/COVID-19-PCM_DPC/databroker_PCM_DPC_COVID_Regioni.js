@@ -1801,7 +1801,7 @@ window.ixmaps = window.ixmaps || {};
 			function (dataA) {
 					
 			var data = dataA[0];
-			
+				
 			var data_Home 		= __get_home(data);
 			var data_Symptoms	= __get_symptoms(data);
 			var data_Intensive	= __get_intensive(data);
@@ -1843,16 +1843,25 @@ window.ixmaps = window.ixmaps || {};
 				columnsA.shift();
 				columnsA.shift();
 				columnsA.shift();
+				
+				for ( var i=0; i<columnsA.length; i++ ){
+					dbTable.column(columnsA[i]+".1").rename(columnsA[i]+" isolamento");
+					dbTable.column(columnsA[i]+".2").rename(columnsA[i]+" osptitalizzati");
+					dbTable.column(columnsA[i]+".3").rename(columnsA[i]+" terapia intens.");
+					dbTable.column(columnsA[i]+".4").rename(columnsA[i]+" guariti/dimessi");
+					dbTable.column(columnsA[i]+".5").rename(columnsA[i]+" deceduti");
+				}
+				
 
 				// set as data fields in actual theme
 
 				fieldsA = [];
 				for ( var i=0; i<columnsA.length; i++ ){
-					fieldsA.push(columnsA[i]+".1");
-					fieldsA.push(columnsA[i]+".2");
-					fieldsA.push(columnsA[i]+".3");
-					fieldsA.push(columnsA[i]+".4");
-					fieldsA.push(columnsA[i]+".5");
+					fieldsA.push(columnsA[i]+" isolamento");
+					fieldsA.push(columnsA[i]+" osptitalizzati");
+					fieldsA.push(columnsA[i]+" terapia intens.");
+					fieldsA.push(columnsA[i]+" guariti/dimessi");
+					fieldsA.push(columnsA[i]+" deceduti");
 				}
 						
 				options.theme.szFields = fieldsA.slice().join("|");
@@ -1861,22 +1870,10 @@ window.ixmaps = window.ixmaps || {};
 
 				options.theme.szItemField = "lat.1|long.1";
 				options.theme.szSelectionField = "lat.1|long.1";
-				console.log(options.theme);
 
-				// make label 
-				
-				labelA = [];
-				for ( var i=0; i<columnsA.length; i++ ){
-					fieldsA.push(columnsA[i]+" domiciliare");
-					fieldsA.push(columnsA[i]+" hospedalizzato");
-					fieldsA.push(columnsA[i]+" terapia int.");
-					fieldsA.push(columnsA[i]+" guariti/dimessi");
-					fieldsA.push(columnsA[i]+" deceduti");
-				}
-				options.theme.szLabelA = labelA;
-				
 				// set xaxis 
 				
+				// make label 
 				var xAxis = [];
 				for ( i in columnsA ){
 					xAxis.push(" ");
@@ -1902,7 +1899,6 @@ window.ixmaps = window.ixmaps || {};
 	};
 	
 	
-	
 	ixmaps.PCM_DPC_COVID_SEQUENCE_HHIRD_PREVALENCE = function (theme, options) {
 
 		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
@@ -1921,11 +1917,6 @@ window.ixmaps = window.ixmaps || {};
 			function (dataA) {
 					
 			var data = dataA[0];
-				
-			// make local dates
-			data.column('data').map(function (value,row) {
-					return (new Date(value).toLocaleDateString());
-			});
 				
 			// get popolation array
 			var dataPop = dataA[1];
@@ -2048,7 +2039,7 @@ window.ixmaps = window.ixmaps || {};
 				options.theme.szXaxisA = xAxis; 
 
 				ixmaps.setTitle("aggiornato al: " + xAxis[columnsA.length-1]);
-				
+
 				// -----------------------------------------------------------------------------------------------               
 				// deploy the data
 				// ----------------------------------------------------------------------------------------------- 
@@ -2059,7 +2050,6 @@ window.ixmaps = window.ixmaps || {};
 				});
 			});
 		});
-						
 		
 	};
 	
