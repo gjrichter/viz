@@ -76,7 +76,7 @@
 				"child": "true",
 				"symbols": [
 					"circle"],
-				"units": "",
+				"units": "new cases",
 				"label": "new cases 24H",
 				"align": "right",
 				"refreshtimeout": "0",

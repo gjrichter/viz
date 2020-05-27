@@ -754,8 +754,8 @@ window.ixmaps = window.ixmaps || {};
 				// difference values (mean of 3 days)
 				var records = pivot.records;
 				for (r=0; r<records.length;r++){
-					for (c=4; c<records[r].length-2;c++){
-						records[r][c] = (Number(records[r][c])+Number(records[r][c+1])+Number(records[r][c+2]))/3;
+					for (c=records[r].length-1; c>=7;c--){
+						records[r][c] = (Number(records[r][c])+Number(records[r][c-1])+Number(records[r][c-2]))/3;
 					}
 				}
 
@@ -765,8 +765,8 @@ window.ixmaps = window.ixmaps || {};
 				columns.shift();
 				columns.shift();
 				columns.shift();
-				columns.pop();
-				columns.pop();
+				columns.shift();
+				columns.shift();
 
 				var last = columns.length - 1;
 

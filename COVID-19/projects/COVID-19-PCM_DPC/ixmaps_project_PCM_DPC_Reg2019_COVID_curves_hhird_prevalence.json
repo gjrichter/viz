@@ -42,7 +42,7 @@
 			"popupalignment": "BOTTOM|LEFT",
 			"transparentbackground": "true",
 			"labelscaling": "dynamic",
-			"flushChartDraw": "50000",
+			"flushChartDraw": "1",
 			"mapopacity": "1",
 			"basemapopacity": "1"
 			},
@@ -102,8 +102,8 @@
 				"gridoffsety": "0",
 				"aggregationlower": "1:10000000",
 				"name": "stacked_curves",
-				"title": "COVID-19 - active cases vs recovered ",
-				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
+				"title": "COVID-19 - andamento",
+				"snippet": "fonte: <a href=' https://github.com/pcm-dpc/COVID-19/' target='_blank'>Dipartimento della Protezione Civile</a>",
 				"description": "aggiornato: 4/1/20"
 				}
 			}],
