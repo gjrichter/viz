@@ -1,0 +1,113 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "../../projects/COVID-19-CSSE/about_ARD.html",
+		"created": "Fri Apr 24 2020 08:42:13 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>COVID-19 - <b>attualmente positivi, guariti e deceduti</b> <a style='text-decoration:none;' href='javascript:ixmaps.showAbout()'><i class='icon icon-info' /></a></h1><h2>metodo: <a href='javascript:ixmaps.changeThemeStyle(null,\"stacked_curves\",\"type:AGGREGATE\",\"toggle\")'>aggregato</a></h2><h4>fonte: 2019 Novel Coronavirus COVID-19 (2019-nCoV) <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Data Repository</a> by Johns Hopkins CSSE</h4><h4><i class='icon icon-radio-checked2' style='color:rgba(100, 160, 220,0.9)'/> attual. positivi <i class='icon icon-radio-checked2' style='color:rgba(155, 200, 100,0.9)'/> guariti <i class='icon icon-radio-checked2' style='color:rgba(100, 100, 100,0.9)'/> deceduti </h4><h4><a href='javascript:ixmaps.showAbout()'>about this map</a></h4>",
+		"item": "html",
+		"scaleParam": {
+			"normalSizeScale": "100000000"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "3",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "38.82259097617713",
+			"lng": "17.753906250000004"
+			},
+		"zoom": "3"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|STACKED|AREA|LINES|BOX|GRID|LONGTITLE|SUM|FIXSIZE|AGGREGATE|RELOCATE|NOLEGEND",
+				"colorscheme": [
+					"rgba(100, 160, 220,0.7)",
+					"rgba(155, 200, 100,0.9)",
+					"rgba(100, 100, 100,0.5)"],
+				"fillopacity": "0.9",
+				"shadow": "false",
+				"filter": "WHERE Lat.1 != 0",
+				"dbtable": "CSSE_COVID_ALL_MERGE_ARD",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
+				"datacache": "false",
+				"lookupfield": "Lat.1|Long.1",
+				"symbols": [
+					"none"],
+				"label": [
+					"attualmente positivi",
+					"guariti",
+					"deceduti"
+				],
+				"units": "",
+				"align": "23right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1000",
+				"scale": "0.1",
+				"rangescale": "12",
+				"minvalue": "0",
+				"maxvalue": "auto",
+				"linewidth": "500",
+				"bordercolor": "none",
+				"boxopacity": "0.001",
+				"timefield": "$item$",
+				"titlefield": "Country/Region.1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"gridx": "3",
+				"aggregationscale": [
+					"1:1",
+					"250px",
+					"1:5000000",
+					"100px"],
+				"name": "stacked_curves",
+				"title": "COVID-19 - positivi, dismessi/guariti, deceduti",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
+				"description": "aggiornato: 23/4/2020"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
