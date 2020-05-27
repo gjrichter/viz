@@ -1849,6 +1849,71 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 
+	ixmaps.CSSE_COVID_SEQUENCE_CONFIRMED_MEAN_3 = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.realize(
+
+				function (dataA) {
+
+					data_Confirmed = __mean_7(dataA[0]);
+
+					var lastDataColumnName = data_Confirmed.columnNames().pop();
+
+					theme.szDescription = "aggiornato: " + lastDataColumnName;
+
+					// get data columns
+					var columnsA = data_Confirmed.columnNames();
+
+					columnsA.shift();
+					columnsA.shift();
+					columnsA.shift();
+					columnsA.shift();
+
+					// set as data fields in actual theme
+
+					fieldsA = [];
+					for (var i = 0; i < columnsA.length; i++) {
+						fieldsA.push(columnsA[i]);
+					}
+
+					options.theme.szFields = fieldsA.slice().join("|");
+					options.theme.szFieldsA = fieldsA;
+
+					options.theme.szItemField = "Lat|Long";
+					options.theme.szSelectionField = "Lat|Long";
+
+					// make label 
+					var xAxis = [];
+					for (i in columnsA) {
+						xAxis.push(" ");
+					}
+					var dte = new Date(columnsA[0]);
+					xAxis[0] = dte.toLocaleDateString();
+					dte = new Date(columnsA[columnsA.length-1]);
+					xAxis[columnsA.length-1] = dte.toLocaleDateString();
+
+					options.theme.szXaxisA = xAxis; 
+					
+					theme.szSnippet = "from "+columnsA[0]+" to "+columnsA[columnsA.length-1];
+
+					// -----------------------------------------------------------------------------------------------               
+					// deploy the data
+					// ----------------------------------------------------------------------------------------------- 
+					console.log(data_Confirmed);
+					ixmaps.setExternalData(data_Confirmed, {
+						type: "dbtable",
+						name: options.name
+					});
+
+				});
+
+	};
+
 
 	ixmaps.CSSE_COVID_LAST_DAILY = function (theme, options) {
 
@@ -2081,6 +2146,48 @@ window.ixmaps = window.ixmaps || {};
 		var columns = table.columnNames();
 		table.column(columns.pop()).remove();
 		table.column(columns.pop()).remove();
+		
+		return table;
+     };  
+	 var __mean_5 = function(table) { 
+		
+		// make mean of 3 days
+		var records = table.records;
+		for ( var r=0; r<records.length; r++ ){
+			for ( var c=4; c<records[r].length; c++){
+				records[r][c] = (Number(records[r][c])+Number(records[r][c+1])+Number(records[r][c+2])+Number(records[r][c+3])+Number(records[r][c+4]))/5;
+			}
+		}
+		var columns = table.columnNames();
+		table.column(columns.pop()).remove();
+		table.column(columns.pop()).remove();
+		table.column(columns.pop()).remove();
+		table.column(columns.pop()).remove();
+		
+		return table;
+     };  
+	 var __mean_7 = function(table) {
+		
+		// make mean of 5 days
+		var records = table.records;
+		for ( var r=0; r<records.length; r++ ){
+			for ( var c=records[r].length-1; c>=10; c--){
+				records[r][c] = ((Number(records[r][c])+
+								 Number(records[r][c-1])+
+								 Number(records[r][c-2])+
+								 Number(records[r][c-3])+
+								 Number(records[r][c-4])+
+								 Number(records[r][c-5])+
+								 Number(records[r][c-6]))/7).toFixed(2);
+			}
+		}
+		var columns = table.columnNames();
+		table.column(columns[4]).remove();
+		table.column(columns[5]).remove();
+		table.column(columns[6]).remove();
+		table.column(columns[7]).remove();
+		table.column(columns[8]).remove();
+		table.column(columns[9]).remove();
 		
 		return table;
      };  
