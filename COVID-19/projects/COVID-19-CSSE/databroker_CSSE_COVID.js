@@ -1849,7 +1849,7 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 
-	ixmaps.CSSE_COVID_SEQUENCE_CONFIRMED_MEAN_3 = function (theme, options) {
+	ixmaps.CSSE_COVID_SEQUENCE_CONFIRMED_MEAN_7 = function (theme, options) {
 
 		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
 
