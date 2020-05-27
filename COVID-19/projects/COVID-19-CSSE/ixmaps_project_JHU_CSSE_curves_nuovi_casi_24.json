@@ -12,7 +12,7 @@
 		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "iXMaps",
 		"basemap": "ArcGIS - Hillshade",
-		"legend": "<h1>COVID-19 - <b>nuovi casi 24</b><br><span style='font-size:0.7em'>7 days roling mean of daily new cases</span></h1><h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE</h4>",
+		"legend": "<h1>COVID-19 - <br><b>new cases 24h</b><br><span style='font-size:0.7em'>7 days roling mean of daily new cases</span></h1><h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE</h4>",
 		"item": "",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
