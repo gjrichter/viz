@@ -12,7 +12,7 @@
 		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "iXMaps",
 		"basemap": "ArcGIS - Hillshade",
-		"legend": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/legend_pcm_dcp_incidenza.html",
+		"legend": "<h1>COVID-19 - <b>nuovi casi 24</b><br><span style='font-size:0.7em'>curves of new cases 24h smoothed by 7 days roling mean</span></h1><h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE</h4>",
 		"item": "",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
@@ -64,7 +64,7 @@
 					"#dd0000"],
 				"fillopacity": "0.2",
 				"shadow": "false",
-				"dbtable": "CSSE_COVID_SEQUENCE_CONFIRMED_MEAN_3",
+				"dbtable": "CSSE_COVID_SEQUENCE_CONFIRMED_MEAN_7",
 				"dbtableType": "ext",
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
 				"datacache": "false",
