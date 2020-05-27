@@ -87,7 +87,7 @@
 				"boxmargin": "10",
 				"titlefield": "Country/Region",
 				"timefield": "$item$",
-				"boxupper": "1:1000000",
+				"boxupper": "1:20000000",
 				"valuescale": "1",
 				"valuedecimals": "1",
 				"fadenegative": "1",
