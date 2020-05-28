@@ -17,6 +17,7 @@
 		"splash": "test",
 		"scaleParam": {
 			"borderScaling": "0.1",
+			"lineScaling": "0.001",
 			"normalSizeScale": "177165354"
 			},
 		"options": {
