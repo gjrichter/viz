@@ -15,6 +15,7 @@
 		"legend": "<h1>new cases day by day</h1><h4>moving average of 7 days on County level aggregated by dynamic grid<br>source: Data from <a href='https://github.com/nytimes/covid-19-data' target='_blank'>The New York Times</a>, based on reports from state and local health agencies</h4><h4><a style='border: #888 solid 1px;padding: 0em 0.3em;border-radius: 1em;width: 1em;color: #888;text-decoration:none' href='javascript:ixmaps.changeThemeStyle(null,null,\"scale:0.66\",\"factor\")'>-</a> size <a style='border: #888 solid 1px;padding: 0em 0.3em;border-radius: 1em;width: 1em;color: #888;text-decoration:none' href='javascript:ixmaps.changeThemeStyle(null,null,\"scale:1.5\",\"factor\")'>+</a></h4>",
 		"item": "html",
 		"splash": "test",
+		"layout":"minimal",
 		"scaleParam": {
 			"borderScaling": "0.1",
 			"normalSizeScale": "177165354"
