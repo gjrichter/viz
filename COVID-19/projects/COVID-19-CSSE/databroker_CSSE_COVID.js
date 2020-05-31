@@ -1900,6 +1900,7 @@ window.ixmaps = window.ixmaps || {};
 					options.theme.szXaxisA = xAxis; 
 					
 					theme.szSnippet = "from "+columnsA[0]+" to "+columnsA[columnsA.length-1];
+					ixmaps.setTitle(columnsA[columnsA.length-1]);
 
 					// -----------------------------------------------------------------------------------------------               
 					// deploy the data
