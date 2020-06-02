@@ -659,6 +659,7 @@ window.ixmaps = window.ixmaps || {};
 			columns.shift();
 			columns.pop();
 			
+			// make moving average of 3 days, last 2 remain original
 			var records = pivot.records;
 			for ( var r=0; r<records.length; r++ ){
 				for ( var c=4; c<records[r].length-3; c++ ){
