@@ -665,6 +665,120 @@ window.ixmaps = window.ixmaps || {};
 					records[r][c] = Math.round((Number(records[r][c]) + Number(records[r][c+1]) + Number(records[r][c+2]))/3);
  				}
 			}
+			columns.shift();
+			columns.shift();
+
+			var last = columns.length-1;
+			
+			// and configure the theme
+			theme.szFields = columns.slice().join('|');
+			theme.szFieldsA = columns.slice();
+			
+			// and set the label (for difference 1 less)
+			//columns.shift();
+			theme.szLabelA = columns.slice();
+			
+			for ( var i=0; i<columns.length; i++ ){
+				columns[i] = new Date(columns[i]).toLocaleDateString();
+			}
+			theme.szLabelA = columns.slice();
+			
+			theme.szXaxisA = columns.slice();
+			for ( i=1; i<theme.szXaxisA.length-1; i++ ){
+				if ( theme.szXaxisA[i] == "xx11/3/2020" ){
+					theme.szXaxisA[i] = "a";
+				}else
+				if ( theme.szXaxisA[i] == "xx21/3/2020" ){
+					theme.szXaxisA[i] = "b";
+				}else
+				if ( theme.szXaxisA[i] == "19/3/2020" ){
+					theme.szXaxisA[i] = "s+14";
+				}else
+				if ( theme.szXaxisA[i] == "25/3/2020" ){
+					theme.szXaxisA[i] = "a+14";
+				}else
+				if ( theme.szXaxisA[i] == "4/4/2020" ){
+					theme.szXaxisA[i] = "b+14";
+				}else{
+					theme.szXaxisA[i] = " ";
+				}
+			}
+
+			theme.szSnippet = "dal "+columns[0]+" al "+columns[last];
+
+			// -----------------------------------------------------------------------------------------------               
+			// deploy the data
+			// ----------------------------------------------------------------------------------------------- 
+
+			ixmaps.setExternalData(pivot, {
+				type: "dbtable",
+				name: options.name
+			});
+
+		})
+		.error(function(e){alert("error loading data from:\n"+szUrl)});
+
+	};
+
+	ixmaps.PCM_DPC_COVID_SEQUENCE_ACTIVE_PREVALENCE = function (theme,options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+		
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+				
+			function (dataA) {
+					
+			var data = dataA[0];
+			var pivot = __get_active(data,options);
+				
+			// get popolation array
+			var dataPop = dataA[1];
+			// correct region names in population table
+			dataPop.column("Territorio").map(function (value) {
+				if (value == "Provincia Autonoma Bolzano / Bozen") {
+					return "P.A. Bolzano";
+				} else
+				if (value == "Provincia Autonoma Trento") {
+					return "P.A. Trento";
+				} else {
+					return value.split(" /")[0].replace(/-/, " ");
+				}
+			});
+			var pop = [];
+			var terrA = dataPop.column("Territorio").values();
+			var popA = dataPop.column("Value").values();
+			for (var i = 0; i < terrA.length; i++) {
+				pop[terrA[i]] = popA[i];
+			}
+			var indexName = pivot.column("denominazione_regione").index;
+				
+			// get the columns with date 
+			var columns = pivot.columnNames();
+			
+			// get the columns with date 
+			var columns = pivot.columnNames();
+			columns.shift();
+			columns.shift();
+			columns.shift();
+			columns.shift();
+			columns.pop();
+			
+			var records = pivot.records;
+			for ( var r=0; r<records.length; r++ ){
+				for ( var c=4; c<records[r].length-3; c++ ){
+					var value = Math.round((Number(records[r][c]) + Number(records[r][c+1]) + Number(records[r][c+2]))/3);
+					records[r][c] = (value/pop[records[r][indexName].replace(/\-/," ")]*10000).toFixed(2);
+ 				}
+			}
 			columns.pop();
 			columns.pop();
 
@@ -685,7 +799,6 @@ window.ixmaps = window.ixmaps || {};
 			
 			theme.szXaxisA = columns.slice();
 			for ( i=1; i<theme.szXaxisA.length-1; i++ ){
-				console.log(theme.szXaxisA[i]);
 				if ( theme.szXaxisA[i] == "xx11/3/2020" ){
 					theme.szXaxisA[i] = "a";
 				}else
@@ -705,7 +818,74 @@ window.ixmaps = window.ixmaps || {};
 				}
 			}
 
-			theme.szSnippet = "dal "+columns[0]+" al "+columns[last-1];
+			theme.szSnippet = "dal "+columns[0]+" al "+columns[last];
+
+			// -----------------------------------------------------------------------------------------------               
+			// deploy the data
+			// ----------------------------------------------------------------------------------------------- 
+
+			ixmaps.setExternalData(pivot, {
+				type: "dbtable",
+				name: options.name
+			});
+		});
+	};
+
+	
+	
+	
+	ixmaps.PCM_DPC_COVID_SEQUENCE_ACTIVE_CLIP = function (theme,options) {
+
+		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(mydata){
+			
+			var pivot = __get_active(mydata,options);
+	
+			// get the columns with date 
+			var columns = pivot.columnNames();
+			
+			// get the columns with date 
+			var columns = pivot.columnNames();
+			columns.shift();
+			columns.shift();
+			columns.shift();
+			columns.shift();
+			columns.pop();
+			
+			var records = pivot.records;
+			for ( var r=0; r<records.length; r++ ){
+				for ( var c=4; c<records[r].length-3; c++ ){
+					records[r][c] = Math.round((Number(records[r][c]) + Number(records[r][c+1]) + Number(records[r][c+2]))/3);
+ 				}
+			}
+			columns.shift();
+			columns.shift();
+
+			var last = columns.length-1;
+			
+			// and configure the theme
+			theme.szFields = columns.slice().join('|');
+			theme.szFieldsA = columns.slice();
+			
+			// and set the label (for difference 1 less)
+			//columns.shift();
+			theme.szLabelA = columns.slice();
+			
+			for ( var i=0; i<columns.length; i++ ){
+				columns[i] = new Date(columns[i]).toLocaleDateString();
+			}
+			theme.szLabelA = columns.slice();
+			
+			theme.szXaxisA = columns.slice();
+			
+			theme.nClipFrames = columns.length;
+			
+			theme.szSnippet = "dal "+columns[0]+" al "+columns[last];
 
 			// -----------------------------------------------------------------------------------------------               
 			// deploy the data
@@ -721,7 +901,7 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 
-		ixmaps.PCM_DPC_COVID_SEQUENCE_DEATHS = function (theme,options) {
+	ixmaps.PCM_DPC_COVID_SEQUENCE_DEATHS = function (theme,options) {
 
 		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
 
@@ -770,7 +950,6 @@ window.ixmaps = window.ixmaps || {};
 			
 			theme.szXaxisA = columns.slice();
 			for ( i=1; i<theme.szXaxisA.length-1; i++ ){
-				console.log(theme.szXaxisA[i]);
 				if ( theme.szXaxisA[i] == "xx11/3/2020" ){
 					theme.szXaxisA[i] = "a";
 				}else
@@ -855,7 +1034,6 @@ window.ixmaps = window.ixmaps || {};
 			
 			theme.szXaxisA = columns.slice();
 			for ( i=1; i<theme.szXaxisA.length-1; i++ ){
-				console.log(theme.szXaxisA[i]);
 				if ( theme.szXaxisA[i] == "xx11/3/2020" ){
 					theme.szXaxisA[i] = "a";
 				}else
@@ -940,7 +1118,6 @@ window.ixmaps = window.ixmaps || {};
 			
 			theme.szXaxisA = columns.slice();
 			for ( i=1; i<theme.szXaxisA.length-1; i++ ){
-				console.log(theme.szXaxisA[i]);
 				if ( theme.szXaxisA[i] == "xx11/3/2020" ){
 					theme.szXaxisA[i] = "a";
 				}else
@@ -1502,7 +1679,6 @@ window.ixmaps = window.ixmaps || {};
 
 				options.theme.szItemField = "lat.1|long.1";
 				options.theme.szSelectionField = "lat.1|long.1";
-				console.log(options.theme);
 
 				// make label 
 				var xAxis = [];
@@ -1644,6 +1820,118 @@ window.ixmaps = window.ixmaps || {};
 		
 	};
 	
+	ixmaps.PCM_DPC_COVID_SEQUENCE_DHHIR = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+		
+			.addSource(szUrl1, "csv")
+			.realize(
+				
+			function (dataA) {
+					
+			var data = dataA[0];
+				
+			var indexName = data.column("denominazione_regione").index;
+
+			var data_Deaths 	= __get_deaths(data);
+			var data_Home 		= __get_home(data);
+			var data_Symptoms	= __get_symptoms(data);
+			var data_Intensive	= __get_intensive(data);
+			var data_Recovered 	= __get_recovered(data);
+				
+			data_Deaths.column("Total").remove();
+			data_Home.column("Total").remove();
+			data_Symptoms.column("Total").remove();
+			data_Intensive.column("Total").remove();
+			data_Recovered.column("Total").remove();
+
+			var columnsA = data_Recovered.columnNames();
+
+			var merger = new Data.Merger();
+			merger.addSource(data_Deaths, {
+				lookup: "denominazione_regione",
+				columns: columnsA	
+			});
+			merger.addSource(data_Home, {
+				lookup: "denominazione_regione",
+				columns: columnsA
+			});
+			merger.addSource(data_Symptoms, {
+				lookup: "denominazione_regione",
+				columns: columnsA
+			});
+			merger.addSource(data_Intensive, {
+				lookup: "denominazione_regione",
+				columns: columnsA
+			});
+			merger.addSource(data_Recovered, {
+				lookup: "denominazione_regione",
+				columns: columnsA	
+			});
+			merger.realize(function (dbTable) {
+						
+				columnsA.shift();
+				columnsA.shift();
+				columnsA.shift();
+				columnsA.shift();
+
+				for ( var i=0; i<columnsA.length; i++ ){
+					dbTable.column(columnsA[i]+".1").rename(columnsA[i]+" deceduti");
+					dbTable.column(columnsA[i]+".2").rename(columnsA[i]+" isolamento");
+					dbTable.column(columnsA[i]+".3").rename(columnsA[i]+" osptitalizzati");
+					dbTable.column(columnsA[i]+".4").rename(columnsA[i]+" terapia intens.");
+					dbTable.column(columnsA[i]+".5").rename(columnsA[i]+" guariti/dimessi");
+				}
+
+				// set as data fields in actual theme
+
+				fieldsA = [];
+				for ( var i=0; i<columnsA.length; i++ ){
+					fieldsA.push(columnsA[i]+" deceduti");
+					fieldsA.push(columnsA[i]+" isolamento");
+					fieldsA.push(columnsA[i]+" osptitalizzati");
+					fieldsA.push(columnsA[i]+" terapia intens.");
+					fieldsA.push(columnsA[i]+" guariti/dimessi");
+				}
+
+				options.theme.szFields = fieldsA.slice().join("|");
+				options.theme.szFieldsA = fieldsA;
+				options.theme.nGridX = 5;
+
+				options.theme.szItemField = "lat.1|long.1";
+				options.theme.szSelectionField = "lat.1|long.1";
+
+				// make label 
+				var xAxis = [];
+				for ( i in columnsA ){
+					xAxis.push(" ");
+				}
+				var dte = new Date(columnsA[columnsA.length-1]);
+				xAxis[columnsA.length-1]=(dte.toLocaleDateString());
+				var dte = new Date(columnsA[0]);
+				xAxis[0]=(dte.toLocaleDateString());
+				options.theme.szXaxisA = xAxis; 
+
+				// -----------------------------------------------------------------------------------------------               
+				// deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(dbTable, {
+					type: "dbtable",
+					name: options.name
+				});
+			});
+		});
+						
+		
+	};
+	
 	ixmaps.PCM_DPC_COVID_SEQUENCE_DHHIR_PREVALENCE = function (theme, options) {
 
 		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
@@ -1740,16 +2028,26 @@ window.ixmaps = window.ixmaps || {};
 				columnsA.shift();
 				columnsA.shift();
 				columnsA.shift();
+				
+				// set label in column names of pivot table
+
+				for ( var i=0; i<columnsA.length; i++ ){
+					dbTable.column(columnsA[i]+".1").rename(columnsA[i]+" deceduti");
+					dbTable.column(columnsA[i]+".2").rename(columnsA[i]+" isolamento");
+					dbTable.column(columnsA[i]+".3").rename(columnsA[i]+" osptitalizzati");
+					dbTable.column(columnsA[i]+".4").rename(columnsA[i]+" terapia intens.");
+					dbTable.column(columnsA[i]+".5").rename(columnsA[i]+" guariti/dimessi");
+				}
 
 				// set as data fields in actual theme
 
 				fieldsA = [];
 				for ( var i=0; i<columnsA.length; i++ ){
-					fieldsA.push(columnsA[i]+".1");
-					fieldsA.push(columnsA[i]+".2");
-					fieldsA.push(columnsA[i]+".3");
-					fieldsA.push(columnsA[i]+".4");
-					fieldsA.push(columnsA[i]+".5");
+					fieldsA.push(columnsA[i]+" deceduti");
+					fieldsA.push(columnsA[i]+" isolamento");
+					fieldsA.push(columnsA[i]+" osptitalizzati");
+					fieldsA.push(columnsA[i]+" terapia intens.");
+					fieldsA.push(columnsA[i]+" guariti/dimessi");
 				}
 						
 				options.theme.szFields = fieldsA.slice().join("|");
@@ -1758,7 +2056,6 @@ window.ixmaps = window.ixmaps || {};
 
 				options.theme.szItemField = "lat.1|long.1";
 				options.theme.szSelectionField = "lat.1|long.1";
-				console.log(options.theme);
 
 				// make label 
 				var xAxis = [];
@@ -1784,7 +2081,7 @@ window.ixmaps = window.ixmaps || {};
 						
 		
 	};
-	
+
 	ixmaps.PCM_DPC_COVID_SEQUENCE_HHIRD = function (theme, options) {
 
 		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
@@ -2053,7 +2350,327 @@ window.ixmaps = window.ixmaps || {};
 		
 	};
 	
-    ixmaps.PCM_DPC_COVID_LAST_ACTIVE_DIFF = function (theme,options) {
+	ixmaps.PCM_DPC_COVID_SEQUENCE_HHID = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+		
+			.addSource(szUrl1, "csv")
+			.realize(
+				
+			function (dataA) {
+					
+			var data = dataA[0];
+				
+			// make local dates
+			/**
+			data.column('data').map(function (value,row) {
+					return (new Date(value).toLocaleDateString());
+			});
+			**/
+
+			var data_Home 		= __get_home(data);
+			var data_Symptoms	= __get_symptoms(data);
+			var data_Intensive	= __get_intensive(data);
+			var data_Deaths 	= __get_deaths(data);
+				
+			data_Home.column("Total").remove();
+			data_Symptoms.column("Total").remove();
+			data_Intensive.column("Total").remove();
+			data_Deaths.column("Total").remove();
+
+			var columnsA = data_Symptoms.columnNames();
+
+			var merger = new Data.Merger();
+			merger.addSource(data_Home, {
+				lookup: "denominazione_regione",
+				columns: columnsA
+			});
+			merger.addSource(data_Symptoms, {
+				lookup: "denominazione_regione",
+				columns: columnsA
+			});
+			merger.addSource(data_Intensive, {
+				lookup: "denominazione_regione",
+				columns: columnsA
+			});
+			merger.addSource(data_Deaths, {
+				lookup: "denominazione_regione",
+				columns: columnsA	
+			});
+			merger.realize(function (dbTable) {
+						
+				columnsA.shift();
+				columnsA.shift();
+				columnsA.shift();
+				columnsA.shift();
+				
+				for ( var i=0; i<columnsA.length; i++ ){
+					dbTable.column(columnsA[i]+".1").rename(columnsA[i]+" isolamento");
+					dbTable.column(columnsA[i]+".2").rename(columnsA[i]+" osptitalizzati");
+					dbTable.column(columnsA[i]+".3").rename(columnsA[i]+" terapia intens.");
+					dbTable.column(columnsA[i]+".4").rename(columnsA[i]+" deceduti");
+				}
+				
+
+				// set as data fields in actual theme
+
+				fieldsA = [];
+				for ( var i=0; i<columnsA.length; i++ ){
+					fieldsA.push(columnsA[i]+" isolamento");
+					fieldsA.push(columnsA[i]+" osptitalizzati");
+					fieldsA.push(columnsA[i]+" terapia intens.");
+					fieldsA.push(columnsA[i]+" deceduti");
+				}
+						
+				options.theme.szFields = fieldsA.slice().join("|");
+				options.theme.szFieldsA = fieldsA;
+				options.theme.nGridX = 4;
+
+				options.theme.szItemField = "lat.1|long.1";
+				options.theme.szSelectionField = "lat.1|long.1";
+
+				// set xaxis 
+				
+				// make label 
+				var xAxis = [];
+				for ( i in columnsA ){
+					xAxis.push(" ");
+				}
+				var dte = new Date(columnsA[columnsA.length-1]);
+				xAxis[columnsA.length-1]=(dte.toLocaleDateString());
+				var dte = new Date(columnsA[0]);
+				xAxis[0]=(dte.toLocaleDateString());
+				options.theme.szXaxisA = xAxis; 
+
+				// -----------------------------------------------------------------------------------------------               
+				// deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(dbTable, {
+					type: "dbtable",
+					name: options.name
+				});
+			});
+		});
+						
+		
+	};
+	
+	ixmaps.PCM_DPC_COVID_SEQUENCE_HHI = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+		
+			.addSource(szUrl1, "csv")
+			.realize(
+				
+			function (dataA) {
+					
+			var data = dataA[0];
+				
+			// make local dates
+			/**
+			data.column('data').map(function (value,row) {
+					return (new Date(value).toLocaleDateString());
+			});
+			**/
+
+			var data_Home 		= __get_home(data);
+			var data_Symptoms	= __get_symptoms(data);
+			var data_Intensive	= __get_intensive(data);
+				
+			data_Home.column("Total").remove();
+			data_Symptoms.column("Total").remove();
+			data_Intensive.column("Total").remove();
+
+			var columnsA = data_Symptoms.columnNames();
+
+			var merger = new Data.Merger();
+			merger.addSource(data_Home, {
+				lookup: "denominazione_regione",
+				columns: columnsA
+			});
+			merger.addSource(data_Symptoms, {
+				lookup: "denominazione_regione",
+				columns: columnsA
+			});
+			merger.addSource(data_Intensive, {
+				lookup: "denominazione_regione",
+				columns: columnsA
+			});
+			merger.realize(function (dbTable) {
+						
+				columnsA.shift();
+				columnsA.shift();
+				columnsA.shift();
+				columnsA.shift();
+				
+				for ( var i=0; i<columnsA.length; i++ ){
+					dbTable.column(columnsA[i]+".1").rename(columnsA[i]+" isolamento");
+					dbTable.column(columnsA[i]+".2").rename(columnsA[i]+" osptitalizzati");
+					dbTable.column(columnsA[i]+".3").rename(columnsA[i]+" terapia intens.");
+				}
+				
+
+				// set as data fields in actual theme
+
+				fieldsA = [];
+				for ( var i=0; i<columnsA.length; i++ ){
+					fieldsA.push(columnsA[i]+" isolamento");
+					fieldsA.push(columnsA[i]+" osptitalizzati");
+					fieldsA.push(columnsA[i]+" terapia intens.");
+				}
+						
+				options.theme.szFields = fieldsA.slice().join("|");
+				options.theme.szFieldsA = fieldsA;
+				options.theme.nGridX = 3;
+
+				options.theme.szItemField = "lat.1|long.1";
+				options.theme.szSelectionField = "lat.1|long.1";
+
+				// set xaxis 
+				
+				// make label 
+				var xAxis = [];
+				for ( i in columnsA ){
+					xAxis.push(" ");
+				}
+				var dte = new Date(columnsA[columnsA.length-1]);
+				xAxis[columnsA.length-1]=(dte.toLocaleDateString());
+				var dte = new Date(columnsA[0]);
+				xAxis[0]=(dte.toLocaleDateString());
+				options.theme.szXaxisA = xAxis; 
+
+				// -----------------------------------------------------------------------------------------------               
+				// deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(dbTable, {
+					type: "dbtable",
+					name: options.name
+				});
+			});
+		});
+						
+		
+	};
+	
+ 	ixmaps.PCM_DPC_COVID_SEQUENCE_HID = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+		
+			.addSource(szUrl1, "csv")
+			.realize(
+				
+			function (dataA) {
+					
+			var data = dataA[0];
+				
+			// make local dates
+			/**
+			data.column('data').map(function (value,row) {
+					return (new Date(value).toLocaleDateString());
+			});
+			**/
+
+			var data_Symptoms	= __get_symptoms(data);
+			var data_Intensive	= __get_intensive(data);
+			var data_Deaths 	= __get_deaths(data);
+				
+			data_Symptoms.column("Total").remove();
+			data_Intensive.column("Total").remove();
+			data_Deaths.column("Total").remove();
+
+			var columnsA = data_Symptoms.columnNames();
+
+			var merger = new Data.Merger();
+			merger.addSource(data_Symptoms, {
+				lookup: "denominazione_regione",
+				columns: columnsA
+			});
+			merger.addSource(data_Intensive, {
+				lookup: "denominazione_regione",
+				columns: columnsA
+			});
+			merger.addSource(data_Deaths, {
+				lookup: "denominazione_regione",
+				columns: columnsA	
+			});
+			merger.realize(function (dbTable) {
+						
+				columnsA.shift();
+				columnsA.shift();
+				columnsA.shift();
+				columnsA.shift();
+				
+				for ( var i=0; i<columnsA.length; i++ ){
+					dbTable.column(columnsA[i]+".1").rename(columnsA[i]+" osptitalizzati");
+					dbTable.column(columnsA[i]+".2").rename(columnsA[i]+" terapia intens.");
+					dbTable.column(columnsA[i]+".3").rename(columnsA[i]+" deceduti");
+				}
+				
+
+				// set as data fields in actual theme
+
+				fieldsA = [];
+				for ( var i=0; i<columnsA.length; i++ ){
+					fieldsA.push(columnsA[i]+" osptitalizzati");
+					fieldsA.push(columnsA[i]+" terapia intens.");
+					fieldsA.push(columnsA[i]+" deceduti");
+				}
+						
+				options.theme.szFields = fieldsA.slice().join("|");
+				options.theme.szFieldsA = fieldsA;
+				options.theme.nGridX = 3;
+
+				options.theme.szItemField = "lat.1|long.1";
+				options.theme.szSelectionField = "lat.1|long.1";
+
+				// set xaxis 
+				
+				// make label 
+				var xAxis = [];
+				for ( i in columnsA ){
+					xAxis.push(" ");
+				}
+				var dte = new Date(columnsA[columnsA.length-1]);
+				xAxis[columnsA.length-1]=(dte.toLocaleDateString());
+				var dte = new Date(columnsA[0]);
+				xAxis[0]=(dte.toLocaleDateString());
+				options.theme.szXaxisA = xAxis; 
+
+				// -----------------------------------------------------------------------------------------------               
+				// deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(dbTable, {
+					type: "dbtable",
+					name: options.name
+				});
+			});
+		});
+		
+	};
+	
+	
+   ixmaps.PCM_DPC_COVID_LAST_ACTIVE_DIFF = function (theme,options) {
 
 
 		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
