@@ -115,14 +115,18 @@ window.ixmaps = window.ixmaps || {};
 			
 				var colors = [];
 				var divisions = [];
-				var scale = myfeed.data.meta.colorings[5].scale;
-			
-				for ( var i=0; i<scale.length; i++ ){
-					divisions.push(scale[i][0]);
-					colors.push(scale[i][1]);
+				for ( var k in myfeed.data.meta.colorings ){
+					if (  myfeed.data.meta.colorings[k].key == "country" ){
+						var scale = myfeed.data.meta.colorings[k].scale;
+
+						for ( var i=0; i<scale.length; i++ ){
+							divisions.push(scale[i][0]);
+							colors.push(scale[i][1]);
+						}
+						ixmaps.changeThemeStyle(theme.szId,"values:"+divisions.join(','),'fast');
+						theme.origColorScheme = theme.colorScheme = colors;
+					} 
 				}
-				ixmaps.changeThemeStyle(theme.szId,"values:"+divisions.join(','),'fast');
-				theme.origColorScheme = theme.colorScheme = colors;
 			
 				theme.szTitle = myfeed.data.meta.title;
 				theme.szSnippet = "source:<a href='https://nextstrain.org/ncov' target='_blank'>nextstrain.org</a><br>updated: "+ myfeed.data.meta.updated;
@@ -165,14 +169,18 @@ window.ixmaps = window.ixmaps || {};
 			
 				var colors = [];
 				var divisions = [];
-				var scale = myfeed.data.meta.colorings[5].scale;
-			
-				for ( var i=0; i<scale.length; i++ ){
-					divisions.push(scale[i][0]);
-					colors.push(scale[i][1]);
+				for ( var k in myfeed.data.meta.colorings ){
+					if (  myfeed.data.meta.colorings[k].key == "country" ){
+						var scale = myfeed.data.meta.colorings[k].scale;
+
+						for ( var i=0; i<scale.length; i++ ){
+							divisions.push(scale[i][0]);
+							colors.push(scale[i][1]);
+						}
+						ixmaps.changeThemeStyle(theme.szId,"values:"+divisions.join(','),'fast');
+						theme.origColorScheme = theme.colorScheme = colors;
+					} 
 				}
-				ixmaps.changeThemeStyle(theme.szId,"values:"+divisions.join(','),'fast');
-				theme.origColorScheme = theme.colorScheme = colors;
 			
 				theme.szTitle = myfeed.data.meta.title;
 				theme.szSnippet = "source:<a href='https://nextstrain.org/ncov' target='_blank'>nextstrain.org</a><br>updated: "+ myfeed.data.meta.updated;
