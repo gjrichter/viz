@@ -1,0 +1,112 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Fri Jun 05 2020 10:15:33 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/world_base_ISO/world_ISO2_winkel_gray.svgz",
+		"attribution": "iXMaps",
+		"basemap": "Black",
+		"legend": "<h1>COVID-19 - day by day</b><br><span style='font-size:0.6em;color:#888888'>7 days moving average of new cases</span></h1><h4 style='color:#888888'>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE</h4>",
+		"item": "html",
+		"scaleParam": {
+			"borderScaling": "0.1",
+			"lineScaling": "4.213991769547325",
+			"labelScaling": "2",
+			"normalSizeScale": "2319015"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50",
+			"mapopacity": "0.2",
+			"basemapopacity": "0.5"
+			},
+		"center": {
+			"lat": "16.804541076383455",
+			"lng": "11.601562500000002"
+			},
+		"zoom": "2"
+		},
+	"themes": [{
+			"layer": "generic",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|FADE|GRID|BOX|TITLE|FIXSIZE|LONGTITLE|COMPATIBLE|SUM|NOLEGEND|DIFFERENCE",
+				"colorscheme": [
+					"150",
+					"#443366",
+					"#ff2288",
+					"3colors",
+					"#8866aa"],
+				"fillopacity": "0.3",
+				"shadow": "false",
+				"dbtable": "CSSE_COVID_SEQUENCE_CONFIRMED_MEAN_7",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
+				"datacache": "false",
+				"lookupfield": "Lat|Long",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"align": "23right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "2",
+				"scale": "0.2",
+				"rangescale": "0.5",
+				"timefield": "$item$",
+				"minvalue": "0",
+				"maxvalue": "auto",
+				"textcolor": "#dd0000",
+				"linewidth": "50",
+				"bordercolor": "none",
+				"boxopacity": "0.002",
+				"boxmargin": "10",
+				"titlefield": "Country/Region",
+				"boxupper": "1:20000000",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"fadenegative": "1",
+				"aggregationscale": [
+					"1:1",
+					"150px",
+					"1:500000",
+					"100px"],
+				"name": "curve",
+				"title": "nuovi casi - moving mean 7 days",
+				"snippet": "from 1/28/20 to 6/4/20",
+				"description": "aggiornato: 6/4/20"
+				}
+			}],
+	"layerMask": {
+		}
+	}
