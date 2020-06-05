@@ -11,7 +11,7 @@
 	"map": {
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
 		"attribution": "iXMaps",
-		"basemap": "CartoDB - Positron",
+		"basemap": "Stamen - toner-lite",
 		"legend": "<div style='color:#777777'><h1></h1><h1><b>Prima o poi ...</b></h1><h2><b>nuovi casi</b> negli ultimi <b>3 giorni</b></h2><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
 		"item": "",
 		"layout":"minimal",
