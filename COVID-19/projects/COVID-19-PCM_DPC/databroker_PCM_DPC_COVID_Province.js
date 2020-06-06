@@ -828,7 +828,7 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 
-	ixmaps.PCM_DPC_COVID_SEQUENCE_MEAN_7 = function (theme, options) {
+	ixmaps.PCM_DPC_COVID_SEQUENCE_MEAN_3 = function (theme, options) {
 
 
 		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-province/dpc-covid19-ita-province.csv";
