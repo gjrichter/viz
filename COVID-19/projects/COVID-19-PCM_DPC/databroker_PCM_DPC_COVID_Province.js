@@ -783,6 +783,10 @@ window.ixmaps = window.ixmaps || {};
 
 				var last = columns.length - 1;
 
+				for ( var i=0; i<columns.length; i++ ){
+					columns[i] = new Date(columns[i]).toLocaleDateString();	
+				}
+
 				// and configure the theme
 				theme.szFields = columns.slice().join('|');
 				theme.szFieldsA = columns.slice();
