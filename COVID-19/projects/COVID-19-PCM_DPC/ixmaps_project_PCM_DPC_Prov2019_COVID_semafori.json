@@ -90,13 +90,13 @@
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|LOLLIPOP|LONGTITLE|GRID|BOX|GRIDSIZE|FIXSIZE|AGGREGATE|RECT|COMPATIBLE|DIFFERENCE|SUM|NOLEGEND",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|LOLLIPOP|LONGTITLE|GRID|BOX|FIXSIZE|AGGREGATE|RECT|COMPATIBLE|DIFFERENCE|SUM|LEGEND",
 				"colorscheme": [
 					"#dd0000"],
 				"fillopacity": "0.4",
 				"shadow": "false",
 				"filter": "WHERE \"denominazione_provincia\" NOT \"aggio\"",
-				"dbtable": "PCM_DPC_COVID_SEQUENCE_MEAN_3",
+				"dbtable": "PCM_DPC_COVID_SEQUENCE_MEAN_7",
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province.js",
 				"datacache": "false",
@@ -106,9 +106,10 @@
 				"symbols": [
 					"circle"],
 				"units": "",
+				"align":"right",
 				"refreshtimeout": "0",
 				"normalsizevalue": "0.8",
-				"scale": "2",
+				"scale": "0.04",
 				"rangescale": "0.8",
 				"minvalue": "0",
 				"maxvalue": "auto",
@@ -159,6 +160,7 @@
 				"symbols": [
 					"circle"],
 				"units": "",
+				"align":"above",
 				"refreshtimeout": "0",
 				"normalsizevalue": "100",
 				"scale": "0.5",
