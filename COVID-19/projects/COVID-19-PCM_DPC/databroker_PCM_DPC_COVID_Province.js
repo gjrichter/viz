@@ -754,7 +754,7 @@ window.ixmaps = window.ixmaps || {};
 				// make moving average of 7 days
 				var records = pivot.records;
 				for (r=0; r<records.length;r++){
-					for (c=records[r].lenhgth-1; c>=11;c--){
+					for (c=records[r].length-1; c>=11;c--){
 						records[r][c] = (Number(records[r][c])+
 										 Number(records[r][c-1])+
 										 Number(records[r][c-2])+
