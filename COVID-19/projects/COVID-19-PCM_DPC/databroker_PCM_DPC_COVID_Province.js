@@ -784,6 +784,7 @@ window.ixmaps = window.ixmaps || {};
 				var last = columns.length - 1;
 
 				for ( var i=0; i<columns.length; i++ ){
+					pivot.column(columns[i]).rename(new Date(columns[i]).toLocaleDateString());
 					columns[i] = new Date(columns[i]).toLocaleDateString();	
 				}
 
