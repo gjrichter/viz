@@ -274,6 +274,74 @@ window.ixmaps = window.ixmaps || {};
 		ixmaps.PCM_DPC_COVID_LAST_24H_MEAN_3(theme, options);
 	};
 
+	ixmaps.PCM_DPC_COVID_LAST_24H_MEAN_7 = function (theme, options) {
+
+
+		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-province/dpc-covid19-ita-province.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var myfeed = Data.feed({
+				"source": szUrl,
+				"type": "csv"
+			}).load(function (mydata) {
+
+				var pivot = __process(mydata, options);
+				pivot.column("Total").remove();
+
+				// difference values (mean of 3 days)
+				var records = pivot.records;
+				for (r=0; r<records.length;r++){
+					for (c=records[r].lenhgth; c>=10;c--){
+						records[r][c] = (Number(records[r][c])+
+										 Number(records[r][c-1])+
+										 Number(records[r][c-2])+
+										 Number(records[r][c-3])+
+										 Number(records[r][c-4])+
+										 Number(records[r][c-5])+
+										 Number(records[r][c-6])
+										)/7;
+					}
+				}
+
+				// get the columns with date 
+				var columns = pivot.columnNames();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+			
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+
+				var last = columns.length - 1;
+
+				theme.szFields = columns[last];
+				theme.szFieldsA = [columns[last]];
+				theme.szField100 = columns[last - 1];
+
+				// -----------------------------------------------------------------------------------------------               
+				// deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(pivot, {
+					type: "dbtable",
+						name: options.name
+				});
+
+			})
+			.error(function (e) {
+				alert("error loading data from:\n" + szUrl)
+			});
+
+	};
+
 		
 	ixmaps.PCM_DPC_COVID_LAST_DIFF = function (theme, options) {
 
