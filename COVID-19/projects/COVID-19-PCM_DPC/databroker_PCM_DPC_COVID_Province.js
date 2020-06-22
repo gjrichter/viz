@@ -707,6 +707,11 @@ window.ixmaps = window.ixmaps || {};
 
 				var last = columns.length - 1;
 
+				for ( var i=0; i<columns.length; i++ ){
+					pivot.column(columns[i]).rename(new Date(columns[i]).toLocaleDateString());
+					columns[i] = new Date(columns[i]).toLocaleDateString();	
+				}
+
 				// and configure the theme
 				theme.szFields = columns.slice().join('|');
 				theme.szFieldsA = columns.slice();
@@ -714,6 +719,14 @@ window.ixmaps = window.ixmaps || {};
 				// and set the label (for difference 1 less)
 				columns.shift();
 				theme.szLabelA = columns.slice();
+
+				var szXaxisA = [];
+				for ( var i =0; i<columns.length; i++ ){
+					szXaxisA.push(" ");
+				}
+				szXaxisA[0] = columns[0];
+				szXaxisA[last - 1] = columns[last - 1];
+				theme.szXaxisA = szXaxisA;
 
 				theme.szSnippet = "dal " + columns[0] + " al " + columns[last - 1];
 
@@ -754,7 +767,7 @@ window.ixmaps = window.ixmaps || {};
 				// make moving average of 7 days
 				var records = pivot.records;
 				for (r=0; r<records.length;r++){
-					for (c=records[r].length-1; c>=11;c--){
+					for (c=records[r].length-1; c>=10;c--){
 						records[r][c] = (Number(records[r][c])+
 										 Number(records[r][c-1])+
 										 Number(records[r][c-2])+
@@ -800,13 +813,8 @@ window.ixmaps = window.ixmaps || {};
 				for ( var i =0; i<columns.length; i++ ){
 					szXaxisA.push(" ");
 				}
-			
-				columns[0] = new Date(columns[0]).toLocaleDateString();
-				columns[last - 1] = new Date(columns[last - 1]).toLocaleDateString();
-			
 				szXaxisA[0] = columns[0];
 				szXaxisA[last - 1] = columns[last - 1];
-			
 				theme.szXaxisA = szXaxisA;
 			
 				theme.szSnippet = "dal " + columns[0] + " al " + columns[last - 1];
@@ -814,6 +822,209 @@ window.ixmaps = window.ixmaps || {};
 
 			
 			// -----------------------------------------------------------------------------------------------               
+				// deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(pivot, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			})
+			.error(function (e) {
+				alert("error loading data from:\n" + szUrl)
+			});
+
+	};
+
+	ixmaps.PCM_DPC_COVID_SEQUENCE_MEAN_28 = function (theme, options) {
+
+
+		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-province/dpc-covid19-ita-province.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var myfeed = Data.feed({
+				"source": szUrl,
+				"type": "csv"
+			}).load(function (mydata) {
+
+				var pivot = __process(mydata, options);
+			
+				pivot.column("Total").remove();
+
+				// make moving average of 28 days
+				var records = pivot.records;
+				for (r=0; r<records.length;r++){
+					for (c=records[r].length-1; c>=10;c--){
+						mean = 0;
+						for (m=0; m<28; m++){
+							mean += Number(records[r][c-m]);
+						}
+						records[r][c] = mean/28;
+					}
+				}
+
+				// get the columns with date 
+				var columns = pivot.columnNames();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+			
+				for (m=0; m<28-1; m++){
+					columns.shift();
+				}
+
+				var last = columns.length - 1;
+			
+				for ( var i=0; i<columns.length; i++ ){
+					pivot.column(columns[i]).rename(new Date(columns[i]).toLocaleDateString());
+					columns[i] = new Date(columns[i]).toLocaleDateString();	
+				}
+
+				// and configure the theme
+				theme.szFields = columns.slice().join('|');
+				theme.szFieldsA = columns.slice();
+
+				// and set the label (for difference 1 less)
+				columns.shift();
+				theme.szLabelA = columns.slice();
+
+				var szXaxisA = [];
+				for ( var i =0; i<columns.length; i++ ){
+					szXaxisA.push(" ");
+				}
+				szXaxisA[0] = columns[0];
+				szXaxisA[last - 1] = columns[last - 1];
+				theme.szXaxisA = szXaxisA;
+			
+				theme.szSnippet = "dal " + columns[0] + " al " + columns[last - 1];
+
+				// -----------------------------------------------------------------------------------------------               
+				// deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(pivot, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			})
+			.error(function (e) {
+				alert("error loading data from:\n" + szUrl)
+			});
+
+	};
+
+	ixmaps.PCM_DPC_COVID_LAST_MEAN_28 = function (theme, options) {
+
+
+		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-province/dpc-covid19-ita-province.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var myfeed = Data.feed({
+				"source": szUrl,
+				"type": "csv"
+			}).load(function (mydata) {
+
+				var pivot = __process(mydata, options);
+			
+				pivot.column("Total").remove();
+
+				// make moving average of 28 days
+				var records = pivot.records;
+				for (r=0; r<records.length;r++){
+					for (c=records[r].length-1; c>=31;c--){
+						mean = 0;
+						for (m=0; m<28; m++){
+							mean += Number(records[r][c-m]);
+						}
+						records[r][c] = mean/28;
+					}
+				}
+
+				// get the columns with date 
+				var columns = pivot.columnNames();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+			
+				for (m=0; m<28-1; m++){
+					columns.shift();
+				}
+
+				var last = columns.length - 1;
+			
+				for ( var i=0; i<columns.length; i++ ){
+					pivot.column(columns[i]).rename(new Date(columns[i]).toLocaleDateString());
+					columns[i] = new Date(columns[i]).toLocaleDateString();	
+				}
+
+				// and configure the theme
+				theme.szFields = columns[last];
+				theme.szField100 = columns[last-1];
+
+				theme.szSnippet = "aggiornato al " + columns[last];
+
+				// -----------------------------------------------------------------------------------------------               
+				// deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(pivot, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			})
+			.error(function (e) {
+				alert("error loading data from:\n" + szUrl)
+			});
+
+	};
+
+	ixmaps.PCM_DPC_COVID_FREE_DAYS = function (theme, options) {
+
+
+		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-province/dpc-covid19-ita-province.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var myfeed = Data.feed({
+				"source": szUrl,
+				"type": "csv"
+			}).load(function (mydata) {
+
+				var pivot = __process(mydata, options);
+			
+				pivot.column("Total").remove();
+			
+				pivot.addColumn({destination:"free_days"},function(row){
+					var free = 0;
+					for ( c=row.length-1;(row[c] <= row[c-1]) && (c>=4);c--){
+						free++
+					}
+					return free;
+				})
+
+				// get the columns with date 
+				var columns = pivot.columnNames();
+				var last = columns.length - 2;
+			
+				// and configure the theme
+				theme.szFields = "free_days";
+
+				theme.szSnippet = "aggiornato al " + columns[last];
+
+				// -----------------------------------------------------------------------------------------------               
 				// deploy the data
 				// ----------------------------------------------------------------------------------------------- 
 
