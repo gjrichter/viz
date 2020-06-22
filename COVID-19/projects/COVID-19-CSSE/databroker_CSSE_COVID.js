@@ -1915,6 +1915,72 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 
+	ixmaps.CSSE_COVID_SEQUENCE_DEATHS_MEAN_7 = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.realize(
+
+				function (dataA) {
+
+					data_Confirmed = __mean_7(dataA[0]);
+
+					var lastDataColumnName = data_Confirmed.columnNames().pop();
+
+					theme.szDescription = "aggiornato: " + lastDataColumnName;
+
+					// get data columns
+					var columnsA = data_Confirmed.columnNames();
+
+					columnsA.shift();
+					columnsA.shift();
+					columnsA.shift();
+					columnsA.shift();
+
+					// set as data fields in actual theme
+
+					fieldsA = [];
+					for (var i = 0; i < columnsA.length; i++) {
+						fieldsA.push(columnsA[i]);
+					}
+
+					options.theme.szFields = fieldsA.slice().join("|");
+					options.theme.szFieldsA = fieldsA;
+
+					options.theme.szItemField = "Lat|Long";
+					options.theme.szSelectionField = "Lat|Long";
+
+					// make label 
+					var xAxis = [];
+					for (i in columnsA) {
+						xAxis.push(" ");
+					}
+					var dte = new Date(columnsA[0]);
+					xAxis[0] = dte.toLocaleDateString();
+					dte = new Date(columnsA[columnsA.length-1]);
+					xAxis[columnsA.length-1] = dte.toLocaleDateString();
+
+					options.theme.szXaxisA = xAxis; 
+					
+					theme.szSnippet = "from "+columnsA[0]+" to "+columnsA[columnsA.length-1];
+					ixmaps.setTitle("<span style='color:#888888'>"+xAxis[columnsA.length-1]+"</span");
+
+					// -----------------------------------------------------------------------------------------------               
+					// deploy the data
+					// ----------------------------------------------------------------------------------------------- 
+					console.log(data_Confirmed);
+					ixmaps.setExternalData(data_Confirmed, {
+						type: "dbtable",
+						name: options.name
+					});
+
+				});
+
+	};
+
 
 	ixmaps.CSSE_COVID_LAST_DAILY = function (theme, options) {
 
