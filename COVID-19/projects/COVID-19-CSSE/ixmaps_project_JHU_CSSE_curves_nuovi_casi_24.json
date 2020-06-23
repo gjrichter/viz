@@ -61,7 +61,9 @@
 			"style": {
 				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|FADE|GRID|BOX|FIXSIZE|LONGTITLE|COMPATIBLE|SUM|NOLEGEND|DIFFERENCE",
 				"colorscheme": [
-					"rgba(100, 160, 220,1)"],
+					"180",
+					"rgba(100, 160, 220,1)",
+					"red"],
 				"fillopacity": "0.6",
 				"shadow": "false",
 				"dbtable": "CSSE_COVID_SEQUENCE_CONFIRMED_MEAN_7",
