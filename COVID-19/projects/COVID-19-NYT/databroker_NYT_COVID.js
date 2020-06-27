@@ -383,7 +383,7 @@ window.ixmaps = window.ixmaps || {};
 					ixmaps.setTitle("<span style='font-family:arial'>" + columns[0] + " to " + columns[last] +"</span>");
 					
 					var szXaxisA = [];
-					for ( var 0 =1; i<columns.length; i++ ){
+					for ( var i =0; i<columns.length; i++ ){
 						szXaxisA.push(" ");
 					}
 					szXaxisA[0] = (columns[0]);
