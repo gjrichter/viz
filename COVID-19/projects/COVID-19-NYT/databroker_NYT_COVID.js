@@ -368,13 +368,13 @@ window.ixmaps = window.ixmaps || {};
 					columns.shift();
 					columns.shift();
 
-					var last = columns.length - 1;
-
 					// and configure the theme
 					theme.szFields = columns.slice().join('|');
 					theme.szFieldsA = columns.slice();
 
+					// prepare label and xaxis for DIFFERENCE theme 
 					columns.shift();
+					var last = columns.length - 1;
 					
 					// and set the label
 					theme.szLabelA = columns.slice();
