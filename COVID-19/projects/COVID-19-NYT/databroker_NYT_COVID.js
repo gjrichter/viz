@@ -390,8 +390,6 @@ window.ixmaps = window.ixmaps || {};
 					szXaxisA[columns.length-1] = (columns[columns.length-1]);
 					theme.szXaxisA = szXaxisA;
 								 
-					theme.nClipFrames = columns.length;
-
 					// -----------------------------------------------------------------------------------------------               
 					// deploy the data
 					// ----------------------------------------------------------------------------------------------- 
