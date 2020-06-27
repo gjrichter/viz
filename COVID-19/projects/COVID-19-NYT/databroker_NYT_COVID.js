@@ -374,18 +374,20 @@ window.ixmaps = window.ixmaps || {};
 					theme.szFields = columns.slice().join('|');
 					theme.szFieldsA = columns.slice();
 
+					columns.shift();
+					
 					// and set the label
 					theme.szLabelA = columns.slice();
 					
-					theme.szSnippet = "from " + columns[1] + " to " + columns[last];
-					ixmaps.setTitle("<span style='font-family:arial'>" + columns[1] + " to " + columns[last] +"</span>");
+					theme.szSnippet = "from " + columns[0] + " to " + columns[last];
+					ixmaps.setTitle("<span style='font-family:arial'>" + columns[0] + " to " + columns[last] +"</span>");
 					
 					var szXaxisA = [];
-					for ( var i =1; i<columns.length; i++ ){
+					for ( var 0 =1; i<columns.length; i++ ){
 						szXaxisA.push(" ");
 					}
-					szXaxisA[0] = (columns[1]);
-					szXaxisA[columns.length-2] = (columns[columns.length-1]);
+					szXaxisA[0] = (columns[0]);
+					szXaxisA[columns.length-1] = (columns[columns.length-1]);
 					theme.szXaxisA = szXaxisA;
 								 
 					theme.nClipFrames = columns.length;
