@@ -818,6 +818,7 @@ window.ixmaps = window.ixmaps || {};
 				theme.szXaxisA = szXaxisA;
 			
 				theme.szSnippet = "dal " + columns[0] + " al " + columns[last - 1];
+				ixmaps.setTitle("<f2 class='btn btn-default btn-lg'>aggiornato: "+new Date(columns[last - 1]).toLocaleDateString()+"</f2>");
 
 
 			
