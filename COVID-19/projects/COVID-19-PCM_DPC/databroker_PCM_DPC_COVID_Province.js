@@ -22,6 +22,7 @@ window.ixmaps = window.ixmaps || {};
 			value: "totale_casi",
 			keep: ["denominazione_provincia"]
 		});
+        console.log(pivot);
 
 		return pivot;
 	};
