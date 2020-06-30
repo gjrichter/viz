@@ -14,7 +14,9 @@ window.ixmaps = window.ixmaps || {};
 			return value.split(" ")[0];
 		});
         
-        data.column("long").map(function(value){return value.split("00000001")[0]});
+        data.column("long").map(function (value) {
+            return value.substr(0,9);
+        });
         
  		var pivot = data.pivot({
 			lead: "codice_provincia",
