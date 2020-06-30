@@ -14,7 +14,7 @@ window.ixmaps = window.ixmaps || {};
 			return value.split(" ")[0];
 		});
         
-        data = data.select("WHERE \"denominazione_provincia\" NOT \"in Fase\" AND \"denominazione_provincia\" NOT \"Fuori\"");
+        //data = data.select("WHERE \"denominazione_provincia\" NOT \"in Fase\" AND \"denominazione_provincia\" NOT \"Fuori\"");
         console.log(data);
 		var pivot = data.pivot({
 			lead: "codice_provincia",
