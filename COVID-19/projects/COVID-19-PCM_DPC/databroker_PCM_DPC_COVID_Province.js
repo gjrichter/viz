@@ -23,6 +23,8 @@ window.ixmaps = window.ixmaps || {};
 			keep: ["denominazione_provincia"]
 		});
         console.log(pivot);
+        
+        console.log("hi");
 
 		return pivot;
 	};
