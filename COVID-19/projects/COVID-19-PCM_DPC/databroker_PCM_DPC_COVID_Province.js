@@ -16,10 +16,10 @@ window.ixmaps = window.ixmaps || {};
         
         
  		var pivot = data.pivot({
-			lead: "codice_provincia",
+			lead: ["codice_provincia","lat","long"],
 			columns: "data",
 			value: "totale_casi",
-			keep: ["lat","long","denominazione_provincia"]
+			keep: ["denominazione_provincia"]
 		});
         
         console.log(pivot);
