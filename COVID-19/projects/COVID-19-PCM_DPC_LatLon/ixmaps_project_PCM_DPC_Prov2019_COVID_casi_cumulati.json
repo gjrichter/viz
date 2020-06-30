@@ -6,13 +6,13 @@
 		"thumbnail": "",
 		"about": "",
 		"description": "",
-		"created": "Tue Mar 24 2020 11:56:31 GMT+0100 (Ora standard dell’Europa centrale)"
+		"created": "Sun Mar 29 2020 12:56:10 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
-		"legend": "<div style='color:#777777'><h1></h1><h3><b>Verso contatto zero</b></br>media <b>nuovi casi</b> nei ultimi <b>3 giorni</b></h3></div>",
+		"legend": "<div style='color:#777777'><h1></h1><h3><b>Casi totali</b></br>casi cumulativi fin'oggi</h3></div>",
 		"item": "",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
@@ -31,7 +31,6 @@
 			"discardtiles": "false",
 			"loadmultitiles": "true",
 			"loadsilent": "false",
-			"worksilent": "true",
 			"loadexternaldata": "true",
 			"buttonsize": "15",
 			"fastpan": "false",
@@ -49,8 +48,8 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "44.308126684886126",
-			"lng": "10.772094726562502"
+			"lat": "43.87017822557581",
+			"lng": "11.497192382812502"
 			},
 		"zoom": "7"
 		},
@@ -59,24 +58,24 @@
 			"field": "2020-03-05",
 			"field100": "",
 			"style": {
-				"type": "CHOROPLETH|DIFFERENCE|QUANTILE",
+				"type": "CHOROPLETH|QUANTILE|DOPACITYMAX|NOLEGEND",
 				"colorscheme": [
 					"7",
-					"#66aa00",
+					"#FFaaaa",
 					"#ff0000"],
-				"fillopacity": "0.3",
+				"fillopacity": "0.1",
 				"shadow": "false",
-				"dbtable": "PCM_DPC_COVID_LAST_24H_MEAN_3",
+				"dbtable": "PCM_DPC_COVID_LAST",
 				"dbtableType": "ext",
-				"dbtableExt":"https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province.js",
+				"dbtableExt":"https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province_old.js",
 				"datacache": "false",
 				"lookupfield": "codice_provincia",
 				"lookuptonumber": "true",
-				"units": "casi in più",
+				"units": "casi",
 				"refreshtimeout": "0",
 				"scale": "1",
 				"dopacitypow": "2",
-				"dopacityscale": "1",
+				"dopacityscale": "3",
 				"valuescale": "1",
 				"valuedecimals": "1",
 				"valuesupper":"1:1000000",
@@ -86,87 +85,89 @@
 				}
 			},{
 			"layer": "Prov2019_nome",
-			"field": "$item$",
+			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|LOLLIPOP|LONGTITLE|GRID|BOX|GRIDSIZE|FIXSIZE|AGGREGATE|RECT|COMPATIBLE|DIFFERENCE|SUM|SIMPLELEGEND",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LOLLIPOP|AREA||GRID|LONGTITLE|BOX|FIXSIZE|AGGREGATE|RECT|COMPATIBLE|SUM|SIMPLELEGEND",
 				"colorscheme": [
 					"#dd0000"],
-				"fillopacity": "0.4",
+				"fillopacity": "0.7",
 				"shadow": "false",
 				"filter": "WHERE \"denominazione_provincia\" NOT \"aggio\"",
-				"dbtable": "PCM_DPC_COVID_SEQUENCE_MEAN_3",
+				"dbtable": "PCM_DPC_COVID_SEQUENCE",
 				"dbtableType": "ext",
-				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province.js",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province_old.js",
 				"datacache": "false",
-				"lookupfield": "codice_provincia",
+				"itemfield": "codice_provincia",
+				"lookupfield": "lat|long",
 				"lookuptonumber": "true",
 				"symbols": [
 					"circle"],
 				"units": "",
+				"align":"center",
 				"refreshtimeout": "0",
-				"normalsizevalue": "0.8",
-				"scale": "2",
-				"rangescale": "0.8",
+				"normalsizevalue": "0.7",
+				"scale": "0.002",
+				"rangescale": "1.1",
 				"minvalue": "0",
 				"maxvalue": "auto",
 				"textcolor": "#880000",
-				"linewidth": "5",
-				"bordercolor": "none",
+				"linewidth": "17",
+				"bordercolor": "#880000",
 				"boxopacity": "0",
 				"boxmargin": "10",
-				"itemfield": "codice_provincia",
 				"titlefield": "denominazione_provincia",
 				"boxupper": "1:1000000",
-				"chartupper": "1:1000000",
+				"chartupper": "1:2000000",
 				"valuescale": "1",
-				"valuedecimals": "1",
+				"valuedecimals": "0",
 				"fadenegative": "1",
-				"aggregationscale": [
-					"1:1",
-					"150px",
-					"1:1000000",
-					"100px"],
-				"aggregationlower": "1:2500000",
 				"name": "curve",
-				"title": "nuovi casi, giorno per giorno",
-				"snippet": "dal 2020-02-25 al 2020-03-23"
+				"title": "Giorno per giorno",
+				"snippet": "dal 2020-02-25T18:00:00 al 2020-03-28T17:00:00"
 				}
 			},{
 			"layer": "Prov2019_nome",
-			"field": "2020-03-23",
-			"field100": "2020-03-22",
+			"field": "$item$",
+			"field100": "",
 			"style": {
-				"type": "CHART|DIFFERENCE|BUBBLE|VALUES|NOSIZE|COMPACTLEGEND|ZEROISVALUE",
+				"type": "CHART|BUBBLE|VALUES|SIZE|COMPACTLEGEND",
 				"colorscheme": [
-					"green",
-					"#88aa00",
-					"white"],
-				"fillopacity": "0.1",
-				"ranges":"-1,0,0.9,100",
+					"red"],
+				"fillopacity": "0.0001",
 				"shadow": "false",
-				"dbtable": "PCM_DPC_COVID_LAST_24H_MEAN_3_ALT",
+				"dbtable": "PCM_DPC_COVID_LAST_2",
 				"dbtableType": "ext",
-				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province.js",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province_old.js",
 				"datacache": "false",
-				"lookupfield": "codice_provincia",
+				"lookupfield": "lat|long",
 				"lookuptonumber": "true",
 				"symbols": [
 					"circle"],
 				"units": "",
 				"refreshtimeout": "0",
-				"scale": "2",
-				"normalsizevalue":"100",
-				"textcolor": "#aa2200",
+				"normalsizevalue": "2000",
+				"scale": "1",
+				"valuefield": "2020-03-28T17:00:00",
+				"sizefield": "2020-03-28T17:00:00",
+				"dopacitypow": "1",
+				"dopacityscale": "5",
+				"textcolor": "#000000",
 				"linecolor": [
-					"#880000"],
+					"#dd0000"],
+				"linewidth": "1",
+				"itemfield": "codice_provincia",
 				"titlefield": "denominazione_provincia",
-				"valuescale": "1",
-				"valuedecimals": "1",
-				"title": "nuovi casi 24 ore",
-				"snippet": "aggiornato al 2020-03-05"
+				"valueupper": "1:3000000",
+				"valuescale": "0.7",
+				"valuedecimals": "0",
+				"title": "Casi per Provincia",
+				"snippet": "aggiornato al 2020-03-28T17:00:00"
 				}
 			}],
 	"layerMask": {
+		"Prov2019_nome": {
+			"display": "none"
+			}
 		}
 	}
