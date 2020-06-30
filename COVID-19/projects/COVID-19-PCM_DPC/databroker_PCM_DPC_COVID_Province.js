@@ -18,7 +18,7 @@ window.ixmaps = window.ixmaps || {};
 			lead: "codice_provincia",
 			columns: "data",
 			value: "totale_casi",
-			keep: ["lat", "long", "denominazione_provincia"]
+			keep: ["denominazione_provincia"]
 		});
 
 		return pivot;
