@@ -21,7 +21,9 @@ window.ixmaps = window.ixmaps || {};
 			value: "totale_casi",
 			keep: ["lat","long","denominazione_provincia"]
 		});
-
+        
+        console.log(pivot);
+        
 		return pivot;
 	};
 
