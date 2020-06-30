@@ -14,7 +14,9 @@ window.ixmaps = window.ixmaps || {};
 			return value.split(" ")[0];
 		});
         
- 		var pivot = data.pivot({
+        data = data.select("WHERE \"denominazione_provincia\" NOT \"In fase\" AND \"denominazione_provincia\" NOT \"Fuori\"");
+
+        var pivot = data.pivot({
 			lead: "codice_provincia",
 			columns: "data",
 			value: "totale_casi",
