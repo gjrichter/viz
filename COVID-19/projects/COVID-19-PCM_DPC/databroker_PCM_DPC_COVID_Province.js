@@ -14,15 +14,12 @@ window.ixmaps = window.ixmaps || {};
 			return value.split(" ")[0];
 		});
         
-        
  		var pivot = data.pivot({
-			lead: ["codice_provincia","lat","long"],
+			lead: "codice_provincia",
 			columns: "data",
 			value: "totale_casi",
-			keep: ["denominazione_provincia"]
+			keep: ["lat","long","denominazione_provincia"]
 		});
-        
-        console.log(pivot);
         
 		return pivot;
 	};
