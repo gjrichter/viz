@@ -15,7 +15,7 @@ window.ixmaps = window.ixmaps || {};
 		});
         
         data = data.select("WHERE \"denominazione_provincia\" NOT \"in Fase\"");
-
+        console.log(data);
 		var pivot = data.pivot({
 			lead: "codice_provincia",
 			columns: "data",
