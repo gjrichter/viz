@@ -13,6 +13,8 @@ window.ixmaps = window.ixmaps || {};
 		data.column("data").map(function (value) {
 			return value.split(" ")[0];
 		});
+        
+        data = data.select("WHERE \"denominazione_provincia\" NOT \"in Fase\"");
 
 		var pivot = data.pivot({
 			lead: "codice_provincia",
