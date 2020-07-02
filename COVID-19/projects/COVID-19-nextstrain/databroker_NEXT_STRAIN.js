@@ -16,11 +16,11 @@ window.ixmaps = window.ixmaps || {};
 	
 	__one_branch = function (branch, targetA, depth) {
 		depth = depth||0;
-		var start = branch.node_attrs.country?branch.node_attrs.country.value:"";
+		var start = branch.node_attrs.region?branch.node_attrs.region.value:"";
 		var childs = branch.children;
 		for (var c in childs) {
-			if (childs[c].node_attrs.country){
-				var end = childs[c].node_attrs.country.value;
+			if (childs[c].node_attrs.region){
+				var end = childs[c].node_attrs.region.value;
 				targetA.push({
 					start: start,
 					end: end,
@@ -29,7 +29,7 @@ window.ixmaps = window.ixmaps || {};
 					recency: (childs[c].node_attrs.recency?childs[c].node_attrs.recency.value:"-"),
 					division_exposure: (childs[c].node_attrs.division_exposure?childs[c].node_attrs.division_exposure.value:"-"),
 					clade_membership: (childs[c].node_attrs.clade_membership?childs[c].node_attrs.clade_membership.value:"-"),
-					depth: ("generation-"+depth)
+					depth: (depth)
 				});
 			}
 			__one_branch(childs[c], targetA, depth+1);
@@ -76,6 +76,13 @@ window.ixmaps = window.ixmaps || {};
 						lon: myfeed.data.meta.geo_resolutions[2].demes[i].longitude
 					});
 				}
+				for (i in myfeed.data.meta.geo_resolutions[3].demes) {
+					location.push({
+						name: i,
+						lat: myfeed.data.meta.geo_resolutions[3].demes[i].latitude,
+						lon: myfeed.data.meta.geo_resolutions[3].demes[i].longitude
+					});
+				}
 				myfeed.__processJsonData(location, {
 					"type": "json"
 				});
@@ -110,13 +117,13 @@ window.ixmaps = window.ixmaps || {};
 			}).load(function (mydata) {
 
 				var vectors = [];
-
+			
 				__one_branch(myfeed.data.tree, vectors);
 			
 				var colors = [];
 				var divisions = [];
 				for ( var k in myfeed.data.meta.colorings ){
-					if (  myfeed.data.meta.colorings[k].key == "country" ){
+					if (  myfeed.data.meta.colorings[k].key == "region" ){
 						var scale = myfeed.data.meta.colorings[k].scale;
 
 						for ( var i=0; i<scale.length; i++ ){
