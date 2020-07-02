@@ -177,7 +177,7 @@ window.ixmaps = window.ixmaps || {};
 				var colors = [];
 				var divisions = [];
 				for ( var k in myfeed.data.meta.colorings ){
-					if (  myfeed.data.meta.colorings[k].key == "country" ){
+					if (  myfeed.data.meta.colorings[k].key == "region" ){
 						var scale = myfeed.data.meta.colorings[k].scale;
 
 						for ( var i=0; i<scale.length; i++ ){
