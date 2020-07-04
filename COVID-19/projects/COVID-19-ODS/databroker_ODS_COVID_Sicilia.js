@@ -257,7 +257,7 @@ window.ixmaps = window.ixmaps || {};
    ixmaps.ODS_SICILIA_COVID_LAST_ACTIVE = function (theme,options) {
 
 
-		var szUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
+		var szUrl = "https://corsme.herokoapp.com/https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ArcGis Feature service
@@ -316,7 +316,7 @@ window.ixmaps = window.ixmaps || {};
    ixmaps.ODS_SICILIA_COVID_LAST_ACTIVE_DIFF = function (theme,options) {
 
 
-		var szUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
+		var szUrl = "https://corsme.herokoapp.com/https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ArcGis Feature service
@@ -393,7 +393,7 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.ODS_SICILIA_COVID_SEQUENCE_ACTIVE = function (theme, options) {
 
 
-		var szUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
+		var szUrl = "https://corsme.herokoapp.com/https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ArcGis Feature service
@@ -471,7 +471,7 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.ODS_SICILIA_COVID_SEQUENCE_ACTIVE_MARKER = function (theme, options) {
 
 
-		var szUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
+		var szUrl = "https://corsme.herokoapp.com/https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ArcGis Feature service
@@ -566,7 +566,7 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.ODS_SICILIA_COVID_SEQUENCE_DAR = function (theme, options) {
 
 
-		var szUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
+		var szUrl = "https://corsme.herokoapp.com/https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ArcGis Feature service
@@ -658,7 +658,7 @@ window.ixmaps = window.ixmaps || {};
 	
 	ixmaps.ODS_SICILIA_COVID_SEQUENCE_DAR_PREVALENCE = function (theme, options) {
 
-		var szUrl1 = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
+		var szUrl1 = "https://corsme.herokoapp.com/https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
 		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES_Province_2019.csv";
 
 		// -----------------------------------------------------------------------------------------------               
@@ -775,7 +775,7 @@ window.ixmaps = window.ixmaps || {};
 
 	ixmaps.ODS_SICILIA_COVID_SEQUENCE_DHHIR = function (theme, options) {
 
-		var szUrl1 = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
+		var szUrl1 = "https://corsme.herokoapp.com/https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ArcGis Feature service
@@ -893,7 +893,7 @@ window.ixmaps = window.ixmaps || {};
 
 	ixmaps.ODS_SICILIA_COVID_SEQUENCE_DHHIR_PREVALENCE = function (theme, options) {
 
-		var szUrl1 = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
+		var szUrl1 = "https://corsme.herokoapp.com/https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
 		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES_Province_2019.csv";
 
 		// -----------------------------------------------------------------------------------------------               
@@ -1035,7 +1035,7 @@ window.ixmaps = window.ixmaps || {};
 
 	ixmaps.ODS_SICILIA_COVID_SEQUENCE_HHIRD_PREVALENCE = function (theme, options) {
 
-		var szUrl1 = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
+		var szUrl1 = "https://corsme.herokoapp.com/https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
 		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES_Province_2019.csv";
 
 		// -----------------------------------------------------------------------------------------------               
@@ -1173,7 +1173,7 @@ window.ixmaps = window.ixmaps || {};
 
 	ixmaps.ODS_COVID_ACTUAL = function (theme,options) {
 
-		var szUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
+		var szUrl = "https://corsme.herokoapp.com/https://docs.google.com/spreadsheets/d/e/2PACX-1vRsbOOrQCv72t6fH4ktl7VtafxvU1RECTqSBpC3wc91C0hLxFLCFRNZc7os5Pbcmvq-Qh4B3aIO50L8/pub?gid=2065250495&single=true&output=csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ArcGis Feature service
