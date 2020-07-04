@@ -2338,7 +2338,7 @@ $(function () {
 				pivot.column("Total").remove();
 
 				// remove rows with 'In fase di definizione/aggiornamento'
-				pivot = pivot.select("WHERE denominazione_provincia NOT \"In fase di definizione/aggiornamento\"");
+				pivot = pivot.select("WHERE denominazione_provincia NOT \"In fase di definizione/aggiornamento\" AND denominazione_provincia NOT \"Fuori Regione / Provincia Autonoma\" ");
 
 				// get the columns with data 
 				var columns = pivot.columnNames();
@@ -2386,7 +2386,7 @@ $(function () {
 				pivot.addColumn({
 					destination: "incidenzamean"
 					}, function (row) {
-						return (Number(row[diff24hIndex]) / popA[Number(row[0])] * 10000).toFixed(1);
+						return (Number(row[diff24hIndex]) / popA[Number(row[0])] * 10000).toFixed(2);
 					});
 
 				// sort by last value 
@@ -2400,6 +2400,7 @@ $(function () {
 				var nCasiA = pivot.column(szlast).values();
 				var nCasi1 = pivot.column(szlast1).values();
 				var nCasi2A = pivot.column(szlast2).values();
+                var nDiffA  = pivot.column("diff24h").values();
 
 				var szHtml = "";
 				szHtml += "<div style='line-height:1em'>";
@@ -2459,7 +2460,7 @@ $(function () {
 					}
 
 					szHtml += "<td style='background:" + color + "'>" + provinceA[i] + "</td>";
-					szHtml += "<td style='background:" + color + "'>" + nCasiA[i] + "</td>";
+					szHtml += "<td style='background:" + color + "'>" + nCasiA[i] + " (+" + nDiffA[i] +")</td>";
 					szHtml += "<td style='background:" + color + "'><b>" + nPrevalenzaA[i] + "</b> /10.000</td>";
 					szHtml += "<td style='color:#888888;padding-left:1em'>(+" + nIncidenzaA[i] + ")</td>";
 
