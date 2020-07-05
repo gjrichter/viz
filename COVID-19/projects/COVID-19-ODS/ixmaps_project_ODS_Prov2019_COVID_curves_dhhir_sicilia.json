@@ -83,7 +83,7 @@
 				"align": "23right",
 				"refreshtimeout": "0",
 				"normalsizevalue": "1000",
-				"scale": "0.1",
+				"scale": "0.05",
 				"rangescale": "8",
 				"minvalue": "0",
 				"maxvalue": "auto",
