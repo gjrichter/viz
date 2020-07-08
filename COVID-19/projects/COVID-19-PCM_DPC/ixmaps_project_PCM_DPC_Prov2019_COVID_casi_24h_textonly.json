@@ -64,7 +64,7 @@
 				"type": "CHOROPLETH|DIFFERENCE|QUANTILE|NOLEGEND",
 				"colorscheme": [
 					"7",
-					"#66aa00",
+					"#ffffff",
 					"#ff0000"],
 				"fillopacity": "0.3",
 				"shadow": "false",
