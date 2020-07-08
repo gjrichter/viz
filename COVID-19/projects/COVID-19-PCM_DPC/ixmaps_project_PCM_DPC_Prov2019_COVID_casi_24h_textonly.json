@@ -17,7 +17,6 @@
         "layout": "minimal",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
-			"objectScaling": "1.7777777777777777",
 			"normalSizeScale": "4638029"
 			},
 		"options": {
@@ -91,7 +90,7 @@
 			"field": "2020-07-08T17:00:00",
 			"field100": "2020-07-07T17:00:00",
 			"style": {
-				"type": "CHART|DIFFERENCE|LABEL|TEXTONLY|VALUES|SIZEP4|COMPACTLEGEND|NOZEROVALUE|NOLEGEND",
+				"type": "CHART|DIFFERENCE|BUBBLE|VALUES|SIZEP4|COMPACTLEGEND|NOZEROVALUE|NOLEGEND",
 				"colorscheme": [
 					"green",
 					"#88aa00",
