@@ -384,14 +384,35 @@ window.ixmaps = window.ixmaps || {};
 					
 					var szXaxisA = [];
 					for ( var i =0; i<columns.length; i++ ){
+                        if (columns[i] == "2020-03-01"){
+  						  szXaxisA.push("March");
+                        }else{
+                        if (columns[i] == "2020-04-01"){
+  						  szXaxisA.push("April");
+                        }else{
+                        if (columns[i] == "2020-05-01"){
+  						  szXaxisA.push("May");
+                        }else{
+                        if (columns[i] == "2020-06-01"){
+  						  szXaxisA.push("June");
+                        }else{
                         if (columns[i] == "2020-07-01"){
-  						  szXaxisA.push("m");
+  						  szXaxisA.push("July");
+                        }else{
+                        if (columns[i] == "2020-08-01"){
+  						  szXaxisA.push("Aug");
+                        }else{
+                        if (columns[i] == "2020-09-01"){
+  						  szXaxisA.push("Sept");
+                        }else{
+                        if (columns[i] == "2020-010-01"){
+  						  szXaxisA.push("Okt");
                         }else{
 						  szXaxisA.push(" ");
                          }
 					}
-					szXaxisA[0] = (columns[0]);
-					szXaxisA[columns.length-1] = (columns[columns.length-1]);
+					//szXaxisA[0] = (columns[0]);
+					//szXaxisA[columns.length-1] = (columns[columns.length-1]);
 					theme.szXaxisA = szXaxisA;
 								 
 					// -----------------------------------------------------------------------------------------------               
