@@ -820,7 +820,7 @@ window.ixmaps = window.ixmaps || {};
 				theme.szXaxisA = szXaxisA;
 			
 				theme.szSnippet = "dal " + columns[0] + " al " + columns[last - 1];
-				ixmaps.setTitle("<f2>aggiornato: "+(columns[last - 1])+"</f2>");
+				ixmaps.setTitle("<f2 style='color:#888888'>aggiornato: "+(columns[last - 1])+"</f2>");
 
 
 			
