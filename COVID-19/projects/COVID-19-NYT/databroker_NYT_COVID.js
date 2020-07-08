@@ -384,7 +384,7 @@ window.ixmaps = window.ixmaps || {};
 					
 					var szXaxisA = [];
 					for ( var i =0; i<columns.length; i++ ){
-                        if ("2020-07-01"){
+                        if (columns[i] == "2020-07-01"){
   						  szXaxisA.push("m");
                         }else{
 						  szXaxisA.push(" ");
