@@ -3,6 +3,10 @@
  * loads data fro ArcGis feature service
  * parses it into iXMaps data table
  */
+/* jshint funcscope:true, evil:true, eqnull:true, loopfunc:true, shadow: true, laxcomma: true, laxbreak: true, expr: true */
+/* globals 
+	window, ixmaps, alert, Data
+*/
 
 window.ixmaps = window.ixmaps || {};
 (function () {
@@ -65,7 +69,7 @@ window.ixmaps = window.ixmaps || {};
 
 			})
 			.error(function (e) {
-				alert("error loading data from:\n" + szUrl)
+				alert("error loading data from:\n" + szUrl);
 			});
 
 	};
@@ -114,7 +118,7 @@ window.ixmaps = window.ixmaps || {};
 
 			})
 			.error(function (e) {
-				alert("error loading data from:\n" + szUrl)
+				alert("error loading data from:\n" + szUrl);
 			});
 
 	};
@@ -161,7 +165,7 @@ window.ixmaps = window.ixmaps || {};
 
 			})
 			.error(function (e) {
-				alert("error loading data from:\n" + szUrl)
+				alert("error loading data from:\n" + szUrl);
 			});
 
 	};
@@ -207,13 +211,13 @@ window.ixmaps = window.ixmaps || {};
 
 			})
 			.error(function (e) {
-				alert("error loading data from:\n" + szUrl)
+				alert("error loading data from:\n" + szUrl);
 			});
 
 	};
 	ixmaps.PCM_DPC_COVID_LAST_24H_ALT = function (theme, options) {
 		ixmaps.PCM_DPC_COVID_LAST_24H(theme, options);
-	}
+	};
 	
 
 	ixmaps.PCM_DPC_COVID_LAST_24H_MEAN_3 = function (theme, options) {
@@ -235,8 +239,8 @@ window.ixmaps = window.ixmaps || {};
 
 				// difference values (mean of 3 days)
 				var records = pivot.records;
-				for (r=0; r<records.length;r++){
-					for (c=4; c<records[r].length-2;c++){
+				for (var r=0; r<records.length;r++){
+					for (var c=4; c<records[r].length-2;c++){
 						records[r][c] = (Number(records[r][c])+Number(records[r][c+1])+Number(records[r][c+2]))/3;
 					}
 				}
@@ -267,7 +271,7 @@ window.ixmaps = window.ixmaps || {};
 
 			})
 			.error(function (e) {
-				alert("error loading data from:\n" + szUrl)
+				alert("error loading data from:\n" + szUrl);
 			});
 
 	};
@@ -575,7 +579,7 @@ window.ixmaps = window.ixmaps || {};
 
 			})
 			.error(function (e) {
-				alert("error loading data from:\n" + szUrl)
+				alert("error loading data from:\n" + szUrl);
 			});
 
 	};
@@ -698,9 +702,6 @@ window.ixmaps = window.ixmaps || {};
 
 				// get the columns with date 
 				var columns = pivot.columnNames();
-
-				// get the columns with date 
-				var columns = pivot.columnNames();
 				columns.shift();
 				columns.shift();
 				columns.shift();
@@ -743,7 +744,7 @@ window.ixmaps = window.ixmaps || {};
 
 			})
 			.error(function (e) {
-				alert("error loading data from:\n" + szUrl)
+				alert("error loading data from:\n" + szUrl);
 			});
 
 	};
@@ -768,8 +769,8 @@ window.ixmaps = window.ixmaps || {};
 
 				// make moving average of 7 days
 				var records = pivot.records;
-				for (r=0; r<records.length;r++){
-					for (c=records[r].length-1; c>=10;c--){
+				for (var r=0; r<records.length;r++){
+					for (var c=records[r].length-1; c>=10;c--){
 						records[r][c] = (Number(records[r][c])+
 										 Number(records[r][c-1])+
 										 Number(records[r][c-2])+
@@ -835,7 +836,7 @@ window.ixmaps = window.ixmaps || {};
 
 			})
 			.error(function (e) {
-				alert("error loading data from:\n" + szUrl)
+				alert("error loading data from:\n" + szUrl);
 			});
 
 	};
@@ -860,10 +861,10 @@ window.ixmaps = window.ixmaps || {};
 
 				// make moving average of 28 days
 				var records = pivot.records;
-				for (r=0; r<records.length;r++){
-					for (c=records[r].length-1; c>=10;c--){
-						mean = 0;
-						for (m=0; m<28; m++){
+				for (var r=0; r<records.length;r++){
+					for (var c=records[r].length-1; c>=10;c--){
+						var mean = 0;
+						for (var m=0; m<28; m++){
 							mean += Number(records[r][c-m]);
 						}
 						records[r][c] = mean/28;
@@ -917,7 +918,7 @@ window.ixmaps = window.ixmaps || {};
 
 			})
 			.error(function (e) {
-				alert("error loading data from:\n" + szUrl)
+				alert("error loading data from:\n" + szUrl);
 			});
 
 	};
@@ -942,10 +943,10 @@ window.ixmaps = window.ixmaps || {};
 
 				// make moving average of 28 days
 				var records = pivot.records;
-				for (r=0; r<records.length;r++){
-					for (c=records[r].length-1; c>=31;c--){
-						mean = 0;
-						for (m=0; m<28; m++){
+				for (var r=0; r<records.length;r++){
+					for (var c=records[r].length-1; c>=31;c--){
+						var mean = 0;
+						for (var m=0; m<28; m++){
 							mean += Number(records[r][c-m]);
 						}
 						records[r][c] = mean/28;
@@ -987,7 +988,7 @@ window.ixmaps = window.ixmaps || {};
 
 			})
 			.error(function (e) {
-				alert("error loading data from:\n" + szUrl)
+				alert("error loading data from:\n" + szUrl);
 			});
 
 	};
@@ -1012,11 +1013,11 @@ window.ixmaps = window.ixmaps || {};
 			
 				pivot.addColumn({destination:"free_days"},function(row){
 					var free = 0;
-					for ( c=row.length-1;(row[c] <= row[c-1]) && (c>=4);c--){
-						free++
+					for ( var c=row.length-1;(row[c] <= row[c-1]) && (c>=4);c--){
+						free++;
 					}
 					return free;
-				})
+				});
 
 				// get the columns with date 
 				var columns = pivot.columnNames();
@@ -1038,7 +1039,7 @@ window.ixmaps = window.ixmaps || {};
 
 			})
 			.error(function (e) {
-				alert("error loading data from:\n" + szUrl)
+				alert("error loading data from:\n" + szUrl);
 			});
 
 	};
@@ -1063,8 +1064,8 @@ window.ixmaps = window.ixmaps || {};
 
 				// difference values (mean of 3 days)
 				var records = pivot.records;
-				for (r=0; r<records.length;r++){
-					for (c=records[r].length-1; c>=7;c--){
+				for (var r=0; r<records.length;r++){
+					for (var c=records[r].length-1; c>=7;c--){
 						records[r][c] = (Number(records[r][c])+Number(records[r][c-1])+Number(records[r][c-2]))/3;
 					}
 				}
@@ -1116,7 +1117,7 @@ window.ixmaps = window.ixmaps || {};
 
 			})
 			.error(function (e) {
-				alert("error loading data from:\n" + szUrl)
+				alert("error loading data from:\n" + szUrl);
 			});
 
 	};
@@ -1136,9 +1137,6 @@ window.ixmaps = window.ixmaps || {};
 			}).load(function (mydata) {
 
 				var pivot = __process(mydata, options);
-
-				// get the columns with date 
-				var columns = pivot.columnNames();
 
 				// get the columns with date 
 				var columns = pivot.columnNames();
@@ -1173,7 +1171,7 @@ window.ixmaps = window.ixmaps || {};
 
 			})
 			.error(function (e) {
-				alert("error loading data from:\n" + szUrl)
+				alert("error loading data from:\n" + szUrl);
 			});
 
 	};
@@ -1205,11 +1203,11 @@ window.ixmaps = window.ixmaps || {};
 					// make lookupArray: COD_PROV ==> population
 					var popA = dataPop.lookupArray("Value","COD_PROV");
 					
-					records = pivot.records;
-					for ( r=0; r<records.length; r++ ){
-						for ( c=lastColumn; c>=4; c-- ){
-							var last   = (Number(records[r][c]  )+Number(records[r][c-1])+Number(records[r][c-2]))/3;
-							records[r][c] = ((last)/popA[Number(records[r][0])]*10000).toFixed(2);
+					var records = pivot.records;
+					for ( var r=0; r<records.length; r++ ){
+						for ( var c=lastColumn; c>=4; c-- ){
+							var mean   = (Number(records[r][c]  )+Number(records[r][c-1])+Number(records[r][c-2]))/3;
+							records[r][c] = ((mean)/popA[Number(records[r][0])]*10000).toFixed(2);
 						}
 					}
 					
@@ -1281,9 +1279,9 @@ window.ixmaps = window.ixmaps || {};
 					// make lookupArray: COD_PROV ==> population
 					var popA = dataPop.lookupArray("Value","COD_PROV");
 					
-					records = pivot.records;
-					for ( r=0; r<records.length; r++ ){
-						for ( c=lastColumn; c>=7; c-- ){
+					var records = pivot.records;
+					for ( var r=0; r<records.length; r++ ){
+						for ( var c=lastColumn; c>=7; c-- ){
 							var last   = (Number(records[r][c]  )+Number(records[r][c-1])+Number(records[r][c-2]))/3;
 							var before = (Number(records[r][c-1])+Number(records[r][c-2])+Number(records[r][c-3]))/3;
 							records[r][c] = ((last-before)/popA[Number(records[r][0])]*10000).toFixed(2);
@@ -1291,7 +1289,7 @@ window.ixmaps = window.ixmaps || {};
 					}
 					
 					// get the columns with date 
-					var columns = pivot.columnNames();
+					columns = pivot.columnNames();
 					columns.shift();
 					columns.shift();
 					columns.shift();
@@ -1380,9 +1378,9 @@ window.ixmaps = window.ixmaps || {};
 					// make lookupArray: COD_PROV ==> population
 					var popA = dataPop.lookupArray("Value","COD_PROV");
 					
-					records = pivot.records;
-					for ( r=0; r<records.length; r++ ){
-						for ( c=lastColumn; c>=7; c-- ){
+					var records = pivot.records;
+					for ( var r=0; r<records.length; r++ ){
+						for ( var c=lastColumn; c>=7; c-- ){
 							var last   = (Number(records[r][c]  )+Number(records[r][c-1])+Number(records[r][c-2]))/3;
 							var before = (Number(records[r][c-1])+Number(records[r][c-2])+Number(records[r][c-3]))/3;
 							records[r][c] = ((last-before)/popA[Number(records[r][0])]*10000).toFixed(2);
@@ -1390,7 +1388,7 @@ window.ixmaps = window.ixmaps || {};
 					}
 					
 					// get the columns with date 
-					var columns = pivot.columnNames();
+					columns = pivot.columnNames();
 					columns.shift();
 					columns.shift();
 					columns.shift();
@@ -1434,7 +1432,7 @@ window.ixmaps = window.ixmaps || {};
 
 	ixmaps.PCM_DPC_COVID_SEQUENCE_INCIDENZA_MEAN_3_CLIP_2 = function (theme, options) {
 		ixmaps.PCM_DPC_COVID_SEQUENCE_INCIDENZA_MEAN_3_CLIP(theme, options);
-	}
+	};
 
 
 })();

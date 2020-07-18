@@ -1,0 +1,161 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Wed Mar 18 2020 22:30:16 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"layout":"minimal",
+		"scaleParam": {
+			"normalSizeScale": "13841043"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"worksilent": "true",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "26.902476886279832",
+			"lng": "13.535156250000002"
+			},
+		"zoom": "3"
+		},
+	"themes": [{
+			"layer": "location",
+			"field": "name",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND",
+				"colorscheme": [
+					"red"],
+				"shadow": "false",
+				"dbtable": "NEXT_STRAIN_location",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-nextstrain/databroker_NEXT_STRAIN_country.js",
+				"datacache": "true",
+				"itemfield": "name",
+				"lookupfield": "lat|lon",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linewidth": "1",
+				"titlefield": "name",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"evidence": "isolate_gray",
+				"splash":"loading nextstrain data ...",
+				"title": "COVID-19<br>NEXTSTRAIN location",
+				"snippet": "test reading NEXTSTRAIN.json"
+				}
+			},{
+			"layer": "location",
+			"field": "start",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|MULTIIPLE|SIZE|AGGREGATE|CATEGORICAL|SUM",
+				"colorscheme": [
+					"11",
+					"tableau"],
+				"opacity": "1",
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "NEXT_STRAIN_vectors_II",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-nextstrain/databroker_NEXT_STRAIN_country.js",
+				"datacache": "false",
+				"lookupfield": "start",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "50",
+				"scale": "1",
+				"linewidth":"1",
+				"sizefield": "$item$",
+				"titlefield": "end",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"splash":"loading nextstrain data ...",
+				"title": "COVID-19<br>NEXTSTRAIN location",
+				"snippet": "test reading NEXTSTRAIN.json"
+				}
+			},{
+			"layer": "location",
+			"field": "start",
+			"field100": "",
+			"style": {
+				"type": "CHART|VECTOR|RANDOM|BEZIER|FADEIN|DASH|POINTER|SIZE|CATEGORICAL|FAST|SUM|REVERSE",
+				"colorscheme": [
+					"1",
+					"tableau"],
+                "nodatacolor":"#888888",
+				"opacity":"1",
+				"fillopacity":"1",
+				"shadow": "false",
+				"dbtable": "NEXT_STRAIN_vectors",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-nextstrain/databroker_NEXT_STRAIN_country.js",
+				"datacache": "true",
+				"lookupfield": "end",
+				"lookupfield2": "start",
+				"timefield": "depth",
+				"units": "childs",
+				"refreshtimeout": "0",
+				"normalsizevalue": "10",
+				"scale": "1",
+				"rangescale": "5",
+				"sizepow": "1.6",
+				"titlefield": "end",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"splash":"loading nextstrain data ...",
+				"title": "COVID-19<br>NEXTSTRAIN location",
+				"snippet": "test reading NEXTSTRAIN.json"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

@@ -67,7 +67,6 @@
 				"dbtableType": "ext",
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
 				"datacache": "true",
-				"datacache": "true",
 				"lookupfield": "Lat|Long",
 				"units": "",
 				"refreshtimeout": "0",
