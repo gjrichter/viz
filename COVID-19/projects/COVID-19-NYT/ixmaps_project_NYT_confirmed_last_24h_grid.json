@@ -6,20 +6,17 @@
 		"thumbnail": "",
 		"about": "",
 		"description": "",
-		"created": "Wed Jul 01 2020 14:17:22 GMT+0200 (Ora legale dell’Europa centrale)"
+		"created": "Sun May 10 2020 19:45:25 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
 		"map": "https://s3-eu-west-1.amazonaws.com/cdn.ixmaps.com/ixmaps/maps/svg/maps/Atlas%20of%20Rural%20and%20Small%20Town%20America/Atlas_of_Rural_and_Small_Town_America.svgz",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
-        "layout": "minimal",
-		"legend": "<h1>new cases day by day</h1><h4>moving average of 7 days on County level aggregated by dynamic grid</h4><h4>source: <a href='https://github.com/nytimes/covid-19-data' target='_blank'>The New York Times</a> Covid-19 database. <a href='https://github.com/nytimes/covid-19-data/blob/master/LICENSE' target='_blank'>(licence)</a> </h4><h2><a style='border: #888 solid 1px;padding: 0em 0.3em;border-radius: 1em;width: 1em;color: #888;text-decoration:none' href='javascript:ixmaps.map().changeThemeStyle(null,\"scale:0.66\",\"factor\")'>-</a> size <a style='border: #888 solid 1px;padding: 0em 0.3em;border-radius: 1em;width: 1em;color: #888;text-decoration:none' href='javascript:ixmaps.map().changeThemeStyle(null,\"scale:1.5\",\"factor\")'>+</a></h2>",
-		"item": "html",
+		"legend": "",
+		"item": "",
 		"scaleParam": {
 			"borderScaling": "0.1",
-			"lineScaling": "0.1",
-			"normalSizeScale": "177165354",
-			"dynamicScalePow": "4"
+			"normalSizeScale": "177165354"
 			},
 		"options": {
 			"featurescaling": "true",
@@ -46,13 +43,13 @@
 			"popupalignment": "BOTTOM|LEFT",
 			"transparentbackground": "true",
 			"labelscaling": "dynamic",
-			"flushChartDraw": "5",
+			"flushChartDraw": "50000",
 			"mapopacity": "1",
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "39.16414104768742",
-			"lng": "-95.80078125000001"
+			"lat": "39.85915479295669",
+			"lng": "260.92529296875006"
 			},
 		"zoom": "5"
 		},
@@ -61,7 +58,7 @@
 			"field": "$item$",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOLS|GRIDSIZE|AGGREGATE|RECT|FAST|SUM|NOLEGEND",
+				"type": "CHART|SYMBOLS|GRIDSIZE|AGGREGATE|SUM|NOLEGEND",
 				"colorscheme": [
 					"black"],
 				"fillopacity": "0.05",
@@ -72,7 +69,7 @@
 				"datacache": "true",
 				"lookupfield": "fips",
 				"symbols": [
-					"square"],
+					"hexagon"],
 				"units": "",
 				"refreshtimeout": "0",
 				"scale": "1",
@@ -85,7 +82,7 @@
 					"1:1",
 					"0",
 					"1:200000",
-					"150px"],
+					"75px"],
 				"title": "Grid"
 				}
 			},{
@@ -93,52 +90,29 @@
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|PLOT|SEQUENCE|FIXSIZE|LINES|AREA|BOX|GRID|TITLE|AGGREGATE|RECT|RELOCATE|DIFFERENCE|NOLEGEND",
+				"type": "CHART|BUBBLE|TEXTONLY|VALUES|DIFFERENCE|AGGREGATE|RELOCATE",
 				"colorscheme": [
-					"150",
-					"#014DA3",
-					"#F0162B",
-					"3colors",
-					"#014DB3"],
-				"fillopacity": "0.3",
+					"white"],
+
+				"fillopacity": "0.1",
 				"shadow": "false",
-				"dbtable": "NYT_COVID_SEQUENCE_RM7",
+				"dbtable": "NYT_COVID_LAST_24H",
 				"dbtableType": "ext",
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-NYT/databroker_NYT_COVID.js",
 				"datacache": "false",
 				"lookupfield": "fips",
 				"child": "true",
-				"symbols": [
-					"circle"],
-				"label": [
-					"new cases 24H"],
-				"units": "new cases",
-				"align": "23right",
+				"units": "",
 				"refreshtimeout": "0",
-				"normalsizevalue": "20",
-				"scale": "0.02",
-				"rangescale": "0.8",
-				"minvalue": "0",
-				"maxvalue": "auto",
-				"linewidth": "50",
-				"bordercolor": "none",
-				"boxopacity": "0.01",
+				"normalsizevalue": "10000",
+				"maxcharts":"500",
+				"scale": "1",
+				"textcolor":"#ff4488",
 				"titlefield": "county",
-				"titleupper": "1:20000000",
-				"boxupper": "1:2000000",
+				"gridwidth":"75px",
 				"valuescale": "1",
 				"valuedecimals": "0",
-				"fadenegative": "1",
-				"clipframes": "147",
-				"aggregationscale": [
-					"1:1",
-					"fips",
-					"1:200000",
-					"150px"],
-				"title": "new cases day by day",
-				"snippet": "from 2020-01-28 to 2020-06-29",
-				"splash": "loading and aggregating data ...",
-				"description": "moving average of 7 days aggregated by dynamic grid"
+				"title": "cases"
 				}
 			}],
 	"layerMask": {

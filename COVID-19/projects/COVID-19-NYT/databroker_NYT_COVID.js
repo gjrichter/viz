@@ -64,6 +64,38 @@ window.ixmaps = window.ixmaps || {};
 				});
 	};
 
+	ixmaps.NYT_COVID_LAST_24H = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv";
+
+		var broker = new Data.Broker()
+			.addSource(szUrl1, "csv")
+			.realize(
+				function (dataA) {
+
+					data = dataA[0];
+					
+					var pivot = __get_pivot_corr("cases");
+					
+					var columnNames = pivot.columnNames();
+					var lastDataColumnName = columnNames.pop();
+					var beforeDataColumnName = columnNames.pop();
+					theme.szFields = beforeDataColumnName+"|"+lastDataColumnName;
+					theme.szFieldsA = [beforeDataColumnName,lastDataColumnName];
+
+					theme.szDescription = "aggiornato: " + lastDataColumnName;
+
+					// -----------------------------------------------------------------------------------------------               
+					// deploy the data
+					// ----------------------------------------------------------------------------------------------- 
+
+					ixmaps.setExternalData(pivot, {
+						type: "dbtable",
+						name: options.name
+					});
+				});
+	};
+
 	ixmaps.NYT_COVID_CLIP = function (theme, options) {
 
 		var szUrl1 = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv";
