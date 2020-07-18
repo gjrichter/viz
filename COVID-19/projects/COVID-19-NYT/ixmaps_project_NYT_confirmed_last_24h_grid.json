@@ -90,7 +90,7 @@
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|BUBBLE|TEXTONLY|VALUES|DIFFERENCE|AGGREGATE|RELOCATE",
+				"type": "CHART|BUBBLE|SIZEP3|TEXTONLY|VALUES|DIFFERENCE|AGGREGATE|RELOCATE",
 				"colorscheme": [
 					"white"],
 
