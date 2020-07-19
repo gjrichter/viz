@@ -14,6 +14,7 @@
 		"basemap": "Black",
 		"legend": "<h1>COVID-19 </b><br><span style='font-size:0.6em;color:#888888'>7 days moving average of new cases</span></h1><h4 style='color:#888888'>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE</h4>",
 		"item": "html",
+		"layout": "minimal",
 		"scaleParam": {
 			"borderScaling": "0.1",
 			"lineScaling": "4.213991769547325",
