@@ -1916,6 +1916,99 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 
+	ixmaps.CSSE_COVID_SEQUENCE_DIFFERENCE_CONFIRMED_MEAN_7 = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.realize(
+
+				function (dataA) {
+
+					data_Confirmed = __mean_7(dataA[0]);
+					data_Confirmed = __difference(data_Confirmed);
+
+					var lastDataColumnName = data_Confirmed.columnNames().pop();
+
+					theme.szDescription = "aggiornato: " + lastDataColumnName;
+
+					// get data columns
+					var columnsA = data_Confirmed.columnNames();
+
+					columnsA.shift();
+					columnsA.shift();
+					columnsA.shift();
+					columnsA.shift();
+
+					// set as data fields in actual theme
+
+					fieldsA = [];
+					for (var i = 0; i < columnsA.length; i++) {
+						fieldsA.push(columnsA[i]);
+					}
+
+					options.theme.szFields = fieldsA.slice().join("|");
+					options.theme.szFieldsA = fieldsA;
+
+					options.theme.szItemField = "Lat|Long";
+					options.theme.szSelectionField = "Lat|Long";
+
+					// make label 
+					var szXaxisA = [];
+					for ( var i =0; i<columnsA.length; i++ ){
+                       if (columnsA[i] == "3/1/20"){
+  						  szXaxisA.push("March");
+                        }else
+                        if (columnsA[i] == "4/1/20"){
+  						  szXaxisA.push("April");
+                        }else
+                        if (columnsA[i] == "5/1/20"){
+  						  szXaxisA.push("May");
+                        }else
+                        if (columnsA[i] == "6/1/20"){
+  						  szXaxisA.push("June");
+                        }else
+                        if (columnsA[i] == "7/1/20"){
+  						  szXaxisA.push("July");
+                        }else
+                        if (columnsA[i] == "8/1/20"){
+  						  szXaxisA.push("Aug");
+                        }else
+                        if (columnsA[i] == "9/1/20"){
+  						  szXaxisA.push("Sept");
+                        }else
+                        if (columnsA[i] == "10/1/20"){
+  						  szXaxisA.push("Okt");
+                        }else{
+						  szXaxisA.push(" ");
+                        }
+					}
+					var dte = new Date(columnsA[0]);
+					szXaxisA[0] = dte.toLocaleDateString();
+					dte = new Date(columnsA[columnsA.length-1]);
+					szXaxisA[columnsA.length-1] = dte.toLocaleDateString();
+
+					options.theme.szXaxisA = szXaxisA; 
+					
+				    options.theme.nClipFrames = columnsA.length;
+
+                    theme.szSnippet = "from "+columnsA[0]+" to "+columnsA[columnsA.length-1];
+					ixmaps.setTitle("<span style='color:#888888'>"+szXaxisA[columnsA.length-1]+"</span");
+
+					// -----------------------------------------------------------------------------------------------               
+					// deploy the data
+					// ----------------------------------------------------------------------------------------------- 
+					ixmaps.setExternalData(data_Confirmed, {
+						type: "dbtable",
+						name: options.name
+					});
+
+				});
+
+	};
+
 	ixmaps.CSSE_COVID_SEQUENCE_DEATHS_MEAN_7 = function (theme, options) {
 
 		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
@@ -2235,7 +2328,7 @@ window.ixmaps = window.ixmaps || {};
      };  
 	 var __mean_7 = function(table) {
 		
-		// make mean of 5 days
+		// make mean of 7 days
 		var records = table.records;
 		for ( var r=0; r<records.length; r++ ){
 			for ( var c=records[r].length-1; c>=10; c--){
@@ -2259,6 +2352,24 @@ window.ixmaps = window.ixmaps || {};
 		return table;
      };  
 	
+	 var __difference = function(table) {
+		
+		// make difference from day to day
+        // remove first value column 
+        // !! don't touch the first 4 columns 
+		var records = table.records;
+		for ( var r=0; r<records.length; r++ ){
+			for ( var c=records[r].length-1; c>=4; c--){
+				records[r][c] = (Number(records[r][c])-Number(records[r][c-1])).toFixed(2);
+			}
+		}
+		var columns = table.columnNames();
+		table.column(columns[4]).remove();
+		
+		return table;
+     };  
+    
+    
 	ixmaps.CSSE_COVID_LAST_ACTIVE_DIFF_GLOBAL = function (theme, options) {
 
 		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";

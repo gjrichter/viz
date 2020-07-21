@@ -62,7 +62,7 @@
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|TITLE|FIXSIZE|LONGTITLE|COMPATIBLE|SUM|NOLEGEND|DIFFERENCE",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|TITLE|FIXSIZE|LONGTITLE|COMPATIBLE|SUM|NOLEGEND",
 				"colorscheme": [
 					"160",
 					"#443366",
@@ -71,7 +71,7 @@
 					"#8866aa"],
 				"fillopacity": "0.4",
 				"shadow": "false",
-				"dbtable": "CSSE_COVID_SEQUENCE_CONFIRMED_MEAN_7",
+				"dbtable": "CSSE_COVID_SEQUENCE_DIFFERENCE_CONFIRMED_MEAN_7",
 				"dbtableType": "ext",
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
 				"datacache": "false",
@@ -79,7 +79,7 @@
 				"lookuptonumber": "true",
 				"symbols": [
 					"circle"],
-				"units": "",
+				"units": "cases",
 				"align": "23right",
 				"refreshtimeout": "0",
 				"normalsizevalue": "2",
@@ -96,7 +96,7 @@
 				"titlefield": "Country/Region",
 				"boxupper": "1:20000000",
 				"valuescale": "1",
-				"valuedecimals": "1",
+				"valuedecimals": "0",
 				"fadenegative": "1",
 				"aggregationscale": [
 					"1:1",
@@ -104,7 +104,7 @@
 					"1:500000",
 					"100px"],
 				"name": "curve",
-				"title": "nuovi casi - moving mean 7 days",
+				"title": "new cases - 7 days moving average",
 				"snippet": "from 1/28/20 to 6/21/20",
 				"description": "aggiornato: 6/21/20"
 				}
