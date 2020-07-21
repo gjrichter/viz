@@ -1907,7 +1907,6 @@ window.ixmaps = window.ixmaps || {};
 					// -----------------------------------------------------------------------------------------------               
 					// deploy the data
 					// ----------------------------------------------------------------------------------------------- 
-					console.log(data_Confirmed);
 					ixmaps.setExternalData(data_Confirmed, {
 						type: "dbtable",
 						name: options.name
@@ -1973,7 +1972,6 @@ window.ixmaps = window.ixmaps || {};
 					// -----------------------------------------------------------------------------------------------               
 					// deploy the data
 					// ----------------------------------------------------------------------------------------------- 
-					console.log(data_Confirmed);
 					ixmaps.setExternalData(data_Confirmed, {
 						type: "dbtable",
 						name: options.name
