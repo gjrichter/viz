@@ -814,8 +814,34 @@ window.ixmaps = window.ixmaps || {};
 
 				var szXaxisA = [];
 				for ( var i =0; i<columns.length; i++ ){
-					szXaxisA.push(" ");
+					if (columns[i] == "1/3/2020"){
+					  szXaxisA.push("Marzo");
+					}else
+					if (columns[i] == "1/4/2020"){
+					  szXaxisA.push("Aprile");
+					}else
+					if (columns[i] == "1/5/2020"){
+					  szXaxisA.push("Maggio");
+					}else
+					if (columns[i] == "1/6/2020"){
+					  szXaxisA.push("Giugno");
+					}else
+					if (columns[i] == "1/7/2020"){
+					  szXaxisA.push("Luglio");
+					}else
+					if (columns[i] == "1/8/2020"){
+					  szXaxisA.push("Augosto");
+					}else
+					if (columns[i] == "1/9/2020"){
+					  szXaxisA.push("Septtembre");
+					}else
+					if (columns[i] == "1/10/2020"){
+					  szXaxisA.push("Okt");
+					}else{
+					  szXaxisA.push(" ");
+					}
 				}
+
 				szXaxisA[0] = columns[0];
 				szXaxisA[last - 1] = columns[last - 1];
 				theme.szXaxisA = szXaxisA;
