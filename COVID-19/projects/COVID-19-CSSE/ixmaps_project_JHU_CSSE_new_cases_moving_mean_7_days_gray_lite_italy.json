@@ -9,10 +9,10 @@
 		"created": "Mon Jun 22 2020 19:43:28 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
-		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/world_base_ISO/world_ISO2_winkel_black.svgz",
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
 		"attribution": "iXMaps",
-		"basemap": "CloudMade - white",
-		"legend": "<h1>COVID-19(2019-nCoV)</b><br><span style='font-size:0.6em;color:#888888;font-weight:bold'>7 days moving average of new cases</span></h1><h4 style='color:#888888'>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE</h4><h4><button class='btn btn-default' onclick='ixmaps.map().setView([19.973348786110613,20.402343750000004],2);'>world</button> <button class='btn btn-default' onclick='ixmaps.map().setView([47.05008621372306,12.963867187499943],5);'>europe</button> <button class='btn btn-default' onclick='ixmaps.map().setView([30.30282100323501,116.82861328124994],5);'>asia</button> <button class='btn btn-default' onclick='ixmaps.map().setView([32.179135931767995,-86.22070312500006],4);'>america-nord</button> <button class='btn btn-default' onclick='ixmaps.map().setView([2.918118269138251,31.289062500000057],4);'>africa</button></h4>",
+		"basemap": "ArcGIS - Light Gray Base",
+		"legend": "<h1>COVID-19(2019-nCoV)</b><br><span style='font-size:0.6em;color:#888888;font-weight:bold'>7 days moving average of new cases</span></h1><h4 style='color:#888888'>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a> and <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>PCM DPC Italy</a></h4><h4><button class='btn btn-default' onclick='ixmaps.map().setView([47.05008621372306,12.963867187499943],5);'>europe</button> <button class='btn btn-default' onclick='ixmaps.map().setView([43.78695837311561,12.733154296875002],7);'>italy</button> <button class='btn btn-default' onclick='ixmaps.map().setView([32.179135931767995,-86.22070312500006],4);'>america</button> <button class='btn btn-default' onclick='ixmaps.map().setView([30.30282100323501,116.82861328124994],5);'>asia</button> <button class='btn btn-default' onclick='ixmaps.map().setView([2.918118269138251,31.289062500000057],4);'>africa</button></h4>",
 		"item": "html",
 		"layout":"minimal",
 		"scaleParam": {
@@ -52,10 +52,10 @@
 			"panhidden":"false"
 			},
 		"center": {
-			"lat": "28.304380682962783",
-			"lng": "21.972656250000004"
+			"lat": "47.05008621372306",
+			"lng": "12.963867187499943"
 			},
-		"zoom": "2"
+		"zoom": "5"
 		},
 	"themes": [{
 			"layer": "generic",
