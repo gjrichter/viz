@@ -107,7 +107,7 @@
 				"align":"right",
 				"refreshtimeout": "0",
 				"normalsizevalue": "1",
-				"scale": "1",
+				"scale": "2",
 				"textcolor": "#aa0000",
 				"linecolor":"#dd0000",
 				"linewidth":"0.1",
