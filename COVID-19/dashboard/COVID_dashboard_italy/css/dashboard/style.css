@@ -478,7 +478,7 @@ a:hover {
 .card.summary-inline .card-body {
   padding: 20px; }
   .card.summary-inline .card-body .content {
-    float: right; }
+    float: left; }
     .card.summary-inline .card-body .content .title {
       font-family: 'Lato', sans-serif;
       margin-top: -0.3em;

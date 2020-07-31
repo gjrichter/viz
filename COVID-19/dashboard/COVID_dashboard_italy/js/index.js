@@ -385,11 +385,11 @@ $(function () {
 				"<div id=\"card-" + idFeed + "\" class=\"col-lg-4 col-md-4 col-sm-6 col-xs-12\" style=\"margin-bottom:1em;float:left\">" +
 				"<div class=\"card " + "" + " summary-inline\">" +
 				"<div class=\"card-body\" style=\"margin-top:-1em\">" +
-				"<i class=\"icon fa fa-none fa-4x\"></i><span style=\"font-size:1.5em;vertical-align:60%\">&nbsp;" + title + " </span>" +
+				"<i class=\"icon fa fa-none fa-4x\"></i><span style=\"font-size:1.5em;vertical-align:60%\">" + title + " </span>" +
 				"<div class=\"content\">" +
 				"<div id=\"dynamic-" + idFeed + "\" class=\"title data-dynamic\" data-path=\"data::albopop::" + idFeed + "\">--</div>";
 			
-			if (feed != "xxtamponi") {
+			if (0 && feed != "xxtamponi") {
 				szHtml += 
 					"<div class=\"sub-title data-dynamic\" style=\"color:#888;margin-top:-1.5em\">variazioni (media di 3 giorni)</div>";
 			}
@@ -595,10 +595,11 @@ $(function () {
 				var nPercent = (lastdiff/beforediff*100-100).toFixed(1);
 					nPercent = ((nPercent>0)?"+":"") + nPercent;
 				var chart = "<div style='width:80%;margin-top:2px;margin-bottom:10px'><canvas id='" + idCard + "-line-chart'></canvas></div>";
+				chart = "";
 
 				if (feed != "xxtamponi") {
 					$("#dynamic-" + idCard).html(
-					"<span class='pull-left' style='float:left;color:white;background:rgba(" + color + ",1);border-radius:0.1em')>&nbsp; " + __formatValue(actvalue, 0) + " &nbsp;</span><br><span class='pull-right' style='font-size:0.7em;padding-top:0em;'><span style='font-size:0.5em;color:#aaaaaa'>("+ (beforediff>0?"+":"") + __formatValue((beforediff), 0) + ")</span>  <span style='color:rgba(" + color + ",1)'>"+ (lastdiff>0?"+":"") + __formatValue((lastdiff), 0) + "</span><i class='icon fa " + szArrow + "' style='color:" + szArrowColor + ";font-size:0.5em'></i><span style='font-size:0.5em'>"+nPercent+"%</span></span>" + ((feed != "xxtamponi") ? chart : ""));
+					"<div><span class='pull-left' style='margin-top:0.2em;padding:0 0.3em;color:white;background:rgba(" + color + ",1);border-radius:0.1em')>" + __formatValue(actvalue, 0) + "</span><br><span class='pull-left' style='font-size:0.7em;padding-top:0em;'><span style='font-size:0.5em;color:#aaaaaa'>("+ (beforediff>0?"+":"") + __formatValue((beforediff), 0) + ")</span>  <span style='font-size:0.6em;color:rgba(" + color + ",1)'>"+ (lastdiff>0?"+":"") + __formatValue((lastdiff), 0) + "</span> <span><i class='icon fa " + szArrow + "' style='color:" + szArrowColor + ";font-size:0.5em'></i> <span style='font-size:0.5em'>"+nPercent+"%</span></div></div>" + ((feed != "xxtamponi") ? chart : ""));
 				} else {
 					$("#dynamic-" + idCard).html(
 					"<span class='pull-left' >" + __formatValue(actvalue, 0) + " </span><br><span class='pull-right' style='font-size:0.7em;padding-top:0em;'><span style='font-size:0.5em;color:#aaaaaa'>("+ (beforediff>0?"+":"") + __formatValue((beforediff), 0) + ")</span>  <span style='color:rgba(" + color + ",1)'>"+ (lastdiff>0?"+":"") + __formatValue((lastdiff), 0) + " </span><i class='icon fa " + szArrow + "' style='color:#888888'></i></span> ");
