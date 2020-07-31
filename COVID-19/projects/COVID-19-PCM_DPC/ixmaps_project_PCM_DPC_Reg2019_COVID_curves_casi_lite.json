@@ -61,7 +61,11 @@
 			"style": {
 				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|TITLE|FIXSIZE|LONGTITLE|COMPATIBLE|SUM|NOLEGEND|DIFFERENCE",
 				"colorscheme": [
-					"#dd0000"],
+					"120",
+					"#443366",
+					"#ff2288",
+					"3colors",
+					"#8866aa"],
 				"fillopacity": "0.2",
 				"shadow": "false",
 				"dbtable": "PCM_DPC_COVID_SEQUENCE_MEAN_7",
