@@ -159,7 +159,6 @@
 				"boxopacity": "0",
 				"boxmargin": "10",
 				"titlefield": "denominazione_regione",
-				"chartupper": "1:3000000",
 				"boxupper": "1:5000000",
 				"valuescale": "1",
 				"valuedecimals": "0",
