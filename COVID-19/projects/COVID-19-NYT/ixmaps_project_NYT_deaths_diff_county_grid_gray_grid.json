@@ -6,14 +6,13 @@
 		"thumbnail": "",
 		"about": "",
 		"description": "",
-		"created": "Wed Jul 01 2020 14:17:22 GMT+0200 (Ora legale dell’Europa centrale)"
+		"created": "Sun Aug 02 2020 09:12:42 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
 		"map": "https://s3-eu-west-1.amazonaws.com/cdn.ixmaps.com/ixmaps/maps/svg/maps/Atlas%20of%20Rural%20and%20Small%20Town%20America/Atlas_of_Rural_and_Small_Town_America.svgz",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
-        "layout": "minimal",
-		"legend": "<h1>new cases day by day</h1><h4>moving average of 7 days on County level aggregated by dynamic grid</h4><h4>source: <a href='https://github.com/nytimes/covid-19-data' target='_blank'>The New York Times</a> Covid-19 database. <a href='https://github.com/nytimes/covid-19-data/blob/master/LICENSE' target='_blank'>(licence)</a> </h4><h2><a style='border: #888 solid 1px;padding: 0em 0.3em;border-radius: 1em;width: 1em;color: #888;text-decoration:none' href='javascript:ixmaps.map().changeThemeStyle(null,\"scale:0.66\",\"factor\")'>-</a> size <a style='border: #888 solid 1px;padding: 0em 0.3em;border-radius: 1em;width: 1em;color: #888;text-decoration:none' href='javascript:ixmaps.map().changeThemeStyle(null,\"scale:1.5\",\"factor\")'>+</a></h2>",
+		"legend": "<h1>number of deaths, day by day</h1><h4>moving average of 7 days on County level aggregated by dynamic grid</h4><h4>source: <a href='https://github.com/nytimes/covid-19-data' target='_blank'>The New York Times</a> Covid-19 database. <a href='https://github.com/nytimes/covid-19-data/blob/master/LICENSE' target='_blank'>(licence)</a> </h4><h2><a style='border: #888 solid 1px;padding: 0em 0.3em;border-radius: 1em;width: 1em;color: #888;text-decoration:none' href='javascript:ixmaps.map().changeThemeStyle(null,\"scale:0.66\",\"factor\")'>-</a> size <a style='border: #888 solid 1px;padding: 0em 0.3em;border-radius: 1em;width: 1em;color: #888;text-decoration:none' href='javascript:ixmaps.map().changeThemeStyle(null,\"scale:1.5\",\"factor\")'>+</a></h2>",
 		"item": "html",
 		"scaleParam": {
 			"borderScaling": "0.1",
@@ -51,8 +50,8 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "39.16414104768742",
-			"lng": "-95.80078125000001"
+			"lat": "38.53097889440024",
+			"lng": "-95.66894531250001"
 			},
 		"zoom": "5"
 		},
@@ -76,6 +75,8 @@
 				"units": "",
 				"refreshtimeout": "0",
 				"scale": "1",
+				"valuefield": "2020-08-01",
+				"sizefield": "2020-08-01",
 				"textcolor": "#aaaaaa",
 				"linecolor": [
 					"white"],
@@ -86,7 +87,8 @@
 					"0",
 					"1:200000",
 					"150px"],
-				"title": "Grid"
+				"title": "Grid",
+				"description": "aggiornato: 2020-08-01"
 				}
 			},{
 			"layer": "COUNTIES|COUNTIES-s",
@@ -97,12 +99,12 @@
 				"colorscheme": [
 					"150",
 					"#014DA3",
-					"#F0162B",
+					"#888888",
 					"3colors",
-					"#014DB3"],
+					"#dddddd"],
 				"fillopacity": "0.3",
 				"shadow": "false",
-				"dbtable": "NYT_COVID_SEQUENCE_RM7",
+				"dbtable": "NYT_COVID_SEQUENCE_RM7_D",
 				"dbtableType": "ext",
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-NYT/databroker_NYT_COVID.js",
 				"datacache": "false",
@@ -112,11 +114,11 @@
 					"circle"],
 				"label": [
 					"new cases 24H"],
-				"units": "new cases",
+				"units": "deaths",
 				"align": "23right",
 				"refreshtimeout": "0",
 				"normalsizevalue": "20",
-				"scale": "0.01",
+				"scale": "0.019405980000000003",
 				"rangescale": "0.8",
 				"minvalue": "0",
 				"maxvalue": "auto",
@@ -129,14 +131,14 @@
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"fadenegative": "1",
-				"clipframes": "147",
+				"clipframes": "188",
 				"aggregationscale": [
 					"1:1",
 					"fips",
 					"1:200000",
 					"150px"],
-				"title": "new cases day by day",
-				"snippet": "from 2020-01-28 to 2020-06-29",
+				"title": "deaths day by day",
+				"snippet": "from 2020-01-27 to 2020-08-01",
 				"splash": "loading and aggregating data ...",
 				"description": "moving average of 7 days aggregated by dynamic grid"
 				}
