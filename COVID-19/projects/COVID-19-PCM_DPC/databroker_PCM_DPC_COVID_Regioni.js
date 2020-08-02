@@ -2857,8 +2857,8 @@ window.ixmaps = window.ixmaps || {};
 					}
 				}
 
-				szXaxisA[0] = columns[0];
-				szXaxisA[last - 1] = columns[last - 1];
+				//szXaxisA[0] = columns[0];
+				//szXaxisA[last - 1] = columns[last - 1];
 				theme.szXaxisA = szXaxisA;
 			
 				theme.szSnippet = "dal " + columns[0] + " al " + columns[last - 1];
