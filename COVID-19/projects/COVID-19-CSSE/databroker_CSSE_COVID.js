@@ -1985,11 +1985,14 @@ window.ixmaps = window.ixmaps || {};
 						  szXaxisA.push(" ");
                         }
 					}
+					
+					/**
 					var dte = new Date(columnsA[0]);
 					szXaxisA[0] = dte.toLocaleDateString();
 					dte = new Date(columnsA[columnsA.length-1]);
 					szXaxisA[columnsA.length-1] = dte.toLocaleDateString();
-
+					**/
+					
 					options.theme.szXaxisA = szXaxisA; 
 					
 				    options.theme.nClipFrames = columnsA.length;
