@@ -85,7 +85,7 @@
 					"1:1",
 					"0",
 					"1:200000",
-					"150px"],
+					"75px"],
 				"title": "Grid"
 				}
 			},{
@@ -134,7 +134,7 @@
 					"1:1",
 					"fips",
 					"1:200000",
-					"150px"],
+					"75px"],
 				"title": "new cases day by day",
 				"snippet": "from 2020-01-28 to 2020-06-29",
 				"splash": "loading and aggregating data ...",
