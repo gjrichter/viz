@@ -446,6 +446,9 @@ window.ixmaps = window.ixmaps || {};
 					//szXaxisA[0] = (columns[0]);
 					//szXaxisA[columns.length-1] = (columns[columns.length-1]);
 					theme.szXaxisA = szXaxisA;
+					
+					// set colors = columns 
+					theme.origColorScheme[0] = columns.length;
 								 
 					// -----------------------------------------------------------------------------------------------               
 					// deploy the data
