@@ -12,7 +12,7 @@
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
-		"legend": "<h3 style='background:rgba(255,255,255,1.5);padding:0.2em;border:#ffffff solid 1px;border-radius:0.2em'>andamento casi attivi</h3>",
+		"legend": "<div style='color:#777777'><h1></h1><h1><b>Casi attivi ...</b></h1><h2>media mobile di 7 giorni</h2><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
 		"item": "html",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
