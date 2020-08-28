@@ -1999,6 +1999,9 @@ window.ixmaps = window.ixmaps || {};
 					options.theme.szXaxisA = szXaxisA; 
 					
 				    options.theme.nClipFrames = columnsA.length;
+					
+					// set colors = columns 
+					theme.origColorScheme[0] = columnsA.length;
 
                     theme.szSnippet = "from "+columnsA[0]+" to "+columnsA[columnsA.length-1];
 					ixmaps.setTitle("<span style='color:#888888'>"+szXaxisA[columnsA.length-1]+"</span");
