@@ -112,8 +112,7 @@
 				"units": "casi",
 				"align": "top",
 				"refreshtimeout": "0",
-				"normalsizevalue": "20",
-				"scale": "1",
+				"scale": "1.5",
 				"textcolor": "#aa2200",
 				"linecolor": [
 					"#dd0000"],
