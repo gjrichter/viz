@@ -62,7 +62,7 @@
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|TITLE|FIXSIZE|LONGTITLE|COMPATIBLE|SUM|NOLEGEND",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|FADE|GRID|BOX|TITLE|FIXSIZE|LONGTITLE|COMPATIBLE|SUM|NOLEGEND",
 				"colorscheme": [
 					"160",
 					"#443366",
@@ -83,7 +83,7 @@
 				"align": "23right",
 				"refreshtimeout": "0",
 				"normalsizevalue": "2",
-				"scale": "0.2",
+				"scale": "0.15",
 				"rangescale": "0.5",
 				"timefield": "$item$",
 				"minvalue": "0",
