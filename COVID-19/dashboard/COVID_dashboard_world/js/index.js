@@ -338,7 +338,7 @@ $(function () {
 			"dimessi_guariti"
 		]
 		var cardA_all = [
-			"Active",
+			"Confirmed",
 			"Recovered",
 			"Deaths",
 		]
@@ -442,7 +442,7 @@ $(function () {
 						data = data_Confirmed;	
 						var records = data.records[0];
 						for ( var c=4; c<records.length; c++ ){
-							records[c] = Number(records[c]) - Number(data_Recovered.records[0][c]) - Number(data_Deaths.records[0][c]);
+							records[c] = Number(records[c]);
 						}
 					}else
 					if ( feed == "Confirmed" ){
@@ -463,7 +463,7 @@ $(function () {
 					
 					var records = data.records;
 				
-					var max = 100000;
+					var max = 500000;
 					if ( feed == "Deaths" ){
 						max = 20000;
 					}
