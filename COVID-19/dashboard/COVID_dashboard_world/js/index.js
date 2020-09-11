@@ -467,6 +467,9 @@ $(function () {
 					if ( feed == "Deaths" ){
 						max = 20000;
 					}
+					if ( feed == "Recovered" ){
+						max = 500000;
+					}
 					var values = records[0].slice(); 
 					var last = values.pop();
 					var before = Number(values.pop());
