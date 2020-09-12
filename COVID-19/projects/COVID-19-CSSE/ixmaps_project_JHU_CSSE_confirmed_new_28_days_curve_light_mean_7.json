@@ -12,7 +12,7 @@
 		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
-		"legend": "<h1>COVID-19 - <b>new cases</b> <br> last <b>28</b> days</h1><h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a></h4>",
+		"legend": "<h1>COVID-19 - <b>new cases</b> <br> last <b>28</b> days</h1><h4>Moving average over 7 days</h4><h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a></h4>",
 		"item": "",
 		"scaleParam": {
 			"normalSizeScale": "55364168"
@@ -75,7 +75,7 @@
 				"refreshtimeout": "0",
 				"normalsizevalue": "2",
 				"scale": "0.2",
-				"rangescale": "0.7",
+				"rangescale": "1",
 				"minvalue": "0",
 				"maxvalue": "auto",
 				"linewidth": "20",
