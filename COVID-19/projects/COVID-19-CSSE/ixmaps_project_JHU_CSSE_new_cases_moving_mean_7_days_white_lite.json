@@ -98,11 +98,6 @@
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"fadenegative": "1",
-				"aggregationscale": [
-					"1:1",
-					"150px",
-					"1:500000",
-					"100px"],
 				"name": "curve",
 				"title": "new cases - 7 days moving average",
 				"snippet": "from 1/28/20 to 6/21/20",
