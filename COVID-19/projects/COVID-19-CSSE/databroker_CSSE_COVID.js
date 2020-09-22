@@ -2303,6 +2303,54 @@ window.ixmaps = window.ixmaps || {};
 				});
 	};
 
+	ixmaps.CSSE_COVID_LAST_DAILY_DIFF_GLOBAL_MEAN_7 = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+
+		var broker = new Data.Broker()
+			.addSource(szUrl1, "csv")
+			.realize(
+				function (dataA) {
+
+					data_Confirmed = dataA[0];
+					
+					data_Confirmed = __mean_7(data_Confirmed);
+
+					var columnNamesA = data_Confirmed.columnNames();
+					var szLastColumn = columnNamesA.pop();
+					var szBeforeColumn = columnNamesA.pop();
+
+					var iLast = data_Confirmed.column(szLastColumn).index;
+					var iBefore = data_Confirmed.column(szBeforeColumn).index;
+
+					theme.szDescription = "aggiornato: " + szLastColumn;
+
+					data_Confirmed.addColumn({
+						destination: "diff"
+					}, function (row) {
+						return (Number(row[iLast]) - Number(row[iBefore]));
+					});
+					var iDiff = data_Confirmed.column("diff").index;
+					data_Confirmed.addColumn({
+						destination: "diff_percent"
+					}, function (row) {
+						if (Number(row[iDiff]) && (Number(row[iBefore]) > 100)) {
+							return (Number(row[iDiff]) / Number(row[iBefore]) * 100).toFixed(2);
+						}
+						return 0;
+					});
+
+					// -----------------------------------------------------------------------------------------------               
+					// deploy the data
+					// ----------------------------------------------------------------------------------------------- 
+
+					ixmaps.setExternalData(data_Confirmed, {
+						type: "dbtable",
+						name: options.name
+					});
+				});
+	};
+
    var __mean_3 = function(table) { 
 		
 		// make mean of 3 days
