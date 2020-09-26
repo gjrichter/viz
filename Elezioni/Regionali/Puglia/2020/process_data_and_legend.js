@@ -22,8 +22,7 @@ window.ixmaps.themeDataObj = window.ixmaps.themeDataObj || {};
                                 });
 		return dbtable;
  	};
-	console.log(ixmaps);
-	ixmaps.parentApi.parentApi.htmlgui_onLegendFooter = function() {
+	ixmaps.htmlgui_onLegendFooter = function() {
 	 	return ("<div class='map-legend-footer' style='margin-top:0.5em;'>"+
 				"<a href=\"javascript:ixmaps.map().changeThemeStyle('polygon','dopacitypow:-0.1','add')\" class=\"button\" style=\"pointer-events:all\">"+
 				"(-)</a>&nbsp;fondo&nbsp;"+
