@@ -110,7 +110,7 @@
 				"shadow": "true",
 				"dbtable": "partiti_2019_2020",
 				"dbtableType": "ext",
-				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/projects/ElezioniRegionaliPU2020/broker_data_partiti_2019_2020_PU.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/projects/ElezioniRegionaliPU2020/provide_data_partiti_2019_2020_PU.js",
 				"datacache": "true",
 				"lookupfield": "CODICE ISTAT.1",
 				"lookuptonumber":"6",
