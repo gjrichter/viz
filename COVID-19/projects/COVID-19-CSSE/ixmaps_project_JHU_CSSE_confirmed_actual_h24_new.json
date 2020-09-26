@@ -95,7 +95,7 @@
 				"filter": "WHERE Country/Region != Others",
 				"dbtable": "CSSE_COVID_LAST_DIFF_CONFIRMED_MEAN_7",
 				"dbtableType": "ext",
-				"dbtableExt": "../../projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
 				"datacache": "false",
 				"lookupfield": "Lat|Long",
 				"units": "",
