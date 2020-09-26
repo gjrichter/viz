@@ -12,7 +12,7 @@
 		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "",
 		"basemap": "CartoDB - Positron",
-		"legend": "<h1>COVID-19 - <b>24 hours</b> <br> new cases</h1><h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE</h4>",
+		"legend": "<h1>COVID-19 - <b>24 hours</b> <br> new cases</h1><h2>(moving mean of 7 days)</h2><h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE</h4>",
 		"item": "",
 		"scaleParam": {
 			"normalSizeScale": "55364168"
@@ -85,18 +85,17 @@
 			},{
 			"layer": "World Mercator",
 			"field": "2/27/20",
-			"field100": "2/26/20",
+			"field100": "",
 			"style": {
-				"type": "CHART|AURA|BUBBLE|DIFFERENCE|SIZE|SUM|VALUES",
+				"type": "CHART|AURA|BUBBLE|SIGN|SIZE|SUM|VALUES",
 				"colorscheme": [
 					"rgba(100, 160, 220,1)"],
 				"fillopacity": "0.5",
 				"shadow": "false",
 				"filter": "WHERE Country/Region != Others",
-				"dbtable": "CSSE_COVID_CONFIRMED",
-				"dbtableUrl": "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv",
-				"dbtableType": "csv",
-				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/process_last_diff.js",
+				"dbtable": "CSSE_COVID_LAST_DIFF_CONFIRMED_MEAN_7",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
 				"datacache": "false",
 				"lookupfield": "Lat|Long",
 				"units": "",
