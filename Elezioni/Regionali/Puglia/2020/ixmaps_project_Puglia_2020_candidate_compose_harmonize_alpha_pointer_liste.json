@@ -120,7 +120,7 @@
 				"dbtable": "themeDataObj",
 				"dbtableUrl": "https://raw.githubusercontent.com/ondata/elezioni_2020/master/regionali/output/scrutini_candidati.csv",
 				"dbtableType": "csv",
-				"dbtableExt": "../../projects/ElezioniRegionaliPU2020/process_data_and_legend.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/process_data_and_legend.js",
 				"datacache": "true",
 				"lookupfield": "CODICE ISTAT",
 				"lookuptonumber":"6",
