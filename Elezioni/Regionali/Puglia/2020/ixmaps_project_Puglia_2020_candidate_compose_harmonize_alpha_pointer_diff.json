@@ -93,7 +93,7 @@
 				"clipparts": "10",
 				"title": "Emilia-Romagna 2020",
 				"snippet": "colore = misto da voti/candidato<br>intensità = n°elettori",
-				"description": "fonte: Eligendo > Matteo Fortini > <a href='https://github.com/mfortini/ElezioniRegionaliER2020?fbclid=IwAR35rDIT5Joh0xBz4gwY3RZu0dJzznGojLdtnGu9DEpJeo9pg1WtoDJU4d8' target='_blank'>GitHub</a>"
+				"description": "fonte: Eligendo > OnData > <a href='https://github.com/ondata/elezioni_2020' target='_blank'>GitHub</a>"
 				}
 			},{
 			"layer": "Com2020_pro_com",
@@ -140,7 +140,7 @@
 				"fadenegative": "0.4",
 				"title": "Puglia 2020",
 				"snippet": "colore = Lista",
-				"description": "fonte: Eligendo > OnData > <a href='https://github.com/mfortini/ElezioniRegionaliER2020?fbclid=IwAR35rDIT5Joh0xBz4gwY3RZu0dJzznGojLdtnGu9DEpJeo9pg1WtoDJU4d8' target='_blank'>GitHub</a>"
+				"description": "fonte: Eligendo > OnData > <a href='https://github.com/ondata/elezioni_2020' target='_blank'>GitHub</a>"
 				}
 			}],
 	"layerMask": {
