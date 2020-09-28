@@ -1,0 +1,152 @@
+	{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Fri Jan 31 2020 11:14:22 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_pro_com.svgz",
+		"attribution": "",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"layout": "minimal",
+		"info": "<h4>questa mappa parte di un set di visualizzazioni delle Elezioni Regionali Settembre 2020.</h4><h4>Si basa su dati pubblicati dalla asociazione OnData su GitHub, che rende accessibile i dati del sito Eligendo</h4>",
+		"scaleParam": {
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "40.522150985623796",
+			"lng": "17.262268066406254"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "Com2020_pro_com",
+			"field": "EMILIANO|FITTO|LARICCHIA",
+			"field100": "Total",
+			"style": {
+				"name":"polygon",
+				"type": "CHOROPLETH|DOMINANT|PERCENTOFMEAN|HORZ|SIMPLELEGEND|MEAN|DOPACITYMAX",
+				"colorscheme": [
+					"#FF0000",
+					"#0000FF",
+					"#FFFF00"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/elezioni_2020/master/regionali/output/scrutini_candidati.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/process_data.js",
+				"datacache": "true",
+				"lookupfield": "CODICE ISTAT",
+				"lookuptonumber":"6",
+				"symbols": [
+					"circle"],
+				"values": [
+					"EMILIANO",
+					"FITTO",
+					"LARICCHIA"],
+				"label": [
+					"EMILIANO",
+					"FITTO",
+					"LARICCHIA"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"dopacitypow": "0.2",
+				"dopacityscale": "1",
+				"linewidth": "0",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"clipparts": "10",
+				"dominantfilter": "min",
+				"dominantdfilter": "0",
+				"title": "Puglia 2020",
+				"snippet": "Candidato vincente",
+				"description": "fonte: Eligendo > OnData > <a href='https://github.com/ondata/elezioni_2020' target='_blank'>GitHub</a>"
+				}
+			},{
+			"layer": "Com2020_pro_com",
+			"field": "EMILIANO|FITTO|LARICCHIA",
+			"field100": "Total",
+			"style": {
+				"name":"polygon",
+				"type": "CHART|SYMBOL|TEXTONLY|DOMINANT|PERCENTOFMEAN|AGGREGATE|MAX|RELOCATE|SUM|NOLEGEND|SIZEP1",
+				"colorscheme": [
+					"#FF0000",
+					"#0000FF",
+					"#FFFF00"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/elezioni_2020/master/regionali/output/scrutini_candidati.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "../../projects/ElezioniRegionaliPU2020/process_data.js",
+				"datacache": "true",
+				"lookupfield": "CODICE ISTAT",
+				"lookuptonumber":"6",
+				"symbols": [
+					"label"],
+				"values": [
+					"EMILIANO",
+					"FITTO",
+					"LARICCHIA"],
+				"label": [
+					"EMILIANO",
+					"FITTO",
+					"LARICCHIA"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"normalsizevalue":"30",
+				"scale": "1",
+				"dopacitypow": "0.5",
+				"dopacityscale": "1",
+				"linewidth": "0",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"clipparts": "10",
+				"gridwidth":"25px",
+				"dominantfilter": "min",
+				"dominantdfilter": "0",
+				"title": "Puglia 2020",
+				"snippet": "Candidato vincente",
+				"description": "fonte: Eligendo > OnData > <a href='https://github.com/ondata/elezioni_2020' target='_blank'>GitHub</a>"
+				}
+			}],
+		
+	"layerMask": {
+		}
+	}
