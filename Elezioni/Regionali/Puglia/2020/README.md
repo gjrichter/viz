@@ -30,7 +30,7 @@ In questa versione della stessa mappa, i partiti 'grandi' con un risultato nazio
 
 
 
-### [il risultato sopra alla media nei confini del 1861](javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/elezioni-europee-2019/master/projects/ixmaps_project_Europee_2019_deviation_1861.json?id=123'))
+### [il risultato sopra alla media nei confini del 1861](javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_compose_harmonize_alpha_pointer_liste.json?id=123'))
 
 <a href="javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/elezioni-europee-2019/master/projects/ixmaps_project_Europee_2019_deviation_1861.json?id=123')" >
 <img src="https://raw.githubusercontent.com/gjrichter/elezioni-europee-2019/master/projects/ixmaps_project_Europee_2019_deviation_1861.png"></a>
