@@ -38,10 +38,10 @@ Questa mappa contiene 3 temi per visualizzare il risultato delle elezioni europe
 
 Un terzo tema dipende dal livello dello zoom è mostra il risultato di tutti partiti in un semicerchio.
 
-### [il candidato vincente](javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.json?id=123'))
+### [il candidato vincente](javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_performer.json?id=123'))
 
-<a href="javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.json?id=123')" >
-<img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.png"></a>
+<a href="javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner_performer.json?id=123')" >
+<img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_performer.png"></a>
 
 Questa mappa contiene 3 temi per visualizzare il risultato delle elezioni europee del 2019. Il primo mostra il partito vincente con il suo colore, il secondo aggiunge il risultato del partito vincente in cifre.
 
