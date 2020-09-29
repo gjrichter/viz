@@ -13,6 +13,7 @@
 		"attribution": "",
 		"basemap": "Stamen - toner-lite",
 		"legend": "",
+		"item": "html",
 		"layout": "minimal",
 		"info": "<h4>questa mappa parte di un set di visualizzazioni delle Elezioni Regionali Settembre 2020.</h4><h4>Si basa su dati pubblicati dalla asociazione OnData su GitHub, che rende accessibile i dati del sito Eligendo</h4>",
 		"scaleParam": {
