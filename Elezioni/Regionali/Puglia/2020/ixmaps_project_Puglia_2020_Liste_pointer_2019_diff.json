@@ -94,7 +94,7 @@
 				"boxupper": "1:100000",
 				"valuescale": "1",
 				"valuedecimals": "1",
-				"fadenegative": "0.4",
+				"fadenegative": "0.2",
 				"title": "Puglia 2019 -> 2020",
 				"snippet": "differenza della percentuale nelle elezioni <b>regionali del 2020</b> e delle elezioni <b>europee del 2019</b>",
 				"description": "fonte: Eligendo > OnData > <a href='https://github.com/ondata/elezioni_2020' target='_blank'>GitHub</a>"
