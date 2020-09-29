@@ -6,7 +6,7 @@
 		"thumbnail": "",
 		"about": "",
 		"description": "",
-		"created": "Sun Sep 27 2020 22:17:15 GMT+0200 (Ora legale dell’Europa centrale)"
+		"created": "Tue Sep 29 2020 12:52:14 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_pro_com.svgz",
@@ -14,7 +14,6 @@
 		"basemap": "CartoDB - Positron",
 		"legend": "<h1>Elezioni regionale 2020 Puglia</h1><h4><b>Tutti voti</b> per comune e liste</h4><h4>La scelta degli <b>colori</b> permette un <b>confronto</b> tra la <b>lista principale</b> del candidato e le <b>liste di supporto</b></h4>",
 		"item": "",
-		"layout": "minimal",
 		"scaleParam": {
 			"normalSizeScale": "489293"
 			},
@@ -48,8 +47,8 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "40.72228267283148",
-			"lng": "17.267761230468754"
+			"lat": "40.911436954156436",
+			"lng": "16.745910644531254"
 			},
 		"zoom": "9"
 		},
@@ -58,7 +57,7 @@
 			"field": "desc_lis_c",
 			"field100": "",
 			"style": {
-				"type": "CHART|PIE|DONUT|HALF|SIZE|AGGREGATE|CATEGORICAL|SUM|SIZE|SUM",
+				"type": "CHART|PIE|SORT|DONUT|HALF|SIZE|AGGREGATE|CATEGORICAL|SUM|SIZE|SUM",
 				"colorscheme": [
 					"rgb(233,30,37)",
 					"rgb(233,130,137)",
@@ -130,11 +129,14 @@
 				"scale": "0.5",
 				"rangescale": "1",
 				"sizefield": "voti",
+				"linecolor": [
+					"white"],
+				"boxopacity": "0.001",
+				"titlefield": "Denominazione dell'Unità territoriale sovracomunale (valida a fini statistici)",
 				"valuescale": "1",
 				"valuedecimals": "0",
-				"linecolor": "white",
 				"centerpart": "max",
-				"gridwidth": "40px",
+				"gridwidthpx": "100",
 				"evidence": "isolate_gray",
 				"name": "polygon",
 				"title": "Puglia 2020<br>Candidati e liste",
