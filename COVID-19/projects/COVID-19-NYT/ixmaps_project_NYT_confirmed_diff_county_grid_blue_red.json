@@ -85,7 +85,7 @@
 				"align": "right",
 				"refreshtimeout": "0",
 				"normalsizevalue": "20",
-				"scale": "0.02",
+				"scale": "0.01",
 				"rangescale": "0.8",
 				"minvalue": "0",
 				"maxvalue": "auto",
