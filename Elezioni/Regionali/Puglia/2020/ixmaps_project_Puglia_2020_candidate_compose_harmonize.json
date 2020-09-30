@@ -9,7 +9,7 @@
 		"created": "Fri Jan 31 2020 11:20:30 GMT+0100 (Ora standard dell’Europa centrale)"
 		},
 	"map": {
-		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_pro_com.svgz",
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_pro_com_Puglia.svgz",
 		"attribution": "confini comunali: ISTAT, dati: Eligendo, OnData, visualizzazione: iXMaps",
 		"basemap": "Stamen - toner-lite",
 		"legend": "",
