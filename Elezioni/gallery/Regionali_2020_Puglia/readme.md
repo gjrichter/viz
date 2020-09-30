@@ -42,7 +42,7 @@ Come nella mappa dei vincitori si può valutare il risultato ottenuto e visualiz
 
 Aggiungendo il valori in forma testuale si nota subito la differenza tra i candidati
 
-
+<br>
 
 ## visualizzazione multivariata del risultato con colori composti
 
@@ -54,7 +54,7 @@ Insieme questi coloro creano un paesaggio politico del risultato degli elezioni.
 
 <iframe id="map" width="100%" height="640" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_compose_harmonize_alpha.json?id=123"></iframe>
 
-
+<br>
 
 ## i risultati delle liste
 
@@ -68,7 +68,7 @@ Qui sotto solo i risultati delle liste principali a supporto dei candidati. Le f
 
 <iframe id="map" width="100%" height="640" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_Liste_pointer.json?id=123"></iframe>
 
-
+<br>
 
 ## l'importanza delle liste
 
@@ -86,7 +86,7 @@ Si nota anche che in non pochi comuni le liste civiche hanno il risultato maggio
 
 <iframe id="map" width="100%" height="640" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_Liste_pie_candidate_liste_star.json?id=123"></iframe>
 
-
+<br>
 
 ## Guadagni e perdite rispetto a 2019
 
@@ -96,11 +96,11 @@ Alla fine un confronto delle percentuali raggiunti nelle Elezioni Europee del 20
 
 La valutazione del risultato lascio a chi si intende.
 
-
+<br>
 
 Fonte: OnData <a href="https://github.com/ondata/elezioni_2020" target="_blank">GitHub</a>  <---  <a href="https://dait.interno.gov.it/elezioni" target="_blank">Eligendo - Ministero dell'Interno</a>
 
-Visualizzazioni: iXMaps
+Visualizzazioni: iXMaps, i progetti (json) per le mappe si trovano qui: <a href="https://github.com/gjrichter/viz/tree/master/Elezioni/Regionali/Puglia/2020" _target="_blank">GitHub</a>
 
 
 
