@@ -86,7 +86,7 @@
 				"scale": "1",
 				"alphafield": "Total",
 				"alphafield100": "$density$",
-				"dopacitypow": "1",
+				"dopacitypow": "1.5",
 				"dopacityscale": "5",
 				"linewidth": "0",
 				"valuescale": "1",
