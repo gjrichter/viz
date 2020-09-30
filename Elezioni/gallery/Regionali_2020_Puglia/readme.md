@@ -28,6 +28,18 @@ Oltre al candidato vincente, questa mappa mostra anche la percentuale della vitt
 
 <br>
 
+## visualizzazione multivariata del risultato con colori composti
+
+Se si crea un colore composto dai colori degli candidati in percentuali uguali al risultato ottenuto, si ottiene per ogni comune un colore specifico rappresentando non solo il candidato vincitore, ma il risultato nella sua complessità. 
+
+Insieme questi coloro creano un paesaggio politico del risultato degli elezioni. l'intensità del colore rappresenta la densità degli votanti. 
+
+> *suggerimento: cliccando sui colori nella leggenda si può isolare un candidato o creare paesaggi da solo due concorrenti*.
+
+<iframe id="map" width="100%" height="640" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_compose_density.json?id=123"></iframe>
+
+<br>
+
 ## il candidato con il risultato sopra alla propria media
 
 Per ogni comune il colore indica il candidato il quale ha ottenuto il risultato relativamente maggiore, cioè il risultato più ampio sopra la propria media regionale.
@@ -44,11 +56,13 @@ Aggiungendo il valori in forma testuale si nota subito la differenza tra i candi
 
 <br>
 
-## visualizzazione multivariata del risultato con colori composti
+### visualizzazione multivariata
 
-Se si crea un colore composto dai colori degli candidati in percentuali uguali al risultato ottenuto, si ottiene per ogni comune un colore specifico rappresentando non solo il candidato vincitore, ma il risultato nella sua complessità. 
+Anche dagli risultati relativi (alla media regionale) di può creare un tema con colori composti dai colori degli candidati, si ottiene per ogni comune un colore specifico rappresentando la particolarità del comune relativo alla media regionale. 
 
-Insieme questi coloro creano un paesaggio politico del risultato degli elezioni. l'intensità del colore rappresenta la densità degli votanti. 
+Insieme questi colori creano un paesaggio politico delle presenze relativamente forti sul territorio. 
+
+La mappa **non** è rappresentativo per il risultato delle elezioni ma dove un candidato ha ottenuto i suoi migliori risultati.
 
 > *suggerimento: cliccando sui colori nella leggenda si può isolare un candidato o creare paesaggi da solo due concorrenti*.
 
@@ -56,7 +70,7 @@ Insieme questi coloro creano un paesaggio politico del risultato degli elezioni.
 
 <br>
 
-## i risultati delle liste
+## i risultati forti e deboli delle principali liste
 
 Aggiungiamo a questo mappa i risultati delle liste principali a supporto dei candidati. Le frecce indicano quando il risultato è superiore o inferiore al risultato della lista al livello regionale.
 
