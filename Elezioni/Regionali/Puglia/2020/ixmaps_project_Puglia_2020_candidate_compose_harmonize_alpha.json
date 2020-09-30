@@ -46,6 +46,7 @@
 			"mapopacity": "1",
 			"basemapopacity": "1"
 			},
+		"center": {
 			"lat": "40.84290487729676",
 			"lng": "16.949157714843754"
 			},
