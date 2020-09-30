@@ -100,7 +100,7 @@ La valutazione del risultato lascio a chi si intende.
 
 Fonte: OnData <a href="https://github.com/ondata/elezioni_2020" target="_blank">GitHub</a>  <---  <a href="https://dait.interno.gov.it/elezioni" target="_blank">Eligendo - Ministero dell'Interno</a>
 
-Visualizzazioni: iXMaps, i progetti (json) per le mappe si trovano qui: <a href="https://github.com/gjrichter/viz/tree/master/Elezioni/Regionali/Puglia/2020" _target="_blank">GitHub</a>
+Visualizzazioni: iXMaps, i progetti (json) per le mappe si trovano qui: <a href="https://github.com/gjrichter/viz/tree/master/Elezioni/Regionali/Puglia/2020" target="_blank">GitHub</a>
 
 
 
