@@ -27,7 +27,7 @@ Qui le varie mappe:
 <a href="javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_performer.json?id=123')" >
 <img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_performer.png"></a>
 
-### javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_performer_density.json?id=123'))
+
 
 <a href="javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_performer_density.json?id=123')" >
 <img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_performer_density.png"></a>
