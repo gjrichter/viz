@@ -28,7 +28,7 @@ Oltre al candidato vincente, questa mappa mostra anche la percentuale della vitt
 
 
 
-### il candidato con il risultato sopra alla propria media
+## il candidato con il risultato sopra alla propria media
 
 Per ogni comune il colore indica il candidato il quale ha ottenuto il risultato relativamente maggiore, cioè il risultato più ampio sopra la propria media regionale.
 
@@ -44,7 +44,7 @@ Aggiungendo il valori in forma testuale si nota subito la differenza tra i candi
 
 
 
-### visualizzazione multivariata del risultato con colori composti
+## visualizzazione multivariata del risultato con colori composti
 
 Se si crea un colore composto dai colori degli candidati in percentuali uguali al risultato ottenuto, si ottiene per ogni comune un colore specifico rappresentando non solo il candidato vincitore, ma il risultato nella sua complessità. 
 
@@ -56,7 +56,7 @@ Insieme questi coloro creano un paesaggio politico del risultato degli elezioni.
 
 
 
-### i risultati delle liste
+## i risultati delle liste
 
 Aggiungiamo a questo mappa i risultati delle liste principali a supporto dei candidati. Le frecce indicano quando il risultato è superiore o inferiore al risultato della lista al livello regionale.
 
@@ -70,7 +70,7 @@ Qui sotto solo i risultati delle liste principali a supporto dei candidati. Le f
 
 
 
-### l'importanza delle liste
+## l'importanza delle liste
 
 Visto il numero elevato delle liste a supporto di alcuni candidati, ho fatto la seguente mappa per vedere il rapporto tra lista principale del candidato e le list a supporto. Per le liste a supporto del candidato Emiliano ho scelto il colore rosa. Per Fratelli d'Italia, Forza Italia e Lega a supporto di Fitto ho scelto i colori partitici.
 
@@ -88,7 +88,7 @@ Si nota anche che in non pochi comuni le liste civiche hanno il risultato maggio
 
 
 
-### Guadagni e perdite rispetto a 2019
+## Guadagni e perdite rispetto a 2019
 
 Alla fine un confronto delle percentuali raggiunti nelle Elezioni Europee del 2019 con le Elezione Regionale nel 2020 per i principali partiti.
 
