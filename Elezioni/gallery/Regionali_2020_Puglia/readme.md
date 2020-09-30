@@ -26,7 +26,8 @@ Un altro modo di dare più profondità e variare l'intensità del colore con il 
 
 Oltre al candidato vincente, questa mappa mostra anche la percentuale della vittoria.
 
-
+<br>
+<br>
 
 ## il candidato con il risultato sopra alla propria media
 
