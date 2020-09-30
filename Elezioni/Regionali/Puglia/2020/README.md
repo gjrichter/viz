@@ -10,138 +10,33 @@ Qui le varie mappe:
 <a href="javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.json?id=123')" >
 <img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.png"></a>
 
-Questa mappa contiene 3 temi per visualizzare il risultato delle elezioni europee del 2019. Il primo mostra il partito vincente con il suo colore, il secondo aggiunge il risultato del partito vincente in cifre.
 
-Un terzo tema dipende dal livello dello zoom è mostra il risultato di tutti partiti in un semicerchio.
-
-
-
-
-
-### [il candidato vincente](javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner_density.json?id=123'))
 
 <a href="javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner_density.json?id=123')" >
 <img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner_density.png"></a>
 
-Questa mappa contiene 3 temi per visualizzare il risultato delle elezioni europee del 2019. Il primo mostra il partito vincente con il suo colore, il secondo aggiunge il risultato del partito vincente in cifre.
 
-Un terzo tema dipende dal livello dello zoom è mostra il risultato di tutti partiti in un semicerchio.
-
-
-
-### [il candidato vincente](javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner_text.json?id=123'))
 
 <a href="javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner_text.json?id=123')" >
 <img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner_text.png"></a>
 
-Questa mappa contiene 3 temi per visualizzare il risultato delle elezioni europee del 2019. Il primo mostra il partito vincente con il suo colore, il secondo aggiunge il risultato del partito vincente in cifre.
 
-Un terzo tema dipende dal livello dello zoom è mostra il risultato di tutti partiti in un semicerchio.
 
-### [il candidato vincente](javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_performer.json?id=123'))
+### [il candidato con risultato maggiore relativo](javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_performer.json?id=123'))
 
 <a href="javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_performer.json?id=123')" >
 <img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_performer.png"></a>
 
-Questa mappa contiene 3 temi per visualizzare il risultato delle elezioni europee del 2019. Il primo mostra il partito vincente con il suo colore, il secondo aggiunge il risultato del partito vincente in cifre.
-
-Un terzo tema dipende dal livello dello zoom è mostra il risultato di tutti partiti in un semicerchio.
-
-### [il candidato vincente](javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_performer_density.json?id=123'))
+### javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_performer_density.json?id=123'))
 
 <a href="javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_performer_density.json?id=123')" >
 <img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_performer_density.png"></a>
 
-Questa mappa contiene 3 temi per visualizzare il risultato delle elezioni europee del 2019. Il primo mostra il partito vincente con il suo colore, il secondo aggiunge il risultato del partito vincente in cifre.
-
-Un terzo tema dipende dal livello dello zoom è mostra il risultato di tutti partiti in un semicerchio.
 
 
-
-### [il candidato vincente](javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.json?id=123'))
+### [successo relativo delle liste](javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.json?id=123'))
 
 <a href="javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_Liste_pointer_2019_diff.json?id=123')" >
 <img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_Liste_pointer_2019_diff.png"></a>
-
-Questa mappa contiene 3 temi per visualizzare il risultato delle elezioni europee del 2019. Il primo mostra il partito vincente con il suo colore, il secondo aggiunge il risultato del partito vincente in cifre.
-
-Un terzo tema dipende dal livello dello zoom è mostra il risultato di tutti partiti in un semicerchio.
-
-### [il candidato vincente](javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.json?id=123'))
-
-<a href="javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.json?id=123')" >
-<img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.png"></a>
-
-Questa mappa contiene 3 temi per visualizzare il risultato delle elezioni europee del 2019. Il primo mostra il partito vincente con il suo colore, il secondo aggiunge il risultato del partito vincente in cifre.
-
-Un terzo tema dipende dal livello dello zoom è mostra il risultato di tutti partiti in un semicerchio.
-
-### [il candidato vincente](javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.json?id=123'))
-
-<a href="javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.json?id=123')" >
-<img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.png"></a>
-
-Questa mappa contiene 3 temi per visualizzare il risultato delle elezioni europee del 2019. Il primo mostra il partito vincente con il suo colore, il secondo aggiunge il risultato del partito vincente in cifre.
-
-Un terzo tema dipende dal livello dello zoom è mostra il risultato di tutti partiti in un semicerchio.
-
-### [il candidato vincente](javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.json?id=123'))
-
-<a href="javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.json?id=123')" >
-<img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.png"></a>
-
-Questa mappa contiene 3 temi per visualizzare il risultato delle elezioni europee del 2019. Il primo mostra il partito vincente con il suo colore, il secondo aggiunge il risultato del partito vincente in cifre.
-
-Un terzo tema dipende dal livello dello zoom è mostra il risultato di tutti partiti in un semicerchio.
-
-### [il candidato vincente](javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.json?id=123'))
-
-<a href="javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.json?id=123')" >
-<img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.png"></a>
-
-Questa mappa contiene 3 temi per visualizzare il risultato delle elezioni europee del 2019. Il primo mostra il partito vincente con il suo colore, il secondo aggiunge il risultato del partito vincente in cifre.
-
-Un terzo tema dipende dal livello dello zoom è mostra il risultato di tutti partiti in un semicerchio.
-
-### [il candidato vincente](javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.json?id=123'))
-
-<a href="javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.json?id=123')" >
-<img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.png"></a>
-
-Questa mappa contiene 3 temi per visualizzare il risultato delle elezioni europee del 2019. Il primo mostra il partito vincente con il suo colore, il secondo aggiunge il risultato del partito vincente in cifre.
-
-Un terzo tema dipende dal livello dello zoom è mostra il risultato di tutti partiti in un semicerchio.
-
-### [il candidato vincente](javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.json?id=123'))
-
-<a href="javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.json?id=123')" >
-<img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.png"></a>
-
-Questa mappa contiene 3 temi per visualizzare il risultato delle elezioni europee del 2019. Il primo mostra il partito vincente con il suo colore, il secondo aggiunge il risultato del partito vincente in cifre.
-
-Un terzo tema dipende dal livello dello zoom è mostra il risultato di tutti partiti in un semicerchio.[il risultato sopra alla media](javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_performer_text.json?id=123'))
-
-<a href="javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/elezioni-europee-2019/master/projects/ixmaps_project_Europee_2019_deviation_dopacity.json?id=123')" >
-<img src="https://raw.githubusercontent.com/gjrichter/elezioni-europee-2019/master/projects/ixmaps_project_Europee_2019_deviation_dopacity.png"></a>
-
-La mappa mostra il partito con il risultato migliore rispetto alla propria media nazionale. Cosi evidenziando preferenze e tendenze locali. 
-
-<a href="javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/elezioni-europee-2019/master/projects/ixmaps_project_Europee_2019_deviation_dopacity_gray.json?id=123')" >
-<img src="https://raw.githubusercontent.com/gjrichter/elezioni-europee-2019/master/projects/ixmaps_project_Europee_2019_deviation_dopacity_gray.png"></a>
-
-In questa versione della stessa mappa, i partiti 'grandi' con un risultato nazionale sopra a 5 % vengono visualizzati con il colore grigio per dare maggiore visibilità ai partiti 'piccoli'.
-
-
-
-### [il risultato sopra alla media nei confini del 1861](javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_compose_harmonize_alpha_pointer_liste.json?id=123'))
-
-<a href="javascript:ixmaps.loadExample('https://raw.githubusercontent.com/gjrichter/elezioni-europee-2019/master/projects/ixmaps_project_Europee_2019_deviation_1861.json?id=123')" >
-<img src="https://raw.githubusercontent.com/gjrichter/elezioni-europee-2019/master/projects/ixmaps_project_Europee_2019_deviation_1861.png"></a>
-
-Un 'gioco' che mette al confronto preferenze locali come descritto sopra con i confini del regno d'Italia al 1861.
-
-La domanda è: sono ancora 'vivi' i confini di allora e come si esprimono nel risultato delle elezioni? 
-
-<br><br><br><br><br><br>
 
 
