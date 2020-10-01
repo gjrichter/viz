@@ -103,7 +103,7 @@
 			"field": "EMILIANO|FITTO|LARICCHIA",
 			"field100": "Total",
 			"style": {
-				"name":"polygon",
+				"name":"textual",
 				"type": "CHART|SYMBOL|TEXTONLY|DOMINANT|PERCENTOFMEAN|AGGREGATE|MAX|RELOCATE|SUM|NOLEGEND|SIZE",
 				"colorscheme": [
 					"#FF0000",
