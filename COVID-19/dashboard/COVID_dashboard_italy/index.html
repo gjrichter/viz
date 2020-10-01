@@ -183,7 +183,7 @@
 		<div class="card-deck mb-3 text-center">
 			<div class="card mb-4 shadow-sm">
 				<div class="card-header">
-					<h4 class="my-0 font-weight-normal">Prevalenza - Casi attualmente positivi per 10.000 abianti</h4>
+					<h4 class="my-0 font-weight-normal"><b>Prevalenza</b> - Casi attualmente positivi per 10.000 abianti</h4>
 				</div>
 				<div class="card-body">
 					<h5 class="card-title pricing-card-title"><small class="text-muted">
@@ -232,12 +232,21 @@
 		<div class="card-deck mb-3 text-center">
 			<div class="card mb-4 shadow-sm">
 				<div class="card-header">
-					<h4 class="my-0 font-weight-normal"><b>Nuovi casi</b> giorno per giorno</h4>
+					<h4 class="my-0 font-weight-normal"><b>Nuovi casi positivi</b>, giorno per giorno</h4>
 				</div>
 				<div class="card-body">
 					<h5 class="card-title pricing-card-title"><small class="text-muted">Media mobile per 7 giorni dei nuovi casi</small></h5>
 					<div class="card-body no-padding">
 						<iframe id="map1" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map1&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Reg2019_COVID_curves_casi_lite.json"></iframe>
+					</div>
+				</div>
+				<div class="card-header">
+					<h4 class="my-0 font-weight-normal"><b>Casi attivi</b>, giorno per giorno</h4>
+				</div>
+				<div class="card-body">
+					<h5 class="card-title pricing-card-title"><small class="text-muted">Media mobile per 7 giorni dei casi attualmente positivi</small></h5>
+					<div class="card-body no-padding">
+						<iframe id="map1" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map1&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Reg2019_COVID_active_plus.json"></iframe>
 					</div>
 				</div>
 			</div>
@@ -337,7 +346,7 @@
 					<h5 class="card-title pricing-card-title"><small class="text-muted">
 						</small></h5>
 					<div class="card-body no-padding">
-						<iframe id="map5" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map5&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_free_days_green.json"></iframe>
+						<iframe id="map5" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map5&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_free_days_green_new_cases.json"></iframe>
 					</div>
 				</div>
 			</div>
@@ -356,8 +365,8 @@
 				</div>
 				<div class="card-body">
 					<h5 class="card-title pricing-card-title text-left"><small class="text-muted">
-							Per ogni provincia viene elencato: il n° attuale di casi, la Prevalenza (casi per 10.000 abitanti) e l'Incidenza (= nuovi casi per 10.000 abitanti). La freccia indica se l'Incidenza e più alta o più bassa di ieri, la piccola curva mostra l'andamento dell'Incidenza per i unltimi 28 giorni.<br><br>
-							Lista è <b>ordinata</b> per <b>Incidenza</b> ma <b>colorata</b> per <b>Prevalenza</b>
+						Per ogni provincia viene elencato: il n° attuale di casi, la <b>prevalenza (casi per 10.000 abitanti)</b> e <b>l'incidenza (= nuovi casi per 10.000 abitanti)</b>. La freccia indica se l'Incidenza e più alta o più bassa di ieri, la piccola curva mostra l'andamento dell'Incidenza per i unltimi 28 giorni.<br><br>
+						<h4>Le Province sono <b>ordinate &darr; per incidenza</b> ma <b style='color:#EE8888'>colorate per prevalenza</b></h4>
 						</small></h5>
 
 					<div id="province-list">

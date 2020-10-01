@@ -346,7 +346,7 @@ $(function () {
 			"dimessi_guariti"
 		]
 		var cardA_all = [
-			"totale_positivi",
+			"totale_casi",
 			"dimessi_guariti",
 			"deceduti",
 			"totale_ospedalizzati",
@@ -1023,7 +1023,7 @@ $(function () {
 			var set4 = data.column("terapia_intensiva").values();
 			var set5 = data.column("deceduti").values();
 
-			var fPrevalenza = true;
+			var fPrevalenza = false;
 			if (fPrevalenza) {
 				
 				var pop = __regionPop[szName.replace(/\-/," ")];
@@ -1046,6 +1046,7 @@ $(function () {
 			}
 			
 			var last = set5.length-1;
+			max = 0;
 			max = Math.max(max,Math.ceil(Number(set1[last])+Number(set2[last])+Number(set3[last])+Number(set4[last])+Number(set5[last])));
 
 			var ctx, data, myBarChart, option_bars;
@@ -1112,8 +1113,8 @@ $(function () {
 		  }, {
 						label: "deceduti",
 						backgroundColor: "rgba(255, 255, 255,0.6)",
-						borderColor: "#c287F0",
-						borderWidth: 1,
+						borderColor: "#666666",
+						borderWidth: 0.5,
 						pointColor: "#22A7F0",
 						pointStrokeColor: "#fff",
 						pointHighlightFill: "#fff",
