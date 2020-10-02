@@ -9,7 +9,7 @@
 		"created": "Tue Sep 29 2020 12:50:56 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
-		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_pro_com.svgz",
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_pro_com_Campania.svgz",
 		"attribution": "confini comunali: ISTAT, dati: Eligendo, OnData, visualizzazione: iXMaps",
 		"basemap": "CartoDB - Positron",
 		"legend": "<h1>Elezioni regionale 2020 Puglia</h1><h4><b>Tutti voti</b> per comune e liste</h4><h4>La scelta degli <b>colori</b> permette un <b>confronto</b> tra la <b>lista principale</b> del candidato e le <b>liste di supporto</b></h4>",
