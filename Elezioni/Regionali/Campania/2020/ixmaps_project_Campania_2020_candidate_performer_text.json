@@ -95,7 +95,7 @@
 				"dominantfilter": "min",
 				"dominantdfilter": "0",
 				"title": "Campania 2020",
-				"snippet": "Candidato vincente",
+				"snippet": "Risultato sopra alla media",
 				"description": "fonte: Eligendo > OnData > <a href='https://github.com/ondata/elezioni_2020' target='_blank'>GitHub</a>"
 				}
 			},{
@@ -142,7 +142,7 @@
 				"dominantfilter": "min",
 				"dominantdfilter": "0",
 				"title": "Campania 2020",
-				"snippet": "Candidato vincente",
+				"snippet": "Riosultato sopra alla media",
 				"description": "fonte: Eligendo > OnData > <a href='https://github.com/ondata/elezioni_2020' target='_blank'>GitHub</a>"
 				}
 			}],
