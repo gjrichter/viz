@@ -5,7 +5,7 @@ Visualizzazioni cartografiche sulla base dei dati pubblicato dal Ministero dell'
 
 In seguito le varie visualizzazioni:
 
-#### Elezioni Regionali 2020 
+### Elezioni Regionali 2020 
 
 <a href="https://gjrichter.github.io/viz/Elezioni/gallery/Regionali_2020_Campania" >
 <img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Campania/2020/img/ixmaps_project_Campania_2020_candidate_winner.png" style="width:30%" ></a><a href="https://gjrichter.github.io/viz/Elezioni/gallery/Regionali_2020_Puglia" >
