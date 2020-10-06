@@ -6,14 +6,15 @@
 		"thumbnail": "",
 		"about": "",
 		"description": "",
-		"created": "Mon Sep 28 2020 17:02:42 GMT+0200 (Ora legale dell’Europa centrale)"
+		"created": "Sun Sep 27 2020 22:18:32 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
-		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2011/italia_comuni_2011_g_procom_nsh.svgz",
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_pro_com_Campania.svgz",
 		"attribution": "confini comunali: ISTAT, dati: Eligendo, OnData, visualizzazione: iXMaps",
 		"basemap": "CartoDB - Positron",
 		"legend": "<h1>Elezioni regionale 2020 Puglia</h1><h4><b>Tutti voti</b> per comune e liste</h4><h4>La scelta degli <b>colori</b> permette un <b>confronto</b> tra la <b>lista principale</b> del candidato e le <b>liste di supporto</b></h4>",
 		"item": "",
+		"layout": "minimal",
 		"scaleParam": {
 			"normalSizeScale": "489293"
 			},
@@ -53,14 +54,14 @@
 		"zoom": "9"
 		},
 	"themes": [{
-			"layer": "com2011_g",
+			"layer": "Com2020_pro_com",
 			"field": "desc_lis_c",
 			"field100": "",
 			"style": {
-				"type": "CHART|PIE|HALF|CENTERVALUE|STARBURST|RAYS|SIZE|AGGREGATE|CATEGORICAL|SUM|SIZE|SUM",
+				"type": "CHART|PIE|DONUT|HALF|SIZE|AGGREGATE|CATEGORICAL|SUM|SIZE|SUM",
 				"colorscheme": [
 					"rgb(233,30,37)",
-					"rgb(233,130,137)",
+					"rgb(233,90,97)",
 					"rgb(233,130,137)",
 					"rgb(233,130,137)",
 					"rgb(233,130,137)",
@@ -129,10 +130,9 @@
 				"scale": "0.5",
 				"rangescale": "1",
 				"sizefield": "voti",
-				"linecolor": [
-					"white"],
 				"valuescale": "1",
 				"valuedecimals": "0",
+				"linecolor": "white",
 				"centerpart": "max",
 				"aggregationfield": "CODICE ISTAT",
 				"evidence": "isolate_gray",

@@ -1,0 +1,102 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Fri Jan 31 2020 11:22:40 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_pro_com_Campania.svgz",
+		"attribution": "confini comunali: ISTAT, dati: Eligendo, OnData, visualizzazione: iXMaps",
+		"basemap": "Stamen - toner-lite",
+		"legend": "",
+		"layout": "minimal",
+		"scaleParam": {
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "40.73164913017892",
+			"lng": "15.167999267578127"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "Com2020_pro_com",
+			"field": "DE LUCA|CALDORO|CIARAMBINO",
+			"field100": "Total",
+			"style": {
+				"type": "CHOROPLETH|COMPOSECOLOR|SUBTRACTIVE|HORZ|SIMPLELEGEND|DOPACITY|MEAN",
+				"colorscheme": [
+					"#FF0000",
+					"#0000FF",
+					"#FFFF00"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/elezioni_2020/master/regionali/output/scrutini_candidati.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Campania/2020/process_data.js",
+				"datacache": "true",
+				"lookupfield": "CODICE ISTAT",
+				"lookuptonumber":"6",
+				"symbols": [
+					"circle"],
+				"values": [
+					"DE LUCA",
+					"CALDORO",
+					"CIARAMBINO"],
+				"label": [
+					"DE LUCA",
+					"CALDORO",
+					"CIARAMBINO"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"alphafield": "Total",
+				"alphafield100": "$density$",
+				"dopacitypow": "1.5",
+				"dopacityscale": "5",
+				"linewidth": "0",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"clipparts": "10",
+				"title": "Campania 2020",
+				"snippet": "colore = misto da voti/candidato<br>intensità = n°elettori",
+				"description": "fonte: Eligendo > OnData > <a href='https://github.com/ondata/elezioni_2020' target='_blank'>GitHub</a>"
+				}
+			}],
+	"layerMask": {
+		}
+	}
