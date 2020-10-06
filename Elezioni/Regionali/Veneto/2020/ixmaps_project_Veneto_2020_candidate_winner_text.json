@@ -88,7 +88,7 @@
 				"refreshtimeout": "0",
 				"scale": "1",
 				"dopacitypow": "0.5",
-				"dopacityscale": "1",
+				"dopacityscale": "0.7",
 				"linewidth": "0",
 				"valuescale": "1",
 				"valuedecimals": "0",
