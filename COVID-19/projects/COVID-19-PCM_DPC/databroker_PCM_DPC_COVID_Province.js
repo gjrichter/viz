@@ -1632,6 +1632,7 @@ window.ixmaps = window.ixmaps || {};
 						  szXaxisA.push(" ");
 						}
 					}
+					theme.szXaxisA = szXaxisA;
 
 					// -----------------------------------------------------------------------------------------------               
 					// deploy the data
