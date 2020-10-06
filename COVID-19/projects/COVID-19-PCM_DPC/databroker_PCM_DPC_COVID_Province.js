@@ -1603,24 +1603,33 @@ window.ixmaps = window.ixmaps || {};
 					
 					theme.szSnippet = "dal " + columns[0] + " al " + columns[last - 1];
 					
-					theme.szXaxisA = columns.slice();
-					for ( i=1; i<theme.szXaxisA.length-1; i++ ){
-						if ( theme.szXaxisA[i] == "xx11/3/2020" ){
-							theme.szXaxisA[i] = "a";
+					var szXaxisA = [];
+					for ( var i =0; i<columns.length; i++ ){
+						if (columns[i] == "1/3/2020"){
+						  szXaxisA.push("Mar");
 						}else
-						if ( theme.szXaxisA[i] == "xx21/3/2020" ){
-							theme.szXaxisA[i] = "b";
+						if (columns[i] == "1/4/2020"){
+						  szXaxisA.push("Apr");
 						}else
-						if ( theme.szXaxisA[i] == "xx5/3/2020" ){
-							theme.szXaxisA[i] = "scuola";
+						if (columns[i] == "1/5/2020"){
+						  szXaxisA.push("Mag");
 						}else
-						if ( theme.szXaxisA[i] == "11/3/2020" ){
-							theme.szXaxisA[i] = "Dpcm-1";
+						if (columns[i] == "1/6/2020"){
+						  szXaxisA.push("Giu");
 						}else
-						if ( theme.szXaxisA[i] == "22/3/2020" ){
-							theme.szXaxisA[i] = "Dpcm-2";
+						if (columns[i] == "1/7/2020"){
+						  szXaxisA.push("Lug");
+						}else
+						if (columns[i] == "1/8/2020"){
+						  szXaxisA.push("Aug");
+						}else
+						if (columns[i] == "1/9/2020"){
+						  szXaxisA.push("Sep");
+						}else
+						if (columns[i] == "1/10/2020"){
+						  szXaxisA.push("Okt");
 						}else{
-							theme.szXaxisA[i] = " ";
+						  szXaxisA.push(" ");
 						}
 					}
 
