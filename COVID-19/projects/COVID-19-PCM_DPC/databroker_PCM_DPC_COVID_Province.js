@@ -494,6 +494,7 @@ window.ixmaps = window.ixmaps || {};
 						name: options.name
 					});
 
+					theme.szTitle = pivot.columnNames()[lastColumn];
 				});
 
 	};
