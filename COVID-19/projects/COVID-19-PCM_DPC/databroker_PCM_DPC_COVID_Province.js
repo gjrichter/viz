@@ -477,7 +477,7 @@ window.ixmaps = window.ixmaps || {};
 									  Number(row[lastColumn-5])+
 									  Number(row[lastColumn-6])+
 									  Number(row[lastColumn-7]))/7;
-						return (Number(last-before)/popA[Number(row[0])]*10000).toFixed(2);
+						return (Number(last-before)/popA[Number(row[0])]*100000).toFixed(2);
 				    });
 					
 					// set theme data source 
