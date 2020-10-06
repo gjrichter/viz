@@ -435,7 +435,7 @@ window.ixmaps = window.ixmaps || {};
 			ixmaps.PCM_DPC_COVID_LAST_INCID(theme, options);
 	};
 	
-	ixmaps.PCM_DPC_COVID_LAST_INCID_7 = function (theme, options) {
+	ixmaps.PCM_DPC_COVID_LAST_INCID_100000_7 = function (theme, options) {
 
 
 		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-province/dpc-covid19-ita-province.csv";
@@ -497,8 +497,8 @@ window.ixmaps = window.ixmaps || {};
 				});
 
 	};
-	ixmaps.PCM_DPC_COVID_LAST_INCID_7_ALT = function (theme, options) {
-			ixmaps.PCM_DPC_COVID_LAST_INCID_7(theme, options);
+	ixmaps.PCM_DPC_COVID_LAST_INCID_100000_7_ALT = function (theme, options) {
+			ixmaps.PCM_DPC_COVID_LAST_INCID_100000_7(theme, options);
 	};
 
 	ixmaps.PCM_DPC_COVID_LAST_PREVAL = function (theme, options) {
@@ -1526,7 +1526,7 @@ window.ixmaps = window.ixmaps || {};
 		ixmaps.PCM_DPC_COVID_SEQUENCE_INCIDENZA_MEAN_3_CLIP(theme, options);
 	};
 
-	ixmaps.PCM_DPC_COVID_SEQUENCE_INCIDENZA_MEAN_7 = function (theme, options) {
+	ixmaps.PCM_DPC_COVID_SEQUENCE_INCIDENZA_100000_MEAN_7 = function (theme, options) {
 
 
 		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-province/dpc-covid19-ita-province.csv";
