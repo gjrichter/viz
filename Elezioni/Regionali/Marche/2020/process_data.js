@@ -17,6 +17,7 @@ window.ixmaps.themeDataObj = window.ixmaps.themeDataObj || {};
 		dbtable = dbtable.pivot({  
 								"lead":	'PRO_COM_T',
 								"cols":	'cognome_cand',
+								"keep":	'COMUNE',
 								"value": 'voti' 
                                 });
 		return dbtable;
