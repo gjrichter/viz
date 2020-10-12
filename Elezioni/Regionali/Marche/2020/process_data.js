@@ -15,10 +15,10 @@ window.ixmaps.themeDataObj = window.ixmaps.themeDataObj || {};
     
  	ixmaps.themeDataObj.process = function(dbtable) {
 		dbtable = dbtable.pivot({  
-								"lead":	'PRO_COM_T',
-								"cols":	'cognome_cand',
+								"lead":	'CODICE ISTAT',
+								"cols":	'cogn',
 								"keep":	'COMUNE',
-								"value": 'voti' 
+								"value": 'voti', 
                                 });
 		return dbtable;
  	};
