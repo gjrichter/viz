@@ -17,8 +17,8 @@ window.ixmaps.themeDataObj_liste = window.ixmaps.themeDataObj_liste || {};
  	ixmaps.themeDataObj.process = function(dbtable) { 
 		dbtable.column("COMUNE").rename("comune");
 		dbtable = dbtable.pivot({  
-								"lead":	'PRO_COM_T',
-								"cols":	'nome',
+								"lead":	'CODICE ISTAT',
+								"cols":	'desc_lis_c',
 								"keep": 'comune',
 								"value": 'voti' 
                                 });
@@ -28,8 +28,8 @@ window.ixmaps.themeDataObj_liste = window.ixmaps.themeDataObj_liste || {};
  	ixmaps.themeDataObj_liste.process = function(dbtable) { 
 		dbtable.column("COMUNE").rename("comune");
 		dbtable = dbtable.pivot({  
-								"lead":	'PRO_COM_T',
-								"cols":	'nome',
+								"lead":	'CODICE ISTAT',
+								"cols":	'desc_lis_c',
 								"keep": 'comune',
 								"value": 'voti' 
                                 });
