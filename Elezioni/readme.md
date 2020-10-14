@@ -7,7 +7,15 @@ In seguito le varie visualizzazioni:
 
 ### Elezioni Regionali 2020 
 
-<a href="https://gjrichter.github.io/viz/Elezioni/gallery/Regionali_2020_Veneto" >
-<img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Veneto/2020/img/ixmaps_project_Veneto_2020_candidate_winner.png" style="width:30%" ></a><a href="https://gjrichter.github.io/viz/Elezioni/gallery/Regionali_2020_Veneto" >
-<img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Campania/2020/img/ixmaps_project_Campania_2020_candidate_winner.png" style="width:30%" ></a><a href="https://gjrichter.github.io/viz/Elezioni/gallery/Regionali_2020_Puglia" >
-<img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.png" style="width:30%" ></a>
+<div style="float:left;width:30%"><a href="https://gjrichter.github.io/viz/Elezioni/gallery/Regionali_2020_Veneto" >
+<img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Veneto/2020/img/ixmaps_project_Veneto_2020_candidate_winner.png"  ></a>
+</div>
+<div style="float:left;width:30%"><a href="https://gjrichter.github.io/viz/Elezioni/gallery/Regionali_2020_Marche" >
+<img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/img/ixmaps_project_Marche_2020_candidate_winner.png"  ></a>
+</div>
+<div style="float:left;width:30%"><a href="https://gjrichter.github.io/viz/Elezioni/gallery/Regionali_2020_Campania" >
+<img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Campania/2020/img/ixmaps_project_Campania_2020_candidate_winner.png" ></a>
+</div>
+<div style="float:left;width:30%"><a href="https://gjrichter.github.io/viz/Elezioni/gallery/Regionali_2020_Puglia" >
+<img src="https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Puglia/2020/ixmaps_project_Puglia_2020_candidate_winner.png" ></a>
+</div>
