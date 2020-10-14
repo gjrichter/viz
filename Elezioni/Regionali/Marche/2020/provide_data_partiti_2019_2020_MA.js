@@ -22,7 +22,7 @@ window.ixmaps = window.ixmaps || {};
 				  }).load(function(data2019){
 		Data.feed({source:"https://raw.githubusercontent.com/gjrichter/data/master/ElezioniRegionali2020/scrutini_liste.csv",
 				   type:"csv"
-				  }).load(function(data2020PU){
+				  }).load(function(data2020MA){
 			
 			// calcolate % for 2019
 
@@ -54,62 +54,56 @@ window.ixmaps = window.ixmaps || {};
 			
 			// make ISTAT pro_com column
 			
-			console.log(istat2019);
 			var procomA = istat2019.lookupArray("PRO_COM_T,C,6","COMUNE_U,C,100");
-			console.log(procomA);
 			data2019.addColumn({source:"COMUNE",destination:"CODICE ISTAT"},function(value){
 								return (procomA[value]);
 						});			
-			console.log(data2019);
 
 			// make 2020 ER pivot table 
 			
-			data2020PU = data2020PU.select("WHERE IDREGIONE is 16");
-			
-			data2020PU = data2020PU.pivot({  
+			data2020MA = data2020MA.pivot({  
 							"lead":	'CODICE ISTAT',
 							"cols":	'desc_lis_c',
 							"value": 'voti' 
 						});
 
-			console.log(data2020PU);
+			console.log(data2020MA);
 			console.log("start ---------->");
 			
 			// calcolate % for 2020
 
-			var i1 = data2020PU.column("PARTITO DEMOCRATICO").index;
-			var i2 = data2020PU.column("Total").index;
-			data2020PU.addColumn({destination:'PARTITO DEMOCRATICO PERCENTO'},function(value){
+			var i1 = data2020MA.column("PARTITO DEMOCRATICO").index;
+			var i2 = data2020MA.column("Total").index;
+			data2020MA.addColumn({destination:'PARTITO DEMOCRATICO PERCENTO'},function(value){
 					return (100/value[i2]*value[i1]);
 			});
-			var i1 = data2020PU.column("LEGA SALVINI PUGLIA").index;
-			var i2 = data2020PU.column("Total").index;
-			data2020PU.addColumn({destination:'LEGA PERCENTO'},function(value){
+			var i1 = data2020MA.column("LEGA SALVINI MARCHE").index;
+			var i2 = data2020MA.column("Total").index;
+			data2020MA.addColumn({destination:'LEGA PERCENTO'},function(value){
 					return (100/value[i2]*value[i1]);
 			});
-			var i1 = data2020PU.column("MOVIMENTO 5 STELLE").index;
-			var i2 = data2020PU.column("Total").index;
-			data2020PU.addColumn({destination:'MOVIMENTO 5 STELLE PERCENTO'},function(value){
+			var i1 = data2020MA.column("MOVIMENTO 5 STELLE").index;
+			var i2 = data2020MA.column("Total").index;
+			data2020MA.addColumn({destination:'MOVIMENTO 5 STELLE PERCENTO'},function(value){
 					return (100/value[i2]*value[i1]);
 			});
-			var i1 = data2020PU.column("FORZA ITALIA BERLUSCONI PER FITTO").index;
-			var i2 = data2020PU.column("Total").index;
-			data2020PU.addColumn({destination:'FORZA ITALIA PERCENTO'},function(value){
+			var i1 = data2020MA.column("FORZA ITALIA - BERLUSCONI - CIVICI PER LE MARCHE").index;
+			var i2 = data2020MA.column("Total").index;
+			data2020MA.addColumn({destination:'FORZA ITALIA PERCENTO'},function(value){
 					return (100/value[i2]*value[i1]);
 			});
-			var i1 = data2020PU.column("FRATELLI D'ITALIA").index;
-			var i2 = data2020PU.column("Total").index;
-			data2020PU.addColumn({destination:"FRATELLI D'ITALIA PERCENTO"},function(value){
+			var i1 = data2020MA.column("GIORGIA MELONI per ACQUAROLI - FRATELLI D'ITALIA").index;
+			var i2 = data2020MA.column("Total").index;
+			data2020MA.addColumn({destination:"FRATELLI D'ITALIA PERCENTO"},function(value){
 					return (100/value[i2]*value[i1]);
 			});
 
-			console.log(data2020PU);
 
 			Data.merger()
 			
 				.addSource(data2019,{lookup:"CODICE ISTAT",columns:["CODICE ISTAT","PARTITO DEMOCRATICO PERCENTO","LEGA SALVINI PREMIER PERCENTO","MOVIMENTO 5 STELLE PERCENTO","FORZA ITALIA PERCENTO","FRATELLI D'ITALIA PERCENTO"]})
 			
-				.addSource(data2020PU,{lookup:"CODICE ISTAT",columns:["PARTITO DEMOCRATICO PERCENTO","LEGA PERCENTO","MOVIMENTO 5 STELLE PERCENTO","FORZA ITALIA PERCENTO","FRATELLI D'ITALIA PERCENTO","Total"]})
+				.addSource(data2020MA,{lookup:"CODICE ISTAT",columns:["PARTITO DEMOCRATICO PERCENTO","LEGA PERCENTO","MOVIMENTO 5 STELLE PERCENTO","FORZA ITALIA PERCENTO","FRATELLI D'ITALIA PERCENTO","Total"]})
 			
 				.realize(function(newData){
 
