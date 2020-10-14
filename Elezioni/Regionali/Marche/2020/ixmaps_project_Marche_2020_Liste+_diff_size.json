@@ -116,7 +116,7 @@
 			"field": "PARTITO DEMOCRATICO VARIAZIONE|LEGA VARIAZIONE|MOVIMENTO 5 STELLE VARIAZIONE|FRATELLI D'ITALIA VARIAZIONE|FORZA ITALIA VARIAZIONE",
 			"field100": "",
 			"style": {
-				"type": "CHART|BAR|POINTER|BOX|LONGTITLE|SIMPLELEGEND|MEAN|VALUES|VALUEBACKGROUND|SIZE",
+				"type": "CHART|BAR|POINTER|BOX|LONGTITLE|SIMPLELEGEND|MEAN|VALUES|VALUEBACKGROUND|SIZEP3",
 				"colorscheme": [
 					"#FF0000",
 					"#048445",
@@ -138,9 +138,10 @@
 					"FORZA ITALIA"],
 				"units": "%",
 				"refreshtimeout": "0",
-				"normalsizevalue": "20",
-				"scale": "1",
-				"rangescale": "1",
+				"normalsizevalue": "10000",
+				"scale": "2.5",
+				"rangescale": "100",
+				"sizefield": "Total.2",
 				"textcolor": "black",
 				"linecolor": [
 					"none"],
