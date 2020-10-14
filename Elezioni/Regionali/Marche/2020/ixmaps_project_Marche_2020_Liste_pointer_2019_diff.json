@@ -1,0 +1,106 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Sat Feb 01 2020 12:10:32 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_pro_com_Marche.svgz",
+		"attribution": "",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"layout": "minimal",
+		"item": "html",
+		"scaleParam": {
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.27320591705845",
+			"lng": "13.463745117187502"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "Com2020_pro_com",
+			"field": "PARTITO DEMOCRATICO VARIAZIONE|LEGA VARIAZIONE|MOVIMENTO 5 STELLE VARIAZIONE|FRATELLI D'ITALIA VARIAZIONE|FORZA ITALIA VARIAZIONE",
+			"field100": "",
+			"style": {
+				"type": "CHART|BAR|POINTER|BOX|LONGTITLE|SIMPLELEGEND|MEAN|VALUES|VALUEBACKGROUND|SIZEP3",
+				"colorscheme": [
+					"#FF0000",
+					"#048445",
+					"#F8E127",
+					"#000088",
+					"#23ABE5"],
+				"shadow": "false",
+				"dbtable": "partiti_2019_2020",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/provide_data_partiti_2019_2020_MA.js",
+				"datacache": "true",
+				"lookupfield": "CODICE ISTAT.1",
+				"lookuptonumber":"6",
+				"label": [
+					"PARTITO DEMOCRATICO",
+					"LEGA",
+					"MOVIMENTO 5 STELLE",
+					"FRATELLI D'ITALIA",
+					"FORZA ITALIA"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"normalsizevalue": "10000",
+				"scale": "2.5",
+				"rangescale": "100",
+				"sizefield": "Total.2",
+				"textcolor": "black",
+				"linecolor": [
+					"none"],
+				"linewidth": "0.6",
+				"bordercolor": "black",
+				"boxopacity": "0.01",
+				"titlefield": "CODICE ISTAT.1",
+				"valueupper": "1:100000",
+				"boxupper": "1:100000",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"fadenegative": "0.2",
+				"title": "Marche 2019 -> 2020",
+				"snippet": "differenza della percentuale nelle elezioni <b>regionali del 2020</b> e delle elezioni <b>europee del 2019</b>",
+				"description": "fonte: Eligendo/Regione Marche > OnData > <a href='https://github.com/ondata/elezioni_2020' target='_blank'>GitHub</a>"
+				}
+			}],
+	"layerMask": {
+		}
+	}
