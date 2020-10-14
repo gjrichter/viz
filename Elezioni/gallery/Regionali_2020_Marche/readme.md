@@ -1,4 +1,4 @@
-# elezioni-regionali-2020 Campania
+# elezioni-regionali-2020 Marche
 
 Visualizzazioni cartografiche sulla base di dati pubblicati dalla Regione Marche sul sito della Regione.
 
@@ -95,6 +95,10 @@ Si può notare una grande variazione nel rapporto tra la lista principale e le l
 
 <iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_Liste_pie_candidate_liste.json?id=123"></iframe>
 
+<iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_Liste_pie_candidate_liste_star.json?id=123"></iframe>
+
+<br>
+
 Si nota anche che in non pochi comuni le liste civiche hanno il risultato maggiore. 
 
 
@@ -107,19 +111,24 @@ Si nota anche che in non pochi comuni le liste civiche hanno il risultato maggio
 
 <br>
 
-<iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_Liste+_pointer.json?id=123"></iframe>
+<iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_Liste+_Liste.json?id=123"></iframe>
 
 <br>
 
-<iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_Liste+_Liste.json?id=123"></iframe>
+<iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_Liste+_pointer.json?id=123"></iframe>
 
 <br>
 
 <iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_Liste+_diff.json?id=123"></iframe>
 
-<br>
 
-<iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_Liste+_compose.json?id=123"></iframe>
+## Guadagni e perdite rispetto a 2019
+
+Alla fine un confronto delle percentuali raggiunte nelle Elezioni Europee del 2019 con le Elezione Regionali del 2020 per i principali partiti.
+
+<iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_Liste_pointer_2019_diff.json?id=123"></iframe>
+
+La valutazione del risultato la lascio a chi se ne intende.
 
 <br>
 
@@ -138,19 +147,6 @@ Si nota anche che in non pochi comuni le liste civiche hanno il risultato maggio
 <iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_Liste-_bars.json?id=123"></iframe>
 
 
-<iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_Liste_pie_candidate_liste_star.json?id=123"></iframe>
-
-<br>
-
-## Guadagni e perdite rispetto a 2019
-
-Alla fine un confronto delle percentuali raggiunte nelle Elezioni Europee del 2019 con le Elezione Regionali del 2020 per i principali partiti.
-
-<iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_Liste_pointer_2019_diff.json?id=123"></iframe>
-
-La valutazione del risultato la lascio a chi se ne intende.
-
-<br>
 
 Fonte: OnData <a href="https://github.com/ondata/elezioni_2020" target="_blank">GitHub</a>  <---  <a href="https://dait.interno.gov.it/elezioni" target="_blank">Eligendo - Ministero dell'Interno</a>
 
