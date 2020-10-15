@@ -1,0 +1,105 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Thu Oct 15 2020 23:45:14 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Dark matter",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"lineScaling": "9.988721231519573",
+			"labelScaling": "1.777777777777777",
+			"normalSizeScale": "4638029"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"worksilent": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "42.19596877629178",
+			"lng": "14.633789062500002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "mercator",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|GLOW|VALUES|SUM|NOZERO|COMPACTLEGEND|CLIP|LOOP",
+				"colorscheme": [
+					"15",
+					"#D2E3F4",
+					"#104482",
+					"3colors",
+					"#4A90E1"],
+				"fillopacity": "0.6",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_HOSPITALIZED_CLIP",
+				"dbtableUrl": "",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "true",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"units": "giorni",
+				"refreshtimeout": "0",
+				"normalsizevalue": "100",
+				"scale": "1",
+				"dopacitypow": "1.5",
+				"dopacityscale": "2",
+				"textcolor": "white",
+				"linecolor": [
+					"white"],
+				"linewidth": "0.3",
+				"titlefield": "denominazione_regione",
+				"chartlower": "1:1000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"clipframes": "229",
+				"clipframerate": "24",
+				"title": " ",
+				"snippet": "aggiornato al 14/10/2020",
+				"description": "<div style='color:#777777;font-weight'><h1></h1><h1><b>ospedalizzati ...</b></h1><h4>il totale delle persone ricoverate in ospedale con sintomi, incliusivo della terapia intensiva</h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>"
+				}
+			}],
+	"layerMask": {
+		"Prov2019_nome": {
+			"display": "none"
+			}
+		}
+	}
