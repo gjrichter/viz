@@ -12,7 +12,7 @@
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_pro_com_Marche.svgz",
 		"attribution": "",
 		"basemap": "CartoDB - Positron",
-		"legend": "<h1>Elezioni regionale 2020 Marche</h1><h4><b>Tutti voti</b> per comuni e liste</h4><h4>La scelta degli <b>colori</b> permette un <b>confronto</b> tra la <b>lista principale</b> del candidato e le <b>liste di supporto</b></h4>",
+		"legend": "",
 		"item": "",
 		"layout": "minimal",
 		"scaleParam": {
@@ -123,7 +123,7 @@
 				"aggregationfield": "CODICE ISTAT",
 				"evidence": "isolate_gray",
 				"name": "polygon",
-				"title": "Regionali Marche 2020<br>Candidati e liste",
+				"title": "<h1>Regionali 2020 Marche</h1><h4><b>Tutti voti</b> per comuni e liste</h4>",
 				"description": "fonte: Regione Marche > OnData > <a href='https://github.com/ondata/elezioni_2020' target='_blank'>GitHub</a>"
 				}
 			}],
