@@ -389,7 +389,7 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 
-	ixmaps.PCM_DPC_COVID_LAST_PERCENT_ALT_7 = function (theme, options) {
+	ixmaps.PCM_DPC_COVID_LAST_PERCENT_7_ALT = function (theme, options) {
 		ixmaps.PCM_DPC_COVID_LAST_PERCENT_7(theme, options);		
 	};
 	
