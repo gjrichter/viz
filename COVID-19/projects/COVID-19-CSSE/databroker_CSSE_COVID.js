@@ -629,12 +629,12 @@ window.ixmaps = window.ixmaps || {};
 			.addSource(szUrl4, "csv")
 			.realize(
 
-				function (dataA) {
+				function (dataA) {	
 
-					data_Confirmed = dataA[0];
-					data_Recovered = dataA[1];
-					data_Deaths = dataA[2];
-					data_Active = dataA[3];
+					data_Confirmed = __mean_7(dataA[0]);
+					data_Recovered = __mean_7(dataA[1]);
+					data_Deaths = __mean_7(dataA[2]);
+					data_Active = __mean_7(dataA[3]);
 
 					var lastDataColumnName = data_Confirmed.columnNames().pop();
 
