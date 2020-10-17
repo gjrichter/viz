@@ -9,7 +9,7 @@
 		"created": "Tue Oct 13 2020 21:05:09 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
-		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_pro_com_Marche.svgz",
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_province_2020_g_pro_com_Marche.svgz",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
 		"legend": "",
