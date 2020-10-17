@@ -485,6 +485,62 @@ window.ixmaps = window.ixmaps || {};
 		ixmaps.CSSE_COVID_ALL_28(theme, options);
 	}
 
+	ixmaps.CSSE_COVID_CONFIRMED_CLIP = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.realize(
+
+				function (dataA) {
+
+					data_Confirmed = dataA[0];
+
+					var lastDataColumnName = data_Confirmed.columnNames().pop();
+
+					theme.szDescription = "aggiornato: " + lastDataColumnName;
+
+					// get data columns
+					var columnsA = data_Confirmed.columnNames();
+
+					columnsA.shift();
+					columnsA.shift();
+					columnsA.shift();
+					columnsA.shift();
+
+					// set as data fields in actual theme
+
+					options.theme.szFields = columnsA.slice().join("|");
+					options.theme.szFieldsA = columnsA;
+
+					options.theme.nClipFrames = columnsA.length;
+
+					options.theme.szItemField = "Lat|Long";
+					options.theme.szSelectionField = "Lat|Long";
+
+					// make label 
+					var xAxis = [];
+					for (i in columnsA) {
+						var dte = new Date(columnsA[i]);
+						xAxis.push(dte.toLocaleDateString());
+					}
+					options.theme.szXaxisA = xAxis;
+
+					// -----------------------------------------------------------------------------------------------               
+					// deploy the data
+					// ----------------------------------------------------------------------------------------------- 
+
+					ixmaps.setExternalData(data_Confirmed, {
+						type: "dbtable",
+						name: options.name
+					});
+
+				});
+
+	};
+
 	ixmaps.CSSE_COVID_ALL_CLIP = function (theme, options) {
 
 		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
@@ -2058,6 +2114,138 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 
+	ixmaps.CSSE_COVID_SEQUENCE_DIFFERENCE_CONFIRMED_MEAN_7_CLIP = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.realize(
+
+				function (dataA) {
+
+					data_Confirmed = __mean_7(dataA[0]);
+					data_Confirmed = __difference(data_Confirmed);
+
+					var lastDataColumnName = data_Confirmed.columnNames().pop();
+
+					theme.szDescription = "aggiornato: " + lastDataColumnName;
+
+					// get data columns
+					var columnsA = data_Confirmed.columnNames();
+
+					columnsA.shift();
+					columnsA.shift();
+					columnsA.shift();
+					columnsA.shift();
+
+					// set as data fields in actual theme
+
+					fieldsA = [];
+					for (var i = 0; i < columnsA.length; i++) {
+						fieldsA.push(columnsA[i]);
+					}
+
+					options.theme.szFields = fieldsA.slice().join("|");
+					options.theme.szFieldsA = fieldsA;
+
+					options.theme.szItemField = "Lat|Long";
+					options.theme.szSelectionField = "Lat|Long";
+
+					// make label 
+					var szXaxisA = [];
+					for (i in columnsA) {
+						var dte = new Date(columnsA[i]);
+						szXaxisA.push(dte.toLocaleDateString());
+					}
+					
+					options.theme.szXaxisA = szXaxisA; 
+					
+				    options.theme.nClipFrames = columnsA.length;
+
+                    theme.szSnippet = "from "+columnsA[0]+" to "+columnsA[columnsA.length-1];
+					ixmaps.setTitle("<span style='color:#888888'>"+szXaxisA[columnsA.length-1]+"</span");
+
+					// -----------------------------------------------------------------------------------------------               
+					// deploy the data
+					// ----------------------------------------------------------------------------------------------- 
+					ixmaps.setExternalData(data_Confirmed, {
+						type: "dbtable",
+						name: options.name
+					});
+
+				});
+
+	};
+	ixmaps.CSSE_COVID_SEQUENCE_DIFFERENCE_CONFIRMED_MEAN_7_CLIP_WEEKS = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.realize(
+
+				function (dataA) {
+
+					data_Confirmed = __mean_7(dataA[0]);
+					data_Confirmed = __difference(data_Confirmed);
+
+					var lastDataColumnName = data_Confirmed.columnNames().pop();
+
+					theme.szDescription = "aggiornato: " + lastDataColumnName;
+
+					// get data columns
+					var columnsA = data_Confirmed.columnNames();
+
+					columnsA.shift();
+					columnsA.shift();
+					columnsA.shift();
+					columnsA.shift();
+
+					fieldsA = [];
+					for (var i = 0; i < columnsA.length; i++) {
+						if ( i%5 ){
+							data_Confirmed.column(columnsA[i]).remove();
+						}else{
+							fieldsA.push(columnsA[i]);
+							}
+					}
+
+					options.theme.szFields = fieldsA.slice().join("|");
+					options.theme.szFieldsA = fieldsA;
+
+					options.theme.szItemField = "Lat|Long";
+					options.theme.szSelectionField = "Lat|Long";
+
+					var szMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+					// make label 
+					var szXaxisA = [];
+					for (i in fieldsA) {
+						var dte = new Date(fieldsA[i]);
+						szXaxisA.push(szMonth[dte.getMonth()]);
+						dte.getMonth();
+					}
+					
+					options.theme.szXaxisA = szXaxisA; 
+					
+				    options.theme.nClipFrames = fieldsA.length;
+
+                    theme.szSnippet = "from "+columnsA[0]+" to "+fieldsA[fieldsA.length-1];
+					ixmaps.setTitle("<span style='color:#888888'>"+szXaxisA[fieldsA.length-1]+"</span");
+
+					// -----------------------------------------------------------------------------------------------               
+					// deploy the data
+					// ----------------------------------------------------------------------------------------------- 
+					ixmaps.setExternalData(data_Confirmed, {
+						type: "dbtable",
+						name: options.name
+					});
+
+				});
+
+	};
 	ixmaps.CSSE_COVID_SEQUENCE_DEATHS_MEAN_7 = function (theme, options) {
 
 		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
