@@ -63,7 +63,7 @@
 				"type": "CHOROPLETH|LOG|NOLEGEND|NOZERO|VALUES|DOPACITYMAX",
 				"colorscheme": [
 					"15",
-					"#aa8800",
+					"#ffffff",
 					"#44aa00",
 					"linear"],
 				"fillopacity": "0.9",
@@ -78,6 +78,7 @@
 				"units": "giorni",
 				"refreshtimeout": "0",
 				"scale": "1",
+				"minvalue":"1",
 				"dopacitypow": "1.5",
 				"dopacityscale": "2",
 				"textcolor": "#ffffff",
