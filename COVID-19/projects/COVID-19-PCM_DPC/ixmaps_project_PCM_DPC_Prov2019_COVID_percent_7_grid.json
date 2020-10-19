@@ -115,7 +115,7 @@
 				"boxopacity": "0.1",
 				"titlefield": "denominazione_provincia",
 				"boxupper": "1:2000000",
-				"gridwidth": "50px",
+				"gridwidth": "30px",
 				"valuescale": "1",
 				"valuedecimals": "1",
 				"fadenegative": "0.7",
