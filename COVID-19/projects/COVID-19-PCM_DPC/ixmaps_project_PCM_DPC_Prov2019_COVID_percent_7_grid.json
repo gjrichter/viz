@@ -75,7 +75,7 @@
 				"refreshtimeout": "0",
 				"scale": "1",
 				"dopacitypow": "1",
-				"dopacityscale": "1",
+				"dopacityscale": "2",
 				"titlefield": "denominazione_provincia",
 				"valueupper": "1:1000000",
 				"valuescale": "1",
