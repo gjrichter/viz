@@ -62,7 +62,7 @@
 				"colorscheme": [
 					"7",
 					"#FFaaaa",
-					"#ff0088"],
+					"#ff0044"],
 				"fillopacity": "0.1",
 				"shadow": "false",
 				"dbtable": "PCM_DPC_COVID_LAST_INCID_100000_CUMUL_7_ALT",
@@ -90,7 +90,7 @@
 			"style": {
 				"type": "CHART|SYMBOL|SEQUENCE|PLOT|AREA|LINES|LOLLIPOP|GRID|LONGTITLE|BOX|FIXSIZE|AGGREGATE|RECT|SUM|SIMPLELEGEND",
 				"colorscheme": [
-					"#dd0088"],
+					"#dd0044"],
 				"fillopacity": "0.05",
 				"shadow": "false",
 				"filter": "WHERE \"denominazione_provincia\" NOT \"In fase di\"",
@@ -136,7 +136,7 @@
 				"colorscheme": [
 					"50",
 					"#ffeeee",
-					"#dd0088",
+					"#dd0044",
 					"dynamic",
 					"cold"],
 				"fillopacity": "0.6",
