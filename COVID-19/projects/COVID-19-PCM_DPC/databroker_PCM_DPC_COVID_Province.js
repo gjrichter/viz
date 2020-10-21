@@ -567,6 +567,61 @@ window.ixmaps = window.ixmaps || {};
 			ixmaps.PCM_DPC_COVID_LAST_INCID_100000_7(theme, options);
 	};
 
+	ixmaps.PCM_DPC_COVID_LAST_INCID_100000_CUMUL_7 = function (theme, options) {
+
+
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-province/dpc-covid19-ita-province.csv";
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES_Province_2019.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+				function (dataA) {
+
+					var mydata = dataA[0];
+					var dataPop = dataA[1];
+					
+					// make pivot: one row x province, data = column 4 ---> 
+					var pivot = __process(mydata, options);
+					
+					var lastColumn = pivot.columnNames().length - 2;
+
+					// make lookupArray: COD_PROV ==> population
+					var popA = dataPop.lookupArray("Value","COD_PROV");
+					
+					pivot.addColumn({destination:"incidenza"},function(row){
+						var last   = (Number(row[lastColumn]  ));
+						var before = (Number(row[lastColumn-6]));
+						return (Number(last-before)/popA[Number(row[0])]*100000).toFixed(2);
+				    });
+					
+					// set theme data source 
+					//
+					theme.szFields = "incidenza";
+					theme.szFieldsA = ["incidenza"];
+	
+					// -----------------------------------------------------------------------------------------------               
+					// deploy the data
+					// ----------------------------------------------------------------------------------------------- 
+
+					ixmaps.setExternalData(pivot, {
+						type: "dbtable",
+						name: options.name
+					});
+
+					theme.szTitle = pivot.columnNames()[lastColumn];
+				});
+
+	};
+	ixmaps.PCM_DPC_COVID_LAST_INCID_100000_CUMUL_7_ALT = function (theme, options) {
+			ixmaps.PCM_DPC_COVID_LAST_INCID_100000_CUMUL_7(theme, options);
+	};
+
 	ixmaps.PCM_DPC_COVID_LAST_PREVAL = function (theme, options) {
 
 
