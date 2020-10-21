@@ -88,7 +88,7 @@
 			"field": "incidenza",
 			"field100": "",
 			"style": {
-				"type": "CHART|BUBBLE|VALUES|SIZEP4|BOX|LONGTITLE",
+				"type": "CHART|BUBBLE|VALUES|SIZE|BOX|LONGTITLE",
 				"colorscheme": [
 					"7",
 					"#FEE5D9",
