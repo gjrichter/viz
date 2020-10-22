@@ -76,7 +76,7 @@
 				"datacache": "true",
 				"lookupfield": "lat|long",
 				"lookuptonumber": "true",
-				"units": "giorni",
+				"units": "",
 				"refreshtimeout": "0",
 				"normalsizevalue": "100",
 				"scale": "1",
