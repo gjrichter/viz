@@ -72,7 +72,7 @@
 				"dbtable": "PCM_DPC_HOSPITALIZED_CLIP",
 				"dbtableUrl": "",
 				"dbtableType": "ext",
-				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/dataprovider_PCM_DPC_COVID_Regioni.js",
 				"datacache": "true",
 				"lookupfield": "lat|long",
 				"lookuptonumber": "true",
