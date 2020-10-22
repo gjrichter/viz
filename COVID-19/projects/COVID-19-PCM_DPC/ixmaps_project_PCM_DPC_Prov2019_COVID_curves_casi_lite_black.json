@@ -12,8 +12,9 @@
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Dark matter",
-		"legend": "<div style='color:#777777'><h1></h1><h1><b>Covare sotto ...</b></h1><h2>nuovi casi<br>media mobile di 7 giorni</h2><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
+		"legend": "<div style='color:#777777'><h1></h1><h2>nuovi casi<br>media mobile di 7 giorni</h2><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
 		"item": "",
+		"layout": "minimal",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
 			"normalSizeScale": "4638029"
@@ -61,10 +62,10 @@
 			"style": {
 				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|TITLE|FIXSIZE|LONGTITLE|COMPATIBLE|SUM|NOLEGEND|DIFFERENCE",
 				"colorscheme": [
-					"120",
+					"280",
 					"#443366",
 					"#ff2288",
-					"3colors",
+					"3low",
 					"#8866aa"],
 				"fillopacity": "0.2",
 				"shadow": "false",
