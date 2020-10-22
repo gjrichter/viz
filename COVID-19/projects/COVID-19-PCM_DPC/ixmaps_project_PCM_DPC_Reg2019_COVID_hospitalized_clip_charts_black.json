@@ -60,7 +60,7 @@
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|BUBBLE|GLOW|VALUES|SUM|NOZERO|COMPACTLEGEND|CLIP|LOOP",
+				"type": "CHART|BUBBLE|GLOW|VALUES|SUM|NOZERO|SIMPLELEGEND|CLIP|LOOP",
 				"colorscheme": [
 					"15",
 					"#D2E3F4",
