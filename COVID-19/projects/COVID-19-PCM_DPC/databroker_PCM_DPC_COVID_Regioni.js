@@ -143,6 +143,55 @@ window.ixmaps = window.ixmaps || {};
 		return pivot;
      };   
 
+    var __get_tampon = function(data,options) { 
+
+		// make pivot table with columns per day
+		data.column("data").map(function(value){
+		             return value.split(" ")[0];
+		});
+		
+		var pivot = data.pivot(
+			{lead:"codice_regione",
+			 columns:"data",
+			 value:"tamponi",
+			 keep:["lat","long","denominazione_regione"]}
+		);
+	
+		return pivot;
+     };   
+	
+    var __get_nuovi = function(data,options) { 
+
+		// make pivot table with columns per day
+		data.column("data").map(function(value){
+		             return value.split(" ")[0];
+		});
+		
+		var pivot = data.pivot(
+			{lead:"codice_regione",
+			 columns:"data",
+			 value:"nuovi positivi",
+			 keep:["lat","long","denominazione_regione"]}
+		);
+	
+		return pivot;
+     }; 
+	
+    var __get_tamponratio = function(data,options) { 
+
+		var tamponTab = __get_tampom(data);
+		var nuoviTab  = __get_nuovi(data);
+		
+		var records = tamponTab.records;
+		for ( var r=0; r<records.length; r++){
+			for ( var c=4; c<records[r].length; c++){
+				records[r][c] = Number(nuoviTab.records[r][c]) / Number(tamponTab.records[r][c]) * 100000;
+			}
+		}
+	
+		return tamponTab;
+     };   
+
 	
     var __get_deaths_active_recovered = function(data,options) { 
 
@@ -3551,6 +3600,130 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 				
+	ixmaps.PCM_DPC_COVID_SEQUENCE_MEAN_7_TAMPONRATIO = function (theme, options) {
+
+
+		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var myfeed = Data.feed({
+				"source": szUrl,
+				"type": "csv"
+			}).load(function (mydata) {
+
+				var pivot = __get_tamponratio(mydata, options);
+			
+				pivot.column("Total").remove();
+
+				// make moving average of 7 days
+				var records = pivot.records;
+				for (var r=0; r<records.length;r++){
+					for (var c=records[r].length-1; c>=10;c--){
+						records[r][c] = (Number(records[r][c])+
+										 Number(records[r][c-1])+
+										 Number(records[r][c-2])+
+										 Number(records[r][c-3])+
+										 Number(records[r][c-4])+
+										 Number(records[r][c-5])+
+										 Number(records[r][c-6])
+										)/7;
+					}
+				}
+
+
+				// get the columns with date 
+				var columns = pivot.columnNames();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+			
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+
+				var last = columns.length - 1;
+
+				for ( var i=0; i<columns.length; i++ ){
+					pivot.column(columns[i]).rename(new Date(columns[i]).toLocaleDateString());
+					columns[i] = new Date(columns[i]).toLocaleDateString();	
+				}
+
+				// and configure the theme
+				theme.szFields = columns.slice().join('|');
+				theme.szFieldsA = columns.slice();
+
+				// and set the label (for difference 1 less)
+				columns.shift();
+				theme.szLabelA = columns.slice();
+
+				var szXaxisA = [];
+				for ( var i =0; i<columns.length; i++ ){
+					if (columns[i] == "1/3/2020"){
+					  szXaxisA.push("Mar");
+					}else
+					if (columns[i] == "1/4/2020"){
+					  szXaxisA.push("Apr");
+					}else
+					if (columns[i] == "1/5/2020"){
+					  szXaxisA.push("Mag");
+					}else
+					if (columns[i] == "1/6/2020"){
+					  szXaxisA.push("Giu");
+					}else
+					if (columns[i] == "1/7/2020"){
+					  szXaxisA.push("Lug");
+					}else
+					if (columns[i] == "1/8/2020"){
+					  szXaxisA.push("Aug");
+					}else
+					if (columns[i] == "1/9/2020"){
+					  szXaxisA.push("Sep");
+					}else
+					if (columns[i] == "1/10/2020"){
+					  szXaxisA.push("Okt");
+					}else
+					if (columns[i] == "1/10/2020"){
+					  szXaxisA.push("Nov");
+					}else
+					if (columns[i] == "1/10/2020"){
+					  szXaxisA.push("Dec");
+					}else{
+					  szXaxisA.push(" ");
+					}
+				}
+
+				//szXaxisA[0] = columns[0];
+				//szXaxisA[last - 1] = columns[last - 1];
+				theme.szXaxisA = szXaxisA;
+			
+				theme.szSnippet = "dal " + columns[0] + " al " + columns[last - 1];
+				ixmaps.setTitle("<f2 style='color:#888888;background-color:rgba(255,255,255,0.1);padding:0.3em 0.5em;border:#888888 solid 0.5px;border-radius:0.2em'>aggiornato: "+(columns[last - 1])+"</f2>");
+
+
+			
+			// -----------------------------------------------------------------------------------------------               
+				// deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(pivot, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			})
+			.error(function (e) {
+				alert("error loading data from:\n" + szUrl);
+			});
+
+	};
+
 				
 				
    
