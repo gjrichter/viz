@@ -189,7 +189,7 @@ window.ixmaps = window.ixmaps || {};
 				records[r][c] = Number(nuoviTab.records[r][c]) / 
 								(Number(tamponTab.records[r][c])-Number(tamponTab.records[r][c-1]))
 								* 100;
-				records[r][c] = isFinite(records[r][c])||0;
+				records[r][c] = isFinite(records[r][c])?records[r][c]:0;
 			}
 		}
 		console.log(tamponTab);	
