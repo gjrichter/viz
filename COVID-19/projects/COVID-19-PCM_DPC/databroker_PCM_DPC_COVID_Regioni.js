@@ -3631,6 +3631,10 @@ window.ixmaps = window.ixmaps || {};
 				columns.shift();
 				columns.shift();
 				columns.shift();
+
+				for ( var i=0; i<90; i++){
+					columns.shift();
+				}
 			
 				var last = columns.length - 1;
 
