@@ -94,7 +94,7 @@
 				"fillopacity": "0.05",
 				"shadow": "false",
 				"filter": "WHERE \"denominazione_provincia\" NOT \"In fase di\"",
-				"dbtable": "PCM_DPC_COVID_SEQUENCE_INCIDENZA_100000_MEAN_7",
+				"dbtable": "PCM_DPC_COVID_SEQUENCE_INCIDENZA_100000_CUMUL_7",
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province.js",
 				"datacache": "false",
