@@ -185,7 +185,7 @@ window.ixmaps = window.ixmaps || {};
 		var records = tamponTab.records;
 		for ( var r=0; r<records.length; r++){
 			for ( var c=4; c<records[r].length; c++){
-				records[r][c] = Number(nuoviTab.records[r][c]) / Number(tamponTab.records[r][c]) * 100000;
+				records[r][c] = Number(nuoviTab.records[r][c]) / (Number(tamponTab.records[r][c]-Number(tamponTab.records[r][c-1])) * 100;
 			}
 		}
 	
