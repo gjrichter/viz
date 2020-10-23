@@ -111,7 +111,7 @@
 				"rangescale": "0.5",
 				"field100min": "50",
 				"minvalue": "0",
-				"maxvalue": "20",
+				"maxvalue": "1000",
 				"textcolor": "#880000",
 				"linewidth": "10",
 				"bordercolor": "none",
