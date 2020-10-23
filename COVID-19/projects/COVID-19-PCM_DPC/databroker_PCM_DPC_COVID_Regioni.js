@@ -170,7 +170,7 @@ window.ixmaps = window.ixmaps || {};
 		var pivot = data.pivot(
 			{lead:"codice_regione",
 			 columns:"data",
-			 value:"nuovi positivi",
+			 value:"nuovi_positivi",
 			 keep:["lat","long","denominazione_regione"]}
 		);
 	
