@@ -179,7 +179,7 @@ window.ixmaps = window.ixmaps || {};
 	
     var __get_tamponratio = function(data,options) { 
 
-		var tamponTab = __get_tampom(data);
+		var tamponTab = __get_tampon(data);
 		var nuoviTab  = __get_nuovi(data);
 		
 		var records = tamponTab.records;
