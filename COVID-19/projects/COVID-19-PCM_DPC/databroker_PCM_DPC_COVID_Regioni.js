@@ -185,11 +185,13 @@ window.ixmaps = window.ixmaps || {};
 		var records = tamponTab.records;
 		for ( var r=0; r<records.length; r++){
 			for ( var c=records[r].length-1; c>=5; c--){
+				console.log(nuoviTab.records[r][c]);
 				console.log((Number(tamponTab.records[r][c])-Number(tamponTab.records[r][c-1])));
 				records[r][c] = Number(nuoviTab.records[r][c]) / 
 								(Number(tamponTab.records[r][c])-Number(tamponTab.records[r][c-1]))
 								* 100;
 				records[r][c] = isFinite(records[r][c])?records[r][c]:0;
+				console.log(records[r][c]);
 			}
 		}
 		console.log(tamponTab);	
