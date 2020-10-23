@@ -192,7 +192,7 @@ window.ixmaps = window.ixmaps || {};
 				records[r][c] = isFinite(records[r][c])||0;
 			}
 		}
-	
+		console.log(tamponTab);	
 		return tamponTab;
      };   
 
