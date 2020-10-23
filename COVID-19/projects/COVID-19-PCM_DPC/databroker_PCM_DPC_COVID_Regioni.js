@@ -3624,9 +3624,31 @@ window.ixmaps = window.ixmaps || {};
 			
 				pivot.column("Total").remove();
 
+				// make moving average of 7 days
+				var records = pivot.records;
+				for (var r=0; r<records.length;r++){
+					for (var c=records[r].length-1; c>=10;c--){
+						records[r][c] = (Number(records[r][c])+
+										 Number(records[r][c-1])+
+										 Number(records[r][c-2])+
+										 Number(records[r][c-3])+
+										 Number(records[r][c-4])+
+										 Number(records[r][c-5])+
+										 Number(records[r][c-6])
+										)/7;
+					}
+				}
+
 
 				// get the columns with date 
 				var columns = pivot.columnNames();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+			
+				columns.shift();
+				columns.shift();
 				columns.shift();
 				columns.shift();
 				columns.shift();
@@ -3635,7 +3657,7 @@ window.ixmaps = window.ixmaps || {};
 				for ( var i=0; i<90; i++){
 					columns.shift();
 				}
-			
+
 				var last = columns.length - 1;
 
 				for ( var i=0; i<columns.length; i++ ){
