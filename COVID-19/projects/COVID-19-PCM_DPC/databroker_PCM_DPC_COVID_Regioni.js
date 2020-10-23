@@ -181,9 +181,8 @@ window.ixmaps = window.ixmaps || {};
 
 		var tamponTab = __get_tampon(data);
 		var nuoviTab  = __get_nuovi(data);
-		var recordTab = __get_nuovi(data);
 		
-		var records = recordTab.records;
+		var records = tamponTab.records;
 		for ( var r=0; r<records.length; r++){
 			for ( var c=records[r].length-1; c>=5; c--){
 				records[r][c] = Number(nuoviTab.records[r][c]) / 
@@ -192,7 +191,7 @@ window.ixmaps = window.ixmaps || {};
 				records[r][c] = isFinite(records[r][c])?records[r][c]:0;
 			}
 		}
-		return recordTab;
+		return tamponTab;
      };   
 
 	
@@ -3621,6 +3620,21 @@ window.ixmaps = window.ixmaps || {};
 			
 				pivot.column("Total").remove();
 
+				// make moving average of 7 days
+				var records = pivot.records;
+				for (var r=0; r<records.length;r++){
+					for (var c=records[r].length-1; c>=10;c--){
+						records[r][c] = (Number(records[r][c])+
+										 Number(records[r][c-1])+
+										 Number(records[r][c-2])+
+										 Number(records[r][c-3])+
+										 Number(records[r][c-4])+
+										 Number(records[r][c-5])+
+										 Number(records[r][c-6])
+										)/7;
+					}
+				}
+
 
 				// get the columns with date 
 				var columns = pivot.columnNames();
@@ -3629,6 +3643,13 @@ window.ixmaps = window.ixmaps || {};
 				columns.shift();
 				columns.shift();
 			
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+
 				for ( var i=0; i<90; i++){
 					columns.shift();
 				}
