@@ -1,7 +1,7 @@
 # elezioni
 
 Visualizzazioni cartografiche sulla base dei dati pubblicato dal Ministero dell'Interno sul sito 'Eligendo' e reso accessibile su GitHub dall'associazione OnData.<br>
- Fonte: OnData <a href="https://elezioni.interno.gov.it/report" target="_blank">GitHub</a> <- <a href="https://elezioni.interno.gov.it/report" target="_blank">Eligendo - Ministero dell'Interno</a>
+ Fonte: OnData <a href="https://github.com/ondata/elezioni_2020" target="_blank">GitHub</a> <- <a href="https://elezioni.interno.gov.it" target="_blank">Eligendo - Ministero dell'Interno</a>
 
 In seguito le varie visualizzazioni:
 
