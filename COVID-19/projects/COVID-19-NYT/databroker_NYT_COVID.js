@@ -439,10 +439,10 @@ window.ixmaps = window.ixmaps || {};
                         }else
                         if (columns[i] == "2020-010-01"){
   						  szXaxisA.push("Okt");
-                        }else{
+                        }else
                         if (columns[i] == "2020-011-01"){
   						  szXaxisA.push("Nov");
-                        }else{
+                        }else
                         if (columns[i] == "2020-012-01"){
   						  szXaxisA.push("Dec");
                         }else{
