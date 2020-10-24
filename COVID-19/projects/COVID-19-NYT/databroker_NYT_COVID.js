@@ -7,7 +7,7 @@
 window.ixmaps = window.ixmaps || {};
 (function () {
 	
-	__get_pivot_corr = function(column){
+	var __get_pivot_corr = function(column){
 	
 		var pivot = data.pivot(
 			{lead:"fips",
