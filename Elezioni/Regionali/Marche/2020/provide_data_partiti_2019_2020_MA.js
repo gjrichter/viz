@@ -20,7 +20,7 @@ window.ixmaps = window.ixmaps || {};
 		Data.feed({source:"https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ElezioniEuropee2019/Scrutini_comuni_partiti.csv.gz",
 				   type:"csv"
 				  }).load(function(data2019){
-		Data.feed({source:"https://raw.githubusercontent.com/gjrichter/data/master/ElezioniRegionali2020/scrutini_liste.csv",
+		Data.feed({source:"https://raw.githubusercontent.com/ondata/elezioni_2020/master/regionali/output/scrutini_liste-marche.csv",
 				   type:"csv"
 				  }).load(function(data2020MA){
 			

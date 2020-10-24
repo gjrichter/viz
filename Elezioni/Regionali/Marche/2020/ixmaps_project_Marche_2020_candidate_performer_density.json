@@ -67,7 +67,7 @@
 				"fillopacity": "0.7",
 				"shadow": "false",
 				"dbtable": "themeDataObj",
-				"dbtableUrl": "https://raw.githubusercontent.com/gjrichter/data/master/ElezioniRegionali2020/scrutini_candidati.csv",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/elezioni_2020/master/regionali/output/scrutini_candidati-marche.csv",
 				"dbtableType": "csv",
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/process_data.js",
 				"datacache": "true",
