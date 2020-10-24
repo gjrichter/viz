@@ -80,7 +80,7 @@
 					"rgb(155, 155, 155)"],
 				"fillopacity": "0.7",
 				"shadow": "false",
-				"dbtable": "themeDataObj_scrutini_liste-marche",
+				"dbtable": "themeDataObj_scrutini_liste",
 				"dbtableUrl": "https://raw.githubusercontent.com/ondata/elezioni_2020/master/regionali/output/scrutini_liste-marche.csv",
 				"dbtableType": "csv",
 				"datacache": "false",
