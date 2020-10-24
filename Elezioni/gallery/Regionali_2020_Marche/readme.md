@@ -202,7 +202,7 @@ Aggregazione dei risultati per una griglia rettangolare di 100 pixel dello scher
 
 
 
-Fonte: OnData <a href="https://github.com/ondata/elezioni_2020" target="_blank">GitHub</a>  <---  <a href="https://dait.interno.gov.it/elezioni" target="_blank">Eligendo - Ministero dell'Interno</a>
+Fonte: OnData <a href="https://github.com/ondata/elezioni_2020" target="_blank">GitHub</a>  <---  <a href="https://www.regione.marche.it/Entra-in-Regione/Elezioni-regionali-2020" target="_blank">Regione Marche</a>
 
 Visualizzazioni: iXMaps, i progetti (json) per le mappe si trovano qui: <a href="https://github.com/gjrichter/viz/tree/master/Elezioni/Regionali/Marche/2020" target="_blank">GitHub</a>
 
