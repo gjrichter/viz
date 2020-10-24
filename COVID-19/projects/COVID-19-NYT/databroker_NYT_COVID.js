@@ -271,7 +271,7 @@ window.ixmaps = window.ixmaps || {};
 					columns.shift();
 					columns.shift();
 
-					var last = columns.length - 1;
+					last = columns.length - 1;
 
 					// and configure the theme
 					theme.szFields = columns.slice().join('|');
@@ -334,7 +334,7 @@ window.ixmaps = window.ixmaps || {};
 					columns.shift();
 					columns.shift();
 
-					var last = columns.length - 1;
+					last = columns.length - 1;
 
 					// and configure the theme
 					theme.szFields = columns.slice().join('|');
@@ -406,7 +406,7 @@ window.ixmaps = window.ixmaps || {};
 
 					// prepare label and xaxis for DIFFERENCE theme 
 					columns.shift();
-					var last = columns.length - 1;
+					last = columns.length - 1;
 					
 					// and set the label
 					theme.szLabelA = columns.slice();
@@ -506,7 +506,7 @@ window.ixmaps = window.ixmaps || {};
 
 					// prepare label and xaxis for DIFFERENCE theme 
 					columns.shift();
-					var last = columns.length - 1;
+					last = columns.length - 1;
 					
 					// and set the label
 					theme.szLabelA = columns.slice();
