@@ -440,6 +440,12 @@ window.ixmaps = window.ixmaps || {};
                         if (columns[i] == "2020-010-01"){
   						  szXaxisA.push("Okt");
                         }else{
+                        if (columns[i] == "2020-011-01"){
+  						  szXaxisA.push("Nov");
+                        }else{
+                        if (columns[i] == "2020-012-01"){
+  						  szXaxisA.push("Dec");
+                        }else{
 						  szXaxisA.push(" ");
                         }
 					}
@@ -533,6 +539,12 @@ window.ixmaps = window.ixmaps || {};
                         }else
                         if (columns[i] == "2020-010-01"){
   						  szXaxisA.push("Okt");
+                        }else
+                        if (columns[i] == "2020-011-01"){
+  						  szXaxisA.push("Nov");
+                        }else
+                        if (columns[i] == "2020-012-01"){
+  						  szXaxisA.push("Dec");
                         }else{
 						  szXaxisA.push(" ");
                         }
