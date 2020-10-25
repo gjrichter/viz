@@ -596,7 +596,7 @@ window.ixmaps = window.ixmaps || {};
 					
 					pivot.addColumn({destination:"incidenza"},function(row){
 						var last   = (Number(row[lastColumn]  ));
-						var before = (Number(row[lastColumn-6]));
+						var before = (Number(row[lastColumn-7]));
 						return (Number(last-before)/popA[Number(row[0])]*100000).toFixed(2);
 				    });
 					
@@ -651,7 +651,7 @@ window.ixmaps = window.ixmaps || {};
 					
 					pivot.addColumn({destination:"incidenza"},function(row){
 						var last   = (Number(row[lastColumn]  ));
-						var before = (Number(row[lastColumn-13]));
+						var before = (Number(row[lastColumn-14]));
 						return (Number(last-before)/popA[Number(row[0])]*100000).toFixed(2);
 				    });
 					
