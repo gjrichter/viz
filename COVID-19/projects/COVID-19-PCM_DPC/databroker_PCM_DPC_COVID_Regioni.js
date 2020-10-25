@@ -160,6 +160,23 @@ window.ixmaps = window.ixmaps || {};
 		return pivot;
      };   
 	
+    var __get_testati = function(data,options) { 
+
+		// make pivot table with columns per day
+		data.column("data").map(function(value){
+		             return value.split(" ")[0];
+		});
+		
+		var pivot = data.pivot(
+			{lead:"codice_regione",
+			 columns:"data",
+			 value:"casi_testati",
+			 keep:["lat","long","denominazione_regione"]}
+		);
+	
+		return pivot;
+     };   
+	
     var __get_nuovi = function(data,options) { 
 
 		// make pivot table with columns per day
@@ -179,14 +196,16 @@ window.ixmaps = window.ixmaps || {};
 	
     var __get_tamponratio = function(data,options) { 
 
-		var tamponTab = __get_tampon(data);
-		var nuoviTab  = __get_nuovi(data);
+		var tamponTab  = __get_tampon(data);
+		var testatiTab = __get_testati(data);
+		var nuoviTab   = __get_nuovi(data);
 		
 		var records = tamponTab.records;
 		for ( var r=0; r<records.length; r++){
 			for ( var c=records[r].length-1; c>=5; c--){
 				records[r][c] = Number(nuoviTab.records[r][c]) / 
-								(Number(tamponTab.records[r][c])-Number(tamponTab.records[r][c-1]))
+//								(Number(tamponTab.records[r][c])-Number(tamponTab.records[r][c-1]))
+								(Number(testatiTab.records[r][c])-Number(testatiTab.records[r][c-1]))
 								* 100;
 				records[r][c] = isFinite(records[r][c])?records[r][c]:0;
 			}
