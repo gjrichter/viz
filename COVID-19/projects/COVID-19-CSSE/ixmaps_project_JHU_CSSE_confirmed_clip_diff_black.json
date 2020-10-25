@@ -1,0 +1,93 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Sat Oct 24 2020 18:26:29 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Dark matter",
+		"legend": "<h1>COVID-19(2019-nCoV)</b><br><span style='font-size:0.6em;color:#888888'>7 days moving average of new cases</span></h1><h4 style='color:#888888'>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE</h4>",
+		"item": "html",
+		"scaleParam": {
+			"borderScaling": "0.1",
+			"lineScaling": "4.213991769547325",
+			"labelScaling": "2",
+			"normalSizeScale": "2319015"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50",
+			"mapopacity": "0.2",
+			"basemapopacity": "0.5"
+			},
+		"center": {
+			"lat": "16.46769474828897",
+			"lng": "25.664062500000004"
+			},
+		"zoom": "2"
+		},
+	"themes": [{
+			"layer": "generic",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|VALUES|BUBBLE|SIGN|SIZE|SUM|GLOW|CLIP|LOOP",
+				"colorscheme": [
+					"#ff88dd"],
+				"fillopacity": "0.8",
+				"shadow": "false",
+				"filter": "WHERE Country/Region != Others",
+				"dbtable": "CSSE_COVID_SEQUENCE_DIFFERENCE_CONFIRMED_MEAN_7_CLIP_WEEKS",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
+				"datacache": "false",
+				"lookupfield": "Lat|Long",
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "10000",
+				"scale": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"clipframes": "54",
+				"clipframerate": "24",
+				"name": "clip",
+				"title": "COVID-19",
+				"snippet": "from 1/29/20 to 10/20/20",
+				"description": "aggiornato: 10/23/20"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
