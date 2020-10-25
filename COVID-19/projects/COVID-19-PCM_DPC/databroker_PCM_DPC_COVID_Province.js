@@ -1977,7 +1977,7 @@ window.ixmaps = window.ixmaps || {};
 					for ( var r=0; r<records.length; r++ ){
 						for ( var c=lastColumn; c>=7; c-- ){
 							var last   = (Number(records[r][c]  ));
-							var before = (Number(records[r][c-7]));
+							var before = (Number(records[r][c-14]));
 							records[r][c] = ((last-before)/popA[Number(records[r][0])]*100000).toFixed(2);
 						}
 					}
