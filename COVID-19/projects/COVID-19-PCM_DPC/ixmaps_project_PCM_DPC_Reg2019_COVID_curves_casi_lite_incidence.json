@@ -68,7 +68,7 @@
 					"#8866aa"],
 				"fillopacity": "0.2",
 				"shadow": "false",
-				"dbtable": "PCM_DPC_COVID_SEQUENCE_CUMUL_7_INCIDENCE",
+				"dbtable": "PCM_DPC_COVID_SEQUENCE_CUMUL_14_INCIDENCE",
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
 				"datacache": "false",
