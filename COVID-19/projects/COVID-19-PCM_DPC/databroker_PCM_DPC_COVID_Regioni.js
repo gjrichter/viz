@@ -3479,7 +3479,7 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 				
-	ixmaps.PCM_DPC_COVID_SEQUENCE_CUMUL_7_INCIDENCE = function (theme, options) {
+	ixmaps.PCM_DPC_COVID_SEQUENCE_CUMUL_14_INCIDENCE = function (theme, options) {
 		
 		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
 		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
