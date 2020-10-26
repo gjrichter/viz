@@ -106,7 +106,6 @@
 				"units": "",
 				"align":"top",
 				"refreshtimeout": "0",
-				"normalsizevalue": "1",
 				"field100min":"10000",	
 				"scale": "1",
 				"textcolor": "#aa2200",
