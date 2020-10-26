@@ -3525,13 +3525,8 @@ window.ixmaps = window.ixmaps || {};
 				var records = pivot.records;
 				for (var r=0; r<records.length;r++){
 					for (var c=records[r].length-1; c>=10;c--){
-						records[r][c] = (Number(records[r][c])+
-										 Number(records[r][c-1])+
-										 Number(records[r][c-2])+
-										 Number(records[r][c-3])+
-										 Number(records[r][c-4])+
-										 Number(records[r][c-5])+
-										 Number(records[r][c-6])
+						records[r][c] = (Number(records[r][c])-
+										 Number(records[r][c-7])
 										);
 						records[r][c] =  (records[r][c]/pop[records[r][indexName].replace(/\-/," ")]*100000);
 					}
