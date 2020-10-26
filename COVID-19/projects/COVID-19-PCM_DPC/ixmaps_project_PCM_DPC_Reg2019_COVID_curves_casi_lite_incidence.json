@@ -59,7 +59,7 @@
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|TITLE|FIXSIZE|LONGTITLE|COMPATIBLE|SUM|NOLEGEND",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|TITLE|FIXSIZE|COMPATIBLE|SUM|NOLEGEND",
 				"colorscheme": [
 					"120",
 					"#443366",
@@ -90,7 +90,6 @@
 				"bordercolor": "none",
 				"boxopacity": "0",
 				"boxmargin": "10",
-				"titlefield": "denominazione_regione",
 				"boxupper": "1:10000000",
 				"valuescale": "1",
 				"valuedecimals": "0",
