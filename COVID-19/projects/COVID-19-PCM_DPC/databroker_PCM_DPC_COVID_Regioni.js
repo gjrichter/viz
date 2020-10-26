@@ -203,11 +203,13 @@ window.ixmaps = window.ixmaps || {};
 		var records = tamponTab.records;
 		for ( var r=0; r<records.length; r++){
 			for ( var c=records[r].length-1; c>=5; c--){
-				records[r][c] = Number(nuoviTab.records[r][c]) / 
-//								(Number(tamponTab.records[r][c])-Number(tamponTab.records[r][c-1]))
-								(Number(testatiTab.records[r][c])-Number(testatiTab.records[r][c-1]))
-								* 100;
-				records[r][c] = isFinite(records[r][c])?records[r][c]:0;
+				var tests = (Number(testatiTab.records[r][c])-Number(testatiTab.records[r][c-1]));
+				if ( tests > 100 ){
+					records[r][c] = Number(nuoviTab.records[r][c]) / tests * 100;
+					records[r][c] = isFinite(records[r][c])?records[r][c]:0;
+				}else{
+					records[r][c] = 0;
+				}
 			}
 		}
 		return tamponTab;
