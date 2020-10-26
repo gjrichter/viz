@@ -3524,9 +3524,9 @@ window.ixmaps = window.ixmaps || {};
 				// make sum of 7 days
 				var records = pivot.records;
 				for (var r=0; r<records.length;r++){
-					for (var c=records[r].length-1; c>=10;c--){
+					for (var c=records[r].length-1; c>=18;c--){
 						records[r][c] = (Number(records[r][c])-
-										 Number(records[r][c-7])
+										 Number(records[r][c-14])
 										);
 						records[r][c] =  (records[r][c]/pop[records[r][indexName].replace(/\-/," ")]*100000);
 					}
@@ -3539,6 +3539,14 @@ window.ixmaps = window.ixmaps || {};
 				columns.shift();
 				columns.shift();
 			
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
 				columns.shift();
 				columns.shift();
 				columns.shift();
