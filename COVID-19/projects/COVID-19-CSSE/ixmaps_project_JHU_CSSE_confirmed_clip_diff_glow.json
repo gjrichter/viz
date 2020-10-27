@@ -61,7 +61,7 @@
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|VALUES|BUBBLE|SIGN|SIZE|SUM|GLOW|CLIP|LOOP|SIMPLELEGEND",
+				"type": "CHART|VALUES|BUBBLE|SIGN|SIZE|SUM|GLOW|CLIP|LOOP|PAUSE|SIMPLELEGEND",
 				"colorscheme": [
 					"#006688"],
 				"fillopacity": "0.8",
