@@ -93,7 +93,7 @@
 				"titlefield": "denominazione_regione",
 				"boxupper": "1:10000000",
 				"valuescale": "1",
-				"valuedecimals": "0",
+				"valuedecimals": "2",
 				"fadenegative": "1",
 				"aggregationscale": [
 					"1:1",
