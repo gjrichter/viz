@@ -90,7 +90,7 @@
 			"field": "2020-07-08T17:00:00",
 			"field100": "2020-07-07T17:00:00",
 			"style": {
-				"type": "CHART|DIFFERENCE|BUBBLE|VALUES|SIZEP4|COMPACTLEGEND|NOZEROVALUE|NOLEGEND",
+				"type": "CHART|DIFFERENCE|BUBBLE|VALUES|TEXTONLY|SIZEP4|COMPACTLEGEND|NOZEROVALUE|NOLEGEND",
 				"colorscheme": [
 					"green",
 					"#88aa00",
@@ -112,7 +112,7 @@
 					"10000"],
 				"units": "",
 				"refreshtimeout": "0",
-				"normalsizevalue": "2000",
+				"normalsizevalue": "500",
 				"scale": "2",
 				"textcolor": "#aa2200",
 				"linecolor": [
