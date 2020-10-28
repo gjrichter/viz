@@ -59,11 +59,11 @@
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|TITLE|FIXSIZE|LONGTITLE|COMPATIBLE|SUM|NOLEGEND",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|TITLE|FIXSIZE|LONGTITLE|COMPATIBLE|SUM|DIFFERENCE|NOLEGEND",
 				"colorscheme": [
 					"120",
 					"#aaaaaa",
-					"rgba(100, 160, 220,1)",
+					"rgba(10, 10, 10,1)",
 					"3colors",
 					"#aaaaaa"],
 				"fillopacity": "0.2",
