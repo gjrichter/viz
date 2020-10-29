@@ -205,6 +205,208 @@ window.ixmaps = window.ixmaps || {};
 			});
 	};
 	
+	ixmaps.CSSE_COVID_CASE_FATALITY_RATIO = function (theme, options) {
+		
+		// to get the last date in the time series 
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		
+		// root url to daily reports 
+		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/";
+
+		new Data.Broker()
+			.addSource(szUrl1, "csv")
+			.realize(
+				function (dataA) {
+
+					var date = dataA[0].columnNames().pop();
+					dateA = date.split("/");
+					date = new Date(Number("20" + dateA[2]), Number(dateA[0]) - 1, Number(dateA[1]), 18);
+					
+					var lastDate = date.toLocaleDateString();
+					
+					szDate1 = date.toISOString();
+					dateA = szDate1.split("T")[0].split("-");
+					szDate1 = dateA[1] + "-" + dateA[2] + "-" + dateA[0];
+					
+					date = new Date(date.getTime() - 1000*60*60*24*28);
+					szDate2 = date.toISOString();
+					dateA = szDate2.split("T")[0].split("-");
+					szDate2 = dateA[1] + "-" + dateA[2] + "-" + dateA[0];
+					
+					date = new Date(date.getTime() - 1000*60*60*24*56);
+					szDate3 = date.toISOString();
+					dateA = szDate3.split("T")[0].split("-");
+					szDate3 = dateA[1] + "-" + dateA[2] + "-" + dateA[0];
+
+					szDate4 = "08-01-2020";
+					
+
+					new Data.Broker()
+						.addSource(szUrl2 + szDate1 + ".csv", "csv")
+						.addSource(szUrl2 + szDate2 + ".csv", "csv")
+						.addSource(szUrl2 + szDate3 + ".csv", "csv")
+						.addSource(szUrl2 + szDate4 + ".csv", "csv")
+						.realize(
+							function (dataA) {
+								
+							// merge the two data tables	
+								
+							var columnsA = dataA[0].columnNames();
+							var merger = new Data.Merger();
+							merger.addSource(dataA[0], {
+								lookup: "Combined_Key",
+								columns: columnsA
+							});
+							merger.addSource(dataA[1], {
+								lookup: "Combined_Key",
+								columns: columnsA
+							});
+							merger.addSource(dataA[2], {
+								lookup: "Combined_Key",
+								columns: columnsA
+							});
+							merger.addSource(dataA[3], {
+								lookup: "Combined_Key",
+								columns: columnsA
+							});
+
+							merger.realize(function (data) {
+
+									var iConfirmed = data.column("Confirmed.1").index;
+									var iDeaths = data.column("Deaths.1").index;
+									var iRecovered = data.column("Recovered.1").index;
+								
+									var iConfirmed_28 = data.column("Confirmed.2").index;
+									var iDeaths_28 = data.column("Deaths.2").index;
+									var iRecovered_28 = data.column("Recovered.2").index;
+								
+									var iConfirmed_56 = data.column("Confirmed.3").index;
+									var iDeaths_56 = data.column("Deaths.3").index;
+									var iRecovered_56 = data.column("Recovered.3").index;
+
+									var iConfirmed_ref = data.column("Confirmed.4").index;
+									var iDeaths_ref = data.column("Deaths.4").index;
+									var iRecovered_ref = data.column("Recovered.4").index;
+
+									// get Confirmed of last 28 days
+
+									data.addColumn({
+										destination: "Confirmed_28"
+									}, function (row) {
+										return (Number(row[iConfirmed]) - Number(row[iConfirmed_28]));
+									});
+								
+									// get Deaths of last 28 days
+								
+									data.addColumn({
+										destination: "Deaths_28"
+									}, function (row) {
+										return (Number(row[iDeaths]) - Number(row[iDeaths_28]));
+									});
+								
+									// calcolate Case-Fatality_Ratio from this
+								
+									var iConfirmed = data.column("Confirmed_28").index;
+									var iDeaths = data.column("Deaths_28").index;
+								
+									data.addColumn({
+										destination: "Case-Fatality_Ratio_28"
+									}, function (row) {
+										if (Number(row[iConfirmed])){
+											return (Number(row[iDeaths]) / Number(row[iConfirmed]) * 100);
+										}else{
+											return 0;
+										}
+									});
+								
+									// calcolate Case-Fatality_Ratio before this
+
+									data.addColumn({
+										destination: "Case-Fatality_Ratio_before_28"
+									}, function (row) {
+										if (Number(row[iConfirmed_28])){
+											return (Number(row[iDeaths_28]) / Number(row[iConfirmed_28]) * 100);
+										}else{
+											return 0;
+										}
+									});
+
+									// get Confirmed of last 56 days
+
+									data.addColumn({
+										destination: "Confirmed_56"
+									}, function (row) {
+										return (Number(row[iConfirmed]) - Number(row[iConfirmed_56]));
+									});
+								
+									// get Deaths of last 56 days
+								
+									data.addColumn({
+										destination: "Deaths_56"
+									}, function (row) {
+										return (Number(row[iDeaths]) - Number(row[iDeaths_56]));
+									});
+								
+									// calcolate Case-Fatality_Ratio from this
+								
+									var iConfirmed = data.column("Confirmed_56").index;
+									var iDeaths = data.column("Deaths_56").index;
+								
+									data.addColumn({
+										destination: "Case-Fatality_Ratio_56"
+									}, function (row) {
+										if (Number(row[iConfirmed])){
+											return (Number(row[iDeaths]) / Number(row[iConfirmed]) * 100);
+										}else{
+											return 0;
+										}
+									});
+								
+									// calcolate Case-Fatality_Ratio before this
+
+									data.addColumn({
+										destination: "Case-Fatality_Ratio_before_56"
+									}, function (row) {
+										if (Number(row[iConfirmed_56])){
+											return (Number(row[iDeaths_56]) / Number(row[iConfirmed_56]) * 100);
+										}else{
+											return 0;
+										}
+									});
+
+									// calcolate Case-Fatality_Ratio at ref date 08-01-2020
+
+									data.addColumn({
+										destination: "Case-Fatality_Ratio_08-01-2020"
+									}, function (row) {
+										if (Number(row[iConfirmed_ref])){
+											return (Number(row[iDeaths_ref]) / Number(row[iConfirmed_ref]) * 100);
+										}else{
+											return 0;
+										}
+									});
+
+									data.column("Lat.1").rename("Lat");
+									data.column("Long_.1").rename("Long_");
+									data.column("Country_Region.1").rename("Country_Region");
+									data.column("Case-Fatality_Ratio.1").rename("Case-Fatality_Ratio");
+								
+									ixmaps.setTitle("<span style='font-family:courier new,Raleway,arial,helvetica;font-size:18px;color:#444444'>aggiornato al " + lastDate + "</span>", "right");
+									
+									// --------------------------------------
+									// deploy the data
+									// --------------------------------------
+
+									options.setData(data, {
+										type: "dbtable",
+										name: options.name
+									});
+
+							});
+					});
+			});
+	};
+	
 	ixmaps.CSSE_COVID_LAST_56_DAILY = function (theme, options) {
 		
 		// to get the last date in the time series 
