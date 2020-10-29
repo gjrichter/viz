@@ -433,7 +433,7 @@ window.ixmaps = window.ixmaps || {};
 						var diff = last-before;
 						var ret = 0;
 						if ( before > 100 ){
-							ret = Math.ln(2)/Math.ln(1 + (diff / before));
+							ret = Math.log(2)/Math.log(1 + (diff / before));
 						}
 						return ret;
 				    });
