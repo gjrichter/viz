@@ -1,12 +1,12 @@
 /**
  * data preprocessing 
  * 
- * get the last 28 columns from the data table
+ * get the last 56 columns from the data table
  * and set the theme fields (columns) appropriate
  */
 
 window.ixmaps = window.ixmaps || {};
-window.ixmaps.CSSE_COVID_CONFIRMED_28 = window.ixmaps.CSSE_COVID_CONFIRMED_28 || {};
+window.ixmaps.CSSE_COVID_CONFIRMED_56 = window.ixmaps.CSSE_COVID_CONFIRMED_56 || {};
 
 (function() {
         
