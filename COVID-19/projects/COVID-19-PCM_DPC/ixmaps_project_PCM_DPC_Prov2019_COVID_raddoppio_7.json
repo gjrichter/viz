@@ -65,7 +65,7 @@
 					"#FFdddd",
 					"3colors",
 					"#FF8888"],
-				"fillopacity": "0.7",
+				"fillopacity": "0.5",
 				"shadow": "false",
 				"dbtable": "PCM_DPC_COVID_LAST_DOUBLETIME_7",
 				"dbtableType": "ext",
