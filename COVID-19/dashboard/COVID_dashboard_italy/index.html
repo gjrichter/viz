@@ -97,31 +97,6 @@
 		</div>
 	</div>
 	
-	<!-- ------------------------------------------------------ -->
-	<!-- - bar chart giorno per giorno						    -->
-	<!-- ------------------------------------------------------ -->
-
-	<div class="container">
-		<div class="card-decktext-center">
-			<div class="card shadow-sm">
-				<div class="card-header">
-					<h1 id="bar-chart-title">&nbsp;La situazione giorno per giorno
-					</h1>
-				</div>
-				<div class="card-body" style="padding:0">
-					<div class="card-body no-padding">
-						<div class="card-body no-padding">
-							<canvas id="bar-chart-situazione-regionale" class="chart" height="200px"></canvas>
-						</div>
-						<div style="padding:1.2em">
-							<p>Fonte: COVID-19 Italia - Monitoraggio situazione - file: dpc-covid19-ita-andamento-nazionale.csv pubblicato dal Dipartimento della Protezione Civile su <a href="https://github.com/pcm-dpc/COVID-19/">GitHub</a></p>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<!-- --------------------------------------------------------------- -->
 	<!-- --------------------------------------------------------------- -->
@@ -134,34 +109,6 @@
 	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
 		<h1 class="display-4">Regioni</h1>
 		<p class="lead">Visualizzazioni di dati attuali, particolarizzati per le Regioni d'Italia e pubblicati dal Departimento della Protezione Civile. Le visualizzazione usano i campi: ricoverati_con_sintomi, terapia_intensiva, isolamento_domiciliare, totale_positivi, dimessi_guariti, deceduti, totale_casi, tamponi. I dati si trovono su GitHub e vengono aggiornati ogni giorno intorno all 18:00. Le visualizzazioni caricano i dati direttamente dalla fonte (GitHub)</p>
-	</div>
-
-	<!-- ------------------------------------------------------ -->
-	<!-- - small multiples									    -->
-	<!-- ------------------------------------------------------ -->
-
-	<div class="container">
-		<div class="card-decktext-center">
-
-			<div class="row">
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				</div>
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<div class="card-body no-padding">
-						<h4 style="color:#aaaaaa"><b style="color:black">casi positivi, guariti/dimessi e deceduti </b> nelle Regioni giorno per giorno in scala logarithmica</h4>
-						<h4 style="color:#aaaaaa">un <b style="color:black">clic sul grafico</b> apre il grafico della Regione</h4>
-						<div id="SmallRegionCards" class="row" style="margin-top:2em;">
-						</div>
-						<h4 style="color:#aaaaaa;font-size:1.2em">clicca sul grafico per aprire il grafico della Regione</h4>
-					</div>
-				</div>
-			</div>
-
-			<div class="row" id="regional-cards">
-			</div>
-
-
-		</div>
 	</div>
 
 	<!-- ------------------------------------------------------ -->
@@ -180,6 +127,8 @@
 
 						<div id="SmallRegionList">
 						</div>
+							
+						<span style="color:#444444;font-size:1.5em;font-weight:normal">*) incidenza cumulativa di 14 giorni  x 100.000 abitanti; indice compatibile ai dati pubblicati dal al European Centre for Disease Prevention and Control</span>	
 					</div>
 				</div>
 			</div>
@@ -191,77 +140,6 @@
 		<p class="lead">Casi totali e la loro variazione, giorno per giorno. I dati si trovono su GitHub e vengono aggiornati ogni giorno intorno all 18:00. Le visualizzazioni caricano i dati direttamente dalla fonte (GitHub)</p>
 	</div>
 
-	<!-- --------------------------------------------------------------- -->
-	<!-- Curve Charts - regional confirmed cases 					 	 -->
-	<!-- --------------------------------------------------------------- -->
-
-    <!--
-	<div class="container">
-		<div class="card-deck mb-3 text-center">
-			<div class="card mb-4 shadow-sm">
-				<div class="card-header">
-					<h4 class="my-0 font-weight-normal">Incidenza - nuovi casi giornalieri per 10.000 abianti</h4>
-				</div>
-				<div class="card-body">
-					<h5 class="card-title pricing-card-title"><small class="text-muted">
-							Colori: divisi per macro regione: <b style="color:#44aa44">Valle d'Aosta</b> <b style="color:#aaddaa">Province autonome</b>, <b style="color:#DD4587">Nord-Ovest</b> , <b style="color:#AA8888">Nord-Est</b>, <b style="color:#DCDD1A">Centro</b>, <b style="color:#88AADC">Sud</b> e <b style="color:#0C89DC">Isole</b>
-						<span style="float:right">regressione ultimi 5 valori <input type="checkbox" id="regressione" name="regressione" checked="checked" onchange="makeRegionCurves(this.checked)"></span></small></h5>
-					<div class="">
-						<canvas id="bar-chart-incidenza-regioni" class="chart" height="200px"></canvas>
-					</div>
-					<div style="text-left padding:1.2em">
-						L'Incidenza è la variazione di casi per 24 ore ralativo alla popolazione del territorio (n° casi per 10.000 abitanti).<br> Per una grafica più leggibile ci sono 2 algoritmi di regressione. Ogni valore e la media di 3 giorni consecutivi e gli ultimi 5 valori sono sottoposto ad una interpolazione lineare (least squares regression) per enfatizzare la tendenza.
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-    -->
-    
-	<div class="container">
-		<div class="card-deck mb-3 text-center">
-			<div class="card mb-4 shadow-sm">
-				<div class="card-header">
-					<h4 class="my-0 font-weight-normal"><b>Prevalenza</b> - Casi attualmente positivi per 10.000 abianti</h4>
-				</div>
-				<div class="card-body">
-					<h5 class="card-title pricing-card-title"><small class="text-muted">
-							Colori: divisi per macro regione: <b style="color:#44aa44">Valle d'Aosta</b> <b style="color:#aaddaa">Province autonome</b>, <b style="color:#DD4587">Nord-Ovest</b> , <b style="color:#AA8888">Nord-Est</b>, <b style="color:#DCDD1A">Centro</b>, <b style="color:#88AADC">Sud</b> e <b style="color:#0C89DC">Isole</b>
-						</small></h5>
-					<div class="">
-						<canvas id="bar-chart-prevalenza-positivi-regioni" class="chart" width="250%" height="200px"></canvas>
-					</div>
-					<div style="text-left padding:1.2em">
-						La Prevalenza sono i casi in relazione alla popolazione del territorio (n° casi per 10.000 abitanti).<br> Per una grafica più leggibile ogni valore e la media di 3 giorni consecutivi.
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-    <!--
-	<div class="container">
-		<div class="card-deck mb-3 text-center">
-			<div class="card mb-4 shadow-sm">
-				<div class="card-header">
-					<h4 class="my-0 font-weight-normal">Incremento Percentuale - Nuovi Casi in percentuale del giorno prima</h4>
-				</div>
-				<div class="card-body">
-					<h5 class="card-title pricing-card-title"><small class="text-muted">
-							Colori: divisi per macro regione: <b style="color:#44aa44">Valle d'Aosta</b> <b style="color:#aaddaa">Province autonome</b>, <b style="color:#DD4587">Nord-Ovest</b> , <b style="color:#AA8888">Nord-Est</b>, <b style="color:#DCDD1A">Centro</b>, <b style="color:#88AADC">Sud</b> e <b style="color:#0C89DC">Isole</b>
-						</small></h5>
-					<div class="">
-						<canvas id="bar-chart-percentuale-regioni" class="chart" height="200px"></canvas>
-					</div>
-					<div style="text-left padding:1.2em">
-						La percentuale del incremento delle ultime 24 ore è una misura per la velocità della diffusione del contaggio. La precentuale si comporta in modo reciproco al numero di giorni per il raddoppiamento dei casi. Un valore di 50% per esempio indica un tempo di meno di 2 giorni per il raddoppimento. Per evitare valori ecessivi all'inizio di una evoluzione viene applicata una soglia di 100 casi. Si vede l'entrata sfalzata delle regioni.
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-    -->
     
 	<!-- --------------------------------------------------------------- -->
 	<!-- Maps - regional - categories           					 	 -->
@@ -271,21 +149,37 @@
 		<div class="card-deck mb-3 text-center">
 			<div class="card mb-4 shadow-sm">
 				<div class="card-header">
-					<h4 class="my-0 font-weight-normal"><b>Nuovi casi positivi</b>, giorno per giorno</h4>
+					<h4 class="my-0 font-weight-normal"><b>Incidenza cumulativa di 14 giorni</b>, giorno per giorno</h4>
 				</div>
 				<div class="card-body">
-					<h5 class="card-title pricing-card-title"><small class="text-muted">(media mobile per 7 giorni)</small>
+					<h5 class="card-title pricing-card-title"><small class="text-muted">nuovi positivi registrati in 14 giorni per 100.000 abitanti</small>
 						<a href="javascript:ixmaps.changeThemeStyle('map1',null,'scale:0.9','factor')">(-)</a> grafici 
 						<a href="javascript:ixmaps.changeThemeStyle('map1',null,'scale:1.11','factor')">(+)</a>
 					</h5>
 					<div class="card-body no-padding">
-						<iframe id="map1" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map1&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Reg2019_COVID_curves_casi_lite.json"></iframe>
+						<iframe id="map1" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map1&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Reg2019_COVID_curves_casi_lite_incidence.json"></iframe>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-    
+ 	<div class="container">
+		<div class="card-deck mb-3 text-center">
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header">
+					<h4 class="my-0 font-weight-normal"><b>Rapporto nuovi positivi vs testati</b>, giorno per giorno</h4>
+				</div>
+				<div class="card-body">
+					<h5 class="card-title pricing-card-title"><small class="text-muted">Numero di nuovi casi positivi in percentuale ai tamponi effetuati la prima volta alla persona non positiva</small></h5>
+					<div class="card-body no-padding">
+						<iframe id="map3" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map3&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Reg2019_COVID_curves_tampone_ratio_lite.json"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+   
 	<!-- --------------------------------------------------------------- -->
 	<!-- --------------------------------------------------------------- -->
 	<!--                                                                 -->
@@ -299,6 +193,29 @@
 		<p class="lead">Visualizzazioni dei casi totali per ogni Provincia d'Italia da parte della Protezione Civile. I dati si trovono su GitHub e vengono aggiornati ogni giorno intorno all 18:00. Le visualizzazioni caricano i dati direttamente dalla fonte (GitHub)</p>
 	</div>
 
+	<div class="container">
+		<div class="card-deck mb-3 text-center">
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header">
+					<h4 class="my-0 font-weight-normal">Tutte le Province:  casi, prevalenza, incidenza e la sua tendenza</h4>
+				</div>
+				<div class="card-body">
+					<h5 class="card-title pricing-card-title text-left"><small class="text-muted">
+						Per ogni provincia viene elencato: il n° attuale di casi, la <b style='color:#EE8888'>prevalenza </b><b> (casi per 100.000 abitanti)</b> e <b style='color:#cc0077'>l'incidenza cumulativa per 14 giorni </b><b> (= nuovi casi in 14 giorni per 100.000 abitanti)</b>. La freccia indica se l'Incidenza e più alta o più bassa di ieri, la piccola curva mostra l'andamento dell'Incidenza per i unltimi 28 giorni.<br><br>
+						<h4>Le Province sono <b style='color:#EE8888'>colorate per prevalenza</b> ma <b>ordinate &darr; per </b><b style='color:#cc0077'>incidenza</b></h4>
+						</small></h5>
+
+					<div id="province-list">
+					</div>
+					
+				</div>
+			</div>
+		</div>
+					<span style="color:#444444;font-size:1.5em;font-weight:normal">*) incidenza cumulativa di 14 giorni  x 100.000 abitanti; indice compatibile ai dati pubblicati dal al European Centre for Disease Prevention and Control</span>
+	</div>
+	
+	<br><br>
+		
 	<!-- --------------------------------------------------------------- -->
 	<!-- Maps - Incidenza, Prevalenza, Incremento Percentuale		 	 -->
 	<!-- --------------------------------------------------------------- -->
@@ -307,16 +224,30 @@
 		<div class="card-deck mb-3 text-center">
 			<div class="card mb-4 shadow-sm">
 				<div class="card-header">
-					<h4 class="my-0 font-weight-normal"><b>Casi totali</b> cumulativi e storico</h4>
+					<h4 class="my-0 font-weight-normal"><b>Incidenza cumulativa di 14 giorni </b> - attuale e storico</h4>
 				</div>
 				<div class="card-body">
-					<h5 class="card-title pricing-card-title"><small class="text-muted">Numero di casi e lo storico dei casi (visibile con zoom)</small></h5>
+					<h5 class="card-title pricing-card-title"><small class="text-muted">L'incidenza cumulativa è il numero di nuovi casi positivi registrati in 14 guiorni e espresso in casi per 100.000 abitanti<br>(14-day notification rate - European Centre for Disease Prevention and Control)</small></h5>
 					<div class="card-body no-padding">
-						<iframe id="map3" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map3&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_casi_cumulati.json"></iframe>
+						<iframe id="map3" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_incidenza_100000_14_cumulative_II.json"></iframe>
+					</div>
+				</div>
+				<div class="card-body">
+					<h5 class="card-title pricing-card-title"><small class="text-muted">L'incidenza cumulativa è il numero di nuovi casi positivi registrati in 14 guiorni e espresso in casi per 100.000 abitanti<br>(14-day notification rate - European Centre for Disease Prevention and Control)</small></h5>
+					<div class="card-body no-padding">
+						<iframe id="map3" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_curves_incidenza_100000_14_cumulative.json"></iframe>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<!-- --------------------------------------------------------------- -->
+	<!-- List - Incidenza, Prevalenza, Incremento Percentuale		 	 -->
+	<!-- --------------------------------------------------------------- -->
+	
+	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+		<h1 class="display-4">in 24 ore</h1>
 	</div>
 
 	<div class="container">
@@ -362,13 +293,35 @@
 					<h5 class="card-title pricing-card-title"><small class="text-muted">
 						La <b>percentuale del incremento</b> delle casi nelle ultime 24 ore è una <b>misura</b> per <b>la velocità della diffusione</b> del contaggio. La precentuale si comporta in modo <b>reciproco</b> al numero di giorni per il <b>raddoppiamento</b> dei casi. Un valore di 50% per esempio indica un tempo di meno di 2 giorni per il raddoppimento.</small></h5>
 					<div class="card-body no-padding">
-						<iframe id="map7" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map7&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_percent_7.json"></iframe>
+						<iframe id="map7" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map7&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_percent_7_grid.json"></iframe>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	
+	<div class="container">
+		<div class="card-deck mb-3 text-center">
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header">
+					<h4 class="my-0 font-weight-normal"><b>Tempo di radoppiamento</b> - <b>giorni</b> per <b>raddoppiare</b> il numero di <b>nuovi casi</b></h4>
+				</div>
+				<div class="card-body">
+					<h5 class="card-title pricing-card-title"><small class="text-muted">
+						Il <b>tempo di raddoppio</b> dei nuovi casi è una <b>misura</b> complementare al tasso della cresità per <b>la velocità della diffusione</b> del contaggio. Il tempo di raddoppiamento si comporta in modo <b>reciproco</b> al <b>tasso di crescità</b>.</small></h5>
+					<div class="card-body no-padding">
+						<iframe id="map7" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map7&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_raddoppio_7.json"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+		<h1 class="display-4">prima o poi ...</h1>
+		<p class="lead"></p>
+	</div>
+		
 	<div class="container">
 		<div class="card-deck mb-3 text-center">
 			<div class="card mb-4 shadow-sm">
@@ -385,30 +338,6 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- --------------------------------------------------------------- -->
-	<!-- List - Incidenza, Prevalenza, Incremento Percentuale		 	 -->
-	<!-- --------------------------------------------------------------- -->
-	
-	<div class="container">
-		<div class="card-deck mb-3 text-center">
-			<div class="card mb-4 shadow-sm">
-				<div class="card-header">
-					<h4 class="my-0 font-weight-normal">Tutte le Province:  casi, prevalenza, incidenza e la sua tendenza</h4>
-				</div>
-				<div class="card-body">
-					<h5 class="card-title pricing-card-title text-left"><small class="text-muted">
-						Per ogni provincia viene elencato: il n° attuale di casi, la <b>prevalenza (casi per 100.000 abitanti)</b> e <b>l'incidenza (= nuovi casi per 100.000 abitanti)</b>. La freccia indica se l'Incidenza e più alta o più bassa di ieri, la piccola curva mostra l'andamento dell'Incidenza per i unltimi 28 giorni.<br><br>
-						<h4>Le Province sono <b style='color:#EE8888'>colorate per prevalenza</b> ma <b>ordinate &darr; per incidenza</b></h4>
-						</small></h5>
-
-					<div id="province-list">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
 
 	<!-- --------------------------------------------------------------- -->
 	<!-- --------------------------------------------------------------- -->
