@@ -51,7 +51,7 @@ window.ixmaps.CSSE_COVID_CONFIRMED_56 = window.ixmaps.CSSE_COVID_CONFIRMED_56 ||
 		options.theme.szLabelA = last_56.slice(-55);
 		options.theme.szXaxisA = last_56.slice(-55);
 		for ( var i=1; i < options.theme.szXaxisA.length-1; i++ ){
-			options.theme.szXaxisA[i] = i%7?options.theme.szXaxisA[i]:" ";
+			options.theme.szXaxisA[i] = i%7?" ":options.theme.szXaxisA[i];
 		}
      };   
     
