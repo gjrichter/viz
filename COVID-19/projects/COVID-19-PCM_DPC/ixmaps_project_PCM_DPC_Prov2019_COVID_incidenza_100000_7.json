@@ -99,7 +99,7 @@
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province.js",
 				"datacache": "false",
-				"lookupfield": "lat|long",
+				"lookupfield": "codice_provincia",
 				"lookuptonumber": "true",
 				"symbols": [
 					"label"],
@@ -138,7 +138,7 @@
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province.js",
 				"datacache": "false",
 				"itemfield": "codice_provincia",
-				"lookupfield": "lat|long",
+				"lookupfield": "codice_provincia",
 				"lookuptonumber": "true",
 				"symbols": [
 					"circle"],
