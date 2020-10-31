@@ -134,7 +134,7 @@
 				"dopacityscale": "5",
 				"textcolor": "#dd0044",
 				"linecolor": [
-					"none"],
+					"#888888"],
 				"linewidth": "3",
 				"titlefield": "denominazione_regione",
 				"valuescale": "1.1",
