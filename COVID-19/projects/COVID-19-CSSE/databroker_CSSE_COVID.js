@@ -2797,7 +2797,7 @@ window.ixmaps = window.ixmaps || {};
 		var records = table.records;
 		for ( var r=0; r<records.length; r++ ){
 			for ( var c=records[r].length-1; c>=4; c--){
-				if ( (Number(records[r][c])-Number(records[r][c-1])) && (Number(records[r][c-1])) > 100) ) {
+				if ( (Number(records[r][c])-Number(records[r][c-1])) && (Number(records[r][c-1]) > 100) ) {
 					records[r][c] = ((Number(records[r][c])-Number(records[r][c-1])) / (Number(records[r][c-1])) * 100).toFixed(2);
 				}else{
 					records[r][c] = 0;
