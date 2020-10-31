@@ -72,7 +72,7 @@
 				"filter": "WHERE Country/Region != Others",
 				"dbtable": "CSSE_COVID_SEQUENCE_DIFFERENCE_PERCENT_MEAN_7_CLIP_WEEKS",
 				"dbtableType": "ext",
-				"dbtableExt": "../../projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
 				"datacache": "false",
 				"lookupfield": "Lat|Long",
 				"ranges": [
