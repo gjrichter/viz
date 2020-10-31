@@ -652,14 +652,13 @@ window.ixmaps = window.ixmaps || {};
 				columns.shift();
 				columns.shift();
 				columns.shift();
-				columns.pop();
 
 				var last = columns.length-1;
 
 				theme.szSizeField = columns[last];
 				theme.szValueField = columns[last];
 
-				// -----------------------------------------------------------------------------------------------               
+				// ----------------------------------------------------------------------------------------------- 
 				// deploy the data
 				// ----------------------------------------------------------------------------------------------- 
 
@@ -668,8 +667,7 @@ window.ixmaps = window.ixmaps || {};
 					name: options.name
 				});
 
-			})
-			.error(function(e){alert("error loading data from:\n"+szUrl)});
+			});
 
 	};
 				
