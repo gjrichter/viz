@@ -12,7 +12,7 @@
 		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Dark matter",
-		"legend": "<h1>COVID-19(2019-nCoV)</b><br><span style='font-size:0.6em;color:#888888'>7 days moving average of new cases</span></h1><h4 style='color:#888888'>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE</h4>",
+		"legend": "",
 		"item": "html",
 		"scaleParam": {
 			"borderScaling": "0.1",
@@ -94,7 +94,7 @@
 				"clipframes": "55",
 				"clipframerate": "24",
 				"name": "clip",
-				"title": "COVID-19",
+				"title": "COVID-19 growth rate",
 				"snippet": "from 1/29/20 to 10/25/20",
 				"description": "aggiornato: 10/29/20"
 				}
