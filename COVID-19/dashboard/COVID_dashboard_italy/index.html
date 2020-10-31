@@ -1,33 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-<script id="tinyhippos-injected">
+<html lang="it">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script id="tinyhippos-injected">
 	if (window.top.ripple) {
 		window.top.ripple("bootstrap").inject(window, document);
 	}
 
-</script>
-
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
-	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-	<title>COVID-19 Italia</title>
-
-	<!-- Bootstrap core CSS -->
-	<link href="./css/bootstrap.min.css" rel="stylesheet">
-
-	</style>
-	<!-- Custom styles for this template -->
-	<link href="./css/pricing.css" rel="stylesheet">
-
-	<!-- CSS App -->
-	<link rel="stylesheet" type="text/css" href="./css/dashboard/style.css">
-	<link rel="stylesheet" type="text/css" href="./css/dashboard/themes/flat-blue.css">
-	<link rel="stylesheet" type="text/css" href="./lib/css/font-awesome.min.css">
-
-	<style>
+</script> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <title>COVID-19 Italia</title>
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="./css/pricing.css" rel="stylesheet">
+    <!-- CSS App -->
+    <link rel="stylesheet" type="text/css" href="./css/dashboard/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/dashboard/themes/flat-blue.css">
+    <link rel="stylesheet" type="text/css" href="./lib/css/font-awesome.min.css">
+    <style>
 		table.region-list td {
 			font-size: 1.05em;
 			border-bottom: 5px solid #fff;
@@ -43,362 +35,414 @@
 			border-bottom: 1px solid #eee;
 		}
 	</style>
-</head>
+  </head>
+  <body data-gr-c-s-loaded="true">
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <h5 class="my-0 mr-md-auto font-weight-normal">2019 Novel Coronavirus
+        COVID-19</h5>
+      <a class="btn btn-outline" href="https://gjrichter.github.io/viz/COVID-19/dashboard/COVID_dashboard_italy_curves">grafici
+        II →</a> <span style="width:10px"></span> <a class="btn btn-outline" href="https://gjrichter.github.io/viz/COVID-19/dashboard/COVID_dashboard_italy_clips">grafici
+        III →</a> <span style="width:10px"></span>
+      <nav class="my-2 my-md-0 mr-md-3"> <a class="p-1 text-dark" style="font-size:18px"
 
-<body data-gr-c-s-loaded="true">
-	<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-		<h5 class="my-0 mr-md-auto font-weight-normal">2019 Novel Coronavirus COVID-19</h5>
-		<nav class="my-2 my-md-0 mr-md-3">
-			<a class="p-1 text-dark" style="font-size:18px" href="#footer">Fonti & Attributioni</a>
-		</nav>
-		<a class="btn btn-outline-primary" href="https://gjrichter.github.io/viz/COVID-19/dashboard/COVID_dashboard_world/index.html">Situazione nel mondo &rarr;</a>
-	</div>
+          href="#footer">Fonti &amp; Attributioni</a> </nav>
+      <a class="btn btn-outline-primary" href="https://gjrichter.github.io/viz/COVID-19/dashboard/COVID_dashboard_world/index.html">Situazione
+        nel mondo →</a> </div>
+    <!-- --------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------- -->
+    <!--                                                                 -->
+    <!-- Jumbo Map 													 -->
+    <!--                                                                 -->
+    <!-- --------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------- -->
+    <div id="map_div" style="margin-top:-16px;margin-bottom:-10px;padding:0;" background="#f8f8f8"
 
-	<!-- --------------------------------------------------------------- -->
-	<!-- --------------------------------------------------------------- -->
-	<!--                                                                 -->
-	<!-- Jumbo Map 													 -->
-	<!--                                                                 -->
-	<!-- --------------------------------------------------------------- -->
-	<!-- --------------------------------------------------------------- -->
-	
-	<div id="map_div" style="margin-top:-16px;margin-bottom:-10px;padding:0;" background="#f8f8f8" onclick="event.stopPropagation();return false;">
-	</div>
+      onclick="event.stopPropagation();return false;"> </div>
+    <!-- --------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------- -->
+    <!--                                                                 -->
+    <!-- Top Cards with numbers an trend curve, actual data release date -->
+    <!--                                                                 -->
+    <!-- --------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------- -->
+    <div class="container">
+      <div class="card-decktext-center">
+        <div class="card shadow-sm">
+          <div class="card-header">
+            <h1 id="italia">&nbsp;La situazione: <span id="select-country" style="margin-left:em"></span>
+              <span id="data_italia" class="pull-right" style="color:#aaaaaa;font-weight:bold;font-size:0.6em"></span>
+            </h1>
+          </div>
+          <div class="card-body" style="padding:0">
+            <div class="card-body no-padding">
+              <div id="ItalyCards" style="margin-top:2em" class="pull-left"> </div>
+              <div style="padding:1.2em">
+                <p>&nbsp;</p>
+                <p><b>Fonte:</b> COVID-19 Italia - Monitoraggio situazione -
+                  dati_andamento_nazionale (csvn) e dati_regioni (csv)
+                  pubblicati dal Dipartimento della Protezione Civile su <a href="https://github.com/pcm-dpc/COVID-19/">GitHub</a></p>
+                <p><b>Ogni scheda mostra:</b> il valore attuale, l'incremento
+                  del giorno attuale e del giorno passato (in parentesi), una
+                  freccia per indicare se l'incremento attuale è più alto o più
+                  basso del precedente e una curva che riporta lo storico degli
+                  incrementi. Le curve vengono calcolati cone la media mobile di
+                  3 giorni</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- --------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------- -->
+    <!--                                                                 -->
+    <!-- R E G I O N I		                        				 	 -->
+    <!--                                                                 -->
+    <!-- --------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------- -->
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Regioni</h1>
+      <p class="lead">Visualizzazioni di dati attuali, particolarizzati per le
+        Regioni d'Italia e pubblicati dal Departimento della Protezione Civile.
+        Le visualizzazione usano i campi: ricoverati_con_sintomi,
+        terapia_intensiva, isolamento_domiciliare, totale_positivi,
+        dimessi_guariti, deceduti, totale_casi, tamponi. I dati si trovono su
+        GitHub e vengono aggiornati ogni giorno intorno all 18:00. Le
+        visualizzazioni caricano i dati direttamente dalla fonte (GitHub)</p>
+    </div>
+    <!-- ------------------------------------------------------ -->
+    <!-- - region list   									    -->
+    <!-- ------------------------------------------------------ -->
+    <div class="container">
+      <div class="card-decktext-center">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card-body no-padding">
+              <h4 style="color:#aaaaaa"><b style="color:black">positivi,
+                  ospedalizzati, terapia intensiva, deceduti e tamponi e la loro
+                  tendenza</b></h4>
+              <b style="color:black">
+                <div id="SmallRegionList"> </div>
+                <span style="color:#444444;font-size:1.5em;font-weight:normal">*)
+                  incidenza cumulativa di 14 giorni x 100.000 abitanti; indice
+                  compatibile ai dati pubblicati dal al European Centre for
+                  Disease Prevention and Control</span> </b></div>
+            <b style="color:black"> </b></div>
+          <b style="color:black"> </b></div>
+        <b style="color:black"> </b></div>
+      <b style="color:black"> </b></div>
+    <b style="color:black">
+      <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <p class="lead">Casi totali e la loro variazione, giorno per giorno. I
+          dati si trovono su GitHub e vengono aggiornati ogni giorno intorno all
+          18:00. Le visualizzazioni caricano i dati direttamente dalla fonte
+          (GitHub)</p>
+      </div>
+      <!-- --------------------------------------------------------------- -->
+      <!-- Maps - regional - categories           					 	 -->
+      <!-- --------------------------------------------------------------- -->
+      <div class="container">
+        <div class="card-deck mb-3 text-center">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+              <h4 class="my-0 font-weight-normal"><b>Incidenza cumulativa di 14
+                  giorni</b>, giorno per giorno</h4>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title pricing-card-title"><small class="text-muted">nuovi
+                  positivi registrati in 14 giorni per 100.000 abitanti</small>
+                <a href="javascript:ixmaps.changeThemeStyle('map1',null,'scale:0.9','factor')">(-)</a>
+                grafici <a href="javascript:ixmaps.changeThemeStyle('map1',null,'scale:1.11','factor')">(+)</a>
+              </h5>
+              <div class="card-body no-padding"> <iframe id="map1" scrolling="no"
 
-	<!-- --------------------------------------------------------------- -->
-	<!-- --------------------------------------------------------------- -->
-	<!--                                                                 -->
-	<!-- Top Cards with numbers an trend curve, actual data release date -->
-	<!--                                                                 -->
-	<!-- --------------------------------------------------------------- -->
-	<!-- --------------------------------------------------------------- -->
+                  marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=left&amp;legend=1&amp;name=map1&amp;sync=false&amp;footer=1&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Reg2019_COVID_curves_casi_lite_incidence.json"
 
-	<div class="container">
-		<div class="card-decktext-center">
-			<div class="card shadow-sm">
-				<div class="card-header">
-					<h1 id="italia">&nbsp;La situazione:
-						<span id="select-country" style="margin-left:em"></span>
-						<span id="data_italia" class="pull-right" style="color:#aaaaaa;font-weight:bold;font-size:0.6em"></span>
-					</h1>
-				</div>
-				<div class="card-body" style="padding:0">
-					<div class="card-body no-padding">
-						<div id="ItalyCards" style="margin-top:2em" class="pull-left">
-						</div>
-						<div style="padding:1.2em">
-							<p>&nbsp;</p>
-							<p><b>Fonte:</b> COVID-19 Italia - Monitoraggio situazione - dati_andamento_nazionale (csvn) e dati_regioni (csv) pubblicati dal Dipartimento della Protezione Civile su <a href="https://github.com/pcm-dpc/COVID-19/">GitHub</a></p>
-							<p><b>Ogni scheda mostra:</b> il valore attuale, l'incremento del giorno attuale e del giorno passato (in parentesi), una freccia per indicare se l'incremento attuale è più alto o più basso del precedente e una curva che riporta lo storico degli incrementi. Le curve vengono calcolati cone la media mobile di 3 giorni</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
+                  height="850" frameborder="0" width="100%"></iframe> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="card-deck mb-3 text-center">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+              <h4 class="my-0 font-weight-normal"><b>Rapporto nuovi positivi vs
+                  testati</b>, giorno per giorno</h4>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title pricing-card-title"><small class="text-muted">Numero
+                  di nuovi casi positivi in percentuale ai tamponi effettuati la
+                  prima volta alle persone non positiva<br>
+                  valore attuale e evoluzione con media mobile di 7 giorni</small></h5>
+              <div class="card-body no-padding"> <iframe id="map3" scrolling="no"
 
-	<!-- --------------------------------------------------------------- -->
-	<!-- --------------------------------------------------------------- -->
-	<!--                                                                 -->
-	<!-- R E G I O N I		                        				 	 -->
-	<!--                                                                 -->
-	<!-- --------------------------------------------------------------- -->
-	<!-- --------------------------------------------------------------- -->
+                  marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=left&amp;legend=1&amp;name=map3&amp;sync=false&amp;footer=1&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Reg2019_COVID_curves_tampone_ratio_values.json"
 
-	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-		<h1 class="display-4">Regioni</h1>
-		<p class="lead">Visualizzazioni di dati attuali, particolarizzati per le Regioni d'Italia e pubblicati dal Departimento della Protezione Civile. Le visualizzazione usano i campi: ricoverati_con_sintomi, terapia_intensiva, isolamento_domiciliare, totale_positivi, dimessi_guariti, deceduti, totale_casi, tamponi. I dati si trovono su GitHub e vengono aggiornati ogni giorno intorno all 18:00. Le visualizzazioni caricano i dati direttamente dalla fonte (GitHub)</p>
-	</div>
+                  height="850" frameborder="0" width="100%"></iframe> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- --------------------------------------------------------------- -->
+      <!-- --------------------------------------------------------------- -->
+      <!--                                                                 -->
+      <!-- P R O V I N C E                         					 	 -->
+      <!--                                                                 -->
+      <!-- --------------------------------------------------------------- -->
+      <!-- --------------------------------------------------------------- -->
+      <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Province</h1>
+        <p class="lead">Visualizzazioni dei casi totali per ogni Provincia
+          d'Italia da parte della Protezione Civile. I dati si trovono su GitHub
+          e vengono aggiornati ogni giorno intorno all 18:00. Le visualizzazioni
+          caricano i dati direttamente dalla fonte (GitHub)</p>
+      </div>
+      <div class="container">
+        <div class="card-deck mb-3 text-center">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+              <h4 class="my-0 font-weight-normal">Tutte le Province: casi,
+                prevalenza, incidenza e la sua tendenza</h4>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title pricing-card-title text-left"><small class="text-muted">
+                  Per ogni provincia viene elencato: il n° attuale di casi, la <b
 
-	<!-- ------------------------------------------------------ -->
-	<!-- - region list   									    -->
-	<!-- ------------------------------------------------------ -->
+                    style="color:#EE8888">prevalenza </b><b> (casi per 100.000
+                    abitanti)</b> e <b style="color:#cc0077">l'incidenza
+                    cumulativa per 14 giorni </b><b> (= nuovi casi in 14 giorni
+                    per 100.000 abitanti)</b>. La freccia indica se l'Incidenza
+                  e più alta o più bassa di ieri, la piccola curva mostra
+                  l'andamento dell'Incidenza per i unltimi 28 giorni.<br>
+                  <br>
+                  <h4>Le Province sono <b style="color:#EE8888">colorate per
+                      prevalenza</b> ma <b>ordinate ↓ per </b><b style="color:#cc0077">incidenza</b></h4>
+                </small></h5>
+              <div id="province-list"> </div>
+            </div>
+          </div>
+        </div>
+        <span style="color:#444444;font-size:1.5em;font-weight:normal">*)
+          incidenza cumulativa di 14 giorni x 100.000 abitanti; indice
+          compatibile ai dati pubblicati dal al European Centre for Disease
+          Prevention and Control</span> </div>
+      <br>
+      <br>
+      <!-- --------------------------------------------------------------- -->
+      <!-- Maps - Incidenza, Prevalenza, Incremento Percentuale		 	 -->
+      <!-- --------------------------------------------------------------- -->
+      <div class="container">
+        <div class="card-deck mb-3 text-center">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+              <h4 class="my-0 font-weight-normal"><b>Incidenza cumulativa di 14
+                  giorni </b> - attuale e storico</h4>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title pricing-card-title"><small class="text-muted">L'incidenza
+                  cumulativa è il numero di nuovi casi positivi registrati in 14
+                  guiorni e espresso in casi per 100.000 abitanti<br>
+                  (14-day notification rate - European Centre for Disease
+                  Prevention and Control)</small></h5>
+              <div class="card-body no-padding"> <iframe id="map3" scrolling="no"
 
-	<div class="container">
-		<div class="card-decktext-center">
+                  marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=left&amp;legend=1&amp;name=map9&amp;sync=false&amp;footer=1&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_incidenza_100000_14_cumulative_II.json"
 
-			<div class="row">
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				</div>
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<div class="card-body no-padding">
-						<h4 style="color:#aaaaaa"><b style="color:black">positivi, ospedalizzati, terapia intensiva, deceduti e tamponi e la loro tendenza</h4>
+                  height="850" frameborder="0" width="100%"></iframe> </div>
+            </div>
+            <!--
+				<div class="card-body">					<h5 class="card-title pricing-card-title"><small class="text-muted">L'incidenza cumulativa è il numero di nuovi casi positivi registrati in 14 guiorni e espresso in casi per 100.000 abitanti<br>(14-day notification rate - European Centre for Disease Prevention and Control)</small></h5>					<div class="card-body no-padding">						<iframe id="map3" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_curves_incidenza_100000_14_cumulative.json"></iframe>
+					</div>				</div>				--> </div>
+        </div>
+      </div>
+      <!-- --------------------------------------------------------------- -->
+      <!-- List - Incidenza, Prevalenza, Incremento Percentuale		 	 -->
+      <!-- --------------------------------------------------------------- -->
+      <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">in 24 ore</h1>
+      </div>
+      <div class="container">
+        <div class="card-deck mb-3 text-center">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+              <h4 class="my-0 font-weight-normal"><b>Nuovi casi</b> x <b>24 ore</b>
+                (media dei ultimi 3 giorni)</h4>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title pricing-card-title"><small class="text-muted">La
+                  media degli incrementi dei casi totali nei ultimi 3 giorni e
+                  lo storico degli incrementi dall'inizio dell'epidemia ad oggi
+                  (visibile con l'ingrandimento della mappa).</small></h5>
+              <div class="card-body no-padding"> <iframe id="map4" scrolling="no"
 
-						<div id="SmallRegionList">
-						</div>
-							
-						<span style="color:#444444;font-size:1.5em;font-weight:normal">*) incidenza cumulativa di 14 giorni  x 100.000 abitanti; indice compatibile ai dati pubblicati dal al European Centre for Disease Prevention and Control</span>	
-					</div>
-				</div>
-			</div>
+                  marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=left&amp;legend=1&amp;name=map4&amp;sync=false&amp;footer=1&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_casi_24h_textonly.json"
 
-		</div>
-	</div>
+                  height="850" frameborder="0" width="100%"></iframe> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="card-deck mb-3 text-center">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+              <h4 class="my-0 font-weight-normal"><b>Incidenza</b> - <b>nuovi
+                  casi</b> per <b>100.000</b> abitanti</h4>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title pricing-card-title"><small class="text-muted">
+                  L'incidenza è una misura dell'impatto attuale dei nuovi casi
+                  sull'territorio. E piu idonea della variazione giornaliera dei
+                  casi per comparare territori con popolazione diversa.</small></h5>
+              <div class="card-body no-padding"> <iframe id="map6" scrolling="no"
 
-	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-		<p class="lead">Casi totali e la loro variazione, giorno per giorno. I dati si trovono su GitHub e vengono aggiornati ogni giorno intorno all 18:00. Le visualizzazioni caricano i dati direttamente dalla fonte (GitHub)</p>
-	</div>
+                  marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=left&amp;legend=1&amp;name=map6&amp;sync=false&amp;footer=1&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_incidenza_100000_7.json"
 
-    
-	<!-- --------------------------------------------------------------- -->
-	<!-- Maps - regional - categories           					 	 -->
-	<!-- --------------------------------------------------------------- -->
+                  height="850" frameborder="0" width="100%"></iframe> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="card-deck mb-3 text-center">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+              <h4 class="my-0 font-weight-normal"><b>Tasso di crescita</b> - <b>nuovi
+                  casi</b> in <b>percentuali</b> del <b>totale</b> dei casi</h4>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title pricing-card-title"><small class="text-muted">
+                  La <b>percentuale del incremento</b> delle casi nelle ultime
+                  24 ore è una <b>misura</b> per <b>la velocità della
+                    diffusione</b> del contaggio. La precentuale si comporta in
+                  modo <b>reciproco</b> al numero di giorni per il <b>raddoppiamento</b>
+                  dei casi. Un valore di 50% per esempio indica un tempo di meno
+                  di 2 giorni per il raddoppimento.</small></h5>
+              <div class="card-body no-padding"> <iframe id="map7" scrolling="no"
 
- 	<div class="container">
-		<div class="card-deck mb-3 text-center">
-			<div class="card mb-4 shadow-sm">
-				<div class="card-header">
-					<h4 class="my-0 font-weight-normal"><b>Incidenza cumulativa di 14 giorni</b>, giorno per giorno</h4>
-				</div>
-				<div class="card-body">
-					<h5 class="card-title pricing-card-title"><small class="text-muted">nuovi positivi registrati in 14 giorni per 100.000 abitanti</small>
-						<a href="javascript:ixmaps.changeThemeStyle('map1',null,'scale:0.9','factor')">(-)</a> grafici 
-						<a href="javascript:ixmaps.changeThemeStyle('map1',null,'scale:1.11','factor')">(+)</a>
-					</h5>
-					<div class="card-body no-padding">
-						<iframe id="map1" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map1&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Reg2019_COVID_curves_casi_lite_incidence.json"></iframe>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
- 	<div class="container">
-		<div class="card-deck mb-3 text-center">
-			<div class="card mb-4 shadow-sm">
-				<div class="card-header">
-					<h4 class="my-0 font-weight-normal"><b>Rapporto nuovi positivi vs testati</b>, giorno per giorno</h4>
-				</div>
-				<div class="card-body">
-					<h5 class="card-title pricing-card-title"><small class="text-muted">Numero di nuovi casi positivi in percentuale ai tamponi effetuati la prima volta alla persona non positiva</small></h5>
-					<div class="card-body no-padding">
-						<iframe id="map3" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map3&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Reg2019_COVID_curves_tampone_ratio_lite.json"></iframe>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                  marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=left&amp;legend=1&amp;name=map7&amp;sync=false&amp;footer=1&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_percent_7_grid.json"
 
-   
-	<!-- --------------------------------------------------------------- -->
-	<!-- --------------------------------------------------------------- -->
-	<!--                                                                 -->
-	<!-- P R O V I N C E                         					 	 -->
-	<!--                                                                 -->
-	<!-- --------------------------------------------------------------- -->
-	<!-- --------------------------------------------------------------- -->
+                  height="850" frameborder="0" width="100%"></iframe> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="card-deck mb-3 text-center">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+              <h4 class="my-0 font-weight-normal"><b>Tempo di radoppiamento</b>
+                - <b>giorni</b> per <b>raddoppiare</b> il numero di <b>nuovi
+                  casi</b></h4>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title pricing-card-title"><small class="text-muted">
+                  Il <b>tempo di raddoppio</b> dei nuovi casi è una <b>misura</b>
+                  complementare al tasso della cresità per <b>la velocità della
+                    diffusione</b> del contaggio. Il tempo di raddoppiamento si
+                  comporta in modo <b>reciproco</b> al <b>tasso di crescità</b>.</small></h5>
+              <div class="card-body no-padding"> <iframe id="map7" scrolling="no"
 
-	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-		<h1 class="display-4">Province</h1>
-		<p class="lead">Visualizzazioni dei casi totali per ogni Provincia d'Italia da parte della Protezione Civile. I dati si trovono su GitHub e vengono aggiornati ogni giorno intorno all 18:00. Le visualizzazioni caricano i dati direttamente dalla fonte (GitHub)</p>
-	</div>
+                  marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=left&amp;legend=1&amp;name=map7&amp;sync=false&amp;footer=1&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_raddoppio_7.json"
 
-	<div class="container">
-		<div class="card-deck mb-3 text-center">
-			<div class="card mb-4 shadow-sm">
-				<div class="card-header">
-					<h4 class="my-0 font-weight-normal">Tutte le Province:  casi, prevalenza, incidenza e la sua tendenza</h4>
-				</div>
-				<div class="card-body">
-					<h5 class="card-title pricing-card-title text-left"><small class="text-muted">
-						Per ogni provincia viene elencato: il n° attuale di casi, la <b style='color:#EE8888'>prevalenza </b><b> (casi per 100.000 abitanti)</b> e <b style='color:#cc0077'>l'incidenza cumulativa per 14 giorni </b><b> (= nuovi casi in 14 giorni per 100.000 abitanti)</b>. La freccia indica se l'Incidenza e più alta o più bassa di ieri, la piccola curva mostra l'andamento dell'Incidenza per i unltimi 28 giorni.<br><br>
-						<h4>Le Province sono <b style='color:#EE8888'>colorate per prevalenza</b> ma <b>ordinate &darr; per </b><b style='color:#cc0077'>incidenza</b></h4>
-						</small></h5>
+                  height="850" frameborder="0" width="100%"></iframe> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">prima o poi ...</h1>
+        <p class="lead"></p>
+      </div>
+      <div class="container">
+        <div class="card-deck mb-3 text-center">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+              <h4 class="my-0 font-weight-normal"><b>Giorni senza nuovi casi</b>
+                - da<b> 28 </b> in poi una Provincia è ufficialmente <b style="color:green">
+                  Covis free</b></h4>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title pricing-card-title"><small class="text-muted">
+                </small></h5>
+              <div class="card-body no-padding"> <iframe id="map5" scrolling="no"
 
-					<div id="province-list">
-					</div>
-					
-				</div>
-			</div>
-		</div>
-					<span style="color:#444444;font-size:1.5em;font-weight:normal">*) incidenza cumulativa di 14 giorni  x 100.000 abitanti; indice compatibile ai dati pubblicati dal al European Centre for Disease Prevention and Control</span>
-	</div>
-	
-	<br><br>
-		
-	<!-- --------------------------------------------------------------- -->
-	<!-- Maps - Incidenza, Prevalenza, Incremento Percentuale		 	 -->
-	<!-- --------------------------------------------------------------- -->
-	
-	<div class="container">
-		<div class="card-deck mb-3 text-center">
-			<div class="card mb-4 shadow-sm">
-				<div class="card-header">
-					<h4 class="my-0 font-weight-normal"><b>Incidenza cumulativa di 14 giorni </b> - attuale e storico</h4>
-				</div>
-				<div class="card-body">
-					<h5 class="card-title pricing-card-title"><small class="text-muted">L'incidenza cumulativa è il numero di nuovi casi positivi registrati in 14 guiorni e espresso in casi per 100.000 abitanti<br>(14-day notification rate - European Centre for Disease Prevention and Control)</small></h5>
-					<div class="card-body no-padding">
-						<iframe id="map3" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_incidenza_100000_14_cumulative_II.json"></iframe>
-					</div>
-				</div>
-				<!--
-				<div class="card-body">
-					<h5 class="card-title pricing-card-title"><small class="text-muted">L'incidenza cumulativa è il numero di nuovi casi positivi registrati in 14 guiorni e espresso in casi per 100.000 abitanti<br>(14-day notification rate - European Centre for Disease Prevention and Control)</small></h5>
-					<div class="card-body no-padding">
-						<iframe id="map3" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_curves_incidenza_100000_14_cumulative.json"></iframe>
-					</div>
-				</div>
-				-->
-			</div>
-		</div>
-	</div>
+                  marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=left&amp;legend=1&amp;name=map5&amp;sync=false&amp;footer=1&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_free_days_green_new_cases.json"
 
-	<!-- --------------------------------------------------------------- -->
-	<!-- List - Incidenza, Prevalenza, Incremento Percentuale		 	 -->
-	<!-- --------------------------------------------------------------- -->
-	
-	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-		<h1 class="display-4">in 24 ore</h1>
-	</div>
+                  height="850" frameborder="0" width="100%"></iframe> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- --------------------------------------------------------------- -->
+      <!-- --------------------------------------------------------------- -->
+      <!--                                                                 -->
+      <!-- F O O T E R          		               					 	 -->
+      <!--                                                                 -->
+      <!-- --------------------------------------------------------------- -->
+      <!-- --------------------------------------------------------------- -->
+      <footer id="footer" class="container border-top">
+        <div class="row">
+          <div class="col-4">
+            <h5>Fonti</h5>
+            <ul class="list-unstyled text-small">
+              <li> <a class="btn btn-primary" href="https://github.com/pcm-dpc/COVID-19/"
 
-	<div class="container">
-		<div class="card-deck mb-3 text-center">
-			<div class="card mb-4 shadow-sm">
-				<div class="card-header">
-					<h4 class="my-0 font-weight-normal"><b>Nuovi casi</b> x <b>24 ore</b> (media dei ultimi 3 giorni)</h4>
-				</div>
-				<div class="card-body">
-					<h5 class="card-title pricing-card-title"><small class="text-muted">La media degli incrementi dei casi totali nei ultimi 3 giorni e lo storico degli incrementi dall'inizio dell'epidemia ad oggi (visibile con l'ingrandimento della mappa).</small></h5>
-					<div class="card-body no-padding">
-						<iframe id="map4" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map4&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_casi_24h_textonly.json"></iframe>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                  target="_blank">COVID-19 Italia - Monitoraggio situazione</a>
+                Dipartimento della Protezione Civile, Italia<br>
+                Licenza: <a href="https://creativecommons.org/licenses/by/4.0/"
 
-	<div class="container">
-		<div class="card-deck mb-3 text-center">
-			<div class="card mb-4 shadow-sm">
-				<div class="card-header">
-					<h4 class="my-0 font-weight-normal"><b>Incidenza</b> - <b>nuovi casi</b> per <b>100.000</b> abitanti</h4>
-				</div>
-				<div class="card-body">
-					<h5 class="card-title pricing-card-title"><small class="text-muted">
-						L'incidenza è una misura dell'impatto attuale dei nuovi casi sull'territorio. E piu idonea della variazione giornaliera dei casi per comparare territori con popolazione diversa.</small></h5>
-					<div class="card-body no-padding">
-						<iframe id="map6" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map6&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_incidenza_100000_7.json"></iframe>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                  target="_blank">CC-BY 4.0</a></li>
+              <li>&nbsp;</li>
+              <li><a class="text-muted" href="https://istat.it">Popolazione
+                  2019, ISTAT</a></li>
+            </ul>
+          </div>
+          <div class="col-4">
+            <h5>Attribuzioni</h5>
+            <ul class="list-unstyled text-small">
+              <li> chart.js - <span style="color:#888888">grafici a barra e
+                  curve sono realizzati con Chart.js, licenza: <a href="https://opensource.org/licenses/MIT"
 
-	<div class="container">
-		<div class="card-deck mb-3 text-center">
-			<div class="card mb-4 shadow-sm">
-				<div class="card-header">
-					<h4 class="my-0 font-weight-normal"><b>Tasso di crescita</b> - <b>nuovi casi</b> in <b>percentuali</b> del <b>totale</b> dei casi</h4>
-				</div>
-				<div class="card-body">
-					<h5 class="card-title pricing-card-title"><small class="text-muted">
-						La <b>percentuale del incremento</b> delle casi nelle ultime 24 ore è una <b>misura</b> per <b>la velocità della diffusione</b> del contaggio. La precentuale si comporta in modo <b>reciproco</b> al numero di giorni per il <b>raddoppiamento</b> dei casi. Un valore di 50% per esempio indica un tempo di meno di 2 giorni per il raddoppimento.</small></h5>
-					<div class="card-body no-padding">
-						<iframe id="map7" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map7&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_percent_7_grid.json"></iframe>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<div class="container">
-		<div class="card-deck mb-3 text-center">
-			<div class="card mb-4 shadow-sm">
-				<div class="card-header">
-					<h4 class="my-0 font-weight-normal"><b>Tempo di radoppiamento</b> - <b>giorni</b> per <b>raddoppiare</b> il numero di <b>nuovi casi</b></h4>
-				</div>
-				<div class="card-body">
-					<h5 class="card-title pricing-card-title"><small class="text-muted">
-						Il <b>tempo di raddoppio</b> dei nuovi casi è una <b>misura</b> complementare al tasso della cresità per <b>la velocità della diffusione</b> del contaggio. Il tempo di raddoppiamento si comporta in modo <b>reciproco</b> al <b>tasso di crescità</b>.</small></h5>
-					<div class="card-body no-padding">
-						<iframe id="map7" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map7&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_raddoppio_7.json"></iframe>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-		<h1 class="display-4">prima o poi ...</h1>
-		<p class="lead"></p>
-	</div>
-		
-	<div class="container">
-		<div class="card-deck mb-3 text-center">
-			<div class="card mb-4 shadow-sm">
-				<div class="card-header">
-					<h4 class="my-0 font-weight-normal"><b>Giorni senza nuovi casi</b> - da<b> 28 </b> in poi una Provincia è ufficialmente <b style="color:green"> Covis free</b></h4>
-				</div>
-				<div class="card-body">
-					<h5 class="card-title pricing-card-title"><small class="text-muted">
-						</small></h5>
-					<div class="card-body no-padding">
-						<iframe id="map5" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map5&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_free_days_green_new_cases.json"></iframe>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                    target="_blank">MIT</a></span><br>
+                Papa Parse - <span style="color:#888888">.csv parser
+                  integtegrato in data.js, usato per caricare e manipolare i
+                  dati dai siti ufficiali, licenza: <a href="https://opensource.org/licenses/MIT"
 
-	<!-- --------------------------------------------------------------- -->
-	<!-- --------------------------------------------------------------- -->
-	<!--                                                                 -->
-	<!-- F O O T E R          		               					 	 -->
-	<!--                                                                 -->
-	<!-- --------------------------------------------------------------- -->
-	<!-- --------------------------------------------------------------- -->
-	
-	<footer id="footer" class="container border-top">
-		<div class="row">
-			<div class="col-4">
-				<h5>Fonti</h5>
-				<ul class="list-unstyled text-small">
-					<li>
-						<a class='btn btn-primary' href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>COVID-19 Italia - Monitoraggio situazione</a> Dipartimento della Protezione Civile, Italia<br>
-						Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></li>
-					<li>&nbsp;</li>
-					<li><a class="text-muted" href="https://istat.it">Popolazione 2019, ISTAT</a></li>
-				</ul>
-			</div>
-			<div class="col-4">
-				<h5>Attribuzioni</h5>
-				<ul class="list-unstyled text-small">
-					<li> chart.js - <span style="color:#888888">grafici a barra e curve sono realizzati con Chart.js, licenza: <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a></span><br>
-						Papa Parse - <span style="color:#888888">.csv parser integtegrato in data.js, usato per caricare e manipolare i dati dai siti ufficiali, licenza: <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a></span><br>
-						Flat Admin Bootstrap Templates - <span style="color:#888888">HTML5 Bootstrap template alola base di questo dasboard, licenza: <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a></span><br>
-					</li>
-				</ul>
-			</div>
-			<div class="col-4">
-				<h5>About</h5>
-				<ul class="list-unstyled text-small">
-					<li><a class="text-muted" href="https://ixmaps.com">powered by iXMaps</a></li>
-				</ul>
-			</div>
-		</div>
-	</footer>
+                    target="_blank">MIT</a></span><br>
+                Flat Admin Bootstrap Templates - <span style="color:#888888">HTML5
+                  Bootstrap template alola base di questo dasboard, licenza: <a
 
-	<!-- --------------------------------------------------------------- -->
-	<!-- --------------------------------------------------------------- -->
-	<!--                                                                 -->
-	<!-- C O D E	          		               					 	 -->
-	<!--                                                                 -->
-	<!-- --------------------------------------------------------------- -->
-	<!-- --------------------------------------------------------------- -->
-	
-	<script type="text/javascript" src="./lib/js/jquery.min.js"></script>
-	<script type="text/javascript" src="./lib/js/bootstrap.bundle.min.js"></script>
-
-	<script type="text/javascript" src="./lib/js/Chart.bundle.js"></script>
-
-	<script type="text/javascript" src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
-	<script type="text/javascript" src="https://gjrichter.github.io/data.js/data.js"></script>
-
-	<script type="text/javascript" src="./js/index.js"></script>
-
-	<!-- Javascript -->
-	<script>
+                    href="https://opensource.org/licenses/MIT" target="_blank">MIT</a></span><br>
+              </li>
+            </ul>
+          </div>
+          <div class="col-4">
+            <h5>About</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="https://ixmaps.com">powered by
+                  iXMaps</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <!-- --------------------------------------------------------------- -->
+      <!-- --------------------------------------------------------------- -->
+      <!--                                                                 -->
+      <!-- C O D E	          		               					 	 -->
+      <!--                                                                 -->
+      <!-- --------------------------------------------------------------- -->
+      <!-- --------------------------------------------------------------- -->
+      <script type="text/javascript" src="./lib/js/jquery.min.js"></script>
+      <script type="text/javascript" src="./lib/js/bootstrap.bundle.min.js"></script>
+      <script type="text/javascript" src="./lib/js/Chart.bundle.js"></script>
+      <script type="text/javascript" src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
+      <script type="text/javascript" src="https://gjrichter.github.io/data.js/data.js"></script>
+      <script type="text/javascript" src="./js/index.js"></script>
+      <!-- Javascript -->
+      <script>
 		// ---------------------------------------------------------------------------------------
 		// infuse HTML snippets
 		// ---------------------------------------------------------------------------------------
@@ -449,8 +493,5 @@
 		});
 
 	</script>
-
-
-</body>
-
+  </body>
 </html>
