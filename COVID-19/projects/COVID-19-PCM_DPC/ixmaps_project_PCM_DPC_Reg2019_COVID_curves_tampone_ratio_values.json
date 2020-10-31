@@ -138,7 +138,7 @@
 					"#dd0088"],
 				"linewidth": "3",
 				"titlefield": "denominazione_regione",
-				"valuescale": "1",
+				"valuescale": "0.9",
 				"valuedecimals": "0",
 				"title": "Tampone/casi ratio",
 				"snippet": "aggiornato al 2020-03-28T17:00:00"
