@@ -552,7 +552,7 @@ window.ixmaps = window.ixmaps || {};
 
 				function (dataA) {
 
-					data_Deaths = dataA[0];
+					var data_Deaths = dataA[0];
 
 					var lastDataColumnName = data_Deaths.columnNames().pop();
 
