@@ -393,6 +393,46 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 		
+    ixmaps.PCM_DPC_COVID_LAST_NUOVI = function (theme,options) {
+
+
+		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(mydata){
+			
+			var pivot = __get_nuovi(mydata,options);
+	
+			// get the columns with date 
+			var columns = pivot.columnNames();
+			columns.shift();
+			columns.shift();
+			columns.shift();
+			columns.shift();
+			columns.pop();
+			
+			var last = columns.length-1;
+		
+			theme.szSizeField = columns[last];
+			theme.szValueField = columns[last];
+
+			// -----------------------------------------------------------------------------------------------               
+			// deploy the data
+			// ----------------------------------------------------------------------------------------------- 
+
+			ixmaps.setExternalData(pivot, {
+				type: "dbtable",
+				name: options.name
+			});
+
+		})
+		.error(function(e){alert("error loading data from:\n"+szUrl)});
+
+	};
+		
     ixmaps.PCM_DPC_COVID_LAST_ACTIVE = function (theme,options) {
 
 
