@@ -648,9 +648,6 @@ window.ixmaps = window.ixmaps || {};
 
 					// set as data fields in actual theme
 
-					options.theme.szFields = columnsA.slice().join("|");
-					options.theme.szFieldsA = columnsA;
-
 					options.theme.szItemField = "Lat|Long";
 					options.theme.szSelectionField = "Lat|Long";
 
