@@ -2361,7 +2361,6 @@ window.ixmaps = window.ixmaps || {};
 				    options.theme.nClipFrames = fieldsA.length;
 
                     theme.szSnippet = "from "+columnsA[0]+" to "+fieldsA[fieldsA.length-1];
-					ixmaps.setTitle("<span style='color:#888888'>"+szXaxisA[fieldsA.length-1]+"</span");
 
 					// -----------------------------------------------------------------------------------------------               
 					// deploy the data
@@ -2560,7 +2559,6 @@ window.ixmaps = window.ixmaps || {};
 				    options.theme.nClipFrames = fieldsA.length;
 
                     theme.szSnippet = "from "+columnsA[0]+" to "+fieldsA[fieldsA.length-1];
-					ixmaps.setTitle("<span style='color:#888888'>"+szXaxisA[fieldsA.length-1]+"</span");
 
 					// -----------------------------------------------------------------------------------------------               
 					// deploy the data
