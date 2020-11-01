@@ -541,6 +541,62 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 
+	ixmaps.CSSE_COVID_DEATHS_CLIP = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.realize(
+
+				function (dataA) {
+
+					data_Deaths = dataA[0];
+
+					var lastDataColumnName = data_Deaths.columnNames().pop();
+
+					theme.szDescription = "aggiornato: " + lastDataColumnName;
+
+					// get data columns
+					var columnsA = data_Deaths.columnNames();
+
+					columnsA.shift();
+					columnsA.shift();
+					columnsA.shift();
+					columnsA.shift();
+
+					// set as data fields in actual theme
+
+					options.theme.szFields = columnsA.slice().join("|");
+					options.theme.szFieldsA = columnsA;
+
+					options.theme.nClipFrames = columnsA.length;
+
+					options.theme.szItemField = "Lat|Long";
+					options.theme.szSelectionField = "Lat|Long";
+
+					// make label 
+					var xAxis = [];
+					for (i in columnsA) {
+						var dte = new Date(columnsA[i]);
+						xAxis.push(dte.toLocaleDateString());
+					}
+					options.theme.szXaxisA = xAxis;
+
+					// -----------------------------------------------------------------------------------------------               
+					// deploy the data
+					// ----------------------------------------------------------------------------------------------- 
+
+					ixmaps.setExternalData(data_Confirmed, {
+						type: "dbtable",
+						name: options.name
+					});
+
+				});
+
+	};
+
 	ixmaps.CSSE_COVID_ALL_CLIP = function (theme, options) {
 
 		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
