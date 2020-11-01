@@ -588,7 +588,7 @@ window.ixmaps = window.ixmaps || {};
 					// deploy the data
 					// ----------------------------------------------------------------------------------------------- 
 
-					ixmaps.setExternalData(data_Deaths {
+					ixmaps.setExternalData(data_Deaths) {
 						type: "dbtable",
 						name: options.name
 					});
