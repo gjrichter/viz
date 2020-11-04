@@ -125,7 +125,7 @@
 				"symbols": [
 					"label"],
 				"units": "%",
-				"align": "center|below",
+				"align": "right|below",
 				"refreshtimeout": "0",
 				"normalsizevalue": "20",
 				"scale": "1",
