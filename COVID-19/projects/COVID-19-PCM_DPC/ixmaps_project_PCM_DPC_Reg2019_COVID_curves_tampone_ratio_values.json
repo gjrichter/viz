@@ -78,7 +78,7 @@
 				"symbols": [
 					"circle"],
 				"units": "nuovi positivi",
-				"align": "center|top",
+				"align": "10%right|below",
 				"refreshtimeout": "0",
 				"normalsizevalue": "2",
 				"scale": "0.06",
@@ -125,7 +125,7 @@
 				"symbols": [
 					"label"],
 				"units": "%",
-				"align": "2below",
+				"align": "center|below",
 				"refreshtimeout": "0",
 				"normalsizevalue": "20",
 				"scale": "1",
