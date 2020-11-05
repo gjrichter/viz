@@ -6,7 +6,7 @@
 		"thumbnail": "",
 		"about": "",
 		"description": "",
-		"created": "Thu Oct 01 2020 17:53:49 GMT+0200 (Ora legale dell’Europa centrale)"
+		"created": "Thu Nov 05 2020 21:27:50 GMT+0100 (Ora standard dell’Europa centrale)"
 		},
 	"map": {
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
@@ -49,8 +49,8 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "43.8899753738369",
-			"lng": "11.228027343750002"
+			"lat": "42.86791248391533",
+			"lng": "12.293701171875002"
 			},
 		"zoom": "6"
 		},
@@ -61,14 +61,13 @@
 			"style": {
 				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|TITLE|FIXSIZE|LONGTITLE|COMPATIBLE|DIFFERENCE|SUM|NOLEGEND",
 				"colorscheme": [
-					"120",
+					"249",
 					"#aaaaaa",
-					"rgba(100, 160, 220,1)",
+					"rgba(10, 10, 10,1)",
 					"3colors",
 					"#aaaaaa"],
-				"fillopacity": "0.2",
+				"fillopacity": "0.3",
 				"shadow": "false",
-				"dbtable": "PCM_DPC_COVID_SEQUENCE_MEAN_7_DEATHS_INCIDENCE",
 				"dbtable": "PCM_DPC_COVID_SEQUENCE_MEAN_7_DEATHS_INCIDENCE",
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
@@ -79,19 +78,20 @@
 				"symbols": [
 					"circle"],
 				"units": "ricoverati",
-				"align": "center|top",
+				"align": "10%right|top",
 				"refreshtimeout": "0",
 				"normalsizevalue": "0.8",
-				"scale": "0.07",
-				"rangescale": "0.5",
+				"scale": "0.02",
+				"rangescale": "1",
 				"minvalue": "0",
-				"maxvalue": "auto",
-				"textcolor": "#880000",
+				"maxvalue": "2",
+				"textcolor": "#888888",
 				"linewidth": "35",
 				"bordercolor": "none",
 				"boxopacity": "0",
 				"boxmargin": "10",
 				"titlefield": "denominazione_regione",
+				"titleupper": "1:2000000",
 				"boxupper": "1:10000000",
 				"valuescale": "1",
 				"valuedecimals": "0",
@@ -104,7 +104,7 @@
 				"aggregationlower": "1:2500000",
 				"name": "curve",
 				"title": "Persone decedute per 100.000 abitanti - media mobile 7 giorno",
-				"snippet": "dal 2/3/2020 al 1/10/2020"
+				"snippet": "dal 2/3/2020 al 5/11/2020"
 				}
 			}],
 	"layerMask": {
