@@ -2996,6 +2996,95 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 
+	
+	ixmaps.PCM_DPC_COVID_ACTUAL_PREVALENCE = function (theme,options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+		
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+				
+			function (dataA) {
+				
+				var mydata = dataA[0];
+				
+				// get popolation array
+				var dataPop = dataA[1];
+				// correct region names in population table
+				dataPop.column("Territorio").map(function (value) {
+					if (value == "Provincia Autonoma Bolzano / Bozen") {
+						return "P.A. Bolzano";
+					} else
+					if (value == "Provincia Autonoma Trento") {
+						return "P.A. Trento";
+					} else {
+						return value.split(" /")[0].replace(/-/, " ");
+					}
+				});
+				var pop = [];
+				var terrA = dataPop.column("Territorio").values();
+				var popA = dataPop.column("Value").values();
+				for (var i = 0; i < terrA.length; i++) {
+					pop[terrA[i]] = popA[i];
+				}
+				var indexName = mydata.column("denominazione_regione").index;
+				
+				mydata.column('totale_ospedalizzati').map(function (value,row) {
+						return (Number(value)/pop[row[indexName].replace(/\-/," ")]*100000).toFixed(2);
+				});
+				mydata.column('terapia_intensiva').map(function (value,row) {
+						return (Number(value)/pop[row[indexName].replace(/\-/," ")]*100000).toFixed(2);
+				});
+				mydata.column('totale_positivi').map(function (value,row) {
+						return (Number(value)/pop[row[indexName].replace(/\-/," ")]*100000).toFixed(2);
+				});
+				mydata.column('ricoverati_con_sintomi').map(function (value,row) {
+						return (Number(value)/pop[row[indexName].replace(/\-/," ")]*100000).toFixed(2);
+				});
+				mydata.column('nuovi_positivi').map(function (value,row) {
+						return (Number(value)/pop[row[indexName].replace(/\-/," ")]*100000).toFixed(2);
+				});
+				mydata.column('variazione_totale_positivi').map(function (value,row) {
+						return (Number(value)/pop[row[indexName].replace(/\-/," ")]*100000).toFixed(2);
+				});
+				mydata.column('tamponi').map(function (value,row) {
+						return (Number(value)/pop[row[indexName].replace(/\-/," ")]*100).toFixed(2);
+				});
+				mydata.column('casi_testati').map(function (value,row) {
+						return (Number(value)/pop[row[indexName].replace(/\-/," ")]*100).toFixed(2);
+				});
+				
+				var data = mydata.column("data").values();
+				var last = data.pop();
+
+				theme.szSnippet = "aggiornato al "+last;
+				theme.szFilter = "WHERE data = \""+last+"\"";
+
+				// -----------------------------------------------------------------------------------------------               
+				// deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+				ixmaps.setExternalData(mydata, {
+					type: "dbtable",
+					name: options.name
+				});
+				
+			});
+
+	};
+	
+	
+	
+	
+	
+	
 	ixmaps.PCM_DPC_COVID_SEQUENCE_MEAN_7 = function (theme, options) {
 
 
