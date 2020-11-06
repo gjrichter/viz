@@ -113,7 +113,7 @@
 			"style": {
 				"type": "CHART|LABEL|SIGN|VALUES|SIZEP4|COMPACTLEGEND",
 				"colorscheme": [
-					"#dd0044"],
+					"rgb(198, 64, 45)"],
 				"fillopacity": "0.0005",
 				"shadow": "false",
 				"dbtable": "PCM_DPC_COVID_LAST_NUOVI",
@@ -134,7 +134,7 @@
 				"sizefield": "2020-10-31T17:00:00",
 				"dopacitypow": "1",
 				"dopacityscale": "5",
-				"textcolor": "#dd0088",
+				"textcolor": "rgb(198, 64, 45)",
 				"linecolor": [
 					"#888888"],
 				"linewidth": "0.6",
