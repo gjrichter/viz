@@ -1126,34 +1126,34 @@ window.ixmaps = window.ixmaps || {};
 				var szXaxisA = [];
 				for ( var i =0; i<columns.length; i++ ){
 					if (columns[i] == "1/3/2020"){
-					  szXaxisA.push("Mar");
+					  szXaxisA.push("mar");
 					}else
 					if (columns[i] == "1/4/2020"){
-					  szXaxisA.push("Apr");
+					  szXaxisA.push("apr");
 					}else
 					if (columns[i] == "1/5/2020"){
-					  szXaxisA.push("Mag");
+					  szXaxisA.push("mag");
 					}else
 					if (columns[i] == "1/6/2020"){
-					  szXaxisA.push("Giu");
+					  szXaxisA.push("giu");
 					}else
 					if (columns[i] == "1/7/2020"){
-					  szXaxisA.push("Lug");
+					  szXaxisA.push("lug");
 					}else
 					if (columns[i] == "1/8/2020"){
-					  szXaxisA.push("Ago");
+					  szXaxisA.push("ago");
 					}else
 					if (columns[i] == "1/9/2020"){
-					  szXaxisA.push("Sep");
+					  szXaxisA.push("set");
 					}else
 					if (columns[i] == "1/10/2020"){
-					  szXaxisA.push("Okt");
+					  szXaxisA.push("ott");
 					}else
 					if (columns[i] == "1/11/2020"){
-					  szXaxisA.push("Nov");
+					  szXaxisA.push("nov");
 					}else
 					if (columns[i] == "1/12/2020"){
-					  szXaxisA.push("Dec");
+					  szXaxisA.push("dic");
 					}else{
 					  szXaxisA.push(" ");
 					}
@@ -1860,28 +1860,34 @@ window.ixmaps = window.ixmaps || {};
 					var szXaxisA = [];
 					for ( var i =0; i<columns.length; i++ ){
 						if (columns[i] == "1/3/2020"){
-						  szXaxisA.push("Mar");
+						  szXaxisA.push("mar");
 						}else
 						if (columns[i] == "1/4/2020"){
-						  szXaxisA.push("Apr");
+						  szXaxisA.push("apr");
 						}else
 						if (columns[i] == "1/5/2020"){
-						  szXaxisA.push("Mag");
+						  szXaxisA.push("mag");
 						}else
 						if (columns[i] == "1/6/2020"){
-						  szXaxisA.push("Giu");
+						  szXaxisA.push("giu");
 						}else
 						if (columns[i] == "1/7/2020"){
-						  szXaxisA.push("Lug");
+						  szXaxisA.push("lug");
 						}else
 						if (columns[i] == "1/8/2020"){
-						  szXaxisA.push("Aug");
+						  szXaxisA.push("ago");
 						}else
 						if (columns[i] == "1/9/2020"){
-						  szXaxisA.push("Sep");
+						  szXaxisA.push("set");
 						}else
 						if (columns[i] == "1/10/2020"){
-						  szXaxisA.push("Okt");
+						  szXaxisA.push("ott");
+						}else
+						if (columns[i] == "1/11/2020"){
+						  szXaxisA.push("nov");
+						}else
+						if (columns[i] == "1/12/2020"){
+						  szXaxisA.push("dic");
 						}else{
 						  szXaxisA.push(" ");
 						}
@@ -1968,28 +1974,34 @@ window.ixmaps = window.ixmaps || {};
 					var szXaxisA = [];
 					for ( var i =0; i<columns.length; i++ ){
 						if (columns[i] == "1/3/2020"){
-						  szXaxisA.push("Mar");
+						  szXaxisA.push("mar");
 						}else
 						if (columns[i] == "1/4/2020"){
-						  szXaxisA.push("Apr");
+						  szXaxisA.push("apr");
 						}else
 						if (columns[i] == "1/5/2020"){
-						  szXaxisA.push("Mag");
+						  szXaxisA.push("mag");
 						}else
 						if (columns[i] == "1/6/2020"){
-						  szXaxisA.push("Giu");
+						  szXaxisA.push("giu");
 						}else
 						if (columns[i] == "1/7/2020"){
-						  szXaxisA.push("Lug");
+						  szXaxisA.push("lug");
 						}else
 						if (columns[i] == "1/8/2020"){
-						  szXaxisA.push("Aug");
+						  szXaxisA.push("ago");
 						}else
 						if (columns[i] == "1/9/2020"){
-						  szXaxisA.push("Sep");
+						  szXaxisA.push("set");
 						}else
 						if (columns[i] == "1/10/2020"){
-						  szXaxisA.push("Okt");
+						  szXaxisA.push("ott");
+						}else
+						if (columns[i] == "1/11/2020"){
+						  szXaxisA.push("nov");
+						}else
+						if (columns[i] == "1/12/2020"){
+						  szXaxisA.push("dic");
 						}else{
 						  szXaxisA.push(" ");
 						}
@@ -2076,28 +2088,34 @@ window.ixmaps = window.ixmaps || {};
 					var szXaxisA = [];
 					for ( var i =0; i<columns.length; i++ ){
 						if (columns[i] == "1/3/2020"){
-						  szXaxisA.push("Mar");
+						  szXaxisA.push("mar");
 						}else
 						if (columns[i] == "1/4/2020"){
-						  szXaxisA.push("Apr");
+						  szXaxisA.push("apr");
 						}else
 						if (columns[i] == "1/5/2020"){
-						  szXaxisA.push("Mag");
+						  szXaxisA.push("mag");
 						}else
 						if (columns[i] == "1/6/2020"){
-						  szXaxisA.push("Giu");
+						  szXaxisA.push("giu");
 						}else
 						if (columns[i] == "1/7/2020"){
-						  szXaxisA.push("Lug");
+						  szXaxisA.push("lug");
 						}else
 						if (columns[i] == "1/8/2020"){
-						  szXaxisA.push("Aug");
+						  szXaxisA.push("ago");
 						}else
 						if (columns[i] == "1/9/2020"){
-						  szXaxisA.push("Sep");
+						  szXaxisA.push("set");
 						}else
 						if (columns[i] == "1/10/2020"){
-						  szXaxisA.push("Okt");
+						  szXaxisA.push("ott");
+						}else
+						if (columns[i] == "1/11/2020"){
+						  szXaxisA.push("nov");
+						}else
+						if (columns[i] == "1/12/2020"){
+						  szXaxisA.push("dic");
 						}else{
 						  szXaxisA.push(" ");
 						}
