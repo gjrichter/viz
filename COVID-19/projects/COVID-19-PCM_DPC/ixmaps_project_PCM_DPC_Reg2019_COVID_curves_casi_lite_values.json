@@ -128,7 +128,7 @@
 				"units": "",
 				"align": "top|right",
 				"refreshtimeout": "0",
-				"normalsizevalue": "1000",
+				"normalsizevalue": "200",
 				"scale": "1",
 				"valuefield": "2020-10-31T17:00:00",
 				"sizefield": "2020-10-31T17:00:00",
