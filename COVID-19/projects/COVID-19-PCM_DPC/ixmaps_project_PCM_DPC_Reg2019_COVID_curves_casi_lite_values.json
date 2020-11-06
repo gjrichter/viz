@@ -64,9 +64,9 @@
 				"colorscheme": [
 					"244",
 					"#443366",
-					"#ff2288",
+					"rgb(198, 64, 45)",
 					"3colors",
-					"#8866aa"],
+					"rgb(198, 64, 45)"],
 				"fillopacity": "0.2",
 				"shadow": "false",
 				"dbtable": "PCM_DPC_COVID_SEQUENCE_MEAN_7",
