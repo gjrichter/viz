@@ -79,7 +79,7 @@
 				"symbols": [
 					"circle"],
 				"units": "casi",
-				"align": "center|top",
+				"align": "10%right|top",
 				"refreshtimeout": "0",
 				"normalsizevalue": "0.8",
 				"scale": "0.06",
