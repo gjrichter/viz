@@ -10,15 +10,15 @@ In seguito le varie mappe:
 ## il candidato vincente
 
 
-Per ogni comune il colore indica il candidato che ha ottenuto il maggiore numero di voti.
+Per ogni comune il colore indica il **candidato** che ha ottenuto il **maggiore numero di voti**.
 
 <iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_candidate_winner.json?id=123"></iframe>La mappa dà una veloce informazione sulla prevalenza territoriale degli candidati. Non dà informazioni sul numero di voti degli altri candidati, in altre parole non dice nulla sul vantaggio del vincitore. 
 
-Aggiungendo l'informazione sulla densità dei votanti si ottiene la prossima mappa, che in qualche modo enfatizza il peso del comune sul risultato finale.
+Aggiungendo l'informazione sulla **densità dei votanti** si ottiene la prossima mappa, che in qualche modo enfatizza il **peso del comune sul risultato finale**.
 
 <iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_candidate_winner_density.json?id=123"></iframe>
 
-Per  visualizzare il successo del vincitore nei comuni si può variare l'intensità del colore in base alla percentuale dei voti del candidato vincente ed aggiungere la percentuale in forma testuale. 
+Per  visualizzare il successo del vincitore nei comuni si può variare **l'intensità del colore in base alla percentuale dei voti** del candidato vincente ed aggiungere la percentuale in forma testuale. 
 
 <iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_candidate_winner_text.json?id=123"></iframe>
 
@@ -38,7 +38,8 @@ Insieme questi colori creano un paesaggio politico del risultato degli elezioni.
 >
 > *suggerimento: cliccando sui colori nella leggenda si può isolare un candidato o creare paesaggi da solo due concorrenti*.
 >
-> 
+
+<br>
 
 <iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_candidate_compose_density.json?id=123"></iframe>
 
