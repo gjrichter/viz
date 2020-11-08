@@ -30,7 +30,7 @@ Oltre al vincitore, questa mappa mostra anche la percentuale della vittoria.
 
 ## visualizzazione multivariata del risultato con colori composti
 
-Creando un colore composto a partire dai colori dei candidati in percentuali uguali al risultato ottenuto, si ottiene per ogni comune un colore specifico, che rappresenta non solo il candidato vincitore, ma il risultato nella sua complessità. 
+Creando un **colore composto** a partire dai **colori dei candidati in percentuali uguali al risultato ottenuto**, si ottiene per ogni comune un colore specifico, che rappresenta non solo il candidato vincitore, ma il risultato nella sua complessità. 
 
 Insieme questi colori creano un paesaggio politico del risultato degli elezioni. L'intensità del colore rappresenta la densità degli votanti. 
 
@@ -47,7 +47,7 @@ Insieme questi colori creano un paesaggio politico del risultato degli elezioni.
 
 ## risultati sopra alla propria media
 
-Per ogni comune il colore indica il candidato che ha ottenuto il risultato relativamente maggiore, cioè il risultato maggiore sopra la propria media regionale.
+Per ogni comune il colore indica il **candidato** che ha ottenuto il risultato **relativamente maggiore**, cioè il risultato maggiore sopra la **propria media** regionale.
 
 <iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_candidate_performer.json?id=123"></iframe>
 
@@ -65,7 +65,7 @@ Aggiungendo i valori in forma testuale si nota subito la differenza tra i candid
 
 ### visualizzazione multivariata dei risultati relativi
 
-Anche dai risultati relativi (alla media regionale) si può creare un tema con colori composti dai colori dei candidati: si ottiene per ogni comune un colore specifico, che rappresenta la particolarità del comune rispetto alla media regionale. 
+Anche dai risultati relativi (alla media regionale) si può creare un tema con **colori composti dai colori dei candidati**: si ottiene per ogni comune un colore specifico, che rappresenta la particolarità del comune rispetto alla media regionale. 
 
 Questi colori nell'insieme creano un paesaggio politico delle presenze relativamente forti sul territorio. 
 
@@ -75,7 +75,8 @@ La mappa **non** è rappresentativa per il risultato delle elezioni, ma indica d
 >
 > *suggerimento: cliccando sui colori nella leggenda si può isolare un candidato o creare paesaggi basati su due concorrenti*.
 >
-> 
+
+<br>
 
 <iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_candidate_compose_harmonize_alpha.json?id=123"></iframe>
 
@@ -112,7 +113,7 @@ Versione alternativa degli stessi dati con la lista con più voti al centro.
 
 <br>
 
-Tornando ad una visualizzazione territoriale qui la lista con più voti per comune. Oltre ai territori 'rocca forti' del 'Partito Democratico' e della 'Lega' si nota la presenza vincente di 'Fratelli d'Italia' nelle valli.
+Tornando ad una visualizzazione territoriale qui la **lista con più voti** per comune. Oltre ai territori 'rocca forti' del 'Partito Democratico' e della 'Lega' si nota la presenza vincente di 'Fratelli d'Italia' nelle valli.
 
 
 
@@ -122,7 +123,7 @@ Tornando ad una visualizzazione territoriale qui la lista con più voti per comu
 
 <iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_Liste+_winner_text.json?id=123"></iframe>
 
-Aggiunto delle frecce per visualizzare il risultato sopra alla propria media di ogni lista, cosi si vede anche risultati importanti delle liste che non hanno il risultato migliore del comune ma un risultato eccezionale rispetto alla propria media.  
+Aggiunto delle **frecce** per visualizzare il **risultato sopra alla propria media** di ogni lista, cosi si vede anche risultati importanti delle liste che non hanno il risultato migliore del comune ma un risultato eccezionale rispetto alla propria media.  
 
 <br>
 
@@ -138,7 +139,7 @@ Qui gli stessi risultati eccezionale ma con grandezza relativo al numero di voti
 
 ## Guadagni e perdite rispetto a 2019
 
-Alla fine un confronto delle percentuali raggiunte nelle Elezioni Europee del 2019 con le Elezione Regionali del 2020 per i principali partiti.
+Alla fine un confronto delle percentuali raggiunte nelle **Elezioni Europee del 2019** con le **Elezione Regionali del 2020** per i principali partiti.
 
 <iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_Liste_pointer_2019_diff.json?id=123"></iframe>
 
@@ -170,7 +171,8 @@ La mappa **non** è rappresentativa per il risultato delle elezioni, ma indica d
 >
 > *suggerimento: cliccando sui colori nella leggenda si può isolare un candidato o creare paesaggi basati su due concorrenti*.
 >
-> 
+
+<br>
 
 
 <iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Regionali/Marche/2020/ixmaps_project_Marche_2020_Liste+_compose_harmonize.json?id=123"></iframe>
