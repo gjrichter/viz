@@ -2306,6 +2306,73 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 
+	ixmaps.CSSE_COVID_SEQUENCE_CONFIRMED_MEAN_7_CLIP_WEEKS = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.realize(
+
+				function (dataA) {
+
+					data_Confirmed = __mean_7(dataA[0]);
+
+					var lastDataColumnName = data_Confirmed.columnNames().pop();
+
+					theme.szDescription = "aggiornato: " + lastDataColumnName;
+
+					// get data columns
+					var columnsA = data_Confirmed.columnNames();
+
+					columnsA.shift();
+					columnsA.shift();
+					columnsA.shift();
+					columnsA.shift();
+
+					fieldsA = [];
+					for (var i = 0; i < columnsA.length; i++) {
+						if ( i%5 ){
+							data_Confirmed.column(columnsA[i]).remove();
+						}else{
+							fieldsA.push(columnsA[i]);
+							}
+					}
+
+					options.theme.szFields = fieldsA.slice().join("|");
+					options.theme.szFieldsA = fieldsA;
+
+					options.theme.szItemField = "Lat|Long";
+					options.theme.szSelectionField = "Lat|Long";
+
+					var szMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+					// make label 
+					var szXaxisA = [];
+					for (i in fieldsA) {
+						var dte = new Date(fieldsA[i]);
+						szXaxisA.push(szMonth[dte.getMonth()]);
+						dte.getMonth();
+					}
+					
+					options.theme.szXaxisA = szXaxisA; 
+					
+				    options.theme.nClipFrames = fieldsA.length;
+
+                    theme.szSnippet = "from "+columnsA[0]+" to "+fieldsA[fieldsA.length-1];
+
+					// -----------------------------------------------------------------------------------------------               
+					// deploy the data
+					// ----------------------------------------------------------------------------------------------- 
+					ixmaps.setExternalData(data_Confirmed, {
+						type: "dbtable",
+						name: options.name
+					});
+
+				});
+
+	};
+	
 	ixmaps.CSSE_COVID_SEQUENCE_DIFFERENCE_CONFIRMED_MEAN_7_CLIP_WEEKS = function (theme, options) {
 
 		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
