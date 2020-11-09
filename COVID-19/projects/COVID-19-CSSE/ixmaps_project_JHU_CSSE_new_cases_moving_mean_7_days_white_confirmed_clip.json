@@ -78,7 +78,7 @@
 				"valuescale": "1.2",
 				"valuedecimals": "0",
 				"clipframerate": "24",
-				"normalsizevalue":"10000",
+				"normalsizevalue":"100000",
 				"name":"clip",
 				"title": "COVID-19",
 				"snippet": "<p>new cases day per day</p><br>fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
