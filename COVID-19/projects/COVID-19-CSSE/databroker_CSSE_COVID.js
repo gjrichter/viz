@@ -2185,25 +2185,25 @@ window.ixmaps = window.ixmaps || {};
 					var szXaxisA = [];
 					for ( var i =0; i<columnsA.length; i++ ){
                        if (columnsA[i] == "3/1/20"){
-  						  szXaxisA.push("march");
+  						  szXaxisA.push("mar");
                         }else
                         if (columnsA[i] == "4/1/20"){
-  						  szXaxisA.push("april");
+  						  szXaxisA.push("apr");
                         }else
                         if (columnsA[i] == "5/1/20"){
   						  szXaxisA.push("may");
                         }else
                         if (columnsA[i] == "6/1/20"){
-  						  szXaxisA.push("june");
+  						  szXaxisA.push("jun");
                         }else
                         if (columnsA[i] == "7/1/20"){
-  						  szXaxisA.push("july");
+  						  szXaxisA.push("jul");
                         }else
                         if (columnsA[i] == "8/1/20"){
   						  szXaxisA.push("aug");
                         }else
                         if (columnsA[i] == "9/1/20"){
-  						  szXaxisA.push("sept");
+  						  szXaxisA.push("sep");
                         }else
                         if (columnsA[i] == "10/1/20"){
   						  szXaxisA.push("oct");
