@@ -2185,28 +2185,34 @@ window.ixmaps = window.ixmaps || {};
 					var szXaxisA = [];
 					for ( var i =0; i<columnsA.length; i++ ){
                        if (columnsA[i] == "3/1/20"){
-  						  szXaxisA.push("March");
+  						  szXaxisA.push("march");
                         }else
                         if (columnsA[i] == "4/1/20"){
-  						  szXaxisA.push("April");
+  						  szXaxisA.push("april");
                         }else
                         if (columnsA[i] == "5/1/20"){
-  						  szXaxisA.push("May");
+  						  szXaxisA.push("may");
                         }else
                         if (columnsA[i] == "6/1/20"){
-  						  szXaxisA.push("June");
+  						  szXaxisA.push("june");
                         }else
                         if (columnsA[i] == "7/1/20"){
-  						  szXaxisA.push("July");
+  						  szXaxisA.push("july");
                         }else
                         if (columnsA[i] == "8/1/20"){
-  						  szXaxisA.push("Aug");
+  						  szXaxisA.push("aug");
                         }else
                         if (columnsA[i] == "9/1/20"){
-  						  szXaxisA.push("Sept");
+  						  szXaxisA.push("sept");
                         }else
                         if (columnsA[i] == "10/1/20"){
-  						  szXaxisA.push("Okt");
+  						  szXaxisA.push("oct");
+                       }else
+                        if (columnsA[i] == "11/1/20"){
+  						  szXaxisA.push("nov");
+                       }else
+                        if (columnsA[i] == "12/1/20"){
+  						  szXaxisA.push("dec");
                         }else{
 						  szXaxisA.push(" ");
                         }
