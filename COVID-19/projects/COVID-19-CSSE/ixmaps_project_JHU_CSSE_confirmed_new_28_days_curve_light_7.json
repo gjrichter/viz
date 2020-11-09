@@ -74,7 +74,7 @@
 				"align": "center",
 				"refreshtimeout": "0",
 				"normalsizevalue": "2",
-				"scale": "0.2",
+				"scale": "0.1",
 				"rangescale": "0.7",
 				"minvalue": "0",
 				"maxvalue": "auto",
