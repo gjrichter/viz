@@ -95,6 +95,7 @@
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"fadenegative": "1",
+				"titleupper":"1:100000",
 				"aggregationscale": [
 					"1:1",
 					"150px",
