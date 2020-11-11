@@ -113,7 +113,9 @@
 			"style": {
 				"type": "CHART|PIE|AUTOCOMPLETE|SIZE|SIZE|VALUES|VALUEBACKGROUND",
 				"colorscheme": [
+					"#aaaaaa",
 					"#F27E2B"],
+				"ranges":"0,30,100",
 				"opacity": "1",
 				"fillopacity": "0.3",
 				"shadow": "false",
