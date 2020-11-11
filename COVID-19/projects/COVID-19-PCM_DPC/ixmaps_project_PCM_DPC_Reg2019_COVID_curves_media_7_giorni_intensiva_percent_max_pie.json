@@ -132,7 +132,7 @@
 				"units100": "",
 				"align": "above|right",
 				"refreshtimeout": "0",
-				"normalsizevalue": "1000",
+				"normalsizevalue": "600",
 				"scale": "1.5",
 				"sizefield": "posti_letti_ti",
 				"textcolor": "black",
