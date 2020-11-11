@@ -513,6 +513,79 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 
+     ixmaps.PCM_DPC_COVID_LAST_INTENSIVE_MAX = function (theme,options) {
+		
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/posti_letti_TI_28_10_2020.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+
+			function (dataA) {
+
+				// get population lookup for incidence
+				var dataLetti = dataA[1];
+				// correct region names in population table
+				dataLetti.column("Regione").map(function (value) {
+					if (value == "PA Bolzano") {
+						return "P.A. Bolzano";
+					} else
+					if (value == "PA Trento") {
+						return "P.A. Trento";
+					} else {
+						return value.split(" /")[0].replace(/-/, " ");
+					}
+				});
+				var letti = [];
+				var terrA = dataLetti.column("Regione").values();
+				var lettiA = dataLetti.column("Posti letto attivati al 28 ottobre").values();
+				for (var i = 0; i < terrA.length; i++) {
+					letti[terrA[i]] = lettiA[i];
+				}
+
+				var pivot = __get_intensive(dataA[0], options);
+			
+				pivot.column("Total").remove();
+				var indexName = pivot.column("denominazione_regione").index;
+
+				pivot.addColumn({
+					destination: "posti_letti_ti"
+				}, function (row) {
+					return (letti[row[indexName].replace(/\-/," ")]);
+				});
+				
+				// get the columns with date 
+				var columns = pivot.columnNames();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+
+				var last = columns.length-1;
+
+				theme.szFields = columns[last-1];
+				theme.szField100 = columns[last];
+
+				// ----------------------------------------------------------------------------------------------- 
+				// deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(pivot, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			});
+
+	};
+	
     ixmaps.PCM_DPC_COVID_LAST_DEATHS = function (theme,options) {
 
 
