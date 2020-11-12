@@ -398,7 +398,7 @@ $(function () {
 			"ratio"
 		]
 		var colorA = [
-			"100, 160, 220",
+			"198, 64, 45",
 			"155, 200, 100",
 			"128,128,128",
 			"34, 167, 240",
@@ -2668,8 +2668,7 @@ $(function () {
 				yAxes: [{
 					display: false,
 					ticks: {
-						min: -1,
-						max: 6
+						min: -1
 					},
 					scaleLabel: {
 						display: false,
@@ -2690,13 +2689,21 @@ $(function () {
 		//	
 		var last = 	daysA.length;
 		for ( var i=0; i<last-1; i++ ){
-			daysA[i] = (daysA[i+1]+daysA[i+2]+daysA[i+3])/3 - (daysA[i+0]+daysA[i+1]+daysA[i+2])/3;
-			daysA[i] = daysA[i] / popA[Number(prov_code)] * 10000;
+			daysA[i] = (daysA[i+1]+daysA[i+2]+daysA[i+3]+daysA[i+4]+daysA[i+5]+daysA[i+6]+daysA[i+7])/7 - (daysA[i+0]+daysA[i+1]+daysA[i+2]+daysA[i+3]+daysA[i+4]+daysA[i+5]+daysA[i+6])/7;
+			daysA[i] = daysA[i] / popA[Number(prov_code)] * 100000;
 		}	
 		daysA.pop();
 		daysA.pop();
 		daysA.pop();
+		daysA.pop();
+		daysA.pop();
+		daysA.pop();
+		daysA.pop();
 
+		dateA.pop();
+		dateA.pop();
+		dateA.pop();
+		dateA.pop();
 		dateA.pop();
 		dateA.pop();
 		dateA.pop();
@@ -2706,7 +2713,7 @@ $(function () {
 
 		// make curve	
 
-		var chart = "<div style='max-width:60px;width:80%;margin-top:2px;'><canvas id='small-Province-" + prov_id + "-line-chart'></canvas></div>";
+		var chart = "<div style='max-width:60px;width:80%;margin-top:2px'><canvas id='small-Province-" + prov_id + "-line-chart'></canvas></div>";
 		$("#small-dynamic-province-" + prov_id).html(chart);
 
 		// make curve
@@ -2724,8 +2731,8 @@ $(function () {
 						data: daysA,
 						fill: true,
 						borderWidth: 2,
-						borderColor: "rgba(255,0,0,1)",
-						backgroundColor: "rgba(160,160,160,0.2)",
+						borderColor: "rgba(255,0,120,1)",
+						backgroundColor: "rgba(160,160,160,0)",
 						pointRadius: 0,
 						lineTension: 1
 					}]
@@ -2745,6 +2752,13 @@ $(function () {
 	// small regional cards 
 	//
 	// --------------------------------------------
+
+	var __getArrow = function (last, before) {
+		return (last == before) ? "fa-arrow-right" : ((last < before) ? "fa-arrow-down" : "fa-arrow-up");
+	};
+	var __getArrowColor = function (last, before) {
+		return (last == before) ? "black" : ((last < before) ? "green" : "red");
+	};
 
 	__feedReadCount = 0;
 	__feedFilterValue = "";
@@ -2772,19 +2786,19 @@ $(function () {
 				szHtml += "<table class='region-list' style='text-align:right' >";
 				szHtml += "<tr style='text-align:left;'>";
 				szHtml += "<th></th>";
-				szHtml += "<th colspan='3'>positivi</th>";
+				szHtml += "<th colspan='5'>positivi</th>";
 				szHtml += "<th colspan='2'>ospedalizzati</th>";
 				szHtml += "<th colspan='2'>terapia intensiva</th>";
-				szHtml += "<th colspan='2'>decessi</th>";
+				szHtml += "<th colspan='3'>deceduti</th>";
 				szHtml += "<th colspan='3'>tamponi</th>";
 				szHtml += "</tr>";
 				szHtml += "<tr style='text-align:left;'>";
 				szHtml += "<th>Regione</th>";
-				szHtml += "<th></th><th style='color:#ddd;width:25px;text-align:right;'>oggi (ieri)</th><th style='color:#888;width:25px;text-align:right;'>incidenza cumulativa*)</th>";
-				szHtml += "<th></th><th style='color:#ddd;width:25px;text-align:right;'>oggi (ieri)</th>";
-				szHtml += "<th></th><th style='color:#ddd;width:25px;text-align:right;'>oggi (ieri)</th>";
-				szHtml += "<th></th><th style='color:#ddd;width:25px;text-align:right;'>oggi (ieri)</th>";
-				szHtml += "<th></th><th style='color:#ddd;width:25px;text-align:right;'>oggi<br>(ieri)</th><th style='color:#888;text-align:right;'>% positivi</th>";
+				szHtml += "<th style='color:#444'>totale</th><th style='color:#ddd;width:25px;text-align:right;'>oggi (ieri)</th><th></th><th style='color:#888;width:25px;text-align:right;'>incidenza cumul.*)</th><th></th>";
+				szHtml += "<th>attuale</th><th style='color:#ddd;width:25px;text-align:right;'>oggi (ieri)</th>";
+				szHtml += "<th>attuale</th><th style='color:#ddd;width:25px;text-align:right;'>oggi (ieri)</th>";
+				szHtml += "<th>attuale</th><th style='color:#ddd;width:25px;text-align:right;'>oggi (ieri)</th>";
+				szHtml += "<th></th><th>totale</th><th style='color:#ddd;width:25px;text-align:right;'>oggi<br>(ieri)</th><th style='color:#888;text-align:right;'>% positivi</th>";
 				szHtml += "</tr>";
 				
 				$("#FeedCount").html(feedA.length);
@@ -3040,37 +3054,48 @@ $(function () {
 				}
 				
 				szHtml = "";
-				szHtml += "<td style='text-align:left;font-size:1.5em'>";
+				szHtml += "<td style='text-align:left;font-size:1.5em;line-height:0.9em'>";
 				szHtml += name;
 				szHtml += "</td>";
 
 				// positivi 
 				// -----------------------------------------------------------
-				var daysA = mydata.column("totale_positivi").values();
-				records = daysA[daysA.length - 1];
-				var max = Number(records)*1.4;
-
-				var abs = daysA[daysA.length - 1];
-				var last = daysA[daysA.length - 1] - daysA[daysA.length - 2];
-				var before = daysA[daysA.length - 2] - daysA[daysA.length - 3];
-				var gg7 = daysA[daysA.length - 1] - daysA[daysA.length - 2];
+				var totaleA = mydata.column("totale_positivi").values();
+				var nuoviA  = mydata.column("nuovi_positivi").values();
 				
-				var gg14 = daysA[daysA.length - 1] - daysA[daysA.length - 15];
-				gg14 = (Number(gg14) / __regionPop[name.replace(/\-/," ")] * 100000).toFixed(2);
+				var abs = Number(totaleA[totaleA.length - 1]);
+				var last = Number(nuoviA[nuoviA.length - 1]);
+				var before = Number(nuoviA[nuoviA.length - 2]);
 				
-				var gg14_before = daysA[daysA.length - 2] - daysA[daysA.length - 16];
+				var gg14 = 0;
+				for (var i=1; i<=14; i++ ){
+					gg14 += Number(nuoviA[nuoviA.length - i]);
+				}
+				gg14_before = 0;
+				for (var i=2; i<=15; i++ ){
+					gg14_before += Number(nuoviA[nuoviA.length - i]);
+				}
+				
+				//gg14 		= Number(totaleA[totaleA.length-1]) - Number(totaleA[totaleA.length-16]);
+				//gg14_before = Number(totaleA[totaleA.length-2]) - Number(totaleA[totaleA.length-17]);
+				
+				gg14        = (Number(gg14       ) / __regionPop[name.replace(/\-/," ")] * 100000).toFixed(1);
 				gg14_before = (Number(gg14_before) / __regionPop[name.replace(/\-/," ")] * 100000).toFixed(1);
 
-				szHtml += "<td style='color:white;background-color:rgb(100,160,220)'title='positivi'>";
+				szHtml += "<td style='color:white;background-color:rgb(198, 64, 45)'title='positivi'>";
 				szHtml += abs;
-				szHtml += "</td><td style='font-weight:bold;color:rgb(100,160,220)'>";
+				szHtml += "</td><td style='font-weight:bold;color:rgb(198, 64, 45)'>";
 				szHtml += (last>0?"+":"")+last;
 				szHtml += " <span style='color:rgb(175,175,175)'>"
 				szHtml += (before>0?"(+":"(")+ before +")";
 				szHtml += "</span></td>";
+
+				szHtml += "</td><td><i class='icon fa " + __getArrow(last, before) + "' style='color:" + __getArrowColor(last, before) + ";font-size:1.5em'></i>";
 				
 				
 				szHtml += "<td style='color:rgb(221, 0, 136)'>"+gg14+"<br><span style='color:rgb(220,220,220)'>"+gg14_before+"</span></td>";
+				
+				szHtml += "<td></td>";
 				
 				// ospedalizzati 
 				// -----------------------------------------------------------
@@ -3125,6 +3150,8 @@ $(function () {
 				szHtml += " <span style='color:rgb(175,175,175)'>"
 				szHtml += (before>0?"(+":"(")+ before +")";
 				szHtml += "</span></td>";
+
+				szHtml += "<td></td>";
 
 				// tamponi 
 				// -----------------------------------------------------------
