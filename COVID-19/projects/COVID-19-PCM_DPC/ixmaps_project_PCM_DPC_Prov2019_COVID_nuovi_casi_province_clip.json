@@ -12,7 +12,7 @@
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
-		"legend": "Incidenza",
+		"legend": "",
 		"item": "",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
@@ -58,7 +58,7 @@
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|BUBBLE|GLOW|VALUES|SIZE|CLIP|LOOP",
+				"type": "CHART|BUBBLE|GLOW|VALUES|SIZE|CLIP|LOOP|SIMPLELEGEND",
 				"colorscheme": [
 					"rgba(255, 100, 255,1)"],
 				"fillopacity": "0.1",
@@ -87,8 +87,9 @@
 				"valuedecimals": "0",
 				"clipframes": "253",
 				"clipframerate": "24",
-				"title": "nuovi casi x 10000 abitanti",
-				"snippet": "dal 2/3/2020 al 8/11/2020"
+				"title": "nuovi casi,<br>giorno per giorno",
+				"snippet": "dal 2/3/2020 al 8/11/2020",
+				"description": "<h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4>"
 				}
 			}],
 	"layerMask": {
