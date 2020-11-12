@@ -139,9 +139,55 @@
           18:00. Le visualizzazioni caricano i dati direttamente dalla fonte
           (GitHub)</p>
       </div>
+		
       <!-- --------------------------------------------------------------- -->
       <!-- Maps - regional - categories           					 	 -->
       <!-- --------------------------------------------------------------- -->
+		
+      <div class="container">
+        <div class="card-deck mb-3 text-center">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+              <h4 class="my-0 font-weight-normal"><b>Rapporto nuovi positivi vs
+                  testati</b>, giorno per giorno</h4>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title pricing-card-title"><small class="text-muted">Numero
+                  di nuovi casi positivi in percentuale ai tamponi effettuati la
+                  prima volta alle persone non positiva<br>
+                  valore attuale e evoluzione con media mobile di 7 giorni</small></h5>
+              <div class="card-body no-padding"> <iframe id="map3" scrolling="no"
+
+                  marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=left&amp;legend=1&amp;name=map3&amp;sync=false&amp;footer=1&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Reg2019_COVID_curves_tampone_ratio_values.json"
+
+                  height="850" frameborder="0" width="100%"></iframe> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+		
+     <div class="container">
+        <div class="card-deck mb-3 text-center">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+              <h4 class="my-0 font-weight-normal"><b>Casi positivi</b>, giorno per giorno</h4>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title pricing-card-title"><small class="text-muted">casi
+                  positivi - incremento giornaliero</small>
+                <a href="javascript:ixmaps.changeThemeStyle('mapr1',null,'scale:0.9','factor')">(-)</a>
+                grafici <a href="javascript:ixmaps.changeThemeStyle('mapr1',null,'scale:1.11','factor')">(+)</a>
+              </h5>
+              <div class="card-body no-padding"> <iframe id="mapr1" scrolling="no"
+
+                  marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=left&amp;legend=1&amp;name=mapr1&amp;sync=false&amp;footer=1&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Reg2019_COVID_curves_casi_lite_values.json"
+
+                  height="850" frameborder="0" width="100%"></iframe> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+	  <!--	
       <div class="container">
         <div class="card-deck mb-3 text-center">
           <div class="card mb-4 shadow-sm">
@@ -164,27 +210,46 @@
           </div>
         </div>
       </div>
-      <div class="container">
+ 		
+        <div class="container">
         <div class="card-deck mb-3 text-center">
           <div class="card mb-4 shadow-sm">
-            <div class="card-header">
-              <h4 class="my-0 font-weight-normal"><b>Rapporto nuovi positivi vs
-                  testati</b>, giorno per giorno</h4>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title pricing-card-title"><small class="text-muted">Numero
-                  di nuovi casi positivi in percentuale ai tamponi effettuati la
-                  prima volta alle persone non positiva<br>
-                  valore attuale e evoluzione con media mobile di 7 giorni</small></h5>
-              <div class="card-body no-padding"> <iframe id="map3" scrolling="no"
-
-                  marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=left&amp;legend=1&amp;name=map3&amp;sync=false&amp;footer=1&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Reg2019_COVID_curves_tampone_ratio_values.json"
-
-                  height="850" frameborder="0" width="100%"></iframe> </div>
-            </div>
+		<div class="card-header">
+            <h4 class="my-0 font-weight-normal"><b>in terapia intensiva</b>,
+              giorno per giorno</h4>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title pricing-card-title"><small class="text-muted">media
+                mobile per 7 giorni - in terapia intensiva</small></h5>
+            <div class="card-body no-padding"> <iframe id="map1" scrolling="no"
+                marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=left&amp;legend=1&amp;name=map1&amp;sync=false&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Reg2019_COVID_curves_media_7_giorni_intensiva.json"
+                height="850" frameborder="0" width="100%"></iframe> </div>
+          </div>
           </div>
         </div>
       </div>
+	  -->
+		
+        <div class="container">
+        <div class="card-deck mb-3 text-center">
+          <div class="card mb-4 shadow-sm">
+		<div class="card-header">
+            <h4 class="my-0 font-weight-normal"><b>in terapia intensiva</b>,
+              giorno per giorno</h4>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title pricing-card-title"><small class="text-muted">media
+                mobile per 7 giorni - in terapia intensiva</small></h5>
+            <div class="card-body no-padding"> <iframe id="map1" scrolling="no"
+                marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=left&amp;legend=1&amp;name=map1&amp;sync=false&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Reg2019_COVID_curves_media_7_giorni_intensiva_percent_max_pie.json"
+                height="850" frameborder="0" width="100%"></iframe> </div>
+          </div>
+          </div>
+        </div>
+      </div>
+		
+		
+		
       <!-- --------------------------------------------------------------- -->
       <!-- --------------------------------------------------------------- -->
       <!--                                                                 -->
