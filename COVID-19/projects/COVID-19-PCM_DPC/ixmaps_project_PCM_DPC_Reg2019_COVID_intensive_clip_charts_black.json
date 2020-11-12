@@ -94,7 +94,7 @@
 				"clipframerate": "24",
 				"title": " ",
 				"snippet": "aggiornato al 17/10/2020",
-				"description": "<div style='color:#777777;font-weight'><h1></h1><h1><b>ospedalizzati ...</b></h1><h4>il totale delle persone ricoverate in ospedale con sintomi, incliusivo della terapia intensiva</h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>"
+				"description": "<div style='color:#777777;font-weight'><h1></h1><h1><b>terapia intensiva ...</b></h1><h4>il totale delle persone in terapia intensiva</h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>"
 				}
 			}],
 	"layerMask": {
