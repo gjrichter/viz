@@ -97,7 +97,7 @@
 					"white"],
 				"fillopacity": "0.1",
 				"shadow": "false",
-				"dbtable": "PCM_DPC_COVID_LAST_24H",
+				"dbtable": "PCM_DPC_COVID_LAST_24H_ALT",
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province.js",
 				"datacache": "false",
