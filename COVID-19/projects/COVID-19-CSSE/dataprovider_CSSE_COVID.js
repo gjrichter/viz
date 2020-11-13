@@ -100,19 +100,18 @@ window.ixmaps = window.ixmaps || {};
 								
 							// merge the two data tables	
 								
-							var columnsA = dataA[0].columnNames();
 							var merger = new Data.Merger();
 							merger.addSource(dataA[0], {
 								lookup: "Combined_Key",
-								columns: columnsA
+								columns: dataA[0].columnNames()
 							});
 							merger.addSource(dataA[1], {
 								lookup: "Combined_Key",
-								columns: columnsA
+								columns: dataA[1].columnNames()
 							});
 							merger.addSource(dataA[2], {
 								lookup: "Combined_Key",
-								columns: columnsA
+								columns: dataA[2].columnNames()
 							});
 
 							merger.realize(function (data) {
@@ -187,7 +186,7 @@ window.ixmaps = window.ixmaps || {};
 									data.column("Lat.1").rename("Lat");
 									data.column("Long_.1").rename("Long_");
 									data.column("Country_Region.1").rename("Country_Region");
-									data.column("Case-Fatality_Ratio.1").rename("Case-Fatality_Ratio");
+									data.column("Case_Fatality_Ratio.1").rename("Case-Fatality_Ratio");
 								
 									ixmaps.setTitle("<span style='font-family:courier new,Raleway,arial,helvetica;font-size:18px;color:#444444'>aggiornato al " + lastDate + "</span>", "right");
 									
@@ -251,23 +250,22 @@ window.ixmaps = window.ixmaps || {};
 								
 							// merge the two data tables	
 								
-							var columnsA = dataA[0].columnNames();
 							var merger = new Data.Merger();
 							merger.addSource(dataA[0], {
 								lookup: "Combined_Key",
-								columns: columnsA
+								columns: dataA[0].columnNames()
 							});
 							merger.addSource(dataA[1], {
 								lookup: "Combined_Key",
-								columns: columnsA
+								columns: dataA[1].columnNames()
 							});
 							merger.addSource(dataA[2], {
 								lookup: "Combined_Key",
-								columns: columnsA
+								columns: dataA[2].columnNames()
 							});
 							merger.addSource(dataA[3], {
 								lookup: "Combined_Key",
-								columns: columnsA
+								columns: dataA[3].columnNames()
 							});
 
 							merger.realize(function (data) {
@@ -306,14 +304,14 @@ window.ixmaps = window.ixmaps || {};
 								
 									// calcolate Case-Fatality_Ratio from this
 								
-									var iConfirmed = data.column("Confirmed_28").index;
-									var iDeaths = data.column("Deaths_28").index;
+									var iConfirmed_calc = data.column("Confirmed_28").index;
+									var iDeaths_calc = data.column("Deaths_28").index;
 								
 									data.addColumn({
 										destination: "Case-Fatality_Ratio_28"
 									}, function (row) {
-										if (Number(row[iConfirmed])){
-											return (Number(row[iDeaths]) / Number(row[iConfirmed]) * 100);
+										if (Number(row[iConfirmed_calc])){
+											return (Number(row[iDeaths_calc]) / Number(row[iConfirmed_calc]) * 100);
 										}else{
 											return 0;
 										}
@@ -349,14 +347,14 @@ window.ixmaps = window.ixmaps || {};
 								
 									// calcolate Case-Fatality_Ratio from this
 								
-									var iConfirmed = data.column("Confirmed_56").index;
-									var iDeaths = data.column("Deaths_56").index;
+									var iConfirmed_calc = data.column("Confirmed_56").index;
+									var iDeaths_calc = data.column("Deaths_56").index;
 								
 									data.addColumn({
 										destination: "Case-Fatality_Ratio_56"
 									}, function (row) {
-										if (Number(row[iConfirmed])){
-											return (Number(row[iDeaths]) / Number(row[iConfirmed]) * 100);
+										if (Number(row[iConfirmed_calc])){
+											return (Number(row[iDeaths_calc]) / Number(row[iConfirmed_calc]) * 100);
 										}else{
 											return 0;
 										}
@@ -389,7 +387,7 @@ window.ixmaps = window.ixmaps || {};
 									data.column("Lat.1").rename("Lat");
 									data.column("Long_.1").rename("Long_");
 									data.column("Country_Region.1").rename("Country_Region");
-									data.column("Case-Fatality_Ratio.1").rename("Case-Fatality_Ratio");
+									data.column("Case_Fatality_Ratio.1").rename("Case-Fatality_Ratio");
 								
 									ixmaps.setTitle("<span style='font-family:courier new,Raleway,arial,helvetica;font-size:18px;color:#444444'>aggiornato al " + lastDate + "</span>", "right");
 									
@@ -444,15 +442,14 @@ window.ixmaps = window.ixmaps || {};
 								
 							// merge the two data tables	
 								
-							var columnsA = dataA[0].columnNames();
 							var merger = new Data.Merger();
 							merger.addSource(dataA[0], {
 								lookup: "Combined_Key",
-								columns: columnsA
+								columns: dataA[0].columnNames()
 							});
 							merger.addSource(dataA[1], {
 								lookup: "Combined_Key",
-								columns: columnsA
+								columns: dataA[1].columnNames()
 							});
 
 							merger.realize(function (data) {
@@ -499,7 +496,7 @@ window.ixmaps = window.ixmaps || {};
 									data.column("Lat.1").rename("Lat");
 									data.column("Long_.1").rename("Long_");
 									data.column("Country_Region.1").rename("Country_Region");
-									data.column("Case-Fatality_Ratio.1").rename("Case-Fatality_Ratio");
+									data.column("Case_Fatality_Ratio.1").rename("Case-Fatality_Ratio");
 								
 									ixmaps.setTitle("<span style='font-family:courier new,Raleway,arial,helvetica;font-size:18px;color:#444444'>aggiornato al " + lastDate + "</span>", "right");
 									
@@ -590,27 +587,27 @@ window.ixmaps = window.ixmaps || {};
 							var merger = new Data.Merger();
 							merger.addSource(dataA[0], {
 								lookup: "Combined_Key",
-								columns: columnsA
+								columns: dataA[0].columnNames()
 							});
 							merger.addSource(dataA[1], {
 								lookup: "Combined_Key",
-								columns: columnsA
+								columns: dataA[1].columnNames()
 							});
 							merger.addSource(dataA[2], {
 								lookup: "Combined_Key",
-								columns: columnsA
+								columns: dataA[2].columnNames()
 							});
 							merger.addSource(dataA[3], {
 								lookup: "Combined_Key",
-								columns: columnsA
+								columns: dataA[3].columnNames()
 							});
 							merger.addSource(dataA[4], {
 								lookup: "Combined_Key",
-								columns: columnsA
+								columns: dataA[4].columnNames()
 							});
 							merger.addSource(dataA[5], {
 								lookup: "Combined_Key",
-								columns: columnsA
+								columns: dataA[5].columnNames()
 							});
 							console.log(merger);
 
