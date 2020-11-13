@@ -67,7 +67,7 @@
 				"filter": "WHERE Country_Region != Others AND Lat != 0 AND Confirmed_56 > 100",
 				"dbtable": "CSSE_COVID_CASE_FATALITY_RATIO",
 				"dbtableType": "ext",
-				"dbtableExt": "../../projects/COVID-19-CSSE/dataprovider_CSSE_COVID.js",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-CSSE/dataprovider_CSSE_COVID.js",
 				"datacache": "true",
 				"lookupfield": "Lat|Long_",
 				"symbols": [
