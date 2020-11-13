@@ -1,0 +1,101 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "<h4>Part of a set of COVID-19 visualizations</4><p>relies on 2 data sources:</p><ul><li><a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository</a><br>by Johns Hopkins CSSE</li><li><a href='http://unwfp.maps.arcgis.com/apps/opsdashboard/index.html#/4f74fc222b7041cd9cc3c52e62af1b8c' target='_blank'>COVID-19 outbreak in Italy</a><br> by United Nations World Food Programme</li></ul>",
+		"created": "Thu Oct 08 2020 12:03:45 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "by <a href=\"http://www.ixmaps.com\" target=\"_blank\">iXMaps</a>",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>COVID-19(2019-nCoV)</b><br><span style='font-size:1em;color:#888888;font-weight:bold'>Case/fatality ratio change</span></h1><h4>Compare the ratio <b style='color:#aaaaaa'>56 days ago</b> (gray) with the ratio over the <b>last 56 days</b> (black)</h4><h4 style='color:#888888'>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE</h4><h4><button class='btn btn-default' onclick='ixmaps.map().changeThemeStyle(null,\"markclasses:0\",\"set\");'>total period</button> <button class='btn btn-default btn-active' onclick='ixmaps.map().changeThemeStyle(null,\"markclasses:1\",\"set\");'>last 56 days</button>  <button class='btn btn-default btn-active' onclick='ixmaps.map().changeThemeStyle(null,\"markclasses:0,1\",\"set\");'>both</button>  <button class='btn btn-default btn-active' onclick='ixmaps.map().changeThemeStyle(null,\"scale:0.75\",\"factor\");'>-</button>  <button class='btn btn-default btn-active' onclick='ixmaps.map().changeThemeStyle(null,\"scale:1.5\",\"factor\");'>+</button> </h4>",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "55364168"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "26.115985925333536",
+			"lng": "7.998046875000001"
+			},
+		"zoom": "3"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "Case-Fatality_Ratio_before_56|Case-Fatality_Ratio_56",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AGGREGATE|RECT|DTEXT|VALUEBACKGROUND|MEAN|SIZE",
+				"colorscheme": [
+					"rgba(70, 70, 70,0.3)",
+					"rgba(70, 70, 70,0.9)"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"showdata":"true",
+				"filter": "WHERE Country_Region != Others AND Lat != 0 AND Confirmed_56 > 100",
+				"dbtable": "CSSE_COVID_CASE_FATALITY_RATIO",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-CSSE/dataprovider_CSSE_COVID.js",
+				"datacache": "true",
+				"lookupfield": "Lat|Long_",
+				"symbols": [
+					"circle"],
+				"label": [
+					"overall ratio",
+					"last 28 days"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"normalsizevalue": "5",
+				"scale": "1.3003950957091206",
+				"minvalue": "0",
+				"linewidth": "1.5",
+				"titlefield": "Country_Region",
+				"valueupper": "1:5000000",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"fadenegative": "0.1",
+				"gridwidthpx": "50",
+				"name": "actual",
+				"title": "COVID-19 case-fatality ratio change",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
+				"splash": "Loading data ..."
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
