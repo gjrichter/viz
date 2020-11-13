@@ -510,6 +510,69 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 
+	ixmaps.PCM_DPC_DEATHS_CLIP = function (theme, options) {
+
+
+		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the data from GitHub and process 
+		// ----------------------------------------------------------------------------------------------- 
+
+		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(mydata){
+			
+			var pivot = __get_deaths(mydata,options);
+			
+				pivot.column("Total").remove();
+
+				var days = pivot.columnNames().length-10;
+				var startColumn = pivot.columnNames().length-1;
+				for (var day = 1; day<=days; day++,startColumn--){
+						pivot.addColumn({destination:"free_days_"+day},function(row){
+						var free = row[startColumn];
+							return free;
+					});
+				}
+
+				// get the columns with date 
+				var columns = pivot.columnNames();
+				var last = columns.length - 2;
+			
+				// and configure the theme
+				var columnA = [];
+				for (var day = 0; day<days; day++){
+					columnA.push("free_days_"+(days-day));
+				}
+				theme.szFields = columnA.join("|");
+				theme.szFieldsA = columnA;
+			
+				var dateColumnsA = pivot.columnNames();
+				var datesA = [];
+				for (var day = 0; day<days; day++){
+					datesA.push(new Date(dateColumnsA[startColumn++]).toLocaleDateString());
+				}
+				theme.szXaxisA = datesA;
+			
+				theme.nClipFrames = days;
+
+				theme.szSnippet = "aggiornato al " + datesA[datesA.length-1];
+
+				// -----------------------------------------------------------------------------------------------               
+				// deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(pivot, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			})
+			.error(function (e) {
+				alert("error loading data from:\n" + szUrl);
+			});
+
+	};
+
 				
 				
 				
