@@ -564,6 +564,82 @@ window.ixmaps = window.ixmaps || {};
 				});
 	};
 
+	ixmaps.NYT_COVID_SEQUENCE_RM7_28 = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv";
+
+		var broker = new Data.Broker()
+			.addSource(szUrl1, "csv")
+			.realize(
+				function (dataA) {
+
+					data = dataA[0];
+					
+					var pivot = __get_pivot_corr("cases");
+					
+					// get the columns with date 
+					var columns = pivot.columnNames();
+					var last = columns.length - 1;
+					columns.shift();
+					columns.shift();
+
+					records = pivot.records;
+					for ( r=0; r<records.length; r++ ){
+						for ( c=last; c>=8; c-- ){
+							var mean = (Number(records[r][c]  )+Number(records[r][c-1])+Number(records[r][c-2])+Number(records[r][c-3])+Number(records[r][c-4])+Number(records[r][c-5])+Number(records[r][c-6]))/7;
+							records[r][c] = mean.toFixed(2);
+						}
+					}
+					columns.shift();
+					columns.shift();
+					columns.shift();
+					columns.shift();
+					columns.shift();
+					columns.shift();
+
+					// and configure the theme
+					theme.szFields = columns.slice().join('|');
+					theme.szFieldsA = columns.slice();
+
+					// prepare label and xaxis for DIFFERENCE theme 
+					columns.shift();
+					last = columns.length - 1;
+					
+					// and set the label
+					theme.szLabelA = columns.slice();
+					
+					theme.szSnippet = "from " + columns[0] + " to " + columns[last];
+					ixmaps.setTitle("<span style='font-family:arial'>" + columns[0] + " to " + columns[last] +"</span>");
+					
+					// set colors = columns 
+					theme.origColorScheme[0] = columns.length;
+
+					// get last 28 columns
+					var last_28 = pivot.columnNames().slice(-28);
+
+					// set as data fields in actual theme
+					options.theme.szFields = last_28.slice().join("|");
+					options.theme.szFieldsA = last_28.slice();
+
+					// make label ! -1 because of DIFFERENC theme
+					options.theme.szLabelA = last_28.slice(-27);
+					options.theme.szXaxisA = last_28.slice(-27);
+					
+					for ( var i=1; i < options.theme.szXaxisA.length-1; i++ ){
+						options.theme.szXaxisA[i] = " ";
+					}
+					
+					// -----------------------------------------------------------------------------------------------               
+					// deploy the data
+					// ----------------------------------------------------------------------------------------------- 
+
+					ixmaps.setExternalData(pivot, {
+						type: "dbtable",
+						name: options.name
+					});
+				});
+	};
+
 
 
 
