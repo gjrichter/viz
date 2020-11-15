@@ -1838,8 +1838,6 @@ window.ixmaps = window.ixmaps || {};
 			
 			var pivot = __get_intensive(mydata,options);
 	
-			pivot = __mean_3(pivot);
-
 			// get the columns with date 
 			var columns = pivot.columnNames();
 			columns.shift();
