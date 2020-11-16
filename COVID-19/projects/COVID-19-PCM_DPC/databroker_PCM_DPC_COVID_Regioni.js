@@ -3074,9 +3074,6 @@ window.ixmaps = window.ixmaps || {};
 				mydata.column('tamponi').map(function (value,row) {
 						return (Number(value)/pop[row[indexName].replace(/\-/," ")]*100).toFixed(2);
 				});
-				mydata.column('deceduti').map(function (value,row) {
-						return (Number(value)/pop[row[indexName].replace(/\-/," ")]*100).toFixed(2);
-				});
 				mydata.column('casi_testati').map(function (value,row) {
 						return (Number(value)/pop[row[indexName].replace(/\-/," ")]*100).toFixed(2);
 				});
