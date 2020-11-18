@@ -4753,6 +4753,14 @@ window.ixmaps = window.ixmaps || {};
 				pivot.column("Total").remove();
 				var indexName = pivot.column("denominazione_regione").index;
 
+				// make percent of intensive care beds
+				var records = pivot.records;
+				for (var r=0; r<records.length;r++){
+					for (var c=records[r].length-1; c>=3;c--){
+						records[r][c] =  (records[r][c]/letti[records[r][indexName].replace(/\-/," ")]*100);
+					}
+				}
+				
 				pivot.addColumn({
 					destination: "posti_letti_ti"
 				}, function (row) {
