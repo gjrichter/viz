@@ -556,7 +556,7 @@ window.ixmaps = window.ixmaps || {};
      ixmaps.PCM_DPC_COVID_LAST_INTENSIVE_MAX = function (theme,options) {
 		
 		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
-		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/posti_letti_TI_28_10_2020.csv";
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/posti_letti_TI_17_11_2020.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ArcGis Feature service
@@ -585,7 +585,7 @@ window.ixmaps = window.ixmaps || {};
 				});
 				var letti = [];
 				var terrA = dataLetti.column("Regione").values();
-				var lettiA = dataLetti.column("Posti letto attivati al 28 ottobre").values();
+				var lettiA = dataLetti.column("Posti letto attivati al 17 novembre").values();
 				for (var i = 0; i < terrA.length; i++) {
 					letti[terrA[i]] = lettiA[i];
 				}
@@ -4272,7 +4272,7 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.PCM_DPC_COVID_SEQUENCE_MEAN_7_INTENSIVE_MAX = function (theme, options) {
 		
 		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
-		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/posti_letti_TI_28_10_2020.csv";
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/posti_letti_TI_17_11_2020.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ArcGis Feature service
@@ -4301,7 +4301,7 @@ window.ixmaps = window.ixmaps || {};
 				});
 				var letti = [];
 				var terrA = dataLetti.column("Regione").values();
-				var lettiA = dataLetti.column("Posti letto attivati al 28 ottobre").values();
+				var lettiA = dataLetti.column("Posti letto attivati al 17 novembre").values();
 				for (var i = 0; i < terrA.length; i++) {
 					letti[terrA[i]] = lettiA[i];
 				}
@@ -4427,7 +4427,7 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.PCM_DPC_COVID_SEQUENCE_MEAN_7_INTENSIVE_PERCENT_MAX = function (theme, options) {
 		
 		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
-		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/posti_letti_TI_28_10_2020.csv";
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/posti_letti_TI_17_11_2020.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ArcGis Feature service
@@ -4456,7 +4456,7 @@ window.ixmaps = window.ixmaps || {};
 				});
 				var letti = [];
 				var terrA = dataLetti.column("Regione").values();
-				var lettiA = dataLetti.column("Posti letto attivati al 28 ottobre").values();
+				var lettiA = dataLetti.column("Posti letto attivati al 17 novembre").values();
 				for (var i = 0; i < terrA.length; i++) {
 					letti[terrA[i]] = lettiA[i];
 				}
