@@ -4711,6 +4711,138 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 
+	ixmaps.PCM_DPC_COVID_SEQUENCE_INTENSIVE_PERCENT_MAX = function (theme, options) {
+		
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/posti_letti_TI_17_11_2020.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+
+			function (dataA) {
+
+				// get population lookup for incidence
+				var dataLetti = dataA[1];
+				// correct region names in population table
+				dataLetti.column("Regione").map(function (value) {
+					if (value == "PA Bolzano") {
+						return "P.A. Bolzano";
+					} else
+					if (value == "PA Trento") {
+						return "P.A. Trento";
+					} else {
+						return value.split(" /")[0].replace(/-/, " ");
+					}
+				});
+				var letti = [];
+				var terrA = dataLetti.column("Regione").values();
+				var lettiA = dataLetti.column("Posti letto attivati al 17 novembre").values();
+				for (var i = 0; i < terrA.length; i++) {
+					letti[terrA[i]] = lettiA[i];
+				}
+
+				var pivot = __get_intensive(dataA[0], options);
+			
+				pivot.column("Total").remove();
+				var indexName = pivot.column("denominazione_regione").index;
+
+				pivot.addColumn({
+					destination: "posti_letti_ti"
+				}, function (row) {
+					return (letti[row[indexName].replace(/\-/," ")]);
+				});
+				
+				// get the columns with date 
+				var columns = pivot.columnNames();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+			
+				var last = columns.length - 1;
+
+				for ( var i=0; i<columns.length; i++ ){
+					pivot.column(columns[i]).rename(new Date(columns[i]).toLocaleDateString());
+					columns[i] = new Date(columns[i]).toLocaleDateString();	
+				}
+
+				columns = columns.slice(-100);
+				
+				// and configure the theme
+				theme.szFields = columns.slice().join('|');
+				theme.szFieldsA = columns.slice();
+
+				// and set the label (for difference 1 less)
+				columns.shift();
+				theme.szLabelA = columns.slice();
+
+				var szXaxisA = [];
+				for ( var i =0; i<columns.length; i++ ){
+					if (columns[i] == "1/3/2020"){
+					  szXaxisA.push("Mar");
+					}else
+					if (columns[i] == "1/4/2020"){
+					  szXaxisA.push("Apr");
+					}else
+					if (columns[i] == "1/5/2020"){
+					  szXaxisA.push("Mag");
+					}else
+					if (columns[i] == "1/6/2020"){
+					  szXaxisA.push("Giu");
+					}else
+					if (columns[i] == "1/7/2020"){
+					  szXaxisA.push("Lug");
+					}else
+					if (columns[i] == "1/8/2020"){
+					  szXaxisA.push("Aug");
+					}else
+					if (columns[i] == "1/9/2020"){
+					  szXaxisA.push("Sep");
+					}else
+					if (columns[i] == "1/10/2020"){
+					  szXaxisA.push("Okt");
+					}else
+					if (columns[i] == "1/10/2020"){
+					  szXaxisA.push("Nov");
+					}else
+					if (columns[i] == "1/10/2020"){
+					  szXaxisA.push("Dec");
+					}else{
+					  szXaxisA.push(" ");
+					}
+				}
+
+				//szXaxisA[0] = columns[0];
+				//szXaxisA[last - 1] = columns[last - 1];
+				theme.szXaxisA = szXaxisA;
+			
+				// set colors = columns 
+				theme.origColorScheme[0] = columns.length;
+
+				theme.szSnippet = "dal " + columns[0] + " al " + columns[last - 1];
+				ixmaps.setTitle("<f2 style='color:#888888;background-color:rgba(255,255,255,0.1);padding:0.3em 0.5em;border:#888888 solid 0.5px;border-radius:0.2em'>aggiornato: "+(columns[columns.length - 1])+"</f2>");
+
+		
+				// ----------------------------------------------------------------------------------------------- 
+				// deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(pivot, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			});
+
+	};
+
 	ixmaps.PCM_DPC_COVID_SEQUENCE_MEAN_7_DEATHS_INCIDENCE = function (theme, options) {
 		
 		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
