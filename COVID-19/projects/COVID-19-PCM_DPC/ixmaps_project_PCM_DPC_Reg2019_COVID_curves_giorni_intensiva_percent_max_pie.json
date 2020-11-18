@@ -1,0 +1,158 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Wed Nov 11 2020 22:18:29 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
+		"attribution": "iXMaps",
+		"basemap": "ArcGIS - Light Gray Base",
+		"legend": "<div style='color:#777777'><h1></h1><h1><b>Livello di saturazione</b> delle <b>terapia intensive</b></h1><h2>Letti occupati in % dei posti letto disponibili al 17 novembre. Dato Commissario all'emergenza. </h2><h4>media mobile di 7 giorni per il periodo degli ultimi 100 giorni e valore attuale</h4><h4>Il ministero della Salute indica il <b><span style='color:rgba(250, 150, 0,1)'>30% dei posti</span></b> disponibili come <b><span style='color:rgba(250, 150, 0,1)'>soglia critica</span></b>, oltre la quale rallenta l’assistenza degli altri pazienti ricoverati</h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
+		"item": "html",
+		"scaleParam": {
+			"lineScaling": "4.213991769547325",
+			"normalSizeScale": "4638029"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"worksilent": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "42.84375132629023",
+			"lng": "10.349121093750002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "Prov2019_nome",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|PLOT|LINES|AREA|GRID|BOX|TITLE|FIXSIZE|LONGTITLE|COMPATIBLE|SUM|NOLEGEND|ZEROISVALUE",
+				"colorscheme": [
+					"100",
+					"rgba(150, 150, 150,1)",
+					"rgba(250, 100, 0,1)"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_SEQUENCE_INTENSIVE_PERCENT_MAX",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "false",
+				"itemfield": "codice_regione",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"ranges": [
+					"0",
+					"30"],
+				"symbols": [
+					"circle"],
+				"units": "%",
+				"align": "right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "20",
+				"scale": "0.05",
+				"rangescale": "1",
+				"maxvalue": "100",
+				"textcolor": "#880000",
+				"linewidth": "25",
+				"bordercolor": "none",
+				"boxopacity": "0",
+				"boxmargin": "10",
+				"titlefield": "denominazione_regione",
+				"titleupper": "1:100000",
+				"boxupper": "1:10000000",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"fadenegative": "1",
+				"aggregationscale": [
+					"1:1",
+					"150px",
+					"1:1000000",
+					"100px"],
+				"aggregationlower": "1:2500000",
+				"name": "curve",
+				"title": "Livello di saturazione degli posti letti in terapia intensiva - media mobile 7 giorno",
+				"snippet": "dal 5/8/2020 al undefined"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "2020-11-11T17:00:00",
+			"field100": "posti_letti_ti",
+			"style": {
+				"type": "CHART|PIE|AUTOCOMPLETE|SIZE|SIZE|VALUES|VALUEBACKGROUND",
+				"colorscheme": [
+					"#aaaaaa",
+					"#F27E2B"],
+				"ranges":"0,30,100",
+				"opacity": "1",
+				"fillopacity": "0.3",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_LAST_INTENSIVE_MAX",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "true",
+				"lookupfield": "lat|long",
+				"symbols": [
+					"circle"],
+				"label": [
+					"terapia intensiva"],
+				"units": "",
+				"units100": "",
+				"align": "above|right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "600",
+				"scale": "1.5",
+				"sizefield": "posti_letti_ti",
+				"textcolor": "black",
+				"linecolor": [
+					"#F28E2B"],
+				"linewidth": "0.5",
+				"titlefield": "denominazione_regione",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"clipparts": "10",
+				"evidence": "isolate_gray",
+				"title": "COVID-19<br>Livello di saturazione degli posti letti in terapia intensiva",
+				"snippet": "aggiornato al 2020-11-07T17:00:00"
+				}
+			}],
+	"layerMask": {
+		"Prov2019_nome": {
+			"display": "none"
+			}
+		}
+	}
