@@ -4773,6 +4773,8 @@ window.ixmaps = window.ixmaps || {};
 				columns.shift();
 				columns.shift();
 				columns.shift();
+				
+				columns.pop();
 			
 				var last = columns.length - 1;
 
