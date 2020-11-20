@@ -9,7 +9,7 @@
 		"created": "Fri Nov 20 2020 17:56:45 GMT+0100 (Ora standard dell’Europa centrale)"
 		},
 	"map": {
-		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_pro_com.svgz",
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_pro_com_Sicilia.svgz",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
 		"legend": "<h1>COVID-19<br>positivi x 100.000 abitanti</h1><h4>&nbsp;&nbsp;un mese di evoluzione del numero di positivi per 100.000 abitanti</h4><h4>&nbsp;&nbsp;aggregazione per griglia fissa di 100 pixel dello schermo; zoomando si arriva alle curve dei singoli comuni</h4><h4>Fonte: <a href='https://www.comune.palermo.it/statistica.php?sel=9&per=2020' target='_blank'>Comune di Palermo</a><br>Licenza: <a href='' target='_blank'>???</a></h4>",
