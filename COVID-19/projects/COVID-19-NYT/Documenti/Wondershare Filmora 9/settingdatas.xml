@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SettingDatas>
+    <ExportSetting>
+        <ExportLocal>
+            <LocalFilePath>C:/Users/guent/OneDrive/Documenti/Wondershare Filmora 9/Output</LocalFilePath>
+            <bShowMessageBox>1</bShowMessageBox>
+        </ExportLocal>
+        <UploaderDataYouTube>
+            <UploaderLogined>0</UploaderLogined>
+            <UploaderFilePath></UploaderFilePath>
+            <UploaderTitle></UploaderTitle>
+            <UploadDesc></UploadDesc>
+            <UploadTags></UploadTags>
+            <UploadCateGory></UploadCateGory>
+            <UploadCateGorys></UploadCateGorys>
+            <UploaderPrivacy></UploaderPrivacy>
+            <UploaderThumbnailPath></UploaderThumbnailPath>
+            <UploaderAccessToken></UploaderAccessToken>
+            <UploaderUserName></UploaderUserName>
+            <UploaderApiKey></UploaderApiKey>
+            <UploaderApiSecret></UploaderApiSecret>
+        </UploaderDataYouTube>
+        <UploaderDataFaceBook>
+            <UploaderLogined>0</UploaderLogined>
+            <UploaderFilePath></UploaderFilePath>
+            <UploaderTitle></UploaderTitle>
+            <UploadDesc></UploadDesc>
+            <UploadTags></UploadTags>
+            <UploadCateGory></UploadCateGory>
+            <UploadCateGorys></UploadCateGorys>
+            <UploaderPrivacy></UploaderPrivacy>
+            <UploaderThumbnailPath></UploaderThumbnailPath>
+            <UploaderAccessToken></UploaderAccessToken>
+            <UploaderUserName></UploaderUserName>
+            <UploaderApiKey></UploaderApiKey>
+            <UploaderApiSecret></UploaderApiSecret>
+        </UploaderDataFaceBook>
+        <UploaderDataVimeo>
+            <UploaderLogined>0</UploaderLogined>
+            <UploaderFilePath></UploaderFilePath>
+            <UploaderTitle></UploaderTitle>
+            <UploadDesc></UploadDesc>
+            <UploadTags></UploadTags>
+            <UploadCateGory></UploadCateGory>
+            <UploadCateGorys></UploadCateGorys>
+            <UploaderPrivacy></UploaderPrivacy>
+            <UploaderThumbnailPath></UploaderThumbnailPath>
+            <UploaderAccessToken></UploaderAccessToken>
+            <UploaderUserName></UploaderUserName>
+            <UploaderApiKey></UploaderApiKey>
+            <UploaderApiSecret></UploaderApiSecret>
+        </UploaderDataVimeo>
+        <DVDSettingData>
+            <DVDDirPath>C:/Users/guent/OneDrive/Documenti/Wondershare Filmora 9/Output</DVDDirPath>
+        </DVDSettingData>
+        <DownloadDataFacebook>
+            <DownLoaderLogin>1</DownLoaderLogin>
+            <DownLoaderFilePath>C:/Users/guent/OneDrive/Documenti/Wondershare Filmora 9/User Media/Downloaded Media</DownLoaderFilePath>
+            <DownLoaderAccessToken>EAAED8qP7qZC0BAFcn4VF4WqMZAUSkm5evJHJccJtZAj2cmLPcijZCq5HwAt6ZAfrZCFIZANl0KKDBv116eUETz39kzlNYjHKMqfPVBkdn0qJ7pGDjMAG8XCAkMQgFz5CfGmcIZBabkZAtZCEP639eFtXLrL2b60sCfVnNKcISa9UGi3UwpeNzu6VBhjf5NOlJvELNqaOTzftNvpQZDZD</DownLoaderAccessToken>
+            <DownLoaderUserName>Guenter Richter</DownLoaderUserName>
+            <DownLoaderApiKey>285815644859389</DownLoaderApiKey>
+            <DownLoaderApiSecret>8c4af54e67dc07307ab80766383d0613</DownLoaderApiSecret>
+        </DownloadDataFacebook>
+        <DownloadDataFlickr>
+            <DownLoaderLogin>0</DownLoaderLogin>
+            <DownLoaderFilePath>C:/Users/guent/OneDrive/Documenti/Wondershare Filmora 9/User Media/Downloaded Media</DownLoaderFilePath>
+            <DownLoaderAccessToken></DownLoaderAccessToken>
+            <DownLoaderUserName></DownLoaderUserName>
+            <DownLoaderApiKey></DownLoaderApiKey>
+            <DownLoaderApiSecret></DownLoaderApiSecret>
+        </DownloadDataFlickr>
+        <DownloadDataInstagram>
+            <DownLoaderLogin>0</DownLoaderLogin>
+            <DownLoaderFilePath>C:/Users/guent/OneDrive/Documenti/Wondershare Filmora 9/User Media/Downloaded Media</DownLoaderFilePath>
+            <DownLoaderAccessToken></DownLoaderAccessToken>
+            <DownLoaderUserName></DownLoaderUserName>
+            <DownLoaderApiKey></DownLoaderApiKey>
+            <DownLoaderApiSecret></DownLoaderApiSecret>
+        </DownloadDataInstagram>
+    </ExportSetting>
+    <GpuAcceleration>0</GpuAcceleration>
+    <ImportDevicePath>C:/Users/guent/OneDrive/Documenti/Wondershare Filmora 9/User Media/Device Import</ImportDevicePath>
+</SettingDatas>

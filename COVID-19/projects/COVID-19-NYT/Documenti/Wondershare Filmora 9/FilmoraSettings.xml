@@ -1,0 +1,55 @@
+<!DOCTYPE FilmoraSettings>
+<FilmoraSettings>
+    <Settings>
+        <General>
+            <UITheme>0</UITheme>
+            <CheckForAutoUpdate>7</CheckForAutoUpdate>
+            <DontShowMessage>0</DontShowMessage>
+            <ReppleCustomSpeed>1</ReppleCustomSpeed>
+            <HighDpiScaling>1</HighDpiScaling>
+            <AutoRipple>1</AutoRipple>
+        </General>
+        <FolderPath>
+            <TempFileFolder>C:/Users/guent/OneDrive/Documenti/Wondershare Filmora 9/Temp</TempFileFolder>
+            <CaptureFileFolder>C:/Users/guent/OneDrive/Documenti/Wondershare Filmora 9/Recorded</CaptureFileFolder>
+            <ViceoverFolder>C:/Users/guent/OneDrive/Documenti/Wondershare Filmora 9/Voiceover</ViceoverFolder>
+            <YouTobeFileFolder>C:/Users/guent/OneDrive/Documenti/Wondershare Filmora 9/Upload</YouTobeFileFolder>
+            <InstanllEffectPackTo>C:/Users/guent/OneDrive/Documenti/Wondershare Filmora 9/Installed Effects</InstanllEffectPackTo>
+        </FolderPath>
+        <sEditting>
+            <sPhoto>125</sPhoto>
+            <sTransition>50</sTransition>
+            <sTitle>125</sTitle>
+            <sEffect>125</sEffect>
+            <sPhotoPlacement>0</sPhotoPlacement>
+            <sFreeze>125</sFreeze>
+            <sSplitMode>0</sSplitMode>
+        </sEditting>
+        <Save>
+            <AutoBackupProject>1</AutoBackupProject>
+            <AutoBackupProjectTime>5</AutoBackupProjectTime>
+            <BackupProjectFile>C:/Users/guent/OneDrive/Documenti/Wondershare Filmora 9/Backup</BackupProjectFile>
+            <MaximumBackupVersion>10</MaximumBackupVersion>
+            <DefaultProjectSaveFolder>C:/Users/guent/OneDrive/Documenti/Wondershare Filmora 9/Projects</DefaultProjectSaveFolder>
+            <lutCubeFolder></lutCubeFolder>
+        </Save>
+        <Performance>
+            <sOpenCLCanBeChange>1</sOpenCLCanBeChange>
+            <EnableOpenCL>1</EnableOpenCL>
+            <EnableOpenGLEncode>1</EnableOpenGLEncode>
+            <GPUDeviceSwicth>0</GPUDeviceSwicth>
+            <EnableGPUDeCode>1</EnableGPUDeCode>
+            <OpenCLGPUAcceleration></OpenCLGPUAcceleration>
+            <UserChangedGpuState>0</UserChangedGpuState>
+            <AutomaticallyCreateProxy>0</AutomaticallyCreateProxy>
+            <AutoCreateProxyResolution>3840*2160</AutoCreateProxyResolution>
+            <GetProxyFileFolder>C:/Users/guent/OneDrive/Documenti/Wondershare Filmora 9/Proxy</GetProxyFileFolder>
+            <AutomaticallyDeleteProxy>0</AutomaticallyDeleteProxy>
+            <PreviewRenderFilesFolder>C:/Users/guent/OneDrive/Documenti/Wondershare Filmora 9/Render</PreviewRenderFilesFolder>
+            <AutomaticallyDeleteRenderFile>0</AutomaticallyDeleteRenderFile>
+            <EnableAutoRender>0</EnableAutoRender>
+            <sAutoRenderAfterSeconds>5</sAutoRenderAfterSeconds>
+            <Register>0</Register>
+        </Performance>
+    </Settings>
+</FilmoraSettings>

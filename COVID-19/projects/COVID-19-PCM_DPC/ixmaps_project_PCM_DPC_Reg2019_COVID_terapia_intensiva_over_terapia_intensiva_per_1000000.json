@@ -6,14 +6,15 @@
 		"description": "",
 		"thumbnail": "",
 		"about": "",
-		"created": "Tue Nov 03 2020 21:31:22 GMT+0100 (Ora standard dell’Europa centrale)"
+		"created": "Sun Nov 15 2020 19:29:59 GMT+0100 (Ora standard dell’Europa centrale)"
 		},
 	"map": {
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/regioni_2019/italia_regioni_2019_s_cod_reg_xx.svgz",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
-		"legend": "",
+		"legend": "<h1><b>COVID-19</b></h1><h2>persone in <span style='color:#F28E2B'><b>terapia intensiva</b></span> per <b>100.000 abitanti</b> (poligoni) e in <b>percentuale</b> del totale ospedalizzati (grafici)</h2><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4>",
 		"item": "",
+		"layout": "minimal",
 		"scaleParam": {
 			"lineScaling": "23.67696884508345",
 			"labelScaling": "2.3703703703703702",
@@ -49,26 +50,25 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "44.02442151965934",
-			"lng": "12.678222656250002"
+			"lat": "43.96119063892027",
+			"lng": "12.529907226562502"
 			},
 		"zoom": "7"
 		},
 	"themes": [{
 			"layer": "Reg2019_s_cod_reg|Prov2019_g_cod_prov",
-			"field": "totale_ospedalizzati",
+			"field": "terapia_intensiva",
 			"field100": "",
 			"style": {
-				"type": "CHOROPLETH|QUANTILE|VALUES|DTEXT",
+				"type": "CHOROPLETH|QUANTILE|SIMPLELEGEND|ITEMDATA",
 				"colorscheme": [
 					"15",
-					"#D2E3F4",
-					"#104482",
-					"3colors",
-					"#4A90E1"],
+					"#FEE5D9",
+					"#F28E2B",
+					"dynamic"],
 				"fillopacity": "1",
 				"shadow": "false",
-				"filter": "WHERE data = \"2020-11-03T17:00:00\"",
+				"filter": "WHERE data = \"2020-11-15T17:00:00\"",
 				"dbtable": "PCM_DPC_COVID_ACTUAL_PREVALENCE",
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
@@ -77,37 +77,70 @@
 				"lookuptonumber": "true",
 				"symbols": [
 					"circle"],
-				"units": "x 100.000",
+				"units": "/ 100.000",
 				"units100": "",
 				"refreshtimeout": "0",
 				"scale": "1",
-				"sizefield": "totale_positivi",
 				"linecolor": [
 					"#F28E2B"],
 				"linewidth": "1",
 				"titlefield": "denominazione_regione",
 				"valuescale": "1",
 				"valuedecimals": "1",
-				"title": "COVID-19<br>Casi Testati in % della popolazione",
-				"snippet": "aggiornato al 2020-11-03T17:00:00"
+				"title": "COVID-19<br>Totale ospedalizzati per 100.000 abitanti",
+				"snippet": "aggiornato al 2020-11-15T17:00:00"
 				}
 			},{
-			"layer": "World Mercator",
+			"layer": "Reg2019_s_cod_reg|Prov2019_g_cod_prov",
 			"field": "terapia_intensiva",
-			"field100": "totale_ospedalizzati",
+			"field100": "",
 			"style": {
-				"type": "CHART|PIE|AUTOCOMPLETE|SIZE|VALUES",
+				"type": "CHART|LABEL|TEXTONLY|VALUES|SIMPLELEGEND|ITEMDATA",
 				"colorscheme": [
-					"#F28E2B"],
-				"nodatacolor":"rgb(212, 234, 245)",
+					"15",
+					"#FEE5D9",
+					"#F28E2B",
+					"dynamic"],
 				"fillopacity": "1",
+				"align":"below",
 				"shadow": "false",
-				"filter": "WHERE data = \"2020-11-03T17:00:00\"",
+				"filter": "WHERE data = \"2020-11-15T17:00:00\"",
 				"dbtable": "PCM_DPC_COVID_ACTUAL_PREVALENCE",
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
 				"datacache": "true",
-				"lookupfield": "lat|long",
+				"lookupfield": "codice_regione",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"units": "/ 100.000",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"textcolor":"white",
+				"titlefield": "denominazione_regione",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "COVID-19<br>Totale ospedalizzati per 100.000 abitanti",
+				"snippet": "aggiornato al 2020-11-15T17:00:00"
+				}
+			},{
+			"layer": "Reg2019_s_cod_reg|Prov2019_g_cod_prov",
+			"field": "terapia_intensiva",
+			"field100": "totale_ospedalizzati",
+			"style": {
+				"type": "CHART|PIE|AUTOCOMPLETE|SIZE|VALUES|COMPACTLEGEND|COUNT",
+				"colorscheme": [
+					"#F28E2B"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"filter": "WHERE data = \"2020-11-15T17:00:00\"",
+				"dbtable": "PCM_DPC_COVID_ACTUAL_PREVALENCE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "true",
+				"lookupfield": "codice_regione",
+				"lookuptonumber": "true",
 				"symbols": [
 					"circle"],
 				"label": [
@@ -123,14 +156,15 @@
 					"#F28E2B"],
 				"linewidth": "1",
 				"titlefield": "denominazione_regione",
+				"nodatacolor": "rgba(255,255,255,0.3)",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"fadenegative": "1",
 				"centerpart": "max",
 				"clipparts": "10",
 				"evidence": "isolate_gray",
-				"title": "COVID-19<br>totale ospedalizati e la percentuale in terapia intensiva",
-				"snippet": "aggiornato al 2020-11-03T17:00:00"
+				"title": "COVID-19<br>percentuale di persone ospedalizzati in terapia intensiva ",
+				"snippet": "aggiornato al 2020-11-15T17:00:00"
 				}
 			}],
 	"layerMask": {

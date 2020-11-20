@@ -6,7 +6,7 @@
 		"description": "",
 		"thumbnail": "",
 		"about": "<h4>Part of a set of COVID-19 visualizations</4><p>relies on 2 data sources:</p><ul><li><a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository</a><br>by Johns Hopkins CSSE</li><li><a href='http://unwfp.maps.arcgis.com/apps/opsdashboard/index.html#/4f74fc222b7041cd9cc3c52e62af1b8c' target='_blank'>COVID-19 outbreak in Italy</a><br> by United Nations World Food Programme</li></ul>",
-		"created": "Thu Oct 08 2020 12:03:45 GMT+0200 (Ora legale dell’Europa centrale)"
+		"created": "Tue Nov 17 2020 12:22:13 GMT+0100 (Ora standard dell’Europa centrale)"
 		},
 	"map": {
 		"map": "../../maps/svg/maps/generic/mercator.svg",
@@ -47,10 +47,10 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "26.115985925333536",
-			"lng": "7.998046875000001"
+			"lat": "49.38237278700955",
+			"lng": "16.303710937500004"
 			},
-		"zoom": "3"
+		"zoom": "5"
 		},
 	"themes": [{
 			"layer": "World Mercator",

@@ -1,0 +1,128 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Fri Nov 20 2020 17:56:45 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2018/italia_comuni_2018_s_nome.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>COVID-19<br>positivi x 100.000 abitanti</h1><h4>&nbsp;&nbsp;un mese di evoluzione del numero di positivi per 100.000 abitanti</h4><h4>&nbsp;&nbsp;aggregazione per griglia fissa di 100 pixel dello schermo; zoomando si arriva alle curve dei singoli comuni</h4><h4>Fonte: <a href='https://www.comune.palermo.it/statistica.php?sel=9&per=2020' target='_blank'>Comune di Palermo</a><br>Licenza: <a href='' target='_blank'>???</a></h4>",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "37.878647338613455",
+			"lng": "13.734283447265625"
+			},
+		"zoom": "10"
+		},
+	"themes": [{
+			"layer": "Com2018_nome",
+			"field": "19/10/2020|20/10/2020|21/10/2020|22/10/2020|23/10/2020|24/10/2020|25/10/2020|26/10/2020|27/10/2020|28/10/2020|29/10/2020|30/10/2020|31/10/2020|01/11/2020|02/11/2020|03/11/2020|04/11/2020|05/11/2020|06/11/2020|07/11/2020|08/11/2020|09/11/2020|10/11/2020|11/11/2020|12/11/2020|13/11/2020|14/11/2020|15/11/2020|16/11/2020|17/11/2020|18/11/2020|19/11/2020",
+			"field100": "Residenti al 31/12/2020",
+			"style": {
+				"type": "CHART|SYMBOLS|FIXSIZE|PLOT|LOLLIPOP|AREA|LINES|BOX|LONGTITLE|GRID|AGGREGATE|SUM|RECT|GRIDSIZE|SIMPLELEGEND",
+				"colorscheme": [
+					"#0000dd"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "CSSE_COVID_PALERMO_CONFIRMED_SEQUENCE",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/DOVID_19_COMUNI_DELLA_CITTA_METROPOLITANA_DI_PALERMO_19_11_2020.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "../../projects/COVID-19-ODS/process_PALERMO.js",
+				"datacache": "true",
+				"lookupfield": "COMUNE",
+				"symbols": [
+					"circle"],
+				"label": [
+					"test"],
+				"xaxis": [
+					"19/10/2020",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					" ",
+					"19/11/2020"],
+				"units": "",
+				"weights": "1000",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1000",
+				"scale": "0.85",
+				"maxvalue": "2000",
+				"linewidth": "20",
+				"boxopacity": "0.1",
+				"titlefield": "COMUNE",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridwidthpx": "100",
+				"title": "Com2018_nome [$item$]"
+				}
+			}],
+	"layerMask": {
+		"Com2018_nome": {
+			"display": "none"
+			}
+		}
+	}

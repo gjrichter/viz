@@ -1,12 +1,12 @@
 /**
  * data preprocessing 
  * 
- * get the last 56 columns from the data table
+ * get the last 28 columns from the data table
  * and set the theme fields (columns) appropriate
  */
 
 window.ixmaps = window.ixmaps || {};
-window.ixmaps.CSSE_COVID_CONFIRMED_56 = window.ixmaps.CSSE_COVID_CONFIRMED_56 || {};
+window.ixmaps.CSSE_COVID_CONFIRMED_28 = window.ixmaps.CSSE_COVID_CONFIRMED_28 || {};
 
 (function() {
         
@@ -36,25 +36,23 @@ window.ixmaps.CSSE_COVID_CONFIRMED_56 = window.ixmaps.CSSE_COVID_CONFIRMED_56 ||
 		return table;
     };  
 
-	ixmaps.CSSE_COVID_CONFIRMED_56.process = function(data,options) { 
+	ixmaps.CSSE_COVID_CONFIRMED_28.process = function(data,options) { 
 		
 		data = __mean_7(data);
 		
 		// get last 28 columns
-		var last_56 = data.columnNames().slice(-56);
+		var last_28 = data.columnNames().slice(-28);
 		
 		// set as data fields in actual theme
-		options.theme.szFields = last_56.slice().join("|");
-		options.theme.szFieldsA = last_56.slice();
+		options.theme.szFields = last_28.slice().join("|");
+		options.theme.szFieldsA = last_28.slice();
 		
 		// make label ! -1 because of DIFFERENC theme
-		options.theme.szLabelA = last_56.slice(-55);
-		options.theme.szXaxisA = last_56.slice(-55);
+		options.theme.szLabelA = last_28.slice(-27);
+		options.theme.szXaxisA = last_28.slice(-27);
 		for ( var i=1; i < options.theme.szXaxisA.length-1; i++ ){
-			options.theme.szXaxisA[i] = (options.theme.szXaxisA.length-i)%14?" ":new Date(options.theme.szXaxisA[i]).toLocaleDateString();
+			options.theme.szXaxisA[i] = " ";
 		}
-		options.theme.szXaxisA[0] = new Date(options.theme.szXaxisA[0]).toLocaleDateString();
-		options.theme.szXaxisA[options.theme.szXaxisA.length-1] = new Date(options.theme.szXaxisA[options.theme.szXaxisA.length-1]).toLocaleDateString();
      };   
     
 })();
