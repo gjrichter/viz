@@ -2,7 +2,7 @@
 
 Visualizzazione di un dataset pubblicato dalla Città di Palermo sul sito istituzionale.
 
-Il dataset si trova qui: https://www.comune.palermo.it/statistica.php?sel=9&per=2020
+Il dataset si trova qui: [https://www.comune.palermo.it/statistica.php?sel=9&per=2020](https://www.comune.palermo.it/statistica.php?sel=9&per=2020)
 
 nome del documento: **Covid-19 Dati per Comune 20201119**
 
