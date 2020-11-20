@@ -65,7 +65,7 @@
 					"rgb(53,1,30)",
 					"3high",
 					"rgb(238, 122, 159)"],
-				"fillopacity": "0.7",
+				"fillopacity": "0.9",
 				"shadow": "false",
 				"dbtable": "CSSE_COVID_PALERMO_CONFIRMED_CLIP",
 				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/DOVID_19_COMUNI_DELLA_CITTA_METROPOLITANA_DI_PALERMO_19_11_2020.csv",
