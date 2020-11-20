@@ -59,7 +59,7 @@
 			"style": {
 				"type": "CHART|SYMBOLS|FIXSIZE|PLOT|LOLLIPOP|AREA|LINES|BOX|LONGTITLE|GRID|AGGREGATE|SUM|RECT|GRIDSIZE|SIMPLELEGEND",
 				"colorscheme": [
-					"#0000dd"],
+					"#aa0099"],
 				"fillopacity": "0.1",
 				"shadow": "false",
 				"dbtable": "CSSE_COVID_PALERMO_CONFIRMED_SEQUENCE",
