@@ -17,7 +17,7 @@ window.ixmaps.CSSE_COVID_PALERMO_CONFIRMED_SEQUENCE = window.ixmaps.CSSE_COVID_P
 		var records = table.records;
 		for ( var r=0; r<records.length; r++ ){
 			for ( var c=records[r].length-1; c>=4; c--){
-				if (isNaN(Number(records[r][c]))){
+				if ((isNaN(Number(records[r][c]))) || (records[r][c] == "") ){
 					records[r][c] = records[r][c-1]
 				}
 			}
