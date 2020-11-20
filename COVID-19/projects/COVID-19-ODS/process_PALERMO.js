@@ -48,7 +48,7 @@ window.ixmaps.CSSE_COVID_PALERMO_CONFIRMED_SEQUENCE = window.ixmaps.CSSE_COVID_P
 		options.theme.nClipFrames = columns.length;
 		options.theme.nClipFramerate = 24;
 		
-		ixmaps.setTitle("<span style='color:#888888'> data: "+options.theme.szXaxisA[columns.length-1])+"</span>";
+		ixmaps.setTitle("<span style='color:#888888'> dal: "+options.theme.szXaxisA[0]+" al: "+options.theme.szXaxisA[columns.length-1]+"</span>");
      }; 
 	
 	 ixmaps.CSSE_COVID_PALERMO_CONFIRMED_SEQUENCE.process = function(data,options) { 
