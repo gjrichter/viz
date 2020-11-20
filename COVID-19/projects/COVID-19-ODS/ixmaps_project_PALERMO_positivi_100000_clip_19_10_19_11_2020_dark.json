@@ -53,7 +53,7 @@
 		"zoom": "10"
 		},
 	"themes": [{
-			"layer": "Com2018_nome",
+			"layer": "Com2020_pro_com",
 			"field": "",
 			"field100": "Residenti al 31/12/2020",
 			"style": {
@@ -71,7 +71,7 @@
 				"dbtableType": "csv",
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-ODS/process_PALERMO.js",
 				"datacache": "true",
-				"lookupfield": "COMUNE",
+				"lookupfield": "PRO COM",
 				"units": "",
 				"weights": "1000",
 				"refreshtimeout": "0",
