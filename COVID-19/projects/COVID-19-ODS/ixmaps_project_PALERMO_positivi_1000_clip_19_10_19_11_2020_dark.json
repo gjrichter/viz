@@ -57,7 +57,7 @@
 			"field": "",
 			"field100": "Residenti al 31/12/2020",
 			"style": {
-				"type": "GLOW|CHART|BUBBLE|VALUES|CLIP|LOOP",
+				"type": "GLOW|CHART|BUBBLE|VALUES|CLIP|LOOP|PAUSE",
 				"colorscheme": [
 					"14",
 					"#FEE5D9",
