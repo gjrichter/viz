@@ -12,7 +12,7 @@
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_pro_com_Sicilia.svgz",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
-		"legend": "<h1>COVID-19<br>positivi giorno per giorno</h1><h4>&nbsp;&nbsp;<b>un mese</b> di <b>evoluzione</b> del numero di positivi</h4><h4>&nbsp;&nbsp;<b>aggregato</b> pergriglia fissa di 150 pixel dello schermo e <b><a href='javascript:ixmaps.map().changeThemeStyle(\"curves\",\"type:RELOCATE\",\"toggle\")'>reposizionato</a></b> sul <b>baricentro dei comuni</b> aggregati; <b>zoomando</b> si arriva alle curve dei <b>singoli comuni</b></h4><h4>Fonte: <a href='https://www.comune.palermo.it/statistica.php?sel=9&per=2020' target='_blank'>Comune di Palermo</a><br>Licenza: <a href='' target='_blank'>???</a></h4>",
+		"legend": "<h1>COVID-19<br>positivi giorno per giorno</h1><h4>&nbsp;&nbsp;<b>un mese</b> di <b>evoluzione</b> del numero di positivi</h4><h4>&nbsp;&nbsp;<b>aggregato</b> pergriglia fissa di 150 pixel dello schermo e <b><a href='javascript:ixmaps.map().changeThemeStyle(\"curves\",\"type:RELOCATE\",\"toggle\")'>reposizionato</a></b> sul <b>baricentro dei comuni</b> aggregati; <b>zoomando</b> si arriva alle curve dei <b>singoli comuni</b></h4><h4>Fonte: <a href='https://www.comune.palermo.it/statistica.php?sel=9&per=2020' target='_blank'>Comune di Palermo</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC BY 4.0</a></h4>",
 		"item": "html",
 		"scaleParam": {
 			"normalSizeScale": "1528452"
