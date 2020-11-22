@@ -58,7 +58,7 @@
 			"field": "",
 			"field100": "Residenti al 31/12/2020",
 			"style": {
-				"type": "CHOROPLETH|CLIP|LOOP|SIMPLELEGEND",
+				"type": "CHOROPLETH|CLIP|LOOP|SIMPLELEGEND|PAUSE",
 				"colorscheme": [
 					"15",
 					"rgb(254,236,226)",
