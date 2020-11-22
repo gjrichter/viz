@@ -13,6 +13,8 @@ nome del documento: **Covid-19 Dati per Comune 20201119**
 La prima visualizzazione mostrano i **valori assoluti** dei attualmente positivi per la **Città  Metropolitana di Palermo** dal **19.10.2020** al **19.11.2020**.
 
 > I valori comunali sono **aggregati** per una griglia di 150 pixel (dello schermo) ma **riposizionati** **sul baricentro** dei comuni aggregati ; con il zoomare nella mappa si arriva ad una visualizzazione del singolo comune.
+>
+> ***Nota***: Il riposizionamento sul baricentro può essere attivato/disattivato nella leggenda
 
 codice per includere la mappa in una pagina HTML:
 
