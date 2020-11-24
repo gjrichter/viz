@@ -1,0 +1,99 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Tue Nov 03 2020 21:29:15 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/regioni_2019/italia_regioni_2019_s_cod_reg_xx.svgz",
+		"attribution": "",
+		"basemap": "white",
+		"legend": "",
+		"item": "",
+		"mode":"info",
+		"scaleParam": {
+			"lineScaling": "23.67696884508345",
+			"labelScaling": "2.3703703703703702",
+			"normalSizeScale": "13841043"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "42.282221877329024",
+			"lng": "12.871337890625002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "Reg2019_s_cod_reg|Prov2019_g_cod_prov",
+			"field": "casi_testati",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|QUANTILE|VALUES|DTEXT|SIMPLELEGEND",
+				"colorscheme": [
+					"15",
+					"rgb(233, 242, 238)",
+					"rgb(46, 142, 139)",
+					"3colors",
+					"rgb(131, 198, 203)"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"filter": "WHERE data = \"2020-11-03T17:00:00\"",
+				"dbtable": "PCM_DPC_COVID_ACTUAL_PREVALENCE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "true",
+				"lookupfield": "codice_regione",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"units": "%",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"sizefield": "totale_positivi",
+				"textcolor": "black",
+				"linecolor": [
+					"#F28E2B"],
+				"linewidth": "1",
+				"titlefield": "denominazione_regione",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "COVID-19<br>Casi Testati in % della popolazione",
+				"snippet": "aggiornato al 2020-11-03T17:00:00"
+				}
+			}],
+	"layerMask": {
+		}
+	}

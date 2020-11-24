@@ -1,0 +1,137 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sat Nov 07 2020 19:26:46 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/regioni_2019/italia_regioni_2019_s_cod_reg_xx.svgz",
+		"attribution": "",
+		"basemap": "CloudMade - white",
+		"legend": "<h1>COVID-19<br>positivi e ricoverati x 100.000 abitanti</h1><h4>&nbsp;&nbsp;il <b>colore di di una regione</b> corrisponde alla incidenza dei casi positivi (numero casi per 100.000 abitanti)</h4><h4>&nbsp;&nbsp;le <b>torte</b> visualizzano l'incidenza dei ricoverati e delle persone in terapie intensive, sempre per 100.000 abitanti</h4>",
+		"item": "",
+		"scaleParam": {
+			"lineScaling": "23.67696884508345",
+			"labelScaling": "2.3703703703703702",
+			"normalSizeScale": "13841043"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panhidden":"false"
+			},
+		"center": {
+			"lat": "42.282221877329024",
+			"lng": "12.871337890625002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "totale_ospedalizzati_100000|terapia_intensiva_100000",
+			"field100": "",
+			"style": {
+				"type": "CHART|PIE|SIZE|SIZE|VALUES|VALUEBACKGROUND",
+				"colorscheme": [
+					"#00aacc",
+					"#F28E2B"],
+				"fillopacity": "1",
+				"shadow": "true",
+				"filter": "WHERE data = \"2020-11-07T17:00:00\"",
+				"dbtable": "PCM_DPC_COVID_ACTUAL_PREVALENCE_100000",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC_extra/dataprovider_PCM_DPC_COVID_Regioni.js",
+				"datacache": "true",
+				"lookupfield": "lat|long",
+				"symbols": [
+					"circle"],
+				"label": [
+					"terapia intensiva"],
+				"units": "",
+				"units100": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "100",
+				"scale": "1.5",
+				"sizefield": "totale_ospedalizzati_100000",
+				"textcolor": "white",
+				"linewidth": "0.5",
+				"titlefield": "denominazione_regione",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"clipparts": "10",
+				"evidence": "isolate_gray",
+				"title": "COVID-19<br>totale ospedalizati e la percentuale in terapia intensiva",
+				"snippet": "aggiornato al 2020-11-07T17:00:00"
+				}
+			},{
+			"layer": "Reg2019_s_cod_reg|Prov2019_g_cod_prov",
+			"field": "totale_positivi",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|QUANTILE|T",
+				"colorscheme": [
+					"15",
+					"#FEE5D9",
+					"#A50F15",
+					"3colors",
+					"#FB6A4A"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"filter": "WHERE data = \"2020-11-07T17:00:00\"",
+				"dbtable": "PCM_DPC_COVID_ACTUAL_PREVALENCE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "true",
+				"lookupfield": "codice_regione",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"sizefield": "totale_positivi",
+				"linecolor": [
+					"#F28E2B"],
+				"linewidth": "1",
+				"titlefield": "denominazione_regione",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "COVID-19<br>Casi Testati in % della popolazione",
+				"snippet": "aggiornato al 2020-11-07T17:00:00"
+				}
+			}],
+	"layerMask": {
+		}
+	}

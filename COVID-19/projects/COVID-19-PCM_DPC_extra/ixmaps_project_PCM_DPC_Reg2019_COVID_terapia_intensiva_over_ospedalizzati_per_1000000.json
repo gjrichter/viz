@@ -1,0 +1,179 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Nov 15 2020 19:29:59 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/regioni_2019/italia_regioni_2019_s_cod_reg_xx.svgz",
+		"attribution": "",
+		"basemap": "white",
+		"legend": "<h1><b>COVID-19</b></h1><h2><span style='color:#4A90E1'><b>Ospedalizzati</b></span> per 100.000 abitanti e percentuale in <span style='color:#F28E2B'><b>terapia intensiva</b></span></h2><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4>",
+		"item": "",
+		"layout": "minimal",
+		"scaleParam": {
+			"lineScaling": "23.67696884508345",
+			"labelScaling": "2.3703703703703702",
+			"normalSizeScale": "13841043"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "42.282221877329024",
+			"lng": "12.871337890625002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "Reg2019_s_cod_reg|Prov2019_g_cod_prov",
+			"field": "totale_ospedalizzati",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|QUANTILE|SIMPLELEGEND|ITEMDATA",
+				"colorscheme": [
+					"15",
+					"#D2E3F4",
+					"#104482",
+					"3colors",
+					"#4A90E1"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"filter": "WHERE data = \"2020-11-15T17:00:00\"",
+				"dbtable": "PCM_DPC_COVID_ACTUAL_PREVALENCE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "true",
+				"lookupfield": "codice_regione",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"units": "/ 100.000",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"sizefield": "totale_positivi",
+				"linecolor": [
+					"#F28E2B"],
+				"linewidth": "1",
+				"titlefield": "denominazione_regione",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "COVID-19<br>Totale ospedalizzati per 100.000 abitanti",
+				"snippet": "aggiornato al 2020-11-15T17:00:00"
+				}
+			},{
+			"layer": "Reg2019_s_cod_reg|Prov2019_g_cod_prov",
+			"field": "totale_ospedalizzati",
+			"field100": "",
+			"style": {
+				"type": "CHART|LABEL|TEXTONLY|VALUES|SIMPLELEGEND|ITEMDATA",
+				"colorscheme": [
+					"15",
+					"#D2E3F4",
+					"#104482",
+					"3colors",
+					"#4A90E1"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"align":"below",
+				"filter": "WHERE data = \"2020-11-15T17:00:00\"",
+				"dbtable": "PCM_DPC_COVID_ACTUAL_PREVALENCE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "true",
+				"lookupfield": "codice_regione",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"units": "/ 100.000",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"normalsizevalue": "150",
+				"textcolor":"white",
+				"linecolor": [
+					"#F28E2B"],
+				"linewidth": "1",
+				"titlefield": "denominazione_regione",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "COVID-19<br>Totale ospedalizzati per 100.000 abitanti",
+				"snippet": "aggiornato al 2020-11-15T17:00:00"
+				}
+			},{
+			"layer": "Reg2019_s_cod_reg|Prov2019_g_cod_prov",
+			"field": "terapia_intensiva",
+			"field100": "totale_ospedalizzati",
+			"style": {
+				"type": "CHART|PIE|AUTOCOMPLETE|SIZE|VALUES|COMPACTLEGEND|COUNT",
+				"colorscheme": [
+					"#F28E2B"],
+				"fillopacity": "1",
+				"shadow": "true",
+				"filter": "WHERE data = \"2020-11-15T17:00:00\"",
+				"dbtable": "PCM_DPC_COVID_ACTUAL_PREVALENCE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "true",
+				"lookupfield": "codice_regione",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"label": [
+					"terapia intensiva"],
+				"units": "%",
+				"units100": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "35",
+				"scale": "1",
+				"sizefield": "totale_ospedalizzati",
+				"textcolor": "#F28E2B",
+				"linecolor": [
+					"#4A90E1"],
+				"linewidth": "1",
+				"titlefield": "denominazione_regione",
+				"nodatacolor": "rgba(65, 133, 211,0.2)",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"clipparts": "10",
+				"evidence": "isolate_gray",
+				"title": "COVID-19<br>persone ospedalizzati per 100.000 abitanti e percentuale in terapia intensiva ",
+				"snippet": "aggiornato al 2020-11-15T17:00:00"
+				}
+			}],
+	"layerMask": {
+		}
+	}
