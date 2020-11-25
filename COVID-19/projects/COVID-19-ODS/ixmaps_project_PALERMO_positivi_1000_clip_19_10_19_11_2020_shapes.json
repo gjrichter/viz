@@ -68,7 +68,7 @@
 				"fillopacity": "0.9",
 				"shadow": "false",
 				"dbtable": "CSSE_COVID_PALERMO_CONFIRMED_CLIP",
-				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/DOVID_19_COMUNI_DELLA_CITTA_METROPOLITANA_DI_PALERMO_19_11_2020.csv",
+				"dbtableUrl": "https://raw.githubusercontent.com/opendatasicilia/covidComuniSicilia/94cf6dd6f6139392b743b0193dac9aac7de97bc2/082053/output/positiviProvinciaPalermo.csv",
 				"dbtableType": "csv",
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-ODS/process_PALERMO.js",
 				"datacache": "true",
