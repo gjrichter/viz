@@ -4,11 +4,9 @@ Visualizzazione di un **dataset** pubblicato dalla **Città di Palerm**o sul sit
 
 Il dataset si trova qui: [https://www.comune.palermo.it/statistica.php?sel=9&per=2020](https://www.comune.palermo.it/statistica.php?sel=9&per=2020)
 
-nome del documento: **Covid-19 Dati per Comune 20201119**
-
 > 
 >
-> Le **visualizzazioni si collegano** direttamente ai **dati pubblicati da onData** su -> [Github](https://github.com/opendatasicilia/covidComuniSicilia/blob/main/082053/output/positiviProvinciaPalermo.csv) 
+> Le **visualizzazioni **usano dati elaborati da **onData** sulla base delle 'PUBBLICAZIONI STATISTICHE' della città di Palermo e **pubblicati qui** su -> [Github](https://github.com/opendatasicilia/covidComuniSicilia/blob/main/082053/output/positiviProvinciaPalermo.csv) 
 >
 > 
 
