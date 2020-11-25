@@ -56,7 +56,7 @@
 	"themes": [{
 			"layer": "Com2020_pro_com",
 			"field": "",
-			"field100": "Residenti al 31/12/2020",
+			"field100": "Residenti al 31/12/2019",
 			"style": {
 				"type": "CHOROPLETH|CLIP|LOOP|SIMPLELEGEND|PAUSE",
 				"colorscheme": [
