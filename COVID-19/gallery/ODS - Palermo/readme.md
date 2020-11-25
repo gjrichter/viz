@@ -6,9 +6,15 @@ Il dataset si trova qui: [https://www.comune.palermo.it/statistica.php?sel=9&per
 
 nome del documento: **Covid-19 Dati per Comune 20201119**
 
+> 
+>
+> Le **visualizzazioni si collegano** direttamente ai **dati pubblicati da onData** su -> [Github](https://github.com/opendatasicilia/covidComuniSicilia/blob/main/082053/output/positiviProvinciaPalermo.csv) 
+>
+> 
 
 
-## l'evoluzione del numero di positivi dal **19.10.2020** al **19.11.2020**
+
+## l'evoluzione del numero di positivi dal **19.10.2020** al 24.11.2020**
 
 La prima visualizzazione mostrano i **valori assoluti** dei attualmente positivi per la **Città  Metropolitana di Palermo** dal **19.10.2020** al **19.11.2020**.
 
