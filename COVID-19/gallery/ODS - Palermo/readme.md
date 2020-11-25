@@ -14,7 +14,7 @@ Il dataset si trova qui: [https://www.comune.palermo.it/statistica.php?sel=9&per
 
 ## l'evoluzione del numero di positivi dal **19.10.2020** al 24.11.2020**
 
-La prima visualizzazione mostrano i **valori assoluti** dei attualmente positivi per la **Città  Metropolitana di Palermo** dal **19.10.2020** al **19.11.2020**.
+La prima visualizzazione mostrano i **valori assoluti** dei attualmente positivi per la **Città  Metropolitana di Palermo** 
 
 > I valori comunali sono **aggregati** per una griglia di 150 pixel (dello schermo) ma **riposizionati** **sul baricentro** dei comuni aggregati ; con il zoomare nella mappa si arriva ad una visualizzazione del singolo comune.
 >
@@ -34,7 +34,7 @@ codice per includere la mappa in una pagina HTML:
 
 ## numero di positivi per 1000 abitanti
 
-La visualizzazione consiste in curve che mostrano la **prevalenza** dei attualmente positivi (positivi per 1000 abitanti) per **ogn**i **comune** della **Città  Metropolitana di Palermo** dal **19.10.2020** al **19.11.2020**.
+La visualizzazione consiste in curve che mostrano la **prevalenza** dei attualmente positivi (positivi per 1000 abitanti) per **ogn**i **comune** della **Città  Metropolitana di Palermo**
 
 > I valori comunali sono aggregati per una griglia di 100 pixel (dello schermo); cosi con il zoomare nella mappa si arriva ad una visualizzazione meno aggregata fino al livello di ogni comune.
 >
@@ -53,7 +53,7 @@ codice per includere la mappa in una pagina HTML:
 
 ## Visualizzazioni con sequenze temporali
 
-Sequenza temporale della **prevalenza** dei attualmente positivi (positivi per 100.000 abitanti) per **ogn**i **comune** della **Città  Metropolitana di Palermo** dal **19.10.2020** al **19.11.2020**.
+Sequenza temporale della **prevalenza** dei attualmente positivi (positivi per 100.000 abitanti) per **ogn**i **comune** della **Città  Metropolitana di Palermo** 
 
 > La visualizzazione funziona simile a un video clip; premere sul simbolo 'Play' per cominciare la sequenza; si può mettere in pausa e spostare il punto attuale manualmente.
 
