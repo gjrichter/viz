@@ -4365,10 +4365,10 @@ window.ixmaps = window.ixmaps || {};
 					if (columns[i] == "1/10/2020"){
 					  szXaxisA.push("Okt");
 					}else
-					if (columns[i] == "1/10/2020"){
+					if (columns[i] == "1/11/2020"){
 					  szXaxisA.push("Nov");
 					}else
-					if (columns[i] == "1/10/2020"){
+					if (columns[i] == "1/12/2020"){
 					  szXaxisA.push("Dec");
 					}else{
 					  szXaxisA.push(" ");
@@ -4520,10 +4520,10 @@ window.ixmaps = window.ixmaps || {};
 					if (columns[i] == "1/10/2020"){
 					  szXaxisA.push("Okt");
 					}else
-					if (columns[i] == "1/10/2020"){
+					if (columns[i] == "1/11/2020"){
 					  szXaxisA.push("Nov");
 					}else
-					if (columns[i] == "1/10/2020"){
+					if (columns[i] == "1/12/2020"){
 					  szXaxisA.push("Dec");
 					}else{
 					  szXaxisA.push(" ");
@@ -4677,10 +4677,10 @@ window.ixmaps = window.ixmaps || {};
 					if (columns[i] == "1/10/2020"){
 					  szXaxisA.push("Okt");
 					}else
-					if (columns[i] == "1/10/2020"){
+					if (columns[i] == "1/11/2020"){
 					  szXaxisA.push("Nov");
 					}else
-					if (columns[i] == "1/10/2020"){
+					if (columns[i] == "1/12/2020"){
 					  szXaxisA.push("Dec");
 					}else{
 					  szXaxisA.push(" ");
@@ -4819,10 +4819,10 @@ window.ixmaps = window.ixmaps || {};
 					if (columns[i] == "1/10/2020"){
 					  szXaxisA.push("Okt");
 					}else
-					if (columns[i] == "1/10/2020"){
+					if (columns[i] == "1/11/2020"){
 					  szXaxisA.push("Nov");
 					}else
-					if (columns[i] == "1/10/2020"){
+					if (columns[i] == "1/12/2020"){
 					  szXaxisA.push("Dec");
 					}else{
 					  szXaxisA.push(" ");
