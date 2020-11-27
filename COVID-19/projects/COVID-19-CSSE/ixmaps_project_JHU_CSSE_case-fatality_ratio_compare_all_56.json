@@ -54,10 +54,10 @@
 		},
 	"themes": [{
 			"layer": "World Mercator",
-			"field": "Case-Fatality_Ratio.2|Case-Fatality_Ratio_56",
+			"field": "Case-Fatality_Ratio|Case-Fatality_Ratio_56",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AGGREGATE|RECT|DTEXT|VALUEBACKGROUND|MEAN|SIZE",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AGGREGATE|RECT|DTEXT|VALUEBACKGROUND|VALUES|INLINETEXT|MEAN|SIZE",
 				"colorscheme": [
 					"rgba(70, 70, 70,0.3)",
 					"rgba(70, 70, 70,0.9)"],
@@ -82,8 +82,8 @@
 				"minvalue": "0",
 				"linewidth": "1.5",
 				"titlefield": "Country_Region",
-				"valueupper": "1:5000000",
-				"valuescale": "1",
+				"valueupper": "1:20000000",
+				"valuescale": "1.25",
 				"valuedecimals": "1",
 				"fadenegative": "0.1",
 				"gridwidthpx": "50",
