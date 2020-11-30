@@ -4100,6 +4100,153 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 				
+	ixmaps.PCM_DPC_COVID_SEQUENCE_MEAN_7_RECOVERED_INCIDENCE = function (theme, options) {
+		
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+
+			function (dataA) {
+
+				// get population lookup for incidence
+				var dataPop = dataA[1];
+				// correct region names in population table
+				dataPop.column("Territorio").map(function (value) {
+					if (value == "Provincia Autonoma Bolzano / Bozen") {
+						return "P.A. Bolzano";
+					} else
+					if (value == "Provincia Autonoma Trento") {
+						return "P.A. Trento";
+					} else {
+						return value.split(" /")[0].replace(/-/, " ");
+					}
+				});
+				var pop = [];
+				var terrA = dataPop.column("Territorio").values();
+				var popA = dataPop.column("Value").values();
+				for (var i = 0; i < terrA.length; i++) {
+					pop[terrA[i]] = popA[i];
+				}
+
+				var pivot = __get_recovered(dataA[0], options);
+			
+				pivot.column("Total").remove();
+				var indexName = pivot.column("denominazione_regione").index;
+
+				// make moving average of 7 days
+				var records = pivot.records;
+				for (var r=0; r<records.length;r++){
+					for (var c=records[r].length-1; c>=10;c--){
+						records[r][c] = (Number(records[r][c])+
+										 Number(records[r][c-1])+
+										 Number(records[r][c-2])+
+										 Number(records[r][c-3])+
+										 Number(records[r][c-4])+
+										 Number(records[r][c-5])+
+										 Number(records[r][c-6])
+										)/7;
+						records[r][c] =  (records[r][c]/pop[records[r][indexName].replace(/\-/," ")]*100000);
+					}
+				}
+				
+					// get the columns with date 
+				var columns = pivot.columnNames();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+			
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+
+				var last = columns.length - 1;
+
+				for ( var i=0; i<columns.length; i++ ){
+					pivot.column(columns[i]).rename(new Date(columns[i]).toLocaleDateString());
+					columns[i] = new Date(columns[i]).toLocaleDateString();	
+				}
+
+				// and configure the theme
+				theme.szFields = columns.slice().join('|');
+				theme.szFieldsA = columns.slice();
+
+				// and set the label (for difference 1 less)
+				columns.shift();
+				theme.szLabelA = columns.slice();
+
+				var szXaxisA = [];
+				for ( var i =0; i<columns.length; i++ ){
+					if (columns[i] == "1/3/2020"){
+					  szXaxisA.push("mar");
+					}else
+					if (columns[i] == "1/4/2020"){
+					  szXaxisA.push("apr");
+					}else
+					if (columns[i] == "1/5/2020"){
+					  szXaxisA.push("mag");
+					}else
+					if (columns[i] == "1/6/2020"){
+					  szXaxisA.push("giu");
+					}else
+					if (columns[i] == "1/7/2020"){
+					  szXaxisA.push("lug");
+					}else
+					if (columns[i] == "1/8/2020"){
+					  szXaxisA.push("ago");
+					}else
+					if (columns[i] == "1/9/2020"){
+					  szXaxisA.push("set");
+					}else
+					if (columns[i] == "1/10/2020"){
+					  szXaxisA.push("ott");
+					}else
+					if (columns[i] == "1/11/2020"){
+					  szXaxisA.push("nov");
+					}else
+					if (columns[i] == "1/12/2020"){
+					  szXaxisA.push("dic");
+					}else{
+					  szXaxisA.push(" ");
+					}
+				}
+
+				//szXaxisA[0] = columns[0];
+				//szXaxisA[last - 1] = columns[last - 1];
+				theme.szXaxisA = szXaxisA;
+			
+				// set colors = columns 
+				theme.origColorScheme[0] = columns.length;
+
+				theme.szSnippet = "dal " + columns[0] + " al " + columns[last - 1];
+				ixmaps.setTitle("<f2 style='color:#888888;background-color:rgba(255,255,255,0.1);padding:0.3em 0.5em;border:#888888 solid 0.5px;border-radius:0.2em'>aggiornato: "+(columns[last - 1])+"</f2>");
+
+		
+				// ----------------------------------------------------------------------------------------------- 
+				// deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(pivot, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			});
+
+	};
+	
 	ixmaps.PCM_DPC_COVID_SEQUENCE_MEAN_7_HOSPITALIZED_INCIDENCE = function (theme, options) {
 		
 		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
