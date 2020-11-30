@@ -158,6 +158,82 @@
 				"title": "Persone ricoverate per 100.000 abitanti - media mobile 7 giorno",
 				"snippet": "dal 2/3/2020 al 29/11/2020"
 				}
+			},{
+			"layer": "Prov2019_nome",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|LABEL|SIGN|VALUES|SIZEP4|COMPACTLEGEND",
+				"colorscheme": [
+					"rgb(198, 64, 45)"],
+				"fillopacity": "0.0005",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_LAST_NUOVI",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "false",
+				"itemfield": "codice_regione",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"symbols": [
+					"label"],
+				"units": "",
+				"align": "above|2right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "200",
+				"scale": "1",
+				"valuefield": "2020-10-31T17:00:00",
+				"sizefield": "2020-10-31T17:00:00",
+				"dopacitypow": "1",
+				"dopacityscale": "5",
+				"textcolor": "rgb(198, 64, 45)",
+				"linecolor": [
+					"none"],
+				"linewidth": "0.6",
+				"titlefield": "denominazione_regione",
+				"valuescale": "1.1",
+				"valuedecimals": "0",
+				"title": "Tampone/casi ratio",
+				"snippet": "aggiornato al 2020-03-28T17:00:00"
+				}
+			},{
+			"layer": "Prov2019_nome",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|LABEL|SIGN|VALUES|SIZEP4|COMPACTLEGEND",
+				"colorscheme": [
+					"rgba(66, 182, 87,1)"],
+				"fillopacity": "0.0005",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_LAST_RECOVERED_DIFF",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "false",
+				"itemfield": "codice_regione",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"symbols": [
+					"label"],
+				"units": "",
+				"align": "center|2right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "200",
+				"scale": "1",
+				"valuefield": "diff",
+				"sizefield": "diff",
+				"dopacitypow": "1",
+				"dopacityscale": "5",
+				"textcolor": "rgba(96, 152, 97,1)",
+				"linecolor": [
+					"none"],
+				"linewidth": "0.6",
+				"titlefield": "denominazione_regione",
+				"valuescale": "1.1",
+				"valuedecimals": "0",
+				"title": "Tampone/casi ratio",
+				"snippet": "aggiornato al 2020-03-28T17:00:00"
+				}
 			}],
 	"layerMask": {
 		"Prov2019_nome": {
