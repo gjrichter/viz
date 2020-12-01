@@ -1,0 +1,120 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Tue Mar 24 2020 11:56:31 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>COVID-19</h1><h2>Casi rilevati in ambito scolastico</h2> in percentuale del totale di casi positivi per Provincia e per il periodo dal 15. settembre al 31. ottobre</h2><h4> Confronto dei dati ottenuti da WIRED e terminati per il 31 ottobre dei casi COVID-19 rilevati in ambito scolastico con i casi totali dello stesso periodo pubblicati dalla Protezione Civile</h4>",
+		"item": "",
+		"scaleParam": {
+			"lineScaling": "4.213991769547325",
+			"normalSizeScale": "4638029"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "44.308126684886126",
+			"lng": "10.772094726562502"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "Prov2019_nome",
+			"field": "incidenza.1",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|QUANTILE|DOPACITYMAX|NOLEGEND",
+				"colorscheme": [
+					"7",
+					"#FFaaaa",
+					"#ff0000"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_1509_3110_INCID_1000",
+				"dbtableType": "ext",
+				"dbtableExt":"../../projects/COVID-19-Scuola/databroker_PCM_DPC_COVID_Province.js",
+				"datacache": "false",
+				"lookupfield": "codice_provincia.1",
+				"lookuptonumber": "true",
+				"units": "casi in più",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"dopacitypow": "2",
+				"dopacityscale": "1",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"valuesupper":"1:1000000",
+				"titlefield":"denominazione_provincia.1",
+				"title": "Casi totali",
+				"snippet": "aggiornato al 2020-03-05"
+				}
+			},{
+			"layer": "Prov2019_nome",
+			"field": "casi.2",
+			"field100": "casi.1",
+			"style": {
+				"type": "CHART|SYMBOL|VALUES|SIZE|COMPACTLEGEND",
+				"colorscheme": [
+					"white"],
+				"fillopacity": "0.3",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_1509_3110_INCID_1000",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-Scuola/databroker_PCM_DPC_COVID_Province.js",
+				"datacache": "false",
+				"lookupfield": "lat.1|long.1",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"normalsizevalue":"5",
+				"textcolor": "#aa2200",
+				"linecolor": [
+					"#880000"],
+				"titlefield": "denominazione_provincia.1",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "nuovi casi 24 ore",
+				"snippet": "aggiornato al 2020-03-05"
+				}
+			}],
+	"layerMask": {
+		}
+	}

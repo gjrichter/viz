@@ -1,0 +1,128 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Tue Dec 01 2020 20:08:34 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>COVID-19</h1><h2><b>Casi</b> rilevati in <b>ambito scolastico</b> in <b>percentuale</b> del <b>totale di casi</b> positivi <b>per Provincia</b> e per il periodo dal <b>15. settembre</b> al <b>31. ottobre</b></h2><h4> Confronto dei <b>dati ottenuti da WIRED</b> dei casi COVID-19 rilevati in ambito scolastico fino al 31 ottobre con i casi totali dello stesso periodo (15.set - 31. ott) pubblicati dalla Protezione Civile</h4><h4>Il <b>diametro</b> delle torte rappresenta <b>l'incidenza dei casi totali</b> (casi per 1000 abitanti).<br> La <b>fetta rossa</b> rappresenta la <b>percentuale dei casi in ambito scolastico</b> rispetto al totale di casi dello stesso periodo.</h4><h4><b>Il numero di alunni del anno scolastico 2019/2020</b> viene quantificato dal MIUR come <b>7.599.259</b>; in percentuale alla popolazione totale ca. <b>13 %</b></h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a>, <a href='https://www.wired.it/attualita/scuola/2020/11/30/scuola-coronavirus-contagi-italia/' target='_blank'>WIRED</a> <br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4>",
+		"item": "",
+		"scaleParam": {
+			"lineScaling": "4.213991769547325",
+			"objectScaling": "0.75",
+			"normalSizeScale": "4638029"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.79092385423621",
+			"lng": "12.810058593750002"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "Prov2019_nome",
+			"field": "incidenza.1",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|QUANTILE|DOPACITYMAX|NOLEGEND",
+				"colorscheme": [
+					"7",
+					"#FFaaaa",
+					"#ff0000"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_1509_3110_INCID_1000",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Scuola/databroker_PCM_DPC_COVID_Province.js",
+				"datacache": "false",
+				"lookupfield": "codice_provincia.1",
+				"lookuptonumber": "true",
+				"units": "casi in più",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"dopacitypow": "2",
+				"dopacityscale": "1",
+				"titlefield": "denominazione_provincia.1",
+				"valueupper": "1:1000000",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "Casi totali",
+				"snippet": "aggiornato al 2020-03-05"
+				}
+			},{
+			"layer": "Prov2019_nome",
+			"field": "incidenza.2",
+			"field100": "incidenza.1",
+			"style": {
+				"type": "CHART|PIE|AUTOCOMPLETE|SIZE|VALUES|SIZE",
+				"colorscheme": [
+					"1",
+					"#ff0000",
+					"#dd0000",
+					"dynamic",
+					"cold"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_1509_3110_INCID_1000",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Scuola/databroker_PCM_DPC_COVID_Province.js",
+				"datacache": "false",
+				"lookupfield": "lat.1|long.1",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "2",
+				"scale": "1",
+				"sizefield": "incidenza.1",
+				"textcolor": "#880000",
+				"linecolor": [
+					"#880000"],
+				"titlefield": "denominazione_provincia.1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"centerpart": "max",
+				"clipparts": "10",
+				"title": "nuovi casi 24 ore",
+				"snippet": "aggiornato al 2020-03-05"
+				}
+			}],
+	"layerMask": {
+		}
+	}
