@@ -81,8 +81,7 @@
 				"valueupper": "1:1000000",
 				"valuescale": "1",
 				"valuedecimals": "1",
-				"title": "Casi totali",
-				"snippet": "aggiornato al 2020-03-05"
+				"title": "Incidenza del periodo 15.09 - 31.10"
 				}
 			},{
 			"layer": "Prov2019_nome",
@@ -119,8 +118,7 @@
 				"valuedecimals": "0",
 				"centerpart": "max",
 				"clipparts": "10",
-				"title": "nuovi casi 24 ore",
-				"snippet": "aggiornato al 2020-03-05"
+				"title": "Percentuale del ambito scolastico all'incidenza nel periodo dal 15.09 al 31.10 2020"
 				}
 			}],
 	"layerMask": {
