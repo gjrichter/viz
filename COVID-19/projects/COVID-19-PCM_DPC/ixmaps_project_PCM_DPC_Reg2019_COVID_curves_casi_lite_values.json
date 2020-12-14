@@ -83,7 +83,7 @@
 				"refreshtimeout": "0",
 				"normalsizevalue": "0.8",
 				"scale": "0.05",
-				"rangescale": "0.6",
+				"rangescale": "0.5",
 				"minvalue": "0",
 				"maxvalue": "auto",
 				"textcolor": "#880000",
