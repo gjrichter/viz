@@ -62,7 +62,7 @@ var __formatValue = function (nValue, nPrecision, szFlag) {
 				szDecimals += '0';
 			}
 		} else {
-			szDecimals = "";
+			szDecimals = "00000000".substr(0,nPrecision);
 		}
 		var szReturn = nValue < 0 ? "-" : "";
 		var szLeading = "";
@@ -395,7 +395,7 @@ $(function () {
 			"tamponi",
 			"nuovi_positivi",
 			"casi_testati",
-			"ratio"
+			"tasso_di_positività"
 		]
 		var colorA = [
 			"198, 64, 45",
@@ -539,9 +539,10 @@ $(function () {
 					max = Math.ceil(Number(last_diff)/500)*1000;
 				}
 				
-				if (feed == "ratio") {
+				if (feed == "tasso_di_positività") {
 					var valuesP = mydata.column('nuovi_positivi').values();
-					var valuesT = mydata.column('casi_testati').values();
+					//var valuesT = mydata.column('casi_testati').values();
+					var valuesT = mydata.column('tamponi').values();
 					recordsA = [];
 					for ( var i=0; i<valuesP.length; i++ ){
 						var ratio = (Number(valuesP[i])/(Number(valuesT[i])-Number(valuesT[i-1]))*100);
@@ -562,7 +563,7 @@ $(function () {
 				actvalue = recordsA[last];
 				
 				var fMean3 = true;		
-				if (feed == "ratio"){
+				if (feed == "tasso_di_positività"){
 					var lastdiff = recordsA[last-0];
 					var beforediff = recordsA[last-1];
 					recordsA.pop();
@@ -671,7 +672,7 @@ $(function () {
 					nPercent = ((nPercent>0)?"+":"") + nPercent;
 				var chart = "<div style='width:80%;margin-top:2px;margin-bottom:10px'><canvas id='" + idCard + "-line-chart'></canvas></div>";
 
-				if (feed == "ratio") {
+				if (feed == "tasso_di_positività") {
 					$("#dynamic-" + idCard).html(
 					"<div><span class='pull-left' style='margin-top:0.2em;padding:0 0.3em;color:white;background:rgba(" + color + ",1);border-radius:0.1em')>" + __formatValue(actvalue, 1) + " %</span><br><span class='pull-left' style='font-size:0.7em;padding-top:0em;'><span style='font-size:0.5em;color:#aaaaaa'>("+ (beforediff>0?"":"") + __formatValue((beforediff), 1) + ")</span>  <span style='font-size:0.6em;color:rgba(" + color + ",1)'>"+ (lastdiff>0?"":"") + __formatValue((lastdiff), 1) + "</span> <span><i class='icon fa " + szArrow + "' style='color:" + szArrowColor + ";font-size:0.5em'></i> <span style='font-size:0.5em'>"+__formatValue((nPercent), 1)+"%</span></div></div>" + ((feed != "xxtamponi") ? chart : ""));
 				} else
@@ -2685,28 +2686,14 @@ $(function () {
 		var dateA = pivot.column("data").values();
 		var daysA = pivot.column(prov_name).values();
 
-		// make increments, mean of 3
+		// make increments, mean of 7
 		//	
-		var last = 	daysA.length;
-		for ( var i=0; i<last-1; i++ ){
-			daysA[i] = (daysA[i+1]+daysA[i+2]+daysA[i+3]+daysA[i+4]+daysA[i+5]+daysA[i+6]+daysA[i+7])/7 - (daysA[i+0]+daysA[i+1]+daysA[i+2]+daysA[i+3]+daysA[i+4]+daysA[i+5]+daysA[i+6])/7;
-			daysA[i] = daysA[i] / popA[Number(prov_code)] * 100000;
+		var last = 	daysA.length-1;
+		for ( var i=last; i>last-50; i-- ){
+			daysA[i] =  (daysA[i-0]+daysA[i-1]+daysA[i-2]+daysA[i-3]+daysA[i-4]+daysA[i-5]+daysA[i-6])/7 -
+				 		(daysA[i-1]+daysA[i-2]+daysA[i-3]+daysA[i-4]+daysA[i-5]+daysA[i-6]+daysA[i-7])/7;
+			daysA[i] =  daysA[i] / popA[Number(prov_code)] * 100000;
 		}	
-		daysA.pop();
-		daysA.pop();
-		daysA.pop();
-		daysA.pop();
-		daysA.pop();
-		daysA.pop();
-		daysA.pop();
-
-		dateA.pop();
-		dateA.pop();
-		dateA.pop();
-		dateA.pop();
-		dateA.pop();
-		dateA.pop();
-		dateA.pop();
 
 		daysA = daysA.slice(-28);	
 		dateA = dateA.slice(-28);	
@@ -2732,7 +2719,7 @@ $(function () {
 						fill: true,
 						borderWidth: 2,
 						borderColor: "rgba(255,0,120,1)",
-						backgroundColor: "rgba(160,160,160,0)",
+						backgroundColor: "rgba(255,60,120,0.2)",
 						pointRadius: 0,
 						lineTension: 1
 					}]
@@ -2744,6 +2731,7 @@ $(function () {
 	};
 	
 });
+
 
 $(function () {
 
@@ -2786,23 +2774,27 @@ $(function () {
 				szHtml += "<table class='region-list' style='text-align:right' >";
 				szHtml += "<tr style='text-align:left;'>";
 				szHtml += "<th></th>";
-				szHtml += "<th colspan='5'>positivi</th>";
+				szHtml += "<th colspan='6'>positivi</th>";
+				szHtml += "<th colspan='4'>tamponi</th>";
 				szHtml += "<th colspan='2'>ospedalizzati</th>";
 				szHtml += "<th colspan='2'>terapia intensiva</th>";
 				szHtml += "<th colspan='3'>deceduti</th>";
-				szHtml += "<th colspan='3'>tamponi</th>";
 				szHtml += "</tr>";
 				szHtml += "<tr style='text-align:left;'>";
 				szHtml += "<th>Regione</th>";
-				szHtml += "<th style='color:#444'>totale</th><th style='color:#ddd;width:25px;text-align:right;'>oggi (ieri)</th><th></th><th style='color:#888;width:25px;text-align:right;'>incidenza cumul.*)</th><th></th>";
-				szHtml += "<th>attuale</th><th style='color:#ddd;width:25px;text-align:right;'>oggi (ieri)</th>";
-				szHtml += "<th>attuale</th><th style='color:#ddd;width:25px;text-align:right;'>oggi (ieri)</th>";
-				szHtml += "<th>attuale</th><th style='color:#ddd;width:25px;text-align:right;'>oggi (ieri)</th>";
-				szHtml += "<th></th><th>totale</th><th style='color:#ddd;width:25px;text-align:right;'>oggi<br>(ieri)</th><th style='color:#888;text-align:right;'>% positivi</th>";
+				szHtml += "<th style='color:#444'>totale</th><th style='color:#ddd;width:25px;text-align:right;'>oggi (ieri)</th><th></th><th>-28 *) giorni</th><th style='color:#888;width:25px;text-align:right;'>incid. cumul.*)</th><th></th>";
+				szHtml += "<th>totale</th><th style='color:#ddd;width:25px;text-align:right;'>oggi<br>(ieri)</th><th style='color:#888;text-align:right;'>% positivi</th>";
+				szHtml += "<th></th>";
+				szHtml += "<th>totale</th><th style='color:#ddd;width:25px;text-align:right;'>oggi (ieri)</th>";
+				szHtml += "<th>totale</th><th style='color:#ddd;width:25px;text-align:right;'>oggi (ieri)</th>";
+				szHtml += "<th>totale</th><th style='color:#ddd;width:25px;text-align:right;'>oggi (ieri)</th>";
 				szHtml += "</tr>";
 				
 				$("#FeedCount").html(feedA.length);
 
+				var szOnOver = "$(this).css(\"border-top\",\"solid #ccc 2px\");$(this).css(\"border-bottom\",\"solid #ccc 3px\");";
+				var szOnOut  = "$(this).css(\"border-top\",\"solid #ddd 0px\");$(this).css(\"border-bottom\",\"solid #ddd 0px\");";
+					
 				for (i in feedA) {
 
 					var feed = feedA[i];
@@ -2811,7 +2803,7 @@ $(function () {
 					var idComune = comune.replace(/\ /g, "").replace(/\'/g, "").replace(/\./g, "");
 
 					szHtml +=
-						"<tr id=\"small-row-values-" + idComune + "\" >" +
+						"<tr id=\"small-row-values-" + idComune + "\" onmouseover='"+szOnOver+"' onmouseout='"+szOnOut+"'>" +
 						"</tr>" +
 						"<span style='display:none'>"+setTimeout("addSmallRegionRow(\"" + idComune + "\",\"" + feed + "\",\"" + comune + "\")", 0)+"</span>";
 					timeO += 100;
@@ -2878,75 +2870,37 @@ $(function () {
 
 				var datasetA = [];	
 				
-				
-				// deceduti 
-				// --------------------------------------------------------------
-				var daysA = mydata.column("deceduti").values();
-				records = daysA[daysA.length - 1];
-				//var max = Number(records);
-
-				var last = daysA[daysA.length - 1] - daysA[daysA.length - 2]
-				var before = daysA[daysA.length - 2] - daysA[daysA.length - 3];
-				/**
-				for (i = 0; i < daysA.length - 3; i++) {
-					daysA[i] = (Number(daysA[i])+Number(daysA[i+1])+Number(daysA[i+2]))/3;
-				}
-				daysA.pop();
-				daysA.pop();
-				**/
-				/**
-				for (i = 0; i < daysA.length - 1; i++) {
-					daysA[i] = Math.log(daysA[i]);
-				}
-				**/
-				daysA.pop();
-
-				var dateA = mydata.column("data").values();
-				dateA.pop();
-
-				datasetA.push({
-						label: "My First dataset",
-						data: daysA,
-						fill: true,
-						borderColor: "rgba(160,160,160,1)",
-						backgroundColor: "rgba(160,160,160,0.7)",
-						pointRadius: 0,
-						lineTension: 0
-				});
-				// --------------------------------------------------------------
-				
-
 				// positivi 
 				// -----------------------------------------------------------
-				var daysA = mydata.column("totale_positivi").values();
-				records = daysA[daysA.length - 1];
-				var max = Number(records)*1.4;
-
-				var last = daysA[daysA.length - 1] - daysA[daysA.length - 2]
-				var before = daysA[daysA.length - 2] - daysA[daysA.length - 3];
-				/**
-				for (i = 0; i < daysA.length - 3; i++) {
-					daysA[i] = (Number(daysA[i])+Number(daysA[i+1])+Number(daysA[i+2]))/3;
-				}
-				daysA.pop();
-				daysA.pop();
-				**/
-				/**
-				for (i = 0; i < daysA.length - 1; i++) {
-					daysA[i] = Math.log(daysA[i]);
-				}
-				**/
+				var daysA = mydata.column("nuovi_positivi").values();
 				daysA.pop();
 
 				var dateA = mydata.column("data").values();
 				dateA.pop();
+				
+				// make increments, mean of 7
+				//	
+				
+				var last = 	daysA.length-1;
+				for ( var i=last; i>last-50; i-- ){
+					daysA[i] =  (Number(daysA[i-0])+
+								 Number(daysA[i-1])+
+								 Number(daysA[i-2])+
+								 Number(daysA[i-3])+
+								 Number(daysA[i-4])+
+								 Number(daysA[i-5])+
+								 Number(daysA[i-6]))/7;
+				}	
+				
+				daysA = daysA.slice(-28);	
+				dateA = dateA.slice(-28);	
 
 				datasetA.push({
 						label: "My First dataset",
 						data: daysA,
 						fill: true,
-						borderColor: "rgba(120,160,250,1)",
-						backgroundColor: "rgba(120,160,250,0.3)",
+						borderColor: "rgba(198, 64, 45,0.7)",
+						backgroundColor: "rgba(250,160,150,0.2)",
 						pointRadius: 0,
 						lineTension: 0
 				});
@@ -2962,97 +2916,17 @@ $(function () {
 				var last = daysA[daysA.length - 1] - daysA[daysA.length - 2]
 				var before = daysA[daysA.length - 2] - daysA[daysA.length - 3];
 				
-				/**
-				for (i = 0; i < daysA.length - 3; i++) {
-					daysA[i] = (Number(daysA[i])+Number(daysA[i+1])+Number(daysA[i+2]))/3;
-				}
-				daysA.pop();
-				daysA.pop();
-				**/
-				/**
-				for (i = 0; i < daysA.length - 1; i++) {
-					daysA[i] = Math.log(daysA[i]);
-				}
-				**/
 				daysA.pop();
 
 				var dateA = mydata.column("data").values();
 				dateA.pop();
-
-				datasetA.push({
-						label: "My First dataset",
-						data: daysA,
-						fill: true,
-						borderColor: "rgba(120,220,100,1)",
-						backgroundColor: "rgba(120,220,100,0.2)",
-						pointRadius: 0,
-						lineTension: 0
-				});
-				// --------------------------------------------------------------
 				
+				daysA = daysA.slice(-28);	
+				dateA = dateA.slice(-28);	
 
-				var small_curve_options = {
-					animation:{
-						duration: 1
-					},
-					responsive: true,
-					legend: {
-						position: 'bottom',
-						display: false,
-					},
-					hover: {
-						mode: 'index'
-					},
-					scales: {
-						xAxes: [{
-							display: false,
-							scaleLabel: {
-								display: false,
-								labelString: 'Day'
-							}
-						}],
-						yAxes: [{
-               				//stacked: true,
-							display: false,
-							ticks: {
-								//max: max,
-								min: 0,
-							},
-							scaleLabel: {
-								display: false,
-								labelString: 'Value'
-							}
-						}]
-					},
-					title: {
-						display: false,
-						text: 'Chart.js Line Chart - Legend'
-					}
-				};
 				// display sum, last 28, trend arrow 
 				// -------------------------------------
-				var chart = "<div style='width:100%;margin-top:2px;'><canvas id='small-row-" + idComune + "-line-chart'></canvas></div>";
-				$("#small-dynamic-row-" + idComune).html(chart);
 
-				$("#small-row-" + idComune).show();
-
-				// make curve
-				// -------------------------------------
-				var canvas = $('#small-row-' + idComune + '-line-chart').get(0);
-				if (canvas){
-					var ctx = canvas.getContext('2d');
-
-					myLineChart = new Chart(ctx, {
-						type: 'line',
-						data: {
-							labels: dateA,
-							datasets: datasetA
-						},
-						options: small_curve_options
-					});
-					// ------------------------------
-				}
-				
 				szHtml = "";
 				szHtml += "<td style='text-align:left;font-size:1.5em;line-height:0.9em'>";
 				szHtml += name;
@@ -3083,20 +2957,53 @@ $(function () {
 				gg14_before = (Number(gg14_before) / __regionPop[name.replace(/\-/," ")] * 100000).toFixed(1);
 
 				szHtml += "<td style='color:white;background-color:rgb(198, 64, 45)'title='positivi'>";
-				szHtml += abs;
+				szHtml += __formatValue(abs,0);
 				szHtml += "</td><td style='font-weight:bold;color:rgb(198, 64, 45)'>";
-				szHtml += (last>0?"+":"")+last;
+				szHtml += (last>0?"+":"")+__formatValue(last,0);
 				szHtml += " <span style='color:rgb(175,175,175)'>"
-				szHtml += (before>0?"(+":"(")+ before +")";
+				szHtml += (before>0?"(+":"(")+ __formatValue(before,0) +")";
 				szHtml += "</span></td>";
 
 				szHtml += "</td><td><i class='icon fa " + __getArrow(last, before) + "' style='color:" + __getArrowColor(last, before) + ";font-size:1.5em'></i>";
 				
+				var chart = "<div style='width:50px;margin-top:2px;'><canvas id='small-row-" + idComune + "-line-chart'></canvas></div>";
 				
-				szHtml += "<td style='color:rgb(221, 0, 136)'>"+gg14+"<br><span style='color:rgb(220,220,220)'>"+gg14_before+"</span></td>";
+				szHtml += "<td>"+chart+"</td>";
+				
+				szHtml += "<td style='color:rgb(221, 0, 136)'>"+__formatValue(gg14,1)+"<br><span style='color:rgb(220,220,220)'>"+__formatValue(gg14_before,1)+"</span></td>";
 				
 				szHtml += "<td></td>";
 				
+				// tamponi 
+				// -----------------------------------------------------------
+				//var daysA = mydata.column("casi_testati").values();
+				var daysA = mydata.column("tamponi").values();
+				var nposA = mydata.column("nuovi_positivi").values();
+				records = daysA[daysA.length - 1];
+				var max = Number(records)*1.4;
+
+				var abs = daysA[daysA.length - 1];
+				var last = daysA[daysA.length - 1] - daysA[daysA.length - 2];
+				var before = daysA[daysA.length - 2] - daysA[daysA.length - 3];
+				
+				var percent  = (nposA[daysA.length-1] / last * 100).toFixed(1);
+				var percent2 = (nposA[daysA.length-2] / before * 100).toFixed(1);
+				
+				szHtml += "<td style='color:white;background-color:rgb(220,220,220)' title='tamponi'>";
+				szHtml += __formatValue(abs,0);
+				szHtml += "</td><td style='font-weight:bold;color:rgb(175,175,175)'>";
+				szHtml += (last>0?"+":"")+__formatValue(last,0);
+				szHtml += " <span style='color:rgb(220,220,220)'>"
+				szHtml += (before>0?"(+":"(")+ __formatValue(before,0) +")";
+				szHtml += "</span></td>";
+				szHtml += "<td style='color:rgb(221, 0, 136)'>"
+				szHtml += __formatValue(percent,1) +"&nbsp;%<br><span style='color:rgb(220,220,220)'>"+percent2+"%</span>";
+				szHtml += "</td>";
+
+				// empty 
+				// -----------------------------------------------------------
+				szHtml += "<td></td>";
+
 				// ospedalizzati 
 				// -----------------------------------------------------------
 				var daysA = mydata.column("totale_ospedalizzati").values();
@@ -3108,11 +3015,11 @@ $(function () {
 				var before = daysA[daysA.length - 2] - daysA[daysA.length - 3];
 				
 				szHtml += "<td style='color:white;background-color:rgb(34,167,240)'title='ospedalizzati'>";
-				szHtml += abs;
+				szHtml += __formatValue(abs,0);
 				szHtml += "</td><td style='font-weight:bold;color:rgb(34,167,240)'>";
-				szHtml += (last>0?"+":"")+last;
+				szHtml += (last>0?"+":"")+__formatValue(last,0);
 				szHtml += " <span style='color:rgb(175,175,175)'>"
-				szHtml += (before>0?"(+":"(")+ before +")";
+				szHtml += (before>0?"(+":"(")+ __formatValue(before,0) +")";
 				szHtml += "</span></td>";
 
 				// terapia_intensiva 
@@ -3126,11 +3033,11 @@ $(function () {
 				var before = daysA[daysA.length - 2] - daysA[daysA.length - 3];
 				
 				szHtml += "<td style='color:white;background-color:rgb(255,180,0)' title='terapia_intensiva'>";
-				szHtml += abs;
+				szHtml += __formatValue(abs,0);
 				szHtml += "</td><td style='font-weight:bold;color:rgb(255,180,0)'>";
-				szHtml += (last>0?"+":"")+last;
+				szHtml += (last>0?"+":"")+__formatValue(last,0);
 				szHtml += " <span style='color:rgb(175,175,175)'>"
-				szHtml += (before>0?"(+":"(")+ before +")";
+				szHtml += (before>0?"(+":"(")+ __formatValue(before,0) +")";
 				szHtml += "</span></td>";
 
 				// deceduti 
@@ -3144,43 +3051,69 @@ $(function () {
 				var before = daysA[daysA.length - 2] - daysA[daysA.length - 3];
 				
 				szHtml += "<td style='color:white;background-color:rgb(128,128,128)' title='deceduti'>";
-				szHtml += abs;
+				szHtml += __formatValue(abs,0);
 				szHtml += "</td><td style='font-weight:bold;color:rgb(128,128,128)'>";
-				szHtml += (last>0?"+":"")+last;
+				szHtml += (last>0?"+":"")+__formatValue(last,0);
 				szHtml += " <span style='color:rgb(175,175,175)'>"
-				szHtml += (before>0?"(+":"(")+ before +")";
+				szHtml += (before>0?"(+":"(")+ __formatValue(before,0) +")";
 				szHtml += "</span></td>";
 
-				szHtml += "<td></td>";
-
-				// tamponi 
-				// -----------------------------------------------------------
-				var daysA = mydata.column("casi_testati").values();
-				var nposA = mydata.column("nuovi_positivi").values();
-				records = daysA[daysA.length - 1];
-				var max = Number(records)*1.4;
-
-				var abs = daysA[daysA.length - 1];
-				var last = daysA[daysA.length - 1] - daysA[daysA.length - 2];
-				var before = daysA[daysA.length - 2] - daysA[daysA.length - 3];
-				
-				var percent  = (nposA[daysA.length-1] / last * 100).toFixed(1);
-				var percent2 = (nposA[daysA.length-2] / before * 100).toFixed(1);
-				
-				szHtml += "<td style='color:white;background-color:rgb(220,220,220)' title='tamponi'>";
-				szHtml += abs;
-				szHtml += "</td><td style='font-weight:bold;color:rgb(175,175,175)'>";
-				szHtml += (last>0?"+":"")+last;
-				szHtml += " <span style='color:rgb(220,220,220)'>"
-				szHtml += (before>0?"(+":"(")+ before +")";
-				szHtml += "</span></td>";
-				szHtml += "<td style='color:rgb(221, 0, 136)'>"
-				szHtml += percent +"&nbsp;%<br><span style='color:rgb(220,220,220)'>"+percent2+"%</span>";
-				szHtml += "</td>";
-
-				console.log(szHtml);	
 				$("#small-row-values-" + idComune).html(szHtml);
-				
+
+				// make curve
+				// -------------------------------------
+				var small_curve_options = {
+					animation: {
+						duration: 0
+					},
+					responsive: true,
+					legend: {
+						position: 'bottom',
+						display: false,
+					},
+					hover: {
+						mode: 'index'
+					},
+					scales: {
+						xAxes: [{
+							display: false,
+							scaleLabel: {
+								display: false,
+								labelString: 'Day'
+							}
+						}],
+						yAxes: [{
+							display: false,
+							ticks: {
+								min: -1
+							},
+							scaleLabel: {
+								display: false,
+								labelString: 'Value'
+							}
+						}]
+					},
+					title: {
+						display: false,
+						text: 'Chart.js Line Chart - Legend'
+					}
+				};
+
+				var canvas = $('#small-row-' + idComune + '-line-chart').get(0);
+				if (canvas){
+					var ctx = canvas.getContext('2d');
+
+					myLineChart = new Chart(ctx, {
+						type: 'line',
+						data: {
+							labels: dateA,
+							datasets: datasetA
+						},
+						options: small_curve_options
+					});
+					// ------------------------------
+				}
+
 
 			});
 
