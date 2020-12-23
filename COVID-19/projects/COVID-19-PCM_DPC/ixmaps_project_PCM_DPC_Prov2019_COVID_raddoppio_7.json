@@ -110,8 +110,7 @@
 				"units": "g",
 				"align": "center",
 				"refreshtimeout": "0",
-				"normalsizevalue": "120",
-				"scale": "1",
+				"scale": "1.2",
 				"sizefield": "diff_percent",
 				"textcolor": "black",
 				"linecolor": [
