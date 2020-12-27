@@ -149,7 +149,7 @@
 				"lookuptonumber": "true",
 				"units": "nuovi casi x 10 000",
 				"refreshtimeout": "0",
-				"scale": "1",
+				"scale": "1.5",
 				"dopacitypow": "1",
 				"dopacityscale": "3",
 				"titlefield": "denominazione_provincia",
