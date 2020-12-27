@@ -12,7 +12,7 @@
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
 		"attribution": "iXMaps",
 		"basemap": "ArcGIS - Light Gray Base",
-		"legend": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/legend_pcm_dcp_incidenza_100000_CUMUL_7.html",
+		"legend": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/legend_pcm_dcp_incidenza_100000_CUMUL_14.html",
 		"item": "html",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
@@ -149,7 +149,7 @@
 				"lookuptonumber": "true",
 				"units": "nuovi casi x 10 000",
 				"refreshtimeout": "0",
-				"scale": "2",
+				"scale": "1",
 				"dopacitypow": "1",
 				"dopacityscale": "3",
 				"titlefield": "denominazione_provincia",
