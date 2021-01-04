@@ -1,0 +1,130 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Tue Nov 03 2020 21:29:15 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/regioni_2019/italia_regioni_2019_s_cod_reg_xx.svgz",
+		"attribution": "",
+		"basemap": "white",
+		"legend": "",
+		"item": "",
+		"mode":"info",
+		"scaleParam": {
+			"lineScaling": "23.67696884508345",
+			"labelScaling": "1.5",
+			"normalSizeScale": "13841043"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "42.282221877329024",
+			"lng": "12.871337890625002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "Reg2019_s_cod_reg|Prov2019_g_cod_prov",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|QUANTILE|DTEXT|NOLEGEND",
+				"colorscheme": [
+					"rgb(233, 242, 238)"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "VACCINI_SOMMINISTRAZIONI_LAST",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini.js",
+				"datacache": "true",
+				"lookupfield": "codice_regione",
+				"lookuptonumber": "true",
+				"units": "",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"textcolor": "black",
+				"linecolor": [
+					"#F28E2B"],
+				"linewidth": "1",
+				"titlefield": "regione",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "COVID-19<br>Vaccini somministrati",
+				"snippet": "aggiornato al 2020-11-03T17:00:00"
+				}
+			},{
+			"layer": "Reg2019_s_cod_reg|Prov2019_g_cod_prov",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|BOX|LONGTITLE|DTEXT|SIMPLELEGEND",
+				"colorscheme": [
+					"1",
+					"rgb(242, 43, 140)",
+					"rgb(242, 43, 140)"],
+				"fillopacity": "0.1",
+				"shadow": "true",
+				"dbtable": "VACCINI_PERCENTUALI_SEQUENCE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini.js",
+				"datacache": "true",
+				"lookupfield": "codice_regione",
+				"lookuptonumber": "true",
+				"symbols":[
+					"https://s3.eu-west-1.amazonaws.com/symbols.ixmaps.com/primula_vaccini.svg"
+				],
+				"align":"23right",
+				"units": "%",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "0.15",
+				"rangescale": "1.5",
+				"normalsizevalue":"40",
+				"titlefield": "regione",
+				"boxcolor":"none",
+				"bordercolor":"none",
+				"valuescale": "2.5",
+				"valuedecimals": "0",
+				"maxvalue":"100",
+				"linewidth":"8",
+				"title": "COVID-19<br>somministrazioni in % delle dosi consegnate",
+				"snippet": "aggiornato al 2020-11-03T17:00:00",
+				"description":"<h4>data: <a  href='<a href=' https://github.com/ondata/covid19italia/tree/master/webservices/vaccini' target='_blank'>onData GitHub</a></h4><h4>fonte: <a href='https://app.powerbi.com/view?r=eyJrIjoiMzg4YmI5NDQtZDM5ZC00ZTIyLTgxN2MtOTBkMWM4MTUyYTg0IiwidCI6ImFmZDBhNzVjLTg2NzEtNGNjZS05MDYxLTJjYTBkOTJlNDIyZiIsImMiOjh9' target='_blank'>Dashboard con informazioni sui vaccini</a> - Ministero della Salute</h4><h4>dati aggiornati 3 volte al giorno </h4>"
+				}
+			}],
+	"layerMask": {
+		}
+	}
