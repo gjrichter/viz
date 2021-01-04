@@ -151,7 +151,7 @@
 				"titlefield": "regione",
 				"valuescale": "0.5",
 				"valuedecimals": "0",
-				"valueupper":"1:200000",
+				"valueupper":"1:2000000",
 				"clipframerate":"24",
 				"title": "COVID-19<br>somministrazioni in % delle dosi consegnate",
 				"snippet": "aggiornato al 2020-11-03T17:00:00",
