@@ -129,6 +129,37 @@
 				"snippet": "aggiornato al 2020-11-03T17:00:00",
 				"description":"<h4>data: <a  href='<a href=' https://github.com/ondata/covid19italia/tree/master/webservices/vaccini' target='_blank'>onData GitHub</a></h4><h4>fonte: <a href='https://app.powerbi.com/view?r=eyJrIjoiMzg4YmI5NDQtZDM5ZC00ZTIyLTgxN2MtOTBkMWM4MTUyYTg0IiwidCI6ImFmZDBhNzVjLTg2NzEtNGNjZS05MDYxLTJjYTBkOTJlNDIyZiIsImMiOjh9' target='_blank'>Dashboard con informazioni sui vaccini</a> - Ministero della Salute</h4><h4>dati aggiornati 3 volte al giorno </h4>"
 				}
+			},{
+			"layer": "Reg2019_s_cod_reg|Prov2019_g_cod_prov",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|LABEL|VALUES|TEXTONLY|DTEXT|NOLEGEND",
+				"colorscheme": [
+					"rgb(242, 43, 140)"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "VACCINI_PERCENTUALI_LAST",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini.js",
+				"datacache": "true",
+				"lookupfield": "codice_regione",
+				"lookuptonumber": "true",
+				"align":"right",
+				"units": "%",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"textcolor": "white",
+				"linecolor": [
+					"#F28E2B"],
+				"linewidth": "1",
+				"titlefield": "regione",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "COVID-19<br>Vaccini somministrati",
+				"snippet": "aggiornato al 2020-11-03T17:00:00"
+				}
 			}],
 	"layerMask": {
 		}
