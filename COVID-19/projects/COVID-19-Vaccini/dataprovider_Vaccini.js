@@ -239,9 +239,14 @@ window.ixmaps = window.ixmaps || {};
 			}
 			theme.szLabelA = columns.slice();
 			
-			//theme.szXaxisA = columns.slice();
-			
-			theme.nClipFrames = columns.length;
+			// make curve xaxis 
+			var xAxis = [];
+			for ( i in columns ){
+				xAxis.push(" ");
+			}
+			xAxis[columns.length-1]=columns[columns.length-1];
+			xAxis[0]=columns[0];
+			options.theme.szXaxisA = xAxis; 
 			
 			theme.szSnippet = "dal "+columns[0]+" al "+columns[last];
 
