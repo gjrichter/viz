@@ -50,6 +50,20 @@ codice per includere la mappa in una pagina HTML:
 
 
 
+# Visualizzazioni realizzati da altri  
+
+
+
+### - Our World in Data  
+
+
+
+<iframe src="https://ourworldindata.org/grapher/covid-vaccination-doses-per-capita?tab=chart&stackMode=absolute&time=latest..2021-01-06&region=World" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+
+
+
+
+
 
 
 
