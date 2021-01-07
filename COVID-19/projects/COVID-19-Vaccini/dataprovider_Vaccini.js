@@ -430,6 +430,7 @@ window.ixmaps = window.ixmaps || {};
 			
 			theme.szSnippet = "dal "+columns[0]+" al "+columns[last];
 				
+			theme.nNormalSizeValue = ixmaps.tempValue;	
 
 			// -----------------------------------------------------------------------------------------------               
 			// deploy the data
@@ -747,7 +748,6 @@ window.ixmaps = window.ixmaps || {};
 			
 			theme.szSnippet = "dal "+columns[0]+" al "+columns[last];
 
-			theme.nNormalSizeValue = ixmaps.tempValue;	
 
 			// -----------------------------------------------------------------------------------------------               
 			// deploy the data
