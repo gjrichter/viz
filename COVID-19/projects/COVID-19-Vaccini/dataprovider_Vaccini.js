@@ -413,7 +413,7 @@ window.ixmaps = window.ixmaps || {};
 			theme.szFields = columns.slice().join('|');
 			theme.szFieldsA = columns.slice();
 			
-			var max = pivot.column(columns[last]).values().sort()[0];
+			var max = ixmaps.tempValue || pivot.column(columns[last]).values().sort()[0];
 			ixmaps.changeThemeStyle(theme.szId,"normalsizevalue:"+Math.ceil(max),"set")
 
 			// and set the label (for difference 1 less)
@@ -504,8 +504,9 @@ window.ixmaps = window.ixmaps || {};
 			theme.szFieldsA = [columns[last]];
 				
 			var max = pivot.column(columns[last]).values().sort()[0];
-			ixmaps.tempValue = Math.ceil(max);	
-			theme.nNormalSizeValue = ixmaps.tempValue;	
+			theme.nNormalSizeValue = Math.ceil(max);
+				
+			ixmaps.tempValue = Math.ceil(max);
 				
 			// -----------------------------------------------------------------------------------------------               
 			// deploy the data
