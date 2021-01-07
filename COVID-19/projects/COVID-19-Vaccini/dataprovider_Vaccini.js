@@ -503,7 +503,8 @@ window.ixmaps = window.ixmaps || {};
 			theme.szFieldsA = [columns[last]];
 				
 			var max = pivot.column(columns[last]).values().sort()[0];
-			theme.nNormalSizeValue = Math.ceil(max);	
+			ixmaps.tempValue = Math.ceil(max);	
+			theme.nNormalSizeValue = ixmaps.tempValue;	
 				
 			// -----------------------------------------------------------------------------------------------               
 			// deploy the data
@@ -746,6 +747,7 @@ window.ixmaps = window.ixmaps || {};
 			
 			theme.szSnippet = "dal "+columns[0]+" al "+columns[last];
 
+			theme.nNormalSizeValue = ixmaps.tempValue;	
 
 			// -----------------------------------------------------------------------------------------------               
 			// deploy the data
