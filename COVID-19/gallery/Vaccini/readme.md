@@ -1,6 +1,6 @@
 ## CODID-19 - Vaccini
 
-Visualizzazione dei dadi sul progresso dei vaccini anti Covid-19 scaricati ciclicamente da onData dal sito del Ministero della Salute e reso accessibili in un archivio pubblicato su GitHub.
+Visualizzazione di dati sul progresso dei vaccini anti Covid-19 scaricati ciclicamente da onData dal sito del Ministero della Salute e reso accessibili in un archivio pubblicato su GitHub.
 
 Il dataset si trova qui: [https://github.com/ondata/covid19italia/tree/master/webservices/vaccini](https://github.com/ondata/covid19italia/tree/master/webservices/vaccini)
 
