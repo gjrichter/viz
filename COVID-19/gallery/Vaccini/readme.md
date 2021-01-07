@@ -22,7 +22,15 @@ codice per includere la mappa in una pagina HTML:
 
 ## il progresso dei vaccini anti COVID-19 in %
 
-La visualizzazione mostra le **dosi consegnate** (sagoma trasparente) e le **somministrazioni** (fiore) in  **percentuali della popolazione** delle Regioni.
+La visualizzazione mostra le **dosi consegnate** e le **somministrazioni** in  **percentuali della popolazione** delle Regioni.
+
+Le dosi consegnate alle Regioni figurano come un fiore pallido che rappresenta il numero di vaccini fino ad oggi consegnate per 100 abitanti.
+
+Le somministrazioni sono rappresentati da fiori in pieno colore e crescono con la percentuale della popolazione vaccinata.
+
+La differenza tra i due fiori visualizza la percentuale dei vaccini effettuati rispettivo alle dosi consegnate.
+
+
 
 codice per includere la mappa in una pagina HTML:
 
