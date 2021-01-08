@@ -14,7 +14,7 @@ window.ixmaps = window.ixmaps || {};
 			 columns:"dataAggiornamento",
 			 value:"somministrazioni",
 			 keep:["regione"],
-			 calc:"mean"}
+			 calc:"max"}
 		);
 	
 		return pivot;
@@ -27,7 +27,7 @@ window.ixmaps = window.ixmaps || {};
 			 columns:"dataAggiornamento",
 			 value:"percentuale",
 			 keep:["regione"],
-			 calc:"mean"}
+			 calc:"max"}
 		);
 	
 		return pivot;
@@ -40,7 +40,7 @@ window.ixmaps = window.ixmaps || {};
 			 columns:"dataAggiornamento",
 			 value:"dosiConsegnate",
 			 keep:["regione"],
-			 calc:"mean"}
+			 calc:"max"}
 		);
 	
 		return pivot;
