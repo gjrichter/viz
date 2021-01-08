@@ -159,7 +159,7 @@
 				"clipframerate":"24",
 				"title": "COVID-19<br>somministrazioni e dosi consegnate in % della popolazione",
 				"snippet": "aggiornato al 2020-11-03T17:00:00",
-				"description":"<h4>data: <a  href='<a href=' https://github.com/ondata/covid19italia/tree/master/webservices/vaccini' target='_blank'>onData GitHub</a></h4><h4>fonte: <a href='https://app.powerbi.com/view?r=eyJrIjoiMzg4YmI5NDQtZDM5ZC00ZTIyLTgxN2MtOTBkMWM4MTUyYTg0IiwidCI6ImFmZDBhNzVjLTg2NzEtNGNjZS05MDYxLTJjYTBkOTJlNDIyZiIsImMiOjh9' target='_blank'>Dashboard con informazioni sui vaccini</a> - Ministero della Salute</h4><h4>dati aggiornati 3 volte al giorno </h4>"
+				"description":"<h4>data: <a  href='<a href=' https://github.com/ondata/covid19italia/tree/master/webservices/vaccini' target='_blank'>onData GitHub</a></h4><h4>fonte: <a href='https://app.powerbi.com/view?r=eyJrIjoiMzg4YmI5NDQtZDM5ZC00ZTIyLTgxN2MtOTBkMWM4MTUyYTg0IiwidCI6ImFmZDBhNzVjLTg2NzEtNGNjZS05MDYxLTJjYTBkOTJlNDIyZiIsImMiOjh9' target='_blank'>Dashboard con informazioni sui vaccini</a> - Ministero della Salute</h4>"
 				}
 			}],
 	"layerMask": {
