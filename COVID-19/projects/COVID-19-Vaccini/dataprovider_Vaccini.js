@@ -433,7 +433,7 @@ window.ixmaps = window.ixmaps || {};
 			theme.szFields = columns.slice().join('|');
 			theme.szFieldsA = columns.slice();
 			
-			var max = ixmaps.tempValue || pivot.column(columns[last]).values().sort()[0];
+			var max = ixmaps.tempMaxValue || pivot.column(columns[last]).values().sort()[0];
 			ixmaps.changeThemeStyle(theme.szId,"normalsizevalue:"+Math.ceil(max),"set")
 
 			// and set the label (for difference 1 less)
