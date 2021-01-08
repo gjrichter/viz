@@ -9,6 +9,10 @@ window.ixmaps = window.ixmaps || {};
 
     var __get_somministrazioni = function(data,options) { 
 
+		data.column("dataAggiornamento").map(function(value){
+			return value.split(" ")[0];
+		});
+				
 		var pivot = data.pivot(
 			{lead:"codice_regione",
 			 columns:"dataAggiornamento",
@@ -22,6 +26,10 @@ window.ixmaps = window.ixmaps || {};
 
     var __get_percentuali = function(data,options) { 
 	
+		data.column("dataAggiornamento").map(function(value){
+			return value.split(" ")[0];
+		});
+				
 		var pivot = data.pivot(
 			{lead:"codice_regione",
 			 columns:"dataAggiornamento",
@@ -35,6 +43,10 @@ window.ixmaps = window.ixmaps || {};
 
      var __get_consegnate = function(data,options) { 
 	
+		data.column("dataAggiornamento").map(function(value){
+			return value.split(" ")[0];
+		});
+				
 		var pivot = data.pivot(
 			{lead:"codice_regione",
 			 columns:"dataAggiornamento",
@@ -364,6 +376,11 @@ window.ixmaps = window.ixmaps || {};
 		// read the ArcGis Feature service
 		// ----------------------------------------------------------------------------------------------- 
 
+		if ( !ixmaps.tempMaxValue ){
+			setTimeout(function(){ixmaps.VACCINI_PERCENTUALI_POPOLAZIONE_CLIP(theme,options)},100);
+			return;
+		}
+
 		var broker = new Data.Broker()
 		
 			.addSource(szUrl1, "csv")
@@ -433,8 +450,6 @@ window.ixmaps = window.ixmaps || {};
 			
 			theme.szSnippet = "dal "+columns[0]+" al "+columns[last];
 				
-			theme.nNormalSizeValue = ixmaps.tempValue;	
-
 			// -----------------------------------------------------------------------------------------------               
 			// deploy the data
 			// ----------------------------------------------------------------------------------------------- 
@@ -505,11 +520,12 @@ window.ixmaps = window.ixmaps || {};
 		
 			theme.szFields = columns[last];
 			theme.szFieldsA = [columns[last]];
-				
+
+			// get value to normalize the flower size	
 			var max = pivot.column(columns[last]).values().sort()[0];
 			theme.nNormalSizeValue = Math.ceil(max);
-				
-			ixmaps.tempValue = Math.ceil(max);
+			// store value to use by the clip flower	
+			ixmaps.tempMaxValue = Math.ceil(max);
 				
 			// -----------------------------------------------------------------------------------------------               
 			// deploy the data
