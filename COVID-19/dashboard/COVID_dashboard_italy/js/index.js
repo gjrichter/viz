@@ -2475,7 +2475,7 @@ $(function () {
 					destination: "diff7gg"
 					}, function (row) {
 						return (
-						Number(row[nLastC]) - Number(row[nLastC - 14])
+						Number(row[nLastC]) - Number(row[nLastC - 7])
 						);
 					});
 
@@ -2782,7 +2782,7 @@ $(function () {
 				szHtml += "</tr>";
 				szHtml += "<tr style='text-align:left;'>";
 				szHtml += "<th>Regione</th>";
-				szHtml += "<th style='color:#444'>totale</th><th style='color:#ddd;width:25px;text-align:right;'>oggi (ieri)</th><th></th><th>-28 *) giorni</th><th style='color:#888;width:25px;text-align:right;'>incid. cumul.*)</th><th></th>";
+				szHtml += "<th style='color:#444'>totale</th><th style='color:#ddd;width:25px;text-align:right;'>oggi (ieri)</th><th></th><th>-28 *) giorni</th><th style='color:#888;width:25px;text-align:right;'>incid. settim.</th><th></th>";
 				szHtml += "<th>totale</th><th style='color:#ddd;width:25px;text-align:right;'>oggi<br>(ieri)</th><th style='color:#888;text-align:right;'>% positivi</th>";
 				szHtml += "<th></th>";
 				szHtml += "<th>totale</th><th style='color:#ddd;width:25px;text-align:right;'>oggi (ieri)</th>";
@@ -2950,9 +2950,21 @@ $(function () {
 					gg14_before += Number(nuoviA[nuoviA.length - i]);
 				}
 				
+				var gg7 = 0;
+				for (var i=1; i<=7; i++ ){
+					gg7 += Number(nuoviA[nuoviA.length - i]);
+				}
+				gg7_before = 0;
+				for (var i=2; i<=8; i++ ){
+					gg7_before += Number(nuoviA[nuoviA.length - i]);
+				}
+
 				//gg14 		= Number(totaleA[totaleA.length-1]) - Number(totaleA[totaleA.length-16]);
 				//gg14_before = Number(totaleA[totaleA.length-2]) - Number(totaleA[totaleA.length-17]);
 				
+				gg7        = (Number(gg7       ) / __regionPop[name.replace(/\-/," ")] * 100000).toFixed(1);
+				gg7_before = (Number(gg7_before) / __regionPop[name.replace(/\-/," ")] * 100000).toFixed(1);
+
 				gg14        = (Number(gg14       ) / __regionPop[name.replace(/\-/," ")] * 100000).toFixed(1);
 				gg14_before = (Number(gg14_before) / __regionPop[name.replace(/\-/," ")] * 100000).toFixed(1);
 
@@ -2970,7 +2982,7 @@ $(function () {
 				
 				szHtml += "<td>"+chart+"</td>";
 				
-				szHtml += "<td style='color:rgb(221, 0, 136)'>"+__formatValue(gg14,1)+"<br><span style='color:rgb(220,220,220)'>"+__formatValue(gg14_before,1)+"</span></td>";
+				szHtml += "<td style='color:rgb(221, 0, 136)'>"+__formatValue(gg7,1)+"<br><span style='color:rgb(220,220,220)'>"+__formatValue(gg7_before,1)+"</span></td>";
 				
 				szHtml += "<td></td>";
 				
