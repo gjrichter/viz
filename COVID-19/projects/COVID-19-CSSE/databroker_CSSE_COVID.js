@@ -2518,6 +2518,117 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 
+	ixmaps.CSSE_COVID_SEQUENCE_DIFFERENCE_DEATHS_MEAN_7 = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.realize(
+
+				function (dataA) {
+
+					data_Confirmed = __mean_7(dataA[0]);
+					data_Confirmed = __difference(data_Confirmed);
+
+					var lastDataColumnName = data_Confirmed.columnNames().pop();
+
+					theme.szDescription = "aggiornato: " + lastDataColumnName;
+
+					// get data columns
+					var columnsA = data_Confirmed.columnNames();
+
+					columnsA.shift();
+					columnsA.shift();
+					columnsA.shift();
+					columnsA.shift();
+
+					// set as data fields in actual theme
+
+					fieldsA = [];
+					for (var i = 0; i < columnsA.length; i++) {
+						fieldsA.push(columnsA[i]);
+					}
+
+					options.theme.szFields = fieldsA.slice().join("|");
+					options.theme.szFieldsA = fieldsA;
+
+					options.theme.szItemField = "Lat|Long";
+					options.theme.szSelectionField = "Lat|Long";
+
+					// make label 
+					var szXaxisA = [];
+					for ( var i =0; i<columnsA.length; i++ ){
+                        if (columnsA[i] == "3/1/20"){
+  						  szXaxisA.push("mar");
+                        }else
+                        if (columnsA[i] == "4/1/20"){
+  						  szXaxisA.push("apr");
+                        }else
+                        if (columnsA[i] == "5/1/20"){
+  						  szXaxisA.push("may");
+                        }else
+                        if (columnsA[i] == "6/1/20"){
+  						  szXaxisA.push("jun");
+                        }else
+                        if (columnsA[i] == "7/1/20"){
+  						  szXaxisA.push("jul");
+                        }else
+                        if (columnsA[i] == "8/1/20"){
+  						  szXaxisA.push("aug");
+                        }else
+                        if (columnsA[i] == "9/1/20"){
+  						  szXaxisA.push("sep");
+                        }else
+                        if (columnsA[i] == "10/1/20"){
+  						  szXaxisA.push("oct");
+                       }else
+                        if (columnsA[i] == "11/1/20"){
+  						  szXaxisA.push("nov");
+                       }else
+                        if (columnsA[i] == "12/1/20"){
+  						  szXaxisA.push("dec");
+                       }else
+                        if (columnsA[i] == "1/1/21"){
+  						  szXaxisA.push("jan");
+                       }else
+                        if (columnsA[i] == "2/1/21"){
+  						  szXaxisA.push("feb");
+                       }else{
+						  szXaxisA.push(" ");
+                        }
+					}
+					
+					/**
+					var dte = new Date(columnsA[0]);
+					szXaxisA[0] = dte.toLocaleDateString();
+					dte = new Date(columnsA[columnsA.length-1]);
+					szXaxisA[columnsA.length-1] = dte.toLocaleDateString();
+					**/
+					
+					options.theme.szXaxisA = szXaxisA; 
+					
+				    options.theme.nClipFrames = columnsA.length;
+					
+					// set colors = columns 
+					theme.origColorScheme[0] = columnsA.length;
+
+                    theme.szSnippet = "from "+columnsA[0]+" to "+columnsA[columnsA.length-1];
+					ixmaps.setTitle("<span style='color:#888888'>"+szXaxisA[columnsA.length-1]+"</span");
+
+					// -----------------------------------------------------------------------------------------------               
+					// deploy the data
+					// ----------------------------------------------------------------------------------------------- 
+					ixmaps.setExternalData(data_Confirmed, {
+						type: "dbtable",
+						name: options.name
+					});
+
+				});
+
+	};
+
 	ixmaps.CSSE_COVID_SEQUENCE_DIFFERENCE_DEATHS_MEAN_7_CLIP_WEEKS = function (theme, options) {
 
 		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
