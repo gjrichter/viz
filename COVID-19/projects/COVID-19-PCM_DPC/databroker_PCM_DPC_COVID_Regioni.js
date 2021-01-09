@@ -889,6 +889,84 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 	
+    ixmaps.PCM_DPC_COVID_LAST_CUMUL_7_INCIDENCE = function (theme,options) {
+		
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+
+			function (dataA) {
+
+				// get population lookup for incidence
+				var dataPop = dataA[1];
+				// correct region names in population table
+				dataPop.column("Territorio").map(function (value) {
+					if (value == "Provincia Autonoma Bolzano / Bozen") {
+						return "P.A. Bolzano";
+					} else
+					if (value == "Provincia Autonoma Trento") {
+						return "P.A. Trento";
+					} else {
+						return value.split(" /")[0].replace(/-/, " ");
+					}
+				});
+				var pop = [];
+				var terrA = dataPop.column("Territorio").values();
+				var popA = dataPop.column("Value").values();
+				for (var i = 0; i < terrA.length; i++) {
+					pop[terrA[i]] = popA[i];
+				}
+
+				var pivot = __process(dataA[0], options);
+			
+				pivot.column("Total").remove();
+				var indexName = pivot.column("denominazione_regione").index;
+
+				// make sum of 7 days
+				var records = pivot.records;
+				for (var r=0; r<records.length;r++){
+					for (var c=records[r].length-1; c>=11;c--){
+						records[r][c] = (Number(records[r][c])-
+										 Number(records[r][c-7])
+										);
+						records[r][c] =  (records[r][c]/pop[records[r][indexName].replace(/\-/," ")]*100000);
+					}
+				}
+				
+				// get the columns with date 
+				var columns = pivot.columnNames();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+
+				var last = columns.length-1;
+
+				theme.szSizeField = columns[last];
+				theme.szValueField = columns[last];
+
+				// ----------------------------------------------------------------------------------------------- 
+				// deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(pivot, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			});
+
+	};
+				
     ixmaps.PCM_DPC_COVID_LAST_CUMUL_14_INCIDENCE = function (theme,options) {
 		
 		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
