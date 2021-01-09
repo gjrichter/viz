@@ -91,7 +91,7 @@
 			"field": "$item$",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|LONGTITLE|DTEXT|SIMPLELEGEND",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|LONGTITLE|GRIDSIZE|DTEXT|SIMPLELEGEND",
 				"colorscheme": [
 					"1",
 					"rgb(242, 43, 140)",
@@ -107,11 +107,11 @@
 				"symbols":[
 					"https://s3.eu-west-1.amazonaws.com/symbols.ixmaps.com/primula_vaccini.svg"
 				],
-				"align":"23right",
+				"align":"left",
 				"units": "%",
 				"units100": "",
 				"refreshtimeout": "0",
-				"scale": "0.2",
+				"scale": "0.8",
 				"rangescale": "0.8",
 				"normalsizevalue":"1000000",
 				"titlefield": "regione",
@@ -124,6 +124,7 @@
 				"valuedecimals": "2",
 				"linewidth":"3",
 				"boxupper":"1:1000000",
+				"gridwidth":"100000",
 				"title": "COVID-19<br>somministrazioni in % della popolazione",
 				"snippet": "aggiornato al 2020-11-03T17:00:00",
 				"description":"<h4>data: <a  href='<a href=' https://github.com/ondata/covid19italia/tree/master/webservices/vaccini' target='_blank'>onData GitHub</a></h4><h4>fonte: <a href='https://app.powerbi.com/view?r=eyJrIjoiMzg4YmI5NDQtZDM5ZC00ZTIyLTgxN2MtOTBkMWM4MTUyYTg0IiwidCI6ImFmZDBhNzVjLTg2NzEtNGNjZS05MDYxLTJjYTBkOTJlNDIyZiIsImMiOjh9' target='_blank'>Dashboard con informazioni sui vaccini</a> - Ministero della Salute</h4>"
