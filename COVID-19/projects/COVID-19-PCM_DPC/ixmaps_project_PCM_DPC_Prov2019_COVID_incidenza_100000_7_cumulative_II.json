@@ -48,10 +48,10 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "44.12702800650004",
-			"lng": "11.1016845703125"
+			"lat": "42.84349959781736",
+			"lng": "10.338134765625002"
 			},
-		"zoom": "7"
+		"zoom": "6"
 		},
 	"themes": [{
 			"layer": "Prov2019_nome",
@@ -71,7 +71,7 @@
 				"datacache": "false",
 				"lookupfield": "codice_provincia",
 				"lookuptonumber": "true",
-				"units": "nuovi casi x 10 000",
+				"units": "nuovi casi x 100 000",
 				"refreshtimeout": "0",
 				"scale": "1",
 				"dopacitypow": "2",
@@ -147,9 +147,9 @@
 				"datacache": "false",
 				"lookupfield": "lat|long",
 				"lookuptonumber": "true",
-				"units": "nuovi casi x 10 000",
+				"units": "nuovi casi x 100 000",
 				"refreshtimeout": "0",
-				"scale": "2",
+				"scale": "1.5",
 				"dopacitypow": "1",
 				"dopacityscale": "3",
 				"titlefield": "denominazione_provincia",
