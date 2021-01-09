@@ -2184,7 +2184,7 @@ window.ixmaps = window.ixmaps || {};
 					// make label 
 					var szXaxisA = [];
 					for ( var i =0; i<columnsA.length; i++ ){
-                       if (columnsA[i] == "3/1/20"){
+                        if (columnsA[i] == "3/1/20"){
   						  szXaxisA.push("mar");
                         }else
                         if (columnsA[i] == "4/1/20"){
@@ -2213,7 +2213,13 @@ window.ixmaps = window.ixmaps || {};
                        }else
                         if (columnsA[i] == "12/1/20"){
   						  szXaxisA.push("dec");
-                        }else{
+                       }else
+                        if (columnsA[i] == "1/1/21"){
+  						  szXaxisA.push("jan");
+                       }else
+                        if (columnsA[i] == "2/1/21"){
+  						  szXaxisA.push("feb");
+                       }else{
 						  szXaxisA.push(" ");
                         }
 					}
