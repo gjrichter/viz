@@ -13,6 +13,23 @@ window.ixmaps = window.ixmaps || {};
 			return value.split(" ")[0];
 		});
 				
+		data.column("regione").map(function (value) {
+			if (value == "P.A. Bolzano") {
+				return "Provincia Autonoma di Bolzano/Bozen";
+			} else
+			if (value == "P.A. Trento") {
+				return "Provincia Autonoma di Trento";
+			} else 
+			if (value == "P.A. Trento") {
+				return "Provincia Autonoma di Trento";
+			} else 
+			if (value == "Valle d'Aosta") {
+				return "Valle d'Aosta/Vallée d'Aoste";
+			} else {
+				return value;
+			}
+		});
+
 		var pivot = data.pivot(
 			{lead:"codice_regione",
 			 columns:"dataAggiornamento",
@@ -30,6 +47,23 @@ window.ixmaps = window.ixmaps || {};
 			return value.split(" ")[0];
 		});
 				
+		data.column("regione").map(function (value) {
+			if (value == "P.A. Bolzano") {
+				return "Provincia Autonoma di Bolzano/Bozen";
+			} else
+			if (value == "P.A. Trento") {
+				return "Provincia Autonoma di Trento";
+			} else 
+			if (value == "P.A. Trento") {
+				return "Provincia Autonoma di Trento";
+			} else 
+			if (value == "Valle d'Aosta") {
+				return "Valle d'Aosta/Vallée d'Aoste";
+			} else {
+				return value;
+			}
+		});
+
 		var pivot = data.pivot(
 			{lead:"codice_regione",
 			 columns:"dataAggiornamento",
@@ -47,6 +81,23 @@ window.ixmaps = window.ixmaps || {};
 			return value.split(" ")[0];
 		});
 				
+		data.column("regione").map(function (value) {
+			if (value == "P.A. Bolzano") {
+				return "Provincia Autonoma di Bolzano/Bozen";
+			} else
+			if (value == "P.A. Trento") {
+				return "Provincia Autonoma di Trento";
+			} else 
+			if (value == "P.A. Trento") {
+				return "Provincia Autonoma di Trento";
+			} else 
+			if (value == "Valle d'Aosta") {
+				return "Valle d'Aosta/Vallée d'Aoste";
+			} else {
+				return value;
+			}
+		});
+
 		var pivot = data.pivot(
 			{lead:"codice_regione",
 			 columns:"dataAggiornamento",
@@ -300,7 +351,6 @@ window.ixmaps = window.ixmaps || {};
     ixmaps.VACCINI_PERCENTUALI_CLIP = function (theme,options) {
 		
 		var szUrl1 = "https://raw.githubusercontent.com/ondata/covid19italia/master/webservices/vaccini/processing/somministrazioni.csv";
-		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/consegnate.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ArcGis Feature service
@@ -309,26 +359,13 @@ window.ixmaps = window.ixmaps || {};
 		var broker = new Data.Broker()
 		
 			.addSource(szUrl1, "csv")
-			.addSource(szUrl2, "csv")
 			.realize(
 				
 			function (dataA) {
 
 			var data = dataA[0];	
-			var pivot = __get_somministrazioni(data,options);
-			var conseg= dataA[1];
-				
-			var consegA = conseg.lookupArray("assegnati","codice_regione");	
-			console.log(conseg);
-			console.log(consegA);
-			var indexCodice = pivot.column("codice_regione").index;	
-			var records = pivot.records;
-			for ( var r=0; r<records.length; r++ ){
-				for ( var c=2; c<records[r].length-1; c++ ){
-					records[r][c] = (Number(records[r][c]) / consegA[Number(records[r][indexCodice])]*100).toFixed(2);
- 				}
-			}
-				
+			var pivot = __get_percentuali(data,options);
+
 			// get the columns with date 
 			var columns = pivot.columnNames();
 			columns.shift();
@@ -397,10 +434,13 @@ window.ixmaps = window.ixmaps || {};
 			// correct region names in population table
 			dataPop.column("Territorio").map(function (value) {
 				if (value == "Provincia Autonoma Bolzano / Bozen") {
-					return "P.A. Bolzano";
+					return "Provincia Autonoma di Bolzano/Bozen";
 				} else
 				if (value == "Provincia Autonoma Trento") {
-					return "P.A. Trento";
+					return "Provincia Autonoma di Trento";
+				} else
+				if (value == "Valle d'Aosta / Vallée d'Aoste") {
+					return "Valle d'Aosta/Vallée d'Aoste";
 				} else {
 					return value.split(" /")[0].replace(/-/, " ");
 				}
@@ -433,6 +473,10 @@ window.ixmaps = window.ixmaps || {};
 			theme.szFields = columns.slice().join('|');
 			theme.szFieldsA = columns.slice();
 			
+			if ( !ixmaps.tempMaxValue ){
+				alert("brrrr");
+			}
+				
 			var max = ixmaps.tempMaxValue || pivot.column(columns[last]).values().sort()[0];
 			ixmaps.changeThemeStyle(theme.szId,"normalsizevalue:"+Math.ceil(max),"set")
 
@@ -486,10 +530,13 @@ window.ixmaps = window.ixmaps || {};
 			// correct region names in population table
 			dataPop.column("Territorio").map(function (value) {
 				if (value == "Provincia Autonoma Bolzano / Bozen") {
-					return "P.A. Bolzano";
+					return "Provincia Autonoma di Bolzano/Bozen";
 				} else
 				if (value == "Provincia Autonoma Trento") {
-					return "P.A. Trento";
+					return "Provincia Autonoma di Trento";
+				} else
+				if (value == "Valle d'Aosta / Vallée d'Aoste") {
+					return "Valle d'Aosta/Vallée d'Aoste";
 				} else {
 					return value.split(" /")[0].replace(/-/, " ");
 				}
@@ -563,10 +610,13 @@ window.ixmaps = window.ixmaps || {};
 			// correct region names in population table
 			dataPop.column("Territorio").map(function (value) {
 				if (value == "Provincia Autonoma Bolzano / Bozen") {
-					return "P.A. Bolzano";
+					return "Provincia Autonoma di Bolzano/Bozen";
 				} else
 				if (value == "Provincia Autonoma Trento") {
-					return "P.A. Trento";
+					return "Provincia Autonoma di Trento";
+				} else
+				if (value == "Valle d'Aosta / Vallée d'Aoste") {
+					return "Valle d'Aosta/Vallée d'Aoste";
 				} else {
 					return value.split(" /")[0].replace(/-/, " ");
 				}
@@ -612,10 +662,9 @@ window.ixmaps = window.ixmaps || {};
 
 		});
 	};
-    ixmaps.VACCINI_PERCENTUALI_SEQUENCE = function (theme,options) {
+   ixmaps.VACCINI_PERCENTUALI_SEQUENCE = function (theme,options) {
 		
 		var szUrl1 = "https://raw.githubusercontent.com/ondata/covid19italia/master/webservices/vaccini/processing/somministrazioni.csv";
-		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/consegnate.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ArcGis Feature service
@@ -624,25 +673,13 @@ window.ixmaps = window.ixmaps || {};
 		var broker = new Data.Broker()
 		
 			.addSource(szUrl1, "csv")
-			.addSource(szUrl2, "csv")
 			.realize(
 				
 			function (dataA) {
 
 			var data = dataA[0];	
-			var pivot = __get_somministrazioni(data,options);
+			var pivot = __get_percentuali(data,options);
 			var conseg= dataA[1];
-				
-			var consegA = conseg.lookupArray("assegnati","codice_regione");	
-			console.log(conseg);
-			console.log(consegA);
-			var indexCodice = pivot.column("codice_regione").index;	
-			var records = pivot.records;
-			for ( var r=0; r<records.length; r++ ){
-				for ( var c=2; c<records[r].length-1; c++ ){
-					records[r][c] = (Number(records[r][c]) / consegA[Number(records[r][indexCodice])]*100).toFixed(2);
- 				}
-			}
 				
 			// get the columns with date 
 			var columns = pivot.columnNames();
@@ -712,10 +749,13 @@ window.ixmaps = window.ixmaps || {};
 			// correct region names in population table
 			dataPop.column("Territorio").map(function (value) {
 				if (value == "Provincia Autonoma Bolzano / Bozen") {
-					return "P.A. Bolzano";
+					return "Provincia Autonoma di Bolzano/Bozen";
 				} else
 				if (value == "Provincia Autonoma Trento") {
-					return "P.A. Trento";
+					return "Provincia Autonoma di Trento";
+				} else
+				if (value == "Valle d'Aosta / Vallée d'Aoste") {
+					return "Valle d'Aosta/Vallée d'Aoste";
 				} else {
 					return value.split(" /")[0].replace(/-/, " ");
 				}
