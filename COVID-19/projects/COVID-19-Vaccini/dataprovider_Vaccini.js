@@ -144,6 +144,9 @@ window.ixmaps = window.ixmaps || {};
 		.error(function(e){alert("error loading data from:\n"+szUrl);});
 
 	};
+    ixmaps.VACCINI_SOMMINISTRAZIONI_LAST_ALT = function (theme,options) {
+		ixmaps.VACCINI_SOMMINISTRAZIONI_LAST(theme,options);
+	}
 		
     ixmaps.VACCINI_CONSEGNATE_LAST = function (theme,options) {
 
