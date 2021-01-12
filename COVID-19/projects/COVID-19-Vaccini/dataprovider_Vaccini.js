@@ -111,7 +111,6 @@ window.ixmaps = window.ixmaps || {};
 
     ixmaps.VACCINI_SOMMINISTRAZIONI_LAST = function (theme,options) {
 
-
 		var szUrl = "https://raw.githubusercontent.com/ondata/covid19italia/master/webservices/vaccini/processing/somministrazioni.csv";
 
 		// -----------------------------------------------------------------------------------------------               
@@ -148,7 +147,45 @@ window.ixmaps = window.ixmaps || {};
 		ixmaps.VACCINI_SOMMINISTRAZIONI_LAST(theme,options);
 	}
 		
-    ixmaps.VACCINI_CONSEGNATE_LAST = function (theme,options) {
+     ixmaps.VACCINI_PERCENTUALI_LAST = function (theme,options) {
+
+		var szUrl = "https://raw.githubusercontent.com/ondata/covid19italia/master/webservices/vaccini/processing/somministrazioni.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(mydata){
+			
+			var pivot = __get_percentuali(mydata,options);
+	
+			// get the columns with date 
+			var columns = pivot.columnNames();
+			columns.pop();
+			
+			var last = columns.length-1;
+		
+			theme.szFields = columns[last];
+			theme.szFieldsA = [columns[last]];
+
+			// -----------------------------------------------------------------------------------------------               
+			// deploy the data
+			// ----------------------------------------------------------------------------------------------- 
+
+			ixmaps.setExternalData(pivot, {
+				type: "dbtable",
+				name: options.name
+			});
+
+		})
+		.error(function(e){alert("error loading data from:\n"+szUrl);});
+
+	};
+    ixmaps.VACCINI_PERCENTUALI_LAST_ALT = function (theme,options) {
+		ixmaps.VACCINI_PERCENTUALI_LAST(theme,options);
+	}
+		
+   ixmaps.VACCINI_CONSEGNATE_LAST = function (theme,options) {
 
 
 		var szUrl = "https://raw.githubusercontent.com/ondata/covid19italia/master/webservices/vaccini/processing/somministrazioni.csv";
@@ -184,10 +221,6 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 		
-	ixmaps.VACCINI_SOMMINISTRAZIONI_LAST_ALT = function (theme,options) {
-	   return ixmaps.VACCINI_SOMMINISTRAZIONI_LAST(theme,options);
-	};
-
 				
     ixmaps.VACCINI_SOMMINISTRAZIONI_CLIP = function (theme,options) {
 
@@ -297,61 +330,7 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 	
-    ixmaps.VACCINI_PERCENTUALI_LAST = function (theme,options) {
-		
-		var szUrl1 = "https://raw.githubusercontent.com/ondata/covid19italia/master/webservices/vaccini/processing/somministrazioni.csv";
-		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/consegnate.csv";
-
-		// -----------------------------------------------------------------------------------------------               
-		// read the ArcGis Feature service
-		// ----------------------------------------------------------------------------------------------- 
-
-		var broker = new Data.Broker()
-		
-			.addSource(szUrl1, "csv")
-			.addSource(szUrl2, "csv")
-			.realize(
-				
-			function (dataA) {
-
-			var data = dataA[0];	
-			var pivot = __get_somministrazioni(data,options);
-			var conseg= dataA[1];
-				
-			var consegA = conseg.lookupArray("assegnati","codice_regione");	
-			console.log(conseg);
-			console.log(consegA);
-			var indexCodice = pivot.column("codice_regione").index;	
-			var records = pivot.records;
-			for ( var r=0; r<records.length; r++ ){
-				for ( var c=2; c<records[r].length-1; c++ ){
-					records[r][c] = (Number(records[r][c]) / consegA[Number(records[r][indexCodice])]*100).toFixed(2);
- 				}
-			}
-				
-			// get the columns with date 
-			var columns = pivot.columnNames();
-			columns.shift();
-			columns.shift();
-			columns.pop();
-			
-			var last = columns.length-1;
-		
-			theme.szFields = columns[last];
-			theme.szFieldsA = [columns[last]];
-
-			// -----------------------------------------------------------------------------------------------               
-			// deploy the data
-			// ----------------------------------------------------------------------------------------------- 
-
-			ixmaps.setExternalData(pivot, {
-				type: "dbtable",
-				name: options.name
-			});
-		});
-	};
-	
-    ixmaps.VACCINI_PERCENTUALI_CLIP = function (theme,options) {
+     ixmaps.VACCINI_PERCENTUALI_CLIP = function (theme,options) {
 		
 		var szUrl1 = "https://raw.githubusercontent.com/ondata/covid19italia/master/webservices/vaccini/processing/somministrazioni.csv";
 
