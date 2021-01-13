@@ -130,9 +130,9 @@ window.ixmaps = window.ixmaps || {};
 			theme.szFields = columns[last];
 			theme.szFieldsA = [columns[last]];
 
-			theme.szSnippet = "aggiornato al "+columns[last];
-
-			ixmaps.setTitle("<f2 style='color:#888888;background-color:rgba(255,255,255,0.1);padding:0.3em 0.5em;border:#888888 solid 0.5px;border-radius:0.2em'>aggiornato: "+(columns[last])+"</f2>");
+			var szDate = new Date(columns[last]).toLocaleDateString();
+			theme.szSnippet = "aggiornato al "+szDate;
+			ixmaps.setTitle("<f2 style='color:#888888;background-color:rgba(255,255,255,0.1);padding:0.3em 0.5em;border:#888888 solid 0.5px;border-radius:0.2em'>aggiornato: "+(szDate)+"</f2>");
 
 			// -----------------------------------------------------------------------------------------------               
 			// deploy the data
