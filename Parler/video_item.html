@@ -1,0 +1,349 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta name="copyright" content="Guenter Richter" />
+	<meta name="author" content="service@medienobjekte.de" />
+	<meta name="description" content="Interactive &amp; estensible maps in SVG" />
+	<meta name="revisit-after" content="30 days" />
+	<meta name="distribution" content="Global" />
+
+	<link rel="stylesheet" href="../../stories/Master/index.css" type="text/css" />
+
+	<style type="text/css">
+		body {
+			font-family: courier new, Raleway, Roboto Slab, monospace, Lato, arial, helvetica;
+			color: #444;
+			font-weight: 300;
+		}
+
+		td {
+			font-weight: 400;
+			font-size: 1.1em;
+			padding: 0.1em 0.5em;
+			vertical-align: top;
+		}
+
+		.label {
+			text-align: right;
+			font-size: 0.8em;
+			padding-top: 0.4em;
+			color: #888;
+			width: 33%;
+		}
+
+		.value {
+			text-align: left;
+			color: #666;
+			font-weight: 600;
+		}
+
+		.clip {
+			max-width: 100px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		.item-list {
+			margin-right: 0em;
+			padding: 1em 0.5em 1.5em 0.66em;
+			color: #aaa;
+		}
+
+		a {
+			color: #4466ff;
+		}
+
+		object {
+			margin: 0;
+			padding: 0;
+			margin-right: -1em;
+			width: 100%;
+			height: 1000px;
+		}
+
+		#container {
+			margin-top: 2.1em;
+			margin-left: 0em;
+			margin-right: 0em;
+			xxpadding-bottom: 1em;
+			xxpadding-right: 2em;
+			vertical-align: middle;
+			background-color: rgba(239, 235, 239, 0.7);
+			border:solid #ddd 0.1px;
+			border-radius: 0.5em;
+		}
+
+		#tooltip {
+			font-family: arial narrow, system;
+			color: #444;
+			background: white;
+			border: 0.5px solid black;
+			border-radius: 5px;
+			padding: 5px;
+			max-width: 80%;
+		}
+
+	</style>
+
+</head>
+
+<body style="margin:0px;padding:0px;" onload="">
+
+	<!-- Container -->
+	<div id="container" style="background:#fff;">
+
+		<div id="chart-div" style="position:relative;top:0px">
+		</div>
+		<div id="chart-div2" style="position:relative;top:-420px;pointer-events:none;max-height:0px">
+		</div>
+
+		<div id="result-div">
+			<div id="result">
+			</div>
+		</div>
+
+
+		<div id="tooltip" style="position: absolute; display: none;"></div>
+
+	</div>
+	
+	<script type="text/javascript" src="assets/plugins/jquery-1.7.1.min.js"></script>
+
+	<script type="text/javascript">
+		// ===========================================
+		//
+		// !! get ixmaps api from story parent/opener
+		//
+		// ===========================================
+
+		var ixmaps = null;
+		if (window.opener) {
+			ixmaps = window.opener.ixmaps;
+		} else
+		if (parent) {
+			ixmaps = parent.window.ixmaps;
+		} else {
+			alert("error: missing parent window for themes !");
+		}
+
+		ixmaps.initialized = true;
+
+		// ===================================
+		// define local functions
+		// ===================================
+
+		// ------------------------
+		// tooltips for SVG charts
+		// ------------------------
+
+		var showTooltip = function(evt, text) {
+			if (text && text.length) {
+				var tooltip = document.getElementById("tooltip");
+				tooltip.innerHTML = text;
+				tooltip.style.display = "block";
+				var left = 0; //parseInt(sidebar.style.getPropertyValue("left"));
+				tooltip.style.left = evt.pageX - left - 20 + 'px';
+				tooltip.style.top = evt.pageY + 20 + 'px';
+			}
+		}
+
+		var hideTooltip = function() {
+			var tooltip = document.getElementById("tooltip");
+			tooltip.style.display = "none";
+		}
+
+        var oldTarget = null;
+        var oldOpacity = null;
+        
+		ixmaps.onMouseOver = function() {
+			
+			if (oldTarget){
+				oldTarget.style.setProperty("fill-opacity",oldOpacity);
+				oldTarget = oldOpacity = null;
+			}
+			
+			var szTooltip = null;
+			var source = oldTarget = event.target;
+            
+            oldOpacity = oldOpacity || source.style.getPropertyValue("fill-opacity");
+            source.style.setProperty("fill-opacity","1");
+            
+			while (!szTooltip && source) {
+				szTooltip = source.getAttribute("tooltip");
+				time = new Date(Number(source.getAttribute("time")));
+				if ((time != "Invalid Date") && time.getTime() ){
+					szTooltip = "<span style='font-size:0.8em;line-height:0.5em;color:#cccccc'>"+time.toLocaleDateString()+"</span><br>" + szTooltip;
+				}
+				source = source.parentNode;
+			}
+			showTooltip(event, szTooltip);
+			event.stopPropagation();
+			event.preventDefault();
+		};
+
+		ixmaps.onMouseOut = function() {
+			if (oldTarget){
+				oldTarget.style.setProperty("fill-opacity",oldOpacity);
+				oldTarget = oldOpacity = null;
+			}
+			hideTooltip();
+		};
+
+		var DonutCharts = {};
+		DonutCharts.partOver = function() {};
+		DonutCharts.partOut = function() {};
+
+		// ===================================
+		// ===================================
+		//
+		// here we go and make the item info
+		//
+		// ===================================
+		// ===================================
+		
+		var showData = false;
+
+		ixmaps.makeItemContent = function() {
+
+			$("#result").html("");
+			$("#chart-div").html("");
+			$("#chart-div2").html("");
+
+			var szHtml = "";
+
+			var normal = "#888888";
+			var highLight = "#000000";
+			var highLightBg = "#e8e8e8";
+
+			if (ixmaps.getMapTypeId().match(/dark/i)) {
+				$("#container").css("background-color", "#333");
+				$("#container").css("color", "#ddd");
+				normal = "#aaaaaa";
+				highLight = "#ffffff";
+				highLightBg = "#808080";
+			}
+
+			var szId = ixmaps.szMapItemId;
+			var themeObj = ixmaps.getThemeObj(szId.split(":")[0]);
+			showData = themeObj?(themeObj.fShowData?true:showData):showData;
+			
+			if (szId.match(/chart/i)) {
+				
+				// and data  
+				// ---------------------------------------
+				var data = ixmaps.getData('map', szId);
+				
+				if ( data ) {
+
+					var szTitle = data.nome || "";
+
+					var suffix = "";
+
+					szHtml += "<div style='padding-top:1.5em;padding-bottom:1em;overflow:auto'>";
+
+					if (data.length > 1) {
+						szHtml += "<div style='padding:1em 0.5em 0em 1.5em;color:#aaa'> data of <b>" + data.length + " aggregated items</b></div>";
+					} else //{
+						//    szHtml += "<div style='padding:1em 0.5em 0em 1.5em;color:#aaa'> data of " + data.length + " item</div>";
+						//}
+						if (data.length > 50) {
+							szHtml += "<div style='padding:0 0.5em 0em 1.5em;color:#a00'> list limited to the first 50 items!</div>";
+						}
+
+					for (d = 0; d < Math.min(50, data.length); d++) {
+
+						szHtml += "</div><div class='item-list' style='background:" + ((d % 2) ? "none" : "rgba(0,0,0,0.04)") + "'>";
+
+						szHtml += "<span style='border:solid #bbb 1px;border-radius:15px;padding:0.2em 0.5em'>" + (d + 1) + "</span>" + "<table>"
+						var dataObject = data[d];
+						
+						var videoId = dataObject.SourceFile.split("meta-")[1].split(".json")[0];
+						szHtml += "<div id='video-div' style='margin-top:0.5em;text-align:center'>";
+						szHtml += "<video style='width:100%;max-height:600px;' controls>";
+  						szHtml += "<source src='https://parlervid.herokuapp.com/"+videoId+"' type='video/mp4'>";
+						szHtml += "Your browser does not support the video tag.";
+						szHtml += "</video>";
+						szHtml += "<div id='video-error' style='position:relative;top:-180px'></div>";
+ 						szHtml += "</div>";
+						
+						for (i in dataObject) {
+							if ( (i == "geometry") ) {
+								continue;
+							}
+							var value = dataObject[i];
+							var szValue = (isNaN(value) || value < 10000) ? String(value) : ixmaps.__formatValue(dataObject[i], 2, "SPACE");
+							if (szValue.match(/http:/) || szValue.match(/https:/)) {
+								if (szValue.match(/.jpg/) || szValue.match(/.png/)) {
+									szValue = "<img  src='" + szValue + "' style='max-width:100%'>";
+									szHtml += "<tr><td></td><td class='label'>" + i + "</td><td class='value clip'>" + szValue + "</td></tr>";
+								} else {
+									szValue = "<a  href='" + szValue + "' target='_blank' style='width:100px'>" + szValue + "</a>";
+									szHtml += "<tr><td></td><td class='label'>" + i + "</td><td class='value clip'>" + szValue + "</td></tr>";
+								}
+							} else {
+								if (!i.match(/------/)) {
+									if (i == themeObj.szSizeField ||
+										i == themeObj.szSymbolField ||
+										i == themeObj.szColorField ||
+										(themeObj.szFieldsA.indexOf(i) >= 0)
+									) {
+										szHtml += "<tr><td><span style='color:black'>&larr;</span></td><td class='label' ><b>" + (i.replace(/\_/g, " ")) + "</b></td><td class='value' style='color:" + highLight + ";background:" + highLightBg + "'>" + szValue + suffix + "</td></tr>";
+									} else {
+										szHtml += "<tr><td></td><td class='label'>" + (i.replace(/\_/g, " ")) + "</td><td class='value' style='color:" + normal + "'>" + szValue + suffix + "</td></tr>";
+									}
+								} else {}
+							}
+						}
+						szHtml += "</table>";
+						
+					}
+					szHtml += "</div>";
+
+					if (data.length > 50) {
+						szHtml += "<div style='padding:0 0.5em 0em 1.5em;color:#444'> list limited to 50 items!<br>" + (data.length - 50) + " more items not shown!</div>";
+					} else {
+						szHtml += "<br><br>";
+					}
+					
+					if ( (data.length > 1)) {
+						szHtml += "</br>";
+						szHtml += "</br>";
+						szHtml += "</br>";
+						szHtml += "&nbsp;";
+					}
+
+				}else{
+					if (data && (data.length > 1)) {
+						szHtml += "<div style='padding:2em 0.5em 0em 1.5em;color:#aaa'> " + data.length + " items aggregated </div>";
+					} 
+					szHtml += "<div style='padding:1.5em;padding-bottom:1em;overflow:auto;pointer-events:all'>";
+					szHtml += "<a href='#' title='show data' onclick=\"showData=true;ixmaps.makeItemContent()\">...</a>"
+					szHtml += "</div>";
+				}
+
+			} 
+
+			// show the item legend when its ready
+			$("#result").html(szHtml);
+			$("#result-div").show();
+
+			//ixmaps.sidebar(1);
+			ixmaps.resizeStoryToolFrame();
+
+			$('video source').last().on('error', function() {
+				$("#video-error").html("Sorry, that video is not available. We'll have to wait for the archive to be hosted somewhere.");
+			});
+		};
+
+		setTimeout("ixmaps.makeItemContent()", 100);
+
+	</script>
+
+</body>
+
+</html>
