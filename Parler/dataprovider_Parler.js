@@ -79,7 +79,7 @@ window.ixmaps = window.ixmaps || {};
 
 	ixmaps.PARLER_RIOT_GEO  = function(data,option){
 		
-		var szUrl = "https://srv-store2.gofile.io/download/EJczW8/RiotGeo.csv";
+		var szUrl = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Parler/RiotGeo.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the tree data base
