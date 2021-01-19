@@ -14,3 +14,9 @@ featured:
 
 [Elezioni 2020](https://gjrichter.github.io/viz/Elezioni)
 
+
+
+
+
+[Parler video map](https://gjrichter.github.io/viz/Parler/gallery/)
+
