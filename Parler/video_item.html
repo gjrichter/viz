@@ -265,9 +265,10 @@
 						var dataObject = data[d];
 						
 						var videoId = dataObject.SourceFile.split("meta-")[1].split(".json")[0];
+						
 						szHtml += "<div id='video-div' style='margin-top:0.5em;text-align:center'>";
 						szHtml += "<video style='width:100%;max-height:600px;' controls>";
-  						szHtml += "<source src='https://parlervid.herokuapp.com/"+videoId+"' type='video/mp4'>";
+  						szHtml += "<source src='https://d2hxwnssq7ss7g.cloudfront.net/"+videoId+"_cvt.mp4' type='video/mp4'>";
 						szHtml += "Your browser does not support the video tag.";
 						szHtml += "</video>";
 						szHtml += "<div id='video-error' style='position:relative;top:-180px'></div>";
