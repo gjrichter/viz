@@ -11,11 +11,17 @@ codice per includere la mappa in una pagina HTML:
 
 
 
-**[https://tinyurl.com/y2g8q3dx](https://tinyurl.com/y2g8q3dx)**
+some links to full screen maps:
 
-[Parler_clean_6_DC_Riot_Geo_aggregated_timeline_satellite](https://gjrichter.github.io/ixmaps/ui/dispatch.htm?ui=embed&basemap=ll&legend=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/Parler/final/ixmaps_project_Parler_clean_6_DC_Riot_Geo_aggregated_timeline_satellite.json)
+shorted url to the above map: [https://tinyurl.com/y2g8q3dx](https://tinyurl.com/y2g8q3dx)
 
-[Parler_clean_6_DC_Riot_Geo_aggregated_timeline_satellite_count](https://gjrichter.github.io/ixmaps/ui/dispatch.htm?ui=embed&basemap=ll&legend=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/Parler/final/ixmaps_project_Parler_clean_6_DC_Riot_Geo_aggregated_timeline_satellite_count.json)
+original url to the above map with esplicit project link: [Map with_aggregated videos and timeline](https://gjrichter.github.io/ixmaps/ui/dispatch.htm?ui=embed&basemap=ll&legend=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/Parler/final/ixmaps_project_Parler_clean_6_DC_Riot_Geo_aggregated_timeline_satellite.json)
 
-[Parler_clean_6_DC_Riot_Geo_multiple_timeline_satellite](https://gjrichter.github.io/ixmaps/ui/dispatch.htm?ui=embed&basemap=ll&legend=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/Parler/final/ixmaps_project_Parler_clean_6_DC_Riot_Geo_multiple_timeline_satellite.json)
+
+
+slightly different vesions:
+
+[Map with aggregated videos and video count](https://gjrichter.github.io/ixmaps/ui/dispatch.htm?ui=embed&basemap=ll&legend=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/Parler/final/ixmaps_project_Parler_clean_6_DC_Riot_Geo_aggregated_timeline_satellite_count.json)
+
+[Map with individual videos and timeline](https://gjrichter.github.io/ixmaps/ui/dispatch.htm?ui=embed&basemap=ll&legend=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/Parler/final/ixmaps_project_Parler_clean_6_DC_Riot_Geo_multiple_timeline_satellite.json)
 
