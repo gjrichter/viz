@@ -95,16 +95,10 @@
 	<!-- Container -->
 	<div id="item-container" style="background:#fff;">
 
-		<div id="chart-div" style="position:relative;top:0px">
-		</div>
-		<div id="chart-div2" style="position:relative;top:-420px;pointer-events:none;max-height:0px">
-		</div>
-
 		<div id="result-div">
 			<div id="result">
 			</div>
 		</div>
-
 
 		<div id="tooltip" style="position: absolute; display: none;"></div>
 
@@ -113,6 +107,9 @@
 	<script type="text/javascript" src="assets/plugins/jquery-3.5.1.min.js"></script>
 	
 	<script type="text/javascript">
+		
+		// if ixmaps is not defined, we are within an iframe and must get it from the opener
+		
 		if ( typeof(ixmaps) == "undefined" ){
 			var ixmaps = null;
 			if ( window.opener ){
@@ -206,8 +203,6 @@
 		ixmaps.makeItemContent = function() {
 
 			$("#result").html("");
-			$("#chart-div").html("");
-			$("#chart-div2").html("");
 
 			var szHtml = "";
 
@@ -236,12 +231,15 @@
 
 			if (szId.match(/chart/i)) {
 				
-				// and data  
+				// get the item data  
 				// ---------------------------------------
 				var data = ixmaps.getData( szId);
 				
 				if ( data ) {
 
+					// render the item data 
+					// ---------------------------------------
+					
 					var szTitle = data.nome || "";
 
 					var suffix = "";
@@ -250,13 +248,13 @@
 
 					if (data.length > 1) {
 						szHtml += "<div style='padding:1em 0.5em 0em 1.5em;color:#aaa'> data of <b>" + data.length + " aggregated items</b></div>";
-					} else //{
-						//    szHtml += "<div style='padding:1em 0.5em 0em 1.5em;color:#aaa'> data of " + data.length + " item</div>";
-						//}
-						if (data.length > 50) {
-							szHtml += "<div style='padding:0 0.5em 0em 1.5em;color:#a00'> list limited to the first 50 items!</div>";
-						}
+					} else 
+					if (data.length > 50) {
+						szHtml += "<div style='padding:0 0.5em 0em 1.5em;color:#a00'> list limited to the first 50 items!</div>";
+					}
 
+					// there may be more data objects (videos)
+					// ---------------------------------------
 					for (d = 0; d < Math.min(50, data.length); d++) {
 
 						szHtml += "</div><div class='item-list' style='background:" + ((d % 2) ? "none" : "rgba(0,0,0,0.04)") + "'>";
@@ -264,8 +262,12 @@
 						szHtml += "<span style='border:solid #bbb 1px;border-radius:15px;padding:0.2em 0.5em'>" + (d + 1) + "</span>" + "<table>"
 						var dataObject = data[d];
 						
+						// get the video id 
 						var videoId = dataObject.SourceFile.split("meta-")[1].split(".json")[0];
 						
+						//=================
+						// embed the video
+						//=================
 						szHtml += "<div id='video-div' style='margin-top:0.5em;text-align:center'>";
 						szHtml += "<video style='width:100%;max-height:600px;' controls>";
   						szHtml += "<source src='https://d2hxwnssq7ss7g.cloudfront.net/"+videoId+"_cvt.mp4' type='video/mp4'>";
@@ -273,7 +275,9 @@
 						szHtml += "</video>";
 						szHtml += "<div id='video-error' style='position:relative;top:-180px'></div>";
  						szHtml += "</div>";
+						//=================
 						
+						// append the metadata
 						for (i in dataObject) {
 							if ( (i == "geometry") ) {
 								continue;
@@ -328,21 +332,25 @@
 					szHtml += "<a href='#' title='show data' onclick=\"showData=true;ixmaps.makeItemContent()\">...</a>"
 					szHtml += "</div>";
 				}
-
 			} 
 
 			// show the item legend when its ready
+			//
 			$("#result").html(szHtml);
 			$("#result-div").show();
 
-			//ixmaps.sidebar(1);
+			// call resize to free unused space to get pointer-events on map
 			ixmaps.resizeStoryToolFrame();
 
+			// define an error handler for the HTML video objects
+			// tbd: point to the individual video objects, 
+			//      at the moment all point to the first video to show the error message
 			$('video source').last().on('error', function() {
 				$("#video-error").html("Sorry, that video is not available. We'll have to wait for the archive to be hosted somewhere.");
 			});
 		};
 
+		// init the content generation when the page is loaded
 		setTimeout("ixmaps.makeItemContent()", 100);
 
 	</script>
