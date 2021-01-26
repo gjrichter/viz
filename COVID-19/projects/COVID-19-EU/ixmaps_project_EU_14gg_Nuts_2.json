@@ -16,6 +16,7 @@
 		"item": "",
 		"layout":"minimal",
 		"scaleParam": {
+			"labelScaling": "0.8",
 			"borderScaling": "0.1",
 			"normalSizeScale": "1528452"
 			},
