@@ -127,7 +127,7 @@
 				"dbtable": "EU_COVID_DATA",
 				"dbtableUrl": "https://cors-anywhere.herokuapp.com/https://opendata.ecdc.europa.eu/covid19/movementindicators/csv/data.csv",
 				"dbtableType": "csv",
-				"dbtableExt":"../../projects/COVID-19-EU/process_data.js",
+				"dbtableExt":"https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-EU/process_data.js",
 				"datacache": "true",
 				"lookupfield": "geo_id_final",
 				"values": [
