@@ -1,0 +1,157 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Mon Jan 25 2021 23:50:25 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "white",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"borderScaling": "0.1",
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "49.724479188712984",
+			"lng": "18.940429687500004"
+			},
+		"zoom": "5"
+		},
+	"themes": [{
+			"layer": "nuts_0",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"white"],
+				"dbtable": "nuts_0",
+				"dbtableUrl": "https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/NUTS_RG_10M_2021_4326_LEVL_0.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "NUTS_ID",
+				"lookupfield": "geometry",
+				"linecolor": [
+					"black"],
+				"linewidth": "0.3",
+				"title": "Nuts_0"
+				}
+			},{
+			"layer": "nuts_1",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"white"],
+				"dbtable": "nuts_1",
+				"dbtableUrl": "https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/NUTS_RG_10M_2021_4326_LEVL_1.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "NUTS_ID",
+				"lookupfield": "geometry",
+				"linecolor": [
+					"black"],
+				"linewidth": "0.3",
+				"title": "Nuts_1"
+				}
+			},{
+			"layer": "nuts_2",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"white"],
+				"dbtable": "nuts_2",
+				"dbtableUrl": "https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/NUTS_RG_10M_2021_4326_LEVL_2.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "NUTS_ID",
+				"lookupfield": "geometry",
+				"linecolor": [
+					"black"],
+				"linewidth": "0.3",
+				"title": "Nuts_2"
+				}
+			},{
+			"layer": "nuts_0|nuts_1|nuts_2",
+			"field": "colour",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|CATEGORICAL|COMPACTLEGEND",
+				"colorscheme": [
+					"red",
+					"orange",
+					"green",
+					"gray"],
+				"opacity": "1",
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "EU_COVID_DATA",
+				"dbtableUrl": "https://cors-anywhere.herokuapp.com/https://opendata.ecdc.europa.eu/covid19/movementindicators/csv/data.csv",
+				"dbtableType": "csv",
+				"dbtableExt":"../../projects/COVID-19-EU/process_data.js",
+				"datacache": "true",
+				"lookupfield": "geo_id_final",
+				"values": [
+					"Red",
+					"Orange",
+					"Green",
+					"Grey - no data"],
+				"label": [
+					" ",
+					" ",
+					" ",
+					"no data"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"titlefield":"region",
+				"title": "COVID-19 colors of europe"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
