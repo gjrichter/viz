@@ -154,7 +154,7 @@ window.ixmaps = window.ixmaps || {};
 				pop[terrA[i]] = popA[i];
 			}
 
-			var iName  = mydata.column("Nome").index;
+			var iName  = mydata.column("nome_area").index;
 			var iValue = mydata.column("prima_dose").index;
 			mydata.addColumn({destination:"prima_dose_pop"},function(row){
 				return (Number(row[iValue]) / pop[row[iName].replace(/\-/," ")]*100).toFixed(2);	
