@@ -117,7 +117,7 @@
 			"field": "$item$",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|LONGTITLE|GRIDSIZE|DTEXT|SIMPLELEGEND",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|LONGTITLE|DTEXT|SIMPLELEGEND",
 				"colorscheme": [
 					"1",
 					"rgb(242, 43, 140)",
@@ -132,11 +132,11 @@
 				"symbols":[
 					"https://s3.eu-west-1.amazonaws.com/symbols.ixmaps.com/primula_vaccini.svg"
 				],
-				"align":"left",
+				"align":"right|above",
 				"units": "%",
 				"units100": "",
 				"refreshtimeout": "0",
-				"scale": "0.8",
+				"scale": "0.1",
 				"rangescale": "0.8",
 				"normalsizevalue":"1000000",
 				"titlefield": "regione",
@@ -169,7 +169,7 @@
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini.js",
 				"datacache": "true",
 				"lookupfield": "regione",
-				"align":"right",
+				"align":"left",
 				"units": "%",
 				"units100": "",
 				"refreshtimeout": "0",
