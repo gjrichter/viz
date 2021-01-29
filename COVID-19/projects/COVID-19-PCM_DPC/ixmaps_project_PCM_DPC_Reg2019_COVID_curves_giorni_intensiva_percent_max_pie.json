@@ -130,7 +130,7 @@
 					"terapia intensiva"],
 				"units": "",
 				"units100": "",
-				"align": "above|right",
+				"align": "bottom|left",
 				"refreshtimeout": "0",
 				"normalsizevalue": "600",
 				"scale": "1.5",
