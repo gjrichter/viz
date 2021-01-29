@@ -136,7 +136,7 @@
 				"legendunits": "%",
 				"units100": "",
 				"refreshtimeout": "0",
-				"scale": "6",
+				"scale": "3",
 				"nodatacolor": "rgba(253, 208, 0,0.5)",
 				"textcolor": "white",
 				"linecolor": [
