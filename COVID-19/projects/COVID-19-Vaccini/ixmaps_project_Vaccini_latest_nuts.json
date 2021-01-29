@@ -22,7 +22,7 @@
 			},
 		"options": {
 			"featurescaling": "true",
-			"objectscaling": "dynamic",
+			"objectscaling": "true",
 			"clipmap": "true",
 			"clipmapdynamic": "true",
 			"dynamiclabel": "NOSIZE",
