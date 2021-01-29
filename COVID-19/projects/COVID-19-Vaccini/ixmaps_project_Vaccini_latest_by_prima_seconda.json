@@ -133,6 +133,7 @@
 					"2. dose",
 					"2. dose"],
 				"units": "%",
+				"legendunits": "%",
 				"units100": "",
 				"refreshtimeout": "0",
 				"scale": "6",
