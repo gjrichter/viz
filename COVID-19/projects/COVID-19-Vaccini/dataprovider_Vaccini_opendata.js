@@ -135,7 +135,10 @@ window.ixmaps = window.ixmaps || {};
 			var dataPop = dataA[1];
 			// correct region names in population table
 			dataPop.column("Territorio").map(function (value) {
-				return value.split(" /")[0].replace(/-/, " ");
+				if (value == "Emilia-Romagna") {
+					return "Emilia Romagna";
+				} 
+				return value;
 			});
 			var pop = [];
 			var terrA = dataPop.column("Territorio").values();
