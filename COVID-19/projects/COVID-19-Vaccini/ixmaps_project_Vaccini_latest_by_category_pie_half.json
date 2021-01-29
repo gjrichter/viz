@@ -49,10 +49,10 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "44.18220395771566",
-			"lng": "12.381591796875002"
+			"lat": "41.86956082699455",
+			"lng": "15.721435546875002"
 			},
-		"zoom": "7"
+		"zoom": "6"
 		},
 	"themes": [{
 			"layer": "nuts2",
@@ -90,10 +90,10 @@
 				"type": "CHOROPLETH|QUANTILE|NOLEGEND",
 				"colorscheme": [
 					"15",
-					"rgb(221, 221, 221)",
-					"rgb(221, 221, 221)",
+					"rgb(211, 211, 211)",
+					"rgb(211, 211, 211)",
 					"3colors",
-					"rgb(221, 221, 221)"],
+					"rgb(211, 211, 211)"],
 				"fillopacity": "1",
 				"shadow": "false",
 				"dbtable": "VACCINI_SOMMINISTRAZIONI_LAST",
@@ -124,7 +124,7 @@
 					"15",
 					"tableau"],
 				"fillopacity": "1",
-				"shadow": "true",
+				"shadow": "false",
 				"dbtable": "VACCINI_SOMMINISTRAZIONI_LAST",
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
@@ -138,7 +138,7 @@
 				"units": "",
 				"units100": "",
 				"refreshtimeout": "0",
-				"normalsizevalue": "20000",
+				"normalsizevalue": "50000",
 				"scale": "1",
 				"linewidth": "0.2",
 				"titlefield": "Nome",
@@ -146,7 +146,7 @@
 				"valuedecimals": "0",
 				"evidence": "isolate_gray",
 				"title": "COVID-19<br>Vaccini somministrati per categoria",
-				"snippet": "<h4>fonte:<br> <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></h4>"
+				"snippet": "<h5>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h5>"
 				}
 			}],
 	"layerMask": {
