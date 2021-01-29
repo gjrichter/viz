@@ -68,6 +68,11 @@ window.ixmaps = window.ixmaps || {};
 
 		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(mydata){
 			
+			var dateA = mydata.column("data_somministrazione").values();
+			var date = dateA.pop();
+			date = new Date(date).toLocaleDateString();
+			ixmaps.setTitle("<f2 style='color:#888888;background-color:rgba(255,255,255,0.1);padding:0.3em 0.5em;border:#888888 solid 0.5px;border-radius:0.2em'>aggiornato: "+date+"</f2>");
+			
 			mydata.condense('area',{keep:"area"});
 			
 			mydata.addColumn({source:"area",destination:"NUTS"},function(value){
