@@ -729,6 +729,49 @@ window.ixmaps = window.ixmaps || {};
 			});
 	};
 
+	ixmaps.CSSE_COVID_NEW_CONFIRMED_14 = function (theme, options) {
+
+		// to get the last date in the time series 
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		
+		new Data.Broker()
+			.addSource(szUrl1, "csv")
+			.realize(
+				function (dataA) {
+					
+				var data_Confirmed = dataA[0];	
+
+				var lastDataColumnName = data_Confirmed.columnNames().pop();
+				// get last 14 columns
+				var last_14 = data.columnNames().slice(-14);
+				// get first and last	
+				var lastDataColumnName  = data_Confirmed.columnNames().pop();
+				var firstDataColumnName = data_Confirmed.columnNames().shift();
+				var firstIndex = data_Confirmed.column(firstDataColumnName).index;
+				var lastIndex  = data_Confirmed.column(lastDataColumnName).index;
+					
+			    data_Confirmed.addColumn({"destination":"14gg"},function(row){
+					return (Number(row[lastIndex])-Number(row[firstIndex]);
+				});
+
+				// set as data fields in actual theme
+				options.theme.szFields = last_28.slice().join("|");
+				options.theme.szFieldsA = last_28.slice();
+
+				// make label ! -1 because of DIFFERENC theme
+				options.theme.szLabelA = 14gg;
+				options.theme.szXaxisA = 14gg;
+					
+				// -----------------------------------------------------------------------------------------------             // deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+				ixmaps.setExternalData(data_Confirmed, {
+					type: "dbtable",
+					name: options.name
+				});
+					
+			});
+	};
+
 
 })();
 
