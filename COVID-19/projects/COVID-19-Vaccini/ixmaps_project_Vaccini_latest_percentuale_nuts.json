@@ -101,7 +101,7 @@
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
 				"datacache": "true",
-				"lookupfield": "NUTS",
+				"lookupfield": "codice_NUTS2",
 				"units": "%",
 				"units100": "",
 				"refreshtimeout": "0",
@@ -110,7 +110,7 @@
 				"linecolor": [
 					"#F28E2B"],
 				"linewidth": "1",
-				"titlefield": "Nome",
+				"titlefield": "nome_area",
 				"valuescale": "1",
 				"valuedecimals": "1",
 				"title": "Percentuale dell popolazione con almeno 1 dose",
@@ -132,7 +132,7 @@
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
 				"datacache": "true",
-				"lookupfield": "NUTS",
+				"lookupfield": "codice_NUTS2",
 				"units": "%",
 				"symbols":[
 					"https://s3.eu-west-1.amazonaws.com/symbols.ixmaps.com/primula_vaccini.svg"
@@ -142,7 +142,7 @@
 				"units100": "",
 				"refreshtimeout": "0",
 				"scale": "1.5",
-				"titlefield": "Nome",
+				"titlefield": "nome_area",
 				"valuescale": "1",
 				"valuedecimals": "1",
 				"title": "Percentuale dell popolazione con almeno 1 dose",
