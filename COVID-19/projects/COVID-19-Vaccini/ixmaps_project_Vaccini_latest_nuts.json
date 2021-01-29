@@ -21,7 +21,7 @@
 			"normalSizeScale": "13841043"
 			},
 		"options": {
-			"featurescaling": "dynamic",
+			"featurescaling": "true",
 			"objectscaling": "dynamic",
 			"clipmap": "true",
 			"clipmapdynamic": "true",
