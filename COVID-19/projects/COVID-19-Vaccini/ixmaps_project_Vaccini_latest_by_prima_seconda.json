@@ -100,7 +100,7 @@
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
 				"datacache": "true",
-				"lookupfield": "NUTS",
+				"lookupfield": "codice_NUTS2",
 				"units": "",
 				"units100": "",
 				"refreshtimeout": "0",
@@ -109,7 +109,7 @@
 				"linecolor": [
 					"#F28E2B"],
 				"linewidth": "1",
-				"titlefield": "NUTS",
+				"titlefield": "codice_NUTS2",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"title": "COVID-19<br>vaccini somministrati"
@@ -128,7 +128,7 @@
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
 				"datacache": "true",
-				"lookupfield": "NUTS",
+				"lookupfield": "codice_NUTS2",
 				"label": [
 					"2. dose",
 					"2. dose"],
@@ -142,7 +142,7 @@
 				"linecolor": [
 					"rgb(242, 43, 140)"],
 				"linewidth": "0.4",
-				"titlefield": "Nome",
+				"titlefield": "nome_area",
 				"sizefield":"prima_dose",
 				"valuescale": "1",
 				"valuedecimals": "0",
