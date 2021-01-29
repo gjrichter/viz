@@ -101,7 +101,7 @@
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
 				"datacache": "true",
-				"lookupfield": "NUTS",
+				"lookupfield": "codice_NUTS2",
 				"units": "",
 				"units100": "",
 				"refreshtimeout": "0",
@@ -109,7 +109,7 @@
 				"linecolor": [
 					"#F28E2B"],
 				"linewidth": "1",
-				"titlefield": "Nome",
+				"titlefield": "nome_area",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"title": "COVID-19<br>Vaccini<br>Dosi somministrate",
