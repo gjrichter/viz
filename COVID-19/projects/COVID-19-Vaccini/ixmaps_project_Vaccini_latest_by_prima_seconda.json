@@ -1,0 +1,159 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Jan 24 2021 21:46:00 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "white",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"lineScaling": "23.67696884508345",
+			"labelScaling": "1.5",
+			"normalSizeScale": "13841043"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "41.97582726102573",
+			"lng": "14.611816406250002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "nuts2",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "barrios",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/nuts/main/processing/NUTS2_g.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "NUTS2",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "features",
+				"title": "Italy nuts2"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "totale",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|QUANTILE|NOLEGEND",
+				"colorscheme": [
+					"15",
+					"rgb(211, 211, 211)",
+					"rgb(211, 211, 211)",
+					"3colors",
+					"rgb(211, 211, 211)"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "VACCINI_SOMMINISTRAZIONI_LAST",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
+				"datacache": "true",
+				"lookupfield": "NUTS",
+				"units": "",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"textcolor": "black",
+				"linecolor": [
+					"#F28E2B"],
+				"linewidth": "1",
+				"titlefield": "NUTS",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "COVID-19<br>vaccini somministrati"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "seconda_dose",
+			"field100": "prima_dose",
+			"style": {
+				"type": "CHART|PIE|AUTOCOMPLETE|SIZE|VALUES|COMPACTLEGEND|COUNT",
+				"colorscheme": [
+					"rgb(242, 43, 140)"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "VACCINI_SOMMINISTRAZIONI_LAST",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
+				"datacache": "true",
+				"lookupfield": "NUTS",
+				"label": [
+					"2. dose",
+					"2. dose"],
+				"units": "%",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "6",
+				"nodatacolor": "rgba(253, 208, 0,0.5)",
+				"textcolor": "white",
+				"linecolor": [
+					"rgb(242, 43, 140)"],
+				"linewidth": "0.3",
+				"titlefield": "Nome",
+				"sizefield":"prima_dose",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"evidence": "isolate_gray",
+				"title": "COVID-19 Vaccini percentuale 2. dosi",
+				"snippet": "<h5>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h5>",
+				"description":"(media nazionale)"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
