@@ -133,6 +133,10 @@ window.ixmaps = window.ixmaps || {};
 				
 			// get population lookup for incidence
 			var dataPop = dataA[1];
+			// correct region names in population table
+			dataPop.column("Territorio").map(function (value) {
+				return value.split(" /")[0].replace(/-/, " ");
+			});
 			var pop = [];
 			var terrA = dataPop.column("Territorio").values();
 			var popA = dataPop.column("Value").values();
