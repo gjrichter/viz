@@ -141,7 +141,7 @@
 				"textcolor": "white",
 				"linecolor": [
 					"rgb(242, 43, 140)"],
-				"linewidth": "0.3",
+				"linewidth": "0.4",
 				"titlefield": "Nome",
 				"sizefield":"prima_dose",
 				"valuescale": "1",
