@@ -20,8 +20,8 @@
 			"normalSizeScale": "13841043"
 			},
 		"options": {
-			"featurescaling": "dynamic",
-			"objectscaling": "dynamic",
+			"featurescaling": "true",
+			"objectscaling": "true",
 			"clipmap": "true",
 			"clipmapdynamic": "true",
 			"dynamiclabel": "NOSIZE",
@@ -100,7 +100,7 @@
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
 				"datacache": "true",
-				"lookupfield": "NUTS",
+				"lookupfield": "codice_NUTS2",
 				"units": "",
 				"units100": "",
 				"refreshtimeout": "0",
@@ -109,7 +109,7 @@
 				"linecolor": [
 					"#F28E2B"],
 				"linewidth": "1",
-				"titlefield": "NUTS",
+				"titlefield": "codice_NUTS2",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"title": "COVID-19<br>vaccini somministrati"
@@ -129,7 +129,7 @@
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
 				"datacache": "true",
-				"lookupfield": "NUTS",
+				"lookupfield": "codice_NUTS2",
 				"label": [
 					"Operatori sanitari sociosanitari",
 					"Personale non sanitario",
@@ -141,7 +141,7 @@
 				"normalsizevalue": "50000",
 				"scale": "1",
 				"linewidth": "0.2",
-				"titlefield": "Nome",
+				"titlefield": "nome_area",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"evidence": "isolate_gray",
