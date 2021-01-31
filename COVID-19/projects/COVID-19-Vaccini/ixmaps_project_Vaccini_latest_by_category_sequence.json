@@ -192,6 +192,7 @@
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"fadenegative": "1",
+				"titlefield":"nome_area",
 				"evidence": "isolate_gray",
 				"title": "COVID-19<br>Vaccini somministrati per categoria",
 				"snippet": "dal 27/12/2020 al 29/1/2021"
@@ -230,6 +231,7 @@
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"fadenegative": "1",
+				"titlefield":"nome_area",
 				"evidence": "isolate_gray",
 				"title": "COVID-19<br>Vaccini somministrati per categoria",
 				"snippet": "dal 27/12/2020 al 29/1/2021"
