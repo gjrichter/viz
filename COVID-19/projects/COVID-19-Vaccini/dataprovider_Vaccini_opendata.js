@@ -116,6 +116,10 @@ window.ixmaps = window.ixmaps || {};
 		return ixmaps.VACCINI_SOMMINISTRAZIONI_XXX_SEQUENCE(theme,options,"categoria_personale_non_sanitario");
 	};
 
+    ixmaps.VACCINI_SOMMINISTRAZIONI_RSA_SEQUENCE = function (theme,options) {
+		return ixmaps.VACCINI_SOMMINISTRAZIONI_XXX_SEQUENCE(theme,options,"categoria_ospiti_rsa");
+	};
+	
     ixmaps.VACCINI_SOMMINISTRAZIONI_FIRST_SEQUENCE = function (theme,options) {
 		return ixmaps.VACCINI_SOMMINISTRAZIONI_XXX_SEQUENCE(theme,options,"prima_dose");
 	};
