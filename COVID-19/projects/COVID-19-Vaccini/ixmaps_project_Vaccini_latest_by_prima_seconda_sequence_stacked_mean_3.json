@@ -89,7 +89,7 @@
 			"data": {
 				"name": "VACCINI_SOMMINISTRAZIONI_LAST",
 				"type": "ext",
-				"ext": "../../projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
+				"ext": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
 				"cache": "true"
 				},
 			"field": "totale",
@@ -123,7 +123,7 @@
 			"data": {
 				"name": "VACCINI_SOMMINISTRAZIONI_PRIMA_SECONDA_SEQUENCE_MEAN_3",
 				"type": "ext",
-				"ext": "../../projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
+				"ext": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
 				"cache": "true"
 				},
 			"field": "",
