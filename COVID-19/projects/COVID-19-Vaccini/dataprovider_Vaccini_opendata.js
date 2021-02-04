@@ -198,11 +198,11 @@ window.ixmaps = window.ixmaps || {};
 		});
 	};
 	
-	ixmaps.VACCINI_FIRST_PERCENTUALI_POPOLAZIONE_LAST(theme,options) {
+	ixmaps.VACCINI_FIRST_PERCENTUALI_POPOLAZIONE_LAST = function(theme,options) {
 		ixmaps.VACCINI_PERCENTUALI_POPOLAZIONE_LAST(theme,options,"prima_dose_pop");
 	};
 	
-	ixmaps.VACCINI_SECOND_PERCENTUALI_POPOLAZIONE_LAST(theme,options) {
+	ixmaps.VACCINI_SECOND_PERCENTUALI_POPOLAZIONE_LAST = function(theme,options) {
 		ixmaps.VACCINI_PERCENTUALI_POPOLAZIONE_LAST(theme,options,"seconda_dose_pop");
 	};	
 
