@@ -136,7 +136,7 @@ window.ixmaps = window.ixmaps || {};
 	};
 	
 	
-	ixmaps.VACCINI_PERCENTUALI_POPOLAZIONE_LAST = function (theme,options) {
+	ixmaps.VACCINI_PERCENTUALI_POPOLAZIONE_LAST = function (theme,options,column) {
 		
 		var szUrl1 = "https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/master/dati/somministrazioni-vaccini-summary-latest.csv";
 		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
@@ -182,7 +182,7 @@ window.ixmaps = window.ixmaps || {};
 
 			var iName  = mydata.column("nome_area").index;
 			var iValue = mydata.column("prima_dose").index;
-			mydata.addColumn({destination:"prima_dose_pop"},function(row){
+			mydata.addColumn({destination:column},function(row){
 				return (Number(row[iValue]) / pop[row[iName].replace(/\-/," ")]*100).toFixed(2);	
 			});
 
@@ -197,6 +197,14 @@ window.ixmaps = window.ixmaps || {};
 
 		});
 	};
+	
+	ixmaps.VACCINI_FIRST_PERCENTUALI_POPOLAZIONE_LAST(theme,options) {
+		ixmaps.VACCINI_PERCENTUALI_POPOLAZIONE_LAST(theme,options,"prima_dose_pop");
+	};
+	
+	ixmaps.VACCINI_SECOND_PERCENTUALI_POPOLAZIONE_LAST(theme,options) {
+		ixmaps.VACCINI_PERCENTUALI_POPOLAZIONE_LAST(theme,options,"seconda_dose_pop");
+	};	
 
     var __mean_3 = function(table) { 
 		
