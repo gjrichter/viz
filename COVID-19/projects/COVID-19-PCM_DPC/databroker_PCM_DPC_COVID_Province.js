@@ -2066,6 +2066,218 @@ window.ixmaps = window.ixmaps || {};
 		ixmaps.PCM_DPC_COVID_SEQUENCE_INCIDENZA_MEAN_7_CLIP(theme, options);
 	};
 
+	ixmaps.PCM_DPC_COVID_SEQUENCE_INCIDENZA_CUMUL_7_CLIP = function (theme, options) {
+
+
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-province/dpc-covid19-ita-province.csv";
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES_Province_2019.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+				function (dataA) {
+
+					var mydata = dataA[0];
+					var dataPop = dataA[1];
+					
+					// make pivot: one row x province, data = column 4 ---> 
+					var pivot = __process(mydata, options);
+					pivot.column("Total").remove();
+					
+					var columns = pivot.columnNames();
+					for ( var i =4; i<columns.length; i++ ){
+						var date = new Date(columns[i]).toLocaleDateString();
+						pivot.column(columns[i]).rename(date);
+					}
+					
+					var lastColumn = pivot.columnNames().length - 1;
+
+					// make lookupArray: COD_PROV ==> population
+					var popA = dataPop.lookupArray("Value","COD_PROV");
+					
+					var records = pivot.records;
+					for ( var r=0; r<records.length; r++ ){
+						for ( var c=lastColumn; c>=11; c-- ){
+							var last   = Number(records[r][c]  );
+							var before = Number(records[r][c-7]);
+							records[r][c] = ((last-before)/popA[Number(records[r][0])]*100000).toFixed(2);
+						}
+					}
+					
+					// get the columns with date 
+					columns = pivot.columnNames();
+					columns.shift();
+					columns.shift();
+					columns.shift();
+					columns.shift();
+					// drop first 7 for diff and  mean 7
+					columns.shift();
+					columns.shift();
+					columns.shift();
+					columns.shift();
+					columns.shift();
+					columns.shift();
+					columns.shift();
+
+					var last = columns.length - 1;
+
+					// and configure the theme
+					theme.szFields = columns.slice().join('|');
+					theme.szFieldsA = columns.slice();
+
+					// and set the label
+					theme.szLabelA = columns.slice();
+					
+					theme.szSnippet = "dal " + columns[0] + " al " + columns[last - 1];
+					
+					var szXaxisA = [];
+					for ( var i =0; i<columns.length; i++ ){
+						szXaxisA.push(columns[i]);
+					}
+					theme.szXaxisA = szXaxisA;
+								 
+					theme.nClipFrames = columns.length;
+	
+					// -----------------------------------------------------------------------------------------------               
+					// deploy the data
+					// ----------------------------------------------------------------------------------------------- 
+
+					ixmaps.setExternalData(pivot, {
+						type: "dbtable",
+						name: options.name
+					});
+
+				});
+
+	};
+
+	ixmaps.PCM_DPC_COVID_SEQUENCE_INCIDENZA_CUMUL_7_CLIP_2 = function (theme, options) {
+		ixmaps.PCM_DPC_COVID_SEQUENCE_INCIDENZA_CUMUL_7_CLIP(theme, options);
+	};
+
+	ixmaps.PCM_DPC_COVID_SEQUENCE_MEAN_7_CLIP = function (theme, options) {
+
+
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-province/dpc-covid19-ita-province.csv";
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES_Province_2019.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+				function (dataA) {
+
+					var mydata = dataA[0];
+					var dataPop = dataA[1];
+					
+					// make pivot: one row x province, data = column 4 ---> 
+					var pivot = __process(mydata, options);
+					pivot.column("Total").remove();
+					
+					var columns = pivot.columnNames();
+					for ( var i =4; i<columns.length; i++ ){
+						var date = new Date(columns[i]).toLocaleDateString();
+						pivot.column(columns[i]).rename(date);
+					}
+					
+					var lastColumn = pivot.columnNames().length - 1;
+
+					// make lookupArray: COD_PROV ==> population
+					var popA = dataPop.lookupArray("Value","COD_PROV");
+					
+					var records = pivot.records;
+					for ( var r=0; r<records.length; r++ ){
+						for ( var c=lastColumn; c>=11; c-- ){
+							var last   = (Number(records[r][c]  )+
+										  Number(records[r][c-1])+
+										  Number(records[r][c-2])+
+										  Number(records[r][c-3])+
+										  Number(records[r][c-4])+
+										  Number(records[r][c-5])+
+										  Number(records[r][c-6]))/7;
+							var before = (Number(records[r][c-1])+
+										  Number(records[r][c-2])+
+										  Number(records[r][c-3])+
+										  Number(records[r][c-4])+
+										  Number(records[r][c-5])+
+										  Number(records[r][c-6])+
+										  Number(records[r][c-7]))/7;
+							records[r][c] = (last-before);
+						}
+					}
+					
+					// get the columns with date 
+					columns = pivot.columnNames();
+					columns.shift();
+					columns.shift();
+					columns.shift();
+					columns.shift();
+					// drop first 7 for diff and  mean 7
+					columns.shift();
+					columns.shift();
+					columns.shift();
+					columns.shift();
+					columns.shift();
+					columns.shift();
+					columns.shift();
+
+					var last = columns.length - 1;
+
+					fieldsA = [];
+					for (var i = 0; i < columns.length; i++) {
+						if ( i%2 ){
+							pivot.column(columns[i]).remove();
+						}else{
+							fieldsA.push(columns[i]);
+							}
+					}
+
+					// and configure the theme
+					theme.szFields = fieldsA.slice().join('|');
+					theme.szFieldsA = fieldsA.slice();
+
+					// and set the label
+					theme.szLabelA = fieldsA.slice();
+					
+					theme.szSnippet = "dal " + columns[0] + " al " + columns[last - 1];
+					
+					var szXaxisA = [];
+					for ( var i =0; i<fieldsA.length; i++ ){
+						szXaxisA.push(fieldsA[i]);
+					}
+					theme.szXaxisA = szXaxisA;
+								 
+					theme.nClipFrames = fieldsA.length;
+	
+					// -----------------------------------------------------------------------------------------------               
+					// deploy the data
+					// ----------------------------------------------------------------------------------------------- 
+
+					ixmaps.setExternalData(pivot, {
+						type: "dbtable",
+						name: options.name
+					});
+
+				});
+
+	};
+
+	ixmaps.PCM_DPC_COVID_SEQUENCE_MEAN_7_CLIP_2 = function (theme, options) {
+		ixmaps.PCM_DPC_COVID_SEQUENCE_MEAN_7_CLIP(theme, options);
+	};
+
+	
+	
+	
 	
 	
 	
