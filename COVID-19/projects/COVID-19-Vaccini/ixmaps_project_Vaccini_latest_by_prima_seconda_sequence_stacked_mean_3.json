@@ -46,7 +46,8 @@
 			"labelscaling": "dynamic",
 			"flushChartDraw": "50000",
 			"mapopacity": "1",
-			"basemapopacity": "1"
+			"basemapopacity": "1",
+			"panhidden":"false"
 			},
 		"center": {
 			"lat": "42.282221877329024",
@@ -67,7 +68,7 @@
 			"style": {
 				"type": "FEATURES|NOLEGEND|LOCKED",
 				"colorscheme": [
-					"none"],
+					"#e0e0e0"],
 				"fillopacity": "1",
 				"autoopacity": "true",
 				"shadow": "false",
@@ -83,40 +84,6 @@
 				"valuedecimals": "0",
 				"name": "features",
 				"title": "Italy nuts2"
-				}
-			},{
-			"layer": "nuts2",
-			"data": {
-				"name": "VACCINI_SOMMINISTRAZIONI_LAST",
-				"type": "ext",
-				"ext": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
-				"cache": "true"
-				},
-			"field": "totale",
-			"field100": "",
-			"style": {
-				"type": "CHOROPLETH|QUANTILE|NOLEGEND",
-				"colorscheme": [
-					"15",
-					"rgb(211, 211, 211)",
-					"rgb(211, 211, 211)",
-					"3colors",
-					"rgb(211, 211, 211)"],
-				"fillopacity": "1",
-				"shadow": "false",
-				"lookupfield": "codice_NUTS2",
-				"units": "",
-				"units100": "",
-				"refreshtimeout": "0",
-				"scale": "1",
-				"textcolor": "black",
-				"linecolor": [
-					"#F28E2B"],
-				"linewidth": "1",
-				"titlefield": "codice_NUTS2",
-				"valuescale": "1",
-				"valuedecimals": "0",
-				"title": "COVID-19<br>vaccini somministrati"
 				}
 			},{
 			"layer": "nuts2",
