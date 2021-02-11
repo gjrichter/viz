@@ -1,0 +1,136 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Fri Jan 22 2021 22:09:38 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h3><b>Incidenza cumulativa di 7 giorni</b> nuovi casi in 7 giorni per 100.000 abitanti</h3><h4>Visualizzazione di dati 'COVID-19 Italia' al livello provinciale, pubblicati dalla <b>Dipartimento Protezione Civile</b></h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4>",
+		"item": "html",
+		"scaleParam": {
+			"borderScaling": "2",
+			"lineScaling": "5",
+			"normalSizeScale": "4638029"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panhidden":"false"
+			},
+		"center": {
+			"lat": "42.84349959781736",
+			"lng": "10.338134765625002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "Prov2019_nome",
+			"field": "incidenza",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|QUANTILE|COMPACTLEGEND",
+				"colorscheme": [
+					"green",
+					"#F1D8DE",
+					"#F4A7BC",
+					"#DD0044"],
+				"ranges": [
+					"0",
+					"35",
+					"100",
+					"250",
+					"1000"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_LAST_INCID_100000_CUMUL_7_ALT",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province.js",
+				"datacache": "false",
+				"lookupfield": "codice_provincia",
+				"lookuptonumber": "true",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"dopacitypow": "2",
+				"dopacityscale": "3",
+				"titlefield": "denominazione_provincia",
+				"valueupper": "1:1000000",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "Incidenza cumulativa di 7 giorni",
+				"snippet": "casi per 100.000 abitanti"
+				}
+			},{
+			"layer": "Prov2019_nome",
+			"field": "incidenza",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|QUANTILE|TEXTONLY|NOLEGEND|VALUES",
+				"colorscheme": [
+					"green",
+					"#F1D8DE",
+					"#F4A7BC",
+					"#DD0044"],
+				"ranges": [
+					"0",
+					"35",
+					"100",
+					"250",
+					"1000"],
+				"fillopacity": "0.6",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_LAST_INCID_100000_CUMUL_7_ALT",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province.js",
+				"datacache": "false",
+				"lookupfield": "codice_provincia",
+				"lookuptonumber": "true",
+				"symbols": [
+					"label"],
+				"units": "nuovi casi x 100 000",
+				"refreshtimeout": "0",
+				"scale": "1.5",
+				"dopacitypow": "1",
+				"dopacityscale": "3",
+				"titlefield": "denominazione_provincia",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "2021-01-22T17:00:00",
+				"snippet": "aggiornato al 2020-03-05"
+				}
+			}],
+	"layerMask": {
+		}
+	}
