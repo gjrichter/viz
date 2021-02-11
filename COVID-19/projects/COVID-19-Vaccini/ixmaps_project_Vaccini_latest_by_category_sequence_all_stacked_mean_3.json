@@ -112,7 +112,7 @@
 				"align": "23right",
 				"refreshtimeout": "0",
 				"normalsizevalue": "50000",
-				"scale": "0.1",
+				"scale": "0.07",
 				"rangescale": "5",
 				"maxvalue": "auto",
 				"textscale": "0.5",
