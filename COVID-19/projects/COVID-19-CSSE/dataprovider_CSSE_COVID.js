@@ -146,8 +146,8 @@ window.ixmaps = window.ixmaps || {};
 								
 									// calcolate Case-Fatality_Ratio from this
 								
-									var iConfirmed = data.column("Confirmed_28").index;
-									var iDeaths = data.column("Deaths_28").index;
+									iConfirmed = data.column("Confirmed_28").index;
+									iDeaths = data.column("Deaths_28").index;
 								
 									data.addColumn({
 										destination: "Case-Fatality_Ratio_28"
@@ -347,8 +347,8 @@ window.ixmaps = window.ixmaps || {};
 								
 									// calcolate Case-Fatality_Ratio from this
 								
-									var iConfirmed_calc = data.column("Confirmed_56").index;
-									var iDeaths_calc = data.column("Deaths_56").index;
+									iConfirmed_calc = data.column("Confirmed_56").index;
+									iDeaths_calc = data.column("Deaths_56").index;
 								
 									data.addColumn({
 										destination: "Case-Fatality_Ratio_56"
@@ -480,8 +480,8 @@ window.ixmaps = window.ixmaps || {};
 								
 									// calcolate Case-Fatality_Ratio from this
 								
-									var iConfirmed = data.column("Confirmed_56").index;
-									var iDeaths = data.column("Deaths_56").index;
+									iConfirmed = data.column("Confirmed_56").index;
+									iDeaths = data.column("Deaths_56").index;
 								
 									data.addColumn({
 										destination: "Case-Fatality_Ratio_56"
@@ -635,10 +635,10 @@ window.ixmaps = window.ixmaps || {};
 								
 									// get Confirmed/Deaths of before 28 days
 								
-									var iConfirmed 		= data.column("Confirmed.5").index;
-									var iDeaths 		= data.column("Deaths.5").index;
-									var iConfirmed_28 	= data.column("Confirmed.4").index;
-									var iDeaths_28 		= data.column("Deaths.4").index;
+									iConfirmed 		= data.column("Confirmed.5").index;
+									iDeaths 		= data.column("Deaths.5").index;
+									iConfirmed_28 	= data.column("Confirmed.4").index;
+									iDeaths_28 		= data.column("Deaths.4").index;
 								
 									data.addColumn({
 										destination: "Case-Fatality_Ratio_4"
@@ -653,10 +653,10 @@ window.ixmaps = window.ixmaps || {};
 								
 									// get Confirmed/Deaths of before 28 days
 								
-									var iConfirmed 		= data.column("Confirmed.4").index;
-									var iDeaths 		= data.column("Deaths.4").index;
-									var iConfirmed_28 	= data.column("Confirmed.3").index;
-									var iDeaths_28 		= data.column("Deaths.3").index;
+									iConfirmed 		= data.column("Confirmed.4").index;
+									iDeaths 		= data.column("Deaths.4").index;
+									iConfirmed_28 	= data.column("Confirmed.3").index;
+									Deaths_28 		= data.column("Deaths.3").index;
 								
 									data.addColumn({
 										destination: "Case-Fatality_Ratio_3"
@@ -671,10 +671,10 @@ window.ixmaps = window.ixmaps || {};
 								
 									// get Confirmed/Deaths of before 28 days
 								
-									var iConfirmed 		= data.column("Confirmed.3").index;
-									var iDeaths 		= data.column("Deaths.3").index;
-									var iConfirmed_28 	= data.column("Confirmed.2").index;
-									var iDeaths_28 		= data.column("Deaths.2").index;
+									iConfirmed 		= data.column("Confirmed.3").index;
+									iDeaths 		= data.column("Deaths.3").index;
+									iConfirmed_28 	= data.column("Confirmed.2").index;
+									iDeaths_28 		= data.column("Deaths.2").index;
 								
 									data.addColumn({
 										destination: "Case-Fatality_Ratio_2"
@@ -689,10 +689,10 @@ window.ixmaps = window.ixmaps || {};
 								
 									// get Confirmed/Deaths of before 28 days
 								
-									var iConfirmed 		= data.column("Confirmed.2").index;
-									var iDeaths 		= data.column("Deaths.2").index;
-									var iConfirmed_28 	= data.column("Confirmed.1").index;
-									var iDeaths_28 		= data.column("Deaths.1").index;
+									iConfirmed 		= data.column("Confirmed.2").index;
+									iDeaths 		= data.column("Deaths.2").index;
+									iConfirmed_28 	= data.column("Confirmed.1").index;
+									iDeaths_28 		= data.column("Deaths.1").index;
 								
 									data.addColumn({
 										destination: "Case-Fatality_Ratio_1"
@@ -745,13 +745,13 @@ window.ixmaps = window.ixmaps || {};
 				// get last 14 columns
 				var last_14 = data.columnNames().slice(-14);
 				// get first and last	
-				var lastDataColumnName  = data_Confirmed.columnNames().pop();
+				    lastDataColumnName  = data_Confirmed.columnNames().pop();
 				var firstDataColumnName = data_Confirmed.columnNames().shift();
 				var firstIndex = data_Confirmed.column(firstDataColumnName).index;
 				var lastIndex  = data_Confirmed.column(lastDataColumnName).index;
 					
 			    data_Confirmed.addColumn({"destination":"14gg"},function(row){
-					return (Number(row[lastIndex])-Number(row[firstIndex]);
+					return (Number(row[lastIndex])-Number(row[firstIndex]));
 				});
 
 				// set as data fields in actual theme
@@ -759,8 +759,8 @@ window.ixmaps = window.ixmaps || {};
 				options.theme.szFieldsA = last_28.slice();
 
 				// make label ! -1 because of DIFFERENC theme
-				options.theme.szLabelA = 14gg;
-				options.theme.szXaxisA = 14gg;
+				options.theme.szLabelA = "14gg";
+				options.theme.szXaxisA = "14gg";
 					
 				// -----------------------------------------------------------------------------------------------             // deploy the data
 				// ----------------------------------------------------------------------------------------------- 
