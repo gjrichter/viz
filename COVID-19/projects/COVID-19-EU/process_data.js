@@ -15,7 +15,37 @@ window.ixmaps.EU_COVID_DATA = window.ixmaps.EU_VOVID_DATA || {};
 		data.column("geo_id_final").map(function(value){
 			switch(value){
 				case "NOCSR03":
-					return "NO01";
+					return "NO081";
+					break;
+				case "NOCSR11":
+					return "NO0A1";
+					break;
+				case "NOCSR15":
+					return "NO0A3";
+					break;
+				case "NOCSR18":
+					return "NO071";
+					break;
+				case "NOCSR30":
+					return "NO082";
+					break;
+				case "NOCSR34":
+					return "NO020 ";
+					break;
+				case "NOCSR38":
+					return "NO091";
+					break;
+				case "NOCSR42":
+					return "NO092";
+					break;
+				case "NOCSR46":
+					return "NO0A2";
+					break;
+				case "NOCSR50":
+					return "NO060";
+					break;
+				case "NOCSR54":
+					return "NO074";
 			}
 			return value.split("X")[0];
 		});
