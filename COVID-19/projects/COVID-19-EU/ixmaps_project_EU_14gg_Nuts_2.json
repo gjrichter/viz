@@ -57,6 +57,34 @@
 		"zoom": "5"
 		},
 	"themes": [{
+			"layer": "nuts_3",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "nuts_3",
+				"dbtableUrl": "https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/NUTS_RG_10M_2021_4326_LEVL_3.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "NUTS_NAME",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"black"],
+				"linewidth": "0",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"titlefield":"NUTS_NAME",
+				"title": "Nuts_2"
+				}
+			},{
 			"layer": "nuts_2",
 			"field": "$item$",
 			"field100": "",
@@ -81,6 +109,7 @@
 				"linewidth": "0.2",
 				"valuescale": "1",
 				"valuedecimals": "0",
+				"titlefield":"NUTS_NAME",
 				"title": "Nuts_2"
 				}
 			},{
@@ -152,7 +181,7 @@
 				"autoopacity": "true",
 				"shadow": "false",
 				"dbtable": "EU_COVID_DATA",
-				"dbtableUrl": "https://cors-anywhere.herokuapp.com/https://opendata.ecdc.europa.eu/covid19/movementindicators/csv/data.csv",
+				"dbtableUrl": "https://corsme.herokuapp.com/https://opendata.ecdc.europa.eu/covid19/movementindicators/csv/data.csv",
 				"dbtableType": "csv",
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-EU/process_data.js",
 				"datacache": "true",
