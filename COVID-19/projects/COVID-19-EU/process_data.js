@@ -13,6 +13,10 @@ window.ixmaps.EU_COVID_DATA = window.ixmaps.EU_VOVID_DATA || {};
     ixmaps.EU_COVID_DATA.process = function(data,options) {
 		
 		data.column("geo_id_final").map(function(value){
+			switch(value){
+				case "NOCSR03":
+					return "NO01";
+			}
 			return value.split("X")[0];
 		});
 		
