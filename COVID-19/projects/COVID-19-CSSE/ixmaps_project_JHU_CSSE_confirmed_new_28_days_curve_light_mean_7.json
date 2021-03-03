@@ -57,7 +57,7 @@
 			"field":"",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|LOLLIPOP|BOX|GRID|LONGTITLE|DIFFERENCE|SUM|AGGREGATE|COMPATIBLE|RELOCATE|RECT|FIXSIZE|NOLEGEND",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|LOLLIPOP|BOX|GRID|LONGTITLE|DIFFERENCE|SUM|FIXSIZE|NOLEGEND",
 				"colorscheme": [
 					"rgba(100, 160, 220,1)"],
 				"fillopacity": "0.1",
@@ -84,10 +84,6 @@
 				"titlefield": "Country/Region",
 				"valuescale": "1",
 				"valuedecimals": "0",
-				"fadenegative": "1",
-				"centerpart": "max",
-				"gridwidthpx": "150",
-				"aggregationlower": "1:5000000000",
 				"name": "new_cases_curves",
 				"title": "COVID-19 - new cases/day <br> last 28 days",
 				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>"
