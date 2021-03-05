@@ -9,9 +9,9 @@
 		"created": "Wed Feb 10 2021 17:04:55 GMT+0100 (Ora standard dell’Europa centrale)"
 		},
 	"map": {
-		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
+		"map": "",
 		"attribution": "iXMaps",
-		"basemap": "ArcGIS - Light Gray Base",
+		"basemap": "white",
 		"legend": "<h3><b>Incidenza cumulativa 7 giorni</b> nuovi casi in 7 giorni per 100.000 abitanti</h3><h4>Visualizzazione di dati 'COVID-19 Italia' al livello provinciale, pubblicati dalla <b>Dipartimento Protezione Civile</b></h4><h4>- valori: nuovi casi x 100.000 abitanti (cumulativo di 7 giorni)<br>- curve: andamento della incidenza cumulativa di 7 giorni</h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4>",
 		"item": "",
 		"scaleParam": {
@@ -55,6 +55,25 @@
 		"zoom": "6"
 		},
 	"themes": [{
+			"layer": "Province_2019",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND",
+				"colorscheme": [
+					"#e8e8e8"],
+				"fillopacity": "1",
+				"dbtable": "Province_2019",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/Province_s.geojson.gz",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "COD_PROV",
+				"lookupfield": "geometry",
+				"linecolor":"white",
+				"linewidth":"0.5",
+				"title": "Province 2019"
+				}
+			},{
 			"layer": "Prov2019_nome",
 			"field": "incidenza",
 			"field100": "",
