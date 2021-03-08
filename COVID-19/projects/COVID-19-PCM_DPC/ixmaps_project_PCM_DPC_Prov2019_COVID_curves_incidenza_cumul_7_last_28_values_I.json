@@ -1,0 +1,157 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Wed Feb 10 2021 17:04:55 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h3><b>Incidenza cumulativa 7 giorni</b> nuovi casi in 7 giorni per 100.000 abitanti</h3><h4>Visualizzazione di dati 'COVID-19 Italia' al livello provinciale, pubblicati dalla <b>Dipartimento Protezione Civile</b></h4><h4>- valori: nuovi casi x 100.000 abitanti (cumulativo di 7 giorni)<br>- curve: andamento della incidenza cumulativa di 7 giorni</h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4>",
+		"item": "",
+		"scaleParam": {
+			"lineScaling": "4.213991769547325",
+			"labelScaling": "2",
+			"normalSizeScale": "2319015"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "41.51680395810118",
+			"lng": "13.183593750000002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "Prov2019_nome",
+			"field": "incidenza",
+			"field100": "",
+			"style": {
+				"type": "CHART|LABEL|QUANTILE|NOLEGEND|VALUES",
+				"colorscheme": [
+					"3",
+					"#ffeeee",
+					"#dd0044",
+					"dynamic",
+					"cold"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_LAST_INCID_100000_CUMUL_7",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province.js",
+				"datacache": "false",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"ranges": [
+					"0",
+					"200",
+					"250",
+					"10000"],
+				"units": "nuovi casi x 100 000",
+				"refreshtimeout": "0",
+				"scale": "1.5",
+				"dopacitypow": "1",
+				"dopacityscale": "3",
+				"textcolor": "#880000",
+				"linecolor": [
+					"#dd0044"],
+				"linewidth": "0.5",
+				"titlefield": "denominazione_provincia",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "2021-02-09T17:00:00",
+				"snippet": "aggiornato al 2020-03-05"
+				}
+			},{
+			"layer": "Prov2019_nome",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|FIXSIZE|LONGTITLE|COMPATIBLE|SUM|SIMPLELEGEND",
+				"colorscheme": [
+					"3",
+					"#ddbbbb",
+					"#dd0044",
+					"dynamic",
+					"cold"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"filter": "WHERE \"denominazione_provincia\" NOT \"aggio\"",
+				"dbtable": "PCM_DPC_COVID_SEQUENCE_INCIDENZA_100000_CUMUL_7_LAST_28",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Province.js",
+				"datacache": "false",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"ranges": [
+					"0",
+					"200",
+					"250",
+					"10000"],
+				"symbols": [
+					"circle"],
+				"units": "",
+				"align": "center|top",
+				"refreshtimeout": "0",
+				"normalsizevalue": "200",
+				"scale": "0.08",
+				"rangescale": "0.95",
+				"minvalue": "0",
+				"textcolor": "#dd0000",
+				"linewidth": "30",
+				"bordercolor": "none",
+				"boxopacity": "0.002",
+				"boxmargin": "10",
+				"titlefield": "denominazione_provincia",
+				"boxupper": "1:1000000",
+				"valuescale": "1",
+				"valuedecimals": "2",
+				"fadenegative": "1",
+				"aggregationscale": [
+					"1:1",
+					"150px",
+					"1:500000",
+					"100px"],
+				"name": "curve",
+				"title": "nuovi casi x 10000 abitanti",
+				"snippet": "dal 12/1/2021 al 8/2/2021"
+				}
+			}],
+	"layerMask": {
+		"Prov2019_nome": {
+			"display": "none"
+			}
+		}
+	}
