@@ -1,0 +1,141 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Tue Feb 18 2020 20:13:16 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3-eu-west-1.amazonaws.com/cdn.ixmaps.com/ixmaps/maps/svg/maps/world_base_NAME/world_NAME.svgz",
+		"attribution": "",
+		"basemap": "ArcGIS - Topo",
+		"legend": "<h1>2019 Berggruen Governance Index</h1><h4><i class='icon icon-radio-checked2' style='color:#2FCDAE'/> Quality of Democracy <i class='icon icon-radio-checked2' style='color:#FFB400'/> Quality of Life <h4>",
+		"item": "../../../../projects/PerfPol/item.html",
+		"scaleParam": {
+			"borderScaling": "0.1",
+			"normalSizeScale": "13841043"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "24.766784522874453",
+			"lng": "14.414062500000002"
+			},
+		"zoom": "3"
+		},
+	"themes": [{
+			"layer": "World_countries_shp0",
+			"field": "mean_democratic.engagement|mean_civ.soc|mean_culture|mean_feedback",
+			"field100": "",
+			"style": {
+				"type": "CHART|PIE|XLRAYS|STARBURST|COMPACTLEGEND|VALUES",
+				"colorscheme": [
+					"#2FCDAE"],
+				"fillopacity": "0.3",
+				"shadow": "true",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/PerfPol/allcountries.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "country",
+				"symbols": [
+					"circle"],
+				"label": [
+					"Political Engagement",
+					"Civil Society",
+					"Culture",
+					"Feedback Mechanismus"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "3.2",
+				"linecolor": [
+					"white"],
+				"linewidth": "1",
+				"titlefield": "country",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"maxvalue":"100",
+				"evidence": "isolate_gray",
+				"valuesupper":"1:2000000",
+				"title": "Quality of Demogracy",
+				"snippet": "Berggruen Governance Index"
+				}
+			},{
+			"layer": "World_countries_shp0",
+			"field": "mean_price.levels|mean_public.health|mean_shadow.economy|mean_civil.justice|mean_crime|mean_regulatory.burden|mean_other.public.services|mean_education|mean_environment|mean_inflation",
+			"field100": "",
+			"style": {
+				"type": "CHART|PIE|XLRAYS|STARBURST|COMPACTLEGEND|VALUES|ANIMATE",
+				"colorscheme": [
+					"#FFB400"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/PerfPol/allcountries.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "country",
+				"label": [
+					"Price Control",
+					"Public Health",
+					"Shadow Economy",
+					"Civil Justice",
+					"Crime",
+					"Business Procedures",
+					"Other Public Services",
+					"Education",
+					"Environment",
+					"Inflation"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "2",
+				"linecolor": [
+					"#FF0000"],
+				"linewidth": "1",
+				"titlefield": "country",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"maxvalue":"100",
+				"evidence": "isolate_gray",
+				"valuesupper":"1:2000000",
+				"title": "Quality of Life",
+				"snippet": "Berggruen Governance Index"
+				}
+			}],
+	"layerMask": {
+		}
+	}
