@@ -168,10 +168,7 @@ window.ixmaps = window.ixmaps || {};
 			var dataPop = dataA[1];
 			// correct region names in population table
 			dataPop.column("Territorio").map(function (value) {
-				if (value == "Emilia-Romagna") {
-					return "Emilia Romagna";
-				} 
-				return value;
+				return value.replace(/\-/," ");
 			});
 			var pop = [];
 			var terrA = dataPop.column("Territorio").values();
@@ -413,10 +410,7 @@ window.ixmaps = window.ixmaps || {};
 			var dataPop = dataA[1];
 			// correct region names in population table
 			dataPop.column("Territorio").map(function (value) {
-				if (value == "Emilia-Romagna") {
-					return "Emilia Romagna";
-				} 
-				return value;
+				return value.replace(/\-/," ");
 			});
 			var pop = [];
 			var terrA = dataPop.column("Territorio").values();
@@ -558,10 +552,7 @@ window.ixmaps = window.ixmaps || {};
 			var dataPop = dataA[1];
 			// correct region names in population table
 			dataPop.column("Territorio").map(function (value) {
-				if (value == "Emilia-Romagna") {
-					return "Emilia Romagna";
-				} 
-				return value;
+				return value.replace(/\-/," ");
 			});
 			var pop = [];
 			var terrA = dataPop.column("Territorio").values();
@@ -720,10 +711,7 @@ window.ixmaps = window.ixmaps || {};
 			var dataPop = dataA[1];
 			// correct region names in population table
 			dataPop.column("Territorio").map(function (value) {
-				if (value == "Emilia-Romagna") {
-					return "Emilia Romagna";
-				} 
-				return value;
+				return value.replace(/\-/," ");
 			});
 			var pop = [];
 			var terrA = dataPop.column("Territorio").values();
@@ -819,10 +807,7 @@ window.ixmaps = window.ixmaps || {};
 			var dataPop = dataA[1];
 			// correct region names in population table
 			dataPop.column("Territorio").map(function (value) {
-				if (value == "Emilia-Romagna") {
-					return "Emilia Romagna";
-				} 
-				return value;
+				return value.replace(/\-/," ");
 			});
 			var pop = [];
 			var terrA = dataPop.column("Territorio").values();
