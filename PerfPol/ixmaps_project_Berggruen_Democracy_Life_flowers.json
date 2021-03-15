@@ -13,7 +13,7 @@
 		"attribution": "",
 		"basemap": "ArcGIS - Topo",
 		"legend": "<h1>2019 Berggruen Governance Index</h1><h4><i class='icon icon-radio-checked2' style='color:#2FCDAE'/> Quality of Democracy <i class='icon icon-radio-checked2' style='color:#FFB400'/> Quality of Life <h4>",
-		"item": "../../../../projects/PerfPol/item.html",
+		"item": "https://raw.githubusercontent.com/gjrichter/viz/master/Perfol/item.html",
 		"scaleParam": {
 			"borderScaling": "0.1",
 			"normalSizeScale": "13841043"
