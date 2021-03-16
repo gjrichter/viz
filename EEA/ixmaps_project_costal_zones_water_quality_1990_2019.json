@@ -1,0 +1,214 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Feb 08 2021 20:03:40 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "",
+		"attribution": "iXMaps",
+		"basemap": "ArcGIS - Topo",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"labelScaling": "1.5",
+			"normalSizeScale": "2314"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "0.7"
+			},
+		"center": {
+			"lat": "42.94511439522653",
+			"lng": "13.934783935546877"
+			},
+		"zoom": "11"
+		},
+	"themes": [{
+			"layer": "costal_zones",
+			"field": "$ITEM$",
+			"field100": "",
+			"style": {
+				"type": "WMS|IMAGE|NOLEGEND",
+				"server": "https://image.discomap.eea.europa.eu/arcgis/rest/services/CoastalZones/CZ_CoastalZones_2018/MapServer/export",
+				"opacity": "0.5"
+				}
+			},{
+			"layer": "riparian_zones",
+			"field": "$ITEM$",
+			"field100": "",
+			"style": {
+				"type": "WMS|IMAGE|NOLEGEND",
+				"server": "https://image.discomap.eea.europa.eu/arcgis/rest/services/RiparianZones/LCLU/MapServer/export",
+				"opacity": "0.5"
+				}
+			},{
+			"layer": "grassland",
+			"field": "$ITEM$",
+			"field100": "",
+			"style": {
+				"type": "WMS|IMAGE|NOLEGEND",
+				"server": "https://image.discomap.eea.europa.eu/arcgis/rest/services/GioLandPublic/HRL_Grassland_2018/ImageServer/exportImage",
+				"opacity": "0.8"
+				}
+			},{
+			"layer": "tree_canopy",
+			"field": "$ITEM$",
+			"field100": "",
+			"style": {
+				"type": "WMS|IMAGE|NOLEGEND",
+				"server": "https://image.discomap.eea.europa.eu/arcgis/rest/services/GioLandPublic/HRL_TreeCoverDensity_2018/ImageServer/exportImage",
+				"opacity": "0.8"
+				}
+			},{
+			"layer": "World_countries_shp",
+			"field": "quality2019",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|EXACT|ZEROISVALUE|NEGATIVEISVALUE",
+				"colorscheme": [
+					"#0070FF",
+					"#73DEFF",
+					"#53EEAF",
+					"#55FF00",
+					"RGB(255,0,0)",
+					"RGB(145,148,150)"],
+				"evidence": "isolate",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableType": "csv",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/EEA/IT_BW2019.csv.gz",
+				"itemfield": "lat|lon",
+				"lookupfield": "lat|lon",
+				"units": "",
+				"sizevalueunits": "",
+				"values": [
+					"Excellent",
+					"Good",
+					"Good or Sufficient",
+					"Sufficient",
+					"Poor",
+					"Not classified"],
+				"label": [
+					"qualità eccellente",
+					"qualità buono",
+					"qualità buono o sufficiente",
+					"qualità sufficiente",
+					"qualità povera",
+					"non classificato"],
+				"scale": "5",
+				"textcolor":"white",
+				"showdata": "true",
+				"titlefield": "nameText",
+				"boxopacity":"0.01",
+				"title": "2019 <br>Qualità acque di balneazione",
+				"description": "fonte: EEA bathing water quality<br>fondo: Copernicus DiscoMap EEA"
+				}
+			},{
+			"layer": "World_countries_shp",
+			"field": "quality2018|quality2017|quality2016|quality2015|quality2014|quality2013|quality2012|quality2011|quality2010|quality2009|quality2008|quality2007|quality2006|quality2005|quality2004|quality2003|quality2002|quality2001|quality2000|quality1999|quality1998|quality1997|quality1996|quality1995|quality1994|quality1993|quality1992|quality1991|quality1990",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|HORZ|COUNT|CATEGORICAL|SIMPLELEGEND",
+				"colorscheme": [
+					"#0070FF",
+					"#73DEFF",
+					"#53EEAF",
+					"#55FF00",
+					"RGB(255,0,0)",
+					"RGB(145,148,150)"],
+				"evidence": "isolate",
+				"symbols":["square"],
+				"fillopacity": "1",
+				"opacity": "1",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableType": "csv",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/EEA/IT_BW2019.csv.gz",
+				"itemfield": "lat|lon",
+				"lookupfield": "lat|lon",
+				"values": [
+					"Excellent",
+					"Good",
+					"Good or Sufficient",
+					"Sufficient",
+					"Poor",
+					"Not classified"],
+				"label": [
+					"qualità eccellente",
+					"qualità buono",
+					"qualità buono o sufficiente",
+					"qualità sufficiente",
+					"qualità povera",
+					"non classificato"],
+				"units": "",
+				"xaxis": [
+					"2017",
+					"2016",
+					"2015",
+					"2014",
+					"2013",
+					"2012",
+					"2011",
+					"2010",
+					"2009",
+					"2008",
+					"2007",
+					"2006",
+					"2005",
+					"2004",
+					"2003",
+					"2002",
+					"2001",
+					"2000",
+					"1999",
+					"1998",
+					"1997",
+					"1996",
+					"1995",
+					"1994",
+					"1993",
+					"1992",
+					"1991",
+					"1990"
+					],
+				"scale": "1",
+				"titlefield": "nameText",
+				"offsetx":"-70",
+				"chartupper":"1:500000",
+				"title": "Acqua di balneazione<br>serie storica<br>1990 - 2018",
+				"description": "fonte: EEA bathing water quality<br>fondo: Copernicus DiscoMap EEA"
+				}
+			}],
+	"layerMask": {
+		}
+	}
