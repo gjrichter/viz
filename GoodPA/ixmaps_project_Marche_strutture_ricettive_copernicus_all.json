@@ -47,7 +47,7 @@
 			"flushChartDraw": "50000",
 			"mapopacity": "1",
 			"basemapopacity": "0.7",
-			"panhidden":"true"
+			"panhidden":"false"
 			},
 		"center": {
 			"lat": "43.004647127794435",
