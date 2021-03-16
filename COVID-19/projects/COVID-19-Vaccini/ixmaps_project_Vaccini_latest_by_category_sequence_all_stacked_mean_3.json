@@ -12,7 +12,7 @@
 		"map": "",
 		"attribution": "iXMaps",
 		"basemap": "white",
-		"legend": "<h1>Dosi somministrati per giorno e per principali categorie</h1><h4><i class='icon icon-radio-checked2' style='color:rgb(78, 121, 167)'/> operatori sanitari / socio sanitari <br><i class='icon icon-radio-checked2' style='color:rgb(160, 203, 232)'/> personale non sanitario <br><i class='icon icon-radio-checked2' style='color:rgb(242, 142, 43)'/> ospiti RSA <br><i class='icon icon-radio-checked2' style='color:rgb(242, 242, 143)'/> più di 80 anni</h4><h4><b>fonte:</b> <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h4>",
+		"legend": "<h1>Dosi somministrati per giorno e per principali categorie</h1><h4><i class='icon icon-radio-checked2' style='color:rgb(78, 121, 167)'/> operatori sanitari / socio sanitari <br><i class='icon icon-radio-checked2' style='color:rgb(160, 203, 232)'/> personale non sanitario <br><i class='icon icon-radio-checked2' style='color:rgb(242, 142, 43)'/> ospiti RSA <br><i class='icon icon-radio-checked2' style='color:rgb(242, 242, 143)'/> più di 80 anni</h4><h4><b>fonte:</b> <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h4><h4><a href='javascript:ixmaps.legend.showItemList()'>test</a></h4>",
 		"item": "",
 		"scaleParam": {
 			"lineScaling": "23.67696884508345",
@@ -122,7 +122,7 @@
 				"borderradius": "10",
 				"boxopacity": "0.1",
 				"boxmargin": "30",
-				"titlefield": "nome_area.1",
+				"titlefield": "nome_area",
 				"titleupper": "1:5000000",
 				"valuescale": "1",
 				"valuedecimals": "0",
