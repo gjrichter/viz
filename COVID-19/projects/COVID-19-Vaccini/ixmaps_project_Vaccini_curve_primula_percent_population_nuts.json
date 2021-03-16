@@ -63,7 +63,7 @@
 			"style": {
 				"type": "FEATURES|NOLEGEND|LOCKED",
 				"colorscheme": [
-					"none"],
+					"#e0e0e0"],
 				"fillopacity": "1",
 				"autoopacity": "true",
 				"shadow": "false",
@@ -82,35 +82,6 @@
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"title": "Barrios"
-				}
-			},{
-			"layer": "nuts2",
-			"field": "$item$",
-			"field100": "",
-			"style": {
-				"type": "CHOROPLETH|QUANTILE|DTEXT|NOLEGEND",
-				"colorscheme": [
-					"rgb(233, 242, 238)"],
-				"fillopacity": "1",
-				"shadow": "false",
-				"dbtable": "VACCINI_SOMMINISTRAZIONI_LAST",
-				"dbtableType": "ext",
-				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini.js",
-				"datacache": "true",
-				"lookupfield": "regione",
-				"units": "",
-				"units100": "",
-				"refreshtimeout": "0",
-				"scale": "1",
-				"textcolor": "black",
-				"linecolor": [
-					"#F28E2B"],
-				"linewidth": "1",
-				"titlefield": "regione",
-				"valuescale": "1",
-				"valuedecimals": "0",
-				"title": "COVID-19<br>Vaccini somministrati",
-				"snippet": "aggiornato al 2020-11-03T17:00:00"
 				}
 			},{
 			"layer": "nuts2",
