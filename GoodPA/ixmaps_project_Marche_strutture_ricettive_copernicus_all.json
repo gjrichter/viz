@@ -105,7 +105,7 @@
 					"fruit"],
 				"shadow": "true",
 				"dbtable": "themeDataObj",
-				"dbtableUrl": "../../projects/SBT/data/20210201elencostrutture.csv",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/GoodPA/20210201elencostrutture.csv.gz",
 				"dbtableType": "csv",
 				"datacache": "true",
 				"lookupfield": "Latitude_Y|Longitude_X",
