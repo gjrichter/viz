@@ -13,7 +13,7 @@
 		"attribution": "iXMaps",
 		"basemap": "ArcGIS - Topo",
 		"legend": "",
-		"item": "",
+		"item": "html",
 		"scaleParam": {
 			"labelScaling": "1.5",
 			"normalSizeScale": "100000"
