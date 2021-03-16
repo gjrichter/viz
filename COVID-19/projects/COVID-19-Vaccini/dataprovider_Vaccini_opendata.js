@@ -182,6 +182,10 @@ window.ixmaps = window.ixmaps || {};
 			mydata.addColumn({destination:"prima_dose_pop"},function(row){
 				return (Number(row[iValue]) / pop[row[iName].replace(/\-/," ")]*100).toFixed(2);	
 			});
+			var iValue = mydata.column("seconda_dose").index;
+			mydata.addColumn({destination:"seconda_dose_pop"},function(row){
+				return (Number(row[iValue]) / pop[row[iName].replace(/\-/," ")]*100).toFixed(2);	
+			});
 
 			// -----------------------------------------------------------------------------------------------               
 			// deploy the data
