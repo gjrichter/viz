@@ -5150,10 +5150,10 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.PCM_DPC_COVID_SEQUENCE_INTENSIVE_MAX = function (theme, options) {
 		
 		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
-		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/posti_letti_TI_17_11_2020.csv";
+		var szUrl2 = "https://raw.githubusercontent.com/ondata/covid19italia/master/webservices/agenas/processing/postiletto-e-ricoverati-areaNonCritica.csv";
 
 		// -----------------------------------------------------------------------------------------------               
-		// read the ArcGis Feature service
+		// read the sources and generate the viz data table
 		// ----------------------------------------------------------------------------------------------- 
 
 		var broker = new Data.Broker()
@@ -5290,10 +5290,10 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.PCM_DPC_COVID_SEQUENCE_MEAN_7_INTENSIVE_MAX = function (theme, options) {
 		
 		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
-		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/posti_letti_TI_17_11_2020.csv";
+		var szUrl2 = "https://raw.githubusercontent.com/ondata/covid19italia/master/webservices/agenas/processing/postiletto-e-ricoverati-areaNonCritica.csv";
 
 		// -----------------------------------------------------------------------------------------------               
-		// read the ArcGis Feature service
+		// read the sources and generate the viz data table
 		// ----------------------------------------------------------------------------------------------- 
 
 		var broker = new Data.Broker()
@@ -5455,10 +5455,10 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.PCM_DPC_COVID_SEQUENCE_MEAN_7_INTENSIVE_PERCENT_MAX = function (theme, options) {
 		
 		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
-		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/posti_letti_TI_17_11_2020.csv";
+		var szUrl2 = "https://raw.githubusercontent.com/ondata/covid19italia/master/webservices/agenas/processing/postiletto-e-ricoverati-areaNonCritica.csv";
 
 		// -----------------------------------------------------------------------------------------------               
-		// read the ArcGis Feature service
+		// read the sources and generate the viz data table
 		// ----------------------------------------------------------------------------------------------- 
 
 		var broker = new Data.Broker()
@@ -5622,10 +5622,10 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.PCM_DPC_COVID_SEQUENCE_INTENSIVE_PERCENT_MAX = function (theme, options) {
 		
 		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
-		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/COVID-19/posti_letti_TI_17_11_2020.csv";
+		var szUrl2 = "https://raw.githubusercontent.com/ondata/covid19italia/master/webservices/agenas/processing/postiletto-e-ricoverati-areaNonCritica.csv";
 
 		// -----------------------------------------------------------------------------------------------               
-		// read the ArcGis Feature service
+		// read the sources and generate the viz data table
 		// ----------------------------------------------------------------------------------------------- 
 
 		var broker = new Data.Broker()
