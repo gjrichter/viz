@@ -1,0 +1,135 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Wed Mar 17 2021 22:35:24 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "MapTiler - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "216266"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.65396273281939",
+			"lng": "13.377571105957033"
+			},
+		"zoom": "11"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "room type",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|CATEGORICAL|SUM|COUNT",
+				"colorscheme": [
+					"RGB(194,82,82)",
+					"RGB(60,194,82)",
+					"RGB(74,125,255)"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "AIRBNB_GET_MARCHE",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/GoodPA/AirBnB_Marche_Gen_21.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "lat|lng",
+				"values": [
+					"Entire home/apt",
+					"Private room",
+					"Hotel room",
+					"Shared room"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0.5",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "AirBnB Gen 2021",
+				"snippet": "Categorie con analisi spaziale<br>fonte: data by courtesy of Vincenzo Patruno"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "room type",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|CENTER|COMPOSECOLOR|SUBTRACTIVE|GRIDSIZE|FAST|EXACT|AGGREGATE|RECT|SUM|DOPACITY|CATEGORICAL",
+				"colorscheme": [
+					"RGB(194,82,82)",
+					"RGB(60,194,82)",
+					"RGB(74,125,255)"],
+				"fillopacity": "0.6051536477525697",
+				"shadow": "false",
+				"dbtable": "AIRBNB_GET_MARCHE",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/GoodPA/AirBnB_Marche_Gen_21.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "lat|lng",
+				"symbols": [
+					"square"],
+				"values": [
+					"Entire home/apt",
+					"Private room",
+					"Hotel room",
+					"Shared room"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "100",
+				"scale": "1",
+				"sizefield": "$item$",
+				"dopacitypow": "3",
+				"dopacityscale": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"clipparts": "1",
+				"aggregationscale": [
+					"1:1",
+					"500",
+					"1:100000",
+					"2000",
+					"1:500000",
+					"5000"],
+				"title": "AirBnB Gen 2021",
+				"snippet": "Categorie con analisi spaziale<br>fonte: data by courtesy of Vincenzo Patruno"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
