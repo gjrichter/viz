@@ -66,7 +66,7 @@
 				"shadow": "true",
 				"dbtable": "MARCHE_MOVIMENTI_WORLD_2019",
 				"dbtableType": "ext",
-				"dbtableExt": "../../projects/SBT/turismo_stats/dataprovider_movimenti.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/GoodPA/dataprovider_movimenti.js",
 				"datacache": "true",
 				"lookupfield": "ISO3",
 				"lookupfield2": "target",
@@ -94,7 +94,7 @@
 				"filter": "WHERE nome_regione != \"MARCHE\"",
 				"dbtable": "MARCHE_MOVIMENTI_WORLD_2019",
 				"dbtableType": "ext",
-				"dbtableExt": "../../projects/SBT/turismo_stats/dataprovider_movimenti.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/GoodPA/dataprovider_movimenti.js",
 				"datacache": "true",
 				"lookupfield": "ISO3",
 				"label": [
@@ -133,7 +133,7 @@
 				"filter": "WHERE nome_regione != \"MARCHE\"",
 				"dbtable": "MARCHE_MOVIMENTI_WORLD_2019",
 				"dbtableType": "ext",
-				"dbtableExt": "../../projects/SBT/turismo_stats/dataprovider_movimenti.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/GoodPA/dataprovider_movimenti.js",
 				"datacache": "true",
 				"lookupfield": "ISO3",
 				"label": [
@@ -171,7 +171,7 @@
 				"filter": "WHERE nome_regione != \"MARCHE\"",
 				"dbtable": "MARCHE_MOVIMENTI_WORLD_2019",
 				"dbtableType": "ext",
-				"dbtableExt": "../../projects/SBT/turismo_stats/dataprovider_movimenti.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/GoodPA//dataprovider_movimenti.js",
 				"datacache": "true",
 				"lookupfield": "ISO3",
 				"label": [
