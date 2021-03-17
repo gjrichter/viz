@@ -10,10 +10,10 @@
 		},
 	"map": {
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/world_base_ISO/world_ISO3_winkel.svgz",
-		"attribution": "iXMaps",
+		"attribution": "fonte: statistica.regione.marche.it, visualizzazione: iXMaps",
 		"basemap": "white",
 		"legend": "",
-		"item": "",
+		"item": "html",
 		"scaleParam": {
 			"borderScaling": "0.1",
 			"normalSizeScale": "6920521"
@@ -193,7 +193,9 @@
 				"valuescale": "3",
 				"valuedecimals": "0",
 				"evidence": "isolate_gray",
-				"title": "Presenze per paese e struttura"
+				"title": "Turismo Regione Marche",
+				"snippet": "<b>Presenze</b> nel <b>2019</b> per paese di provenienza e categoria di struttura ricettiva",
+				"description": "in evidenza le presenze in strutture complementari"
 				}
 			}],
 	"layerMask": {
