@@ -10,7 +10,7 @@
 		},
 	"map": {
 		"map": "",
-		"attribution": "sources: <a href='https://www.eea.europa.eu/data-and-maps/data/bathing-water-directive-status-of-bathing-water-12' target='_blank'>European Environment Agency</a>, Copernicus <a href='https://land.copernicus.eu/local' target='_blank'>Land Monitoring Service</a>, powered by iXMaps",
+		"attribution": "sources: European Environment Agency, Copernicus Land Monitoring Service, powered by iXMaps",
 		"basemap": "ArcGIS - Topo",
 		"legend": "",
 		"item": "html",
