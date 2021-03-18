@@ -10,7 +10,7 @@
 		},
 	"map": {
 		"map": "",
-		"attribution": "iXMaps",
+		"attribution": "sources: <a href='https://www.eea.europa.eu/data-and-maps/data/bathing-water-directive-status-of-bathing-water-12' target='_blank'>European Environment Agency</a>, Copernicus <a href='https://land.copernicus.eu/local' target='_blank'>Land Monitoring Service</a>, powered by iXMaps",
 		"basemap": "ArcGIS - Topo",
 		"legend": "",
 		"item": "html",
@@ -132,7 +132,7 @@
 				"titlefield": "nameText",
 				"boxopacity":"0.01",
 				"title": "2019 <br>Qualità acque di balneazione",
-				"description": "fonte: EEA bathing water quality<br>fondo: Copernicus DiscoMap EEA"
+				"description": "fonte: <a href='https://www.eea.europa.eu/data-and-maps/data/bathing-water-directive-status-of-bathing-water-12' target='_blank'>EEA bathing water quality</a><br>fondo: <a href='https://land.copernicus.eu/local' target='_blank'>Copernicus Land Monitoring Service</a>"
 				}
 			},{
 			"layer": "World_countries_shp",
@@ -207,7 +207,7 @@
 				"offsetx":"-70",
 				"chartupper":"1:500000",
 				"title": "Acqua di balneazione<br>serie storica<br>1990 - 2018",
-				"description": "fonte: EEA bathing water quality<br>fondo: Copernicus DiscoMap EEA"
+				"description": "fonte: <a href='https://www.eea.europa.eu/data-and-maps/data/bathing-water-directive-status-of-bathing-water-12' target='_blank'>EEA bathing water quality</a><br>fondo: <a href='https://land.copernicus.eu/local' target='_blank'>Copernicus Land Monitoring Service</a>"
 				}
 			}],
 	"layerMask": {
