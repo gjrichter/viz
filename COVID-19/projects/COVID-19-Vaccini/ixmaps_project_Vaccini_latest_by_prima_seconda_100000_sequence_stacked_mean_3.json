@@ -1,0 +1,141 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sat Jan 30 2021 15:11:27 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "",
+		"attribution": "iXMaps",
+		"basemap": "white",
+		"legend": "<h1>Prime e seconde dosi somministrate per giorno</h1><h4><i class='icon icon-radio-checked2' style='color:rgb(213, 178, 0)'/> prima dose <br><i class='icon icon-radio-checked2' style='color:rgb(242, 43, 140)'/> seconda dose </h4><h4><b>fonte:</b> <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h4><h4><a style='color:#0088aa' href='javascript:ixmaps.legend.showItemList()'>&rarr; lista Regioni</a></h4>",
+		"item": "",
+		"scaleParam": {
+			"lineScaling": "23.67696884508345",
+			"labelScaling": "1.5",
+			"normalSizeScale": "13841043"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "42.282221877329024",
+			"lng": "12.871337890625002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "nuts2",
+			"data": {
+				"name": "regioni",
+				"url": "https://raw.githubusercontent.com/ondata/nuts/main/processing/NUTS2_g.geojson",
+				"type": "geojson",
+				"cache": "false"
+				},
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"#e0e0e0"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"itemfield": "NUTS2",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "0.5",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "features",
+				"title": "Italy nuts2"
+				}
+			},{
+			"layer": "nuts2",
+			"data": {
+				"name": "VACCINI_SOMMINISTRAZIONI_PRIMA_SECONDA_POPOLAZIONE_SEQUENCE_REVERS_MEAN_3",
+				"type": "ext",
+				"ext": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
+				"cache": "true"
+				},
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|FIXSIZE|LINES|AREA|STACKED|GRID|BOX|LONGTITLE|DTEXT|SIMPLELEGEND",
+				"colorscheme": [
+					"2",
+					"rgb(242, 43, 140)",
+					"rgb(233, 178, 0)"
+					],
+				"label":[
+					"seconda dose",
+					"prima dose"
+				],
+				"shadow": "false",
+				"fillopacity":"0.9",
+				"align":"23right",
+				"lookupfield": "codice_NUTS2",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"units100": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "50000",
+				"maxvalue": "1000",
+				"highvalue": "833",
+				"scale": "0.05",
+				"rangescale":"30",
+				"linewidth": "5",
+				"bordercolor": "none",
+				"boxopacity": "0",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"titlefield":"nome_area",
+				"titleupper":"1:5000000",
+				"textscale":"0.5",
+				"evidence": "isolate_gray",
+				"title": "COVID-19<br>Vaccini somministrati di 1./2. dose",
+				"snippet": "dal 27/12/2020 al 29/1/2021"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
