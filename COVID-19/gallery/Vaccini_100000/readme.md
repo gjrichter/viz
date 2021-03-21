@@ -10,89 +10,9 @@ Il dataset si trova qui: [https://github.com/ondata/covid19italia/tree/master/we
 
 La visualizzazione mostra i **vaccini attualmente somministrati** per Regione (confini delle Regioni) e **l'evoluzione delle somministrazioni** giorno per giorno (simbolo) 
 
-codice per includere la mappa in una pagina HTML:
-
-```javascript
-<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&mode=info&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini/ixmaps_project_Vaccini_latest_nuts.json"></iframe>
-```
 
 
-
-<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&mode=info&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini/ixmaps_project_Vaccini_latest_nuts.json"></iframe>
-
-## il progresso dei vaccini anti COVID-19 in %
-
-La visualizzazione mostra le **dosi consegnate** e le **somministrazioni** in  **percentuali della popolazione** delle Regioni.
-
-Le dosi consegnate alle Regioni figurano come un fiore pallido che rappresenta il numero di vaccini fino ad oggi consegnate per 100 abitanti. Le somministrazioni sono rappresentati da fiori in pieno colore e crescono con la percentuale della popolazione vaccinata. La differenza tra i due fiori visualizza la percentuale dei vaccini effettuati rispettivo alle dosi consegnate.
-
-
-
-codice per includere la mappa in una pagina HTML:
-
-```javascript
-<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map3&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini/ixmaps_project_Vaccini_clip_primula_percentuale_popolazione_sagoma_nuts.json"></iframe>
-```
-
-
-
-<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&mode=info&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini/ixmaps_project_Vaccini_latest_percentuale_12_nuts.json"></iframe>
-
-## i vaccini anti COVID-19 in % (curve)
-
-La visualizzazione mostra **l'evoluzione del percentuale** dei vaccini somministrati (in % della popolazione della Regione) .
-
-codice per includere la mappa in una pagina HTML:
-
-```javascript
-<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map3&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini/ixmaps_project_Vaccini_curve_primula_percent_population.json"></iframe>
-```
-
-
-
-<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&mode=info&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini/ixmaps_project_Vaccini_latest_by_prima_seconda.json"></iframe>
-
-## i vaccini anti COVID-19 in % (curve)
-
-La visualizzazione mostra **l'evoluzione del percentuale** dei vaccini somministrati (in % della popolazione della Regione) .
-
-codice per includere la mappa in una pagina HTML:
-
-```javascript
-<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map3&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini/ixmaps_project_Vaccini_curve_primula_percent_population.json"></iframe>
-```
-
-
-
-<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&mode=pan&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini/ixmaps_project_Vaccini_latest_by_prima_seconda_sequence_stacked_mean_3.json"></iframe>
-
-## i vaccini anti COVID-19 in % (curve)
-
-La visualizzazione mostra **l'evoluzione del percentuale** dei vaccini somministrati (in % della popolazione della Regione) .
-
-codice per includere la mappa in una pagina HTML:
-
-```javascript
-<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map3&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini/ixmaps_project_Vaccini_curve_primula_percent_population.json"></iframe>
-```
-
-
-
-<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&mode=info&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini/ixmaps_project_Vaccini_latest_by_category_sequence_all_new_stacked_mean_3_revers.json"></iframe>
-
-## i vaccini anti COVID-19 in % (curve)
-
-La visualizzazione mostra **l'evoluzione del percentuale** dei vaccini somministrati (in % della popolazione della Regione) .
-
-codice per includere la mappa in una pagina HTML:
-
-```javascript
-<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=left&legend=1&name=map3&sync=false&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini/ixmaps_project_Vaccini_curve_primula_percent_population.json"></iframe>
-```
-
-
-
-<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&mode=pan&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini/ixmaps_project_Vaccini_latest_by_category_sequence_all_new_mean_3.json"></iframe>
+<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&mode=info&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini/ixmaps_project_Vaccini_latest_by_prima_seconda_100000_sequence_stacked_mean_3.json"></iframe>
 
 
 
