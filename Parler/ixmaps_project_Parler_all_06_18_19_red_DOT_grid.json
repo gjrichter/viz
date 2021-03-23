@@ -6,20 +6,20 @@
 		"description": "",
 		"thumbnail": "",
 		"about": "",
-		"created": "Wed Jan 20 2021 11:54:48 GMT+0100 (Ora standard dell’Europa centrale)"
+		"created": "Sun Jan 17 2021 21:46:25 GMT+0100 (Ora standard dell’Europa centrale)"
 		},
 	"map": {
-		"map": "",
+		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "iXMaps",
-		"basemap": "NOKIA - satellite",
+		"basemap": "CartoDB - Dark matter",
 		"legend": "",
-		"item": "https://gjrichter.github.io/viz/Parler/video_item.html",
+		"item": "../../../../projects/Parler/video_item.html",
 		"scaleParam": {
-			"normalSizeScale": "177165354"
+			"normalSizeScale": "3379"
 			},
 		"options": {
 			"featurescaling": "dynamic",
-			"objectscaling": "true",
+			"objectscaling": "dynamic",
 			"clipmap": "true",
 			"clipmapdynamic": "true",
 			"dynamiclabel": "NOSIZE",
@@ -47,42 +47,36 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "38.889930525867136",
-			"lng": "-77.0087715983391"
+			"lat": "38.89063616725028",
+			"lng": "-77.00962185859682"
 			},
-		"zoom": "18"
+		"zoom": "17"
 		},
 	"themes": [{
 			"layer": "World Mercator",
 			"field": "$item$",
 			"field100": "",
 			"style": {
-				"type": "CHART|BUBBLE|SIZEP3|MULTIQUAD|DTEXT|VALUEBACKGROUND|VALUES",
+				"type": "CHART|BUBBLE|AGGREGATE|RECT|SUM",
 				"colorscheme": [
 					"1",
 					"#eeeeff",
 					"#dd0000"],
-				"fillopacity": "0.7",
+				"fillopacity": "0.9",
 				"shadow": "false",
-				"dbtable": "PARLER_RIOT_GEO",
-				"dbtableType": "ext",
-				"dbtableExt": "https://gjrichter.github.io/viz/Parler/dataprovider_Parler.js",
+				"filter": "WHERE \"Hour\" BETWEEN 18 AND 19 AND \"Year\" = \"2021\" AND \"Day\" = \"6\"",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Parler/AllGeo.csv.gz",
+				"dbtableType": "csv",
 				"datacache": "true",
 				"lookupfield": "LatitudeDD|LongitudeDD",
-				"units": "s",
+				"units": "",
 				"refreshtimeout": "0",
-				"scale": "1.3",
-				"valuefield": "sDuration",
-				"sizefield": "sDuration",
-				"timefield": "CreateDate",
-				"textcolor": "#660000",
-				"linecolor": [
-					"white"],
-				"linewidth": "0.5",
+				"scale": "1.25",
 				"valuescale": "1",
 				"valuedecimals": "0",
-				"title": "WDC 6 Jan Parler Vids",
-				"snippet": "dots show video length, more videos at the same position are shown as grid<br>source: GitHub<br><a href='https://gist.github.com/Parler-Analysis/2c023fd2e053fba5bc85b09209f606eb' target='_blank'>Parler-Analysis</a>, <a href='https://github.com/rljacobson/CapitolResources/' target='_blank'>Capitol Resources</a>"
+				"gridwidthpx": "10",
+				"title": "Parler Vids<br>6 jan 18-19"
 				}
 			}],
 	"layerMask": {

@@ -77,7 +77,7 @@
 				"valuedecimals": "0",
 				"gridwidthpx": "30",
 				"title": "WDC 6 Jan Parler Vids",
-				"snippet": "source: GitHub<br><a href='https://gist.github.com/Parler-Analysis/2c023fd2e053fba5bc85b09209f606eb' target='_blank'>Parler-Analysis</a>, <a href='https://github.com/rljacobson/CapitolResources/' target='_blank'>Capitol Resources</a>"
+				"snippet": "videos are aggregeated by a grid of 30 screen pixel, dots show the number of aggregated videos<br>source: GitHub<br><a href='https://gist.github.com/Parler-Analysis/2c023fd2e053fba5bc85b09209f606eb' target='_blank'>Parler-Analysis</a>, <a href='https://github.com/rljacobson/CapitolResources/' target='_blank'>Capitol Resources</a>"
 				}
 			}],
 	"layerMask": {

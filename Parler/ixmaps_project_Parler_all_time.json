@@ -6,14 +6,14 @@
 		"description": "",
 		"thumbnail": "",
 		"about": "",
-		"created": "Wed Jan 20 2021 11:54:48 GMT+0100 (Ora standard dell’Europa centrale)"
+		"created": "Sat Jan 16 2021 20:52:46 GMT+0100 (Ora standard dell’Europa centrale)"
 		},
 	"map": {
-		"map": "",
+		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "iXMaps",
-		"basemap": "NOKIA - satellite",
+		"basemap": "Stamen - toner-lite",
 		"legend": "",
-		"item": "https://gjrichter.github.io/viz/Parler/video_item.html",
+		"item": "../../../../projects/Parler/video_item.html",
 		"scaleParam": {
 			"normalSizeScale": "177165354"
 			},
@@ -47,42 +47,35 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "38.889930525867136",
-			"lng": "-77.0087715983391"
+			"lat": "38.894105816686796",
+			"lng": "-77.01746463775636"
 			},
-		"zoom": "18"
+		"zoom": "15"
 		},
 	"themes": [{
 			"layer": "World Mercator",
 			"field": "$item$",
 			"field100": "",
 			"style": {
-				"type": "CHART|BUBBLE|SIZEP3|MULTIQUAD|DTEXT|VALUEBACKGROUND|VALUES",
+				"type": "CHART|BUBBLE",
 				"colorscheme": [
 					"1",
 					"#eeeeff",
-					"#dd0000"],
+					"#0000dd"],
 				"fillopacity": "0.7",
 				"shadow": "false",
-				"dbtable": "PARLER_RIOT_GEO",
+				"dbtable": "PARLER_ALL",
+				"dbtableExt": "../../projects/Parler/dataprovider_Parler.js",
 				"dbtableType": "ext",
-				"dbtableExt": "https://gjrichter.github.io/viz/Parler/dataprovider_Parler.js",
 				"datacache": "true",
 				"lookupfield": "LatitudeDD|LongitudeDD",
-				"units": "s",
+				"units": "",
 				"refreshtimeout": "0",
-				"scale": "1.3",
-				"valuefield": "sDuration",
-				"sizefield": "sDuration",
+				"scale": "1",
 				"timefield": "CreateDate",
-				"textcolor": "#660000",
-				"linecolor": [
-					"white"],
-				"linewidth": "0.5",
 				"valuescale": "1",
 				"valuedecimals": "0",
-				"title": "WDC 6 Jan Parler Vids",
-				"snippet": "dots show video length, more videos at the same position are shown as grid<br>source: GitHub<br><a href='https://gist.github.com/Parler-Analysis/2c023fd2e053fba5bc85b09209f606eb' target='_blank'>Parler-Analysis</a>, <a href='https://github.com/rljacobson/CapitolResources/' target='_blank'>Capitol Resources</a>"
+				"title": "World Mercator [$item$]"
 				}
 			}],
 	"layerMask": {
