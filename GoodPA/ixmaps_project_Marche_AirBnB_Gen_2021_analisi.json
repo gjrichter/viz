@@ -79,7 +79,7 @@
 				"scale": "0.5",
 				"valuescale": "1",
 				"valuedecimals": "0",
-				"title": "AirBnB Gen 2021",
+				"title": "AirBnB Gen 2021 - room type",
 				"snippet": "Categorie con analisi spaziale<br>fonte: data by courtesy of Vincenzo Patruno"
 				}
 			},{
@@ -123,7 +123,7 @@
 					"2000",
 					"1:500000",
 					"5000"],
-				"title": "AirBnB Gen 2021",
+				"title": "AirBnB Gen 2021 - griglia",
 				"snippet": "Categorie con analisi spaziale<br>fonte: data by courtesy of Vincenzo Patruno"
 				}
 			}],
