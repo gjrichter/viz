@@ -61,11 +61,11 @@
 			"style": {
 				"type": "FEATURES|NOLEGEND|LOCKED",
 				"colorscheme": [
-					"none"],
+					"#e0e0e0"],
 				"fillopacity": "1",
 				"autoopacity": "true",
 				"shadow": "false",
-				"dbtable": "barrios",
+				"dbtable": "nuts2",
 				"dbtableUrl": "https://raw.githubusercontent.com/ondata/nuts/main/processing/NUTS2_g.geojson",
 				"dbtableType": "geojson",
 				"datacache": "false",
@@ -84,57 +84,35 @@
 				}
 			},{
 			"layer": "nuts2",
-			"field": "totale",
+			"field": "categoria_operatori_sanitari_sociosanitari|categoria_personale_non_sanitario|categoria_ospiti_rsa|categoria_over80|categoria_forze_armate|categoria_personale_scolastico",
 			"field100": "",
-			"style": {
-				"type": "CHOROPLETH|QUANTILE|NOLEGEND",
-				"colorscheme": [
-					"15",
-					"rgb(211, 211, 211)",
-					"rgb(211, 211, 211)",
-					"3colors",
-					"rgb(211, 211, 211)"],
-				"fillopacity": "1",
-				"shadow": "false",
-				"dbtable": "VACCINI_SOMMINISTRAZIONI_LAST",
-				"dbtableType": "ext",
-				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
-				"datacache": "true",
-				"lookupfield": "codice_NUTS2",
-				"units": "",
-				"units100": "",
-				"refreshtimeout": "0",
-				"scale": "1",
-				"textcolor": "black",
-				"linecolor": [
-					"#F28E2B"],
-				"linewidth": "1",
-				"titlefield": "codice_NUTS2",
-				"valuescale": "1",
-				"valuedecimals": "0",
-				"title": "COVID-19<br>vaccini somministrati"
-				}
-			},{
-			"layer": "nuts2",
-			"field": "categoria_operatori_sanitari_sociosanitari|categoria_personale_non_sanitario|categoria_ospiti_rsa|categoria_over80",
-			"field100": "",
+			"data":{
+				"name":"VACCINI_SOMMINISTRAZIONI_LAST",
+				"type":"ext",
+				"ext":"https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
+				"cache":"true"
+			},
 			"style": {
 				"type": "GAUGE|HALF|CHART|PIE|DONUT|SIZE|LEGEND|SUM",
 				"colorscheme": [
-					"15",
-					"tableau"],
+					"rgb(78, 121, 167)",
+					"rgb(160, 203, 232)",
+					"rgb(242, 142, 43)",
+					"rgb(242, 242, 143)",
+					"#85924C",
+					"violet"
+				],
+				"label": [
+					"operatori sanitari / socio sanitari",
+					"personale non sanitario",
+					"ospiti RSA",
+					"più di 80 anni",
+					"forze armate",
+					"personale scolastico"
+				],
 				"fillopacity": "1",
 				"shadow": "false",
-				"dbtable": "VACCINI_SOMMINISTRAZIONI_LAST",
-				"dbtableType": "ext",
-				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
-				"datacache": "true",
 				"lookupfield": "codice_NUTS2",
-				"label": [
-					"Operatori sanitari sociosanitari",
-					"Personale non sanitario",
-					"Ospiti rsa",
-					"over 80"],
 				"units": "",
 				"units100": "",
 				"refreshtimeout": "0",
