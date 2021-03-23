@@ -129,8 +129,7 @@
 				"titlefield":"nome_area",
 				"titleupper":"1:1000000",
 				"evidence": "isolate_gray",
-				"title": "COVID-19<br>Vaccini somministrati per categoria",
-				"snippet": "dal 27/12/2020 al 29/1/2021"
+				"title": "COVID-19<br>Vaccini somministrati per categoria"
 				}
 			}],
 	"layerMask": {
