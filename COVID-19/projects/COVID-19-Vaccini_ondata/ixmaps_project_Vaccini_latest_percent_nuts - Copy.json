@@ -1,0 +1,196 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Tue Nov 03 2020 21:29:15 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "",
+		"attribution": "",
+		"basemap": "white",
+		"legend": "",
+		"item": "",
+		"mode":"info",
+		"scaleParam": {
+			"lineScaling": "23.67696884508345",
+			"labelScaling": "1.5",
+			"normalSizeScale": "13841043"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panhidden":"false"
+			},
+		"center": {
+			"lat": "42.282221877329024",
+			"lng": "12.871337890625002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "nuts2",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "nuts2",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/nuts/main/processing/NUTS2_g.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "Nome",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Barrios"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|QUANTILE|DTEXT|SIMPLELEGEND",
+				"colorscheme": [
+					"rgb(233, 242, 238)"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "VACCINI_SOMMINISTRAZIONI_LAST",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini.js",
+				"datacache": "true",
+				"lookupfield": "regione",
+				"units": "%",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"textcolor": "black",
+				"linecolor": [
+					"#F28E2B"],
+				"linewidth": "1",
+				"titlefield": "regione",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "COVID-19<br>Casi Testati in % della popolazione",
+				"snippet": "aggiornato al 2020-11-03T17:00:00"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|WAFFLE|AUTOCOMPLETE|VALUES|COMPACTLEGEND|COUNT",
+				"colorscheme": [
+					"rgb(242, 43, 140)"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "VACCINI_PERCENTUALI_LAST_ALT",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini.js",
+				"datacache": "true",
+				"lookupfield": "regione",
+				"label": [
+					"percentuale somministrate"],
+				"units": "%",
+				"units100": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "35",
+				"scale": "1.5",
+				"textcolor": "rgb(242, 183, 220)",
+				"linecolor": [
+					"rgb(242, 43, 140)"],
+				"linewidth": "0.5",
+				"titlefield": "regione",
+				"nodatacolor": "none",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"clipparts": "10",
+				"evidence": "isolate_gray",
+				"title": "COVID-19<br>percentuale di somministrazioni alle dose consegnate",
+				"snippet": "aggiornato al 2020-11-15T17:00:00"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|VALUES|TEXTONLY|COMPACTLEGEND|COUNT",
+				"colorscheme": [
+					"white"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "VACCINI_PERCENTUALI_LAST",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini.js",
+				"datacache": "true",
+				"lookupfield": "regione",
+				"label": [
+					"percentuale somministrate"],
+				"symbols":[
+					"label"
+				],
+				"align":"top",
+				"units": "%",
+				"units100": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "50",
+				"scale": "1",
+				"textcolor": "white",
+				"linecolor": [
+					"rgb(242, 43, 140)"],
+				"linewidth": "0.5",
+				"titlefield": "regione",
+				"nodatacolor": "none",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"clipparts": "10",
+				"evidence": "isolate_gray",
+				"title": "COVID-19<br>percentuale di somministrazioni alle dose consegnate",
+				"snippet": "aggiornato al 2020-11-15T17:00:00"
+				}
+			}],
+	"layerMask": {
+		}
+	}
