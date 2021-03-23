@@ -122,6 +122,9 @@ window.ixmaps = window.ixmaps || {};
 			});
 
 	};
+	ixmaps.PCM_DPC_COVID_LAST_ALT = function (theme, options) {
+		return ixmaps.PCM_DPC_COVID_LAST(theme, options);
+	}
 
 	ixmaps.PCM_DPC_COVID_LAST_2 = function (theme, options) {
 
@@ -1389,6 +1392,73 @@ window.ixmaps = window.ixmaps || {};
 			});
 
 	};
+	
+	ixmaps.PCM_DPC_COVID_FREE_DAYS_CLIP = function (theme, options) {
+
+
+		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-province/dpc-covid19-ita-province.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var myfeed = Data.feed({
+				"source": szUrl,
+				"type": "csv"
+			}).load(function (mydata) {
+
+				var pivot = __process(mydata, options);
+			
+				pivot.column("Total").remove();
+
+				var days = 150;
+				var startColumn = pivot.columnNames().length-1;
+				for (var day = 1; day<=days; day++,startColumn--){
+						pivot.addColumn({destination:"free_days_"+day},function(row){
+						var free = 0;
+						for ( var c=startColumn;(row[c] <= row[c-1]) && (c>=4);c--){
+							free++;
+						}
+						return free;
+					});
+				}
+
+				// get the columns with date 
+				var columns = pivot.columnNames();
+				var last = columns.length - 2;
+			
+				// and configure the theme
+				var columnA = [];
+				for (var day = 0; day<days; day++){
+					columnA.push("free_days_"+(days-day));
+				}
+				theme.szFields = columnA.join("|");
+				theme.szFieldsA = columnA;
+			
+				var dateColumnsA = pivot.columnNames();
+				var datesA = [];
+				for (var day = 0; day<days; day++){
+					datesA.push(new Date(dateColumnsA[startColumn++]).toLocaleDateString());
+				}
+				theme.szXaxisA = datesA;
+
+				theme.szSnippet = "aggiornato al " + datesA[datesA.length-1];
+
+				// -----------------------------------------------------------------------------------------------               
+				// deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(pivot, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			})
+			.error(function (e) {
+				alert("error loading data from:\n" + szUrl);
+			});
+
+	};
 
 	ixmaps.PCM_DPC_COVID_SEQUENCE_MEAN_3 = function (theme, options) {
 
@@ -1729,7 +1799,7 @@ window.ixmaps = window.ixmaps || {};
 						for ( var c=lastColumn; c>=7; c-- ){
 							var last   = (Number(records[r][c]  )+Number(records[r][c-1])+Number(records[r][c-2]))/3;
 							var before = (Number(records[r][c-1])+Number(records[r][c-2])+Number(records[r][c-3]))/3;
-							records[r][c] = ((last-before)/popA[Number(records[r][0])]*10000).toFixed(2);
+							records[r][c] = ((last-before)/popA[Number(records[r][0])]*100000).toFixed(2);
 						}
 					}
 					
