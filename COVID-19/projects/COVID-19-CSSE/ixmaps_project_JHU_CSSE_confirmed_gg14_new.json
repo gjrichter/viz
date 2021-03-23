@@ -1,0 +1,91 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Fri Feb 28 2020 12:29:52 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>COVID-19 - <b>14 days Cumulative Icidence</b> </h1><h2>new cases x 100.000 people within the last 14 days</h2><h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE</h4>",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "55364168"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panhidden":"false"
+			},
+		"center": {
+			"lat": "37.30027528134433",
+			"lng": "6.855468750000001"
+			},
+		"zoom": "3"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "2/27/20",
+			"field100": "",
+			"style": {
+				"type": "CHART|AURA|BUBBLE|SIGN|SIZE|SUM|VALUES",
+				"colorscheme": [
+					"rgba(100, 160, 220,1)"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"filter": "WHERE Country/Region != Others",
+				"dbtable": "CSSE_COVID_NEW_CONFIRMED_INCIDENCE_CUMULATIVE_14",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-CSSE/dataprovider_CSSE_COVID.js",
+				"datacache": "false",
+				"lookupfield": "Lat|Long",
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue":"500",
+				"linewidth": "0",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"chartlower": "1:5000000",
+				"name":"new_cases",
+				"titlefield":"Country/Region",
+				"title": "COVID-19 Cumulative Incidence of 14 days",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
+				"description":"nuovi casi ultime 24 ore"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
