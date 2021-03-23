@@ -59,7 +59,7 @@
 			"field": "2020-11-11T17:00:00",
 			"field100": "posti_letti_ti",
 			"style": {
-				"type": "CHART|PIE|AUTOCOMPLETE|SIZE|SIZE|VALUES|VALUEBACKGROUND",
+				"type": "CHART|PIE|AUTOCOMPLETE|VALUES|VALUEBACKGROUND",
 				"colorscheme": [
 					"#aaaaaa",
 					"#F27E2B"],
