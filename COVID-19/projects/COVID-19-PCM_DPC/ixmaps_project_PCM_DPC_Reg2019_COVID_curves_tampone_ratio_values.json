@@ -9,10 +9,10 @@
 		"created": "Sat Oct 31 2020 11:05:21 GMT+0100 (Ora standard dell’Europa centrale)"
 		},
 	"map": {
-		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
+		"map": "",
 		"attribution": "iXMaps",
-		"basemap": "ArcGIS - Light Gray Base",
-		"legend": "<div style='color:#777777'><h1></h1><h1><b>tasso di positività<br>nuovi positivi vs tamponi effettuati</b></h1><h2>valore attuale e media mobile di 7 giorni del percentuale di nuovi positivi rilevati tra persone testati per la prima volta</h2><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
+		"basemap": "white",
+		"legend": "<div style='color:#777777'><h1></h1><h1><b>tasso di positività -<br>nuovi positivi vs tamponi effettuati</b></h1><h2>valore attuale e media mobile di 7 giorni del percentuale di nuovi positivi rilevati tra persone testati per la prima volta</h2><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
 		"item": "html",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
@@ -55,6 +55,36 @@
 		"zoom": "6"
 		},
 	"themes": [{
+			"layer": "nuts2",
+			"data": {
+				"name": "regioni",
+				"url": "https://raw.githubusercontent.com/ondata/nuts/main/processing/NUTS2_g.geojson",
+				"type": "geojson",
+				"cache": "false"
+				},
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"#f0f0f0"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"itemfield": "NUTS2",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "2",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "features",
+				"title": "Italy nuts2"
+				}
+			},{
 			"layer": "Prov2019_nome",
 			"field": "",
 			"field100": "",
@@ -70,7 +100,7 @@
 				"shadow": "false",
 				"dbtable": "PCM_DPC_COVID_SEQUENCE_MEAN_7_TAMPONRATIO",
 				"dbtableType": "ext",
-				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
 				"datacache": "false",
 				"itemfield": "codice_regione",
 				"lookupfield": "lat|long",
@@ -111,7 +141,7 @@
 			"field": "$item$",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL||VALUES|SIZE|COMPACTLEGEND",
+				"type": "CHART|SYMBOL|VALUES|SIZE|COMPACTLEGEND",
 				"colorscheme": [
 					"#dd0044"],
 				"fillopacity": "0.5",
@@ -126,7 +156,7 @@
 				"symbols": [
 					"label"],
 				"units": "%",
-				"align": "",
+				"align": "left",
 				"refreshtimeout": "0",
 				"normalsizevalue": "10",
 				"scale": "1",
