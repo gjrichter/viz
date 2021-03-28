@@ -129,6 +129,7 @@
 				"scale": "0.08",
 				"rangescale": "0.95",
 				"minvalue": "0",
+				"maxvalue": "800",
 				"textcolor": "#dd0000",
 				"linewidth": "30",
 				"bordercolor": "none",
