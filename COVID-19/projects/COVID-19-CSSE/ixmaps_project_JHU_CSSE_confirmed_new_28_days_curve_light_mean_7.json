@@ -81,7 +81,7 @@
 				"linewidth": "30",
 				"bordercolor": "none",
 				"boxopacity": "0.01",
-				"titlefield": "Country/Region",
+				"titlefield": "name/combined",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"name": "new_cases_curves",
