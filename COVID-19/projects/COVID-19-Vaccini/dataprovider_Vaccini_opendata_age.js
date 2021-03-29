@@ -39,7 +39,7 @@ window.ixmaps = window.ixmaps || {};
    ixmaps.VACCINI_SOMMINISTRAZIONI_AGE_LAST_PERCENT_STACKED = function (theme,options) {
 
 		var szUrl1 = "https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/master/dati/somministrazioni-vaccini-latest.csv";
-		var szUrl2 = "../../data/Istat/DCIS_POPRES1_2020_regioni_classe_età.csv";
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_2020_regioni_classe_et%C3%A0.csv";
 
 		var broker = new Data.Broker()
 			.addSource(szUrl1, "csv")
@@ -113,7 +113,7 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.VACCINI_SOMMINISTRAZIONI_ETA_PRIMA_DOSE_LAST_POPOLAZIONE = function (theme,options) {
 
 		var szUrl1 = "https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/master/dati/somministrazioni-vaccini-latest.csv";
-		var szUrl2 = "../../data/Istat/DCIS_POPRES1_2020_regioni_classe_età.csv";
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_2020_regioni_classe_et%C3%A0.csv";
 
 		var broker = new Data.Broker()
 			.addSource(szUrl1, "csv")
@@ -163,7 +163,7 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.VACCINI_SOMMINISTRAZIONI_ETA_SECONDA_DOSE_LAST_POPOLAZIONE = function (theme,options) {
 
 		var szUrl1 = "https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/master/dati/somministrazioni-vaccini-latest.csv";
-		var szUrl2 = "../../data/Istat/DCIS_POPRES1_2020_regioni_classe_età.csv";
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_2020_regioni_classe_et%C3%A0.csv";
 
 		var broker = new Data.Broker()
 			.addSource(szUrl1, "csv")
@@ -205,7 +205,7 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.VACCINI_SOMMINISTRAZIONI_ETA_PRIMA_SECONDA_DOSE_LAST_POPOLAZIONE = function (theme,options) {
 
 		var szUrl1 = "https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/master/dati/somministrazioni-vaccini-latest.csv";
-		var szUrl2 = "../../data/Istat/DCIS_POPRES1_2020_regioni_classe_età.csv";
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_2020_regioni_classe_et%C3%A0.csv";
 
 		var broker = new Data.Broker()
 			.addSource(szUrl1, "csv")
