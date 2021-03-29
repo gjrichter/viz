@@ -12,7 +12,7 @@
 		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "iXMaps",
 		"basemap": "white",
-		"legend": "<h1>COVID-19<br>Vaccini somministrati per fasce d'età</h1><h4><i class='icon icon-radio-checked2' style='color:RGBA(250,0,128,0.5)'/> Popolazione per fasce d'età <br><i class='icon icon-radio-checked2' style='color:RGBA(178,255,78,1)'/> persone vaccinate con 1 dose<br><i class='icon icon-radio-checked2' style='color:RGBA(78, 155, 78,1)'/> persone vaccinate con 2 dosi</h4><h4>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.<br>Popolazione per fasce d'età al 1 gen. 2020 - ISTAT</h4>",
+		"legend": "<h1>COVID-19<br>Vaccini somministrati per fasce d'età</h1><h4><i class='icon icon-radio-checked2' style='color:RGBA(131, 198, 203,1)'/> Popolazione per fasce d'età <br><i class='icon icon-radio-checked2' style='color:RGBA(223, 22, 115,1)'/> persone vaccinate con 1 dose<br><i class='icon icon-radio-checked2' style='color:RGBA(253, 208, 0,1)'/> persone vaccinate con 2 dosi</h4><h4>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.<br>Popolazione per fasce d'età al 1 gen. 2020 - ISTAT</h4>",
 		"item": "",
 		"scaleParam": {
 			"lineScaling": "23.67696884508345",
