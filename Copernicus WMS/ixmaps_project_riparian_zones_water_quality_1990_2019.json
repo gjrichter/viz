@@ -1,0 +1,204 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Mar 29 2021 22:03:49 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "sources: European Environment Agency, Copernicus Land Monitoring Service, powered by iXMaps",
+		"basemap": "ArcGIS - Topo",
+		"legend": "",
+		"item": "html",
+		"scaleParam": {
+			"labelScaling": "1.5",
+			"normalSizeScale": "2314"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "0.7"
+			},
+		"center": {
+			"lat": "42.69454866207692",
+			"lng": "13.957099914550781"
+			},
+		"zoom": "12"
+		},
+	"themes": [{
+			"layer": "World_countries_shp",
+			"field": "quality2018|quality2017|quality2016|quality2015|quality2014|quality2013|quality2012|quality2011|quality2010|quality2009|quality2008|quality2007|quality2006|quality2005|quality2004|quality2003|quality2002|quality2001|quality2000|quality1999|quality1998|quality1997|quality1996|quality1995|quality1994|quality1993|quality1992|quality1991|quality1990",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|HORZ|COUNT|CATEGORICAL|SIMPLELEGEND",
+				"colorscheme": [
+					"#0070FF",
+					"#73DEFF",
+					"#53EEAF",
+					"#55FF00",
+					"RGB(255,0,0)",
+					"RGB(145,148,150)"],
+				"opacity": "1",
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/EEA/IT_BW2019.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "lat|lon",
+				"symbols": [
+					"square"],
+				"values": [
+					"Excellent",
+					"Good",
+					"Good or Sufficient",
+					"Sufficient",
+					"Poor",
+					"Not classified"],
+				"label": [
+					"qualità eccellente",
+					"qualità buono",
+					"qualità buono o sufficiente",
+					"qualità sufficiente",
+					"qualità povera",
+					"non classificato"],
+				"xaxis": [
+					"2017",
+					"2016",
+					"2015",
+					"2014",
+					"2013",
+					"2012",
+					"2011",
+					"2010",
+					"2009",
+					"2008",
+					"2007",
+					"2006",
+					"2005",
+					"2004",
+					"2003",
+					"2002",
+					"2001",
+					"2000",
+					"1999",
+					"1998",
+					"1997",
+					"1996",
+					"1995",
+					"1994",
+					"1993",
+					"1992",
+					"1991",
+					"1990"],
+				"units": "",
+				"offsetx": "-70",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"titlefield": "nameText",
+				"chartupper": "1:500000",
+				"valuescale": "1",
+				"title": "Acqua di balneazione<br>serie storica<br>1990 - 2018",
+				"description": "fonte: <a href='https://www.eea.europa.eu/data-and-maps/data/bathing-water-directive-status-of-bathing-water-12' target='_blank'>EEA bathing water quality</a><br>fondo: <a href='https://land.copernicus.eu/local' target='_blank'>Copernicus Land Monitoring Service</a>"
+				}
+			},{
+			"layer": "World_countries_shp",
+			"field": "quality2019",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|EXACT|ZEROISVALUE|NEGATIVEISVALUE|CATEGORICAL",
+				"colorscheme": [
+					"#0070FF",
+					"#73DEFF",
+					"#53EEAF",
+					"#55FF00",
+					"RGB(255,0,0)",
+					"RGB(145,148,150)"],
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/EEA/IT_BW2019.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "lat|lon",
+				"showdata": "true",
+				"values": [
+					"Excellent",
+					"Good",
+					"Good or Sufficient",
+					"Sufficient",
+					"Poor",
+					"Not classified"],
+				"label": [
+					"qualità eccellente",
+					"qualità buono",
+					"qualità buono o sufficiente",
+					"qualità sufficiente",
+					"qualità povera",
+					"non classificato"],
+				"units": "",
+				"sizevalueunits": "    ",
+				"offsetx": "-5",
+				"refreshtimeout": "0",
+				"scale": "5",
+				"textcolor": "white",
+				"boxopacity": "0.01",
+				"titlefield": "nameText",
+				"valuescale": "1",
+				"title": "2019 <br>Qualità acque di balneazione",
+				"description": "fonte: <a href='https://www.eea.europa.eu/data-and-maps/data/bathing-water-directive-status-of-bathing-water-12' target='_blank'>EEA bathing water quality</a><br>fondo: <a href='https://land.copernicus.eu/local' target='_blank'>Copernicus Land Monitoring Service</a>"
+				}
+			},{
+			"layer": "riparian_zones",
+			"field": "$ITEM$",
+			"field100": "",
+			"style": {
+				"type": "WMS|IMAGE|NOLEGEND",
+				"server": "https://image.discomap.eea.europa.eu/arcgis/rest/services/RiparianZones/LCLU/MapServer/export",
+				"opacity": "0.8",
+				"title": "Copernicus Discomap RiparianZones"
+				}
+			},{
+			"layer": "tree_canopy",
+			"field": "$ITEM$",
+			"field100": "",
+			"style": {
+				"type": "WMS|IMAGE|NOLEGEND",
+				"server": "https://image.discomap.eea.europa.eu/arcgis/rest/services/GioLandPublic/HRL_TreeCoverDensity_2018/ImageServer/exportImage",
+				"opacity": "0.6",
+				"title": "Copernicus Discomap Tree Cover Density"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
