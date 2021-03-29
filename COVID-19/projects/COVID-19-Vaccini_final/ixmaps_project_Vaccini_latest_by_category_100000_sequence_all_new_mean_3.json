@@ -1,0 +1,139 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sat Mar 27 2021 23:58:40 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "white",
+		"legend": "<h1>Dosi somministrate per giorno e categoria</h1><h4><i class='icon icon-radio-checked2' style='color:rgb(78, 121, 167)'/> operatori sanitari / socio sanitari <br><i class='icon icon-radio-checked2' style='color:rgb(160, 203, 232)'/> personale non sanitario <br><i class='icon icon-radio-checked2' style='color:rgb(242, 142, 43)'/> ospiti RSA <br><i class='icon icon-radio-checked2' style='color:rgb(242, 242, 143)'/> più di 80 anni<br><i class='icon icon-radio-checked2' style='color:#85924C'/> forze armate<br><i class='icon icon-radio-checked2' style='color:violet'/> personale scolastico</h4><h4><b>fonte:</b> <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h4><h4><a style='color:#0088aa' href='javascript:ixmaps.legend.showItemList()'>&rarr; lista Regioni</a></h4>",
+		"item": "html",
+		"scaleParam": {
+			"lineScaling": "23.67696884508345",
+			"objectScaling": "0.5625",
+			"labelScaling": "1.5",
+			"normalSizeScale": "13841043"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "44.146739625584985",
+			"lng": "11.211547851562502"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "nuts2",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"#e0e0e0"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "barrios",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/nuts/main/processing/NUTS2_g.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "NUTS2",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"#e8e8e8"],
+				"linewidth": "1",
+				"valuescale": "1",
+				"name": "features",
+				"title": "Italy nuts2"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|FIXSIZE|GRID|BOX|LONGTITLE|DTEXT|SIMPLELEGEND|ZEROISVALUE",
+				"colorscheme": [
+					"rgb(78, 121, 167)",
+					"rgb(160, 203, 232)",
+					"rgb(242, 142, 43)",
+					"rgb(242, 242, 143)",
+					"#85924C",
+					"violet"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "VACCINI_SOMMINISTRAZIONI_ALL_NEW_SEQUENCE_MEAN_3",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
+				"datacache": "true",
+				"lookupfield": "codice_NUTS2",
+				"symbols": [
+					"circle"],
+				"label": [
+					"operatori sanitari / socio sanitari",
+					"personale non sanitario",
+					"ospiti RSA",
+					"più di 80 anni",
+					"forze armate",
+					"personale scolastico"],
+				"units": "",
+				"units100": "",
+				"align": "23right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "50000",
+				"scale": "0.05",
+				"rangescale": "5",
+				"maxvalue": "auto",
+				"linewidth": "15",
+				"bordercolor": "none",
+				"boxopacity": "0",
+				"titlefield": "nome_area",
+				"titleupper": "1:3000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"gridx": "6",
+				"evidence": "isolate_gray",
+				"title": "COVID-19<br>Vaccini somministrati per categoria"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
