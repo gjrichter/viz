@@ -1,0 +1,125 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Tue Nov 03 2020 21:29:15 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "",
+		"attribution": "",
+		"basemap": "white",
+		"legend": "",
+		"item": "",
+		"mode":"info",
+		"scaleParam": {
+			"lineScaling": "23.67696884508345",
+			"labelScaling": "1.5",
+			"normalSizeScale": "13841043"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panhidden":"false"
+			},
+		"center": {
+			"lat": "42.282221877329024",
+			"lng": "12.871337890625002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "nuts2",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"rgb(201, 198, 63)"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "nuts2",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/nuts/main/processing/NUTS2_g.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "Nuts2",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Barrios"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|CLIP|LOOP|VALUES|DTEXT|COMPACTLEGEND",
+				"colorscheme": [
+					"1",
+					"rgb(242, 43, 140)",
+					"rgb(242, 43, 140)"],
+				"opacity": "1",
+				"shadow": "true",
+				"dbtable": "VACCINI_PERCENTUALI_POPOLAZIONE_CLIP",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
+				"datacache": "true",
+				"lookupfield": "codice_NUTS2",
+				"symbols":[
+					"https://s3.eu-west-1.amazonaws.com/symbols.ixmaps.com/primula_vaccini.svg"
+				],
+				"align":"center",
+				"units": "%",
+				"units100": "",
+				"showdata":"true",
+				"refreshtimeout": "0",
+				"titlefield": "nome_area",
+				"scale":"2",
+				"normalsizevalue":"10",
+				"valuescale": "0.4",
+				"valuedecimals": "2",
+				"valueupper":"1:200000000",
+				"clipframerate":"24",
+				"title": "COVID-19<br>% della popolazione vaccinato con prima dose",
+				"snippet": "aggiornato al 2020-11-03T17:00:00",
+				"description":"<h4><b>data:</b> <a  href='<a href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>Italia GitHub - Presidenza del Consiglio dei Ministri</a><br><b>Licenza:</b> CC BY 4.0</h4>"
+				}
+			}],
+	"layerMask": {
+		}
+	}

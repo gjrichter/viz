@@ -1,0 +1,179 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Mar 28 2021 10:53:50 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "white",
+		"legend": "<h1>COVID-19<br>Vaccini somministrati per fasce d'età</h1><h4><i class='icon icon-radio-checked2' style='color:RGBA(250,0,128,0.5)'/> Popolazione per fasce d'età <br><i class='icon icon-radio-checked2' style='color:RGBA(178,255,78,1)'/> persone vaccinate con 1 dose<br><i class='icon icon-radio-checked2' style='color:RGBA(78, 155, 78,1)'/> persone vaccinate con 2 dosi</h4><h4>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.<br>Popolazione per fasce d'età al 1 gen. 2020 - ISTAT</h4>",
+		"item": "",
+		"scaleParam": {
+			"lineScaling": "23.67696884508345",
+			"labelScaling": "1.5",
+			"normalSizeScale": "13841043"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.9058083561574",
+			"lng": "12.420043945312502"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "nuts2",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"#e8e8e8"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "barrios",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/nuts/main/processing/NUTS2_g.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "NUTS2",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "features",
+				"title": "Italy nuts2"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "seconda_dose_pop",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|QUANTILE|SIMPLELEGEND",
+				"colorscheme": [
+					"7",
+					"rgb(233, 242, 238)",
+					"rgb(46, 142, 139)",
+					"3colors",
+					"rgb(131, 198, 203)"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "VACCINI_SECOND_PERCENTUALI_POPOLAZIONE_LAST",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
+				"datacache": "true",
+				"lookupfield": "codice_NUTS2",
+				"units": "%",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"textcolor": "black",
+				"linecolor": [
+					"#F28E2B"],
+				"linewidth": "1",
+				"titlefield": "nome_area",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "Percentuale della popolazione protetta con 2 dosi",
+				"snippet": "<h5>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h5>"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "90+.3|90+.2|90+.1|80-89.3|80-89.2|80-89.1|70-79.3|70-79.2|70-79.1|60-69.3|60-69.2|60-69.1|50-59.3|50-59.2|50-59.1|40-49.3|40-49.2|40-49.1|30-39.3|30-39.2|30-39.1|20-29.3|20-29.2|20-29.1|10-19.3|16-19.2|16-19.1|0-9.3|16-19.2|16-19.1",
+			"field100": "",
+			"style": {
+				"type": "VALUES|CHART|BAR|HORZ|STACKED|CENTER|SPACED|SIZE|XAXIS|SIMPLELEGEND|",
+				"colorscheme": [
+					"RGBA(131, 198, 203,1)",
+					"rgba(223, 22, 115,1)",
+					"RGBA(253, 208, 0,1)"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "VACCINI_SOMMINISTRAZIONI_ETA_PRIMA_SECONDA_DOSE_LAST_POPOLAZIONE",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-Vaccini/dataprovider_Vaccini_age.js",
+				"datacache": "true",
+				"lookupfield": "codice_NUTS2.1",
+				"label": [
+					"90+",
+					"90+",
+					"80-89",
+					"80-89",
+					"70-79",
+					"70-79",
+					"60-69",
+					"60-69",
+					"50-59",
+					"50-59",
+					"40-49",
+					"40-49",
+					"30-39",
+					"30-39",
+					"20-29",
+					"20-29",
+					"10-19",
+					"0-9",
+					"0-9"],
+				"units": "",
+				"units100": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1000000",
+				"scale": "0.4",
+				"rangescale": "15",
+				"linecolor": [
+					"white"],
+				"linewidth": "1",
+				"titlefield": "nome_area.1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridx": "3",
+				"evidence": "isolate_gray",
+				"title": "COVID-19<br>Vaccini per fasce d'età",
+				"snippet": "<h4><span style='color:RGBA(250,0,128,0.5)'>&#9679;</span> Popolazione per fasce d'età <br><span style='color:RGBA(178,255,78,1)'>&#9679;</span> persone vaccinate con almeno 1 dose</h4><h5>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h5>",
+				"description": "test"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
