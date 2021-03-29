@@ -1,0 +1,154 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Tue Nov 03 2020 21:29:15 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "",
+		"attribution": "",
+		"basemap": "white",
+		"legend": "",
+		"item": "",
+		"mode":"info",
+		"scaleParam": {
+			"lineScaling": "25",
+			"labelScaling": "1",
+			"normalSizeScale": "13841043"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "true",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panhidden":"false"
+			},
+		"center": {
+			"lat": "42.282221877329024",
+			"lng": "12.871337890625002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "nuts2",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "nuts2",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/nuts/main/processing/NUTS2_g.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "NUTS2",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Italy Nuts2"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "seconda_dose_pop",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|QUANTILE|SIMPLELEGEND",
+				"colorscheme": [
+					"7",
+					"rgb(233, 242, 238)",
+					"rgb(46, 142, 139)",
+					"3colors",
+					"rgb(131, 198, 203)"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "VACCINI_SECOND_PERCENTUALI_POPOLAZIONE_LAST",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
+				"datacache": "true",
+				"lookupfield": "codice_NUTS2",
+				"units": "%",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"textcolor": "black",
+				"linecolor": [
+					"#F28E2B"],
+				"linewidth": "1",
+				"titlefield": "nome_area",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "Percentuale della popolazione protetta con 2 dosi",
+				"snippet": "<h5>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h5>"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "seconda_dose_pop",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|VALUES|DTEXT|SIMPLELEGEND",
+				"colorscheme": [
+					"1",
+					"rgb(242, 43, 140)",
+					"rgb(242, 43, 140)"],
+				"fillopacity": "1",
+				"shadow": "true",
+				"dbtable": "VACCINI_SECOND_PERCENTUALI_POPOLAZIONE_LAST",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
+				"datacache": "true",
+				"lookupfield": "codice_NUTS2",
+				"units": "%",
+				"symbols":[
+					"https://s3.eu-west-1.amazonaws.com/symbols.ixmaps.com/primula_vaccini.svg"
+				],
+				"align":"center",
+				"units": "%",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "1.5",
+				"titlefield": "nome_area",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "Percentuale della popolazione protetta con 2 dose",
+				"snippet": "<h5>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h5>"
+				}
+			}],
+	"layerMask": {
+		}
+	}
