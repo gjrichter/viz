@@ -129,7 +129,7 @@
 				"shadow": "false",
 				"dbtable": "VACCINI_SOMMINISTRAZIONI_ETA_PRIMA_SECONDA_DOSE_LAST_POPOLAZIONE",
 				"dbtableType": "ext",
-				"dbtableExt": "../../projects/COVID-19-Vaccini/dataprovider_Vaccini_age.js",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_age.js",
 				"datacache": "true",
 				"lookupfield": "codice_NUTS2.1",
 				"label": [
