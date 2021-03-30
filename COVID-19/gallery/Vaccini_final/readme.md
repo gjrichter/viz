@@ -18,7 +18,7 @@ Per realizzare 500.000 dosi al giorni somministrati in Italia si deve arrivare a
 
 
 
-<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&mode=info&scrollsafe=1&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_final/ixmaps_project_Vaccini_latest_80_89_percent_prima_seconda_II.json"></iframe>
+<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&scrollsafe=1&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_final/ixmaps_project_Vaccini_latest_80_89_percent_prima_seconda_II.json"></iframe>
 
 
 
@@ -26,9 +26,9 @@ Per realizzare 500.000 dosi al giorni somministrati in Italia si deve arrivare a
 
 
 
-<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&mode=info&scrollsafe=1&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_final/ixmaps_project_Vaccini_latest_by_age_pyramids.json"></iframe>
+<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&scrollsafe=1&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_final/ixmaps_project_Vaccini_latest_by_age_pyramids.json"></iframe>
 
-<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&mode=info&scrollsafe=1&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_final/ixmaps_project_Vaccini_latest_by_category_100000_sequence_all_new_mean_3.json"></iframe>
+<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&scrollsafe=1&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_final/ixmaps_project_Vaccini_latest_by_category_100000_sequence_all_new_mean_3.json"></iframe>
 
 # Visualizzazioni realizzati da altri  
 
