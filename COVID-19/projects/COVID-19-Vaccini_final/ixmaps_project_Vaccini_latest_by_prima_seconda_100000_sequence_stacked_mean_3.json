@@ -46,7 +46,8 @@
 			"labelscaling": "dynamic",
 			"flushChartDraw": "50000",
 			"mapopacity": "1",
-			"basemapopacity": "1"
+			"basemapopacity": "1",
+			"panhidden":"false"
 			},
 		"center": {
 			"lat": "42.282221877329024",
