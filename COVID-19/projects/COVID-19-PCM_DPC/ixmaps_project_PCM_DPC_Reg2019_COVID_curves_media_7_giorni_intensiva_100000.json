@@ -9,10 +9,10 @@
 		"created": "Thu Oct 01 2020 18:06:19 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
-		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
+		"map": "",
 		"attribution": "iXMaps",
-		"basemap": "ArcGIS - Light Gray Base",
-		"legend": "<div style='color:#777777'><h1></h1><h1><b>Terapia intensiva - Incidenza / 100.000</b></h1><h2>Persone in terapia intensiva <br>per 100.000 abitanti, media mobile di 7 giorni</h2><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
+		"basemap": "white",
+		"legend": "<div style='color:#777777'><h1></h1><h1><b>Terapia intensiva - Incidenza / 100.000</b></h1><h2>Persone in terapia intensiva <br>per 100.000 abitanti, media mobile di 7 giorni</h2><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4><h4><a style='color:#0088aa' href='javascript:ixmaps.legend.showItemGrid(\"curve\")'>&rarr; lista Regioni</a></h4></div>",
 		"item": "html",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
@@ -55,6 +55,36 @@
 		"zoom": "6"
 		},
 	"themes": [{
+			"layer": "nuts2",
+			"data": {
+				"name": "barrios",
+				"url": "https://raw.githubusercontent.com/ondata/nuts/main/processing/NUTS2_g.geojson",
+				"type": "geojson",
+				"cache": "false"
+				},
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"#f0f0f0"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"itemfield": "NUTS2",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "2",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "features",
+				"title": "Italy nuts2"
+				}
+			},{
 			"layer": "Prov2019_nome",
 			"field": "",
 			"field100": "",
