@@ -106,6 +106,10 @@
 				"lookupfield": "codice_NUTS2.1",
 				"symbols": [
 					"circle"],
+				"label":[
+					"prima dose",
+					"seconda dose"
+				],
 				"units": "",
 				"units100": "",
 				"align": "23right",
