@@ -143,8 +143,8 @@
 				"sizefield": "80-89.2",
 				"textcolor": "rgb(182, 152, 53)",
 				"linecolor": [
-					"rgb(222, 202, 73)"],
-				"linewidth": "1",
+					"rgb(202, 182, 53)"],
+				"linewidth": "2",
 				"titlefield": "nome_area.1",
 				"nodatacolor": "rgb(232, 222, 173, 0.3)",
 				"valuescale": "1",
