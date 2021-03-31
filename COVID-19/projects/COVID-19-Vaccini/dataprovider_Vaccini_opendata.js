@@ -338,7 +338,8 @@ window.ixmaps = window.ixmaps || {};
 																"categoria_over80"],"mean3");
 	};
 	ixmaps.VACCINI_SOMMINISTRAZIONI_ALL_NEW_SEQUENCE_MEAN_3 = function (theme, options) {
-		return ixmaps.VACCINI_COLUMNS_SEQUENCE(theme, options, ["categoria_operatori_sanitari_sociosanitari",
+		return ixmaps.VACCINI_COLUMNS_SEQUENCE(theme, options, ["altro",
+																"categoria_operatori_sanitari_sociosanitari",
 																"categoria_personale_non_sanitario",
 																"categoria_ospiti_rsa",
 																"categoria_over80",
@@ -363,7 +364,8 @@ window.ixmaps = window.ixmaps || {};
 																"categoria_over80",
 																"categoria_ospiti_rsa",
 																"categoria_personale_non_sanitario",
-																"categoria_operatori_sanitari_sociosanitari"],"mean3");
+																"categoria_operatori_sanitari_sociosanitari",
+															    "altro"],"mean3");
 	};
 
 	ixmaps.VACCINI_SOMMINISTRAZIONI_PRIMA_SECONDA_SEQUENCE = function (theme, options) {
