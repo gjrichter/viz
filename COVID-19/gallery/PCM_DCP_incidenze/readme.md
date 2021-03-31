@@ -1,7 +1,5 @@
 ## CODID-19 - DPM DPC
 
-## Visualizzazioni di dati dell'Dipartimento della Protezione Civile 
-
 Visualizzazioni di dati resi disponibile dalla Protezione Civile in un repository dedicato su GitHub
 
 Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a>
