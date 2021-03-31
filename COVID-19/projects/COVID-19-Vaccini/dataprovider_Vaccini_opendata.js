@@ -661,6 +661,15 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.VACCINI_SOMMINISTRAZIONI_PRIMA_SECONDA_POPOLAZIONE_SEQUENCE_REVERS_MEAN_3 = function (theme, options) {
 		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["seconda_dose","prima_dose"], "mean3");
 	};
+	ixmaps.VACCINI_SOMMINISTRAZIONI_TOTALE_POPOLAZIONE_SEQUENCE_MEAN_3 = function (theme, options) {
+		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["totale"], "mean3");
+	};
+	ixmaps.VACCINI_SOMMINISTRAZIONI_PRIMA_POPOLAZIONE_SEQUENCE_MEAN_3 = function (theme, options) {
+		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["prima_dose"], "mean3");
+	};
+	ixmaps.VACCINI_SOMMINISTRAZIONI_SECONDA_POPOLAZIONE_SEQUENCE_MEAN_3 = function (theme, options) {
+		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["seconda_dose"], "mean3");
+	};
 	
 	ixmaps.VACCINI_SOMMINISTRAZIONI_ALL_NEW_POPOLAZIONE_SEQUENCE_REVERS_MEAN_3 = function (theme, options) {
 		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["categoria_personale_scolastico",
@@ -668,10 +677,12 @@ window.ixmaps = window.ixmaps || {};
 																"categoria_over80",
 																"categoria_ospiti_rsa",
 																"categoria_personale_non_sanitario",
-																"categoria_operatori_sanitari_sociosanitari"],"mean3");
+																"categoria_operatori_sanitari_sociosanitari",
+																"categoria_altro"],"mean3");
 	};
 	ixmaps.VACCINI_SOMMINISTRAZIONI_ALL_NEW_POPOLAZIONE_SEQUENCE_MEAN_3 = function (theme, options) {
-		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["categoria_operatori_sanitari_sociosanitari",
+		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["categoria_altro",
+																"categoria_operatori_sanitari_sociosanitari",
 																"categoria_personale_non_sanitario",
 																"categoria_ospiti_rsa",
 																"categoria_over80",
