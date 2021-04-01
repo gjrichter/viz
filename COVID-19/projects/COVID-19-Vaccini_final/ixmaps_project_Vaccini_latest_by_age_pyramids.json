@@ -168,7 +168,7 @@
 				"gridx": "3",
 				"evidence": "isolate_gray",
 				"title": "COVID-19<br>Vaccini per fasce d'età",
-				"snippet": "<h4><span style='color:RGBA(250,0,128,0.5)'>&#9679;</span> Popolazione per fasce d'età <br><span style='color:RGBA(178,255,78,1)'>&#9679;</span> persone vaccinate con almeno 1 dose</h4><h5>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h5>",
+				"snippet": "<h4><span style='color:RGBA(250,0,128,0.5)'>&#9679;</span> Popolazione per fasce d'età <br><span style='color:RGBA(178,255,78,1)'>&#9679;</span> persone vaccinate con almeno 1 dose</h4><h5>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h5><h4><a class='btn btn-default theme-tool-button' style='color:#0088aa;' href='javascript:ixmaps.legend.showItemGrid(\"curve\")'>visualizzazione a griglia <span class='icon icon-table2' style='font-size:18px;vertical-align:-10%;'></span></a></h4>",
 				"description": "test"
 				}
 			}],
