@@ -12,7 +12,7 @@
 		"map": "",
 		"attribution": "iXMaps",
 		"basemap": "white",
-		"legend": "<div style='color:#777777'><h1></h1><h1><b>Ricoverati -<br>Incidenza / 100 000</b></h1><h2>ricoverati per 100 000 abitanti <br>media mobile di 7 giorni</h2><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4><h4><a style='color:#0088aa' href='javascript:ixmaps.legend.showItemGrid(\"curve\")'>&rarr; lista Regioni</a></h4></div>",
+		"legend": "<div style='color:#777777'><h1></h1><h1><b>Ricoverati -<br>Incidenza / 100 000</b></h1><h2>ricoverati per 100 000 abitanti <br>media mobile di 7 giorni</h2><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4><h4><a class='btn btn-default theme-tool-button' style='color:#0088aa;' href='javascript:ixmaps.legend.showItemGrid(\"curve\")'>visualizzazione a griglia <span class='icon icon-table2' style='font-size:18px;vertical-align:-10%;'></span></a></h4></div>",
 		"item": "html",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
