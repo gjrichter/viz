@@ -6,7 +6,7 @@ Il dataset si trova qui: [https://github.com/italia/covid19-opendata-vaccini](ht
 
 
 
-## il progresso dei vaccini anti COVID-19 
+## arrivare a 500.000 dosi al giorno 
 
 La visualizzazione mostra i **vaccini somministrati** per **100.000 abitanti**, giorno per giorno, divisi in **prima** e **seconda** dosi. I grafici mostrano anche sempre la somma delle somministrazioni. 
 
@@ -20,6 +20,8 @@ Per realizzare 500.000 dosi al giorni somministrati in Italia si deve arrivare a
 
 
 
+## la protezione delle fasce età maggiormente a rischio 
+
 
 
 <iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&scrollsafe=1&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_final/ixmaps_project_Vaccini_latest_80_89_percent_prima_seconda_II.json"></iframe>
@@ -30,7 +32,17 @@ Per realizzare 500.000 dosi al giorni somministrati in Italia si deve arrivare a
 
 
 
+## l'Immunità di gregge
+
+
+
 <iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&scrollsafe=1&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_final/ixmaps_project_Vaccini_latest_by_age_pyramids.json"></iframe>
+
+
+
+## le categorie 
+
+
 
 <iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&scrollsafe=1&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_final/ixmaps_project_Vaccini_latest_by_category_100000_sequence_all_new_mean_3.json"></iframe>
 
