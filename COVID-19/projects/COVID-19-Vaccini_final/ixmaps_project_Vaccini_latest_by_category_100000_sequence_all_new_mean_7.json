@@ -98,7 +98,7 @@
 					"violet"],
 				"fillopacity": "1",
 				"shadow": "false",
-				"dbtable": "VACCINI_SOMMINISTRAZIONI_ALL_NEW_SEQUENCE_MEAN_3",
+				"dbtable": "VACCINI_SOMMINISTRAZIONI_ALL_NEW_SEQUENCE_MEAN_7",
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
 				"datacache": "true",

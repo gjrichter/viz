@@ -12,7 +12,7 @@
 		"map": "",
 		"attribution": "iXMaps",
 		"basemap": "white",
-		"legend": "<h1>Prime e seconde dosi somministrate per giorno</h1><h4><i class='icon icon-radio-checked2' style='color:rgb(213, 178, 0);vertical-align:-20%'/> prima dose <br><i class='icon icon-radio-checked2' style='color:rgb(242, 43, 140);vertical-align:-20%'/> seconda dose <br><i class='icon icon-minus' style='color:rgb(242, 43, 140);vertical-align:-20%'/> somma giornaliera </h4><h4>espresso in dosi per 100.000 abitanti</h4><h4><b>fonte:</b> <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h4><h4>Il traguardo di <b>500.000 dosi</b> al giorni si traduce in <b>833 dosi</b> per <b>100.000 abitanti</b> (300.000 al giorno equivale 500)</h4><h4><a class='btn btn-default theme-tool-button' style='color:#0088aa;' href='javascript:ixmaps.legend.showItemGrid()'>visualizzazione a griglia <span class='icon icon-table2' style='font-size:18px;vertical-align:-10%;'></span></a></h4>",
+		"legend": "<h1>Dosi somministrate per giorno e categorie</h1><h4><i class='icon icon-radio-checked2' style='color:rgb(222,222,222)'/> altro <br><i class='icon icon-radio-checked2' style='color:rgb(78, 121, 167)'/> operatori sanitari / socio sanitari <br><i class='icon icon-radio-checked2' style='color:rgb(160, 203, 232)'/> personale non sanitario <br><i class='icon icon-radio-checked2' style='color:rgb(242, 142, 43)'/> ospiti RSA <br><i class='icon icon-radio-checked2' style='color:rgb(242, 242, 143)'/> più di 80 anni<br><i class='icon icon-radio-checked2' style='color:#85924C'/> forze armate<br><i class='icon icon-radio-checked2' style='color:violet'/> personale scolastico</h4><h4><b>fonte:</b> <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h4><h4><a class='btn btn-default theme-tool-button' style='color:#0088aa;' href='javascript:ixmaps.legend.showItemGrid()'>visualizzazione a griglia <span class='icon icon-table2' style='font-size:18px;vertical-align:-10%;'></span></a></h4>",
 		"item": "",
 		"scaleParam": {
 			"lineScaling": "23.67696884508345",
@@ -68,7 +68,7 @@
 			"style": {
 				"type": "FEATURES|NOLEGEND|LOCKED",
 				"colorscheme": [
-					"#e0e0e0"],
+					"rgb(231, 231, 231)"],
 				"fillopacity": "1",
 				"autoopacity": "true",
 				"shadow": "false",
@@ -88,7 +88,7 @@
 			},{
 			"layer": "nuts2",
 			"data": {
-				"name": "VACCINI_SOMMINISTRAZIONI_PRIMA_SECONDA_POPOLAZIONE_SEQUENCE_REVERS_MEAN_3",
+				"name": "VACCINI_SOMMINISTRAZIONI_ALL_NEW_POPOLAZIONE_SEQUENCE_REVERS_MEAN_7",
 				"type": "ext",
 				"ext": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
 				"cache": "true"
@@ -96,44 +96,50 @@
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|FIXSIZE|LINES|AREA|STACKED|GRID|BOX|LONGTITLE|DTEXT|SIMPLELEGEND",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|STACKED|FIXSIZE|GRID|BOX|LONGTITLE|DTEXT|SIMPLELEGEND|ZEROISVALUE",
 				"colorscheme": [
-					"2",
-					"rgb(242, 43, 140)",
-					"rgb(233, 178, 0)"
-					],
-				"label":[
-					"seconda dose",
-					"prima dose"
+					"violet",
+					"#85924C",
+					"rgb(242, 242, 143)",
+					"rgb(242, 142, 43)",
+					"rgb(160, 203, 232)",
+					"rgb(78, 121, 167)",
+					"rgb(202,202,202)"
+				],
+				"label": [
+					"personale scolastico",
+					"forze armate",
+					"più di 80 anni",
+					"ospiti RSA",
+					"personale non sanitario",
+					"operatori sanitari / socio sanitari",
+					"altro"
 				],
 				"shadow": "false",
-				"fillopacity":"0.7",
+				"fillopacity":"0.9",
 				"align":"23right",
 				"lookupfield": "codice_NUTS2",
 				"symbols": [
 					"circle"],
-				"units": "",
+				"units": "dosi/100.000 abitanti,",
 				"units100": "",
 				"refreshtimeout": "0",
 				"normalsizevalue": "50000",
+				"scale": "0.05",
+				"rangescale":"12",
 				"maxvalue": "1000",
 				"highvalue": "833",
-				"lowvalue": "500",
-				"scale": "0.05",
-				"rangescale":"30",
-				"linecolor": "#ff2080",
-				"linewidth": "15",
+				"linewidth": "5",
 				"bordercolor": "none",
 				"boxopacity": "0",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"fadenegative": "1",
 				"titlefield":"nome_area",
-				"titleupper":"1:5000000",
-				"textscale":"0.5",
+				"timefield":"$item$",
+				"titleupper":"1:1000000",
 				"evidence": "isolate_gray",
-				"title": "COVID-19<br>Vaccini somministrati di 1./2. dose",
-				"snippet": "dal 27/12/2020 al 29/1/2021"
+				"title": "COVID-19<br>Vaccini somministrati per categoria e 100.000 abitanti"
 				}
 			}],
 	"layerMask": {

@@ -88,7 +88,7 @@
 			},{
 			"layer": "nuts2",
 			"data": {
-				"name": "VACCINI_SOMMINISTRAZIONI_PRIMA_SECONDA_POPOLAZIONE_SEQUENCE_REVERS_MEAN_3",
+				"name": "VACCINI_SOMMINISTRAZIONI_PRIMA_SECONDA_POPOLAZIONE_SEQUENCE_REVERS_MEAN_7",
 				"type": "ext",
 				"ext": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
 				"cache": "true"
@@ -96,6 +96,7 @@
 			"field": "",
 			"field100": "",
 			"style": {
+				"name": "curve",
 				"type": "CHART|SYMBOL|SEQUENCE|PLOT|FIXSIZE|LINES|AREA|STACKED|GRID|BOX|LONGTITLE|DTEXT|SIMPLELEGEND",
 				"colorscheme": [
 					"2",
