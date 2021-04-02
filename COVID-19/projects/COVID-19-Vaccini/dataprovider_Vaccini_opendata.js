@@ -219,6 +219,25 @@ window.ixmaps = window.ixmaps || {};
 		return table;
      }; 
 
+    var __mean_7 = function(table) { 
+		
+		// make mean of 7 days
+		var records = table.records;
+		for ( var r=0; r<records.length; r++ ){
+			for ( var c=records[r].length-1; c>=8; c--){
+				records[r][c] = ((Number(records[r][c])+
+								  Number(records[r][c-1])+
+								  Number(records[r][c-2])+
+								  Number(records[r][c-3])+
+								  Number(records[r][c-4])+
+								  Number(records[r][c-5])+
+								  Number(records[r][c-6])
+								 )/7).toFixed(2);
+			}
+		}
+		return table;
+     }; 
+
 	 ixmaps.VACCINI_COLUMNS_SEQUENCE = function (theme, options, columns, flag) {
 
 		var szUrl = "https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/master/dati/somministrazioni-vaccini-summary-latest.csv";
@@ -260,6 +279,9 @@ window.ixmaps = window.ixmaps || {};
 				pivot[i].column("Total").remove();
 				if ( flag && flag.match(/mean3/) ){
 					pivot[i] = __mean_3(pivot[i]);
+				}
+				if ( flag && flag.match(/mean7/) ){
+					pivot[i] = __mean_7(pivot[i]);
 				}
 			}
 				
@@ -345,6 +367,15 @@ window.ixmaps = window.ixmaps || {};
 																"categoria_over80",
 															    "categoria_forze_armate",
 															    "categoria_personale_scolastico"],"mean3");
+	};
+	ixmaps.VACCINI_SOMMINISTRAZIONI_ALL_NEW_SEQUENCE_MEAN_7 = function (theme, options) {
+		return ixmaps.VACCINI_COLUMNS_SEQUENCE(theme, options, ["categoria_altro",
+																"categoria_operatori_sanitari_sociosanitari",
+																"categoria_personale_non_sanitario",
+																"categoria_ospiti_rsa",
+																"categoria_over80",
+															    "categoria_forze_armate",
+															    "categoria_personale_scolastico"],"mean7");
 	};
 	ixmaps.VACCINI_SOMMINISTRAZIONI_ALL_SEQUENCE_REVERS = function (theme, options) {
 		return ixmaps.VACCINI_COLUMNS_SEQUENCE(theme, options, ["categoria_over80",
@@ -585,6 +616,9 @@ window.ixmaps = window.ixmaps || {};
 				if ( flag && flag.match(/mean3/) ){
 					pivot[i] = __mean_3(pivot[i]);
 				}
+				if ( flag && flag.match(/mean7/) ){
+					pivot[i] = __mean_7(pivot[i]);
+				}
 				
 				var indexName = pivot[i].column("nome_area").index;
 
@@ -663,6 +697,12 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.VACCINI_SOMMINISTRAZIONI_PRIMA_SECONDA_POPOLAZIONE_SEQUENCE_REVERS_MEAN_3 = function (theme, options) {
 		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["seconda_dose","prima_dose"], "mean3");
 	};
+	ixmaps.VACCINI_SOMMINISTRAZIONI_PRIMA_SECONDA_POPOLAZIONE_SEQUENCE_MEAN_7 = function (theme, options) {
+		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["prima_dose","seconda_dose"], "mean7");
+	};
+	ixmaps.VACCINI_SOMMINISTRAZIONI_PRIMA_SECONDA_POPOLAZIONE_SEQUENCE_REVERS_MEAN_7 = function (theme, options) {
+		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["seconda_dose","prima_dose"], "mean7");
+	};
 	ixmaps.VACCINI_SOMMINISTRAZIONI_TOTALE_POPOLAZIONE_SEQUENCE_MEAN_3 = function (theme, options) {
 		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["totale"], "mean3");
 	};
@@ -671,6 +711,15 @@ window.ixmaps = window.ixmaps || {};
 	};
 	ixmaps.VACCINI_SOMMINISTRAZIONI_SECONDA_POPOLAZIONE_SEQUENCE_MEAN_3 = function (theme, options) {
 		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["seconda_dose"], "mean3");
+	};
+	ixmaps.VACCINI_SOMMINISTRAZIONI_TOTALE_POPOLAZIONE_SEQUENCE_MEAN_7 = function (theme, options) {
+		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["totale"], "mean7");
+	};
+	ixmaps.VACCINI_SOMMINISTRAZIONI_PRIMA_POPOLAZIONE_SEQUENCE_MEAN_7 = function (theme, options) {
+		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["prima_dose"], "mean7");
+	};
+	ixmaps.VACCINI_SOMMINISTRAZIONI_SECONDA_POPOLAZIONE_SEQUENCE_MEAN_7 = function (theme, options) {
+		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["seconda_dose"], "mean7");
 	};
 	
 	ixmaps.VACCINI_SOMMINISTRAZIONI_ALL_NEW_POPOLAZIONE_SEQUENCE_REVERS_MEAN_3 = function (theme, options) {
@@ -691,7 +740,24 @@ window.ixmaps = window.ixmaps || {};
 															    "categoria_forze_armate",
 															    "categoria_personale_scolastico"],"mean3");
 	};
-
+	ixmaps.VACCINI_SOMMINISTRAZIONI_ALL_NEW_POPOLAZIONE_SEQUENCE_REVERS_MEAN_7 = function (theme, options) {
+		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["categoria_personale_scolastico",
+																"categoria_forze_armate",
+																"categoria_over80",
+																"categoria_ospiti_rsa",
+																"categoria_personale_non_sanitario",
+																"categoria_operatori_sanitari_sociosanitari",
+																"categoria_altro"],"mean7");
+	};
+	ixmaps.VACCINI_SOMMINISTRAZIONI_ALL_NEW_POPOLAZIONE_SEQUENCE_MEAN_7 = function (theme, options) {
+		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["categoria_altro",
+																"categoria_operatori_sanitari_sociosanitari",
+																"categoria_personale_non_sanitario",
+																"categoria_ospiti_rsa",
+																"categoria_over80",
+															    "categoria_forze_armate",
+															    "categoria_personale_scolastico"],"mean7");
+	};
 	ixmaps.VACCINI_PERCENTUALI_POPOLAZIONE_CLIP = function (theme,options,valueColumnName) {
 		
 		var szUrl1 = "https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/master/dati/somministrazioni-vaccini-summary-latest.csv";
