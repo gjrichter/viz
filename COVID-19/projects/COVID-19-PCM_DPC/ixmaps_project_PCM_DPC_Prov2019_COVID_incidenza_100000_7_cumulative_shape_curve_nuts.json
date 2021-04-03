@@ -12,8 +12,8 @@
 		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"basemap": "CartoDB - Positron",
 		"attribution": "iXMaps",
-		"basemap": "white",
-		"legend": "",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h3><b>Incidenza cumulativa di 7 giorni</b> nuovi casi in 7 giorni per 100.000 abitanti</h3><h4>Visualizzazione di dati 'COVID-19 Italia' al livello provinciale, pubblicati dalla <b>Dipartimento Protezione Civile</b></h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4>",
 		"item": "html",
 		"scaleParam": {
 			"borderScaling": "2",
