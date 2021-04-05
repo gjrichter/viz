@@ -246,7 +246,7 @@ window.ixmaps = window.ixmaps || {};
 		// read the ArcGis Feature service
 		// ----------------------------------------------------------------------------------------------- 
 		 
-		console.log(theme.field); 
+		console.log(theme); 
 
 		var broker = new Data.Broker()
 		
