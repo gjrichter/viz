@@ -247,7 +247,8 @@ window.ixmaps = window.ixmaps || {};
 		// ----------------------------------------------------------------------------------------------- 
 		 
 		console.log(theme.szFields); 
-
+		szUrl = "https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/" + theme.szFields + "/dati/somministrazioni-vaccini-summary-latest.csv";
+		 
 		var broker = new Data.Broker()
 		
 			.addSource(szUrl, "csv")
