@@ -246,8 +246,9 @@ window.ixmaps = window.ixmaps || {};
 		// read the ArcGis Feature service
 		// ----------------------------------------------------------------------------------------------- 
 		 
-		console.log(theme.szFields); 
-		szUrl = "https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/" + theme.szFields + "/dati/somministrazioni-vaccini-summary-latest.csv";
+		if (theme.szFields.length){
+			szUrl = "https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/" + theme.szFields + "/dati/somministrazioni-vaccini-summary-latest.csv";
+		} 
 		 
 		var broker = new Data.Broker()
 		
