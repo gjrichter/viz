@@ -88,7 +88,7 @@ window.ixmaps = window.ixmaps || {};
 		// -----------------------------------------------------------------------------------------------               
 		// read actual COVID data
 		// ----------------------------------------------------------------------------------------------- 
-		var szUrl1 = "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
+		var szUrl1 = "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Marche/popolazione_gennaio_2020.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read json from https://contagi-marche.tapion.it/contagi_marche.json 
@@ -206,7 +206,7 @@ window.ixmaps = window.ixmaps || {};
 		// -----------------------------------------------------------------------------------------------               
 		// read actual COVID data
 		// ----------------------------------------------------------------------------------------------- 
-		var szUrl1 = "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
+		var szUrl1 = "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Marche/popolazione_gennaio_2020.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read json from https://contagi-marche.tapion.it/contagi_marche.json 
@@ -311,7 +311,7 @@ window.ixmaps = window.ixmaps || {};
 		// -----------------------------------------------------------------------------------------------               
 		// read actual COVID data
 		// ----------------------------------------------------------------------------------------------- 
-		var szUrl1 = "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
+		var szUrl1 = "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Marche/popolazione_gennaio_2020.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read json from https://contagi-marche.tapion.it/contagi_marche.json 
@@ -404,7 +404,7 @@ window.ixmaps = window.ixmaps || {};
 		// read actual COVID data
 		// ----------------------------------------------------------------------------------------------- 
 		var szUrl1 = "https://corsme.herokuapp.com/https://www.regione.marche.it/DesktopModules/Covid19Stat/WSGetStatComu.ashx/GetPersonData?giornoScelto="+szDate+"&_=1615072154587";
-		var szUrl2 = "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
+		var szUrl2 = "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Marche/popolazione_gennaio_2020.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ArcGis Feature service
