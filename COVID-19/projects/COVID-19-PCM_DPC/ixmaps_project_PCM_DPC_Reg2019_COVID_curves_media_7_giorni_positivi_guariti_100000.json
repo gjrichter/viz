@@ -55,6 +55,36 @@
 		"zoom": "6"
 		},
 	"themes": [{
+			"layer": "nuts2",
+			"data": {
+				"name": "barrios",
+				"url": "https://raw.githubusercontent.com/ondata/nuts/main/processing/NUTS2_g.geojson",
+				"type": "geojson",
+				"cache": "false"
+				},
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"#f0f0f0"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"itemfield": "NUTS2",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "2",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "features",
+				"title": "Italy nuts2"
+				}
+			},{
 			"layer": "Prov2019_nome",
 			"field": "",
 			"field100": "",
