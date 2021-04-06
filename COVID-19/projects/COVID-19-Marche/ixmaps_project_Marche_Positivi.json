@@ -1,0 +1,85 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Wed Oct 23 2019 10:22:55 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2019/italia_comuni_2019_s_nome.svgz",
+		"basemap": "CartoDB - Positron",
+		"scaleParam": {
+			"labelScaling": "1.3",
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.23819991094438",
+			"lng": "13.612060546875002"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "Com2019_nome",
+			"field": "3",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|VALUES",
+				"colorscheme": [
+					"7",
+					"#56A651",
+					"#794073",
+					"3colors",
+					"#DDA729"],
+                "nodatacolor":"#aaaaaa",
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "COVID_MARCHE_POSITIVI_LATEST",
+				"dbtableExt": "../../projects/COVID-19-Marche/dataprovider.js",
+				"dbtableType": "ext",
+ 				"datacache": "true",
+				"lookupfield": "0",
+                "titlefield":"0",
+				"child": "true",
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1000",
+				"scale": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+ 				"title": "Positivi Covid-19"
+				}
+			}],
+	"layerMask": {
+		}
+	}

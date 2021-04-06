@@ -1,0 +1,104 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Mon Nov 09 2020 22:40:35 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2019/italia_comuni_2019_s_nome.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"lineScaling": "4.213991769547325",
+			"normalSizeScale": "4638029"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "42.2366518803206",
+			"lng": "12.403564453125"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "Com2019_nome",
+			"field": "incidenza",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|QUANTILE|LEGEND|CLIP|LOOP|SIMPLELEGEND",
+				"colorscheme": [
+					"green",
+					"#F1D8DE",
+					"#F4A7BC",
+					"#DD0044"],
+				"ranges": [
+					"0",
+					"100",
+					"500",
+					"1000",
+					"10000"],
+				"label": [
+					"< 100",
+					"100 -499",
+					"500 - 999",
+					">= 1000"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "COVID_MARCHE_POSITIVI_LATEST_CLIP_28",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-Marche/dataprovider.js",
+				"datacache": "false",
+				"lookupfield": "Comune",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"dopacitypow": "2",
+				"dopacityscale": "3",
+				"titlefield": "Comune",
+				"valueupper": "1:1000000",
+				"clipframerate": "24",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "Incidenza cumulativa di 7 giorni",
+				"snippet": "casi per 100.000 abitanti"
+				}
+			}],
+	"layerMask": {
+		"Prov2019_nome": {
+			"display": "none"
+			}
+		}
+	}

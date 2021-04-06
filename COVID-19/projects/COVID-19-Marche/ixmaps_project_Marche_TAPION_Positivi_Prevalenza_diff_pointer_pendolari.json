@@ -1,0 +1,238 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Mar 07 2021 16:12:58 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2019/italia_comuni_2019_s_nome.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>COVID-19<br>Prevalenza e tendenza </h1><h4><b>area comuni</b>: positivi per 100.000 abitanti</h4><h4><b>ciffre</b>: numeri positivi</h4><h4><b>frecce</b>: variazione ultimo giorno</h4><h4>fonte:<a href='https://github.com/tapionx/contagi-marche.tapion.it' target='_blank'>https://github.com/tapionx/contagi-marche.tapion.it</a> Licenza: MIT</h4>",
+		"item": "",
+		"scaleParam": {
+			"borderScaling": "5",
+			"lineScaling": "2",
+			"labelScaling": "1.733333333333333",
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.26320625445309",
+			"lng": "13.643646240234377"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "Com2019_nome",
+			"field": "3",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|DTEXT|VALUEBACKGROUND|VALUES|SIMPLELEGEND",
+				"colorscheme": [
+					"green",
+					"#F1D8DE",
+					"#F4A7BC",
+					"#DD0044"],
+				"opacity":"0.3",
+				"dbtable": "COVID_MARCHE_POSITIVI_LATEST_PREVALENCE",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-Marche/dataprovider_tapion.js",
+				"datacache": "true",
+				"lookupfield": "Comune",
+				"child": "true",
+				"ranges": [
+					"0",
+					"100",
+					"500",
+					"1000",
+					"10000"],
+				"label": [
+					"< 100",
+					"100 -499",
+					"500 - 999",
+					">= 1000"],
+				"units": "/100.000",
+				"refreshtimeout": "0",
+				"titlefield": "Comune",
+				"nodatacolor": "RGB(170,170,170)",
+				"valueupper": "1:1500",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Prevalenza Covid-19",
+				"snippet": "Attualmente positivi per 100.000 abitanti"
+				}
+			},{
+			"layer": "Com2019_nome",
+			"field": "3",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|QUANTILE|TEXTONLY|SIZEP4|NOLEGEND|VALUES",
+				"colorscheme": [
+					"green",
+					"#F1D8DE",
+					"#F4A7BC",
+					"#DD0044"],
+				"symbols": [
+					"label"],
+				"dbtable": "COVID_MARCHE_POSITIVI_LATEST",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-Marche/dataprovider_tapion.js",
+				"datacache": "true",
+				"lookupfield": "Comune",
+				"child": "true",
+				"ranges": [
+					"0",
+					"100",
+					"500",
+					"1000",
+					"10000"],
+				"label": [
+					"< 100",
+					"100 -499",
+					"500 - 999",
+					">= 1000"],
+				"units": "positivi",
+				"align":"right",
+				"refreshtimeout": "0",
+				"titlefield": "Comune",
+				"nodatacolor": "RGB(170,170,170)",
+				"valueupper": "1:150000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Attualmente positivi Covid-19",
+				"snippet": "Attualmente positivi per 100.000 abitanti"
+				}
+			},{
+			"layer": "com2011_g",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"1",
+					"RGB(238,238,255)",
+					"RGB(0,0,221)"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "com2011_g",
+				"dbtableUrl": "../../projects/Pendolari/comuni_corr.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"itemfield": "PRO_COM",
+				"lookupfield": "Y|X",
+				"child": "true",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Posizioni comuni 2011"
+				}
+			},{
+			"layer": "com2011_g",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|CATEGORICAL|VECTOR|BEZIER|GRADIENT|FADEIN|DASH|POINTER|SIZE|AGGREGATE|FAST|SUM|CLIPTOGEOBOUNDS",
+				"colorscheme": [
+					"#4488dd"],
+				"fillopacity": "0.9",
+				"shadow": "false",
+				"dbtable": "pendolari",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/pendo2011_S_aggregato.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "procom_residenza",
+				"lookupfield2": "procom_lavoro",
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "12500",
+				"scale": "1",
+				"rangescale": "5",
+				"sizepow": "1",
+				"sizefield": "Numero_di_individui",
+				"minvalue": "20",
+				"maxcharts":"1000",
+				"linecolor": [
+					"#4488dd"],
+				"valuescale": "1",
+				"clipupper":"1:10000000000",
+				"title": "Pendolarismo"
+				}
+			},{
+			"layer": "Com2019_nome",
+			"field": "3.1",
+			"field100": "3.2",
+			"style": {
+				"type": "CHART|BAR|POINTER|DIFFERENCE|SIGN|SIZEP4|VALUES|SIMPLELEGEND|COUNT",
+				"colorscheme": [
+					"green",
+					"#DD0044"],
+				"ranges":"-100000,0,100000",
+				"opacity":"0.7",
+				"label": [
+					"meno positivi",
+					"più positivi"
+				],
+				"fadenegative":"1",
+				"shadow": "false",
+				"dbtable": "COVID_MARCHE_POSITIVI_LATEST_DIFF",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-Marche/dataprovider_tapion.js",
+				"datacache": "true",
+				"lookupfield": "Comune",
+				"child": "true",
+				"offsety":"-6",
+				"units": "",
+				"align" : "center",
+ 				"refreshtimeout": "0",
+				"scale": "1",
+				"rangescale": "1.5",
+				"titlefield": "Comune",
+				"nodatacolor": "RGB(170,170,170)",
+				"linecolor":"white",
+				"linewidth":"1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"valueupper":"1:500000",
+				"title": "Tendenza positivi Covid-19",
+				"snippet": "<b>Frecce</b>: variazione in percentuale del giorno precedente",
+				"description":"*) solo per per comuni con pià di 25 positivi"
+				}
+			}],
+	"layerMask": {
+		}
+	}

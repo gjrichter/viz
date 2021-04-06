@@ -1,0 +1,90 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Mar 07 2021 16:12:58 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2019/italia_comuni_2019_s_nome.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"borderScaling": "5",
+			"lineScaling": "2",
+			"labelScaling": "1.733333333333333",
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.26320625445309",
+			"lng": "13.643646240234377"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "Com2019_nome",
+			"field": "3.1",
+			"field100": "3.2",
+			"style": {
+				"type": "CHART|BAR|POINTER|DIFFERENCE|RELATIVE|SIGN|SIZEP4|VALUES|TEXTONLY",
+				"colorscheme": [
+					"#F4A7BC"],
+				"shadow": "false",
+				"dbtable": "COVID_MARCHE_POSITIVI_LATEST_DIFF",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-Marche/dataprovider.js",
+				"datacache": "true",
+				"lookupfield": "0.1",
+				"child": "true",
+				"symbols":[
+					"label"
+				],
+				"units": "%",
+				"refreshtimeout": "0",
+				"normalsizevalue": "100",
+				"scale": "1.2",
+				"dopacityscale": "0",
+				"titlefield": "0.1",
+				"nodatacolor": "RGB(170,170,170)",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Positivi Covid-19"
+				}
+			}],
+	"layerMask": {
+		}
+	}

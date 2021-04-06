@@ -1,0 +1,174 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Mon Mar 08 2021 22:31:43 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2019/italia_comuni_2019_s_nome.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"lineScaling": "4.213991769547325",
+			"normalSizeScale": "100000"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.219188223481325",
+			"lng": "13.568801879882814"
+			},
+		"zoom": "10"
+		},
+	"themes": [{
+			"layer": "com2011_g",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"1",
+					"RGB(238,238,255)",
+					"RGB(0,0,221)"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "com2011_g",
+				"dbtableUrl": "../../projects/Pendolari/comuni_corr.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"itemfield": "PRO_COM",
+				"lookupfield": "Y|X",
+				"child": "true",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "posizioni comuni 2011"
+				}
+			},{
+			"layer": "com2011_g",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|CATEGORICAL|VECTOR|BEZIER|GRADIENT|FADEIN|DASH|POINTER|SIZE|AGGREGATE|FAST|SUM|CLIPTOGEOBOUNDS",
+				"colorscheme": [
+					"#4488dd"],
+				"fillopacity": "0.9",
+				"shadow": "false",
+				"dbtable": "pendolari",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/pendo2011_S_aggregato.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "procom_residenza",
+				"lookupfield2": "procom_lavoro",
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "12500",
+				"scale": "1",
+				"rangescale": "5",
+				"sizepow": "1",
+				"sizefield": "Numero_di_individui",
+				"minvalue": "20",
+				"maxcharts":"1000",
+				"linecolor": [
+					"#4488dd"],
+				"valuescale": "1",
+				"clipupper":"1:10000000000",
+				"title": "World Mercator [$item$]"
+				}
+			},{
+			"layer": "Com2019_nome",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|TITLE|FIXSIZE|SIMPLELEGEND",
+				"colorscheme": [
+					"green",
+					"#F1D8DE",
+					"#F4A7BC",
+					"#DD0044"],
+				"fillopacity": "0.3",
+				"shadow": "false",
+				"dbtable": "COVID_MARCHE_POSITIVI_LATEST_SEQUENCE_28",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-Marche/dataprovider_tapion.js",
+				"datacache": "false",
+				"lookupfield": "Comune",
+				"ranges": [
+					"0",
+					"100",
+					"500",
+					"1000",
+					"10000"],
+				"symbols": [
+					"circle"],
+				"label": [
+					"< 100",
+					"100 -499",
+					"500 - 999",
+					">= 1000"],
+				"units": "casi /100.000",
+				"align": "center|top",
+				"refreshtimeout": "0",
+				"normalsizevalue": "200",
+				"scale": "0.125",
+				"rangescale": "1.1875",
+				"minvalue": "0",
+				"textcolor": "#dd0000",
+				"linewidth": "20",
+				"bordercolor": "black",
+				"borderradius":"25",
+				"boxopacity": "0.4",
+				"boxmargin": "10",
+				"titlefield": "Comune",
+				"titleupper": "1:100000",
+				"chartupper": "1:2000000",
+				"boxupper": "1:100000",
+				"valuescale": "1",
+				"valuedecimals": "2",
+				"fadenegative": "1",
+				"clipframes": "57",
+				"title": "Prevalenza 28 giorni",
+				"snippet": ""
+				}
+			}],
+	"layerMask": {
+		"Com2019_nome": {
+			"display": "none"
+			}
+		}
+	}
