@@ -121,7 +121,7 @@
 			"field100": "",
 			"style": {
 				"name":"chart",
-				"type": "CHART|PIE|DONUT|STARBURST|SUM|NOSORT|NOLEGEND|POLAR",
+				"type": "CHART|PIE|DONUT|STARBURST|SUM|NOSORT|NOLEGEND|POLAR|BOX|TITLE",
 				"colorscheme": [
 					"1000",
 					"rgb(213, 178, 0)",
@@ -141,12 +141,14 @@
 				"normalsizevalue": "833",
 				"scale": "0.5",
 				"rangescale": "1",
-				"textscale": "0.5",
+				"textscale": "1.5",
 				"linecolor": [
 					"red"],
 				"linewidth": "1",
 				"titlefield": "nome_area",
-				"titleupper": "1:5000000",
+				"titleupper": "1:2000000",
+				"boxcolor":"none",
+				"bordercolor":"none",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"fadenegative": "1",
