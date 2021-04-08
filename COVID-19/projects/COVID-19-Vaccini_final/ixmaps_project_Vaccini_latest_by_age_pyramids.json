@@ -124,7 +124,7 @@
 				"name":"pyramid",
 				"type": "VALUES|CHART|BAR|HORZ|STACKED|CENTER|SPACED|SIZE|XAXIS|NOLEGEND|",
 				"colorscheme": [
-					"RGBA(131, 198, 203,1)",
+					"RGBA(101, 178, 183,1)",
 					"RGBA(253, 208, 0,1)",
 					"rgba(223, 22, 115,1)"
 				],
