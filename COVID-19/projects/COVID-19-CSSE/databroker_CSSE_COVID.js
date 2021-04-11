@@ -2653,7 +2653,11 @@ window.ixmaps = window.ixmaps || {};
                     theme.szSnippet = "from "+columnsA[0]+" to "+columnsA[columnsA.length-1];
 					ixmaps.setTitle("<span style='color:#888888'>"+szXaxisA[columnsA.length-1]+"</span");
 
-					// -----------------------------------------------------------------------------------------------               
+					data_Confirmed.addColumn({"destination":"name/combined"},function(row){
+						return row[0].length?(row[0]+" ("+row[1]+")"):row[1];
+					});
+
+					// -----------------------------------------------------------------------------------------------         
 					// deploy the data
 					// ----------------------------------------------------------------------------------------------- 
 					ixmaps.setExternalData(data_Confirmed, {
