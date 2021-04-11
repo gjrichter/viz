@@ -45,6 +45,15 @@ Piramide di et√† con la popolazione residente al 1.gennaio 2020 per fasce di et√
 
 ## Curve con particolari del andamento vaccini
 
+Anche qui le somministrazioni sono espressi in dosi per 100.000 abitanti.
+
+Per realizzare **500.000 dosi al giorni** si deve arrivare a **833** somministrazioni per **100.000** abitanti in tutte le Regioni.
+
+Cliccando sulle curve o attivando la '**visualizzazione a griglia**' questo **traguardo** viene indicato con una **linea orizzontale.** 
+(la linea di 500 equivale una somministrazione di 300.000 dosi al giorno). 
+
+
+
 
 
 <iframe id="map" width="100%" height="1500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&scrollsafe=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_final/ixmaps_project_Vaccini_latest_by_prima_seconda_100000_sequence_stacked_mean_7.json&view=[41.97582726102573,11.964111328125002],7"></iframe>
