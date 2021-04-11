@@ -568,6 +568,10 @@ window.ixmaps = window.ixmaps || {};
 		var szUrl1 = "https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/master/dati/somministrazioni-vaccini-summary-latest.csv";
 		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
 
+		if (theme.szFields.length){
+			szUrl1 = "https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/" + theme.szFields + "/dati/somministrazioni-vaccini-summary-latest.csv";
+		} 
+		 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ArcGis Feature service
 		// ----------------------------------------------------------------------------------------------- 
