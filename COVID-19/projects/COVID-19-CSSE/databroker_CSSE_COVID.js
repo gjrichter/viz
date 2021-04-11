@@ -2219,6 +2219,24 @@ window.ixmaps = window.ixmaps || {};
                        }else
                         if (columnsA[i] == "2/1/21"){
   						  szXaxisA.push("feb");
+                       }else
+                        if (columnsA[i] == "2/1/21"){
+  						  szXaxisA.push("feb");
+                       }else
+                        if (columnsA[i] == "3/1/21"){
+  						  szXaxisA.push("mar");
+                       }else
+                        if (columnsA[i] == "4/1/21"){
+  						  szXaxisA.push("apr");
+                       }else
+                        if (columnsA[i] == "5/1/21"){
+  						  szXaxisA.push("may");
+                       }else
+                        if (columnsA[i] == "6/1/21"){
+  						  szXaxisA.push("jun");
+                       }else
+                        if (columnsA[i] == "7/1/21"){
+  						  szXaxisA.push("jul");
                        }else{
 						  szXaxisA.push(" ");
                         }
@@ -2598,6 +2616,21 @@ window.ixmaps = window.ixmaps || {};
                        }else
                         if (columnsA[i] == "2/1/21"){
   						  szXaxisA.push("feb");
+                      }else
+                        if (columnsA[i] == "3/1/21"){
+  						  szXaxisA.push("mar");
+                      }else
+                        if (columnsA[i] == "4/1/21"){
+  						  szXaxisA.push("apr");
+                      }else
+                        if (columnsA[i] == "5/1/21"){
+  						  szXaxisA.push("may");
+                      }else
+                        if (columnsA[i] == "6/1/21"){
+  						  szXaxisA.push("jun");
+                      }else
+                        if (columnsA[i] == "7/1/21"){
+  						  szXaxisA.push("jul");
                        }else{
 						  szXaxisA.push(" ");
                         }
