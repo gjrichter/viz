@@ -13,7 +13,7 @@
 		"attribution": "iXMaps",
 		"basemap": "white",
 		"legend": "",
-		"item": "",
+		"item": "html",
 		"scaleParam": {
 			"lineScaling": "25",
 			"normalSizeScale": "1730130"
