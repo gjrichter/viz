@@ -1,0 +1,142 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Sun Apr 11 2021 19:01:33 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/world_base_ISO/world_ISO3_winkel_gray.svgz",
+		"attribution": "iXMaps",
+		"basemap": "white",
+		"legend": "",
+		"layout":"minimal",
+		"item": "",
+		"scaleParam": {
+			"borderScaling": "0.1",
+			"labelScaling": "1.3333333333333333",
+			"normalSizeScale": "5775927"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "24.206889622398023",
+			"lng": "5.625"
+			},
+		"zoom": "2"
+		},
+	"themes": [{
+			"layer": "World_countries_shp0",
+			"field": "people_fully_vaccinated_per_hundred",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|QUANTILE|DTEXT|VALUEBACKGROUND|VALUES|AGGREGATE|MAX",
+				"colorscheme": [
+					"7",
+					"#A8DAB5",
+					"#0D652D",
+					"linear"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "iso_code",
+				"ranges": [
+					"0",
+					"1",
+					"3",
+					"5",
+					"8",
+					"12",
+					"16",
+					"1000"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"dopacityscale": "0",
+				"textcolor": "white",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"clipparts": "10",
+				"aggregationfield": "iso_code",
+				"title":"COVID-19",
+				"snippet": "Percent of population fully vaccinated"
+				}
+			},{
+			"layer": "World_countries_shp0",
+			"field": "people_fully_vaccinated_per_hundred",
+			"field100": "",
+			"style": {
+				"type": "CHART|LABEL|VALUES|AGGREGATE|MAX",
+				"colorscheme": [
+					"7",
+					"#A8DAB5",
+					"#0D652D",
+					"linear"],
+				"fillopacity": "0.6",
+				"shadow": "false",
+				"filter": "WHERE total_vaccinations > 100000",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "iso_code",
+				"ranges": [
+					"0",
+					"1",
+					"3",
+					"5",
+					"8",
+					"12",
+					"16",
+					"1000"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"normalsizevalue": "2",
+				"scale": "0.8000000000000003",
+				"textcolor": "white",
+				"linecolor": [
+					"white"],
+				"linewidth": "1",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"clipparts": "10",
+				"aggregationfield": "iso_code",
+				"title": "Percent of population fully vaccinated"
+				}
+			}],
+	"layerMask": {
+		}
+	}
