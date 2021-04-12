@@ -9,7 +9,7 @@
 		"created": "Sun Apr 11 2021 19:01:33 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
-		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/world_base_ISO/world_ISO3_winkel_gray.svgz",
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/world_base_ISO/world_ISO3.svgz",
 		"attribution": "iXMaps",
 		"basemap": "white",
 		"legend": "",
