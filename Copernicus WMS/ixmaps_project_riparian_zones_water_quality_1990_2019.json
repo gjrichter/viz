@@ -185,16 +185,6 @@
 				"opacity": "0.8",
 				"title": "Copernicus Discomap RiparianZones"
 				}
-			},{
-			"layer": "tree_canopy",
-			"field": "$ITEM$",
-			"field100": "",
-			"style": {
-				"type": "WMS|IMAGE|NOLEGEND",
-				"server": "https://image.discomap.eea.europa.eu/arcgis/rest/services/GioLandPublic/HRL_TreeCoverDensity_2018/ImageServer/exportImage",
-				"opacity": "0.6",
-				"title": "Copernicus Discomap Tree Cover Density"
-				}
 			}],
 	"layerMask": {
 		"World Mercator": {
