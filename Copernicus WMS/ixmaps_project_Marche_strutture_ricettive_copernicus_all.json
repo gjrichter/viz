@@ -86,16 +86,6 @@
 				"title": "Copernicus DiscoMap Grassland"
 				}
 			},{
-			"layer": "tree_canopy",
-			"field": "$ITEM$",
-			"field100": "",
-			"style": {
-				"type": "WMS|IMAGE|NOLEGEND",
-				"server": "https://image.discomap.eea.europa.eu/arcgis/rest/services/GioLandPublic/HRL_TreeCoverDensity_2018/ImageServer/exportImage",
-				"opacity": "0.8",
-				"title": "Copernicus DiscoMap Tree Cover Density"
-				}
-			},{
 			"layer": "World Mercator",
 			"field": "Classificazione",
 			"field100": "",
