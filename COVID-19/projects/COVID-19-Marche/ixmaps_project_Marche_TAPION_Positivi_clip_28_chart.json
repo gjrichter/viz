@@ -6,7 +6,7 @@
 		"thumbnail": "",
 		"about": "",
 		"description": "",
-		"created": "Mon Mar 08 2021 22:31:43 GMT+0100 (Ora standard dell’Europa centrale)"
+		"created": "Mon Apr 12 2021 09:01:38 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2019/italia_comuni_2019_s_nome.svgz",
@@ -16,7 +16,8 @@
 		"item": "",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
-			"normalSizeScale": "100000"
+			"objectScaling": "4.213991769547325",
+			"normalSizeScale": "4638029"
 			},
 		"options": {
 			"featurescaling": "true",
@@ -48,65 +49,42 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "43.219188223481325",
-			"lng": "13.568801879882814"
+			"lat": "43.34116005412307",
+			"lng": "13.507690429687502"
 			},
-		"zoom": "10"
+		"zoom": "9"
 		},
 	"themes": [{
 			"layer": "Com2019_nome",
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|TITLE|FIXSIZE|SIMPLELEGEND",
+				"type": "CHART|BUBBLE|AURA|QUANTILE|SIZEP1|VALUES|LEGEND|CLIP|LOOP|SIMPLELEGEND",
 				"colorscheme": [
 					"green",
 					"#F1D8DE",
 					"#F4A7BC",
 					"#DD0044"],
-				"fillopacity": "0.3",
+				"fillopacity": "0.7",
 				"shadow": "false",
-				"dbtable": "COVID_MARCHE_POSITIVI_LATEST_SEQUENCE_28",
+				"dbtable": "COVID_MARCHE_POSITIVI_CLIP_28",
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Marche/dataprovider_tapion.js",
 				"datacache": "false",
 				"lookupfield": "Comune",
-				"ranges": [
-					"0",
-					"100",
-					"500",
-					"1000",
-					"10000"],
-				"symbols": [
-					"circle"],
-				"label": [
-					"< 100",
-					"100 -499",
-					"500 - 999",
-					">= 1000"],
-				"units": "casi /100.000",
-				"align": "center|top",
+				"units": "",
 				"refreshtimeout": "0",
-				"normalsizevalue": "200",
-				"scale": "0.125",
-				"rangescale": "1.1875",
-				"minvalue": "0",
-				"textcolor": "#dd0000",
-				"linewidth": "20",
-				"bordercolor": "black",
-				"borderradius":"25",
-				"boxopacity": "0.4",
-				"boxmargin": "10",
+				"normalsizevalue": "500",
+				"scale": "1",
+				"dopacitypow": "2",
+				"dopacityscale": "3",
 				"titlefield": "Comune",
-				"titleupper": "1:100000",
-				"chartupper": "1:2000000",
-				"boxupper": "1:100000",
 				"valuescale": "1",
-				"valuedecimals": "2",
-				"fadenegative": "1",
-				"clipframes": "57",
-				"title": "Prevalenza 28 giorni",
-				"snippet": ""
+				"valuedecimals": "0",
+				"clipframes": "100",
+				"clipframerate": "24",
+				"title": "Incidenza cumulativa di 7 giorni",
+				"snippet": "dal 02/01/2021 al 10/04/2021"
 				}
 			}],
 	"layerMask": {

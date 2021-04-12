@@ -6,7 +6,7 @@
 		"thumbnail": "",
 		"about": "",
 		"description": "",
-		"created": "Mon Mar 08 2021 22:31:43 GMT+0100 (Ora standard dell’Europa centrale)"
+		"created": "Mon Apr 12 2021 09:12:56 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2019/italia_comuni_2019_s_nome.svgz",
@@ -48,10 +48,10 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "43.219188223481325",
-			"lng": "13.568801879882814"
+			"lat": "43.323179587489086",
+			"lng": "13.693084716796877"
 			},
-		"zoom": "10"
+		"zoom": "9"
 		},
 	"themes": [{
 			"layer": "Com2019_nome",
@@ -64,7 +64,7 @@
 					"#F1D8DE",
 					"#F4A7BC",
 					"#DD0044"],
-				"fillopacity": "0.3",
+				"fillopacity": "0.1",
 				"shadow": "false",
 				"dbtable": "COVID_MARCHE_POSITIVI_LATEST_SEQUENCE_28",
 				"dbtableType": "ext",
@@ -88,25 +88,26 @@
 				"align": "center|top",
 				"refreshtimeout": "0",
 				"normalsizevalue": "200",
-				"scale": "0.125",
-				"rangescale": "1.1875",
+				"scale": "0.2",
+				"rangescale": "0.5",
 				"minvalue": "0",
+				"maxvalue": "auto",
 				"textcolor": "#dd0000",
 				"linewidth": "20",
 				"bordercolor": "black",
-				"borderradius":"25",
+				"borderradius": "25",
 				"boxopacity": "0.4",
 				"boxmargin": "10",
 				"titlefield": "Comune",
-				"titleupper": "1:100000",
+				"titleupper": "1:200000",
 				"chartupper": "1:2000000",
-				"boxupper": "1:100000",
+				"boxupper": "1:200000",
 				"valuescale": "1",
 				"valuedecimals": "2",
 				"fadenegative": "1",
 				"clipframes": "57",
 				"title": "Prevalenza 28 giorni",
-				"snippet": ""
+				"snippet": "dal 15/03/2021 al 10/04/2021"
 				}
 			}],
 	"layerMask": {

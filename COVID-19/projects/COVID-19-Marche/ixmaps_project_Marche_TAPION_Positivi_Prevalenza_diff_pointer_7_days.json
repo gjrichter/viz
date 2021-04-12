@@ -69,7 +69,7 @@
 				"opacity":"0.3",
 				"dbtable": "COVID_MARCHE_POSITIVI_LATEST_PREVALENCE",
 				"dbtableType": "ext",
-				"dbtableExt": "../../projects/COVID-19-Marche/dataprovider_tapion.js",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Marche/dataprovider_tapion.js",
 				"datacache": "true",
 				"lookupfield": "Comune",
 				"child": "true",

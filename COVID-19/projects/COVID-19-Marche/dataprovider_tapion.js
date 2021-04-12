@@ -20,7 +20,7 @@ window.ixmaps = window.ixmaps || {};
 		// -----------------------------------------------------------------------------------------------               
 		// read actual COVID data
 		// ----------------------------------------------------------------------------------------------- 
-		var szUrl1 = "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
+		var szUrl1 = "../../projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read json from https://contagi-marche.tapion.it/contagi_marche.json 
@@ -83,12 +83,12 @@ window.ixmaps = window.ixmaps || {};
 		});
 	};
 	
-	ixmaps.COVID_MARCHE_POSITIVI_LATEST_CLIP_28 = function (theme,options) {
+	ixmaps.COVID_MARCHE_POSITIVI_CLIP_28 = function (theme,options,szFlag) {
 
 		// -----------------------------------------------------------------------------------------------               
 		// read actual COVID data
 		// ----------------------------------------------------------------------------------------------- 
-		var szUrl1 = "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
+		var szUrl1 = "../../projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read json from https://contagi-marche.tapion.it/contagi_marche.json 
@@ -138,18 +138,20 @@ window.ixmaps = window.ixmaps || {};
 				// remove Total from pivot
 				mydata.column("Total").remove();
 
-				var dataPop = dataA[0];	
-				// make lookupArray: COD_PROV ==> population
-				var popA = dataPop.lookupArray("Totale","Denominazione");
+				if ( szFlag && szFlag.match(/prevalenza/) ){
+					var dataPop = dataA[0];	
+					// make lookupArray: COD_PROV ==> population
+					var popA = dataPop.lookupArray("Totale","Denominazione");
 
-				var records = mydata.records;
-				var lastColumn = mydata.columnNames().length - 1;
-				for ( var r=0; r<records.length; r++ ){
-					for ( var c=lastColumn; c>=2; c-- ){
-						records[r][c] = (Number(records[r][c])/popA[(records[r][0])]*100000).toFixed(2);
+					var records = mydata.records;
+					var lastColumn = mydata.columnNames().length - 1;
+					for ( var r=0; r<records.length; r++ ){
+						for ( var c=lastColumn; c>=2; c-- ){
+							records[r][c] = (Number(records[r][c])/popA[(records[r][0])]*100000).toFixed(2);
+						}
 					}
 				}
-				
+
 				//  rolling mean of 7 days
 				var records = mydata.records;
 				for (var r=0; r<records.length;r++){
@@ -200,13 +202,16 @@ window.ixmaps = window.ixmaps || {};
 			});
 		});
 	};
+	ixmaps.COVID_MARCHE_POSITIVI_PREVALENZA_CLIP_28 = function (theme,options) {
+		ixmaps.COVID_MARCHE_POSITIVI_CLIP_28(theme,options,"prevalenza");
+	}
 	
 	ixmaps.COVID_MARCHE_POSITIVI_LATEST_SEQUENCE_28 = function (theme,options) {
 
 		// -----------------------------------------------------------------------------------------------               
 		// read actual COVID data
 		// ----------------------------------------------------------------------------------------------- 
-		var szUrl1 = "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
+		var szUrl1 = "../../projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read json from https://contagi-marche.tapion.it/contagi_marche.json 
@@ -311,7 +316,7 @@ window.ixmaps = window.ixmaps || {};
 		// -----------------------------------------------------------------------------------------------               
 		// read actual COVID data
 		// ----------------------------------------------------------------------------------------------- 
-		var szUrl1 = "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
+		var szUrl1 = "../../projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read json from https://contagi-marche.tapion.it/contagi_marche.json 
@@ -404,7 +409,7 @@ window.ixmaps = window.ixmaps || {};
 		// read actual COVID data
 		// ----------------------------------------------------------------------------------------------- 
 		var szUrl1 = "https://corsme.herokuapp.com/https://www.regione.marche.it/DesktopModules/Covid19Stat/WSGetStatComu.ashx/GetPersonData?giornoScelto="+szDate+"&_=1615072154587";
-		var szUrl2 = "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
+		var szUrl2 = "../../projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ArcGis Feature service

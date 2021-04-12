@@ -50,8 +50,8 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "43.37211393444652",
-			"lng": "13.356628417968752"
+			"lat": "43.328174695525846",
+			"lng": "13.341522216796877"
 			},
 		"zoom": "9"
 		},
@@ -109,7 +109,7 @@
 					"label"],
 				"dbtable": "COVID_MARCHE_POSITIVI_LATEST",
 				"dbtableType": "ext",
-				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Marche/dataprovider_tapion.js",
+				"dbtableExt": "../../projects/COVID-19-Marche/dataprovider_tapion.js",
 				"datacache": "true",
 				"lookupfield": "Comune",
 				"child": "true",
@@ -154,7 +154,7 @@
 				"shadow": "false",
 				"dbtable": "COVID_MARCHE_POSITIVI_LATEST_DIFF",
 				"dbtableType": "ext",
-				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Marche/dataprovider_tapion.js",
+				"dbtableExt": "../../projects/COVID-19-Marche/dataprovider_tapion.js",
 				"datacache": "true",
 				"lookupfield": "Comune",
 				"child": "true",
