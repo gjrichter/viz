@@ -97,7 +97,7 @@
 				}
 			},{
 			"layer": "World_countries_shp0",
-			"field": "people_fully_vaccinated_per_hundred",
+			"field": "people_vaccinated_per_hundred",
 			"field100": "",
 			"style": {
 				"type": "CHART|LABEL|VALUES|AGGREGATE|MAX",
