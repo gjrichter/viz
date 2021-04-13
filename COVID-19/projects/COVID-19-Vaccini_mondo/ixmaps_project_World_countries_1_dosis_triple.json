@@ -50,10 +50,10 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "24.206889622398023",
-			"lng": "5.625"
+			"lat": "13.752724664396988",
+			"lng": "8.964843750000002"
 			},
-		"zoom": "1"
+		"zoom": "2"
 		},
 	"themes": [{
 			"layer": "World_countries_shp0",
