@@ -1,0 +1,124 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sat Apr 10 2021 23:53:26 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "white",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"lineScaling": "25",
+			"normalSizeScale": "1730130"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "true",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "37.4530574713902",
+			"lng": "15.103454589843752"
+			},
+		"zoom": "8"
+		},
+	"themes": [{
+			"layer": "nuts2",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"#f0f0f0"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "nuts2",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_sicilia.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "PRO_COM",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "0.2",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Italy Nuts2"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "dataInizio.1",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|CATEGORICAL|SIZEP3|NOSORT|COUNT|LEGEND",
+				"colorscheme": [
+					"#dd0000"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "COVID_ZONE_ROSSE_SICILIA",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-zone/dataprovider_zone_sicilia.js",
+				"datacache": "false",
+				"lookupfield": "pro_com.1",
+				"units": "comuni",
+				"units100": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "100000",
+				"scale": "1",
+				"sizefield": "totale.2",
+				"valuefield": "totale.2",
+				"timefield": "dataInizio.1",
+				"titlefield": "comune.1",
+				"textcolor": "black",
+				"linecolor": [
+					"#F28E2B"],
+				"linewidth": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"clipparts": "10",
+				"showdata":"true",
+				"title": "Comuni siciliani attualmente in zona rossa",
+				"snippet": "<h5>fonte: <a  href='https://bl.ocks.org/gbvitrano/raw/664ac98fd51590d48290b70709a4ea48/' target='_blank'>opendatasicilia</a></br>2021 (c) Regione Sicilia.</h5>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
