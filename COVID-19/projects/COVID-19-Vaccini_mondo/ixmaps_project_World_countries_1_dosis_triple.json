@@ -18,11 +18,11 @@
 		"scaleParam": {
 			"borderScaling": "0.1",
 			"labelScaling": "1.3333333333333333",
-			"normalSizeScale": "5775927"
+			"normalSizeScale": "38040836"
 			},
 		"options": {
 			"featurescaling": "true",
-			"objectscaling": "true",
+			"objectscaling": "dynamic",
 			"clipmap": "true",
 			"clipmapdynamic": "true",
 			"dynamiclabel": "NOSIZE",
