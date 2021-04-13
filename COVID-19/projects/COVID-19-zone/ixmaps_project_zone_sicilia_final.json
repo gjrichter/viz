@@ -92,7 +92,7 @@
 				"shadow": "false",
 				"dbtable": "COVID_ZONE_ROSSE_SICILIA",
 				"dbtableType": "ext",
-				"dbtableExt": "../../projects/COVID-19-zone/dataprovider_zone_sicilia.js",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-zone/dataprovider_zone_sicilia.js",
 				"datacache": "false",
 				"lookupfield": "pro_com.1",
 				"units": "comuni",
