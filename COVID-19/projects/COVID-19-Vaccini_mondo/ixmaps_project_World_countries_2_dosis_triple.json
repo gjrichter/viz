@@ -91,6 +91,7 @@
 				"valuedecimals": "1",
 				"clipparts": "10",
 				"aggregationfield": "iso_code",
+				"titlefield": "location",
 				"title":"COVID-19",
 				"snippet": "Percent of population fully vaccinated"
 				}
@@ -134,6 +135,7 @@
 				"valuedecimals": "1",
 				"clipparts": "10",
 				"aggregationfield": "iso_code",
+				"titlefield": "location",
 				"title": "Percent of population fully vaccinated"
 				}
 			}],
