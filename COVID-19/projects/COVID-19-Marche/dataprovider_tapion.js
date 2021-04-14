@@ -155,7 +155,7 @@ window.ixmaps = window.ixmaps || {};
 				//  rolling mean of 7 days
 				var records = mydata.records;
 				for (var r=0; r<records.length;r++){
-					for (var c=lastColumn; c<=8; c--){
+					for (var c=lastColumn; c>=8; c--){
 						records[r][c] = (Number(records[r][c])+
 										 Number(records[r][c-1])+
 										 Number(records[r][c-2])+
@@ -375,6 +375,100 @@ window.ixmaps = window.ixmaps || {};
 				for ( var r=0; r<records.length; r++ ){
 					for ( var c=lastColumn; c>=2; c-- ){
 						records[r][c] = (Number(records[r][c])/popA[(records[r][0])]*100000).toFixed(2);
+					}
+				}
+				
+				theme.szFields = mydata.columnNames().pop();
+				
+			// -----------------------------------------------------------------------------------------------             
+				// deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(mydata, {
+					type: "dbtable",
+					name: options.name
+				});
+			});
+		});
+	};
+	
+	ixmaps.COVID_MARCHE_POSITIVI_LATEST_PREVALENCE_MEAN_7 = function (theme,options) {
+
+		// -----------------------------------------------------------------------------------------------               
+		// read actual COVID data
+		// ----------------------------------------------------------------------------------------------- 
+		var szUrl1 = "../../projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read json from https://contagi-marche.tapion.it/contagi_marche.json 
+		// see GitHub: https://github.com/tapionx/contagi-marche.tapion.it
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+		
+			.addSource(szUrl1, "csv")
+			.realize(
+				
+			function (dataA) {
+
+			var szUrl = "https://corsme.herokuapp.com/https://contagi-marche.tapion.it/contagi_marche.json";		
+			$.get(szUrl,
+				function(data){
+
+				var dbtable = {fields:[],records:[],table:{}};
+
+				dbtable.fields.push({id:"Comune"});  
+				dbtable.fields.push({id:"data"});  
+				dbtable.fields.push({id:"positivi"});  
+				dbtable.fields.push({id:"quarantena"}); 
+
+				for ( i in data ){
+					for ( ii in data[i] ){
+						var row = [];
+						row.push(i);
+						for ( iii in data[i][ii] ){
+							row.push(data[i][ii][iii]);
+						}
+						dbtable.records.push(row);
+					}
+				}
+
+				console.log(dbtable);
+
+				// process data
+				// ============
+
+				dbtable = new Data.Table(dbtable);
+
+				var mydata = dbtable.pivot({ 
+					lead:"Comune",
+					columns:"data",
+					value:"positivi"});
+				// remove Total from pivot
+				mydata.column("Total").remove();
+
+				var dataPop = dataA[0];	
+				// make lookupArray: COD_PROV ==> population
+				var popA = dataPop.lookupArray("Totale","Denominazione");
+
+				var records = mydata.records;
+				var lastColumn = mydata.columnNames().length - 1;
+				for ( var r=0; r<records.length; r++ ){
+					for ( var c=lastColumn; c>=2; c-- ){
+						records[r][c] = (Number(records[r][c])/popA[(records[r][0])]*100000).toFixed(2);
+					}
+				}
+				
+				//  rolling mean of 7 days
+				for (var r=0; r<records.length;r++){
+					for (var c=lastColumn; c>=8; c--){
+						records[r][c] = (Number(records[r][c])+
+										 Number(records[r][c-1])+
+										 Number(records[r][c-2])+
+										 Number(records[r][c-3])+
+										 Number(records[r][c-4])+
+										 Number(records[r][c-5])+
+										 Number(records[r][c-6]))/7;
 					}
 				}
 				
