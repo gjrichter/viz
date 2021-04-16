@@ -1,0 +1,95 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Mon Apr 12 2021 15:40:58 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2019/italia_comuni_2019_s_nome.svgz",
+		"attribution": "iXMaps",
+		"basemap": "ArcGIS - Light Gray Base",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"lineScaling": "4.213991769547325",
+			"normalSizeScale": "4638029"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.328174695525846",
+			"lng": "13.341522216796877"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "Com2019_nome",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|GLOW|QUANTILE|SIZEP1|LEGEND|CLIP|LOOP|PAUSE|SIMPLELEGEND",
+				"colorscheme": [
+					"green",
+					"#F1D8DE",
+					"#F4A7BC",
+					"#DD0044"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "COVID_MARCHE_POSITIVI_PREVALENZA_CLIP_28",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Marche/dataprovider_tapion.js",
+				"datacache": "false",
+				"lookupfield": "Comune",
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "100000",
+				"scale": "10",
+				"dopacitypow": "2",
+				"dopacityscale": "3",
+				"titlefield": "Comune",
+				"valueupper": "1:1000000",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"clipframes": "100",
+				"clipframerate": "24",
+				"title": "Incidenza cumulativa di 7 giorni",
+				"snippet": "dal 02/01/2021 al 10/04/2021"
+				}
+			}],
+	"layerMask": {
+		"Com2019_nome": {
+			"display": "none"
+			}
+		}
+	}
