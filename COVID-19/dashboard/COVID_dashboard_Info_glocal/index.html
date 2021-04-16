@@ -103,7 +103,7 @@
 				<div class="">
 					<h5 class="pricing-card-title"><small class="text-muted">L'ECDC (European Centre for Disease Prevention and Control) calcola un'incidenza cumulativa di <b>14 giorni</b> per valutare la situazione nei paesi della Unione Europea</small></h5>
 					<div class="no-padding">
-						<iframe id="map9" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="../../ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=right&amp;scrollsafe=1&amp;legend=1&amp;name=map3&amp;sync=false&amp;footer=1&amp;project=../../projects/COVID-19-EU/ixmaps_project_EU_14gg_case_notification_rates_ecdc_ranges_small.json"></iframe>
+						<iframe id="map9" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=right&amp;scrollsafe=1&amp;legend=1&amp;name=map3&amp;sync=false&amp;footer=1&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-EU/ixmaps_project_EU_14gg_case_notification_rates_ecdc_ranges_small.json"></iframe>
 					</div>
 				</div>
 			</div>
@@ -124,7 +124,7 @@
 				<div class="">
 					<h5 class="pricing-card-title"><small class="text-muted">Totale dei soggetti sottoposti al test in percentuale della popolazione</small></h5>
 					<div class="no-padding">
-						<iframe id="map9" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="../../ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=right&amp;scrollsafe=1&amp;legend=1&amp;name=map3&amp;sync=false&amp;footer=1&amp;project=../../projects/COVID-19-PCM_DPC/ixmaps_project_Province_2019 - Incidenza - pointer.json&amp;view=[41.98807738309159,12.54638671875],6"></iframe>
+						<iframe id="map9" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=right&amp;scrollsafe=1&amp;legend=1&amp;name=map3&amp;sync=false&amp;footer=1&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_incidenza_100000_7_cumulative_pointer.json&amp;view=[41.98807738309159,12.54638671875],6"></iframe>
 					</div>
 				</div>
 			</div>
@@ -133,33 +133,38 @@
 
 	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
 		<h1 class="display-4">Evoluzione positivi - Marche</h1>
-		<p class="lead">Visualizzazione di dati pubblicati ohns Hopkins CSSE. I dati si trovono su GitHub e vengono aggiornati ogni giorno intorno all 24:00. Le visualizzazioni caricano i dati direttamente dalla fonte (GitHub)</p>
+		<p class="lead">Visualizzazione di <b>dati</b> pubblicati da <b>Riccardo Serafini</b> via <a href="https://github.com/tapionx/contagi-marche.tapion.it" target="_blank">GitHub</a>. I dati vengono prelevati da lui tutti i giorni dal sito della Regione Marche e sono accessibile via file in formato JSON.<br>La Regione purtroppo non mette a disposizione OpenData.</p>
 	</div>
 
 	<div class="container">
 		<div class=" mb-3 text-center">
 			<div class="mb-4 shadow-sm">
 				<div class="">
-					<h4 class="my-0 font-weight-normal"><b>Casi testati in % della popolazione</b></h4>
+					<h4 class="my-0 font-weight-normal"><b>Casi per 100.000 abitanti (prevalenza) e variazione di casi</b></h4>
 				</div>
 				<div class="">
-					<h5 class="pricing-card-title"><small class="text-muted">Totale dei soggetti sottoposti al test in percentuale della popolazione</small></h5>
+					<h5 class="pricing-card-title"><small class="text-muted">poligoni: prevalenza, frecce: casi in meno/più nelle ultime 24 ore, ciffre: numero di positivi</small></h5>
 					<div class="no-padding">
-						<iframe id="map9" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="../../ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=right&amp;scrollsafe=1&amp;legend=1&amp;name=map3&amp;sync=false&amp;footer=1&amp;project=../../projects/COVID-19-Marche/ixmaps_project_Marche_TAPION_Positivi_Prevalenza_diff_pointer_white.json"></iframe>
+						<iframe width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=right&amp;scrollsafe=1&amp;legend=0&amp;sync=false&amp;footer=1&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Marche/ixmaps_project_Marche_TAPION_Positivi_Prevalenza_diff_pointer_white.json"></iframe>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	
+	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+		<h1 class="display-4">Applicazione originale di Riccardo Serafini</h1>
+		<p class="lead">Qui integrato nella pagina l'applicazione di Riccardo Serafini per visuializzare il suo dataset (descrizione vedi prima).</p>
+	</div>
+
 	<div class="container">
 		<div class=" mb-3 text-center">
 			<div class="mb-4 shadow-sm">
 				<div class="">
-					<h4 class="my-0 font-weight-normal"><b>Casi testati in % della popolazione</b></h4>
+					<h4 class="my-0 font-weight-normal"></h4>
 				</div>
 				<div class="">
-					<h5 class="pricing-card-title"><small class="text-muted">Totale dei soggetti sottoposti al test in percentuale della popolazione</small></h5>
+					<h5 class="pricing-card-title"><small class="text-muted"></small></h5>
 					<div class="no-padding">
 						<iframe id="map9" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://contagi-marche.tapion.it"></iframe>
 					</div>
@@ -169,36 +174,36 @@
 	</div>
 
 	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-		<h1 class="display-4">Evoluzione della Pandemia COVID-19</h1>
-		<p class="lead">Visualizzazione di dati pubblicati ohns Hopkins CSSE. I dati si trovono su GitHub e vengono aggiornati ogni giorno intorno all 24:00. Le visualizzazioni caricano i dati direttamente dalla fonte (GitHub)</p>
+		<h1 class="display-4">Altre due visualizzazioni del dataset</h1>
 	</div>
 
 	<div class="wide">
 		<div class=" mb-3 text-center">
 			<div class="mb-4 shadow-sm">
 				<div class="">
-					<h4 class="my-0 font-weight-normal"><b>Casi testati in % della popolazione</b></h4>
+					<h4 class="my-0 font-weight-normal"><b>Valori storici dei positivi per comune espresso in casi per 100.000 abitanti (prevalenza) </b></h4>
 				</div>
 				<div class="">
-					<h5 class="pricing-card-title"><small class="text-muted">Totale dei soggetti sottoposti al test in percentuale della popolazione</small></h5>
+					<h5 class="pricing-card-title"><small class="text-muted">Evoluzione della prevalenza comune per comune nei gli ultìimi 28 giorni</small></h5>
 					<div class="no-padding">
-						<iframe id="map9" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="../../ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=right&amp;scrollsafe=1&amp;legend=0&amp;name=map3&amp;sync=false&amp;footer=1&amp;project=../../projects/COVID-19-Marche/ixmaps_project_Marche_TAPION_Positivi_Prevalenza_sequence_28_auto_III.json"></iframe>
+						<iframe id="map9" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=right&amp;scrollsafe=1&amp;legend=0&amp;name=map3&amp;sync=false&amp;footer=1&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Marche/ixmaps_project_Marche_TAPION_Positivi_Prevalenza_sequence_28_auto_III.json"></iframe>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
+	<br>
+	<br>
 	<div class="container">
 		<div class=" mb-3 text-center">
 			<div class="mb-4 shadow-sm">
 				<div class="">
-					<h4 class="my-0 font-weight-normal"><b>Casi testati in % della popolazione</b></h4>
+					<h4 class="my-0 font-weight-normal"><b>Sequenza temporale della prevalenza</b></h4>
 				</div>
 				<div class="">
-					<h5 class="pricing-card-title"><small class="text-muted">Totale dei soggetti sottoposti al test in percentuale della popolazione</small></h5>
+					<h5 class="pricing-card-title"><small class="text-muted">La prevalenza giorno per giorno e comune per comune in una sequenza di grafci. L'intento è visualizzare la diffusione territoriale dei contaggi.</small></h5>
 					<div class="no-padding">
-						<iframe id="map9" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="../../ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=right&amp;scrollsafe=1&amp;legend=1&amp;name=map3&amp;sync=false&amp;footer=1&amp;project=../../projects/COVID-19-Marche/ixmaps_project_Marche_TAPION_Positivi_Prevalenza_clip_28_chart_linear_white.json"></iframe>
+						<iframe id="map9" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=right&amp;scrollsafe=1&amp;legend=1&amp;name=map3&amp;sync=false&amp;footer=1&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Marche/ixmaps_project_Marche_TAPION_Positivi_Prevalenza_clip_28_chart_linear_white.json"></iframe>
 					</div>
 				</div>
 			</div>
@@ -260,7 +265,7 @@
 
 	<script type="text/javascript" src="./lib/js/Chart.bundle.js"></script>
 
-	<script type="text/javascript" src="../../ixmaps/ui/js/htmlgui_api.js"></script>
+	<script type="text/javascript" src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
 	<script type="text/javascript" src="https://gjrichter.github.io/data.js/data.js"></script>
 
 	<script type="text/javascript" src="./js/index.js"></script>
