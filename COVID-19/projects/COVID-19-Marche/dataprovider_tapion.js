@@ -20,7 +20,7 @@ window.ixmaps = window.ixmaps || {};
 		// -----------------------------------------------------------------------------------------------               
 		// read actual COVID data
 		// ----------------------------------------------------------------------------------------------- 
-		var szUrl1 = "../../projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
+		var szUrl1 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/popolazione_gennaio_2020_totale.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read json from https://contagi-marche.tapion.it/contagi_marche.json 
@@ -88,7 +88,7 @@ window.ixmaps = window.ixmaps || {};
 		// -----------------------------------------------------------------------------------------------               
 		// read actual COVID data
 		// ----------------------------------------------------------------------------------------------- 
-		var szUrl1 = "../../projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
+		var szUrl1 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/popolazione_gennaio_2020_totale.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read json from https://contagi-marche.tapion.it/contagi_marche.json 
@@ -211,7 +211,7 @@ window.ixmaps = window.ixmaps || {};
 		// -----------------------------------------------------------------------------------------------               
 		// read actual COVID data
 		// ----------------------------------------------------------------------------------------------- 
-		var szUrl1 = "../../projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
+		var szUrl1 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/popolazione_gennaio_2020_totale.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read json from https://contagi-marche.tapion.it/contagi_marche.json 
@@ -316,7 +316,7 @@ window.ixmaps = window.ixmaps || {};
 		// -----------------------------------------------------------------------------------------------               
 		// read actual COVID data
 		// ----------------------------------------------------------------------------------------------- 
-		var szUrl1 = "../../projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
+		var szUrl1 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/popolazione_gennaio_2020_totale.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read json from https://contagi-marche.tapion.it/contagi_marche.json 
@@ -397,7 +397,7 @@ window.ixmaps = window.ixmaps || {};
 		// -----------------------------------------------------------------------------------------------               
 		// read actual COVID data
 		// ----------------------------------------------------------------------------------------------- 
-		var szUrl1 = "../../projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
+		var szUrl1 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/popolazione_gennaio_2020_totale.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read json from https://contagi-marche.tapion.it/contagi_marche.json 
@@ -503,7 +503,7 @@ window.ixmaps = window.ixmaps || {};
 		// read actual COVID data
 		// ----------------------------------------------------------------------------------------------- 
 		var szUrl1 = "https://corsme.herokuapp.com/https://www.regione.marche.it/DesktopModules/Covid19Stat/WSGetStatComu.ashx/GetPersonData?giornoScelto="+szDate+"&_=1615072154587";
-		var szUrl2 = "../../projects/COVID-19-Marche/popolazione_gennaio_2020_totale.csv";
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/popolazione_gennaio_2020_totale.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ArcGis Feature service
