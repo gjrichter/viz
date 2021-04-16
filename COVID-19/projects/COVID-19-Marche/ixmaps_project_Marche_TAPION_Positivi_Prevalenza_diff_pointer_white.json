@@ -173,5 +173,8 @@
 				}
 			}],
 	"layerMask": {
+		"Com2019_nome": {
+			"display": "none"
+			}
 		}
 	}
