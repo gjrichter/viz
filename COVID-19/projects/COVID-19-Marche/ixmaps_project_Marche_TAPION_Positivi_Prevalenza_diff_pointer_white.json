@@ -13,6 +13,7 @@
 		"attribution": "iXMaps",
 		"basemap": "white",
 		"item": "",
+		"legend": "",
 		"scaleParam": {
 			"borderScaling": "5",
 			"lineScaling": "2",
