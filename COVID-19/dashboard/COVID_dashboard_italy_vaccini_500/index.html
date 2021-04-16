@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<script id="tinyhippos-injected">
+	if (window.top.ripple) {
+		window.top.ripple("bootstrap").inject(window, document);
+	}
+
+</script>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+	<title>COVID-19 Italia</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+
+	</style>
+	<!-- Custom styles for this template -->
+	<link href="./css/pricing.css" rel="stylesheet">
+
+	<!-- CSS App -->
+	<link rel="stylesheet" type="text/css" href="./css/dashboard/style.css">
+	<link rel="stylesheet" type="text/css" href="./css/dashboard/themes/flat-blue.css">
+	<link rel="stylesheet" type="text/css" href="./lib/css/font-awesome.min.css">
+
+	<style>
+		table.region-list td {
+			font-size: 1.05em;
+			border-bottom: 5px solid #fff;
+			border-radius: 0.2em;
+			background-color: #f8f8f8;
+			padding: 0.5em 6px;
+		}
+		table.region-list th {
+			font-size: 1.2em;
+			font-weight: normal;
+			padding: 2px 6px;
+			padding-bottom: 0.5em;
+			border-bottom: 1px solid #eee;
+		}
+	</style>
+</head>
+
+<body data-gr-c-s-loaded="true">
+	<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+		<h5 class="my-0 mr-md-auto font-weight-normal">2019 Novel Coronavirus COVID-19</h5>
+		<nav class="my-2 my-md-0 mr-md-3">
+			<a class="p-1 text-dark" style="font-size:18px" href="#footer">Fonti & Attributioni</a>
+		</nav>
+		<a class="btn btn-outline-primary" href="https://gjrichter.github.io/viz/COVID-19/dashboard/COVID_dashboard_italy/index.html">Situazione COVID-19 &rarr;</a>
+	</div>
+
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+	<!--                                                                 -->
+	<!-- Jumbo Map 													 -->
+	<!--                                                                 -->
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+	
+	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+		<h1 class="display-4" style="margin-top:-2.4em">Andamento Vaccini</h1>
+		<h4 >verso 500.000 somministrazioni al giorno</h4>
+	</div>
+
+    
+	<!-- --------------------------------------------------------------- -->
+	<!-- Maps                                               		 	 -->
+	<!-- --------------------------------------------------------------- -->
+
+	<!-- curve somministrazioni 1./2. dose -->
+	<div class="">
+		<div class=" mb-3 text-center">
+			<div class="mb-4 shadow-sm">
+				<div class="">
+					<h4 class="my-0 font-weight-normal"><b></b></h4>
+				</div>
+				<div class="">
+					<h5 class="pricing-card-title"><small class="text-muted"></small></h5>
+					<div class="no-padding">
+						<iframe id="map1" width="100%" height="1500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&scrollsafe=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_final/ixmaps_project_Vaccini_latest_by_prima_seconda_100000_sequence_stacked_mean_7.json&view=[41.97582726102573,11.964111328125002],7"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<!-- % seconda dosi -->
+	<div class="container">
+		<div class=" mb-3 text-center">
+			<div class="mb-4 shadow-sm">
+				<div class="">
+					<h4 class="my-0 font-weight-normal"><b>Percentuale della popolazione immunizzata</h4>
+				</div>
+				<div class="">
+					<h5 class="pricing-card-title"><small class="text-muted"></small></h5>
+					<div class="no-padding">
+						<iframe id="map2" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&mode=info&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini/ixmaps_project_Vaccini_latest_percentuale_12_nuts.json"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- prima/seconda dose pie -->
+	<div class="container">
+		<div class=" mb-3 text-center">
+			<div class="mb-4 shadow-sm">
+				<div class="">
+					<h4 class="my-0 font-weight-normal"><b>Percentuale di 2. Dosi</b></h4>
+				</div>
+				<div class="">
+					<h5 class="pricing-card-title"><small class="text-muted"></small></h5>
+					<div class="no-padding">
+						<iframe id="map3" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&mode=info&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini/ixmaps_project_Vaccini_latest_by_prima_seconda.json"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- prima/seconda dose pie -->
+	<div class="">
+		<div class=" mb-3 text-center">
+			<div class="mb-4 shadow-sm">
+				<div class="">
+					<h4 class="my-0 font-weight-normal"><b>Percentuale immunizzati con 2 dosi</b></h4>
+				</div>
+				<div class="">
+					<h5 class="pricing-card-title"><small class="text-muted"></small></h5>
+					<div class="no-padding">
+						<iframe id="map3" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&scrollsafe=1&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_mondo/ixmaps_project_World_countries_2_dosis_triple.json"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+	<!--                                                                 -->
+	<!-- F O O T E R          		               					 	 -->
+	<!--                                                                 -->
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+	
+	<footer id="footer" class="container">
+		<div class="row">
+			<div class="col-4">
+				<h5>Fonti</h5>
+				<ul class="list-unstyled text-small">
+					<li>
+						<a class='btn btn-primary' href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>Covid19 Opendata Vaccini</a><br> 2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri<br>
+						Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></li>
+					<li>
+						<a class='btn btn-primary' href='https://github.com/ondata/nuts' target='_blank'>Confini amministrativi</a><br> ISTAT -> onData geoJson<br>
+						Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></li>
+					<li>&nbsp;</li>
+					<li><a class="text-muted" href="https://istat.it">Popolazione 2019, ISTAT</a></li>
+				</ul>
+			</div>
+			<div class="col-4">
+				<h5>Attribuzioni</h5>
+				<ul class="list-unstyled text-small">
+					<li> 
+						Papa Parse - <span style="color:#888888">.csv parser integtegrato in data.js, usato per caricare e manipolare i dati dai siti ufficiali, licenza: <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a></span><br>
+						Flat Admin Bootstrap Templates - <span style="color:#888888">HTML5 Bootstrap template alola base di questo dasboard, licenza: <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a></span><br>
+					</li>
+				</ul>
+			</div>
+			<div class="col-4">
+				<h5>About</h5>
+				<ul class="list-unstyled text-small">
+					<li><a class="text-muted" href="https://ixmaps.com">powered by iXMaps</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+	<!--                                                                 -->
+	<!-- C O D E	          		               					 	 -->
+	<!--                                                                 -->
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+	
+	<script type="text/javascript" src="./lib/js/jquery.min.js"></script>
+	<script type="text/javascript" src="./lib/js/bootstrap.bundle.min.js"></script>
+
+	<script type="text/javascript" src="./lib/js/Chart.bundle.js"></script>
+
+	<script type="text/javascript" src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
+	<script type="text/javascript" src="https://gjrichter.github.io/data.js/data.js"></script>
+
+	<!-- Javascript -->
+	<script>
+		// ---------------------------------------------------------------------------------------
+		// infuse HTML snippets
+		// ---------------------------------------------------------------------------------------
+
+		infuseHTML = function(szElement, szUrl, szDiv) {
+
+			szStoryRoot = "";
+
+			if (typeof($("#" + szElement)[0]) == "undefined") {
+				return;
+			}
+			$("#" + szElement).load(szUrl + ' #' + szDiv, function(response, status, xhr) {
+				if (status == "error") {
+					var msg = "Sorry but there was an error: ";
+					$("#story").html(msg + xhr.status + "<br><br> '" + szStoryRoot + szUrl + "'<br><br> " + xhr.statusText);
+				}
+			});
+		};
+
+		infuseHTML("menu", "./menu.html", "menu");
+
+		var makeProvinceListT = null;
+		var provinceFilterA = [];
+
+		$(document).ready(function() {
+
+			refreshProvinceList = function() {
+				makeProvinceList(provinceFilterA.join(','));
+			};
+
+
+			mainMap = null;
+
+			$('a').on('click', event => {
+				$('a').removeClass('active');
+				$(event.target).addClass('active');
+			});
+
+			var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+			var myfeed = Data.feed({
+				"source": szUrl,
+				"type": "csv"
+			}).load(function(mydata) {
+				$("#data_italia").html(new Date(mydata.column("data").values().pop()).toLocaleString());
+			});
+
+
+		});
+
+	</script>
+
+
+</body>
+
+</html>
