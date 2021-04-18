@@ -1,0 +1,163 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Wed Mar 03 2021 09:30:19 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "ArcGIS - Topo",
+		"legend": "",
+		"item": "html",
+		"scaleParam": {
+			"labelScaling": "1.5",
+			"normalSizeScale": "100000"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"dynamicScalePow":"10",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "0.7",
+			"panhidden":"false"
+			},
+		"center": {
+			"lat": "43.004647127794435",
+			"lng": "13.797454833984377"
+			},
+		"zoom": "11"
+		},
+	"themes": [{
+			"layer": "costal_zones",
+			"field": "$ITEM$",
+			"field100": "",
+			"style": {
+				"type": "WMS|IMAGE|NOLEGEND",
+				"server": "https://image.discomap.eea.europa.eu/arcgis/rest/services/CoastalZones/CZ_CoastalZones_2018/MapServer/export",
+				"opacity": "0.5",
+				"title": "Copernicus DiscoMap Coastal Zones "
+				}
+			},{
+			"layer": "riparian_zones",
+			"field": "$ITEM$",
+			"field100": "",
+			"style": {
+				"type": "WMS|IMAGE|NOLEGEND",
+				"server": "https://image.discomap.eea.europa.eu/arcgis/rest/services/RiparianZones/LCLU/MapServer/export",
+				"opacity": "0.5",
+				"title": "Copernicus DiscoMap Riparian Zones "
+				}
+			},{
+			"layer": "grassland",
+			"field": "$ITEM$",
+			"field100": "",
+			"style": {
+				"type": "WMS|IMAGE|NOLEGEND",
+				"server": "https://image.discomap.eea.europa.eu/arcgis/rest/services/GioLandPublic/HRL_Grassland_2018/ImageServer/exportImage",
+				"opacity": "0.8",
+				"title": "Copernicus DiscoMap Grassland"
+				}
+			},{
+			"layer": "tree_canopy",
+			"field": "$ITEM$",
+			"field100": "",
+			"style": {
+				"type": "WMS|IMAGE|NOLEGEND",
+				"server": "https://image.discomap.eea.europa.eu/arcgis/rest/services/GioLandPublic/HRL_TreeCoverDensity_2018/ImageServer/exportImage",
+				"opacity": "0.8",
+				"title": "Copernicus DiscoMap Tree Cover Density"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "Classificazione",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|STAR|SORT|DOWN|AGGREGATE|RELOCATE|CATEGORICAL|VALUES|VALUEBACKGROUND",
+				"colorscheme": [
+					"32",
+					"fruit"],
+				"shadow": "true",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/GoodPA/20210201elencostrutture.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "Latitude_Y|Longitude_X",
+				"symbols": [
+					"circle"],
+				"values": [
+					"BedBreakfast",
+					"Affittacamere",
+					"Agriturismi",
+					"Agricampeggi",
+					"Campeggi 3 stelle",
+					"Campeggi 2 stelle",
+					"Campeggi 1 stella",
+					"Campeggi 4 stelle",
+					"Villaggi Turistici 3 stelle",
+					"Villaggi Turistici 2 stelle",
+					"Villaggi Turistici 4 stelle",
+					"Case ed Appartamenti per Vacanze",
+					"Ostelli",
+					"Case per Ferie",
+					"Rifugio Escursionistico",
+					"Alberghi 4 stelle",
+					"Alberghi 3 stelle",
+					"Alberghi 2 stelle",
+					"Alberghi 1 stella",
+					"3 Stelle",
+					"2 Stelle",
+					"4 Stelle",
+					"Alberghi 5 stelle",
+					"Country House",
+					"Attività ricettive rurali",
+					"Appartamenti Ammobiliati uso turistico (Art. 32 – T.U.)",
+					"Altri esercizi ricettivi",
+					"Collegi Universitari",
+					"Uso occasionale di immobili (Art. 33 - T.U.)",
+					"Residenza d epoca extralb.",
+					"Rifugi Alpini",
+					"Albergo diffuso"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "3",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridwidthpx": "50",
+				"title": "Strutture ricettive",
+				"description": "fonte: Open Data Marche<br>fondo: EEA Copernicus DiscoMap Layer"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
