@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<script id="tinyhippos-injected">
+	if (window.top.ripple) {
+		window.top.ripple("bootstrap").inject(window, document);
+	}
+
+</script>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<title>COVID-19 World</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+
+	</style>
+	<!-- Custom styles for this template -->
+	<link href="./css/pricing.css" rel="stylesheet">
+
+	<!-- CSS App -->
+	<link rel="stylesheet" type="text/css" href="./css/dashboard/style.css">
+	<link rel="stylesheet" type="text/css" href="./css/dashboard/themes/flat-blue.css">
+	<link rel="stylesheet" type="text/css" href="./lib/css/font-awesome.min.css">
+
+	<style>
+		.active {
+			border: 2px solid #AFCDEA;
+			border-radius: 0.2em;
+		}
+
+	</style>
+
+
+</head>
+
+<body data-gr-c-s-loaded="true">
+	<div class="d-flex flex-column flex-md-row align-items-center p-2 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+		<h3 class="my-0 mr-md-auto font-weight-normal">2019 Novel Coronavirus COVID-19</h3>
+		<nav class="my-2 my-md-0 mr-md-3">
+			<a class="p-1 text-dark" style="font-size:18px" href="#footer">Fonti & Attributioni</a>
+		</nav>
+		<a class="btn btn-outline-primary" href="https://gjrichter.github.io/viz/COVID-19/dashboard/COVID_dashboard_italy/index.html">Situazione in Italia &rarr;</a>
+	</div>
+
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+	<!--                                                                 -->
+	<!-- Top Jumbo Map 													 -->
+	<!--                                                                 -->
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+	
+	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+		<h1 class="display-4">PCM-DCP - Open Data</h1>
+		<p class="lead">Visualizzazione di dati pubblicati ohns Hopkins CSSE. I dati si trovono su GitHub e vengono aggiornati ogni giorno intorno all 24:00. Le visualizzazioni caricano i dati direttamente dalla fonte (GitHub)</p>
+	</div>
+
+	<div class="container">
+		<div class=" mb-3 text-center">
+			<div class="mb-4 shadow-sm">
+				<div class="">
+					<h4 class="my-0 font-weight-normal"><b>Incidenza cumulativa di 7 giorni</b></h4>
+				</div>
+				<div class="">
+					<h5 class="pricing-card-title"><small class="text-muted">Totale dei soggetti sottoposti al test in percentuale della popolazione</small></h5>
+					<div class="no-padding">
+						<iframe id="map9" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=right&amp;scrollsafe=1&amp;legend=1&amp;name=map3&amp;sync=false&amp;footer=1&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/ixmaps_project_PCM_DPC_Prov2019_COVID_incidenza_100000_7_cumulative_pointer.json&amp;view=[41.98807738309159,12.54638671875],6"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+		<h1 class="display-4">Evoluzione positivi - Marche</h1>
+		<p class="lead">Visualizzazione di <b>dati</b> pubblicati da <b>Riccardo Serafini</b> via <a href="https://github.com/tapionx/contagi-marche.tapion.it" target="_blank">GitHub</a>. I dati vengono prelevati da lui tutti i giorni dal sito della Regione Marche e sono accessibile via file in formato JSON.<br>La Regione purtroppo non mette a disposizione OpenData.</p>
+	</div>
+
+	<div class="container">
+		<div class=" mb-3 text-center">
+			<div class="mb-4 shadow-sm">
+				<div class="">
+					<h4 class="my-0 font-weight-normal"><b>Casi per 100.000 abitanti (prevalenza) e variazione dei positivi</b></h4>
+				</div>
+				<div class="">
+					<h5 class="pricing-card-title"><small class="text-muted">poligoni: prevalenza, frecce: positivi in meno/più nelle ultime 24 ore, ciffre: numero di positivi</small></h5>
+					<div class="no-padding">
+						<iframe width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=right&amp;scrollsafe=1&amp;legend=0&amp;sync=false&amp;footer=1&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Marche/ixmaps_project_Marche_TAPION_Positivi_Prevalenza_diff_pointer_white.json"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+		<h1 class="display-4">Applicazione originale di Riccardo Serafini</h1>
+		<p class="lead">Qui integrato nella pagina l'applicazione di Riccardo Serafini per visuializzare il suo dataset (descrizione vedi prima).</p>
+	</div>
+
+	<div class="container">
+		<div class=" mb-3 text-center">
+			<div class="mb-4 shadow-sm">
+				<div class="">
+					<h4 class="my-0 font-weight-normal"></h4>
+				</div>
+				<div class="">
+					<h5 class="pricing-card-title"><small class="text-muted"></small></h5>
+					<div class="no-padding">
+						<iframe id="map9" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://contagi-marche.tapion.it"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+		<h1 class="display-4">Altre due visualizzazioni del dataset</h1>
+	</div>
+
+	<div class="wide">
+		<div class=" mb-3 text-center">
+			<div class="mb-4 shadow-sm">
+				<div class="">
+					<h4 class="my-0 font-weight-normal"><b>Valori storici dei positivi per comune espresso in casi per 100.000 abitanti (prevalenza) </b></h4>
+				</div>
+				<div class="">
+					<h5 class="pricing-card-title"><small class="text-muted">Evoluzione della prevalenza comune per comune nei gli ultìimi 28 giorni</small></h5>
+					<div class="no-padding">
+						<iframe id="map9" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=right&amp;scrollsafe=1&amp;legend=0&amp;name=map3&amp;sync=false&amp;footer=1&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Marche/ixmaps_project_Marche_TAPION_Positivi_Prevalenza_sequence_28_auto_III.json"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div class="container">
+		<div class=" mb-3 text-center">
+			<div class="mb-4 shadow-sm">
+				<div class="">
+					<h4 class="my-0 font-weight-normal"><b>Sequenza temporale della prevalenza</b></h4>
+				</div>
+				<div class="">
+					<h5 class="pricing-card-title"><small class="text-muted">La prevalenza giorno per giorno e comune per comune in una sequenza di grafci. L'intento è visualizzare la diffusione territoriale dei contaggi.</small></h5>
+					<div class="no-padding">
+						<iframe id="map9" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://s3.eu-west-1.amazonaws.com/rc.ixmaps.com/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;basemap=ll&amp;align=right&amp;scrollsafe=1&amp;legend=1&amp;name=map3&amp;sync=false&amp;footer=1&amp;project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Marche/ixmaps_project_Marche_TAPION_Positivi_Prevalenza_clip_28_chart_linear_white.json"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+	<!--                                                                 -->
+	<!-- F O O T E R          		               					 	 -->
+	<!--                                                                 -->
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+
+	<footer id="footer" class="container border-top">
+		<div class="row">
+			<div class="col-4">
+				<h5>Fonti</h5>
+				<ul class="list-unstyled text-small">
+					<li>
+						<a class='btn btn-primary' href='https://github.com/CSSEGISandData/COVID-19/' target='_blank'>2019 Novel Coronavirus COVID-19 (2019-nCoV)</a> Data Repository</a> by Johns Hopkins CSSE<br>
+						Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></li>
+					<li>&nbsp;</li>
+					<li>
+						<a class='btn btn-primary' href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>COVID-19 Italia - Monitoraggio situazione</a> Dipartimento della Protezione Civile, Italia<br>
+						Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></li>
+					<li>&nbsp;</li>
+					<li><a class="text-muted" href="https://istat.it">Popolazione 2019, ISTAT</a></li>
+				</ul>
+			</div>
+			<div class="col-4">
+				<h5>Attribuzioni</h5>
+				<ul class="list-unstyled text-small">
+					<li> chart.js - <span style="color:#888888">grafici a barra e curve sono realizzati con Chart.js, licenza: <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a></span><br>
+						Papa Parse - <span style="color:#888888">.csv parser integtegrato in data.js, usato per caricare e manipolare i dati dai siti ufficiali, licenza: <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a></span><br>
+						Flat Admin Bootstrap Templates - <span style="color:#888888">HTML5 Bootstrap template alola base di questo dasboard, licenza: <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a></span><br>
+					</li>
+				</ul>
+			</div>
+			<div class="col-4">
+				<h5>About</h5>
+				<ul class="list-unstyled text-small">
+					<li><a class="text-muted" href="https://ixmaps.com">powered by iXMaps</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+	<!--                                                                 -->
+	<!-- C O D E	          		               					 	 -->
+	<!--                                                                 -->
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+
+	<script type="text/javascript" src="./lib/js/jquery.min.js"></script>
+	<script type="text/javascript" src="./lib/js/bootstrap.bundle.min.js"></script>
+
+	<script type="text/javascript" src="./lib/js/Chart.bundle.js"></script>
+
+	<script type="text/javascript" src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
+	<script type="text/javascript" src="https://gjrichter.github.io/data.js/data.js"></script>
+
+	<script type="text/javascript" src="./js/index.js"></script>
+
+	<!-- Javascript -->
+	<script>
+		// ---------------------------------------------------------------------------------------
+		// infuse HTML snippets
+		// ---------------------------------------------------------------------------------------
+
+		infuseHTML = function(szElement, szUrl, szDiv) {
+
+			szStoryRoot = "";
+
+			if (typeof($("#" + szElement)[0]) == "undefined") {
+				return;
+			}
+			$("#" + szElement).load(szUrl + ' #' + szDiv, function(response, status, xhr) {
+				if (status == "error") {
+					var msg = "Sorry but there was an error: ";
+					$("#story").html(msg + xhr.status + "<br><br> '" + szStoryRoot + szUrl + "'<br><br> " + xhr.statusText);
+				}
+			});
+		};
+
+		infuseHTML("menu", "./menu.html", "menu");
+
+		var makeProvinceListT = null;
+		var provinceFilterA = [];
+
+		$(document).ready(function() {
+
+			$('a').on('click', event => {
+				$('a').removeClass('active');
+				$(event.target).addClass('active');
+			});
+
+			var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+			var myfeed = Data.feed({
+				"source": szUrl,
+				"type": "csv"
+			}).load(function(mydata) {
+				$("#data_italia").html(new Date(mydata.column("data").values().pop()).toLocaleString());
+			});
+
+
+		});
+
+	</script>
+
+
+</body>
+
+</html>
