@@ -6903,10 +6903,10 @@ window.ixmaps = window.ixmaps || {};
 
 				theme.szXaxisA = columns.slice();
 				for ( var i=1; i < theme.szXaxisA.length-1; i++ ){
-					theme.szXaxisA[i] = (theme.szXaxisA.length-i)%14?" ":new Date(theme.szXaxisA[i]).toLocaleDateString();
+					theme.szXaxisA[i] = ((theme.szXaxisA.length-i)%14?" ":theme.szXaxisA[i]);
 				}
-				theme.szXaxisA[0] = new Date(theme.szXaxisA[0]).toLocaleDateString();
-				theme.szXaxisA[theme.szXaxisA.length-1] = new Date(theme.szXaxisA[theme.szXaxisA.length-1]).toLocaleDateString();
+				theme.szXaxisA[0] = theme.szXaxisA[0];
+				theme.szXaxisA[theme.szXaxisA.length-1] = theme.szXaxisA[theme.szXaxisA.length-1];
 
 				theme.szSnippet = "dal " + columns[0] + " al " + columns[last - 1];
 				ixmaps.setTitle("<f2 style='color:#888888;background-color:rgba(255,255,255,0.1);padding:0.3em 0.5em;border:#888888 solid 0.5px;border-radius:0.2em'>aggiornato: "+(columns[last - 1])+"</f2>");
