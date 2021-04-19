@@ -7,6 +7,7 @@
 
 window.ixmaps = window.ixmaps || {};
 window.ixmaps.CSSE_COVID_CONFIRMED_56 = window.ixmaps.CSSE_COVID_CONFIRMED_56 || {};
+window.ixmaps.CSSE_COVID_DEATH_56 = window.ixmaps.CSSE_COVID_DEATH_56 || {};
 
 (function() {
         
@@ -37,6 +38,27 @@ window.ixmaps.CSSE_COVID_CONFIRMED_56 = window.ixmaps.CSSE_COVID_CONFIRMED_56 ||
     };  
 
 	ixmaps.CSSE_COVID_CONFIRMED_56.process = function(data,options) { 
+		
+		data = __mean_7(data);
+		
+		// get last 28 columns
+		var last_56 = data.columnNames().slice(-56);
+		
+		// set as data fields in actual theme
+		options.theme.szFields = last_56.slice().join("|");
+		options.theme.szFieldsA = last_56.slice();
+		
+		// make label ! -1 because of DIFFERENC theme
+		options.theme.szLabelA = last_56.slice(-55);
+		options.theme.szXaxisA = last_56.slice(-55);
+		for ( var i=1; i < options.theme.szXaxisA.length-1; i++ ){
+			options.theme.szXaxisA[i] = (options.theme.szXaxisA.length-i)%14?" ":new Date(options.theme.szXaxisA[i]).toLocaleDateString();
+		}
+		options.theme.szXaxisA[0] = new Date(options.theme.szXaxisA[0]).toLocaleDateString();
+		options.theme.szXaxisA[options.theme.szXaxisA.length-1] = new Date(options.theme.szXaxisA[options.theme.szXaxisA.length-1]).toLocaleDateString();
+     };   
+    
+	ixmaps.CSSE_COVID_DEATH_56.process = function(data,options) { 
 		
 		data = __mean_7(data);
 		
