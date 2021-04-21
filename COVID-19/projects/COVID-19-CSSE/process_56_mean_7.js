@@ -77,6 +77,8 @@ window.ixmaps.CSSE_COVID_DEATH_56 = window.ixmaps.CSSE_COVID_DEATH_56 || {};
 		}
 		options.theme.szXaxisA[0] = new Date(options.theme.szXaxisA[0]).toLocaleDateString();
 		options.theme.szXaxisA[options.theme.szXaxisA.length-1] = new Date(options.theme.szXaxisA[options.theme.szXaxisA.length-1]).toLocaleDateString();
+		
+		ixmaps.setTitle("<span style='color:#666666;font-family:courier new,Raleway,arial,helvetica;'>date: "+options.theme.szXaxisA[options.theme.szXaxisA.length-1]+"</span>");
      };   
     
 })();
