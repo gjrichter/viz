@@ -12,7 +12,7 @@
 		"map": "",
 		"attribution": "iXMaps",
 		"basemap": "white",
-		"legend": "<h1>Dosi somministrate per giorno e categorie</h1><h4><i class='icon icon-radio-checked2' style='color:rgb(222,222,222)'/> altro <br><i class='icon icon-radio-checked2' style='color:rgb(78, 121, 167)'/> operatori sanitari / socio sanitari <br><i class='icon icon-radio-checked2' style='color:rgb(160, 203, 232)'/> personale non sanitario <br><i class='icon icon-radio-checked2' style='color:rgb(242, 142, 43)'/> ospiti RSA <br><i class='icon icon-radio-checked2' style='color:rgb(242, 242, 143)'/> più di 80 anni<br><i class='icon icon-radio-checked2' style='color:#85924C'/> forze armate<br><i class='icon icon-radio-checked2' style='color:violet'/> personale scolastico</h4><h4><b>fonte:</b> <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h4><h4><a class='btn btn-default theme-tool-button' style='color:#0088aa;' href='javascript:ixmaps.legend.showItemGrid()'>visualizzazione a griglia <span class='icon icon-table2' style='font-size:18px;vertical-align:-10%;'></span></a></h4>",
+		"legend": "<h1>Dosi somministrate per giorno e categorie</h1><h4><i class='icon icon-radio-checked2' style='color:rgb(222,222,222)'/> altro <br><i class='icon icon-radio-checked2' style='color:rgb(78, 121, 167)'/> operatori sanitari / socio sanitari <br><i class='icon icon-radio-checked2' style='color:rgb(160, 203, 232)'/> personale non sanitario <br><i class='icon icon-radio-checked2' style='color:rgb(242, 142, 43)'/> ospiti RSA <br><i class='icon icon-radio-checked2' style='color:rgb(242, 202, 143)'/> soggetti fragili <br><i class='icon icon-radio-checked2' style='color:rgb(242, 242, 143)'/> più di 80 anni <br><i class='icon icon-radio-checked2' style='color:rgb(222, 222, 123)'/> 70-79 anni<br><i class='icon icon-radio-checked2' style='color:rgb(202, 202, 103)'/> 60-69 anni<br><i class='icon icon-radio-checked2' style='color:#85924C'/> forze armate<br><i class='icon icon-radio-checked2' style='color:violet'/> personale scolastico</h4><h4>in dosi per 100.000 abitanti. Il traguardo nationale di 500.000 dosi al giono si traduce in 833 dosi per 100.000 abitanti.</h4><h4><b>fonte:</b> <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h4><h4><a class='btn btn-default theme-tool-button' style='color:#0088aa;' href='javascript:ixmaps.legend.showItemGrid()'>visualizzazione a griglia <span class='icon icon-table2' style='font-size:18px;vertical-align:-10%;'></span></a></h4>",
 		"item": "",
 		"scaleParam": {
 			"lineScaling": "23.67696884508345",
@@ -100,6 +100,9 @@
 				"colorscheme": [
 					"violet",
 					"#85924C",
+					"rgb(242, 202, 143)",
+					"rgb(202, 202, 103)",
+					"rgb(222, 222, 123)",
 					"rgb(242, 242, 143)",
 					"rgb(242, 142, 43)",
 					"rgb(160, 203, 232)",
@@ -109,6 +112,9 @@
 				"label": [
 					"personale scolastico",
 					"forze armate",
+					"categoria_soggetti_fragili",
+					"categoria_60_69",
+					"categoria_70_79",
 					"più di 80 anni",
 					"ospiti RSA",
 					"personale non sanitario",
@@ -126,7 +132,7 @@
 				"refreshtimeout": "0",
 				"normalsizevalue": "50000",
 				"scale": "0.05",
-				"rangescale":"12",
+				"rangescale":"7",
 				"maxvalue": "1000",
 				"highvalue": "833",
 				"linewidth": "5",
