@@ -6981,7 +6981,7 @@ window.ixmaps = window.ixmaps || {};
 				theme.szXaxisA = szXaxisA;
 			
 				theme.szSnippet = "dal " + columns[0] + " al " + columns[last - 1];
-				ixmaps.setTitle("<span style='color:#666666;font-family:courier new,Raleway,arial,helvetica;'> date:"+columns[last - 1])+"</span>");
+				ixmaps.setTitle("<span style='color:#666666;font-family:courier new,Raleway,arial,helvetica;'> date:"+columns[last - 1]+"</span>");
 		
 				// ----------------------------------------------------------------------------------------------- 
 				// deploy the data
