@@ -364,20 +364,28 @@ window.ixmaps = window.ixmaps || {};
 																"categoria_over80"],"mean3");
 	};
 	ixmaps.VACCINI_SOMMINISTRAZIONI_ALL_NEW_SEQUENCE_MEAN_3 = function (theme, options) {
-		return ixmaps.VACCINI_COLUMNS_SEQUENCE(theme, options, ["categoria_altro",
+		return ixmaps.VACCINI_COLUMNS_SEQUENCE(theme, options, [
+																"categoria_altro",
 																"categoria_operatori_sanitari_sociosanitari",
 																"categoria_personale_non_sanitario",
 																"categoria_ospiti_rsa",
 																"categoria_over80",
+																"categoria_70_79",
+																"categoria_60_69",
+																"categoria_soggetti_fragili",
 															    "categoria_forze_armate",
 															    "categoria_personale_scolastico"],"mean3");
 	};
 	ixmaps.VACCINI_SOMMINISTRAZIONI_ALL_NEW_SEQUENCE_MEAN_7 = function (theme, options) {
-		return ixmaps.VACCINI_COLUMNS_SEQUENCE(theme, options, ["categoria_altro",
+		return ixmaps.VACCINI_COLUMNS_SEQUENCE(theme, options, [
+																"categoria_altro",
 																"categoria_operatori_sanitari_sociosanitari",
 																"categoria_personale_non_sanitario",
 																"categoria_ospiti_rsa",
 																"categoria_over80",
+																"categoria_70_79",
+																"categoria_60_69",
+																"categoria_soggetti_fragili",
 															    "categoria_forze_armate",
 															    "categoria_personale_scolastico"],"mean7");
 	};
@@ -394,13 +402,30 @@ window.ixmaps = window.ixmaps || {};
 																"categoria_operatori_sanitari_sociosanitari"],"mean3");
 	};
 	ixmaps.VACCINI_SOMMINISTRAZIONI_ALL_NEW_SEQUENCE_REVERS_MEAN_3 = function (theme, options) {
-		return ixmaps.VACCINI_COLUMNS_SEQUENCE(theme, options, ["categoria_personale_scolastico",
+		return ixmaps.VACCINI_COLUMNS_SEQUENCE(theme, options, [
+																"categoria_personale_scolastico",
 																"categoria_forze_armate",
+																"categoria_soggetti_fragili",
+																"categoria_60_69",
+																"categoria_70_79",
 																"categoria_over80",
 																"categoria_ospiti_rsa",
 																"categoria_personale_non_sanitario",
 																"categoria_operatori_sanitari_sociosanitari",
-															    "categoria_altro"],"mean3");
+																"categoria_altro"],"mean3");
+	};
+	ixmaps.VACCINI_SOMMINISTRAZIONI_ALL_NEW_SEQUENCE_REVERS_MEAN_7 = function (theme, options) {
+		return ixmaps.VACCINI_COLUMNS_SEQUENCE(theme, options, [
+																"categoria_personale_scolastico",
+																"categoria_forze_armate",
+																"categoria_soggetti_fragili",
+																"categoria_60_69",
+																"categoria_70_79",
+																"categoria_over80",
+																"categoria_ospiti_rsa",
+																"categoria_personale_non_sanitario",
+																"categoria_operatori_sanitari_sociosanitari",
+																"categoria_altro"],"mean7");
 	};
 
 	ixmaps.VACCINI_SOMMINISTRAZIONI_PRIMA_SECONDA_SEQUENCE = function (theme, options) {
@@ -731,8 +756,12 @@ window.ixmaps = window.ixmaps || {};
 	};
 	
 	ixmaps.VACCINI_SOMMINISTRAZIONI_ALL_NEW_POPOLAZIONE_SEQUENCE_REVERS_MEAN_3 = function (theme, options) {
-		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["categoria_personale_scolastico",
+		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, [
+																"categoria_personale_scolastico",
 																"categoria_forze_armate",
+																"categoria_soggetti_fragili",
+																"categoria_60_69",
+																"categoria_70_79",
 																"categoria_over80",
 																"categoria_ospiti_rsa",
 																"categoria_personale_non_sanitario",
@@ -740,17 +769,25 @@ window.ixmaps = window.ixmaps || {};
 																"categoria_altro"],"mean3");
 	};
 	ixmaps.VACCINI_SOMMINISTRAZIONI_ALL_NEW_POPOLAZIONE_SEQUENCE_MEAN_3 = function (theme, options) {
-		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["categoria_altro",
+		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, [
+																"categoria_altro",
 																"categoria_operatori_sanitari_sociosanitari",
 																"categoria_personale_non_sanitario",
 																"categoria_ospiti_rsa",
 																"categoria_over80",
+																"categoria_70_79",
+																"categoria_60_69",
+																"categoria_soggetti_fragili",
 															    "categoria_forze_armate",
 															    "categoria_personale_scolastico"],"mean3");
 	};
 	ixmaps.VACCINI_SOMMINISTRAZIONI_ALL_NEW_POPOLAZIONE_SEQUENCE_REVERS_MEAN_7 = function (theme, options) {
-		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["categoria_personale_scolastico",
+		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, [
+																"categoria_personale_scolastico",
 																"categoria_forze_armate",
+																"categoria_soggetti_fragili",
+																"categoria_60_69",
+																"categoria_70_79",
 																"categoria_over80",
 																"categoria_ospiti_rsa",
 																"categoria_personale_non_sanitario",
@@ -758,11 +795,15 @@ window.ixmaps = window.ixmaps || {};
 																"categoria_altro"],"mean7");
 	};
 	ixmaps.VACCINI_SOMMINISTRAZIONI_ALL_NEW_POPOLAZIONE_SEQUENCE_MEAN_7 = function (theme, options) {
-		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["categoria_altro",
+		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, [
+																"categoria_altro",
 																"categoria_operatori_sanitari_sociosanitari",
 																"categoria_personale_non_sanitario",
 																"categoria_ospiti_rsa",
 																"categoria_over80",
+																"categoria_70_79",
+																"categoria_60_69",
+																"categoria_soggetti_fragili",
 															    "categoria_forze_armate",
 															    "categoria_personale_scolastico"],"mean7");
 	};
