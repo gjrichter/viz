@@ -31,7 +31,7 @@ Protezione con 1 o 2 dosi di vaccino per fasce di età maggiormente a rischio. I
 
 <iframe id="map" width="100%" height="1500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&scrollsafe=1&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_final/ixmaps_project_Vaccini_latest_70_79_percent_prima_seconda_II.json&view=[41.97582726102573,11.964111328125002],7"></iframe>
 
-
+<iframe id="map" width="100%" height="1500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&scrollsafe=1&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_final/ixmaps_project_Vaccini_latest_60_69_percent_prima_seconda_II.json&view=[41.97582726102573,11.964111328125002],7"></iframe>
 
 ## l'Immunità di gregge
 
