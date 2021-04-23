@@ -12,7 +12,7 @@
 		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "iXMaps",
 		"basemap": "white",
-		"legend": "<h1><b>COVID-19<br>Vaccinati</b> per fasce di età<br><b>70-79</b></h1><h4>Vaccinati con prima o/e seconda dose in percentuale alla popolazione della fascia d'età (1.1.2020)</h4><h4><i class='icon icon-radio-checked2' style='color:rgba(222, 202, 73,1)'/> <b>vaccinati con 1 dose</b><br><i class='icon icon-radio-checked2' style='color:RGBA(250,0,128,0.5)'/> <b>vaccinati con 2 dosi</b> </h4><h4>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.<br>Popolazione per fasce d'età al 1 gen. 2020 - ISTAT</h4>",
+		"legend": "<h1><b>COVID-19<br>Vaccinati</b> per fasce di età<br><b>70-79</b></h1><h4>Vaccinati con prima o/e seconda dose in percentuale alla popolazione della fascia d'età (1.1.2020)</h4><h4><i class='icon icon-radio-checked2' style='color:rgba(222, 202, 73,1)'/> <b>vaccinati con 1 dose</b><br><i class='icon icon-radio-checked2' style='color:RGBA(250,0,128,0.5)'/> <b>vaccinati con 2 dosi</b> </h4>",
 		"item": "",
 		"scaleParam": {
 			"lineScaling": "23.67696884508345",
