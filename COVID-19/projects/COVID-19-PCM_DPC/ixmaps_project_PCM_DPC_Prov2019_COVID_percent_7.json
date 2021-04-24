@@ -63,7 +63,7 @@
 					"7",
 					"#FFaaaa",
 					"#ff0000"],
-				"fillopacity": "0.1",
+				"fillopacity": "0.5",
 				"shadow": "false",
 				"dbtable": "PCM_DPC_COVID_LAST_PERCENT_7",
 				"dbtableType": "ext",
