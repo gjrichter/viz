@@ -404,7 +404,7 @@ $(function () {
 			"34, 167, 240",
 			"255, 180, 0",
 			"220,220,220",
-			"220,220,220",
+			"228, 134, 125",
 			"220,220,220",
 			"221, 0, 136"
 		]
@@ -2530,7 +2530,7 @@ $(function () {
 				szHtml += "<table>";
 
 				szHtml += "<thead>";
-				szHtml += "<tr style='background:white;font-size:1.5em;line-height:2em'><td></td><td style='min-width:180px;text-align:left;'>Provincia</td><td style='min-width:100px'>casi</td><td style='min-width:60px'></td><td style='min-width:200px'>prevalenza</td><td style='min-width:100px'>incidenza &darr;</td><td colspan='2' style='min-width:100px;text-align:right'>tendenza</td></tr>";
+				szHtml += "<tr style='background:white;font-size:1.5em;line-height:2em'><td></td><td style='min-width:180px;text-align:left;'>Provincia</td><td style='min-width:100px'>casi</td><td style='min-width:60px'></td><td style='min-width:100px'>incidenza &darr;</td><td colspan='2' style='min-width:100px;text-align:right'>tendenza</td></tr>";
 				szHtml += "</thead>";
 
 				szHtml += "<tbody style='height:650px;overflow:auto'>";
@@ -2584,11 +2584,16 @@ $(function () {
 					szHtml += "<td style='background:" + color + "'>" + (provinceA.length-i)+". " + "</td>";
 					szHtml += "<td style='background:" + color + ";text-align:left;'>" + provinceA[i] + "</td>";
 					szHtml += "<td style='background:" + color + ";text-align:right;'>" + nCasiA[i] + "</td>";
-					szHtml += "<td style='background:" + color + ";text-align:right;'> (+" + nDiffA[i] +")</td>";
-					szHtml += "<td style='background:" + color + ";text-align:right;'><b>" + nPrevalenzaA[i] + "</b> /<span style='color:#88s6666'>100.000&nbsp;&nbsp;</span></td>";
+					szHtml += "<td style='background:" + color + ";text-align:right;'> (+" + nDiffA[i] +")&nbsp;&nbsp;</td>";
+					//szHtml += "<td style='background:" + color + ";text-align:right;'><b>" + nPrevalenzaA[i] + "</b> /<span style='color:#88s6666'>100.000&nbsp;&nbsp;</span></td>";
 //					szHtml += "<td style='font-size:1.2em;color:#dd0088;padding-left:1em'><b>" + nIncidenzaA[i] + "</b> <span style='color:#dddddd'>/ 100.000</span></td>";
 
-					szHtml += "<td style='font-size:1.3em;color:#dd0088;padding-left:1em'><b>" + nIncidenzaA[i] + "</b></td>";
+					if (nIncidenzaA[i] > 35) {
+						color = "#dd0088";
+					}else{
+						color = "#008800";
+					}
+					szHtml += "<td style='font-size:1.3em;color:"+color+";padding-left:1em'><b>" + nIncidenzaA[i] + "</b></td>";
 					var szArrow = __getArrow(nCasiA[i] - nCasi1A[i], nCasi1A[i] - nCasi2A[i]);
 					var szArrowColor = __getArrowColor(nCasiA[i] - nCasi1A[i], nCasi1A[i] - nCasi2A[i]);
 
