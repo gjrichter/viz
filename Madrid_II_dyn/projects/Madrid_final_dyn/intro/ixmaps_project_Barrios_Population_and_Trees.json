@@ -366,7 +366,7 @@
 				"shadow": "false",
 				"dbtable": "MADRID_TREES_CLEAN_ENRICHED_BOUNDED",
 				"dbtableType": "ext",
-				"dbtableExt": "../../projects/Madrid_final_dyn/dataProvider_trees.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/Madrid_II_dyn/projects/Madrid_final_dyn/dataProvider_trees.js",
 				"datacache": "false",
 				"lookupfield": "y|x",
 				"symbols": [
