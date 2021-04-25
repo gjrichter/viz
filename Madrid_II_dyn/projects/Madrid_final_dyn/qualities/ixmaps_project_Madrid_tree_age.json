@@ -1,0 +1,104 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Dec 06 2020 00:38:59 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "5000"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "0.6"
+			},
+		"center": {
+			"lat": "40.42774089653132",
+			"lng": "-3.6474609375000004"
+			},
+		"zoom": "12"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "EDAD_FENOL",
+			"field100": "",
+			"style": {
+				"name":"trees",
+				"type": "CHART|SYMBOL|CATEGORICAL|SEQUENCE|CENTER|COMPOSECOLOR|SUBTRACTIVE|GRIDSIZE|FAST|AGGREGATE|RECT|SUM|COUNT|DTEXT|VALUEBACKGROUND",
+				"colorscheme": [
+					"#CFFF33",
+					"#94CCC8",
+					"#9A5195"],
+				"opacity": "1",
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "MADRID_TREES_CLEAN_ENRICHED_BOUNDED",
+				"dbtableExt": "../../projects/Madrid_final_lite/dataProvider_trees.js",
+				"dbtableType": "ext",
+				"datacache": "true",
+				"lookupfield": "y|x",
+				"symbols": [
+					"circle"],
+				"values": [
+					"J",
+					"M",
+					"V"],
+				"units": "m",
+				"legendunits": "trees",
+				"weights": "1",
+				"refreshtimeout": "0",
+				"scale": "0.9000000000000001",
+				"sizefield": "DIAMETRO_COPA",
+				"brightness": "1.1",
+				"titlefield": "NOMBRE_COMUN",
+				"valuescale": "1",
+				"valuedecimals": "2",
+				"aggregationscale": [
+					"1:1",
+					"0",
+					"1:5000",
+					"5px"],
+				"chartupper":"1:10000",
+				"title": "World Mercator [$item$]"
+				}
+			}],
+	"layerMask": {
+		"Seccionado_2019": {
+			"display": "none"
+			}
+		}
+	}

@@ -1,0 +1,93 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Wed Dec 02 2020 17:19:45 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "177165354"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panhidden":"false"
+			},
+		"center": {
+			"lat": "40.425568425617364",
+			"lng": "-3.671472072601319"
+			},
+		"zoom": "15"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SUM|SIMPLELEGEND",
+				"colorscheme": [
+					"green"],
+				"opacity": "0.5",
+				"shadow": "false",
+				"dbtable": "treeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Madrid/trees_madrid.csv.gz",
+				"dbtableType": "csv",
+				"dbtableExt": "../../projects/Madrid_final/process_trees_doubles.js",
+				"datacache": "true",
+				"lookupfield": "y|x",
+				"showdata":"true",
+				"symbols": [
+					"circle"],
+				"label":"multiple database presence",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0.3",
+				"linecolor": [
+					"RGB(0,138,86)"],
+				"valuescale": "1",
+				"valuedecimals": "2",
+				"title": "Trees with double serial numbers",
+				"snippet": "these trees identified by SERIALNUM are at least 2 times in the data set",
+				"splash":"... scanning the data for double 'SERIALNUM' ..."
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

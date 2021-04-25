@@ -1,0 +1,107 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Fri Dec 04 2020 10:27:41 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "10000"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "5000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "40.450147553355905",
+			"lng": "-3.677909374237061"
+			},
+		"zoom": "15"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "age (estimated)",
+			"field100": "",
+			"style": {
+				"name":"trees",
+				"type": "CHART|BUBBLE|SIZE|COUNT|GLOW|GAUGE|HORZ|COMPACTLEGEND",
+				"colorscheme": [
+					"11",
+					"#CFFF33",
+					"#9A5195",
+					"3colors",
+					"#94CCC8"],
+				"rangescale":"0,10,20,30,40,50,60,70,80,100,150",
+				"label":[
+					"0-9",
+					"10-19",
+					"20-29",
+					"30-39",
+					"40-49",
+					"50-59",
+					"60-69",
+					"70-79",
+					"80-89",
+					"90-99",
+					"100-150"
+					],
+				"fillopacity": "1",
+				"linecolor":"black",
+				"linewidth":"0.5",
+				"shadow": "false",
+				"dbtable": "MADRID_TREES_CLEAN_ENRICHED_BOUNDED",
+				"dbtableExt": "../../projects/Madrid_final_lite/dataProvider_trees.js",
+				"dbtableType": "ext",
+				"datacache": "true",
+				"lookupfield": "y|x",
+				"child": "true",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0.5120000000000001",
+				"titlefield": "NOMBRE_COMUN",
+				"valuescale": "1",
+				"fadenegative": "1",
+				"maxcharts": "50000",
+				"chartupper":"1:10000",
+				"title": "Tree age (estimated)"
+				}
+			}],
+	"layerMask": {
+		}
+	}

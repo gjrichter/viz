@@ -1,0 +1,146 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sat Nov 28 2020 22:21:53 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "white",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "13516"
+			},
+		"options": {
+			"featurescaling": "normal",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "40.420292132688964",
+			"lng": "-3.637332916259766"
+			},
+		"zoom": "12"
+		},
+	"themes": [{
+			"layer": "barrios",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "barrios",
+				"dbtableUrl": "../../data/Madrid/Barrios/Barrios.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "CODBAR",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "3",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Barrios"
+				}
+			},{
+			"layer": "barrios",
+			"field": "Población densidad (hab./Ha.)",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|QUANTILE",
+				"colorscheme": [
+					"7",
+					"#ffeeee",
+					"#dd0000",
+					"dynamic",
+					"cold"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "MADRID_BARRIOS_ALL",
+				"dbtableUrl": "../../data/Madrid/Barrios/panel_indicadores_distritos_barrios.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "../../projects/Madrid_work/dataProvider_barrios.js",
+				"datacache": "false",
+				"lookupfield": "cod_barrio",
+				"lookupdigits": "3",
+				"normalsizevalue":"10000",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Población densidad (hab./Ha.)"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "DIAMETRO_COPA",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|AUTOSIZE|FAST|AGGREGATE|RECT|SUM|DOPACITY",
+				"colorscheme": [
+					"1",
+					"RGB(254,253,223)",
+					"RGB(0,138,86)",
+					"dynamic",
+					"warm"],
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "../../data/Madrid/trees_madrid/trees_madrid.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "y|x",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1.1",
+				"dopacitypow": "2",
+				"dopacityscale": "1.9405980000000005",
+				"valuescale": "2",
+				"valuedecimals": "2",
+				"gridwidthpx": "10",
+				"title": "World Mercator [$item$]"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

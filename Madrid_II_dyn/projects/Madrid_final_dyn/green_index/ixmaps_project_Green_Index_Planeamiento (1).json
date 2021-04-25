@@ -1,0 +1,114 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Fri Dec 11 2020 21:00:13 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Madrid/NDVI/NDVI_II.svgz",
+		"attribution": "iXMaps",
+		"basemap": "OpenStreetMap - Osmarenderer",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "5000"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "40.4499189517136",
+			"lng": "-3.6749696731567387"
+			},
+		"zoom": "17"
+		},
+	"themes": [{
+			"layer": "Planeamiento",
+			"field": "NDVI_MED",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETHE|QUANTILE",
+				"colorscheme": [
+					"7",
+					"#FF4800",
+					"#7CB832",
+					"auto",
+					"#F7FA7A"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "NDVI_DATA",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Madrid/Planeamiento.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "ID_SUBPARC",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Green Index Planeamiento"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "crown",
+			"field100": "",
+			"style": {
+				"name":"trees",
+				"type": "CHART|SYMBOL|QUANTILE|AGGREGATE|RELOCATE|AUTOSIZE",
+				"colorscheme": [
+					"#006A46"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "MADRID_TREES_CLEAN_ENRICHED_BOUNDED",
+				"dbtableExt": "../../projects/Madrid_final/dataProvider_trees.js",
+				"dbtableType": "ext",
+				"datacache": "true",
+				"lookupfield": "y|x",
+				"showdata": "true",
+				"symbols": [
+					"circle"],
+				"units": "&#x33A1;",
+				"refreshtimeout": "0",
+				"scale": "2.44140625",
+				"dopacitypow": "1",
+				"dopacityscale": "10",
+				"linecolor": [
+					"none"],
+				"valuescale": "1",
+				"fadenegative": "1",
+				"gridwidthpx": "5",
+				"title": "Trees by crown size &#x33A1;"
+				}
+			}],
+	"layerMask": {
+		}
+	}

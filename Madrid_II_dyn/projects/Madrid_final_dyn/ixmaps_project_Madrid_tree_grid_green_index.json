@@ -1,0 +1,96 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sat Nov 28 2020 09:46:09 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "white",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "177165354"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "40.443615771577655",
+			"lng": "-3.660507202148438"
+			},
+		"zoom": "13",
+		"localize": {
+			"aggregated": "&#9716;",
+			"processing data":""
+			}
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "DIAMETRO_COPA",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|AUTOSIZE|FAST|AGGREGATE|RECT|SUM|DOPACITY|USERLEGEND|FORCE",
+				"colorscheme": [
+					"1",
+					"RGB(254,253,223)",
+					"RGB(0,138,86)",
+					"dynamic",
+					"warm"],
+				"shadow": "false",
+				"dbtable": "MADRID_TREES_CLEAN_ENRICHED_BOUNDED",
+				"dbtableExt": "../../projects/Madrid_final/dataProvider_trees.js",
+				"dbtableType": "ext",
+				"datacache": "true",
+				"lookupfield": "y|x",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1.1",
+				"dopacitypow": "2",
+				"dopacityscale": "2",
+				"valuescale": "2",
+				"valuedecimals": "2",
+				"gridwidthpx": "10",
+				"aggregationlower":"1:10000",
+				"title": "World Mercator [$item$]"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

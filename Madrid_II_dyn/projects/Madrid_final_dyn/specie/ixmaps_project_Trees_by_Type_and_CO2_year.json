@@ -1,0 +1,104 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Dec 28 2020 23:22:33 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "ArcGIS - Topo",
+		"legend": "",
+		"item": "../../projects/Madrid_final/specie/item_tree.html",
+		"scaleParam": {
+			"lineScaling": "0.13348388671875",
+			"normalSizeScale": "13516"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "2000",
+			"mapopacity": "1",
+			"basemapopacity": "0.4"
+			},
+		"center": {
+			"lat": "40.435972781090264",
+			"lng": "-3.6999893188476567"
+			},
+		"zoom": "12",
+		"localize": {
+			"aggregated": "&#9716;",
+			"loading data ...": "data &#x2B73;"
+			}
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "NOMBRE_COMUN",
+			"field100": "",
+			"style": {
+				"type": "CHART|GLOW|SYMBOL|EXACT|SEQUENCE|CENTER|SORT|UP|FAST|AGGREGATE|SUM|RELOCATE|SIZE|CATEGORICAL|LEGEND",
+				"colorscheme": [
+					"user"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "MADRID_TREES_CLEAN_ENRICHED_BOUNDED",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/Madrid_final/dataProvider_trees.js",
+				"datacache": "true",
+				"lookupfield": "y|x",
+				"showdata": "true",
+				"child": "true",
+				"symbols": [
+					"circle"],
+				"units": "kg",
+				"legendunits": " kg/year",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1000",
+				"scale": "0.4184356219560003",
+				"sizefield": "CO2/year (estimated)",
+				"dopacitypow": "2",
+				"dopacityscale": "2",
+				"valuescale": "1",
+				"fadenegative": "1",
+				"aggregationscale": [
+					"1:1",
+					"1",
+					"1:5000",
+					"3px",
+					"1:50000",
+					"5px"],
+				"title": "CO<sub>2</sub> capturing by tree specie"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

@@ -1,0 +1,95 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Dec 13 2020 22:57:38 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "177165354"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "40.46902083440997",
+			"lng": "-3.7133789062500004"
+			},
+		"zoom": "12"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "PERIMETRO",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SUM|SIMPLELEGEND|COUNT|VALUES",
+				"colorscheme": [
+					"green"],
+				"opacity": "0.5",
+				"shadow": "false",
+				"filter": "WHERE PERIMETRO > 4",
+				"dbtable": "treeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Madrid/trees_madrid.csv.gz",
+				"dbtableType": "csv",
+				"dbtableExt": "../../projects/Madrid_final/process_trees.js",
+				"datacache": "true",
+				"lookupfield": "y|x",
+				"showdata": "true",
+				"symbols": [
+					"circle"],
+				"label": [
+					"large perimeters"],
+				"units": "m",
+				"refreshtimeout": "0",
+				"normalsizevalue": "10",
+				"scale": "1",
+				"linecolor": [
+					"RGB(0,138,86)"],
+				"valuescale": "1",
+				"valuedecimals": "2",
+				"title": "Trees with large perimeter",
+				"snippet": "these trees have perimeter above 4 meters",
+				"splash": "... scanning the data ..."
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

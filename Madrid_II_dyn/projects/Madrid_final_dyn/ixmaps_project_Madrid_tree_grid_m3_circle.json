@@ -1,0 +1,150 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sat Nov 28 2020 22:52:18 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "white",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "13516"
+			},
+		"options": {
+			"featurescaling": "normal",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "40.40552284663898",
+			"lng": "-3.6731243133544926"
+			},
+		"zoom": "13"
+		},
+	"themes": [{
+			"layer": "infraestructura_ciclistica",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND",
+				"colorscheme": [
+					"RGB(64, 64, 199)"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "infraestructura_ciclistica",
+				"dbtableUrl": "../../data/Madrid/Infraestructura_Ciclista/infraestrcutura_Ciclista.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "OBJECTID",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"RGB(64, 164, 199)"],
+				"linewidth": "3",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Infraestructura Ciclista"
+				}
+			},{
+			"layer": "infraestructura_ciclistica",
+			"field": "TIPOLOGÍA",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|CATEGORICAL",
+				"colorscheme": [
+					"RGB(64, 164, 199)",
+					"RGB(64, 199, 144)"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "infraestructura_ciclistica",
+				"dbtableUrl": "../../data/Madrid/Infraestructura_Ciclista/infraestrcutura_Ciclista.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"lookupfield": "OBJECTID",
+				"values": [
+					"VÍA USO COMPARTIDO",
+					"VÍA EXCLUSIVA BICI",
+					"VÍA PREFERENTE BICI",
+					"ANILLO VERDE CICLISTA",
+					"GIROS Y SENTIDOS"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"dopacityscale": "0",
+				"linecolor": [
+					"RGB(64, 164, 199)"],
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Infraestructura Ciclista"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "DIAMETRO_COPA",
+			"field100": "ALTURA",
+			"style": {
+				"type": "CHART|SYMBOL|PRODUCT||SIZE|FAST|AGGREGATE|RECT|SUM",
+				"colorscheme": [
+					"1",
+					"RGB(254,253,223)",
+					"RGB(0,138,86)",
+					"dynamic",
+					"warm"],
+				"fillopacity": "0.2962962962962963",
+				"shadow": "false",
+				"dbtable": "treeDataObj",
+				"dbtableUrl": "../../data/Madrid/trees_madrid/trees_madrid.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "y|x",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "5.9604644775390625",
+				"dopacitypow": "2",
+				"dopacityscale": "0.574992",
+				"valuescale": "2",
+				"valuedecimals": "2",
+				"gridwidthpx": "50",
+				"title": "World Mercator [$item$]"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

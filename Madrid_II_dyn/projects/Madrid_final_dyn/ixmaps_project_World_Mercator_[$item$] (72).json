@@ -1,0 +1,124 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Dec 06 2020 20:20:18 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Madrid/seccionado_2019.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CloudMade - white",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "5000"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "40.41323464818589",
+			"lng": "-3.6392211914062504"
+			},
+		"zoom": "12"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SIZEP1|FAST|AGGREGATE|RELOCATE|RECT|SUM|DTEXT|VALUEBACKGROUND",
+				"colorscheme": [
+					"1",
+					"#FEFDDF",
+					"#00308F",
+					"dynamic",
+					"warm"],
+				"opacity": "1",
+				"fillopacity": "0.4444444444444444",
+				"shadow": "true",
+				"dbtable": "treeDataObj",
+				"dbtableUrl": "../../data/Madrid/trees_madrid/trees_madrid.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "../../projects/Madrid/process_trees.js",
+				"datacache": "true",
+				"lookupfield": "y|x",
+				"symbols": [
+					"https://s3.eu-west-1.amazonaws.com/symbols.ixmaps.com/tree_2-svgrepo-com.svg"],
+				"units": "",
+				"legendunits": "               Mm3",
+				"weights": "1",
+				"refreshtimeout": "0",
+				"scale": "3.75",
+				"linecolor": [
+					"none"],
+				"titlefield": "NOMBRE_COMUN",
+				"valuescale": "1",
+				"valuedecimals": "2",
+				"gridwidthpx": "31.25",
+				"title": "World Mercator [$item$]"
+				}
+			},{
+			"layer": "Seccionado_2019",
+			"field": "totale",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETHE|QUANTILE|DENSITY|ZEROISVALUE|DOPACITY",
+				"colorscheme": [
+					"9",
+					"#FEFDDF",
+					"#888A56",
+					"dynamic",
+					"warm"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Madrid/Popolation_Seccion_202011.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "COD_DIST_SECCION",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"alphafield": "totale",
+				"alphafield100": "$density$",
+				"dopacitypow": "2",
+				"dopacityscale": "3.7252902984619167",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Seccionado_2019 [$item$]"
+				}
+			}],
+	"layerMask": {
+		}
+	}

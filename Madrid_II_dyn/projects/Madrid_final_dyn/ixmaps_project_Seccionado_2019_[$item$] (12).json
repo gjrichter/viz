@@ -1,0 +1,150 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Dec 06 2020 11:46:02 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Madrid/seccionado_2019.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CloudMade - white",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "5000"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "0.6"
+			},
+		"center": {
+			"lat": "40.40957492033851",
+			"lng": "-3.63424301147461"
+			},
+		"zoom": "12"
+		},
+	"themes": [{
+			"layer": "Seccionado_2019",
+			"field": "totale",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETHE|QUANTILE|DENSITY|ZEROISVALUE|DOPACITY",
+				"colorscheme": [
+					"7",
+					"#80AF9B",
+					"#FF3D62",
+					"3colors",
+					"#FBCDAB"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Madrid/Popolation_Seccion_202011.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "COD_DIST_SECCION",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"alphafield": "totale",
+				"alphafield100": "$density$",
+				"dopacitypow": "2.5",
+				"dopacityscale": "0.6250000000000006",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Seccionado_2019 [$item$]"
+				}
+			},{
+			"layer": "idrografia",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND",
+				"colorscheme": [
+					"RGB(64, 64, 199)"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "idrografia",
+				"dbtableUrl": "../../data/Madrid/Rio_Manzanares/idrografia.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "CDID",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"RGB(64, 164, 199)"],
+				"linewidth": "5",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Idrografia"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "weight_ln",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SIZEP1|FAST|AGGREGATE|RELOCATE|RECT|SUM|DTEXT|VALUEBACKGROUND",
+				"colorscheme": [
+					"1",
+					"#FEFDDF",
+					"#008A56",
+					"dynamic",
+					"warm"],
+				"opacity": "1",
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "MADRID_TREES_CLEAN_ENRICHED_BOUNDED",
+				"dbtableExt": "../../projects/Madrid_final/dataProvider_trees.js",
+				"dbtableType": "ext",
+				"datacache": "true",
+				"lookupfield": "y|x",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"legendunits": "t",
+				"weights": "0.001",
+				"refreshtimeout": "0",
+				"scale": "1.5",
+				"linecolor": [
+					"none"],
+				"titlefield": "NOMBRE_COMUN",
+				"valuescale": "1",
+				"valuedecimals": "2",
+				"gridwidthpx": "10",
+				"aggregationlower":"1:5000",
+				"title": "World Mercator [$item$]"
+				}
+			}],
+	"layerMask": {
+		}
+	}

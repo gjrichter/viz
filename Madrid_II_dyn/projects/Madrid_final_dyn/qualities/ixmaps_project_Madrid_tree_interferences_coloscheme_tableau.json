@@ -1,0 +1,101 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Nov 30 2020 10:22:16 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Dark matter",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "10000"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "1000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "40.44147647505906",
+			"lng": "-3.6962985992431645"
+			},
+		"zoom": "15"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "TIPO_INTERFERENCIA",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|CATEGORICAL|AGGREGATE|SUM|RELOCATE|SIZE|COUNT|GLOW",
+				"colorscheme": [
+					"9",
+					"tableau"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"showdata":"true",
+				"dbtable": "MADRID_TREES_CLEAN_ENRICHED_BOUNDED",
+				"dbtableExt": "../../projects/Madrid_final/dataProvider_trees.js",
+				"dbtableType": "ext",
+				"datacache": "true",
+				"lookupfield": "y|x",
+				"child": "true",
+				"symbols": [
+					"circle"],
+				"values": [
+					"NO_ALTA_TENSION",
+					"EDIFICIOS",
+					"FAROLAS",
+					"OTROS",
+					"INVASION_CALZADA",
+					"TRANSITO_PEATONAL",
+					"SENALES",
+					"ALTA_TENSION",
+					"VISIBILIDAD_TRAFICO"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "10000",
+				"scale": "1",
+				"sizefield": "PERIMETRO",
+				"dopacitypow": "2",
+				"dopacityscale": "2",
+				"titlefield": "NOMBRE_COMUN",
+				"sizefield":"crown",
+				"valuescale": "1",
+				"fadenegative": "1",
+				"title": "World Mercator [$item$]"
+				}
+			}],
+	"layerMask": {
+		}
+	}

@@ -1,0 +1,182 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Fri Jan 15 2021 21:55:32 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "13516"
+			},
+		"options": {
+			"featurescaling": "normal",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "40.41357773746748",
+			"lng": "-3.7051177024841313"
+			},
+		"zoom": "16"
+		},
+	"themes": [{
+			"layer": "distrito",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "0.10697706201323787",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "distrito",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Madrid/Distrito.geojson.gz",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "CODDISTRIT",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"red"],
+				"linewidth": "3",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Distritos"
+				}
+			},{
+			"layer": "distrito",
+			"field": "CODDISTRIT",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "0.10697706201323787",
+				"opacity": "0.5",
+				"shadow": "false",
+				"dbtable": "distrito",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Madrid/Distrito.geojson.gz",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"lookupfield": "CODDISTRIT",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "5",
+				"linecolor": [
+					"red"],
+				"linewidth": "0.5",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "choropleth",
+				"title": "Distritos"
+				}
+			},{
+			"layer": "distrito",
+			"field": "CODDISTRIT",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|NOSIZE|VALUES",
+				"colorscheme": [
+					"white"],
+				"fillopacity": "0.10697706201323787",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "distrito",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Madrid/Distrito.geojson.gz",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"lookupfield": "CODDISTRIT",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "5",
+				"linecolor": [
+					"red"],
+				"linewidth": "0.5",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "distritos",
+				"title": "Distritos"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "CO2/year (estimated)",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SIZE|AGGREGATE|DOPACITY|RECT|SUM|COUNT|VALUES",
+				"colorscheme": [
+					"1",
+					"RGB(254,253,223)",
+					"RGB(80,138,86)",
+					"dynamic",
+					"warm"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "MADRID_TREES_CLEAN_ENRICHED_BOUNDED",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/Madrid_final_lite/dataProvider_trees.js",
+				"datacache": "false",
+				"lookupfield": "y|x",
+				"symbols": [
+					"circle"],
+				"units": "kg",
+				"legendunits": "kg/year",
+				"showdata":"true",
+				"refreshtimeout": "0",
+				"scale": "0.5",
+				"textcolor": "RGB(0,138,86)",
+				"linecolor": [
+					"RGB(0,138,86)"],
+				"linewidth": "0",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"aggregationscale": [
+					"1:1",
+					"1px",
+					"1:5000",
+					"5px"],
+				"name": "trees",
+				"title": "CO2 sequestration / year"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

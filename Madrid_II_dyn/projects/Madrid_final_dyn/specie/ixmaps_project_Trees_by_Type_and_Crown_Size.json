@@ -1,0 +1,101 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Thu Dec 10 2020 14:58:40 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "",
+		"attribution": "iXMaps",
+		"basemap": "ArcGIS - Topo",
+		"legend": "",
+		"item": "../../projects/Madrid_final/specie/item_tree.html",
+		"search":"Madrid",
+		"scaleParam": {
+			"lineScaling": "0.13348388671875",
+			"normalSizeScale": "13516"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "2000",
+			"mapopacity": "1",
+			"basemapopacity": "0.4"
+			},
+		"center": {
+			"lat": "40.42632389808495",
+			"lng": "-3.6330252885818486"
+			},
+		"zoom": "17",
+		"localize": {
+			"aggregated": "&#9716;",
+			"loading data ...":"data &#x2B73;"
+			}
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "NOMBRE_COMUN",
+			"field100": "",
+			"style": {
+				"name":"trees",
+				"type": "CHART|GLOW|SYMBOL|EXACT|SEQUENCE|CENTER|SORT|UP|FAST|AGGREGATE|SUM|RELOCATE|SIZE|CATEGORICAL|COUNT|LEGEND",
+				"colorscheme": [
+					"user"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "MADRID_TREES_CLEAN_ENRICHED_BOUNDED",
+				"dbtableExt": "../../projects/Madrid_final_lite/dataProvider_trees.js",
+				"dbtableType": "ext",
+				"datacache": "false",
+				"lookupfield": "y|x",
+				"showdata": "true",
+				"child": "true",
+				"symbols": [
+					"circle"],
+				"units": "m&#0178;",
+				"refreshtimeout": "0",
+				"normalsizevalue": "10000",
+				"scale": "1",
+				"sizefield": "crown",
+				"dopacitypow": "2",
+				"dopacityscale": "2",
+				"valuescale": "1",
+				"fadenegative": "1",
+				"aggregationscale":[
+					"1:1","1",
+					"1:5000","3px",
+					"1:50000","5px"
+				],
+				"chartupper":"1:10000",
+				"title": "Trees by Type and Crown Size"
+				}
+			}],
+	"layerMask": {
+		}
+	}
