@@ -70,7 +70,7 @@
 				"fillopacity": "0.7",
 				"shadow": "false",
 				"dbtable": "MADRID_TREES_CLEAN_ENRICHED_BOUNDED",
-				"dbtableExt": "../../projects/Madrid_final_lite/dataProvider_trees.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/Madrid_II_dyn/projects/Madrid_final_dyn/dataProvider_trees.js",
 				"dbtableType": "ext",
 				"datacache": "false",
 				"lookupfield": "y|x",
