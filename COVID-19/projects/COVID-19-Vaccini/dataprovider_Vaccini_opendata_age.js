@@ -459,6 +459,7 @@ window.ixmaps = window.ixmaps || {};
 																"70-79",
 																"80-89",
 																"90+"],"mean7");
+	};
 	
 
 })();
