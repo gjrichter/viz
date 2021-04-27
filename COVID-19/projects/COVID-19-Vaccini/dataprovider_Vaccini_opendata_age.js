@@ -8,7 +8,38 @@
 window.ixmaps = window.ixmaps || {};
 (function () {
 
-    ixmaps.VACCINI_SOMMINISTRAZIONI_AGE_LAST = function (theme,options) {
+    var __mean_3 = function(table) { 
+		
+		// make mean of 3 days
+		var records = table.records;
+		for ( var r=0; r<records.length; r++ ){
+			for ( var c=records[r].length-1; c>=4; c--){
+				records[r][c] = ((Number(records[r][c])+Number(records[r][c-1])+Number(records[r][c-2]))/3).toFixed(2);
+			}
+		}
+		return table;
+    }; 
+
+    var __mean_7 = function(table) { 
+		
+		// make mean of 7 days
+		var records = table.records;
+		for ( var r=0; r<records.length; r++ ){
+			for ( var c=records[r].length-1; c>=8; c--){
+				records[r][c] = ((Number(records[r][c])+
+								  Number(records[r][c-1])+
+								  Number(records[r][c-2])+
+								  Number(records[r][c-3])+
+								  Number(records[r][c-4])+
+								  Number(records[r][c-5])+
+								  Number(records[r][c-6])
+								 )/7).toFixed(2);
+			}
+		}
+		return table;
+    }; 
+
+	ixmaps.VACCINI_SOMMINISTRAZIONI_AGE_LAST = function (theme,options) {
 
 		var szUrl = "https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/master/dati/somministrazioni-vaccini-latest.csv";
 
