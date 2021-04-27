@@ -90,10 +90,10 @@
 				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|STACKED|FIXSIZE|GRID|BOX|LONGTITLE|DTEXT|SIMPLELEGEND|ZEROISVALUE",
 				"colorscheme": [
 					"8",
-					"#42822A",
-					"#FF6801",
+					"#CFFF33",
+					"#9A5195",
 					"3colors",
-					"#E0E4CB"],
+					"#94CCC8"],
 				"fillopacity": "0.9",
 				"shadow": "false",
 				"dbtable": "VACCINI_SOMMINISTRAZIONI_ALL_NEW_POPOLAZIONE_SEQUENCE_REVERS_MEAN_7_AGE",
