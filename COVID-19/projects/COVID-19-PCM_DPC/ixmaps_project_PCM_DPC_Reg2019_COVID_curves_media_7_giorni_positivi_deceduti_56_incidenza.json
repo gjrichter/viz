@@ -12,7 +12,7 @@
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
 		"attribution": "iXMaps",
 		"basemap": "ArcGIS - Light Gray Base",
-		"legend": "<div style='color:#777777'><h1></h1><h1>COVID-19 <br> <b style='color:rgba(200, 0, 90,1)'>nuovi positivi </b> e <b>deceduti</b> <br> ultimi <b>56</b> days</h1><h4>I positivi sono misurati in nuovi casi per 100.000 abitanti accumulati per 7 giorni, i deceduti in casi giornalieri per 100.000 abitanti con media mobile di 7 giorni. Nei grafici le due curve hanno scale diverse per poter confrontarli</h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
+		"legend": "<div style='color:#777777'><h1></h1><h1>COVID-19 <br> <b style='color:rgba(200, 0, 90,1)'>incidenza cumulativa </b> e <b>deceduti</b> <br> ultimi <b>56</b> days</h1><h4>I <b>positivi</b> sono misurati in <b>nuovi casi</b> per <b>100.000</b> abitanti <b>accumulati</b> per <b>7 giorni</b>, i <b>deceduti</b>in casi <b>giornalieri</b> per <b>100.000</b> abitanti con media mobile di 7 giorni. <br><b>Nota bene:</b> le due curve hanno scale diverse per poter confrontarli</h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
 		"item": "html",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
