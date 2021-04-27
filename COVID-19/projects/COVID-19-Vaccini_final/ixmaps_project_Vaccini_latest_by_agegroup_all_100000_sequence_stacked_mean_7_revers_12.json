@@ -90,7 +90,7 @@
 				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|STACKED|FIXSIZE|GRID|BOX|LONGTITLE|DTEXT|SIMPLELEGEND|ZEROISVALUE",
 				"colorscheme": [
 					"8",
-					"#22D28A",
+					"#42822A",
 					"#FF6801",
 					"3colors",
 					"#E0E4CB"],
