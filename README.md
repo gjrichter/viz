@@ -10,7 +10,7 @@ featured:
 
 [COVID-19 incidenze Regioni](https://gjrichter.github.io/viz/COVID-19/gallery/PCM_DCP_incidenze/)
 
-[COVID-19 CSSE PCM_DPC](https://gjrichter.github.io/viz/COVID-19/gallery/CSSE_PCM_DPC/)
+[COVID-19 CSSE - PCM_DPC](https://gjrichter.github.io/viz/COVID-19/gallery/CSSE - PCM_DPC/)
 
 
 
