@@ -94,7 +94,7 @@
 					"#9A5195",
 					"3colors",
 					"#94CCC8"],
-				"fillopacity": "0.9",
+				"fillopacity": "0.7",
 				"shadow": "false",
 				"dbtable": "VACCINI_SOMMINISTRAZIONI_ALL_NEW_POPOLAZIONE_SEQUENCE_REVERS_MEAN_7_AGE",
 				"dbtableType": "ext",
