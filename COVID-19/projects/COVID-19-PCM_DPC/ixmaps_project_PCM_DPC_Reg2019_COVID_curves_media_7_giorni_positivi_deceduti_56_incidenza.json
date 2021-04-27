@@ -131,6 +131,7 @@
 				"bordercolor": "none",
 				"boxopacity": "0",
 				"boxmargin": "10",
+				"align": "23right",
 				"titlefield": "denominazione_regione",
 				"boxupper": "1:10000000",
 				"valuescale": "1",
