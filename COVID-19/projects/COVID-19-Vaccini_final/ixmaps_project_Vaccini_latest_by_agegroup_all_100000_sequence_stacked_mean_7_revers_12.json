@@ -1,0 +1,145 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Wed Apr 07 2021 17:37:26 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "white",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"lineScaling": "23.67696884508345",
+			"labelScaling": "1.5",
+			"normalSizeScale": "13841043"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "42.78733853171998",
+			"lng": "14.0020751953125"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "nuts2",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"rgb(231, 231, 231)"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "regioni",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/nuts/main/processing/NUTS2_g.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "NUTS2",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "0.5",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "features",
+				"title": "Italy nuts2"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "totale",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|STACKED|FIXSIZE|GRID|BOX|LONGTITLE|DTEXT|SIMPLELEGEND|ZEROISVALUE",
+				"colorscheme": [
+					"8",
+					"#22D28A",
+					"#FF6801",
+					"3colors",
+					"#E0E4CB"],
+				"fillopacity": "0.9",
+				"shadow": "false",
+				"dbtable": "VACCINI_SOMMINISTRAZIONI_ALL_NEW_POPOLAZIONE_SEQUENCE_REVERS_MEAN_7_AGE",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-Vaccini/dataprovider_Vaccini_age.js",
+				"datacache": "true",
+				"lookupfield": "codice_NUTS2",
+				"symbols": [
+					"circle"],
+				"label": [
+					"20-29",
+					"30-39",
+					"40-49",
+					"50-59",
+					"60-69",
+					"70-79",
+					"80-89",
+					"90+"],
+				"units": "dosi/100.000 abitanti,",
+				"units100": "",
+				"align": "23right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "50000",
+				"scale": "0.05",
+				"rangescale": "12",
+				"maxvalue": "1000",
+				"highvalue": "833",
+				"linewidth": "5",
+				"bordercolor": "none",
+				"boxopacity": "0",
+				"titlefield": "nome_area",
+				"titleupper": "1:1000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"gridx": "8",
+				"evidence": "isolate_gray",
+				"title": "COVID-19",
+				"snippet":"Vaccini somministrati per fascia di età",
+				"splash":"elaborando dati ...",
+				"description": "<h5><b>fonte:</b> <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h5><br><h5><a class='btn btn-default theme-tool-button' style='color:#0088aa;' href='javascript:ixmaps.legend.showItemGrid()'>visualizzazione a griglia <span class='icon icon-table2' style='font-size:18px;vertical-align:-10%;'></span></a></h5>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
