@@ -124,6 +124,7 @@
 				"normalsizevalue": "0.8",
 				"scale": "0.05",
 				"rangescale": "1",
+				"align": "23right",
 				"minvalue": "0",
 				"maxvalue": "auto",
 				"textcolor": "#880000",
