@@ -17,23 +17,9 @@ Le linee tratteggiate indicano le percentuali di 25, 50 e 75 raggiunti rispetto 
 
 <iframe id="map" width="100%" height="1500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&scrollsafe=1&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_final/ixmaps_project_Vaccini_sum_dosi_100000_sequence_mean_7_burst.json&view=[41.97582726102573,11.964111328125002],7"></iframe>
 
-## la protezione delle fasce età maggiormente a rischio 
+## la protezione delle fasce età 
 
-Protezione con 1 o 2 dosi di vaccino per fasce di età maggiormente a rischio. In seguito la mappatura per le fasce di 80-89 anni e 70-79 anni.
-
-# 80-89
-
-
-
-<iframe id="map" width="100%" height="1500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&scrollsafe=1&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_final/ixmaps_project_Vaccini_latest_80_89_percent_prima_seconda_II.json&view=[41.97582726102573,11.964111328125002],7"></iframe>
-
-# 70-79
-
-<iframe id="map" width="100%" height="1500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&scrollsafe=1&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_final/ixmaps_project_Vaccini_latest_70_79_percent_prima_seconda_II.json&view=[41.97582726102573,11.964111328125002],7"></iframe>
-
-# 60-69
-
-<iframe id="map" width="100%" height="1500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&scrollsafe=1&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_final/ixmaps_project_Vaccini_latest_60_69_percent_prima_seconda_II.json&view=[41.97582726102573,11.964111328125002],7"></iframe>
+Protezione con 1 o 2 dosi di vaccino per fasce di etài.
 
 ## l'Immunità di gregge
 
@@ -68,7 +54,7 @@ Cliccando sulle curve o attivando la '**visualizzazione a griglia**' questo **tr
 
 
 
-
+<iframe id="map" width="100%" height="1500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&scrollsafe=1&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_final/ixmaps_project_Vaccini_latest_by_agegroup_all_100000_sequence_stacked_mean_7_revers_12.json&view=[41.97582726102573,11.964111328125002],7"></iframe>
 
 # Vaccino nel modo  
 
@@ -79,7 +65,6 @@ Grafici realizzato da
 
 
 <iframe src="https://ourworldindata.org/grapher/covid-vaccination-doses-per-capita?tab=chart&stackMode=absolute&time=latest..2021-01-06&region=World" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
-
 
 
 
