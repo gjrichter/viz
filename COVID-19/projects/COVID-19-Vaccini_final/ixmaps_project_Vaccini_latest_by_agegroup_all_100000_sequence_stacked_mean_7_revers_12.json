@@ -98,7 +98,7 @@
 				"shadow": "false",
 				"dbtable": "VACCINI_SOMMINISTRAZIONI_ALL_NEW_POPOLAZIONE_SEQUENCE_REVERS_MEAN_7_AGE",
 				"dbtableType": "ext",
-				"dbtableExt": "../../projects/COVID-19-Vaccini/dataprovider_Vaccini_age.js",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata_age.js",
 				"datacache": "true",
 				"lookupfield": "codice_NUTS2",
 				"symbols": [
