@@ -1,0 +1,159 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Thu Oct 01 2020 17:53:49 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
+		"attribution": "iXMaps",
+		"basemap": "ArcGIS - Light Gray Base",
+		"legend": "<div style='color:#777777'><h1></h1><h1>COVID-19 <br> <b style='color:rgba(200, 0, 90,1)'>incidenza cumulativa </b> e <b style='color:rgba(255, 120, 0,1)'>saturazione terapia intensiva</b> <br> ultimi <b>56</b> days</h1><h4>Media mobile di 7 giorni. Ogni curva ha la sua scala per poter confrontarli </h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div></div>",
+		"item": "html",
+		"scaleParam": {
+			"lineScaling": "4.213991769547325",
+			"normalSizeScale": "4638029"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"worksilent": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.8899753738369",
+			"lng": "11.228027343750002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "Prov2019_nome",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|TITLE|FIXSIZE|LONGTITLE|COMPATIBLE|SUM|NOLEGEND|NOOUTLIER",
+				"colorscheme": [
+					"100",
+					"#ff6600",
+					"#ff6600",
+					"#ff6600"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_SEQUENCE_MEAN_7_INTENSIVE_PERCENT_MAX_56",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "false",
+				"itemfield": "codice_regione",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"units": "deceduti",
+				"refreshtimeout": "0",
+				"normalsizevalue": "0.8",
+				"scale": "0.05",
+				"rangescale": "1",
+				"minvalue": "0",
+				"maxvalue": "auto",
+				"textcolor": "#880000",
+				"linewidth": "55",
+				"bordercolor": "none",
+				"boxopacity": "0",
+				"boxmargin": "10",
+				"titlefield": "denominazione_regione",
+				"boxupper": "1:10000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"aggregationscale": [
+					"1:1",
+					"150px",
+					"1:1000000",
+					"100px"],
+				"aggregationlower": "1:2500000",
+				"name": "curve",
+				"title": "Persone decedute - media mobile 7 giorno",
+				"snippet": "dal 2/3/2020 al 1/10/2020"
+				}
+			},{
+			"layer": "Prov2019_nome",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|COLOR|BOX|TITLE|FIXSIZE|LONGTITLE|COMPATIBLE|DIFFERENCE|SUM|NOLEGEND|NOOUTLIER",
+				"colorscheme": [
+					"#dd0066"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_SEQUENCE_MEAN_7_56",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "false",
+				"itemfield": "codice_regione",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"units": "positivi",
+				"refreshtimeout": "0",
+				"normalsizevalue": "0.8",
+				"scale": "0.05",
+				"rangescale": "1",
+				"align": "23right",
+				"minvalue": "0",
+				"maxvalue": "auto",
+				"textcolor": "#880000",
+				"linewidth": "35",
+				"bordercolor": "none",
+				"boxopacity": "0",
+				"boxmargin": "10",
+				"titlefield": "denominazione_regione",
+				"boxupper": "1:10000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"aggregationscale": [
+					"1:1",
+					"150px",
+					"1:1000000",
+					"100px"],
+				"aggregationlower": "1:2500000",
+				"name": "curve",
+				"title": "Persone decedute - media mobile 7 giorno",
+				"snippet": "dal 2/3/2020 al 1/10/2020"
+				}
+			}],
+	"layerMask": {
+		"Prov2019_nome": {
+			"display": "none"
+			}
+		}
+	}
