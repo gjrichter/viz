@@ -138,14 +138,15 @@ window.ixmaps = window.ixmaps || {};
 				// remove Total from pivot
 				mydata.column("Total").remove();
 
+				var lastColumn = mydata.columnNames().length - 1;
+				
 				if ( szFlag && szFlag.match(/prevalenza/) ){
 					var dataPop = dataA[0];	
 					// make lookupArray: COD_PROV ==> population
 					var popA = dataPop.lookupArray("Totale","Denominazione");
 
 					var records = mydata.records;
-					var lastColumn = mydata.columnNames().length - 1;
-					for ( var r=0; r<records.length; r++ ){
+						for ( var r=0; r<records.length; r++ ){
 						for ( var c=lastColumn; c>=2; c-- ){
 							records[r][c] = (Number(records[r][c])/popA[(records[r][0])]*100000).toFixed(2);
 						}
@@ -166,6 +167,14 @@ window.ixmaps = window.ixmaps || {};
 					}
 				}
 				
+				if ( szFlag && szFlag.match(/differenza/) ){
+					for (var r=0; r<records.length;r++){
+						for (var c=lastColumn; c>=2; c--){
+							records[r][c] = (Number(records[r][c])-Number(records[r][c-1]));
+						}
+					}
+				}
+				
 				// -----------------------------------------------------------------------------------------------               
 				// deploy the data
 				// ----------------------------------------------------------------------------------------------- 
@@ -176,6 +185,16 @@ window.ixmaps = window.ixmaps || {};
 				columns.shift();
 				columns.shift();
 
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				
+				
+				
 				var last = columns.length - 1;
 
 				// and configure the theme
@@ -204,6 +223,9 @@ window.ixmaps = window.ixmaps || {};
 	};
 	ixmaps.COVID_MARCHE_POSITIVI_PREVALENZA_CLIP_28 = function (theme,options) {
 		ixmaps.COVID_MARCHE_POSITIVI_CLIP_28(theme,options,"prevalenza");
+	}
+	ixmaps.COVID_MARCHE_POSITIVI_PREVALENZA_CLIP_28_DIFF = function (theme,options) {
+		ixmaps.COVID_MARCHE_POSITIVI_CLIP_28(theme,options,"differenza");
 	}
 	
 	ixmaps.COVID_MARCHE_POSITIVI_LATEST_SEQUENCE_28 = function (theme,options) {
