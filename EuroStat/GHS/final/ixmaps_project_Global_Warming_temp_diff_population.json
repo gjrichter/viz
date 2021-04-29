@@ -1,0 +1,101 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Thu Feb 13 2020 11:22:14 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "",
+		"basemap": "CartoDB - Dark matter",
+		"legend": "",
+		"layout":"minimal",
+		"scaleParam": {
+			"normalSizeScale": "55364168"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "10.574222078332806",
+			"lng": "1.7578125000000002"
+			},
+		"zoom": "3"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "E_WR_T_14",
+			"field100": "E_WR_T_90",
+			"style": {
+				"type": "CHART|DIFFERENCE|BUBBLE|COMPATIBLE|GLOW|",
+				"colorscheme": [
+					"5",
+					"#3288BD",
+					"#D53E4F",
+					"3colors",
+					"#d4d898"],
+				"opacity": "0.9",
+				"ranges": [
+					"-10",
+					"-1",
+					"0",
+					"0.5",
+					"1",
+					"1.5",
+					"2"],
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/EuroStat/GHS_STAT_UCDB2015MT_GLOBE_R2019A_V1_1.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "GCPNT_LAT|GCPNT_LON",
+				"rangecentervalue": "0",
+				"units": "°C",
+				"refreshtimeout": "0",
+				"normalsizevalue": "10000000",
+				"scale": "0.390625",
+				"sizefield": "P15",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "Global Warming",
+				"snippet":"Average temperature change 1990 - 2015 in cities, size by population",
+				"description":"data: GHS Urban Centre Database 2015",
+				"splash": "loading data ..."
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

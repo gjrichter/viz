@@ -1,0 +1,88 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Thu Feb 13 2020 10:14:44 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "",
+		"basemap": "CartoDB - Dark matter",
+		"legend": "",
+		"scaleParam": {
+			"normalSizeScale": "55364168"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "17.727758609852284",
+			"lng": "12.568359375000002"
+			},
+		"zoom": "3"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "E_WR_T_14",
+			"field100": "E_WR_T_90",
+			"style": {
+				"type": "CHART|QUANTILE|BUBBLE|RAW|FAST|GLOW|",
+				"colorscheme": [
+					"5",
+					"#3288BD",
+					"#D53E4F",
+					"3colors",
+					"#d4d898"],
+				"opacity": "0.9",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/EuroStat/GHS_STAT_UCDB2015MT_GLOBE_R2019A_V1_1.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "GCPNT_LAT|GCPNT_LON",
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1000",
+				"scale": "0.25",
+				"sizefield": "H00_AREA",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "World Mercator [$item$]"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

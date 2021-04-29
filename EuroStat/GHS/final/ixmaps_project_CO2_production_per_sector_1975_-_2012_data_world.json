@@ -1,0 +1,136 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Feb 17 2020 10:48:59 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1><b>CO2</b> production per sector<br><b>1975</b> - <b>2012</b></h1><h4><i class='icon icon-radio-checked2' style='color:#444444'/> Industry <i class='icon icon-radio-checked2' style='color:#2266ee'/> Traffic <i class='icon icon-radio-checked2' style='color:#dd4422'/> Residential <br><i class='icon icon-radio-checked2' style='color:#eebb22'/> Energy <br><br>data: GHS <b>Urban Centre Database</b> 2015</h4>",
+		"scaleParam": {
+			"normalSizeScale": "55364168"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "27.21555620902969",
+			"lng": "1457.1386718750002"
+			},
+		"zoom": "3"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "E_EC2E_I75|E_EC2E_T75|E_EC2E_R75|E_EC2E_E75|E_EC2E_I90|E_EC2E_T90|E_EC2E_R90|E_EC2E_E90|E_EC2E_I00|E_EC2E_T00|E_EC2E_R00|E_EC2E_E00|E_EC2E_I12|E_EC2E_T12|E_EC2E_R12|E_EC2E_E12",
+			"field100": "",
+			"style": {
+				"type": "CHART|BAR|STACKED|SIZE|BOX|LONGTITLE|AGGREGATE|RELOCATE|FIXSIZE|SUM|SIMPLELEGEND|XAXIS",
+				"colorscheme": [
+					"#444444",
+					"#2266ee",
+					"#dd4422",
+					"#eebb22",
+					"#444444",
+					"#2266ee",
+					"#dd4422",
+					"#eebb22",
+					"#444444",
+					"#2266ee",
+					"#dd4422",
+					"#eebb22",
+					"#444444",
+					"#2266ee",
+					"#dd4422",
+					"#eebb22"
+				],
+				"fillopacity": "0.8",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/EuroStat/GHS/databroker.js",
+				"dbtableType": "ext",
+				"datacache": "true",
+				"lookupfield": "GCPNT_LAT|GCPNT_LON",
+				"symbols": [
+					"circle"],
+				"label": [
+					"Industria 1975",
+					"Transport 1975",
+					"Residental 1975",
+					"Energy 1975",
+					"Industria 1990",
+					"Transport 1990",
+					"Residental 1990",
+					"Energy 1990",
+					"Industria 2000",
+					"Transport 2000",
+					"Residental 2000",
+					"Energy 2000",
+					"Industria 2012",
+					"Transport 2012",
+					"Residental 2012",
+					"Energy 2012"
+				],
+				"xaxis": [
+					"1975",
+					"1990",
+					"2000",
+					"2012"],
+				"units": "t",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "2",
+				"rangescale": "3",
+				"linecolor": [
+					"none"],
+				"linewidth": "0.3",
+				"boxopacity": "0.3",
+				"titlefield": "UC_NM_MN",
+				"boxupper": "1:5000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"gridx": "4",
+				"gridwidthpx": "60",
+				"title": "CO2 production<br>1975 - 2012",
+				"snippet": "Yearly produzione of CO2 da fonti fossili, ciffset from 2012",
+				"description": "data: GHS Urban Centre Database 2015"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

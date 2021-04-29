@@ -1,0 +1,151 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Thu Feb 13 2020 18:06:52 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h4>Esposition to hazard risks<br><i class='icon icon-radio-checked2' style='color:#bb2233'/> Earth quake <i class='icon icon-radio-checked2' style='color:#F7C025'/> Heat wave <i class='icon icon-radio-checked2' style='color:#0044dd'/> Flood <i class='icon icon-radio-checked2' style='color:#88eeff'/> Storm <br><br>data: GHS Urban Centre Database 2015</h4>",
+		"scaleParam": {
+			"normalSizeScale": "55364168"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "23.56398712845123",
+			"lng": "20.742187500000004"
+			},
+		"zoom": "3"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "EX_HW_IDX",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|SIZE|GLOW",
+				"colorscheme": [
+					"#F7C025"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/EuroStat/GHS_STAT_UCDB2015MT_GLOBE_R2019A_V1_1.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "GCPNT_LAT|GCPNT_LON",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0.3276800000000002",
+				"valuescale": "1",
+				"valuedecimals": "2",
+				"title": "Heat Wave Risk Index"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "EX_EQ19PGA",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|SIZE",
+				"colorscheme": [
+					"#bb2233"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/EuroStat/GHS_STAT_UCDB2015MT_GLOBE_R2019A_V1_1.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "GCPNT_LAT|GCPNT_LON",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0.2097152000000001",
+				"valuescale": "1",
+				"valuedecimals": "2",
+				"title": "Earth Quake Risk Index"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "EX_FD_P15",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|SIZE",
+				"colorscheme": [
+					"#0044dd"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/EuroStat/GHS_STAT_UCDB2015MT_GLOBE_R2019A_V1_1.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "GCPNT_LAT|GCPNT_LON",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuescale": "1",
+				"linewidth":"1",
+				"valuedecimals": "0",
+				"title": "Polulation exposed to flooding"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "EX_SS_P15",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|SIZE",
+				"colorscheme": [
+					"#88eeff"],
+				"fillopacity": "0.3",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/EuroStat/GHS_STAT_UCDB2015MT_GLOBE_R2019A_V1_1.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "GCPNT_LAT|GCPNT_LON",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuescale": "1",
+				"linewidth":"1",
+				"valuedecimals": "0",
+				"splash":"... loding 8 Mb data ... ",
+				"title": "Polulation exposed to storm hazards"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

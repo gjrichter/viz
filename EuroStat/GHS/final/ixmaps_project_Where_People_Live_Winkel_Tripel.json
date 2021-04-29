@@ -1,0 +1,118 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Thu Feb 13 2020 17:43:52 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3-eu-west-1.amazonaws.com/cdn.ixmaps.com/ixmaps/maps/svg/maps/world_base_ISO/world_ISO3_winkel_soft.svgz",
+		"attribution": "",
+		"basemap": "black",
+		"legend": "",
+		"scaleParam": {
+			"normalSizeScale": "55364168"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "19.973348786110613",
+			"lng": "33.22265625000001"
+			},
+		"zoom": "2"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "E_BM_NM_LST",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|RAW|FAST|CATEGORICAL|GLOW|SUM",
+				"colorscheme": [
+					"29",
+					"fruit"],
+				"opacity": "0.9",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/EuroStat/GHS_STAT_UCDB2015MT_GLOBE_R2019A_V1_1.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "GCPNT_LAT|GCPNT_LON",
+				"values": [
+					"Tropical and Subtropical Dry Broadleaf Forests",
+					"Tropical and Subtropical Moist Broadleaf Forests",
+					"Mediterranean Forests, Woodlands, and Scrub",
+					"Temperate Grasslands, Savannas, and Shrublands",
+					"Deserts and Xeric Shrublands",
+					"Temperate Coniferous Forests",
+					"Tropical and Subtropical Coniferous Forests",
+					"Temperate Broadleaf and Mixed Forests",
+					"Boreal Forests/Taiga",
+					"Mangroves",
+					"Tropical and subtropical grasslands, savannas, and shrublands",
+					"Tropical and Subtropical Moist Broadleaf Forests;Tropical and Subtropical Coniferous Forests",
+					"Tropical and Subtropical Dry Broadleaf Forests;Tropical and Subtropical Coniferous Forests",
+					"Flooded Grasslands and Savannas",
+					"Tropical and Subtropical Moist Broadleaf Forests;Mangroves",
+					"Montane Grasslands and Shrublands",
+					"Tropical and Subtropical Dry Broadleaf Forests;Mangroves",
+					"NAN",
+					"Tundra",
+					"Tropical and subtropical grasslands, savannas, and shrublands;Deserts and Xeric Shrublands",
+					"Tropical and subtropical grasslands, savannas, and shrublands;Montane Grasslands and Shrublands",
+					"Tropical and subtropical grasslands, savannas, and shrublands;Flooded Grasslands and Savannas",
+					"Lakes",
+					"Tropical and Subtropical Moist Broadleaf Forests;Montane Grasslands and Shrublands",
+					"Temperate Coniferous Forests;Deserts and Xeric Shrublands",
+					"Tropical and Subtropical Dry Broadleaf Forests;Deserts and Xeric Shrublands",
+					"Tropical and Subtropical Moist Broadleaf Forests;Deserts and Xeric Shrublands",
+					"Tropical and Subtropical Moist Broadleaf Forests;Tropical and subtropical grasslands, savannas, and shrublands",
+					"Tropical and Subtropical Moist Broadleaf Forests;Tropical and Subtropical Dry Broadleaf Forests"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "100000000",
+				"scale": "1",
+				"sizefield": "P15",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Where People Live<br>(in urban areas)",
+				"snippet": "Urban Centres colored by Climate Class and sized by Population",
+				"splash": "... loading 8 Mb data to show where people live on this planet ...",
+				"description": "data: <a href='https://ghsl.jrc.ec.europa.eu/ucdb2018Overview.php' target='_blank'>GHS Urban Centre Database 2015</a>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
