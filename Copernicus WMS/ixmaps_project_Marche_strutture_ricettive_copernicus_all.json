@@ -104,7 +104,7 @@
 					"32",
 					"fruit"],
 				"shadow": "true",
-				"dbtable": "themeDataObj",
+				"dbtable": "elencostrutture",
 				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/GoodPA/20210201elencostrutture.csv.gz",
 				"dbtableType": "csv",
 				"datacache": "true",
