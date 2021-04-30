@@ -11,7 +11,7 @@ Il dataset si trova qui: [https://github.com/italia/covid19-opendata-vaccini](ht
 La visualizzazione mostra i **vaccini somministrati** per **100.000 abitanti**, giorno per giorno, in forma circolare e senso orario partendo da 12.  
 Per realizzare **500.000 dosi al giorni** si deve arrivare a **833** somministrazioni per **100.000** abitanti in tutte le Regioni. Questo traguardo si trova nella visualizzazione rappresentato dai **cerchi bianchi**.
 
-> #### I valori visualizzati sono la media di 7 giorni, calcolato verso il passato. Non corrispondono ai valori dei giorni stessi, che possono essere più alti o più bassi <a href="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&scrollsafe=1&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_final/ixmaps_project_Vaccini_sum_dosi_100000_sequence_burst.json&view=[44.3670601700202,11.5521240234375],7" target="mapburst">test</a>
+> #### I valori visualizzati sono la media di 7 giorni, calcolato verso il passato. Non corrispondono ai valori dei giorni stessi, che possono essere più alti o più bassi <a href="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&scrollsafe=1&legend=1&name=map9&sync=false&footer=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-Vaccini_final/ixmaps_project_Vaccini_sum_dosi_100000_sequence_burst.json&view=[44.3670601700202,11.5521240234375],7" target="mapburst">-> grafici con valori giornalieri</a>
 
 Le linee tratteggiate indicano le percentuali di 25, 50 e 75 raggiunti rispetto al traguardo di 833 somministrazioni per 100.000.l   
 
