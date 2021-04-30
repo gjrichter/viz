@@ -11,6 +11,8 @@ Il dataset si trova qui: [https://github.com/italia/covid19-opendata-vaccini](ht
 La visualizzazione mostra i **vaccini somministrati** per **100.000 abitanti**, giorno per giorno, in forma circolare e senso orario partendo da 12.  
 Per realizzare **500.000 dosi al giorni** si deve arrivare a **833** somministrazioni per **100.000** abitanti in tutte le Regioni. Questo traguardo si trova nella visualizzazione rappresentato dai **cerchi bianchi**.
 
+> #### I valori visualizzati sono la media di 7 giorni, calcolato verso il passato. Non corrispondono ai valori dei giorni stessi, che possono essere più alti o più bassi
+
 Le linee tratteggiate indicano le percentuali di 25, 50 e 75 raggiunti rispetto al traguardo di 833 somministrazioni per 100.000.l   
 
 
