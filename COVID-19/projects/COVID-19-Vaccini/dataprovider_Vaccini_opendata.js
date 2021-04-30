@@ -748,6 +748,9 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.VACCINI_SOMMINISTRAZIONI_TOTALE_POPOLAZIONE_SEQUENCE_MEAN_7 = function (theme, options) {
 		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["totale"], "mean7");
 	};
+	ixmaps.VACCINI_SOMMINISTRAZIONI_TOTALE_POPOLAZIONE_SEQUENCE = function (theme, options) {
+		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["totale"], "");
+	};
 	ixmaps.VACCINI_SOMMINISTRAZIONI_PRIMA_POPOLAZIONE_SEQUENCE_MEAN_7 = function (theme, options) {
 		return ixmaps.VACCINI_POPOLAZIONE_COLUMNS_SEQUENCE(theme, options, ["prima_dose"], "mean7");
 	};
