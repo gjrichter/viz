@@ -16,7 +16,8 @@
 		"item": "",
 		"scaleParam": {
 			"objectScaling": "1.7777777777777777",
-			"normalSizeScale": "55364168"
+			"normalSizeScale": "55364168",
+			"dynamicScalePow": "2"
 			},
 		"options": {
 			"featurescaling": "dynamic",
@@ -120,6 +121,7 @@
 				"rangescale": "1",
 				"minvalue": "0",
 				"maxvalue": "auto",
+				"align": "23right",
 				"linewidth": "30",
 				"bordercolor": "none",
 				"boxopacity": "0.01",
