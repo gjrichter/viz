@@ -1,8 +1,8 @@
 {
 	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
 	"metadata": {
-		"title": "",
-		"snippet": "",
+		"title": "Qualità delle Acque di balneazione",
+		"snippet": "Valore attuale e serie storica in confronto con il layer 'Riparia Zones' da Copernicus",
 		"description": "",
 		"thumbnail": "",
 		"about": "",
