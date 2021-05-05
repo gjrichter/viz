@@ -60,7 +60,7 @@
 			"field": "$item$",
 			"field100": "",
 			"style": {
-				"type": "FEATURES|NOLEGEND|LOCKED",
+				"type": "FEATURES|NOLEGEND",
 				"colorscheme": [
 					"#e8e8e8"],
 				"fillopacity": "1",
