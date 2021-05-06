@@ -192,8 +192,8 @@
 				}
 			},{
 			"layer": "nuts2",
-			"field": "70-79.1",
-			"field100": "70-79.2",
+			"field": "60-69.1",
+			"field100": "60-69.2",
 			"style": {
 				"type": "CHART|BUBBLE|SIZE|VALUES|TEXTONLY|NOLEGEND",
 				"colorscheme": [
@@ -211,7 +211,7 @@
 				"scale": "2",
 				"align":"center",
 				"rangescale": "1",
-				"sizefield": "70-79.2",
+				"sizefield": "60-69.2",
 				"textcolor": "RGBA(200,0,108,0.8)",
 				"linecolor": [
 					"none"],
