@@ -1,25 +1,14 @@
-# EEA - State of bathing waters - Italy
+# DPC - Aggregati Strutturali - Roma - Italia
 
-Visualizzazioni di dati della EEA (European Environment Agency) con la qualità delle acque balneare dell'Italia dal 1990 al 2019. Cerchi: Qualità nel 2019. Quadretti a destra: serie storica 
-Per validare il contesto ambientale della qualità acque balneare sono integrate alcuni layer del EEA Map Server
-DiscoMap: Costal Zones, Riparian Zones, Grasslands and Tree Cover Density.
+Visualizzazioni del dataset degli Aggregati Strutturali pubblicato dal Dipartimento della Protezione Civile su GitHub per ogni Comune italiana
 
-Fonte: <a href="https://www.eea.europa.eu/themes/water/interactive/bathing/state-of-bathing-waters" target="_blank">EEA</a>  
+Esempio di trasformazione in SVG (tiles) 
+Fonte: <a href="https://github.com/pcm-dpc/DPC-Aggregati-Strutturali-ITI-Centro" target="_blank">DPC</a>  
 
-<iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Copernicus WMS/ixmaps_project_riparian_zones_water_quality_1990_2019.json"></iframe>
+Visualizzazioni: iXMaps, il progetto (json) per la mappa si trovano qui: <a href="https://github.com/gjrichter/viz/tree/master/DPC_Aggregati_Strutturali" target="_blank">GitHub</a>
 
-Visualizzazioni: iXMaps, i progetti (json) per la mappa si trovano qui: <a href="https://github.com/gjrichter/viz/tree/master/Copernicus%20WMS" target="_blank">GitHub</a>
+<iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/DPC_Aggregati_Strutturali/ixmaps_project_Roma_svg_geo.json"></iframe>
 
-
-
-# Strutture Ricettive - Marche - Italia
-
-Per validare il contesto ambientale della offerta recettiva sono presente alcuni layer del EEA Map Server
-DiscoMap: Costal Zones, Riparian Zones, Grasslands and Tree Cover Density.
-
-<iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Copernicus WMS/ixmaps_project_Marche_strutture_ricettive_copernicus_all.json"></iframe>
-
-Visualizzazioni: iXMaps, i progetti (json) per la mappa si trovano qui: <a href="https://github.com/gjrichter/viz/tree/master/Copernicus%20WMS" target="_blank">GitHub</a>
 
 
 
