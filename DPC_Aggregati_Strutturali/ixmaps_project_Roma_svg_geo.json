@@ -10,7 +10,7 @@
 		},
 	"map": {
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/DPC-Aggregati-Strutturali_ITI/Roma_geo.svgz",
-		"basemap": "CartoDB - Positron",
+		"basemap": "CartoDB - Dark matter",
 		"info":"<h1>Aggregati Strutturali del Comune di Roma</h1><h4>Fonte: <a href=\"https://github.com/pcm-dpc/DPC-Aggregati-Strutturali-ITI-Centro\" target=\"_blank\">DPC</a></h4>",
 		"scaleParam": {
 			"normalSizeScale": "5000"
