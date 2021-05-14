@@ -6,7 +6,7 @@
  */
 
 window.ixmaps = window.ixmaps || {};
-window.ixmaps.EU_COVID_DATA = window.ixmaps.EU_VOVID_DATA || {};
+window.ixmaps.EU_COVID_DATA = window.ixmaps.EU_COVID_DATA || {};
 
 (function() {
         
