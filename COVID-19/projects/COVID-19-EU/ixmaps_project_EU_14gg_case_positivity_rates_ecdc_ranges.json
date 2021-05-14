@@ -1,0 +1,233 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Tue Jan 26 2021 16:56:53 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "© EuroGeographics for the administrative boundariesi, visulizzation: XMaps",
+		"basemap": "white",
+		"legend": "",
+		"item": "",
+		"layout":"minimal",
+		"scaleParam": {
+			"borderScaling": "0.1",
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "48.07807894349862",
+			"lng": "16.765136718750004"
+			},
+		"zoom": "5"
+		},
+	"themes": [{
+			"layer": "nuts_0",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"#eeeeee"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "nuts_0",
+				"dbtableUrl": "https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/NUTS_RG_10M_2021_4326_LEVL_0.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "NUTS_ID",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "1.5",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Nuts_2"
+				}
+			},{
+			"layer": "nuts_3",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "nuts_3",
+				"dbtableUrl": "https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/NUTS_RG_10M_2021_4326_LEVL_3.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "NUTS_ID",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"#eeeeee"],
+				"linewidth": "0.1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"titlefield":"NUTS_NAME",
+				"title": "Nuts_3"
+				}
+			},{
+			"layer": "nuts_2",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "nuts_2",
+				"dbtableUrl": "https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/NUTS_RG_10M_2021_4326_LEVL_2.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "NUTS_ID",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"#eeeeee"],
+				"linewidth": "0.1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Nuts_2"
+				}
+			},{
+			"layer": "nuts_1",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "true",
+				"dbtable": "nuts_1",
+				"dbtableUrl": "https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/NUTS_RG_10M_2021_4326_LEVL_1.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "NUTS_ID",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"#eeeeee"],
+				"linewidth": "0.1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Nuts_2"
+				}
+			},{
+			"layer": "nuts_00",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "nuts_00",
+				"dbtableUrl": "https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/NUTS_RG_10M_2021_4326_LEVL_0.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "NUTS_ID",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"#eeeeee"],
+				"linewidth": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Nuts_00"
+				}
+			},{
+			"layer": "nuts_1|nuts_2|nuts_3",
+			"field": "positivity_rate_combined",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|RANGES|VALUES|DTEXT|VALUEBACKGROUND|SIMPLELEGEND",
+				"colorscheme": [
+					"2",
+					"RGB(101, 180, 42)",
+					"RGB(242, 169, 42)"
+				],
+				"ranges":"0,4,100",
+				"label": [
+					"< 4 %",
+					">= 4 %"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "EU_COVID_DATA",
+				"dbtableUrl": "https://api.allorigins.win/raw?url=https://opendata.ecdc.europa.eu/covid19/movementindicators/csv/data.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-EU/process_data.js",
+				"datacache": "true",
+				"lookupfield": "geo_id_final",
+				"units": "%",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"textcolor":"white",
+				"titlefield":"region",
+				"title": "Positivity rates",
+				"snippet": "casi positivi per test effetuati",
+				"description": "<h5>Questa mappa si genera da dati e confini territoriali scaricati direttamente da enti europei.</h5><h5>Al momento non tutti i dati sono mappati a causa della presenza di identità territoriali (NUTS) non standard.</h5><br><h5>dati: <a href='https://www.ecdc.europa.eu/en/covid-19/data' target='_blank'>open data ECDC</a><a href='https://www.ecdc.europa.eu/en/copyright' target='_blank'> (copyright policy)</a></h5><h5>geo: <a href='https://gisco-services.ec.europa.eu/distribution/v2/nuts' target='_blank'>gisco-services EU</a></h5>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
