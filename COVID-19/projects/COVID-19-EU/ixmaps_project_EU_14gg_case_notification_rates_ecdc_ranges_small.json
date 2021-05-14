@@ -214,7 +214,7 @@
 				"fillopacity": "1",
 				"shadow": "false",
 				"dbtable": "EU_COVID_DATA",
-				"dbtableUrl": "https://corsme.herokuapp.com/https://opendata.ecdc.europa.eu/covid19/movementindicators/csv/data.csv",
+				"dbtableUrl": "https://api.allorigins.win/raw?url=https://opendata.ecdc.europa.eu/covid19/movementindicators/csv/data.csv",
 				"dbtableType": "csv",
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-EU/process_data.js",
 				"datacache": "true",
