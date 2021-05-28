@@ -452,7 +452,7 @@ window.ixmaps = window.ixmaps || {};
 			  szXaxisA.push(" ");
 			}
 		}
-		return axisA;
+		return szXaxisA;
 	};
 
 	
