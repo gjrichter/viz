@@ -1,0 +1,203 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Mon Mar 15 2021 16:56:24 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "",
+		"attribution": "iXMaps",
+		"basemap": "white",
+		"legend": "<div style='color:#777777'><h1></h1><h1><b>incidenca cumulativa<br> di 7 giorno</b></h1><h2>nuovi casi<br>per 7 giorni e 100 000 abitanti</h2><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4><h4><a class='btn btn-default theme-tool-button' style='color:#0088aa;' href='javascript:ixmaps.legend.showItemGrid(\"curve\")'>visualizzazione a griglia <span class='icon icon-table2' style='font-size:18px;vertical-align:-10%;'></span></a></h4></div>",
+		"item": "html",
+		"scaleParam": {
+			"lineScaling": "4.213991769547325",
+			"normalSizeScale": "4638029"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"worksilent": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.04480541304369",
+			"lng": "13.952636718750002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "nuts2",
+			"data": {
+				"name": "barrios",
+				"url": "https://raw.githubusercontent.com/ondata/nuts/main/processing/NUTS2_g.geojson",
+				"type": "geojson",
+				"cache": "false"
+				},
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"#f0f0f0"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"itemfield": "NUTS2",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "2",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "features",
+				"title": "Italy nuts2"
+				}
+			},{
+			"layer": "Prov2019_nome",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL||VALUES|SIZEP3|COMPACTLEGEND",
+				"colorscheme": [
+					"green",
+					"#F1D8DE",
+					"#E4A78C",
+					"#DD0044"],
+				"ranges": [
+					"0",
+					"35",
+					"100",
+					"250",
+					"1000"],
+				"fillopacity": "0.0005",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_LAST_CUMUL_7_INCIDENCE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "false",
+				"itemfield": "codice_regione",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"symbols": [
+					"label"],
+				"units": "",
+				"align": "left",
+				"refreshtimeout": "0",
+				"normalsizevalue": "50",
+				"scale": "1",
+				"valuefield": "2021-03-21T17:00:00",
+				"sizefield": "2021-03-21T17:00:00",
+				"dopacitypow": "1",
+				"dopacityscale": "5",
+				"textcolor": "#dd0044",
+				"linecolor": [
+					"none"],
+				"linewidth": "3",
+				"titlefield": "denominazione_regione",
+				"valuescale": "1.1",
+				"valuedecimals": "0",
+				"title": "Tampone/casi ratio",
+				"snippet": "aggiornato al 2020-03-28T17:00:00"
+				}
+			},{
+			"layer": "Prov2019_nome",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|TITLE|FIXSIZE|COMPATIBLE|SUM|NOLEGEND|NOOUTLIER",
+				"colorscheme": [
+					"green",
+					"#F1D8DE",
+					"#E4A78C",
+					"#DD0044"],
+				"fillopacity": "0.4",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_SEQUENCE_CUMUL_7_INCIDENCE_56",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "false",
+				"itemfield": "codice_regione",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"ranges": [
+					"0",
+					"35",
+					"100",
+					"250",
+					"1000"],
+				"symbols": [
+					"circle"],
+				"label": [
+					"< 35",
+					"35 - 99",
+					"100 - 249",
+					">= 250"],
+				"units": "",
+				"align": "10%right|top",
+				"refreshtimeout": "0",
+				"normalsizevalue": "0.8",
+				"scale": "0.05",
+				"rangescale": "1",
+				"minvalue": "0",
+				"maxvalue": "500",
+				"highvalue": "250",
+				"textcolor": "#880000",
+				"linewidth": "35",
+				"bordercolor": "none",
+				"boxopacity": "0",
+				"boxmargin": "10",
+				"titlefield": "denominazione_regione",
+				"boxupper": "1:10000000",
+				"titleupper": "1:1000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"aggregationscale": [
+					"1:1",
+					"150px",
+					"1:1000000",
+					"100px"],
+				"aggregationlower": "1:2500000",
+				"name": "curve",
+				"title": "incudenca cumulativa di 7 giorni per 100.000 abitanti",
+				"snippet": "dal 10/3/2020 al 14/3/2021"
+				}
+			}],
+	"layerMask": {
+		"Prov2019_nome": {
+			"display": "none"
+			}
+		}
+	}
