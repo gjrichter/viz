@@ -392,6 +392,69 @@ window.ixmaps = window.ixmaps || {};
 		return deathTab;
      };   
 	
+    var __getAxis = function(columns) { 
+		var szXaxisA = [];
+		for ( var i =0; i<columns.length; i++ ){
+			if (columns[i] == "1/3/2020"){
+			  szXaxisA.push("mar");
+			}else
+			if (columns[i] == "1/4/2020"){
+			  szXaxisA.push("apr");
+			}else
+			if (columns[i] == "1/5/2020"){
+			  szXaxisA.push("mag");
+			}else
+			if (columns[i] == "1/6/2020"){
+			  szXaxisA.push("giu");
+			}else
+			if (columns[i] == "1/7/2020"){
+			  szXaxisA.push("lug");
+			}else
+			if (columns[i] == "1/8/2020"){
+			  szXaxisA.push("ago");
+			}else
+			if (columns[i] == "1/9/2020"){
+			  szXaxisA.push("set");
+			}else
+			if (columns[i] == "1/10/2020"){
+			  szXaxisA.push("ott");
+			}else
+			if (columns[i] == "1/11/2020"){
+			  szXaxisA.push("nov");
+			}else
+			if (columns[i] == "1/12/2020"){
+			  szXaxisA.push("dic");
+			}else
+			if (columns[i] == "1/1/2021"){
+			  szXaxisA.push("jan");
+			}else
+			if (columns[i] == "1/2/2021"){
+			  szXaxisA.push("feb");
+			}else
+			if (columns[i] == "1/3/2021"){
+			  szXaxisA.push("mar");
+			}else
+			if (columns[i] == "1/4/2021"){
+			  szXaxisA.push("apr");
+			}else
+			if (columns[i] == "1/5/2021"){
+			  szXaxisA.push("mag");
+			}else
+			if (columns[i] == "1/6/2021"){
+			  szXaxisA.push("giu");
+			}else
+			if (columns[i] == "1/7/2021"){
+			  szXaxisA.push("lug");
+			}else
+			if (columns[i] == "1/8/2021"){
+			  szXaxisA.push("ago");
+			}else{
+			  szXaxisA.push(" ");
+			}
+		}
+		return axisA;
+	};
+
 	
     ixmaps.PCM_DPC_COVID_LAST = function (theme,options) {
 
@@ -6488,53 +6551,7 @@ window.ixmaps = window.ixmaps || {};
 				columns.shift();
 				theme.szLabelA = columns.slice();
 
-				var szXaxisA = [];
-				for ( var i =0; i<columns.length; i++ ){
-					if (columns[i] == "1/3/2020"){
-					  szXaxisA.push("mar");
-					}else
-					if (columns[i] == "1/4/2020"){
-					  szXaxisA.push("apr");
-					}else
-					if (columns[i] == "1/5/2020"){
-					  szXaxisA.push("mag");
-					}else
-					if (columns[i] == "1/6/2020"){
-					  szXaxisA.push("giu");
-					}else
-					if (columns[i] == "1/7/2020"){
-					  szXaxisA.push("lug");
-					}else
-					if (columns[i] == "1/8/2020"){
-					  szXaxisA.push("ago");
-					}else
-					if (columns[i] == "1/9/2020"){
-					  szXaxisA.push("set");
-					}else
-					if (columns[i] == "1/10/2020"){
-					  szXaxisA.push("ott");
-					}else
-					if (columns[i] == "1/11/2020"){
-					  szXaxisA.push("nov");
-					}else
-					if (columns[i] == "1/12/2020"){
-					  szXaxisA.push("dic");
-					}else
-					if (columns[i] == "1/1/2021"){
-					  szXaxisA.push("jan");
-					}else
-					if (columns[i] == "1/2/2021"){
-					  szXaxisA.push("feb");
-					}else
-					if (columns[i] == "1/3/2021"){
-					  szXaxisA.push("mar");
-					}else
-					if (columns[i] == "1/4/2021"){
-					  szXaxisA.push("apr");
-					}else{
-					  szXaxisA.push(" ");
-					}
-				}
+				var szXaxisA = __getAxis(columns);
 
 				//szXaxisA[0] = columns[0];
 				//szXaxisA[last - 1] = columns[last - 1];
