@@ -6542,6 +6542,7 @@ window.ixmaps = window.ixmaps || {};
 				}
 
 				columns = columns.slice(-56);
+				last = columns.length - 1;
 
 				// and configure the theme
 				theme.szFields = columns.slice().join('|');
