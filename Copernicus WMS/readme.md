@@ -9,7 +9,11 @@ Fonte: <a href="https://www.eea.europa.eu/themes/water/interactive/bathing/state
 <iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Copernicus WMS/ixmaps_project_riparian_zones_water_quality_1990_2019.json"></iframe>
 
 Visualizzazioni: iXMaps, i progetti (json) per la mappa si trovano qui: <a href="https://github.com/gjrichter/viz/tree/master/Copernicus%20WMS" target="_blank">GitHub</a>
+codice per includere la mappa in una pagina HTML:
 
+```javascript
+<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/dispatch.htm?ui=embed&basemap=ll&legend=1&project=project=https://raw.githubusercontent.com/gjrichter/viz/master/Copernicus WMS/ixmaps_project_riparian_zones_water_quality_1990_2019.json"></iframe>
+```
 
 
 # Strutture Ricettive - Marche - Italia
@@ -20,7 +24,6 @@ DiscoMap: Costal Zones, Riparian Zones, Grasslands and Tree Cover Density.
 <iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Copernicus WMS/ixmaps_project_Marche_strutture_ricettive_copernicus_all.json"></iframe>
 
 Visualizzazioni: iXMaps, i progetti (json) per la mappa si trovano qui: <a href="https://github.com/gjrichter/viz/tree/master/Copernicus%20WMS" target="_blank">GitHub</a>
-
 
 
 
