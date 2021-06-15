@@ -1,0 +1,101 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Jun 13 2021 00:01:11 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "ArcGIS - Topo",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "100000"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "48.82743544393984",
+			"lng": "2.5007629394531254"
+			},
+		"zoom": "11"
+		},
+	"required": [
+		"https://unpkg.com/osmtogeojson@3.0.0-beta.4/osmtogeojson.js"],
+	"themes": [{
+			"layer": "osm",
+			"field": "wheelchair",
+			"field100": "",
+			"style": {
+				"type": "CHART|GLOW|SYMBOL|SEQUENCE|STAR|SORT|RANDOM|DOPACITY|UNDEFINEDISVALUE|AGGREGATE|RECT|RELOCATE|CATEGORICAL|SUM|SUM",
+				"colorscheme": [
+					"green",
+					"#aaaaaa",
+					"red",
+					"orange"],
+				"shadow": "false",
+				"dbtable": "OSM_dataquery_bus_stop",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/OSM Overpass/dataprovider_overpass.js",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"showdata": "true",
+				"symbols": [
+					"circle"],
+				"values": [
+					"yes",
+					"undefined",
+					"no",
+					"limited"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0.3347484975648001",
+				"textcolor": [
+					"#ffffff"],
+				"linecolor": [
+					"none"],
+				"linewidth": "1",
+				"chartupper": "1:500000",
+				"valuescale": "1",
+				"centerpart": "max",
+				"clipparts": "10",
+				"gridwidthpx": "5",
+				"title": "OSM Overpass test"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
