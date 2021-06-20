@@ -45,10 +45,10 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "48.82743544393984",
-			"lng": "2.5007629394531254"
+			"lat": "41.91385469323496",
+			"lng": "12.49173402786255"
 			},
-		"zoom": "11"
+		"zoom": "15"
 		},
 	"required": [
 		"https://unpkg.com/osmtogeojson@3.0.0-beta.4/osmtogeojson.js"],
