@@ -105,8 +105,6 @@ window.ixmaps = window.ixmaps || {};
 
 		ixmaps.free_bike_status = function(themeObj){
 			
-			console.log(themeObj);
-
 			var myFeed = Data.feed({source:themeObj.coTableUrl,
 					   type:"json",
 					  }).error(function(error){
@@ -115,8 +113,6 @@ window.ixmaps = window.ixmaps || {};
 				
 						ixmaps.setTitle("");
 				
-						console.log(myFeed);
-
 						// get the actual date and set as theme title (->legend)
 						ixmaps.bikeUTC = myFeed.data.last_updated;
 						var d = new Date(ixmaps.bikeUTC*1000);
