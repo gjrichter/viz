@@ -344,7 +344,7 @@ $Log:ixmaps_simple_embed.html,v $
 			
 			// 1. read the discovery data from the feed
 			
-			var gbfs_discovery = new Data.feed({"source":"https://corsme.herokuapp.com/"+szDiscoveryUrl,type:"json"})
+			var gbfs_discovery = new Data.feed({"source":"https://api.allorigins.win/raw?url="+szDiscoveryUrl,type:"json"})
 			.error(function(e){
 				ixmaps.message("error: "+e.statusText,2000);
 				})
@@ -376,13 +376,13 @@ $Log:ixmaps_simple_embed.html,v $
 				for ( i in feeds ){
 					console.log(feeds[i].name);
 					if ( feeds[i].name.match(/station_information/) ){
-						__stations_url = "https://corsme.herokuapp.com/"+feeds[i].url;
+						__stations_url = "https://api.allorigins.win/raw?url="+feeds[i].url;
 					}	
 					if ( feeds[i].name.match(/station_status/) ){
-						__status_url = "https://corsme.herokuapp.com/"+feeds[i].url;
+						__status_url = "https://api.allorigins.win/raw?url="+feeds[i].url;
 					}	
 					if ( feeds[i].name.match(/free_bike_status/) ){
-						__free_bike_status_url = "https://corsme.herokuapp.com/"+feeds[i].url;
+						__free_bike_status_url = "https://api.allorigins.win/raw?url="+feeds[i].url;
 					}	
 				}
 				
