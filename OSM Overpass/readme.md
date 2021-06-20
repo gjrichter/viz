@@ -38,5 +38,18 @@ Visualizzazioni: iXMaps, i progetti (json) per la mappa si trovano qui: <a href=
 
 
 
+# Strutture Ricettive - Marche - Italia
+
+Per validare il contesto ambientale della offerta recettiva sono presente alcuni layer del EEA Map Server
+DiscoMap: Costal Zones, Riparian Zones, Grasslands and Tree Cover Density.
+
+<iframe id="map3" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/OSM Overpass/ixmaps_project_OSM_Overpass_Bus_Wheelchair.json"></iframe>
+
+Visualizzazioni: iXMaps, i progetti (json) per la mappa si trovano qui: <a href="https://github.com/gjrichter/viz/tree/master/Copernicus%20WMS" target="_blank">GitHub</a>
+
+
+
+
+
 
 
