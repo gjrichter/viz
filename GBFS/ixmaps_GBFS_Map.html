@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+
+<!-- **********************************************************************
+
+ixmaps_simple_embed.html
+
+$Comment: map template for Ricostruzione Trasparente; embedded version
+$Source : ixmaps_comuni_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:ixmaps_comuni_embed.html 1 2017-07-22 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:ixmaps_simple_embed.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="assets/img/favicon.png">
+
+	<title>iXMaps really simple RT template</title>
+
+</head>
+
+<body style="padding:0;margin:0;overflow:hidden">
+
+	<div id="map_div"  background="#f8f8f8" onclick="event.stopPropagation();return false;">
+	</div>
+	<div id="footer">
+	</div>
+
+	<div id="themeselect" style="position:absolute;top:3px;left:90px;padding:1em">
+		<select class="form-control" id="theme-classes-select" onchange="eval(document.getElementById('theme-classes-select').value)" style="padding:0.4em;background:#f8f6f6;font-size:1.2em;border-radius:5px;color:#666">
+			<option>-- please select a Bike Sharer ---</option>
+		</select>
+		<select class="form-control" id="theme-refresh-select" onchange="eval(document.getElementById('theme-refresh-select').value)" style="padding:0.4em;background:#f8f6f6;font-size:1.2em;border-radius:5px;color:#666">
+			<option value="javascript:__map.changeThemeStyle('chart2','refresh:0','set')">no refresh</option>
+			<option value="javascript:__map.changeThemeStyle('chart2','refresh:10','set')">10 sec</option>
+			<option value="javascript:__map.changeThemeStyle('chart2','refresh:60','set')">1 min</option>
+			<option value="javascript:__map.changeThemeStyle('chart2','refresh:600','set')">10 min</option>
+		</select>
+		<button style="font-size:1.3em;padding:0.3em 1em;border-radius:0.2em;border:none" onclick="ixmaps.refreshTheme(null,null)">refresh</button>
+	</div>
+
+
+	<!-- ixmaps api ================================================================= -->
+
+	<script type="text/javascript" src = "https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js" > </script>
+
+	<script type="text/javascript" src = "https://gjrichter.github.io/ixmaps/ui/libs/jquery/jquery-1.7.1.min.js" > </script>
+	<script type="text/javascript" src = "https://gjrichter.github.io/data.min.js/data.js" > </script>
+	<script type="text/javascript" src = "https://unpkg.com/osmtogeojson@3.0.0-beta.4/osmtogeojson.js" > </script>														   
+
+	<!--============================================================================= -->
+
+	<script type="text/javascript" charset="utf-8"> 
+
+		// --------------------------------------------
+		// Temi
+		// --------------------------------------------
+		
+		var __map = null;
+		var __stations_url = null;
+		var __status_url = null;
+		var __free_bike_status_url = null;
+		var __themes = [];
+		var __name = null;
+		theme_countries = () => {
+		  return {
+			"layer": "World_countries_shp0",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SIZEP4|AGGREGATE|SUM|VALUES|SIMPLELEGEND",
+				"colorscheme": [
+					"RGB(57,162,225)"],
+				"shadow": "false",
+				"dbtable": "GBFS_NABSA",
+				"datacache": "false",
+				"showdata": "true",
+				"lookupfield": "Country Code",
+				"units": "",
+				"scale": "1",
+				"label": "feeds per country",
+				"valuescale": "1",
+				"title": "GBFS Feeds",
+				"snippet": "around the world which are present in the <a href='https://github.com/NABSA/gbfs/blob/master/systems.csv' target='_blank'>NABSA feed directory</a>",
+				"description": "On her <a href='https://github.com/NABSA/gbfs' target='_blank'>Github</a> page the <b>North American Bike Share Association</b> (NASBA) describes the GBFS as follows:<br><i>The <b>General Bikeshare Feed Specification</b>, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability.</i><br><br>In the initial state, the map shows the GBFS feeds aggregated per country. With the selection box in the upper left you can select and explore the single feed."
+				}
+			}
+		};
+		theme_stations = () => {
+		  return {
+			"layer": "Station",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND",
+				"colorscheme": [
+					"5",
+					"white",
+					"blue"],
+				"shadow": "false",
+				"dbtable": "bike_stations",
+				"dbtableType": "ext",
+				"dbtableExt": "../../app/Minimalist/dataprovider_gbfs.js",
+				"dbtableUrl": __stations_url,
+				"datacache": "false",
+				"itemfield": "station_id",
+				"lookupfield": "lat|lon",
+				"child": "true",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuescale": "1",
+				"title": "Stations",
+				"splash": "loading and aggregating data ...<br>this may rakle a bit ...<br>please give me some time ..."
+				}
+			}
+		};
+		theme_status = () => {
+		  return {
+			"layer": "Station",
+			"field": "num_bikes_available|num_docks_available",
+			"field100": "",
+			"style": {
+				"type": "GAUGE|CENTERVALUES|CHART|SYMBOL|SEQUENCE|CENTER|RINGS|LINEAR|SIZE|FAST|SUM|ZOOMTO",
+				"colorscheme": [
+					"RGB(57,162,225)",
+					"none"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "bike_status",
+				"dbtableType": "ext",
+				"dbtableExt": "../../app/Minimalist/dataprovider_gbfs.js",
+				"dbtableUrl": __status_url,
+				"datacache": "false",
+				"lookupfield": "station_id",
+				"showdata": "true",
+				"child": "true",
+				"symbols": [
+					"circle"],
+				"label": [
+					"bikes",
+					"empty docks"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "2",
+				"linecolor": [
+					"#39A2E1"],
+				"linewidth": "5",
+				"valuescale": "1",
+				"fadenegative": "1",
+				"name": "chart",
+				"title": __name,
+				"description": "<h5>actual station status</h5>",
+				"splash": "loading and aggregating data ...<br>this may take a bit ...<br>please give me some time ..."
+				}
+			}
+		};
+		theme_status_diff = () => {
+		  return {
+			"layer": "Station",
+			"field": "num_bikes_available|old_num_bikes_available",
+			"field100": "",
+			"style": {
+				"type": "GAUGE|CHART|BAR|POINTER|SIZE|DIFFERENCE|SUM|NOLEGEND",
+				"colorscheme": [
+					"red",
+					"green"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "bike_status",
+				"dbtableType": "ext",
+				"dbtableExt": "../../app/Minimalist/dataprovider_gbfs.js",
+				"dbtableUrl": __status_url,
+				"datacache": "false",
+				"lookupfield": "station_id",
+				"showdata": "true",
+				"child": "true",
+				"symbols": [
+					"circle"],
+				"label": [
+					"bikes",
+					"empty docks"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "2",
+				"normalsizevalue": "10",
+				"linecolor": [
+					"white"],
+				"linewidth": "2",
+				"valuescale": "1",
+				"fadenegative": "0.1",
+				"title": "Citi Bike",
+				"name": "chart2",
+				"snippet": "<p>last updated: 19/6/2021 16:14:50</p>",
+				"splash": "loading and aggregating data ...<br>this may take a bit ...<br>please give me some time ...",
+				"description": "<h5>actual station status</h5>"
+				}
+			}
+		};
+	theme_free_bike_status = () => {
+		  return {
+			"layer": "generic",
+			"field": "is_disabled",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|STAR|SIZEP3|CATEGORICAL|AGGREGATE|RECT|RELOCATE|SUM|VALUES|COMPACTLEGEND|ZOOMTO",
+				"colorscheme": [
+					"RGB(57,162,225)",
+					"gray"
+				],
+				"values":[
+					"0",
+					"1"],
+				"label":[
+					"available",
+					"disabled"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "free_bike_status",
+				"dbtableType": "ext",
+				"dbtableExt": "../../app/Minimalist/dataprovider_gbfs.js",
+				"dbtableUrl": __free_bike_status_url,
+				"datacache": "false",
+				"lookupfield": "lat|lon",
+				"scale":"2",
+				"showdata": "true",
+				"units": "",
+				"refreshtimeout": "0",
+				"valuescale": "1",
+				"fadenegative": "1",
+				"sizefield":"$item$",
+				"gridwidth":"10px",
+				"name": "chart",
+				"title": __name,
+				"splash": "loading and aggregating data ...<br>this may take a bit ...<br>please give me some time ...",
+				"description": "free vehicles, aggregated by dynamic grid"
+				}
+			}
+		};
+		project = () => {
+		  return {
+			"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+			"map": {
+				"basemap" : "CartoDB - Positron",
+				"attribution": "iXMaps",
+				"item":"html",
+				"scaleParam": {
+					"normalSizeScale": "10000"         // define the scale with 'normal' sized charts dynamic object scaling 
+					},
+				"options": {
+					"objectscaling": "dynamic",       	// objects (charts) will slightly increase in size while zooming in
+					"panhidden":"false"               	// don't hide the charts on pan
+					},
+				"center": {                         	// the initial map view
+					"lat": "-23.557535732680662",
+					"lng": "-46.641769409179695"
+					},
+				"zoom": "11",
+				"localize":{
+					"loading data ...": "data &#8644;"
+					}
+				},
+			"themes": __themes
+			}
+		}
+					
+		// --------------------------------------------
+		// make the map application
+		// --------------------------------------------
+		
+		ixmaps.embedMap("map_div",
+			{ 
+				mapService: "leaflet",
+				mapType:	"CartoDB - Positron",
+				mapUrl:		"",
+				width:		"100%",
+				height:		window.innerHeight+"px",
+				legend:		true,
+				item:		"html"
+			},
+			(map) => {
+			
+				__map = map;
+
+				// load a world ISO 2 country code map to get positions for the country GBFS sums
+				map.loadMap("https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/world_base_ISO/world_ISO2.svgz");
+
+				// get the data
+				// GBFS feeds around the world present in the NABSA list
+			
+				var gbfs = new Data.feed({"source":"https://raw.githubusercontent.com/NABSA/gbfs/master/systems.csv",type:"csv"}).load( (data) => {
+
+					map.setOptions({
+						"featurescaling": "true",
+						"objectscaling": "dynamic"
+						});
+					map.setScaleParam({
+						"normalSizeScale": "111158913"
+						});
+
+					// show GBFS feeds on map, aggregated by country 
+					
+					map.setData(data,{type:"jsonDB",name:"GBFS_NABSA"});
+					map.newTheme(theme_countries());
+
+					// make selection list with the GBFS feeds
+			
+					var indexCountry = data.column("Country Code").index;
+					var indexName = data.column("Name").index;
+					var indexUrl  = data.column("Auto-Discovery URL").index;
+					var szHtml = "<option selected>-- please select a Bike Sharer ---</option>";
+					for ( i in data.records ){
+						szHtml += "<option value='javascript:ixmaps.loadGBFS(\""+data.records[i][indexUrl]+"\",\""+data.records[i][indexName]+"\")' >"+data.records[i][indexCountry]+ " - " +data.records[i][indexName]+"</option>";
+					}
+					$("#theme-classes-select").html(szHtml);			
+
+				});
+		});
+		
+		// ----------------------------------------
+		// show the selected GBFS feed on the map
+		// ----------------------------------------
+		
+		ixmaps.loadGBFS = function(szDiscoveryUrl,szName) {
+			
+			__name = szName;
+			__stations_url = null;
+			__status_url = null;
+			__free_bike_status_url = null;
+			
+			ixmaps.message("&#10132; "+szName);
+			console.log(szDiscoveryUrl);
+			
+			// 1. read the discovery data from the feed
+			
+			var gbfs_discovery = new Data.feed({"source":"https://corsme.herokuapp.com/"+szDiscoveryUrl,type:"json"})
+			.error(function(e){
+				ixmaps.message("error: "+e.statusText,2000);
+				})
+			.load( (data) => {
+				
+				// look for the puplisheds feed of the GBFS
+				// feed declaration may be one or language specific
+
+				var feeds = gbfs_discovery.data.data.feeds;
+				if ( !feeds ){
+					var __cc = "en";
+					for ( var cc in gbfs_discovery.data.data ){
+						__cc = cc;
+					}
+					feeds = gbfs_discovery.data.data[__cc].feeds;
+				}
+				
+				// ! correct known error in helbiz discovery information
+
+				for ( i in feeds ){
+					if ( !feeds[i].url.match(/api.helbiz.com\/admin/)){
+						feeds[i].url = feeds[i].url.replace(/api.helbiz.com/,"api.helbiz.com\/admin");
+					}
+				}
+				
+				// look for feeds we can display
+				// we want either a station:information / station_status pair or the free_bike_status
+
+				for ( i in feeds ){
+					console.log(feeds[i].name);
+					if ( feeds[i].name.match(/station_information/) ){
+						__stations_url = "https://corsme.herokuapp.com/"+feeds[i].url;
+					}	
+					if ( feeds[i].name.match(/station_status/) ){
+						__status_url = "https://corsme.herokuapp.com/"+feeds[i].url;
+					}	
+					if ( feeds[i].name.match(/free_bike_status/) ){
+						__free_bike_status_url = "https://corsme.herokuapp.com/"+feeds[i].url;
+					}	
+				}
+				
+				// set the themes to be realised in base of what we found
+				
+				if ( __status_url ){
+					var status = new Data.feed({"source":__status_url,type:"json"})
+					.error(function(e){
+						ixmaps.message("error: "+e.statusText,2000);
+						})
+					.load( (data) => {
+						if (status.data.data.stations.length){
+							__themes = [
+								theme_stations(),
+								theme_status(),
+								theme_status_diff()
+								];
+						}
+						else{
+							__themes = [
+								theme_free_bike_status()
+								];
+						}
+						__map.loadProject(project(),"keepview");
+					})
+				}else{
+					__themes = [
+						theme_free_bike_status()
+						];
+					__map.loadProject(project(),"keepview");
+				}
+			});
+		}
+
+	</script>	
+
+
+  </body>
+</html>
