@@ -7,6 +7,58 @@ window.ixmaps = window.ixmaps || {};
 	
 	ixmaps.oldBounds = null;
 
+	ixmaps.OSM_dataquery_streetmap  = function(data,option){
+		
+		ixmaps.setTitleBox("Overpass API &#8644;","RGBA(95, 185, 135,0.5)");
+		ixmaps.in_query = true;
+
+		var bounds = ixmaps.oldBounds = ixmaps.getBoundingBox();
+		var szBounds = bounds[0].lng+'/'+bounds[0].lat+'/'+bounds[1].lng+'/'+bounds[1].lat;
+
+		query = 
+		'[out:json][timeout:250][bbox:'+
+			   bounds[0].lat+','+
+			   bounds[0].lng+','+
+			   bounds[1].lat+','+
+			   bounds[1].lng+'];'+
+		'('+
+		  'way["barrier"];'+
+		  '(way["highway"]; - way[footway="sidewalk"];);'+
+		  '(way[footway="sidewalk"][bicycle]; - way[footway="sidewalk"][bicycle="no"];);'+
+		');'+
+		'out body center qt;'+
+		'>;'+
+		'out skel qt;';
+
+
+		var szUrl = "https://overpass-api.de/api/interpreter?data="+query;
+		var myfeed = Data.feed({"source":szUrl,"type":"json"}).load(function(mydata){
+
+			if ( myfeed.data.elements ){
+				
+				geo = osmtogeojson(myfeed.data);
+				
+				var xgeo = {type:"featurecollection",features:[]}
+				for (i in geo.features ){
+					if (!geo.features[i].geometry.type.match(/Point/) ){
+						xgeo.features.push(geo.features[i]);
+					}
+				}
+
+				ixmaps.in_query = false;
+				ixmaps.setTitle("");
+				ixmaps.setExternalData(xgeo,{type:"geojson",name:options.name});
+
+			}
+
+		})
+		.error(function(e){
+			ixmaps.setTitleBox("error while loading","RGBA(128,0,0,0.5)");
+			ixmaps.setExternalData(null,{name:option.name});
+			ixmaps.in_query = false;
+		});
+
+	};
 	
 	ixmaps.OSM_dataquery_tourism  = function(data,option){
 
@@ -31,16 +83,23 @@ window.ixmaps = window.ixmaps || {};
 		var szUrl = "https://overpass.kumi.systems/api/interpreter?data="+query;
 		var myfeed = Data.feed({"source":szUrl,"type":"json"}).load(function(mydata){
 
+			ixmaps.in_query = false;
+			ixmaps.setTitle("");
 			if ( myfeed.data.elements ){
 				geo = osmtogeojson(myfeed.data);
 				ixmaps.setExternalData(geo,{type:"geojson",name:option.name});
 			}
 
 		})
-		.error(function(e){alert("error loading data from:\n"+szUrl)});
+		.error(function(e){
+			ixmaps.setTitleBox("error while loading","RGBA(128,0,0,0.5)");
+			ixmaps.setExternalData(null,{name:option.name});
+			ixmaps.in_query = false;
+		});
 
 	};
 
+	
 	ixmaps.OSM_dataquery_bus_stop  = function(data,option){
 
 		var bounds = ixmaps.oldBounds = ixmaps.getBoundingBox();
@@ -62,13 +121,61 @@ window.ixmaps = window.ixmaps || {};
 		var szUrl = "https://overpass-api.de/api/interpreter?data="+query;
 		var myfeed = Data.feed({"source":szUrl,"type":"json"}).load(function(mydata){
 
+			ixmaps.in_query = false;
+			ixmaps.setTitle("");
+
 			if ( myfeed.data.elements ){
 				geo = osmtogeojson(myfeed.data);
 				ixmaps.setExternalData(geo,{type:"geojson",name:option.name});
 			}
 
 		})
-		.error(function(e){alert("error loading data from:\n"+szUrl)});
+		.error(function(e){
+			ixmaps.setTitleBox("error while loading","RGBA(128,0,0,0.5)");
+			ixmaps.setExternalData(null,{name:option.name});
+			ixmaps.in_query = false;
+		});
+
+	};
+
+	ixmaps.OSM_dataquery_bike_rental  = function(data,option){
+
+		var bounds = ixmaps.oldBounds = ixmaps.getBoundingBox();
+		var szBounds = bounds[0].lng+'/'+bounds[0].lat+'/'+bounds[1].lng+'/'+bounds[1].lat;
+
+		query = 
+			'[out:json][timeout:100][bbox:'+
+				   bounds[0].lat+','+
+				   bounds[0].lng+','+
+				   bounds[1].lat+','+
+				   bounds[1].lng+'];'+
+			'('+
+				' node["amenity"="bicycle_rental"];'+
+				');'+
+			'out body center qt;'+
+			'>;'+
+			'out skel qt;';									 
+
+		var szUrl = "https://overpass-api.de/api/interpreter?data="+query;
+		var myfeed = Data.feed({"source":szUrl,"type":"json"}).load(function(mydata){
+
+			ixmaps.in_query = false;
+			ixmaps.setTitle("");
+
+			if ( myfeed.data.elements && myfeed.data.elements.length ){
+				geo = osmtogeojson(myfeed.data);
+				ixmaps.setExternalData(geo,{type:"geojson",name:option.name});
+			}else{
+				ixmaps.setTitleBox("no points in map view");
+				ixmaps.setExternalData(null,{type:"geojson",name:option.name});
+			}
+
+		})
+		.error(function(e){
+			ixmaps.setTitleBox("error while loading","RGBA(128,0,0,0.5)");
+			ixmaps.setExternalData(null,{name:option.name});
+			ixmaps.in_query = false;
+		});
 
 	};
 
@@ -124,6 +231,9 @@ window.ixmaps = window.ixmaps || {};
 			}else
 			if ( objTheme.szLabelA[i].match(/primary/i) ){
 				objTheme.colorScheme[i] = "#dd0000";
+			}else
+			if ( objTheme.szLabelA[i].match(/asphalt/i) ){
+				objTheme.colorScheme[i] = "#888888";
 			}
 		}
 

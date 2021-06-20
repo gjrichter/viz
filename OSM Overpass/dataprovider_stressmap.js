@@ -64,7 +64,7 @@ window.ixmaps = window.ixmaps || {};
 		})
 		.error(function(e){
 			ixmaps.setTitleBox("error while loading","RGBA(128,0,0,0.5)");
-			ixmaps.setExternalData(null);
+			ixmaps.setExternalData(null,{type:"geojson",name:options.name});
 			ixmaps.in_query = false;
 		});
 
@@ -134,7 +134,6 @@ window.ixmaps = window.ixmaps || {};
 	
 	ixmaps.addStressLevel = function(data){
 		
-		console.log(data.elements);
 		for ( var i in data.elements ){
 			if ( data.elements[i].type == "way" ){
 				data.elements[i].tags = data.elements[i].tags || {};
@@ -160,22 +159,18 @@ window.stresslevel = window.stresslevel || {};
   exports.evaluateLTS = function (way) {
     const bp = bikingPermitted(way)
     if (!bp.permitted) {
-	  console.log(bp.result); 		
       return bp.result
     }
     const isp = isSeparatedPath(way)
     if (isp.isSeparatedPath) {
- 	 console.log(isp.result); 		
-     return isp.result
+      return isp.result
     }
     const ibl = isBikeLane(way)
     if (ibl.isBikeLane) {
-  	 console.log(ibl.result); 		
-     return ibl.result
+      return ibl.result
     }
     const imt = isMixedTraffic(way)
     if (imt.isMixedTraffic) {
-  	 console.log(imt.result); 		
      return imt.result
     }
 

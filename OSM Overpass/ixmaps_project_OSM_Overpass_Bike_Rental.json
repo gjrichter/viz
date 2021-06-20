@@ -6,14 +6,14 @@
 		"description": "",
 		"thumbnail": "",
 		"about": "",
-		"created": "Fri Jun 11 2021 23:33:58 GMT+0200 (Ora legale dell’Europa centrale)"
+		"created": "Wed Jun 16 2021 10:44:56 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
-		"map": "",
+		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
 		"legend": "",
-		"item": "html",
+		"item": "",
 		"scaleParam": {
 			"normalSizeScale": "100000"
 			},
@@ -45,69 +45,48 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "41.91385469323496",
-			"lng": "12.49173402786255"
+			"lat": "51.5058576545476",
+			"lng": "-0.11569976806640626"
 			},
-		"zoom": "15"
+		"zoom": "13"
 		},
 	"required": [
-		"https://unpkg.com/osmtogeojson@3.0.0-beta.4/osmtogeojson.js"
-	],
+		"https://unpkg.com/osmtogeojson@3.0.0-beta.4/osmtogeojson.js"],
 	"themes": [{
 			"layer": "osm",
-			"field": "highway",
+			"field": "$item$",
 			"field100": "",
 			"style": {
-				"type": "CHART|FEATURES|CATEGORICAL|LINES|LOCKED",
+				"type": "CHART|SYMBOL|AGGREGATE|RELOCATE|SIZE|VALUES|ZEROISVALUE|COMPACTLEGEND|SUM",
 				"colorscheme": [
-					"29",
+					"1",
 					"tableau"],
 				"shadow": "false",
-				"dbtable": "OSM_dataquery_streetmap",
+				"dbtable": "OSM_dataquery_bike_rental",
 				"dbtableType": "ext",
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/OSM Overpass/dataprovider_overpass.js",
 				"datacache": "true",
-				"itemfield": "id",
 				"lookupfield": "geometry",
-				"values": [
-					"pedestrian",
-					"footway",
-					"service",
-					"elevator",
-					"residential",
-					"services",
-					"platform",
-					"path",
-					"tertiary",
-					"secondary",
-					"primary",
-					"motorway",
-					"track",
-					"motorway_link",
-					"unclassified",
-					"steps",
-					"trunk",
-					"cycleway",
-					"trunk_link",
-					"primary_link",
-					"proposed",
-					"secondary_link",
-					"tertiary_link",
-					"construction",
-					"road",
-					"living_street",
-					"corridor",
-					"motorway_junction",
-					"bridleway"],
+				"showdata": "true",
+				"symbols": [
+					"circle"],
 				"units": "",
 				"refreshtimeout": "0",
+				"sizefield":"capacity",
+				"valuefield":"capacity",
+				"normalsizescale": "10",
 				"scale": "1",
+				"textcolor": [
+					"#ffffff"],
 				"linecolor": [
 					"none"],
-				"linewidth": "3",
+				"linewidth": "1",
 				"valuescale": "1",
+				"gridwidthpx": "20",
 				"name": "features",
-				"title": "OSM Overpass test"
+				"title": "Bike Rental Points",
+				"snippet": "with capacity, if defined",
+				"description": "<i>Note: points and capacities are aggregated on a zoom dependent grid</i>"
 				}
 			}],
 	"layerMask": {

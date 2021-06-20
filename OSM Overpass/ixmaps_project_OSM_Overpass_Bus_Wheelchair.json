@@ -11,7 +11,7 @@
 	"map": {
 		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "iXMaps",
-		"basemap": "ArcGIS - Topo",
+		"basemap": "CartoDB - Positron",
 		"legend": "",
 		"item": "",
 		"scaleParam": {
@@ -85,12 +85,13 @@
 				"linecolor": [
 					"none"],
 				"linewidth": "1",
-				"chartupper": "1:500000",
 				"valuescale": "1",
 				"centerpart": "max",
 				"clipparts": "10",
 				"gridwidthpx": "5",
-				"title": "OSM Overpass test"
+				"name": "features",
+				"title": "OSM Bus Stops and wheelchair flag",
+				"splash":"awaiting Overpass response"
 				}
 			}],
 	"layerMask": {
