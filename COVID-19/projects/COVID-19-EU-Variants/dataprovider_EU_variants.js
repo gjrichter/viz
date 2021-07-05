@@ -9,7 +9,7 @@ window.ixmaps = window.ixmaps || {};
 	
     ixmaps.ECDC_VARIANTS_SEQUENCED_PERCENT = function (theme,options) {
 
-		var szUrl = "https://corsme.herokuapp.com/https://opendata.ecdc.europa.eu/covid19/virusvariant/csv/data.csv";
+		var szUrl = "https://api.allorigins.win/raw?url=https://opendata.ecdc.europa.eu/covid19/virusvariant/csv/data.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ECDC variants data
@@ -55,7 +55,7 @@ window.ixmaps = window.ixmaps || {};
 		
     ixmaps.ECDC_VARIANTS_SEQUENCED = function (theme,options) {
 
-		var szUrl = "https://corsme.herokuapp.com/https://opendata.ecdc.europa.eu/covid19/virusvariant/csv/data.csv";
+		var szUrl = "https://api.allorigins.win/raw?url=https://opendata.ecdc.europa.eu/covid19/virusvariant/csv/data.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ECDC variants data
@@ -101,7 +101,7 @@ window.ixmaps = window.ixmaps || {};
 		
     ixmaps.EU_COVID_VARIANTS_RELIABLE = function (theme,options) {
 
-		var szUrl = "https://corsme.herokuapp.com/https://opendata.ecdc.europa.eu/covid19/virusvariant/csv/data.csv";
+		var szUrl = "https://api.allorigins.win/raw?url=https://opendata.ecdc.europa.eu/covid19/virusvariant/csv/data.csv";
 
 		// -----------------------------------------------------------------------------------------------               
 		// read the ECDC variants data
