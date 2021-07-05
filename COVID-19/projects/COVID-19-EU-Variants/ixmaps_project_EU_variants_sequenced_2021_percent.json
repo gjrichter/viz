@@ -1,0 +1,126 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Sat Jul 03 2021 15:26:12 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "© EuroGeographics for the administrative boundariesi, visulizzation: XMaps",
+		"basemap": "white",
+		"legend": "<h1>Percent of cases sequenced</h1><h4><i class='icon icon-radio-checked2' style='color:red'/> < 10 % <br><i class='icon icon-radio-checked2' style='color:green'/> >= 10%<br></h4><h4>Sequencing volumes recommended by ECDC are either >=500 sequences or >=10 % of cases sequenced in a specific week</h4><h4><b>fonte:</b> <a  href='https://www.ecdc.europa.eu/en/publications-data/data-virus-variants-covid-19-eueea' target='_blank'>Data on SARS-CoV-2 variants in the EU/EEA</a> - European Centre for Disease Prevention and Control</h4>",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "27682087"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "50.401515322782366",
+			"lng": "19.4677734375"
+			},
+		"zoom": "5"
+		},
+	"themes": [{
+			"layer": "nuts_0",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"#eeeeee"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "nuts_0",
+				"dbtableUrl": "https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/NUTS_RG_10M_2021_4326_LEVL_0.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "NUTS_ID",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "1.5",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Nuts_2"
+				}
+			},{
+			"layer": "nuts_0",
+			"field": "placeholder",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|PLOT|LINES|AREA|GRID|BOX|TITLE|ZEROISVALUE|NOLEGEND",
+				"colorscheme": [
+					"red",
+					"green"],
+				"fillopacity": "0.3",
+				"shadow": "false",
+				"dbtable": "ECDC_VARIANTS_SEQUENCED_PERCENT",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-EU-Variants/dataprovider_EU_variants.js",
+				"datacache": "false",
+				"lookupfield": "country_code",
+				"ranges": [
+					"0",
+					"10",
+					"100"],
+				"symbols": [
+					"circle"],
+				"units": "%",
+				"align": "23right",
+				"refreshtimeout": "0",
+				"scale": "0.1",
+				"textcolor": "rgb(125, 125, 125)",
+				"linewidth": "10",
+				"bordercolor": "rgb(125, 125, 125)",
+				"boxopacity": "0",
+				"titlefield": "country",
+				"titleupper": "1:1000000000",
+				"valuescale": "1",
+				"valuedecimals": "2",
+				"title": "Other",
+				"snippet": "percent other variants",
+				"description": ""
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
