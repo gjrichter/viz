@@ -37,7 +37,7 @@ $Log:ixmaps_simple_embed.html,v $
 	<div id="footer">
 	</div>
 
-	<div id="themeselect" style="position:absolute;top:3px;left:90px;padding:1em">
+	<div id="themeselect" style="position:absolute;top:1em;left:90px;">
 		<select class="form-control" id="theme-classes-select" onchange="eval(document.getElementById('theme-classes-select').value)" style="padding:0.4em;background:#f8f6f6;font-size:1.2em;border-radius:5px;color:#666">
 			<option>-- please select a Bike Sharer ---</option>
 		</select>
@@ -79,18 +79,22 @@ $Log:ixmaps_simple_embed.html,v $
 			"field": "$item$",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SIZEP4|AGGREGATE|SUM|VALUES|SIMPLELEGEND",
+				"type": "CHART|SYMBOL|SIZEP4|AGGREGATE|SUM|VALUES|SIMPLELEGEND|LOCKED",
 				"colorscheme": [
 					"RGB(57,162,225)"],
 				"shadow": "false",
 				"dbtable": "GBFS_NABSA",
+				"dbtableUrl":"https://raw.githubusercontent.com/NABSA/gbfs/master/systems.csv",
+				"dbtableType":"csv",
 				"datacache": "false",
 				"showdata": "true",
 				"lookupfield": "Country Code",
 				"units": "",
-				"scale": "1",
+				"scale": "5",
+				"normalsizevalue": "1",
 				"label": "feeds per country",
 				"valuescale": "1",
+				"name":"countries",
 				"title": "GBFS Feeds",
 				"snippet": "around the world which are present in the <a href='https://github.com/NABSA/gbfs/blob/master/systems.csv' target='_blank'>NABSA feed directory</a>",
 				"description": "On her <a href='https://github.com/NABSA/gbfs' target='_blank'>Github</a> page the <b>North American Bike Share Association</b> (NASBA) describes the GBFS as follows:<br><i>The <b>General Bikeshare Feed Specification</b>, known as GBFS, is the open data standard for shared mobility. GBFS makes real-time data feeds in a uniform format publicly available online, with an emphasis on findability.</i><br><br>In the initial state, the map shows the GBFS feeds aggregated per country. With the selection box in the upper left you can select and explore the single feed."
@@ -172,10 +176,11 @@ $Log:ixmaps_simple_embed.html,v $
 			"field": "num_bikes_available|old_num_bikes_available",
 			"field100": "",
 			"style": {
-				"type": "GAUGE|CHART|BAR|POINTER|SIZE|DIFFERENCE|SUM|NOLEGEND",
+				"type": "GAUGE|CHART|BAR|POINTER|SIZEP4|DIFFERENCE|SUM|NOLEGEND",
 				"colorscheme": [
 					"red",
 					"green"],
+				"rangecentervalue":"0",
 				"fillopacity": "0.7",
 				"shadow": "false",
 				"dbtable": "bike_status",
@@ -252,9 +257,10 @@ $Log:ixmaps_simple_embed.html,v $
 		  return {
 			"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
 			"map": {
+				"map":"https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/world_base_ISO/world_ISO2.svgz",
 				"basemap" : "CartoDB - Positron",
 				"attribution": "iXMaps",
-				"item":"html",
+				"item":"../../app/Minimalist/item.html",
 				"scaleParam": {
 					"normalSizeScale": "10000"         // define the scale with 'normal' sized charts dynamic object scaling 
 					},
@@ -262,11 +268,6 @@ $Log:ixmaps_simple_embed.html,v $
 					"objectscaling": "dynamic",       	// objects (charts) will slightly increase in size while zooming in
 					"panhidden":"false"               	// don't hide the charts on pan
 					},
-				"center": {                         	// the initial map view
-					"lat": "-23.557535732680662",
-					"lng": "-46.641769409179695"
-					},
-				"zoom": "11",
 				"localize":{
 					"loading data ...": "data &#8644;"
 					}
@@ -281,33 +282,23 @@ $Log:ixmaps_simple_embed.html,v $
 		
 		ixmaps.embedMap("map_div",
 			{ 
-				mapService: "leaflet",
-				mapType:	"CartoDB - Positron",
-				mapUrl:		"",
 				width:		"100%",
 				height:		window.innerHeight+"px",
-				legend:		true,
-				item:		"html"
+				legend:		true
 			},
 			(map) => {
 			
 				__map = map;
 
 				// load a world ISO 2 country code map to get positions for the country GBFS sums
-				map.loadMap("https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/world_base_ISO/world_ISO2.svgz");
-
+				// map.loadMap("https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/world_base_ISO/world_ISO2.svgz");
+			
+				map.loadProject(project());
+			
 				// get the data
 				// GBFS feeds around the world present in the NABSA list
 			
 				var gbfs = new Data.feed({"source":"https://raw.githubusercontent.com/NABSA/gbfs/master/systems.csv",type:"csv"}).load( (data) => {
-
-					map.setOptions({
-						"featurescaling": "true",
-						"objectscaling": "dynamic"
-						});
-					map.setScaleParam({
-						"normalSizeScale": "111158913"
-						});
 
 					// show GBFS feeds on map, aggregated by country 
 					
@@ -333,6 +324,9 @@ $Log:ixmaps_simple_embed.html,v $
 		// ----------------------------------------
 		
 		ixmaps.loadGBFS = function(szDiscoveryUrl,szName) {
+			
+			// set selected, because ixmaps.loadGBFS may be called by item.html
+			$("#theme-classes-select").val("javascript:ixmaps.loadGBFS(\""+szDiscoveryUrl+"\",\""+szName+"\")");
 			
 			__name = szName;
 			__stations_url = null;
