@@ -325,6 +325,8 @@ $Log:ixmaps_simple_embed.html,v $
 		
 		ixmaps.loadGBFS = function(szDiscoveryUrl,szName) {
 			
+			console.log(szDiscoveryUrl);
+			
 			// set selected, because ixmaps.loadGBFS may be called by item.html
 			$("#theme-classes-select").val("javascript:ixmaps.loadGBFS(\""+szDiscoveryUrl+"\",\""+szName+"\")");
 			
