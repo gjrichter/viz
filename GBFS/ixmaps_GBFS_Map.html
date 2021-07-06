@@ -384,11 +384,6 @@ $Log:ixmaps_simple_embed.html,v $
 				
 				// set the themes to be realised in base of what we found
 				
-				alert(__stations_url);
-				alert(__status_url);
-				alert(__free_bike_status_url);
-				
-				
 				if ( __status_url ){
 					var status = new Data.feed({"source":__status_url,type:"json"})
 					.error(function(e){
@@ -413,6 +408,7 @@ $Log:ixmaps_simple_embed.html,v $
 					__themes = [
 						theme_free_bike_status()
 						];
+					console.log(__map);
 					__map.loadProject(project(),"keepview");
 				}
 			});
