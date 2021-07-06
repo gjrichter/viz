@@ -397,7 +397,7 @@
 							continue;
 						}else
 						if ( (i == "Name") ) {
-							szHtml += "<a class='list-group-item list-group-item-action' href='javascript:ixmaps.parentApi.loadGBFS(\""+dataObject["Auto-Discovery URL"]+"\",\""+dataObject[i]+"\")' >"+dataObject["Country Code"]+ " - " +dataObject["Name"]+"</a>";
+							szHtml += "<a class='list-group-item list-group-item-action' href='javascript:ixmaps.parentApi.parentApi.loadGBFS(\""+dataObject["Auto-Discovery URL"]+"\",\""+dataObject[i]+"\")' >"+dataObject["Country Code"]+ " - " +dataObject["Name"]+"</a>";
 						}
 					}
 				}
