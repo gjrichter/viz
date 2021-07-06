@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<!-- **********************************************************************
+
+ixmaps_simple_embed.html
+
+$Comment: map template for Ricostruzione Trasparente; embedded version
+$Source : ixmaps_comuni_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:ixmaps_comuni_embed.html 1 2017-07-22 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:ixmaps_simple_embed.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="assets/img/favicon.png">
+
+	<title>iXMaps really simple RT template</title>
+	<style>
+		.form-control {
+			padding:0.4em;
+			background:rgba(255,255,255,0.3);
+			font-size:1.2em;
+			border-color:#ccc;
+			border-top: 0px;
+			border-left: 0px;
+			border-right: 0px;
+			border-bottom: solid #ddd 3px;
+			border-radius:5px;
+			color:#444
+		}
+		.black {
+			background:rgba(255,255,255,0.1);
+			color:#ddd
+		}
+		.title {
+			background-color: #ddd;
+			color: #fff;
+			border: solid #ddd 1px;
+		}  
+	</style>
+
+</head>
+
+<body style="padding:0;margin:0;overflow:hidden">
+
+	<div id="map_div"  background="#f8f8f8" onclick="event.stopPropagation();return false;">
+	</div>
+	<div id="footer">
+	</div>
+
+	<div id="themeselect" style="position:absolute;top:-1px;left:500px;padding:1em">
+		<select class="form-control" id="theme-classes-select" onchange="eval(document.getElementById('theme-classes-select').value)" style="padding:0.4em;background:#f8f6f6;font-size:1.2em;border-radius:5px;color:#666">
+			<option value="ixmaps.loadProject('map','../../projects/OSM Overpass/ixmaps_project_OSM_Overpass_Stressmap_Roma.json','replacetheme');" selected>Cycling Stress Map</option>
+			<option value="ixmaps.loadProject('map','../../projects/OSM Overpass/ixmaps_project_OSM_Overpass_StreetSpeedMap_Roma - Copy.json','replacetheme');" >Street Speed Limit</option>
+			<option value="ixmaps.clearAll();ixmaps.loadProject('map','../../projects/OSM Overpass/ixmaps_project_OSM_Overpass_Bike_Rental.json','replacetheme');" >Bicycle Rental</option>
+			<option value="ixmaps.loadProject('map','../../projects/OSM Overpass/ixmaps_project_OSM_Overpass_Bus_Wheelchair.json','replacetheme');" >Bus Stop and Wheelchair</option>
+		</select>
+		<button style="font-size:1.3em;padding:0.3em 1em;border-radius:0.2em;border;none" onclick="ixmaps.refreshTheme(null,null)">refresh</button>
+																 
+																			 
+	</div>
+
+
+	<!-- ixmaps api ================================================================= -->
+
+	<script type="text/javascript" src = "../../ui/js/htmlgui_api.js" > </script>
+
+	<script type="text/javascript" src = "../../ui/libs/jquery/jquery-1.7.1.min.js" > </script>
+	<script type="text/javascript" src = "../../../data.js/data.js" > </script>
+	<script type="text/javascript" src = "https://unpkg.com/osmtogeojson@3.0.0-beta.4/osmtogeojson.js" > </script>														   
+
+	<!--============================================================================= -->
+
+	<script type="text/javascript" charset="utf-8"> 
+
+		ixmaps.embedMap("map_div",
+				{ 
+					mapService: "leaflet",
+					mapType:	"CartoDB - Positron",
+					mapUrl:		"",
+					width:		"100%",
+					height:		window.innerHeight+"px",
+					legend:		true
+				},
+				(map) => {
+									   
+					map.setLocal("loading data ...","waiting for OSM data");			   
+					map.loadProject('../../projects/OSM Overpass/ixmaps_project_OSM_Overpass_Stressmap_Roma.json');
+									   
+				}
+			);
+
+	</script>	
+
+
+  </body>
+</html>
