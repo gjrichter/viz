@@ -30,4 +30,5 @@ featured:
 
 
 
-[City Move Map](https://gjrichter.github.io/viz/OSM Overpass/ixmaps_City_Move_Map.html.html)
+[City Move Map](https://gjrichter.github.io/viz/OSM Overpass/ixmaps_City_Move_Map.html)
+
