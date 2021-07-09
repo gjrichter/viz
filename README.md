@@ -24,3 +24,10 @@ featured:
 
 [Parler video map](https://gjrichter.github.io/viz/Parler/gallery/)
 
+
+
+[GBFS map](https://gjrichter.github.io/viz/GBFS/ixmaps_GBFS_Map.html)
+
+
+
+[City Move Map](https://gjrichter.github.io/viz/OSM Overpass/ixmaps_City_Move_Map.html.html)
