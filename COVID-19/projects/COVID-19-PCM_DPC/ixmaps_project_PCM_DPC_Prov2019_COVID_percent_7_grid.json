@@ -106,8 +106,7 @@
 				"units": "%",
 				"align": "center",
 				"refreshtimeout": "0",
-				"normalsizevalue": "2",
-				"scale": "1",
+				"scale": "3",
 				"textcolor": "#aa0000",
 				"linecolor": [
 					"#dd0000"],
