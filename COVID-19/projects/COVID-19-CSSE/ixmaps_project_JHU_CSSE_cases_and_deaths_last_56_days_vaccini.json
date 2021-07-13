@@ -1,0 +1,215 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Wed Dec 16 2020 09:36:00 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/world_base_ISO/world_ISO3.svgz",
+		"attribution": "iXMaps",
+		"basemap": "ArcGIS - Light Gray Base",
+		"legend": "<h1>COVID-19 <br> <b style='color:rgba(200, 0, 90,1)'>new cases</b> and <b>deaths</b> and <b style='color:rgba(0, 150, 90,1)'>vaccinated</b> (<b style='color:rgba(0, 150, 90,0.5)'>1</b>/<b style='color:rgba(0, 150, 90,1)'>2</b> dose)</h1><h4>Curves are 7 day moving average for the last 56 days. Every curve has its own scale to fit into the plot space </h4><h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a></h4>",
+		"item": "",
+		"scaleParam": {
+			"objectScaling": "1.7777777777777777",
+			"normalSizeScale": "55364168",
+			"dynamicScalePow": "2"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panhidden":"false"
+			},
+		"center": {
+			"lat": "48.864714761802794",
+			"lng": "6.65771484375"
+			},
+		"zoom": "5"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|LOLLIPOP|DIFFERENCE|SUM|BOX|LONGTITLE|GRID|RECT|FIXSIZE|NOLEGEND",
+				"colorscheme": [
+					"rgba(0, 0, 0,1)"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "CSSE_COVID_DEATH_56",
+				"dbtableUrl": "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/process_56_mean_7.js",
+				"datacache": "false",
+				"lookupfield": "Lat|Long",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "2",
+				"scale": "0.07",
+				"rangescale": "1",
+				"minvalue": "0",
+				"maxvalue": "auto",
+				"linewidth": "30",
+				"bordercolor": "none",
+				"borderradius": "50",
+				"boxcolor": "black",
+				"boxopacity": "0.003",
+				"titlefield": "Country/Region",
+				"titleupper":"1:10000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"gridwidthpx": "250",
+				"aggregationlower": "1:50000000000",
+				"name": "new_cases_curves",
+				"title": "COVID-19 - deaths/day <br> last 56 days",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>"
+				}
+			},{
+			"layer": "World Mercator",
+			"field":"",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|BOX|GRID|COLOR|LONGTITLE|DIFFERENCE|SUM|FIXSIZE|NOLEGEND|NOOUTLIER",
+				"colorscheme": [
+					"rgba(200, 0, 90,1)"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "CSSE_COVID_CONFIRMED_56",
+				"dbtableUrl": "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/process_56_mean_7.js",
+				"datacache": "false",
+				"lookupfield": "Lat|Long",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "2",
+				"scale": "0.07",
+				"rangescale": "1",
+				"minvalue": "0",
+				"maxvalue": "auto",
+				"align": "23right",
+				"linewidth": "30",
+				"bordercolor": "none",
+				"boxopacity": "0.01",
+				"titlefield": "Country/Region",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "new_cases_curves",
+				"title": "COVID-19 - new cases/day <br> last 56 days",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>"
+				}
+			},{
+			"layer": "World_countries_shp0",
+			"field": "people_vaccinated_per_hundred",
+			"field100": "",
+			"style": {
+				"type": "CHART|PIE|AUTOCOMPLETE|SIZE|NOLEGEND|AGGREGATE|MAX",
+				"colorscheme": [
+					"rgba(10,100,50,0.3)"],
+				"label": [
+					"fully vaccinated"
+				],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "iso_code",
+				"units": "",
+				"units100": "",
+				"refreshtimeout": "0",
+				"align":"bottom",
+				"scale": "3",
+				"rangescale": "1",
+				"sizefield": "total_vaccinations",
+				"textcolor": "rgb(182, 152, 53)",
+				"linecolor": [
+					"rgba(10,100,50,0)"],
+				"linewidth": "0.1",
+				"nodatacolor": "rgb(232, 222, 193, 0)",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"evidence": "isolate_gray",
+				"title": "Percent of population fully vaccinated"
+				}
+			},{
+			"layer": "World_countries_shp0",
+			"field": "people_fully_vaccinated_per_hundred",
+			"field100": "",
+			"style": {
+				"type": "CHART|PIE|AUTOCOMPLETE|SIZE|NOLEGEND|VALUES|AGGREGATE|MAX",
+				"colorscheme": [
+					"#4Da56D"],
+				"label": [
+					"fully vaccinated"
+				],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "iso_code",
+				"units": "",
+				"units100": "",
+				"refreshtimeout": "0",
+				"align":"bottom",
+				"scale": "3",
+				"rangescale": "1",
+				"sizefield": "total_vaccinations",
+				"textcolor": "#0D652D",
+				"linecolor": [
+					"#2D854D"],
+				"linewidth": "0.1",
+				"nodatacolor": "rgb(232, 222, 193, 0)",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"evidence": "isolate_gray",
+				"title": "Percent of population fully vaccinated"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			},
+		"World_countries_shp0": {
+			"display": "none"
+			}
+		}
+	}
