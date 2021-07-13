@@ -170,6 +170,42 @@ window.ixmaps = window.ixmaps || {};
 					 keep:["nome_area","codice_NUTS2"],
 					 calc:"sum"}
 				);
+				
+				var i0 = mydata.column("50-59").index;	
+				var i1 = mydata.column("60-69").index;	
+				var i2 = mydata.column("70-79").index;	
+				var i3 = mydata.column("80-89").index;	
+				var i4 = mydata.column("90+").index;	
+				mydata.addColumn({destination:"80+"},function(row){
+					return Number(row[i3]) + Number(row[i4]);
+				})
+				mydata.addColumn({destination:"70+"},function(row){
+					return Number(row[i2]) + Number(row[i3]) + Number(row[i4]);
+				})
+				mydata.addColumn({destination:"60+"},function(row){
+					return Number(row[i1]) + Number(row[i2]) + Number(row[i3]) + Number(row[i4]);
+				})
+				mydata.addColumn({destination:"50+"},function(row){
+					return Number(row[i0]) + Number(row[i1]) + Number(row[i2]) + Number(row[i3]) + Number(row[i4]);
+				})
+				
+				var i0 = dataPop.column("50-59").index;	
+				var i1 = dataPop.column("60-69").index;	
+				var i2 = dataPop.column("70-79").index;	
+				var i3 = dataPop.column("80-89").index;	
+				var i4 = dataPop.column("90+").index;	
+				dataPop.addColumn({destination:"80+"},function(row){
+					return Number(row[i3]) + Number(row[i4]);
+				})
+				dataPop.addColumn({destination:"70+"},function(row){
+					return Number(row[i2]) + Number(row[i3]) + Number(row[i4]);
+				})
+				dataPop.addColumn({destination:"60+"},function(row){
+					return Number(row[i1]) + Number(row[i2]) + Number(row[i3]) + Number(row[i4]);
+				})
+				dataPop.addColumn({destination:"50+"},function(row){
+					return Number(row[i0]) + Number(row[i1]) + Number(row[i2]) + Number(row[i3]) + Number(row[i4]);
+				})
 
 				var merger = new Data.Merger();
 				merger.addSource(mydata, {
@@ -212,6 +248,42 @@ window.ixmaps = window.ixmaps || {};
 					 keep:["nome_area","codice_NUTS2"],
 					 calc:"sum"}
 				);
+
+				var i0 = mydata.column("50-59").index;	
+				var i1 = mydata.column("60-69").index;	
+				var i2 = mydata.column("70-79").index;	
+				var i3 = mydata.column("80-89").index;	
+				var i4 = mydata.column("90+").index;	
+				mydata.addColumn({destination:"80+"},function(row){
+					return Number(row[i3]) + Number(row[i4]);
+				})
+				mydata.addColumn({destination:"70+"},function(row){
+					return Number(row[i2]) + Number(row[i3]) + Number(row[i4]);
+				})
+				mydata.addColumn({destination:"60+"},function(row){
+					return Number(row[i1]) + Number(row[i2]) + Number(row[i3]) + Number(row[i4]);
+				})
+				mydata.addColumn({destination:"50+"},function(row){
+					return Number(row[i0]) + Number(row[i1]) + Number(row[i2]) + Number(row[i3]) + Number(row[i4]);
+				})
+				
+				var i0 = dataPop.column("50-59").index;	
+				var i1 = dataPop.column("60-69").index;	
+				var i2 = dataPop.column("70-79").index;	
+				var i3 = dataPop.column("80-89").index;	
+				var i4 = dataPop.column("90+").index;	
+				dataPop.addColumn({destination:"80+"},function(row){
+					return Number(row[i3]) + Number(row[i4]);
+				})
+				dataPop.addColumn({destination:"70+"},function(row){
+					return Number(row[i2]) + Number(row[i3]) + Number(row[i4]);
+				})
+				dataPop.addColumn({destination:"60+"},function(row){
+					return Number(row[i1]) + Number(row[i2]) + Number(row[i3]) + Number(row[i4]);
+				})
+				dataPop.addColumn({destination:"50+"},function(row){
+					return Number(row[i0]) + Number(row[i1]) + Number(row[i2]) + Number(row[i3]) + Number(row[i4]);
+				})
 
 				var merger = new Data.Merger();
 				merger.addSource(mydata, {
