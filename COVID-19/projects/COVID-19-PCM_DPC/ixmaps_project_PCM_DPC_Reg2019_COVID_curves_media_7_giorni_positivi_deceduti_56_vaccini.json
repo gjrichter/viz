@@ -11,7 +11,7 @@
 	"map": {
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
 		"attribution": "iXMaps",
-		"basemap": "ArcGIS - Light Gray Base",
+		"basemap": "white",
 		"legend": "<div style='color:#777777'><h1></h1><h1>COVID-19 <br> <b style='color:rgba(200, 0, 90,1)'>nuovi positivi </b> e <b>deceduti</b> <br> ultimi 56 giorni e percentuale della popolazion con età <b style='color:rgba(10, 150, 50,1)'>50+ vaccinati (2 dosi)</b></h1><h4>Media mobile di 7 giorni. Ogni curva ha la sua scala per poter confrontarli </h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
 		"item": "html",
 		"scaleParam": {
