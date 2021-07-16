@@ -60,8 +60,8 @@
 			"style": {
 				"type": "FEATURES|NOLEGEND|LOCKED",
 				"colorscheme": [
-					"none"],
-				"fillopacity": "1",
+					"#e8e8e8"],
+				"fillopacity": "0.5",
 				"autoopacity": "true",
 				"shadow": "false",
 				"dbtable": "nuts2",
