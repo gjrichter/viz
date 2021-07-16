@@ -61,7 +61,7 @@
 				"type": "FEATURES|NOLEGEND|LOCKED",
 				"colorscheme": [
 					"#e8e8e8"],
-				"fillopacity": "0.5",
+				"fillopacity": "1",
 				"autoopacity": "true",
 				"shadow": "false",
 				"dbtable": "nuts2",
