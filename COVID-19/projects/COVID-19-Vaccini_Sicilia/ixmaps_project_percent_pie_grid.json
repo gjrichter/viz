@@ -60,7 +60,7 @@
 			"style": {
 				"type": "FEATURES|NOLEGEND|LOCKED",
 				"colorscheme": [
-					"#e8e8e8"],
+					"none"],
 				"fillopacity": "1",
 				"autoopacity": "true",
 				"shadow": "false",
