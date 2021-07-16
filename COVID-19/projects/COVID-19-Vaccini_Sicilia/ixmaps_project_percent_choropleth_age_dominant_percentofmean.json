@@ -1,0 +1,125 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Thu Jul 15 2021 16:51:45 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "13841043"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "true",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "37.459598322905485",
+			"lng": "14.302825927734377"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "nuts2",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"#e8e8e8"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "nuts2",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_sicilia.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "PRO_COM_T",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Italy Nuts2"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "12-19|20-29|30-39|40-49|50-59|60-69|70-79|>80",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|DOMINANT|PERCENTOFMEAN|SIMPLELEGEND",
+				"colorscheme": [
+					"8",
+					"#CFFF33",
+					"#9A5195",
+					"3colors",
+					"#94CCC8"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "COVID_VACCINI_SICILIA_PIVOT",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini_Sicilia/dataprovider_vaccini_sicilia.js",
+				"datacache": "true",
+				"lookupfield": "CODISTAT",
+				"label": [
+					"12-19",
+					"20-29",
+					"30-29",
+					"40-29",
+					"50-29",
+					"60-29",
+					"70-29",
+					">80"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuescale": "1",
+				"dominantfilter": "mean",
+				"dominantdfilter": "0",
+				"title": "Percentuale dell popolazione con almeno 1 dose",
+				"snippet": "<h5>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h5>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
