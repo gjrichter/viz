@@ -1,0 +1,133 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Fri Jul 16 2021 10:51:39 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1><b style='color:RGBA(101, 178, 183,1)'>Vaccinati</b> per fascia età e <b style='color:RGBA(243, 128, 140,1)'>parte non protetta</b></h1><h4>dati per comune aggregate per griglia rettangolare</h4><h4>fonte: <a  href='https://dati.regione.sicilia.it/dataset/covid-19-vaccini-sicilia-target-e-vaccinati-per-comune-e-fasce-di-eta' target='_blank'>opendata Regione Sicilia</a></h4>",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "865065"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "true",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "37.45850822071285",
+			"lng": "14.304199218750002"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "nuts2",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"#e8e8e8"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "nuts2",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_sicilia.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "PRO_COM_T",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Italy Nuts2"
+				}
+			},{
+			"layer": "nuts2",
+			"field": ">80.1|>80.2|70-79.1|70-79.2|60-69.1|60-69.2|50-59.1|50-59.2|40-49.1|40-49.2|30-39.1|30-39.2|20-29.1|20-29.2|12-19.1|12-19.2",
+			"field100": "",
+			"style": {
+				"type": "CHART|BAR|HORZ|STACKED|CENTER|SIZE|XAXIS|NOLEGEND|AGGREGATE|RECT|BOX|TITLE",
+				"colorscheme": [
+					"RGBA(243, 128, 140,1)",
+					"RGBA(101, 178, 183,1)"],
+				"xaxis":[
+					">80",
+					"70-79",
+					"60-69",
+					"50-59",
+					"40-49",
+					"30-39",
+					"20-29",
+					"12-19"					
+				],
+				"fillopacity": "1",
+				"shadow": "true",
+				"dbtable": "COVID_VACCINI_SICILIA_PIVOT_BARS",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini_Sicilia/dataprovider_vaccini_sicilia.js",
+				"datacache": "true",
+				"lookupfield": "CODISTAT.1",
+				"titlefield": "Comune.1",
+				"units": "",
+				"valuedecimals":"0",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"rangescale": "15",
+				"linecolor": [
+					"none"],
+				"linewidth": "0",
+				"valuescale": "1",
+				"gridx": "2",
+				"gridwidthpx": "100",
+				"boxopacity":"0.7",
+				"bordercolor":"none",
+				"boxupper":"1:250000",
+				"textscale":"2",
+				"title": "<b style='color:RGBA(101, 178, 183,1)'>Vaccinati</b> per fascia età e <b style='color:RGBA(243, 128, 140,1)'>parte non protetta</b>",
+				"snippet": "<h5>fonte: <a  href='https://dati.regione.sicilia.it/dataset/covid-19-vaccini-sicilia-target-e-vaccinati-per-comune-e-fasce-di-eta' target='_blank'>opendata Regione Sicilia</a></h5>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
