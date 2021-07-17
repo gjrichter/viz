@@ -112,8 +112,8 @@
 				"fadenegative": "1",
 				"aggregationfield": "Comune",
 				"valueupper":"1:1000000",
-				"title": "Percentuale dell popolazione con almeno 1 dose",
-				"snippet": "<h5>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h5>"
+				"title": "Percentuale del target protetto",
+				"snippet": "<h5>fonte: fonte: <a  href='https://dati.regione.sicilia.it/dataset/covid-19-vaccini-sicilia-target-e-vaccinati-per-comune-e-fasce-di-eta/resource/30e9d3ea-0c7c-40c0-846b-a36f173028fe' target='_blank'>opendata sicilia</a></h5>"
 				}
 			}],
 	"layerMask": {
