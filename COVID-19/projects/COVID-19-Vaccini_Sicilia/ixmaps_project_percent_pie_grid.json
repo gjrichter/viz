@@ -14,7 +14,7 @@
 		"basemap": "CartoDB - Positron",
 		"legend": "<h2>Percentuale del target vaccinato con 2 dosi <button onclick='ixmaps.showAbout()'>info</button></h2>",
 		"layout":"minimal",
-		"item": "",
+		"item": "html",
 		"scaleParam": {
 			"normalSizeScale": "1730130"
 			},
