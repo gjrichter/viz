@@ -114,7 +114,7 @@
 				"dominantfilter": "mean",
 				"dominantdfilter": "0",
 				"title": "Facia età con percentuale sopra alla media",
-				"snippet": "<h5>Facia età con percentuale sopra alla media</h5><h5>fonte: <a  href='https://dati.regione.sicilia.it/dataset/covid-19-vaccini-sicilia-target-e-vaccinati-per-comune-e-fasce-di-eta' target='_blank'>opendata Regione Sicilia</a></h5>"
+				"snippet": "<h5>fonte: <a  href='https://dati.regione.sicilia.it/dataset/covid-19-vaccini-sicilia-target-e-vaccinati-per-comune-e-fasce-di-eta' target='_blank'>opendata Regione Sicilia</a></h5>"
 				}
 			}],
 	"layerMask": {
