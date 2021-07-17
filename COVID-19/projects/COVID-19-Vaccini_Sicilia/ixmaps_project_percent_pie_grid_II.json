@@ -106,7 +106,7 @@
 					"#668800"],
 				"linewidth": "0.2",
 				"nodatacolor": "none",
-				"boxopacity":"0",
+				"boxopacity":"0.5",
 				"boxupper":"1:250000",
 				"textscale":"2",
 				"valuescale": "1",
