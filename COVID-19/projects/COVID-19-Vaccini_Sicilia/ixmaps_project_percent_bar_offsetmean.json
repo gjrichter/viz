@@ -12,7 +12,7 @@
 		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
-		"legend": "<h3>Percentuale del target vaccinato sopra/sotto alla media regionale</h3>",
+		"legend": "<h3>Target vaccinato sopra/sotto alla media regionale</h3>",
 		"item": "html",
 		"scaleParam": {
 			"normalSizeScale": "865065"
