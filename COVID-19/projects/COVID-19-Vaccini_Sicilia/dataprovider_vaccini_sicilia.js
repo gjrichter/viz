@@ -62,7 +62,7 @@ window.ixmaps = window.ixmaps || {};
 			console.log(mydata);
 				
 			pivot = mydata.pivot({lead:"Comune",
-								  keep:"CODISTAT",
+								  keep:"CODISTAT|Target",
 								  columns:"classeEta",
 								  value:"Percent"});	
 
