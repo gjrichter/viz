@@ -12,7 +12,7 @@
 		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "iXMaps",
 		"basemap": "CartoDB - Positron",
-		"legend": "<h2>Percentuale del target vaccinato con 2 dosi <button onclick='ixmaps.showAbout()'>info</button></h2>",
+		"legend": "<h3>Percentuale del target vaccinato sopra/sotto alla media regionale</h3>",
 		"item": "html",
 		"scaleParam": {
 			"normalSizeScale": "865065"
@@ -116,8 +116,8 @@
 				"valuedecimals": "1",
 				"fadenegative": "1",
 				"aggregationfield": "Comune",
-				"title": "Percentuale del target protetto",
-				"snippet": "<h5>fonte: fonte: <a  href='https://dati.regione.sicilia.it/dataset/covid-19-vaccini-sicilia-target-e-vaccinati-per-comune-e-fasce-di-eta/resource/30e9d3ea-0c7c-40c0-846b-a36f173028fe' target='_blank'>opendata sicilia</a></h5>"
+				"title": "Face età e percentuali sopra o sotto alla media",
+				"snippet": "<h5>fonte: <a  href='https://dati.regione.sicilia.it/dataset/covid-19-vaccini-sicilia-target-e-vaccinati-per-comune-e-fasce-di-eta' target='_blank'>opendata Regione Sicilia</a></h5>"
 				}
 			}],
 	"layerMask": {
