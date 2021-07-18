@@ -115,7 +115,7 @@
 				"textcolor": "black",
 				"boxopacity": "0.3",
 				"titlefield": "Comune",
-				"valueupper": "1:100000",
+				"valueupper": "1:200000",
 				"boxupper": "1:250000",
 				"valuescale": "1",
 				"dominantfilter": "mean",
