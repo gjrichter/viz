@@ -130,7 +130,7 @@
 				"rangescale": "1",
 				"align":"23right",
 				"minvalue": "0",
-				"maxvalue": "500",
+				"maxvalue": "100",
 				"textcolor": "#880000",
 				"linewidth": "35",
 				"bordercolor": "none",
