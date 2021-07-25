@@ -86,7 +86,7 @@ window.ixmaps = window.ixmaps || {};
 			{lead:"codice_regione",
 			 columns:"data",
 			 value:"terapia_intensiva",
-			 keep:["lat","long","denominazione_regione"]}
+			 keep:["lat","long","denominazione_regione","codice_nuts_2"]}
 		);
 	
 		return pivot;
