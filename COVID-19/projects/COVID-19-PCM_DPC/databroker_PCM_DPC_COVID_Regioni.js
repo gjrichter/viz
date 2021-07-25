@@ -18,7 +18,7 @@ window.ixmaps = window.ixmaps || {};
 			{lead:"codice_regione",
 			 columns:"data",
 			 value:"totale_casi",
-			 keep:["lat","long","denominazione_regione"]}
+			 keep:["lat","long","denominazione_regione","codice_nuts_2"]}
 		);
 	
 		return pivot;
@@ -35,7 +35,7 @@ window.ixmaps = window.ixmaps || {};
 			{lead:"codice_regione",
 			 columns:"data",
 			 value:"dimessi_guariti",
-			 keep:["lat","long","denominazione_regione"]}
+			 keep:["lat","long","denominazione_regione","codice_nuts_2"]}
 		);
 	
 		return pivot;
@@ -52,7 +52,7 @@ window.ixmaps = window.ixmaps || {};
 			{lead:"codice_regione",
 			 columns:"data",
 			 value:"totale_ospedalizzati",
-			 keep:["lat","long","denominazione_regione"]}
+			 keep:["lat","long","denominazione_regione","codice_nuts_2"]}
 		);
 	
 		return pivot;
@@ -69,7 +69,7 @@ window.ixmaps = window.ixmaps || {};
 			{lead:"codice_regione",
 			 columns:"data",
 			 value:"ricoverati_con_sintomi",
-			 keep:["lat","long","denominazione_regione"]}
+			 keep:["lat","long","denominazione_regione","codice_nuts_2"]}
 		);
 	
 		return pivot;
@@ -103,7 +103,7 @@ window.ixmaps = window.ixmaps || {};
 			{lead:"codice_regione",
 			 columns:"data",
 			 value:"deceduti",
-			 keep:["lat","long","denominazione_regione"]}
+			 keep:["lat","long","denominazione_regione","codice_nuts_2"]}
 		);
 	
 		return pivot;
@@ -120,7 +120,7 @@ window.ixmaps = window.ixmaps || {};
 			{lead:"codice_regione",
 			 columns:"data",
 			 value:"isolamento_domiciliare",
-			 keep:["lat","long","denominazione_regione"]}
+			 keep:["lat","long","denominazione_regione","codice_nuts_2"]}
 		);
 	
 		return pivot;
@@ -137,7 +137,7 @@ window.ixmaps = window.ixmaps || {};
 			{lead:"codice_regione",
 			 columns:"data",
 			 value:"totale_positivi",
-			 keep:["lat","long","denominazione_regione"]}
+			 keep:["lat","long","denominazione_regione","codice_nuts_2"]}
 		);
 	
 		return pivot;
@@ -154,7 +154,7 @@ window.ixmaps = window.ixmaps || {};
 			{lead:"codice_regione",
 			 columns:"data",
 			 value:"tamponi",
-			 keep:["lat","long","denominazione_regione"]}
+			 keep:["lat","long","denominazione_regione","codice_nuts_2"]}
 		);
 	
 		return pivot;
@@ -171,7 +171,7 @@ window.ixmaps = window.ixmaps || {};
 			{lead:"codice_regione",
 			 columns:"data",
 			 value:"casi_testati",
-			 keep:["lat","long","denominazione_regione"]}
+			 keep:["lat","long","denominazione_regione","codice_nuts_2"]}
 		);
 	
 		return pivot;
@@ -188,7 +188,7 @@ window.ixmaps = window.ixmaps || {};
 			{lead:"codice_regione",
 			 columns:"data",
 			 value:"nuovi_positivi",
-			 keep:["lat","long","denominazione_regione"]}
+			 keep:["lat","long","denominazione_regione","codice_nuts_2"]}
 		);
 	
 		return pivot;
