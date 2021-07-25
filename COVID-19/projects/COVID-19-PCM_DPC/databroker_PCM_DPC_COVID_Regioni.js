@@ -5310,7 +5310,6 @@ window.ixmaps = window.ixmaps || {};
 					columns[i] = new Date(columns[i]).toLocaleDateString();	
 				}
 
-				columns = columns.slice(-100);
 				var last = columns.length - 1;
 				
 				// and configure the theme
