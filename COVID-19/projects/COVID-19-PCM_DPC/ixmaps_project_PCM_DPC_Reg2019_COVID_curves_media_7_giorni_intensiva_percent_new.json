@@ -12,7 +12,7 @@
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
 		"attribution": "iXMaps",
 		"basemap": "white",
-		"legend": "<div style='color:#777777'><h1></h1><h1><b>Livello di saturazione</b> delle <b>terapia intensive</b></h1><h2>Letti occupati in % dei posti letto disponibili</h2><h4>media mobile di 7 giorni per il periodo degli ultimi 100 giorni e valore attuale</h4><h4>Il ministero della Salute indica il <b><span style='color:rgba(250, 150, 0,1)'>30% dei posti</span></b> disponibili come <b><span style='color:rgba(250, 150, 0,1)'>soglia critica</span></b>, oltre la quale rallenta l’assistenza degli altri pazienti ricoverati</h4><h4><a style='color:#0088aa' href='javascript:ixmaps.legend.showItemList()'>&rarr; lista delle Regioni</a></h4><h4>Fonti: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile, </a><a href='https://github.com/ondata/covid19italia/tree/master/webservices/agenas/processing' target='_blank'>onData, </a><a href='https://www.agenas.gov.it/' target='_blank'>AGENAS</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
+		"legend": "<div style='color:#777777'><h1></h1><h1><b>Livello di saturazione</b> delle <b>terapia intensive</b></h1><h2>Letti occupati in % dei posti letto disponibili</h2><h4>media mobile di 7 giorni per il periodo degli ultimi 100 giorni e valore attuale</h4><h4>Il ministero della Salute indica il <b><span style='color:rgba(250, 150, 0,1)'>30% dei posti</span></b> disponibili come <b><span style='color:rgba(250, 150, 0,1)'>soglia critica</span></b>, oltre la quale rallenta l’assistenza degli altri pazienti ricoverati</h4><h4>Fonti: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile, </a><a href='https://github.com/ondata/covid19italia/tree/master/webservices/agenas/processing' target='_blank'>onData, </a><a href='https://www.agenas.gov.it/' target='_blank'>AGENAS</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
 		"item": "html",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
@@ -49,8 +49,8 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "41.918628865183045",
-			"lng": "13.601074218750002"
+			"lat": "42.84375132629023",
+			"lng": "10.349121093750002"
 			},
 		"zoom": "6"
 		},
@@ -114,7 +114,7 @@
 				"boxopacity": "0",
 				"boxmargin": "10",
 				"titlefield": "denominazione_regione",
-				"titleupper": "1:2500000",
+				"titleupper": "1:100000",
 				"boxupper": "1:10000000",
 				"valuescale": "1",
 				"valuedecimals": "1",
