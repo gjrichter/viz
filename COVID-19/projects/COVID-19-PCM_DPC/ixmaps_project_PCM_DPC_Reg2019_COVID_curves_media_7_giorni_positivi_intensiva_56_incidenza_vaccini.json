@@ -12,7 +12,7 @@
 		"map": "",
 		"attribution": "iXMaps",
 		"basemap": "ArcGIS - Light Gray Base",
-		"legend": "<div style='color:#777777'><h1></h1><h1>COVID-19 <br> <b style='color:rgba(200, 0, 90,1)'>incidenza cumulativa </b> e <b style='color:rgba(255, 120, 0,1)'>saturazione terapia intensiva</b> <br> ultimi <b>56 giorni</b> e percentuale della popolazion con età <b style='color:rgba(10, 150, 50,1)'>50+ vaccinati (2 dosi)</b></h1><h4>Media mobile di 7 giorni. Ogni curva ha la sua scala per poter confrontarli </h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
+		"legend": "<div style='color:#777777'><h1></h1><h1>COVID-19 <br> <b style='color:rgba(200, 0, 90,1)'>incidenza cumulativa </b> e <b style='color:rgba(255, 120, 0,1)'>saturazione terapia intensiva</b> <br> ultimi <b>56 giorni</b> e <b style='color:rgba(10, 150, 50,1)'>percentuale</b> della popolazion <b style='color:rgba(10, 150, 50,1)'>vaccinati </b>(2 dosi) con età <b style='color:rgba(10, 150, 50,1)'>50+ </b></h1><h4>Media mobile di 7 giorni. Ogni curva ha la sua scala per poter confrontarli </h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
 		"item": "html",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
