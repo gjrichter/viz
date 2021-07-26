@@ -1,0 +1,246 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Thu Oct 01 2020 17:53:49 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "",
+		"attribution": "iXMaps",
+		"basemap": "ArcGIS - Light Gray Base",
+		"legend": "<div style='color:#777777'><h1></h1><h1>COVID-19 <br> <b style='color:rgba(200, 0, 90,1)'>incidenza cumulativa </b> e <b style='color:rgba(255, 120, 0,1)'>saturazione terapia intensiva</b> <br> ultimi <b>56 giorni</b> e percentuale della popolazion con età <b style='color:rgba(10, 150, 50,1)'>50+ vaccinati (2 dosi)</b></h1><h4>Media mobile di 7 giorni. Ogni curva ha la sua scala per poter confrontarli </h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
+		"item": "html",
+		"scaleParam": {
+			"lineScaling": "4.213991769547325",
+			"normalSizeScale": "4638029"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"worksilent": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.8899753738369",
+			"lng": "11.228027343750002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "nuts2",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "barrios",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/nuts/main/processing/NUTS2_g.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "NUTS2",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"none"],
+				"linewidth": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "features",
+				"title": "Italy nuts2"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "50+.1",
+			"field100": "50+.2",
+			"style": {
+				"type": "CHART|PIE|AUTOCOMPLETE|NOLEGEND|COUNT|VALUES",
+				"colorscheme": [
+					"#4Da56D"],
+				"label": [
+					"seconda dose"
+				],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "VACCINI_SOMMINISTRAZIONI_ETA_SECONDA_DOSE_LAST_POPOLAZIONE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata_age.js",
+				"datacache": "true",
+				"lookupfield": "codice_NUTS2.1",
+				"units": "",
+				"units100": "",
+				"refreshtimeout": "0",
+				"align":"bottom",
+				"scale": "1.2",
+				"rangescale": "1",
+				"sizefield": "50+.2",
+				"textcolor": "#1D651D",
+				"linecolor": [
+					"#2D854D"],
+				"linewidth": "0.5",
+				"titlefield": "nome_area.1",
+				"nodatacolor": "none",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"evidence": "isolate_gray",
+				"title": "COVID-19<br>Vaccini somministrati per fascia di età 60-69",
+				"snippet": "<h5>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h5>"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "50+.1",
+			"field100": "50+.2",
+			"style": {
+				"type": "CHART|LABEL|NOSIZE|VALUES|TEXTONLY|NOLEGEND",
+				"colorscheme": [
+					"white"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "VACCINI_SOMMINISTRAZIONI_ETA_PRIMA_DOSE_LAST_POPOLAZIONE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata_age.js",
+				"datacache": "true",
+				"lookupfield": "codice_NUTS2.1",
+				"units": "%",
+				"units100": "",
+				"align":"2above",
+				"refreshtimeout": "0",
+				"scale": "1.2",
+				"rangescale": "1",
+				"sizefield": "50+.2",
+				"textcolor": "rgba(100,100,50,0.6)",
+				"linecolor": [
+					"red"],
+				"linewidth": "2",
+				"titlefield": "nome_area.1",
+				"nodatacolor": "rgb(232, 222, 173, 0)",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"evidence": "isolate_gray",
+				"title": "COVID-19<br>Vaccini somministrati per fasce d'età",
+				"snippet": "<h5>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h5>"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|RIGHT|COLOR|BOX|TITLE|FIXSIZE|LONGTITLE|COMPATIBLE|SUM|NOLEGEND|NOOUTLIER",
+				"colorscheme": [
+					"100",
+					"#ff6600",
+					"#ff6600",
+					"#ff6600"],
+				"fillopacity": "0.001",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_SEQUENCE_MEAN_7_INTENSIVE_PERCENT_MAX_56",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "false",
+				"itemfield": "codice_regione",
+				"lookupfield": "codice_nuts_2",
+				"symbols": [
+					"circle"],
+				"units": "deceduti",
+				"refreshtimeout": "0",
+				"normalsizevalue": "0.8",
+				"scale": "0.05",
+				"rangescale": "1",
+				"minvalue": "0",
+				"maxvalue": "30",
+				"textcolor": "#880000",
+				"linewidth": "45",
+				"bordercolor": "none",
+				"boxopacity": "0",
+				"boxmargin": "10",
+				"titlefield": "denominazione_regione",
+				"boxupper": "1:10000000",
+				"titleupper": "1:3000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"name": "curve",
+				"title": "Persone decedute - media mobile 7 giorno",
+				"snippet": "dal 2/3/2020 al 1/10/2020"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|COLOR|BOX|TITLE|FIXSIZE|LONGTITLE|COMPATIBLE|SUM|NOLEGEND|NOOUTLIER",
+				"colorscheme": [
+					"#dd0066"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_SEQUENCE_CUMUL_7_INCIDENCE_56",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "false",
+				"itemfield": "codice_regione",
+				"lookupfield": "codice_nuts_2",
+				"symbols": [
+					"circle"],
+				"units": "positivi",
+				"refreshtimeout": "0",
+				"normalsizevalue": "0.8",
+				"scale": "0.05",
+				"rangescale": "1",
+				"align":"23right",
+				"minvalue": "0",
+				"maxvalue": "100",
+				"textcolor": "#880000",
+				"linewidth": "35",
+				"bordercolor": "none",
+				"boxopacity": "0",
+				"boxmargin": "10",
+				"titlefield": "denominazione_regione",
+				"boxupper": "1:10000000",
+				"titleupper": "1:3000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"name": "curve",
+				"title": "Persone decedute - media mobile 7 giorno",
+				"snippet": "dal 2/3/2020 al 1/10/2020"
+				}
+			}],
+	"layerMask": {
+		"Prov2019_nome": {
+			"display": "none"
+			}
+		}
+	}
