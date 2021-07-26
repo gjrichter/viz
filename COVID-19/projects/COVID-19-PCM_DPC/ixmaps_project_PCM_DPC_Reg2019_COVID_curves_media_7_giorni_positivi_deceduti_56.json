@@ -16,7 +16,8 @@
 		"item": "html",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
-			"normalSizeScale": "4638029"
+			"normalSizeScale": "4638029",
+			"dynamicScalePow": "2"
 			},
 		"options": {
 			"featurescaling": "true",
