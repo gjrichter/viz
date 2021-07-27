@@ -12,7 +12,7 @@
 		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "© EuroGeographics for the administrative boundariesi, visulizzation: XMaps",
 		"basemap": "white",
-		"legend": "<h1>Percent of cases sequenced</h1><h4><i class='icon icon-radio-checked2' style='color:red'/> < 10 % <br><i class='icon icon-radio-checked2' style='color:green'/> >= 10%<br></h4><h4>Sequencing volumes recommended by ECDC are either >=500 sequences or >=10 % of cases sequenced in a specific week</h4><h4><b>fonte:</b> <a  href='https://www.ecdc.europa.eu/en/publications-data/data-virus-variants-covid-19-eueea' target='_blank'>Data on SARS-CoV-2 variants in the EU/EEA</a> - European Centre for Disease Prevention and Control</h4>",
+		"legend": "<h1>Percent of cases sequenced</h1><h4><i class='icon icon-radio-checked2' style='color:red'/> < 10 % <br><i class='icon icon-radio-checked2' style='color:green'/> >= 10%<br></h4><h5>Sequencing volumes recommended by ECDC are either >=500 sequences or >=10 % of cases sequenced in a specific week</h5><h4><b>fonte:</b> <a  href='https://www.ecdc.europa.eu/en/publications-data/data-virus-variants-covid-19-eueea' target='_blank'>Data on SARS-CoV-2 variants in the EU/EEA</a> - European Centre for Disease Prevention and Control</h4>",
 		"item": "",
 		"scaleParam": {
 			"normalSizeScale": "27682087"
