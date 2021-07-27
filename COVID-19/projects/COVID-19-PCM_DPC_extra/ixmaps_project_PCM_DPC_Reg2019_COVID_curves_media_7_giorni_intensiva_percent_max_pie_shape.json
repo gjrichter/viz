@@ -101,7 +101,7 @@
 					"rgba(250, 100, 0,1)"],
 				"fillopacity": "0.2",
 				"shadow": "false",
-				"dbtable": "PCM_DPC_COVID_SEQUENCE_MEAN_7_INTENSIVE_PERCENT_MAX",
+				"dbtable": "PCM_DPC_COVID_SEQUENCE_MEAN_7_INTENSIVE_PERCENT_MAX_100",
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
 				"datacache": "false",
