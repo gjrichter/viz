@@ -12,7 +12,7 @@
 		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "© EuroGeographics for the administrative boundariesi, visulizzation: XMaps",
 		"basemap": "white",
-		"legend": "<h1>Variants of interest and concern in the EU/EEA</h1><h4><i class='icon icon-radio-checked2' style='color:rgb(101, 179, 46)'/> Alpha - B.1.1.7 <br><i class='icon icon-radio-checked2' style='color:rgb(219, 219, 29)'/> Gamma - P.1<br><i class='icon icon-radio-checked2' style='color:rgb(124, 189, 196)'/> Beta&nbsp; - B.1.351<br><i class='icon icon-radio-checked2' style='color:rgb(255,100,255)'/> Delta - B.1.617.2<br></h4><h4><b>fonte:</b> <a  href='https://www.ecdc.europa.eu/en/publications-data/data-virus-variants-covid-19-eueea' target='_blank'>Data on SARS-CoV-2 variants in the EU/EEA</a> - European Centre for Disease Prevention and Control</h4>",
+		"legend": "<h1>Variants of interest and concern in the EU/EEA</h1><h4><i class='icon icon-radio-checked2' style='color:rgb(101, 179, 46)'/> Alpha - B.1.1.7 <br><i class='icon icon-radio-checked2' style='color:rgb(219, 219, 29)'/> Gamma - P.1<br><i class='icon icon-radio-checked2' style='color:rgb(124, 189, 196)'/> Beta&nbsp; - B.1.351<br><i class='icon icon-radio-checked2' style='color:rgb(255,100,255)'/> Delta - B.1.617.2<br></h4><h5>Data are sourced from TESSy or the GISAID EpiCoV database. Where data are available from more than one source for a country, the highest value is displayed</h5><h4><b>fonte:</b> <a  href='https://www.ecdc.europa.eu/en/publications-data/data-virus-variants-covid-19-eueea' target='_blank'>Data on SARS-CoV-2 variants in the EU/EEA</a> - European Centre for Disease Prevention and Control</h4>",
 		"item": "",
 		"scaleParam": {
 			"normalSizeScale": "27682087"
@@ -84,7 +84,7 @@
 			"field": "year_week",
 			"field100": "",
 			"style": {
-				"type": "CHART|CATEGORICAL|AGGREGATE|SYMBOL|PLOT|FIXSIZE|LINES|AREA|GRID|BOX|MEAN|NOLEGEND",
+				"type": "CHART|CATEGORICAL|AGGREGATE|SYMBOL|PLOT|NOSIZE|LINES|AREA|GRID|BOX|MAX|NOLEGEND",
 				"colorscheme": [
 					"rgb(101, 179, 46)"],
 				"fillopacity": "0.1",
@@ -120,7 +120,7 @@
 			"field": "year_week",
 			"field100": "",
 			"style": {
-				"type": "CHART|CATEGORICAL|AGGREGATE|SYMBOL|PLOT|FIXSIZE|LINES|AREA|GRID|BOX|MEAN|NOLEGEND",
+				"type": "CHART|CATEGORICAL|AGGREGATE|SYMBOL|PLOT|NOSIZE|LINES|AREA|GRID|BOX|MAX|NOLEGEND",
 				"colorscheme": [
 					"rgb(219, 219, 29)"],
 				"fillopacity": "0.3",
@@ -156,7 +156,7 @@
 			"field": "year_week",
 			"field100": "",
 			"style": {
-				"type": "CHART|CATEGORICAL|AGGREGATE|SYMBOL|PLOT|FIXSIZE|LINES|AREA|GRID|BOX|MEAN|NOLEGEND",
+				"type": "CHART|CATEGORICAL|AGGREGATE|SYMBOL|PLOT|NOSIZE|LINES|AREA|GRID|BOX|MAX|NOLEGEND",
 				"colorscheme": [
 					"rgb(124, 189, 196)"],
 				"fillopacity": "0.3",
@@ -192,7 +192,7 @@
 			"field": "year_week",
 			"field100": "",
 			"style": {
-				"type": "CHART|CATEGORICAL|AGGREGATE|SYMBOL|FIXSIZE|PLOT|LINES|AREA|GRID|BOX|TITLE|MEAN|NOLEGEND",
+				"type": "CHART|CATEGORICAL|AGGREGATE|SYMBOL|NOSIZE|PLOT|LINES|AREA|GRID|BOX|TITLE|MAX|NOLEGEND",
 				"colorscheme": [
 					"rgb(255,100,255)"],
 				"fillopacity": "0.6",
