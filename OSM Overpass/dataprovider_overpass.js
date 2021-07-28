@@ -23,15 +23,14 @@ window.ixmaps = window.ixmaps || {};
 			   bounds[1].lng+'];'+
 		'('+
 		  'way["barrier"];'+
-		  '(way["highway"]; - way[footway="sidewalk"];);'+
-		  '(way[footway="sidewalk"][bicycle]; - way[footway="sidewalk"][bicycle="no"];);'+
+		  '(way["highway"];);'+
 		');'+
 		'out body center qt;'+
 		'>;'+
 		'out skel qt;';
 
 
-		var szUrl = "https://overpass-api.de/api/interpreter?data="+query;
+		var szUrl = "https://overpass.kumi.systems/api/interpreter?data="+query;
 		var myfeed = Data.feed({"source":szUrl,"type":"json"}).load(function(mydata){
 
 			if ( myfeed.data.elements ){
@@ -187,7 +186,10 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.htmlgui_onZoomAndPan_old = ixmaps.htmlgui_onZoomAndPan;
 	ixmaps.htmlgui_onZoomAndPan = function(nZoom){ 
 		
+		ixmaps.htmlgui_onNewTheme("features");
+
 		if (ixmaps.getZoom() < 14 ){
+			ixmaps.htmlgui_onRemoveTheme("features");
 			ixmaps.setTitleBox("please zoom in or <a style='pointer-events:all' href='javascript:ixmaps.refreshTheme(null,\"features\")'>refresh</a>");
 			ixmaps.htmlgui_onZoomAndPan_old(nZoom);
 			return;
@@ -224,20 +226,6 @@ window.ixmaps = window.ixmaps || {};
 		ixmaps.htmlgui_onZoomAndPan_old(nZoom);
 	};
 			
-	ixmaps.htmlgui_colorScheme = function(objTheme){
-		for ( i=0; i<objTheme.szLabelA.length; i++){
-			if ( objTheme.szLabelA[i].match(/cycleway/i) ){
-				objTheme.colorScheme[i] = "#2233dd";
-			}else
-			if ( objTheme.szLabelA[i].match(/primary/i) ){
-				objTheme.colorScheme[i] = "#dd0000";
-			}else
-			if ( objTheme.szLabelA[i].match(/asphalt/i) ){
-				objTheme.colorScheme[i] = "#888888";
-			}
-		}
-
-	};
 
 })();
 
