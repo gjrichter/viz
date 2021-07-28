@@ -66,13 +66,10 @@
 					"#100050",
 					"3colors",
 					"#CC4878"],
-				"values": [
-					"10","20","30","40","50","60","70","80","90","100","110","120","130"
-					],
 				"shadow": "false",
-				"dbtable": "OSM_dataquery_streetmap",
+				"dbtable": "OSM_dataquery_stressmap",
 				"dbtableType": "ext",
-				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/OSM Overpass/dataprovider_overpass.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/OSM Overpass/dataprovider_stressmap.js",
 				"datacache": "true",
 				"itemfield": "id",
 				"lookupfield": "geometry",
