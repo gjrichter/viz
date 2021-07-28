@@ -17,6 +17,8 @@ window.ixmaps = window.ixmaps || {};
 	
 	ixmaps.OSM_dataquery_stressmap  = function(data,option){
 		
+		ixmaps.htmlgui_onNewTheme(option.theme.szId);
+		
 		ixmaps.setTitleBox("Overpass API &#8644;","RGBA(95, 185, 135,0.5)");
 		ixmaps.in_query = true;
 
@@ -77,6 +79,87 @@ window.ixmaps = window.ixmaps || {};
 	
 	ixmaps.setTitleBox = function(szTitle,szColor){
 		ixmaps.setTitle("<span style='padding: 0.3em 1em;border:solid #ddd 1px;border-radius:0.2em;font-family:courier new,Raleway,arial,helvetica;background:"+(szColor||"rgba(255,255,255,0.9)")+";color:"+(szColor?"#fff":"#888")+"'>"+szTitle+"</span");
+	};
+	
+	ixmaps.htmlgui_colorScheme = function(objTheme){
+		for ( i=0; i<objTheme.szLabelA.length; i++){
+			
+			if ( objTheme.szLabelA[i].match(/cycleway/i) ){
+				objTheme.colorScheme[i] = "#2233dd";
+			}else
+			if ( objTheme.szLabelA[i].match(/primary/i) ){
+				objTheme.colorScheme[i] = "#dd0000";
+			}else
+			if ( objTheme.szLabelA[i].match(/asphalt/i) ){
+				objTheme.colorScheme[i] = "#888888";
+			}else
+				
+			if ( objTheme.szLabelA[i].match(/45 mph|50 mph|55 mph|60 mph|65 mph|70 mph|75 mph/i) ){
+				objTheme.colorScheme[i] = "#CE517F";
+			}else
+			if ( objTheme.szLabelA[i].match(/40 mph/i) ){
+				objTheme.colorScheme[i] = "#CC6166";
+			}else
+			if ( objTheme.szLabelA[i].match(/35 mph/i) ){
+				objTheme.colorScheme[i] = "#CF8C55";
+			}else
+			if ( objTheme.szLabelA[i].match(/30 mph/i) ){
+				objTheme.colorScheme[i] = "#D0A148";
+			}else
+			if ( objTheme.szLabelA[i].match(/25 mph/i) ){
+				objTheme.colorScheme[i] = "#D1B63A";
+			}else
+			if ( objTheme.szLabelA[i].match(/20 mph/i) ){
+				objTheme.colorScheme[i] = "#D0D623";
+			}else
+			if ( objTheme.szLabelA[i].match(/10 mph/i) ){
+				objTheme.colorScheme[i] = "#E1EA15";
+			}else
+			if ( objTheme.szLabelA[i].match(/5 mph/i) ){
+				objTheme.colorScheme[i] = "#D2F111";
+			}else
+			if ( objTheme.szLabelA[i].match(/2 mph/i) ){
+				objTheme.colorScheme[i] = "#D2F111";
+			}else
+				
+			if ( objTheme.szLabelA[i].match(/walk/i) ){
+				objTheme.colorScheme[i] = "#0088dd";
+			}else
+				
+			if ( objTheme.szLabelA[i].match(/130/i) ){
+				objTheme.colorScheme[i] = "#aa4488";
+			}else
+			if ( objTheme.szLabelA[i].match(/110/i) ){
+				objTheme.colorScheme[i] = "#aa4488";
+			}else
+			if ( objTheme.szLabelA[i].match(/90/i) ){
+				objTheme.colorScheme[i] = "#aa4488";
+			}else
+			if ( objTheme.szLabelA[i].match(/70/i) ){
+				objTheme.colorScheme[i] = "#dd4488";
+			}else
+			if ( objTheme.szLabelA[i].match(/60/i) ){
+				objTheme.colorScheme[i] = "#dd4400";
+			}else
+			if ( objTheme.szLabelA[i].match(/50/i) ){
+				objTheme.colorScheme[i] = "#dd8800";
+			}else
+			if ( objTheme.szLabelA[i].match(/40/i) ){
+				objTheme.colorScheme[i] = "#eecc22";
+			}else
+			if ( objTheme.szLabelA[i].match(/30/i) ){
+				objTheme.colorScheme[i] = "#ddcc00";
+			}else
+			if ( objTheme.szLabelA[i].match(/20/i) ){
+				objTheme.colorScheme[i] = "#ccdd66";
+			}else
+			if ( objTheme.szLabelA[i].match(/10/i) ){
+				objTheme.colorScheme[i] = "#88dd00";
+			}else
+			if ( objTheme.szLabelA[i].match(/5/i) ){
+				objTheme.colorScheme[i] = "#88dd00";
+			}
+		}
 	};
 	
 	// ---------------------------------------------------------------------
