@@ -4202,7 +4202,7 @@ window.ixmaps = window.ixmaps || {};
 				theme.szFieldsA = columns.slice();
 
 				// and set the label (for difference 1 less)
-				//columns.shift();
+				columns.shift();
 				theme.szLabelA = columns.slice();
 
 				theme.szXaxisA = __get_xaxis(columns);
