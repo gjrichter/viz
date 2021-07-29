@@ -217,7 +217,7 @@
 				"refreshtimeout": "0",
 				"scale": "1",
 				"valuescale": "1",
-				"valuedecimals": "0",
+				"valuedecimals": "1",
 				"textcolor":"white",
 				"titlefield":"region",
 				"title": "Positivity rates",
