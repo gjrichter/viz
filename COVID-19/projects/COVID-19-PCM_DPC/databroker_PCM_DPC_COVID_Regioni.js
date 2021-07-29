@@ -5414,8 +5414,7 @@ window.ixmaps = window.ixmaps || {};
 				theme.szFields = columns.slice().join('|');
 				theme.szFieldsA = columns.slice();
 
-				// and set the label (for difference 1 less)
-				columns.shift();
+				// and set the label
 				theme.szLabelA = columns.slice();
 
 				theme.szXaxisA = __get_xaxis(columns);
@@ -6078,8 +6077,7 @@ window.ixmaps = window.ixmaps || {};
 				theme.szFields = columns.slice().join('|');
 				theme.szFieldsA = columns.slice();
 
-				// and set the label (for difference 1 less)
-				columns.shift();
+				// and set the label
 				theme.szLabelA = columns.slice();
 
 				theme.szXaxisA = __get_xaxis(columns);
@@ -6160,8 +6158,7 @@ window.ixmaps = window.ixmaps || {};
 				theme.szFields = columns.slice().join('|');
 				theme.szFieldsA = columns.slice();
 
-				// and set the label (for difference 1 less)
-				columns.shift();
+				// and set the label
 				theme.szLabelA = columns.slice();
 
 				theme.szXaxisA = columns.slice();
@@ -6250,8 +6247,7 @@ window.ixmaps = window.ixmaps || {};
 				theme.szFields = columns.slice().join('|');
 				theme.szFieldsA = columns.slice();
 
-				// and set the label (for difference 1 less)
-				columns.shift();
+				// and set the label 
 				theme.szLabelA = columns.slice();
 
 				theme.szXaxisA = __get_xaxis(columns);
@@ -6364,8 +6360,7 @@ window.ixmaps = window.ixmaps || {};
 				theme.szFields = columns.slice().join('|');
 				theme.szFieldsA = columns.slice();
 
-				// and set the label (for difference 1 less)
-				columns.shift();
+				// and set the label
 				theme.szLabelA = columns.slice();
 
 				theme.szXaxisA = __get_xaxis(columns);
