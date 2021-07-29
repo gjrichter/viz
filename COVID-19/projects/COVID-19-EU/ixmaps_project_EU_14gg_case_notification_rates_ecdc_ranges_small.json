@@ -102,7 +102,7 @@
 				"refreshtimeout": "0",
 				"scale": "1",
 				"linecolor": [
-					"#eeeeee"],
+					"#ffffff"],
 				"linewidth": "0.1",
 				"valuescale": "1",
 				"valuedecimals": "0",
@@ -130,8 +130,8 @@
 				"refreshtimeout": "0",
 				"scale": "1",
 				"linecolor": [
-					"#eeeeee"],
-				"linewidth": "0.1",
+					"#ffffff"],
+				"linewidth": "0.3",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"title": "Nuts_2"
@@ -157,8 +157,8 @@
 				"refreshtimeout": "0",
 				"scale": "1",
 				"linecolor": [
-					"#eeeeee"],
-				"linewidth": "0.1",
+					"#ffffff"],
+				"linewidth": "0.3",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"title": "Nuts_2"
@@ -184,8 +184,8 @@
 				"refreshtimeout": "0",
 				"scale": "1",
 				"linecolor": [
-					"#cccccc"],
-				"linewidth": "0.5",
+					"#ffffff"],
+				"linewidth": "0.3",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"title": "Nuts_00"
