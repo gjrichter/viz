@@ -4189,13 +4189,6 @@ window.ixmaps = window.ixmaps || {};
 				columns.shift();
 				columns.shift();
 				columns.shift();
-				columns.shift();
-				columns.shift();
-				columns.shift();
-				columns.shift();
-				columns.shift();
-				columns.shift();
-				columns.shift();
 
 				var last = columns.length - 1;
 
