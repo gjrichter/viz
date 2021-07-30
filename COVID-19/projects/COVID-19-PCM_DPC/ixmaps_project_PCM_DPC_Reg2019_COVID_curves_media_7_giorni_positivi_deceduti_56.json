@@ -109,7 +109,7 @@
 			"style": {
 				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|RIGHT|BOX|FIXSIZE|COMPATIBLE|SUM|DIFFERENCE|NOLEGEND|NOOUTLIER",
 				"colorscheme": [
-					"#000000"],
+					"rgba(0,0,0,0.5)"],
 				"fillopacity": "0.05",
 				"shadow": "false",
 				"dbtable": "PCM_DPC_COVID_SEQUENCE_MEAN_7_DEATHS_56",
