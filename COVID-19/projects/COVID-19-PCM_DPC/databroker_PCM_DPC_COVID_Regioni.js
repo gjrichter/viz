@@ -552,7 +552,7 @@ window.ixmaps = window.ixmaps || {};
 		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
 
 		// -----------------------------------------------------------------------------------------------               
-		// read the ArcGis Feature service
+		// read the data
 		// ----------------------------------------------------------------------------------------------- 
 
 		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(mydata){
@@ -615,7 +615,7 @@ window.ixmaps = window.ixmaps || {};
 		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
 
 		// -----------------------------------------------------------------------------------------------               
-		// read the ArcGis Feature service
+		// read the data
 		// ----------------------------------------------------------------------------------------------- 
 
 		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(mydata){
@@ -926,7 +926,7 @@ window.ixmaps = window.ixmaps || {};
 		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
 
 		// -----------------------------------------------------------------------------------------------               
-		// read the ArcGis Feature service
+		// read the data
 		// ----------------------------------------------------------------------------------------------- 
 
 		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(mydata){
@@ -966,7 +966,7 @@ window.ixmaps = window.ixmaps || {};
 		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
 
 		// -----------------------------------------------------------------------------------------------               
-		// read the ArcGis Feature service
+		// read the data
 		// ----------------------------------------------------------------------------------------------- 
 
 		var broker = new Data.Broker()
@@ -1452,9 +1452,6 @@ window.ixmaps = window.ixmaps || {};
 			});
 		});
 	};
-
-	
-	
 	
 	ixmaps.PCM_DPC_COVID_SEQUENCE_ACTIVE_CLIP = function (theme,options) {
 
@@ -1763,8 +1760,6 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 
-
-	
 	ixmaps.PCM_DPC_COVID_SEQUENCE_DEATHS_ACTIVE_RECOVERED = function (theme,options) {
 
 
@@ -2280,7 +2275,6 @@ window.ixmaps = window.ixmaps || {};
 			});
 		});
 						
-		
 	};
 	
 	ixmaps.PCM_DPC_COVID_SEQUENCE_DAR_PREVALENCE = function (theme, options) {
@@ -2773,7 +2767,6 @@ window.ixmaps = window.ixmaps || {};
 			});
 		});
 						
-		
 	};
 	
 	
@@ -3164,13 +3157,6 @@ window.ixmaps = window.ixmaps || {};
 					
 			var data = dataA[0];
 				
-			// make local dates
-			/**
-			data.column('data').map(function (value,row) {
-					return (new Date(value).toLocaleDateString());
-			});
-			**/
-
 			var data_Symptoms	= __get_symptoms(data);
 			var data_Intensive	= __get_intensive(data);
 			var data_Deaths 	= __get_deaths(data);
@@ -3318,7 +3304,7 @@ window.ixmaps = window.ixmaps || {};
 		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
 
 		// -----------------------------------------------------------------------------------------------               
-		// read the ArcGis Feature service
+		// read the data
 		// ----------------------------------------------------------------------------------------------- 
 
 		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(mydata){
@@ -3379,7 +3365,7 @@ window.ixmaps = window.ixmaps || {};
 		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
 
 		// -----------------------------------------------------------------------------------------------               
-		// read the ArcGis Feature service
+		// read the data
 		// ----------------------------------------------------------------------------------------------- 
 
 		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(mydata){
@@ -3465,7 +3451,7 @@ window.ixmaps = window.ixmaps || {};
 		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
 
 		// -----------------------------------------------------------------------------------------------               
-		// read the ArcGis Feature service
+		// read the data
 		// ----------------------------------------------------------------------------------------------- 
 
 		var myfeed = Data.feed({"source":szUrl,"type":"csv"}).load(function(mydata){
@@ -3572,10 +3558,6 @@ window.ixmaps = window.ixmaps || {};
 			});
 
 	};
-	
-	
-	
-	
 	
 	
 	ixmaps.PCM_DPC_COVID_SEQUENCE_MEAN_7 = function (theme, options) {
@@ -3823,9 +3805,8 @@ window.ixmaps = window.ixmaps || {};
 				theme.szSnippet = "dal " + columns[0] + " al " + columns[last - 1];
 				ixmaps.setTitle("<f2 style='color:#888888;background-color:rgba(255,255,255,0.1);padding:0.3em 0.5em;border:#888888 solid 0.5px;border-radius:0.2em'>aggiornato: "+(columns[last - 1])+"</f2>");
 
-
 			
-			// -----------------------------------------------------------------------------------------------               
+				// -----------------------------------------------------------------------------------------------             
 				// deploy the data
 				// ----------------------------------------------------------------------------------------------- 
 
@@ -3908,7 +3889,7 @@ window.ixmaps = window.ixmaps || {};
 				theme.szSnippet = "dal " + columns[0] + " al " + columns[last - 1];
 				ixmaps.setTitle("<f2 style='color:#888888;background-color:rgba(255,255,255,0.1);padding:0.3em 0.5em;border:#888888 solid 0.5px;border-radius:0.2em'>aggiornato: "+(columns[last - 1])+"</f2>");
 
-			// -----------------------------------------------------------------------------------------------               
+				// -----------------------------------------------------------------------------------------------             
 				// deploy the data
 				// ----------------------------------------------------------------------------------------------- 
 
@@ -3931,7 +3912,7 @@ window.ixmaps = window.ixmaps || {};
 		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
 
 		// -----------------------------------------------------------------------------------------------               
-		// read the ArcGis Feature service
+		// read the data
 		// ----------------------------------------------------------------------------------------------- 
 
 		var myfeed = Data.feed({
@@ -3996,7 +3977,7 @@ window.ixmaps = window.ixmaps || {};
 				theme.szSnippet = "dal " + columns[0] + " al " + columns[last - 1];
 				ixmaps.setTitle("<f2 style='color:#888888;background-color:rgba(255,255,255,0.1);padding:0.3em 0.5em;border:#888888 solid 0.5px;border-radius:0.2em'>aggiornato: "+(columns[last - 1])+"</f2>");
 			
-			// -----------------------------------------------------------------------------------------------               
+				// -----------------------------------------------------------------------------------------------             
 				// deploy the data
 				// ----------------------------------------------------------------------------------------------- 
 
@@ -4071,7 +4052,7 @@ window.ixmaps = window.ixmaps || {};
 					}
 				}
 				
-					// get the columns with date 
+				// get the columns with date 
 				var columns = pivot.columnNames();
 				columns.shift();
 				columns.shift();
@@ -4108,7 +4089,6 @@ window.ixmaps = window.ixmaps || {};
 				theme.szSnippet = "dal " + columns[0] + " al " + columns[last - 1];
 				ixmaps.setTitle("<f2 style='color:#888888;background-color:rgba(255,255,255,0.1);padding:0.3em 0.5em;border:#888888 solid 0.5px;border-radius:0.2em'>aggiornato: "+(columns[last - 1])+"</f2>");
 
-		
 				// ----------------------------------------------------------------------------------------------- 
 				// deploy the data
 				// ----------------------------------------------------------------------------------------------- 
@@ -4128,7 +4108,7 @@ window.ixmaps = window.ixmaps || {};
 		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
 
 		// -----------------------------------------------------------------------------------------------               
-		// read the ArcGis Feature service
+		// read the data
 		// ----------------------------------------------------------------------------------------------- 
 
 		var broker = new Data.Broker()
@@ -4229,7 +4209,7 @@ window.ixmaps = window.ixmaps || {};
 		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
 
 		// -----------------------------------------------------------------------------------------------               
-		// read the ArcGis Feature service
+		// read the data
 		// ----------------------------------------------------------------------------------------------- 
 
 		var broker = new Data.Broker()
@@ -4338,7 +4318,7 @@ window.ixmaps = window.ixmaps || {};
 		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
 
 		// -----------------------------------------------------------------------------------------------               
-		// read the ArcGis Feature service
+		// read the data
 		// ----------------------------------------------------------------------------------------------- 
 
 		var broker = new Data.Broker()
@@ -5437,7 +5417,7 @@ window.ixmaps = window.ixmaps || {};
 		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
 
 		// -----------------------------------------------------------------------------------------------               
-		// read the ArcGis Feature service
+		// read the data
 		// ----------------------------------------------------------------------------------------------- 
 
 		var broker = new Data.Broker()
@@ -5729,7 +5709,7 @@ window.ixmaps = window.ixmaps || {};
 		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
 
 		// -----------------------------------------------------------------------------------------------               
-		// read the ArcGis Feature service
+		// read the data
 		// ----------------------------------------------------------------------------------------------- 
 
 		var myfeed = Data.feed({
@@ -5818,7 +5798,7 @@ window.ixmaps = window.ixmaps || {};
 		var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
 
 		// -----------------------------------------------------------------------------------------------               
-		// read the ArcGis Feature service
+		// read the data
 		// ----------------------------------------------------------------------------------------------- 
 
 		var myfeed = Data.feed({
@@ -6376,8 +6356,6 @@ window.ixmaps = window.ixmaps || {};
 			});
 
 	};
-	
-	
 	
 	
    
