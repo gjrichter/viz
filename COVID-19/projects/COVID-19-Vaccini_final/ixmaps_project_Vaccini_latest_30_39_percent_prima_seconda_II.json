@@ -1,0 +1,266 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Thu Mar 25 2021 17:13:47 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "white",
+		"legend": "<h1><b>COVID-19<br>Vaccinati</b> per fasce di età<br><b>30-39</b></h1><h4>Vaccinati con prima o/e seconda dose in percentuale alla popolazione della fascia d'età (1.1.2020)</h4><h4><i class='icon icon-radio-checked2' style='color:rgba(222, 202, 73,1)'/> <b>vaccinati con 1 dose</b><br><i class='icon icon-radio-checked2' style='color:RGBA(250,0,128,0.5)'/> <b>vaccinati con 2 dosi</b> </h4>",
+		"item": "",
+		"scaleParam": {
+			"labelScaling": "1.5",
+			"normalSizeScale": "13841043"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panhidden":"false"
+			},
+		"center": {
+			"lat": "42.282221877329024",
+			"lng": "12.871337890625002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "nuts2",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"#e8e8e8"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "barrios",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/nuts/main/processing/NUTS2_g.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "NUTS2",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "features",
+				"title": "Italy nuts2"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "30-39.1",
+			"field100": "30-39.2",
+			"style": {
+				"type": "CHOROPLETH|QUANTILE|SIMPLELEGEND",
+				"colorscheme": [
+					"7",
+					"rgb(233, 242, 238)",
+					"rgb(46, 142, 139)",
+					"3colors",
+					"rgb(131, 198, 203)"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "VACCINI_SOMMINISTRAZIONI_ETA_PRIMA_DOSE_LAST_POPOLAZIONE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata_age.js",
+				"datacache": "true",
+				"lookupfield": "codice_NUTS2.1",
+				"units": "%",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"textcolor": "black",
+				"linecolor": [
+					"#F28E2B"],
+				"linewidth": "1",
+				"titlefield": "nome_area.1",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "Percentuale della popolazione protetta con 2 dosi",
+				"snippet": "<h5>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h5>"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "30-39.1",
+			"field100": "30-39.2",
+			"style": {
+				"type": "CHART|PIE|AUTOCOMPLETE|SIZE|NOLEGEND|COUNT",
+				"colorscheme": [
+					"rgba(222, 202, 73,0.9)"],
+				"label": [
+					"prima dose"
+				],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "VACCINI_SOMMINISTRAZIONI_ETA_PRIMA_DOSE_LAST_POPOLAZIONE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata_age.js",
+				"datacache": "true",
+				"lookupfield": "codice_NUTS2.1",
+				"units": "",
+				"units100": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "100000",
+				"scale": "1",
+				"rangescale": "1",
+				"sizefield": "30-39.2",
+				"textcolor": "rgb(182, 152, 53)",
+				"linecolor": [
+					"rgb(202, 182, 53)"],
+				"linewidth": "1",
+				"titlefield": "nome_area.1",
+				"nodatacolor": "rgb(232, 222, 193, 0.3)",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"evidence": "isolate_gray",
+				"title": "COVID-19<br>Vaccini somministrati per fasce d'età",
+				"snippet": "<h5>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h5>"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "30-39.1",
+			"field100": "30-39.2",
+			"style": {
+				"type": "CHART|PIE|AUTOCOMPLETE|SIZE|NOLEGEND|COUNT",
+				"colorscheme": [
+					"RGBA(250,0,128,0.5)"],
+				"label": [
+					"seconda dose"
+				],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "VACCINI_SOMMINISTRAZIONI_ETA_SECONDA_DOSE_LAST_POPOLAZIONE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata_age.js",
+				"datacache": "true",
+				"lookupfield": "codice_NUTS2.1",
+				"units": "",
+				"units100": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "100000",
+				"scale": "1",
+				"rangescale": "1",
+				"sizefield": "30-39.2",
+				"textcolor": "black",
+				"linecolor": [
+					"RGBA(250,0,128,0.8)"],
+				"linewidth": "1",
+				"titlefield": "nome_area.1",
+				"nodatacolor": "rgb(232, 222, 173, 0)",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"evidence": "isolate_gray",
+				"title": "COVID-19<br>Vaccini somministrati per fascia di età 60-69",
+				"snippet": "<h5>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h5>"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "30-39.1",
+			"field100": "30-39.2",
+			"style": {
+				"type": "CHART|BUBBLE|SIZE|VALUES|TEXTONLY|NOLEGEND",
+				"colorscheme": [
+					"white"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "VACCINI_SOMMINISTRAZIONI_ETA_SECONDA_DOSE_LAST_POPOLAZIONE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata_age.js",
+				"datacache": "true",
+				"lookupfield": "codice_NUTS2.1",
+				"units": "%",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "2",
+				"align":"center",
+				"rangescale": "1",
+				"sizefield": "30-39.2",
+				"textcolor": "RGBA(200,0,108,0.8)",
+				"linecolor": [
+					"none"],
+				"linewidth": "2",
+				"titlefield": "nome_area.1",
+				"nodatacolor": "rgb(232, 222, 173, 0)",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"evidence": "isolate_gray",
+				"title": "COVID-19<br>Vaccini somministrati per fasce d'età",
+				"snippet": "<h5>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h5>"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "30-39.1",
+			"field100": "30-39.2",
+			"style": {
+				"type": "CHART|LABEL|SIZE|VALUES|TEXTONLY|NOLEGEND",
+				"colorscheme": [
+					"white"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "VACCINI_SOMMINISTRAZIONI_ETA_PRIMA_DOSE_LAST_POPOLAZIONE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata_age.js",
+				"datacache": "true",
+				"lookupfield": "codice_NUTS2.1",
+				"units": "%",
+				"units100": "",
+				"align":"top",
+				"refreshtimeout": "0",
+				"scale": "1.3",
+				"rangescale": "1",
+				"sizefield": "30-39.2",
+				"textcolor": "rgb(132, 102, 3)",
+				"linecolor": [
+					"red"],
+				"linewidth": "2",
+				"titlefield": "nome_area.1",
+				"nodatacolor": "rgb(232, 222, 173, 0)",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"evidence": "isolate_gray",
+				"title": "COVID-19<br>Vaccini somministrati per fasce d'età",
+				"snippet": "<h5>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h5>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
