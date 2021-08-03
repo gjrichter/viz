@@ -4291,7 +4291,7 @@ window.ixmaps = window.ixmaps || {};
 				theme.szFieldsA = columns.slice();
 
 				// and set the label (for difference 1 less)
-				columns.shift();
+				//columns.shift();
 				theme.szLabelA = columns.slice();
 
 				theme.szXaxisA = __get_xaxis(columns);
@@ -5469,7 +5469,7 @@ window.ixmaps = window.ixmaps || {};
 					}
 				}
 				
-					// get the columns with date 
+				// get the columns with date 
 				var columns = pivot.columnNames();
 				columns.shift();
 				columns.shift();
@@ -6042,15 +6042,17 @@ window.ixmaps = window.ixmaps || {};
 					pivot.column(columns[i]).rename(new Date(columns[i]).toLocaleDateString());
 					columns[i] = new Date(columns[i]).toLocaleDateString();	
 				}
-
-				columns = columns.slice(-56);
+				
+				// data used in DIFFERENC theme, 56 -> 57
+				columns = columns.slice(-57);
 				var last = columns.length - 1;
 
 				// and configure the theme
 				theme.szFields = columns.slice().join('|');
 				theme.szFieldsA = columns.slice();
 
-				// and set the label
+				// and set the label (for DIFFERENCE 1 less)
+				columns.shift();
 				theme.szLabelA = columns.slice();
 
 				theme.szXaxisA = __get_xaxis(columns);
@@ -6112,6 +6114,7 @@ window.ixmaps = window.ixmaps || {};
 				columns.shift();
 				columns.shift();
 			
+				columns.shift();
 				columns.shift();
 				columns.shift();
 				columns.shift();
@@ -6213,14 +6216,16 @@ window.ixmaps = window.ixmaps || {};
 					columns[i] = new Date(columns[i]).toLocaleDateString();	
 				}
 
-				columns = columns.slice(-56);
+				// data used in DIFFERENC theme, 56 -> 57
+				columns = columns.slice(-57);
 				var last = columns.length - 1;
 				
 				// and configure the theme
 				theme.szFields = columns.slice().join('|');
 				theme.szFieldsA = columns.slice();
 
-				// and set the label 
+				// and set the label (for DIFFERENCE 1 less)
+				columns.shift();
 				theme.szLabelA = columns.slice();
 
 				theme.szXaxisA = __get_xaxis(columns);
