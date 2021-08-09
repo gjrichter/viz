@@ -159,7 +159,7 @@
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|TITLE|FIXSIZE|LONGTITLE|COMPATIBLE|SUM|DIFFERENCE|NOLEGEND|NOOUTLIER",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|FIXSIZE|COMPATIBLE|SUM|DIFFERENCE|NOLEGEND|NOOUTLIER",
 				"colorscheme": [
 					"#000000"],
 				"fillopacity": "0.1",
@@ -178,6 +178,7 @@
 				"normalsizevalue": "0.8",
 				"scale": "0.05",
 				"rangescale": "1",
+				"align": "23right",
 				"minvalue": "0",
 				"maxvalue": "auto",
 				"textcolor": "#880000",
@@ -191,13 +192,6 @@
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"fadenegative": "1",
-				"aggregationscale": [
-					"1:1",
-					"150px",
-					"1:1000000",
-					"100px"],
-				"aggregationlower": "1:2500000",
-				"name": "curve",
 				"title": "Persone decedute - media mobile 7 giorno",
 				"snippet": "dal 2/3/2020 al 1/10/2020"
 				}
@@ -239,13 +233,6 @@
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"fadenegative": "1",
-				"aggregationscale": [
-					"1:1",
-					"150px",
-					"1:1000000",
-					"100px"],
-				"aggregationlower": "1:2500000",
-				"name": "curve",
 				"title": "Persone decedute - media mobile 7 giorno",
 				"snippet": "dal 2/3/2020 al 1/10/2020"
 				}
