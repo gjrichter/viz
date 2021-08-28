@@ -58,7 +58,7 @@
 			"field": "surface",
 			"field100": "",
 			"style": {
-				"type": "CHART|FEATURES|CATEGORICAL|LINES|LOCKED",
+				"type": "CHART|FEATURES|CATEGORICAL|LINES",
 				"colorscheme": [
 					"29",
 					"tableau"],
