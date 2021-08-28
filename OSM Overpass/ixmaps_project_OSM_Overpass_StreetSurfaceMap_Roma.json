@@ -63,7 +63,7 @@
 					"29",
 					"tableau"],
 				"shadow": "false",
-				"dbtable": "OSM_dataquery_streetmap",
+				"dbtable": "OSM_dataquery_stressmap",
 				"dbtableType": "ext",
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/OSM Overpass/dataprovider_overpass.js",
 				"datacache": "true",
