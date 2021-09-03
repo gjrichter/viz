@@ -1,0 +1,108 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Fri Sep 03 2021 13:14:48 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/world_base_ISO/world_ISO3.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>COVID-19 <br> % of population protected with 2 doses<br><b style='color:rgba(180,200,20,1)'> less </b><b> or </b><b style='color:rgba(0, 150, 90,1)'> more </b> than 60%</h1><h4>aggregated (mean) by dynamic grid (zoom)</h4><h5>data: Data Repository by <a href='covid-19-data/public/data/vaccinations/' target='_blank'>Our World in Data</a></h5><h5>citation: Mathieu, E., Ritchie, H., Ortiz-Ospina, E. et al. A global database of COVID-19 vaccinations. Nat Hum Behav (2021). <a href='https://doi.org/10.1038/s41562-021-01122-8' target='_blank'>https://doi.org/10.1038/s41562-021-01122-8</a></h5><h4><a class='btn btn-default theme-tool-button' style='color:#0088aa;' href='javascript:ixmaps.legend.showItemGrid(\"curve\")'>grid view <span class='icon icon-table2' style='font-size:18px;vertical-align:-10%;'></span></a></h4>",
+		"item": "",
+		"scaleParam": {
+			"objectScaling": "1.3333333333333333",
+			"normalSizeScale": "55364168",
+			"dynamicScalePow": "2"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "0.4"
+			},
+		"center": {
+			"lat": "23.241346102386135",
+			"lng": "18.720703125000004"
+			},
+		"zoom": "3"
+		},
+	"themes": [{
+			"layer": "World_countries_shp0",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|LOLLIPOP|GRID|LONGTITLE|BOX|FIXSIZE|RECT|GAP|MAX|SIZEP4|SIMPLELEGEND|ZEROISVALUE",
+				"colorscheme": [
+					"rgba(180,200,20,1)",
+					"rgba(10,80,10,1)"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "CSSE_COVID_VACCINATIONS_SEQUENCE_PERCENT_FULLY_VACCINATED",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini_mondo/dataprovider_OWID_Vaccination.js",
+				"datacache": "true",
+				"lookupfield": "iso_code",
+				"ranges": [
+					"0",
+					"60",
+					"100"],
+				"symbols": [
+					"circle"],
+				"label": [
+					"fully vaccinated"],
+				"units": "%",
+				"units100": "",
+				"align": "center",
+				"refreshtimeout": "0",
+				"normalsizevalue": "0.1",
+				"scale": "0.015",
+				"rangescale": "1",
+				"maxvalue": "100",
+				"lowvalue": "60",
+				"linewidth": "50",
+				"boxopacity": "0",
+				"boxmargin": "20",
+				"titlefield": "location",
+				"boxupper": "1:50000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"evidence": "isolate_gray",
+				"title": "Daily vaccinations per million",
+				"snippet": "from 2020-12-02 to 2021-09-01"
+				}
+			}],
+	"layerMask": {
+		"World_countries_shp0": {
+			"display": "none"
+			}
+		}
+	}
