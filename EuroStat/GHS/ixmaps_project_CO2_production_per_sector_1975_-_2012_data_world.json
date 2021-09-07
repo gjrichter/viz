@@ -12,6 +12,7 @@
 		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "",
 		"basemap": "CartoDB - Positron",
+		"layout": "minimal",
 		"legend": "<h1><b>CO2</b> production per sector<br><b>1975</b> - <b>2012</b></h1><h4><i class='icon icon-radio-checked2' style='color:#444444'/> Industry <i class='icon icon-radio-checked2' style='color:#2266ee'/> Traffic <i class='icon icon-radio-checked2' style='color:#dd4422'/> Residential <br><i class='icon icon-radio-checked2' style='color:#eebb22'/> Energy <br><br>data: GHS <b>Urban Centre Database</b> 2015</h4>",
 		"scaleParam": {
 			"normalSizeScale": "55364168"
@@ -78,7 +79,7 @@
 				"fillopacity": "0.8",
 				"shadow": "false",
 				"dbtable": "themeDataObj",
-				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/EuroStat/GHS/databroker.js",
+				"dbtableExt": "https://gjrichter.github.io/viz/EuroStat/GHS/databroker.js",
 				"dbtableType": "ext",
 				"datacache": "true",
 				"lookupfield": "GCPNT_LAT|GCPNT_LON",

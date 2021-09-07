@@ -69,7 +69,7 @@
 				"shadow": "false",
 				"dbtable": "themeDataObj2",
 				"dbtableType": "ext",
-				"dbtableExt": "../../data/EuroStat/databroker.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/EuroStat/GHS/databroker.js",
 				"datacache": "true",
 				"lookupfield": "GCPNT_LAT|GCPNT_LON",
 				"units": "",
@@ -111,7 +111,7 @@
 				"shadow": "false",
 				"dbtable": "themeDataObj",
 				"dbtableType": "ext",
-				"dbtableExt": "../../data/EuroStat/databroker.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/EuroStat/GHS/databroker.js",
 				"datacache": "true",
 				"lookupfield": "GCPNT_LAT|GCPNT_LON",
 				"symbols": [

@@ -1,0 +1,167 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "<H1>Concentration of PM2.5 in 2014</H1><h4>the total concertation of PM2.5 for reference epoch 2014, calculated over the Urban Centre spatial domain of 2015, and expressed in μg/m3.</h4>",
+		"created": "Mon Feb 17 2020 21:25:46 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "",
+		"basemap": "CartoDB - Positron",
+		"layout": "minimal",
+		"legend": "<H1>Yearly productione and media concentration of PM2.5</H1><h4>the concentration of PM2.5 for reference epoch 2014, calculated over the Urban Centre and expressed in μg/m3</h4><h4>data: GHS Urban Centre Database 2015</h4>",
+		"scaleParam": {
+			"normalSizeScale": "55364168"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "24.766784522874453",
+			"lng": "10.898437500000002"
+			},
+		"zoom": "3"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "E_CPM2_T14",
+			"field100": "",
+			"style": {
+				"type": "GLOW|CHART|BUBBLE|SIZE|AGGREGATE|MEAN",
+				"colorscheme": [
+					"7",
+					"#F2F226",
+					"#100050",
+					"3colors",
+					"#CC4878"],
+				"opacity": "0.7",
+				"fillopacity": "0.0001",
+				"shadow": "false",
+				"dbtable": "themeDataObj2",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/EuroStat/GHS/databroker.js",
+				"datacache": "true",
+				"lookupfield": "GCPNT_LAT|GCPNT_LON",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0.5",
+				"linecolor": [
+					"none"],
+				"chartlower": "1:1000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridwidthpx": "5",
+				"title": "Concertation of PM2.5 in 2014",
+				"description": "data: GHS Urban Centre Database 2015"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "E_EPM2_I75|E_EPM2_T75|E_EPM2_R75|E_EPM2_E75|E_EPM2_I90|E_EPM2_T90|E_EPM2_R90|E_EPM2_E90|E_EPM2_I00|E_EPM2_T00|E_EPM2_R00|E_EPM2_E00|E_EPM2_I12|E_EPM2_T12|E_EPM2_R12|E_EPM2_E12",
+			"field100": "",
+			"style": {
+				"type": "CHART|BAR|STACKED|SIZE|BOX|LONGTITLE|AGGREGATE|RELOCATE|FIXSIZE|SUM|SIMPLELEGEND|XAXIS",
+				"colorscheme": [
+					"#442288",
+					"#2266ee",
+					"#dd4422",
+					"#eebb22",
+					"#442288",
+					"#2266ee",
+					"#dd4422",
+					"#eebb22",
+					"#442288",
+					"#2266ee",
+					"#dd4422",
+					"#eebb22",
+					"#442288",
+					"#2266ee",
+					"#dd4422",
+					"#eebb22"],
+				"fillopacity": "0.8",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/EuroStat/GHS/databroker.js",
+				"datacache": "true",
+				"lookupfield": "GCPNT_LAT|GCPNT_LON",
+				"symbols": [
+					"circle"],
+				"label": [
+					"Industry 1975",
+					"Transport 1975",
+					"Residential 1975",
+					"Energy 1975",
+					"Industry 1990",
+					"Transport 1990",
+					"Residential 1990",
+					"Energy 1990",
+					"Industry 2000",
+					"Transport 2000",
+					"Residential 2000",
+					"Energy 2000",
+					"Industry 2012",
+					"Transport 2012",
+					"Residential 2012",
+					"Energy 2012"],
+				"xaxis": [
+					"1975",
+					"1990",
+					"2000",
+					"2012"],
+				"units": "t",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "2",
+				"rangescale": "3",
+				"linecolor": [
+					"none"],
+				"linewidth": "0.3",
+				"boxopacity": "0.3",
+				"titlefield": "UC_NM_MN",
+				"boxupper": "1:1000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"gridx": "4",
+				"gridwidthpx": "60",
+				"title": "PM2.5 production per sector<br>1975 - 2012",
+				"snippet": "Yearly total emission of PM2.5 in tonnes",
+				"description": "data: GHS Urban Centre Database 2015"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
