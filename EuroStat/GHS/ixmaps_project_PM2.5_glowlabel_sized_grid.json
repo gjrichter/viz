@@ -81,7 +81,7 @@
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"gridwidthpx": "5",
-				"title": "Concertation of PM2.5 in 2014",
+				"title": "Concentration of PM2.5 in 2014",
 				"description": "data: GHS Urban Centre Database 2015"
 				}
 			},{
@@ -115,7 +115,7 @@
 					"1:5000000","100px",
 					"1:50000000","50px"
 				],
-				"title": "Concertation of PM2.5 in 2014",
+				"title": "Concentration of PM2.5 in 2014",
 				"description": "data: GHS Urban Centre Database 2015"
 				}
 			}],
