@@ -138,7 +138,7 @@
 					"1990",
 					"2000",
 					"2012"],
-				"units": "t",
+				"units": "tons",
 				"units100": "",
 				"refreshtimeout": "0",
 				"scale": "2",
@@ -155,7 +155,7 @@
 				"gridx": "4",
 				"gridwidthpx": "60",
 				"title": "PM2.5 production per sector<br>1975 - 2012",
-				"snippet": "Yearly total emission of PM2.5 in tonnes",
+				"snippet": "Yearly total emission of PM2.5 in tons",
 				"description": "data: GHS Urban Centre Database 2015"
 				}
 			}],
