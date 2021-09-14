@@ -184,6 +184,8 @@ window.ixmaps = window.ixmaps || {};
 				}
 				options.theme.szLabelA = szXaxisA; 
 	
+				theme.szXaxisA = __get_xaxis(columnsA);
+
 				theme.szSnippet = "from "+columnsA[0]+" to "+fieldsA[fieldsA.length-1];
 				ixmaps.setTitle("<span style='background:rgba(255,255,255,0.3);padding:0.3em 0.5em;border:solid #888888 0.5px;border-radius:0.2em;font-family:courier new,Raleway,arial,helvetica;font-size:18px;font-weigtht:700;color:#004400'>" + "from "+columnsA[0]+" to "+fieldsA[fieldsA.length-1] + "</span>", "right");
 					
