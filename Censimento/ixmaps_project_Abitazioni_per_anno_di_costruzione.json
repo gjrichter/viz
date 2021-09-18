@@ -1,15 +1,19 @@
 {
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
 	"metadata": {
 		"title": "",
 		"snippet": "",
 		"description": "",
 		"thumbnail": "",
 		"about": "",
-		"created": "Tue Nov 05 2019 14:14:07 GMT+0100 (Ora standard dell’Europa centrale)"
+		"created": "Thu Jun 03 2021 23:27:43 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
 		"map": "http://public.ixmaps.com.s3-website-eu-west-1.amazonaws.com/stage/maps/svg/maps/ISTAT 2011 Basi Territoriali/marche/istat_bt2011_11_marche.svgz",
-		"basemap": "Stamen - toner-lite",
+		"attribution": "iXMaps",
+		"basemap": "ArcGIS - Topo",
+		"legend": "",
+		"item": "",
 		"scaleParam": {
 			"normalSizeScale": "800121"
 			},
@@ -42,10 +46,10 @@
 			"basemapopacity": "1"
 			},
 		"center": {
-			"lat": "42.92716670573319",
-			"lng": "13.875233499999988"
+			"lat": "42.899106654303075",
+			"lng": "13.746471405029299"
 			},
-		"zoom": "13"
+		"zoom": "12"
 		},
 	"themes": [{
 			"layer": "SEZ2011",
@@ -76,13 +80,13 @@
 				"scale": "1",
 				"alphafield": "P1",
 				"alphafield100": "$density$",
-				"dopacitypow": "1",
-				"dopacityscale": "50",
+				"dopacitypow": "2",
+				"dopacityscale": "5",
 				"valuescale": "1",
 				"dominantfilter": "mean",
 				"dominantdfilter": "0",
 				"title": "15° Censimento ISTAT<br><br>Abitazioni per anno di costruzione",
-                "description":"Fonte: ISTAT"
+				"description": "Fonte: ISTAT"
 				}
 			}],
 	"layerMask": {
