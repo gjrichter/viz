@@ -1,0 +1,121 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sat Aug 21 2021 13:00:07 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>COVID-19 <br> <b style='color:rgba(0, 150, 90,1)'>daily vaccinations per million</b></h1><h4>7-day moving average</h4><h4>data: Data Repository by <a href='covid-19-data/public/data/vaccinations/' target='_blank'>Our World in Data</a></h4><h5>citation: Mathieu, E., Ritchie, H., Ortiz-Ospina, E. et al. A global database of COVID-19 vaccinations. Nat Hum Behav (2021).</h5><h4><a href='https://doi.org/10.1038/s41562-021-01122-8' target='_blank'>https://doi.org/10.1038/s41562-021-01122-8</a></h4><h4><a class='btn btn-default theme-tool-button' style='color:#0088aa;' href='javascript:ixmaps.legend.showItemGrid(\"curves\")'>grid view <span class='icon icon-table2' style='font-size:18px;vertical-align:-10%;'></span></a></h4>",
+		"layout": "minimal",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "55364168",
+			"dynamicScalePow": "2" 
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "0.6"
+			},
+		"center": {
+			"lat": "22.268764039073968",
+			"lng": "4.746093750000001"
+			},
+		"zoom": "3"
+		},
+	"themes": [{
+			"layer": "World_countries_shp0",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "0.7",
+				"dbtable": "WORLD_ISO_3_ALPHA_X",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini_mondo/dataprovider_geojson.js",
+				"datacache": "true",
+				"itemfield": "id",
+				"lookupfield": "geometry",
+				"linecolor": [
+					"none"],
+				"linewidth": "0.5",
+				"title": "Nuts_2"
+				}
+			},{
+			"layer": "World_countries_shp0",
+			"field": "",
+			"field100": "",
+			"style": {
+				"name": "curves",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA||GRID|LONGTITLE|BOX|FIXSIZE|RECT|GAP|MAX|SIZEP4|SIMPLELEGEND|ZEROISVALUE",
+				"colorscheme": [
+					"rgba(10,100,50,1)"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "CSSE_COVID_VACCINATIONS_SEQUENCE_DAILY_PER_MILLION",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini_mondo/dataprovider_OWID_Vaccination.js",
+				"datacache": "true",
+				"lookupfield": "iso_code",
+				"titlefield":"location",
+				"label": [
+					"vaccinations/million"],
+				"units": "",
+				"units100": "",
+				"align": "center",
+				"refreshtimeout": "0",
+				"scale": "0.008",
+				"rangescale": "1",
+				"linewidth":"100",
+				"maxvalue":"15000",
+				"boxopacity": "0",
+				"boxmargin": "20",
+				"titlefield": "location",
+				"titleupper": "1:10000000",
+				"boxupper": "1:20000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"evidence": "isolate_gray",
+				"title": "Daily vaccinations per million",
+				"snippet": "from december 2020 to now"
+				}
+			}],
+	"layerMask": {
+		"World_countries_shp0": {
+			"display": "none"
+			}
+		}
+	}
