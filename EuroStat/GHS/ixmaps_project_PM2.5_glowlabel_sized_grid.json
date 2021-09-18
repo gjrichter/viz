@@ -57,7 +57,7 @@
 			"field": "E_CPM2_T14",
 			"field100": "",
 			"style": {
-				"type": "GLOW|CHART|BUBBLE|SIZE|AGGREGATE|MEAN",
+				"type": "GLOW|CHART|BUBBLE|SIZE|VALUES|AGGREGATE|MEAN",
 				"colorscheme": [
 					"7",
 					"#F2F226",
@@ -72,14 +72,15 @@
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/EuroStat/GHS/databroker.js",
 				"datacache": "true",
 				"lookupfield": "GCPNT_LAT|GCPNT_LON",
-				"units": "",
+				"units": "μg",
 				"refreshtimeout": "0",
 				"scale": "0.5",
+				"textcolor": "black",
 				"linecolor": [
 					"none"],
-				"chartlower": "1:1000000",
-				"valuescale": "1",
-				"valuedecimals": "0",
+				"valueupper": "1:1000000",
+				"valuescale": "2",
+				"valuedecimals": "1",
 				"gridwidthpx": "5",
 				"title": "Concentration of PM2.5 in 2014",
 				"description": "data: GHS Urban Centre Database 2015"
@@ -110,6 +111,7 @@
 				"valuescale": "1",
 				"valuedecimals": "1",
 				"gridwidthpx": "50",
+				"chartlower": "1:1000000",
 				"aggregationscale":[
 					"1:1","200px",
 					"1:5000000","100px",
