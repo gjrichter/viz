@@ -113,7 +113,7 @@
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"gridwidthpx": "5",
-				"chartlower":"1:1000000",
+				"xxchartlower":"1:1000000",
 				"title": "Concertation of PM2.5 in 2014",
 				"description": "data: GHS Urban Centre Database 2015"
 				}
