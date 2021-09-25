@@ -219,7 +219,7 @@ window.ixmaps = window.ixmaps || {};
 				"lead":"denominazione_comune",
 				"columns": "sesso",
 				"keep": ["codice_regione","codice_provincia","popolazione_censita"]
-			}) 
+			}); 
 			
 			var iTotal = pivot.column("Total").index;
 			var iF = pivot.column("F").index;
@@ -338,7 +338,7 @@ window.ixmaps = window.ixmaps || {};
 				"lead":"denominazione_comune",
 				"columns": "sesso",
 				"keep": ["codice_regione","codice_provincia","popolazione_censita"]
-			}) 
+			}); 
 			
 			var iTotal = pivot.column("Total").index;
 			var iF = pivot.column("F").index;
@@ -351,6 +351,12 @@ window.ixmaps = window.ixmaps || {};
 			
 			ammcom.addColumn({source:"denominazione_comune",destination:"quota"},function(value){
 				return lookup[value];
+			});
+			
+			var iProv = pivot.column("codice_provincia").index;
+			var iCom = pivot.column("codice_comune").index;
+			ammcom.addColumn({destination:"PROCOM"},function(row){
+				return String(row[iProv] + substr(("000"+String(row[iCom])),3));
 			});
 			
 			ixmaps.setExternalData(ammcom, {
