@@ -356,7 +356,7 @@ window.ixmaps = window.ixmaps || {};
 			var iProv = ammcom.column("codice_provincia").index;
 			var iCom = ammcom.column("codice_comune").index;
 			ammcom.addColumn({destination:"PROCOM"},function(row){
-				return String(row[iProv] + substr(("000"+String(row[iCom])),3));
+				return String(row[iProv] + ("000"+String(row[iCom])).substr(3));
 			});
 			
 			ixmaps.setExternalData(ammcom, {
