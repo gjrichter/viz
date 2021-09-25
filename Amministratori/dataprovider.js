@@ -350,8 +350,8 @@ window.ixmaps = window.ixmaps || {};
 			var lookup = pivot.lookupArray("denominazione_comune","quota");
 			
 			ammcom.addColumn({source:"denominazione_comune",destination:"quota"},function(value){
-				return lookup[value]:
-			}):
+				return lookup[value];
+			});
 			
 			ixmaps.setExternalData(ammcom, {
 				type: "dbtable",
