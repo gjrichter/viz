@@ -353,8 +353,8 @@ window.ixmaps = window.ixmaps || {};
 				return lookup[value];
 			});
 			
-			var iProv = pivot.column("codice_provincia").index;
-			var iCom = pivot.column("codice_comune").index;
+			var iProv = ammcom.column("codice_provincia").index;
+			var iCom = ammcom.column("codice_comune").index;
 			ammcom.addColumn({destination:"PROCOM"},function(row){
 				return String(row[iProv] + substr(("000"+String(row[iCom])),3));
 			});
