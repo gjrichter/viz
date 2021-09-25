@@ -347,7 +347,7 @@ window.ixmaps = window.ixmaps || {};
 				function(row){
 					return (row[iF]/row[iTotal]*100);
 			});
-			var lookup = pivot.lookupArray("denominazione_comune","quota");
+			var lookup = pivot.lookupArray("quota","denominazione_comune");
 			
 			ammcom.addColumn({source:"denominazione_comune",destination:"quota"},function(value){
 				return lookup[value];
