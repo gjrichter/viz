@@ -1,0 +1,89 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sat Sep 25 2021 09:18:27 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2019/italia_comuni_2019_s_nome_upper_eligendo.svgz",
+		"attribution": "powered by <a href=\"https://www.ixmaps.com\" target=\"_blank\" style=\"color:#0E77B2\">iXMaps</a>  - dati: <a href=\"https://istat.com\" target=\"_blank\" style=\"color:#0E77B2\">ISTAT - CC BY 4.0</a>",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"lineScaling": "0.5",
+			"normalSizeScale": "5000000"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushPaintShape": "10000",
+			"flushChartDraw": "10000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "41.89409955811395",
+			"lng": "13.666992187500002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "Com2019_name_upper",
+			"field": "F",
+			"field100": "Total",
+			"style": {
+				"type": "CHOROPLETH|QUANTILE|DOPACITYMINMAX",
+				"colorscheme": [
+					"7",
+					"RGB(44,74,255)",
+					"RGB(255,41,38)",
+					"dynamic"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "ammcom_pivot",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/Amministratori/dataprovider.js",
+				"datacache": "true",
+				"lookupfield": "denominazione_comune",
+				"lookuptoupper": "true",
+				"symbols": [
+					"circle"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"alphafield": "popolazione_censita",
+				"dopacitypow": "2",
+				"dopacityscale": "5",
+				"valuescale": "1",
+				"title": "com2011_s [sesso]"
+				}
+			}],
+	"layerMask": {
+		}
+	}

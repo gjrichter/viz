@@ -1,0 +1,99 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sat Sep 25 2021 10:12:23 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2019/italia_comuni_2019_s_nome_upper_eligendo.svgz",
+		"attribution": "powered by <a href=\"https://www.ixmaps.com\" target=\"_blank\" style=\"color:#0E77B2\">iXMaps</a>  - dati: <a href=\"https://istat.com\" target=\"_blank\" style=\"color:#0E77B2\">ISTAT - CC BY 4.0</a>",
+		"basemap": "black",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"lineScaling": "0.5",
+			"normalSizeScale": "5000000"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushPaintShape": "10000",
+			"flushChartDraw": "10000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "41.36031866306708",
+			"lng": "15.457763671875002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "Com2019_name_upper",
+			"field": "F",
+			"field100": "Total",
+			"style": {
+				"type": "CHART|GLOW|BUBBLE|SIZEP3|RANGES",
+				"colorscheme": [
+					"RGB(80,120,255)",
+					"RGBA(180,140,180,0.2)",
+					"RGB(255,41,38)"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "ammcom_pivot",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/Amministratori/dataprovider.js",
+				"datacache": "true",
+				"lookupfield": "denominazione_comune",
+				"lookuptoupper": "true",
+				"ranges": [
+					"0",
+					"20",
+					"50",
+					"100"],
+				"symbols": [
+					"circle"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"scale": "0.6400000000000002",
+				"sizefield": "popolazione_censita",
+				"dopacitypow": "3.1250000000000004",
+				"dopacityscale": "3.2",
+				"valuescale": "1",
+				"titlefield": "denominazione_comune",
+				"title": "Amministratori locali in carica al<br> 9 Settembre 2021",
+				"snippet": "Fonte: <a href='https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-in-carica' target='blank'>Eligendo</a> Licenza: ???"
+				}
+			}],
+	"layerMask": {
+		"Com2017_name_upper": {
+			"display": "none"
+			}
+		}
+	}
