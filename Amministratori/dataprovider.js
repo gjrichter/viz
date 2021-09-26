@@ -11,7 +11,7 @@ window.ixmaps = window.ixmaps || {};
 	 * @return void
 	 */
 
-	ixmaps.ammcom = function(theme, option){ 
+	ixmaps.ammcom = function(theme, options){ 
 		
 		var broker = new Data.Broker()
 			.addSource("https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Amministrazioni/ammcom.csv.gz","csv")
@@ -117,7 +117,7 @@ window.ixmaps = window.ixmaps || {};
 		});
 	};
 
-	ixmaps.ammcom_pivot = function(theme, option){ 
+	ixmaps.ammcom_pivot = function(theme, options){ 
 		
 		var broker = new Data.Broker()
 			.addSource("https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Amministrazioni/ammcom.csv.gz","csv")
@@ -236,7 +236,7 @@ window.ixmaps = window.ixmaps || {};
 		});
 	};
 	
-	ixmaps.ammcom_extended = function(theme, option){ 
+	ixmaps.ammcom_extended = function(theme, options){ 
 		
 		var broker = new Data.Broker()
 			.addSource("https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Amministrazioni/ammcom.csv.gz","csv")
