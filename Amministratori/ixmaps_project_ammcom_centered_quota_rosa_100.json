@@ -78,15 +78,21 @@
 					"M",
 					"F"],
 				"label": [
-					"M",
-					"F"],
+					"Maschi",
+					"Femmine"],
 				"units": "",
 				"refreshtimeout": "0",
 				"scale": "2.5",
+				"textcolor": "#444444",
+				"textscale": "3",
+				"boxopacity": "0",
 				"sizefield": "popolazione_censita",
+				"boxupper": "1:150000",
 				"valuescale": "1",
+				"titlefield": "denominazione_comune",
 				"maxcharts": "200",
-				"title": "com2011_s [sesso]"
+				"title": "Amministratori locali in carica al<br> 9 Settembre 2021",
+				"description": "<br><h5>fonte: <a href='https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-in-carica' target='blank'>Eligendo</a> licenza: <a href='https://www.dati.gov.it/content/italian-open-data-license-v20' target='blank'>IODL v2.0</a></h5>"
 				}
 			}],
 	"layerMask": {
