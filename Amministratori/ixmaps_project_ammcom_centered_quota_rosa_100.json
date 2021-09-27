@@ -59,7 +59,7 @@
 			"field": "sesso",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|CENTER|SIZE|AGGREGATE|RECT|EXACT|SUM|CATEGORICAL|COUNT",
+				"type": "CHART|SYMBOL|SEQUENCE|CENTER|SIZE|AGGREGATE|RECT|EXACT|SUM|CATEGORICAL|COUNT|BOX|TITLE",
 				"colorscheme": [
 					"#006BDE",
 					"#F087a7"],
