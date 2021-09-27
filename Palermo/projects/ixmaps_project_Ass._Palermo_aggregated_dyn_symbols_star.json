@@ -1,0 +1,95 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Thu Sep 09 2021 14:42:24 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Palermo/palermo_upl_circ_quart.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"lineScaling":"6",
+			"normalSizeScale": "177165354"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "38.128817897709595",
+			"lng": "13.371734619140627"
+			},
+		"zoom": "13"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "Settore",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|STAR|AGGREGATE|HEX|CATEGORICAL|SUM|SUM|VALUES",
+				"colorscheme": [
+					"9",
+					"fruit"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ODS/gz/AssPalermo.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "gmaps",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "2",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"centerpart": "max",
+				"aggregationscale": [
+					"1:1","0",
+					"1:10000","UPL_nome",
+					"1:20000","Quartiere",
+					"1:50000","circoscrizione",
+					"1:200000","1px"
+				],
+				"title": "Ass. Palermo aggregati per UPL, Circoscr. o Quartieri"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

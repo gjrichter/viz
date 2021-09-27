@@ -1,0 +1,100 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Fri Sep 17 2021 18:46:42 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "177165354"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "38.1212894165799",
+			"lng": "13.357701301574707"
+			},
+		"zoom": "14"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "Settore",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|CENTER|SORT|UP|COMPOSECOLOR|SUBTRACTIVE|AGGREGATE|RECT|AUTOSIZE|CATEGORICAL|SUM|INLINETEXT|DTEXT|VALUEBACKGROUND|BOX|TITLE",
+				"colorscheme": [
+					"9",
+					"fruit"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ODS/gz/AssPalermo.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "gmaps",
+				"symbols": [
+					"roundrect"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1.2",
+				"sizefield": "$item$",
+				"showdata":"true",
+				"titlefield": "Denominazione",
+				"textscale": "7",
+				"textcolor": "black",
+				"boxupper": "1:5000",
+				"boxopacity": "0.5",
+				"dopacitypow": "1",
+				"dopacityscale": "0.5",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"aggregationscale":[
+					"1:1","0",
+					"1:5000","40px"
+					],
+				"title": "Palermo - Associazioni per Settore",
+				"snippet": "aggregati su griglia dinamica"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

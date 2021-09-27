@@ -1,0 +1,89 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Thu Sep 09 2021 14:53:52 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "177165354"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "38.124496711979006",
+			"lng": "13.362464904785158"
+			},
+		"zoom": "13"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "Settore",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|CENTER|COMPOSECOLOR|SUBSTRACTIVE|HARMONIZE|AGGREGATE|HEX|GRIDSIZE|CATEGORICAL|SUM|DOPACITY",
+				"colorscheme": [
+					"9",
+					"fruit"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ODS/gz/AssPalermo.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "gmaps",
+				"symbols": [
+					"hexagon"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"dopacitypow": "1",
+				"dopacityscale": "0.5",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridwidthpx": "40",
+				"title": "World Mercator [$item$]"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

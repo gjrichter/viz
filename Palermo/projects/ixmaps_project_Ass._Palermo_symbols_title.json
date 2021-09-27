@@ -1,0 +1,92 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Thu Sep 09 2021 16:04:15 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "Stamen - toner-lite",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "108133"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "38.1334763895322",
+			"lng": "13.375768661499025"
+			},
+		"zoom": "13"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "Settore",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|CATEGORICAL|BOX|TITLE",
+				"colorscheme": [
+					"9",
+					"fruit"],
+				"fillopacity": "0.7",
+				"shadow": "true",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ODS/gz/AssPalermo.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "lat|lng",
+				"showdata": "true",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"textcolor": "black",
+				"textscale": "2",
+				"linecolor": [
+					"white"],
+				"linewidth": "2",
+				"titlefield": "Denominazione",
+				"boxupper": "1:10000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Ass. Palermo"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

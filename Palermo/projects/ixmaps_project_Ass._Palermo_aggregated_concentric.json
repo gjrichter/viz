@@ -1,0 +1,99 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Tue Sep 14 2021 15:57:29 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Palermo/palermo_upl.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"lineScaling": "6",
+			"normalSizeScale": "27033"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "normal",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "38.1151107557172",
+			"lng": "13.379802703857424"
+			},
+		"zoom": "13"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "Settore",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|CENTER|SORT|UP|RINGS|AGGREGATE|HEX|CATEGORICAL|BOX|TITLE|SUM",
+				"colorscheme": [
+					"9",
+					"fruit"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ODS/gz/AssPalermo.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "gmaps",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"showdata": "true",
+				"scale": "2.5",
+				"textscale": "2.5",
+				"boxopacity": "0.5",
+				"bordercolor": "black",
+				"borderradius": "2",
+				"boxmargin": "5",
+				"textcolor": "black",
+				"titlefield": "Denominazione",
+				"boxupper": "1:25000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"centerpart": "max",
+				"aggregationscale": [
+					"1:1","0",
+					"1:5000","UPL_nome"
+				],
+				"title": "Palermo - Associazioni per Settore",
+				"snippet": "aggregati sum UPL"
+				}
+			}],
+	"layerMask": {
+		}
+	}

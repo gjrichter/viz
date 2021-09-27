@@ -1,0 +1,167 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Thu Sep 09 2021 14:42:24 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"lineScaling":"6",
+			"normalSizeScale": "177165354"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "38.128817897709595",
+			"lng": "13.371734619140627"
+			},
+		"zoom": "13"
+		},
+	"themes": [{
+			"layer": "circoscrizioni",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"#dddddd"],
+				"fillopacity": "0.2",
+				"dbtable": "circoscrizioni",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ODS/gz/palermo_circoscrizioni.geojson.gz",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "name",
+				"lookupfield": "geometry",
+				"linecolor": [
+					"#ffffff"],
+				"linewidth": "2",
+				"featureupper": "1:150000",
+				"featurelower": "1:50000",
+				"title": "Palermo Circoscrizioni"
+				}
+			},{
+			"layer": "quartieri",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"#eeeeff"],
+				"fillopacity": "0.2",
+				"dbtable": "quartieri",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ODS/gz/palermo_25_quartieri.geojson.gz",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "name",
+				"lookupfield": "geometry",
+				"linecolor": [
+					"#ffffff"],
+				"linewidth": "2",
+				"titlefield":"name",
+				"featureupper": "1:50000",
+				"featurelower": "1:20000",
+				"title": "Palermo Quartieri"
+				}
+			},{
+			"layer": "upl",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"#ffeeee"],
+				"fillopacity": "0.2",
+				"dbtable": "upl",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ODS/gz/palermo_unit__di_primo_livello.geojson.gz",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "nome",
+				"lookupfield": "geometry",
+				"linecolor": [
+					"#ddcccc"],
+				"linewidth": "3",
+				"featureupper": "1:20000",
+				"featurelower": "1:5000",
+				"title": "Unità di Primo Livello"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "Settore",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|STAR|AGGREGATE|HEX|CATEGORICAL|SUM|VALUES|BOX|TITLE",
+				"colorscheme": [
+					"9",
+					"fruit"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ODS/gz/AssPalermo.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "gmaps",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "2.5",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"showdata":"true",
+				"titlefield": "Denominazione",
+				"textscale": "3",
+				"boxupper": "1:5000",
+				"boxopacity": "0.5",
+				"aggregationscale": [
+					"1:1","0",
+					"1:10000","UPL_nome",
+					"1:20000","Quartiere",
+					"1:50000","circoscrizione",
+					"1:200000","0"
+				],
+				"chartupper":"1:200000",
+				"title": "Associazioni aggregati per <span style='color:#888888'>Circoscrizioni</span>, <span style='color:#8888dd'>Quartieri</span> o <span style='color:#dd8888'>UPL</span>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
