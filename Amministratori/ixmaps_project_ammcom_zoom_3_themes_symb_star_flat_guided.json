@@ -183,7 +183,7 @@
 					"#F05757",
 					"#0088dd"],
 				"shadow": "false",
-				"dbtable": "ammcom",
+				"dbtable": "ammcom_extended",
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/Amministratori/dataprovider.js",
 				"datacache": "true",
