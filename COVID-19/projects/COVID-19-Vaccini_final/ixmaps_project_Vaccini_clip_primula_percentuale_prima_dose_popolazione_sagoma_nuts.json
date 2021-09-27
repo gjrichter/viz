@@ -110,7 +110,7 @@
 				"refreshtimeout": "0",
 				"titlefield": "nome_area",
 				"scale":"2",
-				"normalsizevalue":"10",
+				"normalsizevalue":"100",
 				"valuescale": "0.4",
 				"valuedecimals": "2",
 				"valueupper":"1:200000000",
