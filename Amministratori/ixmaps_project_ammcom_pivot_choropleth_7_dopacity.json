@@ -88,11 +88,12 @@
 				"refreshtimeout": "0",
 				"scale": "1",
 				"alphafield": "popolazione_censita",
+				"alphafield100": "$densità$",
 				"dopacitypow": "2",
 				"dopacityscale": "3",
 				"valuescale": "1",
 				"title": "Amministratori locali in carica al<br> 9 Settembre 2021",
-				"description": "<h4>Quota femminile</h4><h5>fonte: <a href='https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-in-carica' target='blank'>Eligendo</a> licenza: <a href='https://www.dati.gov.it/content/italian-open-data-license-v20' target='blank'>IODL v2.0</a></h5>"
+				"description": "<h4>Quota femminile nei comuni. La lumuinosità rappresenta la densita della popolazione</h4><h5>fonte: <a href='https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-in-carica' target='blank'>Eligendo</a> licenza: <a href='https://www.dati.gov.it/content/italian-open-data-license-v20' target='blank'>IODL v2.0</a></h5>"
 				}
 			}],
 	"layerMask": {
