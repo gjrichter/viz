@@ -62,7 +62,7 @@
 				"colorscheme": [
 					"#F05757",
 					"#0088dd"],
-				"fillopacity": "0.03",
+				"fillopacity": "0.1",
 				"shadow": "false",
 				"dbtable": "ammcom",
 				"dbtableType": "ext",
@@ -86,7 +86,7 @@
 					"none"],
 				"valuescale": "1",
 				"centerpart": "max",
-				"minaggregation": "20",
+				"minaggregation": "2",
 				"gridwidth": "150px",
 				"chartupper":"1:400000",
 				"title": "com2011_s [sesso]"
