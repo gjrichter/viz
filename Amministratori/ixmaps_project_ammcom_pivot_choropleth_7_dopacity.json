@@ -88,7 +88,7 @@
 				"refreshtimeout": "0",
 				"scale": "1",
 				"alphafield": "popolazione_censita",
-				"alphafield100": "$densità$",
+				"alphafield100": "$density$",
 				"dopacitypow": "2",
 				"dopacityscale": "3",
 				"valuescale": "1",
