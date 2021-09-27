@@ -121,7 +121,7 @@
 				"textscale": "3",
 				"bordercolor": "black",
 				"borderradius": "2",
-				"boxopacity": "0.3",
+				"boxopacity": "0",
 				"boxmargin": "5",
 				"titlefield": "denominazione_comune",
 				"valueupper": "1:100000",
