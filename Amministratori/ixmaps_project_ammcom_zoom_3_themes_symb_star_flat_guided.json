@@ -87,7 +87,7 @@
 				"valuescale": "1",
 				"centerpart": "max",
 				"minaggregation": "2",
-				"gridwidth": "150px",
+				"gridwidth": "200px",
 				"chartupper":"1:400000",
 				"title": "com2011_s [sesso]"
 				}
