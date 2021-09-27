@@ -79,6 +79,11 @@
 					"100"],
 				"symbols": [
 					"circle"],
+				"label": [
+					"quota feminile < 20 %",
+					"quota feminile tra 20 e 50 %",
+					"quota feminile 50 % e più"
+					],	
 				"units": "%",
 				"refreshtimeout": "0",
 				"scale": "0.6400000000000002",
