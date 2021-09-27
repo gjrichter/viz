@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<!-- **********************************************************************
+
+ixmaps_Amministratori.html
+
+$Comment: project map for: Amministratori - parità di genere
+$Source : ixmaps_Amministratori.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2021/09/27 $
+$Author: guenter richter $
+$Id:ixmaps_comuni_embed.html 1 2021-09-27 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:ixmaps_Amministratori.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="assets/img/favicon.png">
+
+	<title>iXMaps simple map</title>
+	<style>
+		.form-control {
+			padding:0.4em;
+			background:rgba(255,255,255,0.5);
+			font-size:1.2em;
+			border-color:#ccc;
+			border-top: 0px;
+			border-left: 0px;
+			border-right: 0px;
+			border-bottom: solid #ddd 3px;
+			border-radius:5px;
+			color:#444
+		}
+		.black {
+			background:rgba(0,0,0,0.7);
+			color:#ddd
+		}
+		.title {
+			background-color: #ddd;
+			color: #888;
+			border: solid #ddd 1px;
+		}  
+	</style>
+
+</head>
+
+<body style="padding:0;margin:0;overflow:hidden">
+
+	<!-- map hosting div (fullscreen) -->
+	
+	<div id="map_div"  background="#f8f8f8" onclick="event.stopPropagation();return false;">
+	</div>
+	<div id="footer">
+	</div>
+
+	<!-- menu line on top of the map -->
+
+	<div id="themeselect" style="position:absolute;top:5px;left:50px;padding:1em">
+		
+		<select class="form-control" id="theme-classes-select" onchange="ixmaps.setTheme(document.getElementById('theme-classes-select').value)" >
+			
+	  		<option disabled class="title">Confronto maschi femmine</option>
+			<option value=
+					"https://gjrichter.github.io/viz/Amministratori/ixmaps_project_ammcom_pie_sym_dyn.json" selected>
+				Amministratori - aggregati per torte</option>
+			
+			<option value=
+					"https://gjrichter.github.io/viz/Amministratori/ixmaps_project_ammcom_zoom_3_themes_bar_flat_guided.json" >
+				Amministratori - aggregati per barre</option>
+
+			<option value=						"https://gjrichter.github.io/viz/Amministratori/ixmaps_project_ammcom_zoom_3_themes_symb_star_flat_guided.json" >
+				Amministratori - aggregati per semicerchi</option>
+		
+	  		<option disabled class="title">Quota 'rosa'</option>
+
+			<option value=
+					"https://gjrichter.github.io/viz/Amministratori/ixmaps_project_ammcom_centered_quota_rosa_grid.json" >
+				Amministratori - 'quota rosa' - griglia</option>
+			
+			<option value=
+					"https://gjrichter.github.io/viz/Amministratori/ixmaps_project_ammcom_centered_quota_rosa_100.json" >
+				Amministratori - 'quota rosa' - 100 grafici'</option>
+			
+	  		<option disabled class="title">Alta e bassa parità di genere</option>
+			
+			<option value=
+					"https://gjrichter.github.io/viz/Amministratori/ixmaps_project_ammcom_pivot_glow_3.json" >
+				Amministratori - parità di genere - punti</option>
+			
+			<option value=
+					"https://gjrichter.github.io/viz/Amministratori/ixmaps_project_ammcom_pivot_choropleth_7_dopacity.json" >
+				Amministratori - parità di genere - poligoni</option>
+			
+			
+		</select>
+		
+		<select class="form-control" id="filter-classes-select" onchange="eval(document.getElementById('filter-classes-select').value)" >
+			<option value="ixmaps.setFilter();" selected>tutte le chariche</option>
+			
+			<option value="ixmaps.setFilter('WHERE descrizione_carica = Sindaco');" >
+				carica Sindaco</option>
+			
+			<option value="ixmaps.setFilter('WHERE descrizione_carica = Assessore');" >
+				carica Assessore</option>
+			
+			<option value="ixmaps.setFilter('WHERE quota < 20');" >
+				quota < 20 %</option>
+				
+			<option value="ixmaps.setFilter('WHERE quota > 50');" >
+				quota > 50 %</option>
+		</select>
+		
+		<select class="form-control" id="background-select" onchange="eval(document.getElementById('background-select').value)" >
+			<option selected value="ixmaps.htmlgui_setMapTypeId('CartoDB - Positron');$('.form-control').removeClass('black');">
+				fondo chiaro
+			</option>
+			<option value="ixmaps.htmlgui_setMapTypeId('CartoDB - Dark matter');$('.form-control').addClass('black');">
+				fondo scuro
+			</option>
+			<option value="ixmaps.htmlgui_setMapTypeId('white');$('.form-control').removeClass('black');">
+				fondo bianco
+			</option>
+			<option value="ixmaps.htmlgui_setMapTypeId('black');$('.form-control').addClass('black');">
+				fondo nero
+			</option>
+		</select>
+	</div>
+
+	<!-- ixmaps api ================================================================= -->
+
+	<script type="text/javascript" src = "https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js" > </script>
+
+	<script type="text/javascript" src = "https://gjrichter.github.io/ixmaps/ui/libs/jquery/jquery-1.7.1.min.js" > </script>
+	<script type="text/javascript" src = "https://gjrichter.github.io/data.js/data.js" > </script>
+	<script type="text/javascript" src = "https://unpkg.com/osmtogeojson@3.0.0-beta.4/osmtogeojson.js" > </script>														   
+
+	<!-- code ======================================================================= -->
+
+	<script type="text/javascript" charset="utf-8"> 
+
+		ixmaps.embedMap("map_div",
+				{ 
+					mapService: "leaflet",
+					mapType:	"CartoDB - Positron",
+					mapUrl:		"",
+					width:		"100%",
+					height:		window.innerHeight+"px",
+					legend:		true
+				},
+				(map) => {
+			
+					var szProject = document.getElementById('theme-classes-select').value;
+					map.loadProject(szProject);
+									   
+				}
+			);
+
+		ixmaps.lastFilter = null;
+		ixmaps.setFilter = function(szFilter){
+			
+			// filter items on map
+			var objTheme = ixmaps.getThemeObj();
+			var objThemesA = ixmaps.getThemes();
+			for ( a in objThemesA ){
+				objTheme = objThemesA[a];
+				if ( objTheme.szFlag.match(/CHART|CHOROPLETH/) ){
+					if ( szFilter ){
+						ixmaps.changeThemeStyle(null,objTheme.szId, "filter:" + (szFilter || " "), "set");
+					}else{
+						ixmaps.changeThemeStyle(null,objTheme.szId, "filter", "remove");
+					}
+				}
+			}
+			ixmaps.lastFilter = szFilter;
+		}
+		
+		ixmaps.setTheme = function(szProjectUrl){
+			ixmaps.map().loadProject(szProjectUrl,'themeonly');
+			document.getElementById('filter-classes-select').value = "ixmaps.setFilter();"
+			//setTimeout("ixmaps.setFilter('"+ixmaps.lastFilter+"')",1000);
+		}
+		
+	</script>	
+
+
+  </body>
+</html>
