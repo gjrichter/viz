@@ -89,7 +89,7 @@
 				"scale": "1",
 				"alphafield": "popolazione_censita",
 				"dopacitypow": "2",
-				"dopacityscale": "5",
+				"dopacityscale": "7",
 				"valuescale": "1",
 				"title": "com2011_s [sesso]"
 				}
