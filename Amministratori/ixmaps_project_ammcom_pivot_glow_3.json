@@ -13,7 +13,7 @@
 		"attribution": "powered by <a href=\"https://www.ixmaps.com\" target=\"_blank\" style=\"color:#0E77B2\">iXMaps</a>  - dati: <a href=\"https://istat.com\" target=\"_blank\" style=\"color:#0E77B2\">ISTAT - CC BY 4.0</a>",
 		"basemap": "white",
 		"legend": "",
-		"item": "",
+		"item": "html",
 		"scaleParam": {
 			"lineScaling": "0.5",
 			"normalSizeScale": "5000000"
