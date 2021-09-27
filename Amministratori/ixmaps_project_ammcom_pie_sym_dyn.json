@@ -140,7 +140,7 @@
 				"units": "",
 				"scale": "0.5",
 				"valuescale": "1",
-				"gridx": "10px",
+				"gridwidth": "10px",
 				"chartupper": "1:250000",
 				"valueupper": "1:100000",
 				"boxupper": "1:100000",
