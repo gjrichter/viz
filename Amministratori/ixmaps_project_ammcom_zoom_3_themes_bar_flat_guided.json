@@ -119,7 +119,7 @@
 				"scale": "0.5",
 				"rangescale": "1.5",
 				"textscale": "3",
-				"bordercolor": "black",
+				"bordercolor": "none",
 				"borderradius": "2",
 				"boxopacity": "0",
 				"boxmargin": "5",
