@@ -84,7 +84,7 @@
 				"refreshtimeout": "0",
 				"scale": "2.5",
 				"textcolor": "#444444",
-				"textscale": "3",
+				"textscale": "1",
 				"boxopacity": "0",
 				"sizefield": "popolazione_censita",
 				"boxupper": "1:150000",
