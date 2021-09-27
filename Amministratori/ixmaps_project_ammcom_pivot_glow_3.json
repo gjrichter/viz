@@ -58,7 +58,7 @@
 			"field": "F",
 			"field100": "Total",
 			"style": {
-				"type": "CHART|GLOW|BUBBLE|SIZEP3|RANGES|SIMPLELEGEND",
+				"type": "CHART|GLOW|BUBBLE|SIZEP3|RANGES|SIMPLELEGEND|BOX|TITLE",
 				"colorscheme": [
 					"RGB(80,120,255)",
 					"RGBA(180,140,180,0.2)",
@@ -90,6 +90,10 @@
 				"sizefield": "popolazione_censita",
 				"dopacitypow": "3.1250000000000004",
 				"dopacityscale": "3.2",
+				"bordercolor": "none",
+				"boxopacity": "0",
+				"titlefield": "denominazione_comune",
+				"boxupper": "1:150000",
 				"valuescale": "1",
 				"title": "Amministratori locali in carica al 9 Settembre 2021",
 				"snippet": "<h5>Comuni con bassa, normale e elevata presenza femminile</h5>",
