@@ -226,7 +226,7 @@ window.ixmaps = window.ixmaps || {};
 			pivot.addColumn({
 				"destination": "quota"},
 				function(row){
-					return (row[iF]/row[iTotal]*100);
+					return (row[iF]/row[iTotal]*100).toFixed(2);
 			});
 			ixmaps.setExternalData(pivot, {
 				type: "dbtable",
@@ -345,7 +345,7 @@ window.ixmaps = window.ixmaps || {};
 			pivot.addColumn({
 				"destination": "quota"},
 				function(row){
-					return (row[iF]/row[iTotal]*100);
+					return (row[iF]/row[iTotal]*100).toFixed(2);
 			});
 			var lookup = pivot.lookupArray("quota","denominazione_comune");
 			
