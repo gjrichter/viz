@@ -59,7 +59,7 @@
 			"field": "sesso",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|STAR|UP|ZEROISVALUE|NEGATIVEISVALUE|AGGREGATE|RECT|CATEGORICAL|COUNT|BOX|TITLE",
+				"type": "CHART|SYMBOL|SEQUENCE|STAR|UP|SIZEP3|AGGREGATE|RECT|CATEGORICAL|COUNT|BOX|TITLE",
 				"colorscheme": [
 					"#0070C0",
 					"#FF0000"],
@@ -83,7 +83,7 @@
 					"F"],
 				"units": "",
 				"refreshtimeout": "0",
-				"scale": "5",
+				"scale": "2",
 				"sizefield": "popolazione_censita",
 				"textcolor": "#444444",
 				"textscale": "0.5",
