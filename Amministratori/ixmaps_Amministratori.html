@@ -69,6 +69,7 @@ $Log:ixmaps_Amministratori.html,v $
 		<select class="form-control" id="theme-classes-select" onchange="ixmaps.setTheme(document.getElementById('theme-classes-select').value)" >
 			
 	  		<option disabled class="title">Confronto maschi femmine</option>
+			
 			<option value=
 					"https://gjrichter.github.io/viz/Amministratori/ixmaps_project_ammcom_pie_sym_dyn.json" selected>
 				Amministratori - aggregati per torte</option>
@@ -80,6 +81,14 @@ $Log:ixmaps_Amministratori.html,v $
 			<option value=						"https://gjrichter.github.io/viz/Amministratori/ixmaps_project_ammcom_zoom_3_themes_symb_star_flat_guided.json" >
 				Amministratori - aggregati per semicerchi</option>
 		
+	  		<option disabled >-----</option>
+			
+			<option value=						"https://gjrichter.github.io/viz/Amministratori/ixmaps_project_ammcom_black_circle.json" >
+				Amministratori - confronto circolare</option>
+		
+			<option value=						"https://gjrichter.github.io/viz/Amministratori/ixmaps_project_ammcom_black_square.json" >
+				Amministratori - confronto rettangolare</option>
+		
 	  		<option disabled class="title">Quota 'rosa'</option>
 
 			<option value=
@@ -89,6 +98,13 @@ $Log:ixmaps_Amministratori.html,v $
 			<option value=
 					"https://gjrichter.github.io/viz/Amministratori/ixmaps_project_ammcom_centered_quota_rosa_100.json" >
 				Amministratori - 'quota rosa' - 100 grafici'</option>
+			
+			<option value=
+					"https://gjrichter.github.io/viz/Amministratori/ixmaps_project_ammcom_centered_quota_rosa_grid_II.json" >
+				Amministratori - quota variazione colore a)</option>
+			<option value=
+					"https://gjrichter.github.io/viz/Amministratori/ixmaps_project_ammcom_centered_quota_rosa_grid_III.json" >
+				Amministratori - quota variazione colore b)</option>
 			
 	  		<option disabled class="title">Alta e bassa parità di genere</option>
 			
@@ -100,17 +116,36 @@ $Log:ixmaps_Amministratori.html,v $
 					"https://gjrichter.github.io/viz/Amministratori/ixmaps_project_ammcom_pivot_choropleth_7_dopacity.json" >
 				Amministratori - parità di genere - poligoni</option>
 			
+	  		<option disabled >------</option>
+			
+			<option value=
+					"https://gjrichter.github.io/viz/Amministratori/ixmaps_project_ammcom_pointer_diff.json" >
+				Amministratori - parità di genere - frecce a)</option>
+			
+			<option value=
+					"https://gjrichter.github.io/viz/Amministratori/ixmaps_project_ammcom_pointer_diff_II.json" >
+				Amministratori - parità di genere - frecce b)</option>
+			
+			<option value=
+					"https://gjrichter.github.io/viz/Amministratori/ixmaps_project_ammcom_pointer_offsetmean.json" >
+				Amministratori - parità di genere - frecce c)</option>
+			
 			
 		</select>
 		
 		<select class="form-control" id="filter-classes-select" onchange="eval(document.getElementById('filter-classes-select').value)" >
-			<option value="ixmaps.setFilter();" selected>tutte le chariche</option>
+			
+			<option value="ixmaps.setFilter();" selected>tutti</option>
+			
+	  		<option disabled class="title">filtro per carica</option>
 			
 			<option value="ixmaps.setFilter('WHERE descrizione_carica = Sindaco');" >
 				carica Sindaco</option>
 			
 			<option value="ixmaps.setFilter('WHERE descrizione_carica = Assessore');" >
 				carica Assessore</option>
+			
+	  		<option disabled class="title">per quota femminile</option>
 			
 			<option value="ixmaps.setFilter('WHERE quota < 20');" >
 				quota < 20 %</option>
@@ -122,6 +157,9 @@ $Log:ixmaps_Amministratori.html,v $
 		<select class="form-control" id="background-select" onchange="eval(document.getElementById('background-select').value)" >
 			<option selected value="ixmaps.htmlgui_setMapTypeId('CartoDB - Positron');$('.form-control').removeClass('black');">
 				fondo chiaro
+			</option>
+			<option value="ixmaps.htmlgui_setMapTypeId('Stamen - toner');$('.form-control').removeClass('black');">
+				fondo Stamen
 			</option>
 			<option value="ixmaps.htmlgui_setMapTypeId('CartoDB - Dark matter');$('.form-control').addClass('black');">
 				fondo scuro
