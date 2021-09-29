@@ -72,6 +72,10 @@
 				"lookupfield": "denominazione_comune",
 				"lookuptoupper": "true",
 				"rangecentervalue": "0",
+				"label":[
+					" più rappresentanza maschile",
+					" più rappresentanza femminile"
+				],
 				"units": "%",
 				"refreshtimeout": "0",
 				"scale": "1",
