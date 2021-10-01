@@ -14,7 +14,7 @@ L'applicazione è accessibile con questa URL: [https://gjrichter.github.io/viz/A
 
 Tutto il codice dei [progetti](https://github.com/gjrichter/viz/tree/master/Amministratori) dell'applicazione e del framework [iXmaps](https://gjrichter.github.io/ixmaps/) è pubblicato su GitHub.
 
-Oltre all'applicazione ci sono altri strumenti per vedere e conoscere i progetti;:.
+Oltre all'applicazione ci sono altri strumenti per vedere e conoscere i progetti:
 
 - [ ] Una lista di tutti progetti si può avere qui:
   [https://gjrichter.github.io/ixmaps/app/ProjectP/html/index.html?projects=gjrichter/viz/contents/Amministratori](https://gjrichter.github.io/ixmaps/app/ProjectP/html/index.html?projects=gjrichter/viz/contents/Amministratori)
