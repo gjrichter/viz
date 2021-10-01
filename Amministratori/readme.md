@@ -12,6 +12,8 @@ Una preview di tutti progetti si può avviare qui: https://gjrichter.github.io/i
 
 Una galleria con alcune mappa interattive definite con questi progetti si apre qui: https://gjrichter.github.io/viz/Amministratori/gallery 
 
+Sotto le mappe nella galleria si trova il codice per includerli in una pagina HTML (embedding code). 
+
 
 
 Il github ripository dei progetti e qui: https://github.com/gjrichter/viz/tree/master/Amministratori
