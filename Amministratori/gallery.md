@@ -4,7 +4,7 @@ Alcune mappa per analizzare la disparità di genere nei amministratori comunali 
 
 Fonte: <a href="https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-in-carica" target="_blank">Ministero dell'Interno</a>  
 
-<iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Amministratori/ixmaps_project_ammcom_pointer_diff.json"></iframe>
+<iframe id="map" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Amministratori/ixmaps_project_ammcom_pointer_diff.json"></iframe>
 
 Visualizzazioni: iXMaps, i progetti (json) per la mappa si trovano qui: <a href="https://github.com/gjrichter/viz/tree/master/Amministratori" target="_blank">GitHub</a>
 codice per includere la mappa in una pagina HTML:
@@ -18,7 +18,7 @@ La prossima mappa evidenzia la parità raggiunta o no rispetto alla media nazion
 
 
 
-<iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Amministratori/ixmaps_project_ammcom_pointer_offsetmean.json"></iframe>
+<iframe id="map" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Amministratori/ixmaps_project_ammcom_pointer_offsetmean.json"></iframe>
 
 Visualizzazioni: iXMaps, i progetti (json) per la mappa si trovano qui: <a href="https://github.com/gjrichter/viz/tree/master/Amministratori" target="_blank">GitHub</a>
 codice per includere la mappa in una pagina HTML:
