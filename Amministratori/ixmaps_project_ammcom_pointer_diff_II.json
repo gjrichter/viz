@@ -73,8 +73,8 @@
 				"lookuptoupper": "true",
 				"rangecentervalue": "0",
 				"label":[
-					" più rappresentanza maschile",
-					" più rappresentanza femminile"
+					"  ",
+					"  "
 				],
 				"units": "%",
 				"refreshtimeout": "0",

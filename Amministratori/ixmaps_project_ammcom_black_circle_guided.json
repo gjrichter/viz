@@ -116,8 +116,8 @@
 					"M",
 					"F"],
 				"label": [
-					"M",
-					"F"],
+					"Maschi",
+					"Femmine"],
 				"units": "",
 				"refreshtimeout": "0",
 				"scale": "0.5368709120000004",
@@ -131,7 +131,7 @@
 				"centerpart": "max",
 				"clipparts": "10",
 				"gridwidthpx": "6.4",
-				"title": "Amministratori locali in carica al<br> 9 Settembre 2021",
+				"title": "Amministratori locali in carica al 9 Settembre 2021",
 				"description": "<br><h5>fonte: <a href='https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-in-carica' target='blank'>Eligendo</a> licenza: <a href='https://www.dati.gov.it/content/italian-open-data-license-v20' target='blank'>IODL v2.0</a></h5>"
 				}
 			}],
