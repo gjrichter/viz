@@ -6,6 +6,11 @@ Fonte: <a href="https://dait.interno.gov.it/elezioni/open-data/amministratori-lo
 
 Questi progetti si trovano in questo [Github ripository](https://github.com/gjrichter/viz/tree/master/Amministratori) è sono alla base di una mappa interattiva per analizzare la parità di genere con alcuni temi e filtri.
 
+
+
+### la mappa interattiva
+
+![](https://gjrichter.github.io/viz/Amministratori/ixmaps_Amministratori.png)
 L'applicazione è accessibile con questa URL: [https://gjrichter.github.io/viz/Amministratori/ixmaps_Amministratori.html](https://gjrichter.github.io/viz/Amministratori/ixmaps_Amministratori.html)
 
 
