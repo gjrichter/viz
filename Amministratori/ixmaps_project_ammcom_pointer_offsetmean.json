@@ -94,7 +94,7 @@
 				"dominantfilter": "min",
 				"dominantdfilter": "0",
 				"title": "Amministratori locali in carica al 9 Settembre 2021",
-				"snippet": "<h2>(Dis)parità di genere nel consiglio comunale.</h2><h4>Piu o meno rappresentanza femminile rispetto alla media di tutti comuni</h4>",
+				"snippet": "<h2>(Dis)parità di genere nel consiglio comunale.</h2><h4>Le frecce indicano più (rosa) o meno (blue) rappresentanza femminile rispetto alla media di tutti comuni</h4><h4>La grandezza delle frecce corrisponde alla popolazione censita del comune</h4>",
 				"description": "<br><h5>fonte: <a href='https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-in-carica' target='blank'>Eligendo</a> licenza: <a href='https://www.dati.gov.it/content/italian-open-data-license-v20' target='blank'>IODL v2.0</a></h5>"
 				}
 			}],
