@@ -1,4 +1,4 @@
-# Amministratori - parità di genere
+# Amministratori - (dis)parità di genere
 
 Visualizzazioni di dati della EEA (European Environment Agency) con la qualità delle acque balneare dell'Italia dal 1990 al 2019. Cerchi: Qualità nel 2019. Quadretti a destra: serie storica 
 Per validare il contesto ambientale della qualità acque balneare sono integrate alcuni layer del EEA Map Server
