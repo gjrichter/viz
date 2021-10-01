@@ -28,7 +28,7 @@ codice per includere la mappa in una pagina HTML:
 
 
 <br>
-La prossima mappa evidenzia la parità raggiunta o no rispetto alla media nazionale di quota femminile nei consigli comunali. Comuni in 'rosa' hanno più rappresentanza femminile rispetto alla media nazionale, quelli in blu di meno.
+La prossima mappa evidenzia la parità raggiunta o no rispetto alla media nazionale di quota femminile nei consigli comunali. Comuni in 'rosa' hanno una rappresentanza femminile più alta rispetto alla media nazionale, quelli in blu di meno.
 
 
 
