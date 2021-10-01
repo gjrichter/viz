@@ -10,14 +10,16 @@ L'applicazione è accessibile con questa URL: [https://gjrichter.github.io/viz/A
 
 
 
-Tutto il codice dei progetti, dell'applicazione e dell'applicazione iXmaps è pubblicatoi su GitHub.
+### progetti e piattaforma
 
-Oltre all'applicazione ci sono altri strumenti per vedere e conoscere i progetti.
+Tutto il codice dei [progetti](https://github.com/gjrichter/viz/tree/master/Amministratori) dell'applicazione e del framework [iXmaps](https://gjrichter.github.io/ixmaps/) è pubblicato su GitHub.
 
-Una preview di tutti progetti si può avviare qui:
-[https://gjrichter.github.io/ixmaps/app/ProjectP/html/index.html?projects=gjrichter/viz/contents/Amministratori](https://gjrichter.github.io/ixmaps/app/ProjectP/html/index.html?projects=gjrichter/viz/contents/Amministratori)
+Oltre all'applicazione ci sono altri strumenti per vedere e conoscere i progetti;:.
 
-Una galleria con alcune mappa interattive definite con questi progetti si apre qui: [https://gjrichter.github.io/viz/Amministratori/gallery]( https://gjrichter.github.io/viz/Amministratori/gallery ) 
+- [ ] Una lista di tutti progetti si può avere qui:
+  [https://gjrichter.github.io/ixmaps/app/ProjectP/html/index.html?projects=gjrichter/viz/contents/Amministratori](https://gjrichter.github.io/ixmaps/app/ProjectP/html/index.html?projects=gjrichter/viz/contents/Amministratori)
+- [ ] Una galleria con alcune mappa interattive definite con questi progetti si apre qui: [https://gjrichter.github.io/viz/Amministratori/gallery]( https://gjrichter.github.io/viz/Amministratori/gallery ) 
+  (Sotto le mappe nella galleria si trova il codice per includerli in una pagina HTML).
 
-Sotto le mappe nella galleria si trova il codice per includerli in una pagina HTML (embedding code). 
+
 
