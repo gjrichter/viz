@@ -77,6 +77,11 @@
 					"20",
 					"50",
 					"100"],
+				"label": [
+					"quota feminile < 20 %",
+					"quota feminile tra 20 e 50 %",
+					"quota feminile 50 % e più"
+					],	
 				"symbols": [
 					"circle"],
 				"units": "%",
@@ -86,10 +91,9 @@
 				"dopacitypow": "3.1250000000000004",
 				"dopacityscale": "3.2",
 				"valuescale": "1",
-				"markclasses": [
-					"0",
-					"2"],
-				"title": "com2011_s [sesso]"
+				"title": "Amministratori locali in carica al 9 Settembre 2021",
+				"snippet": "<h5>Comuni con bassa, normale e elevata presenza femminile</h5>",
+				"description": "<br><h5>fonte: <a href='https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-in-carica' target='blank'>Eligendo</a> licenza: <a href='https://www.dati.gov.it/content/italian-open-data-license-v20' target='blank'>IODL v2.0</a></h5>"
 				}
 			}],
 	"layerMask": {
