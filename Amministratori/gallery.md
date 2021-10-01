@@ -10,7 +10,7 @@ Visualizzazioni: iXMaps, i progetti (json) per la mappa si trovano qui: <a href=
 codice per includere la mappa in una pagina HTML:
 
 ```javascript
-<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/dispatch.htm?ui=embed&basemap=ll&legend=1&project=project=https://raw.githubusercontent.com/gjrichter/viz/master/Amministratori/ixmaps_project_ammcom_pointer_diff.json"></iframe>
+<iframe id="map" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/dispatch.htm?ui=embed&basemap=ll&legend=1&project=project=https://raw.githubusercontent.com/gjrichter/viz/master/Amministratori/ixmaps_project_ammcom_pointer_diff.json"></iframe>
 ```
 
 <br>
@@ -24,7 +24,7 @@ Visualizzazioni: iXMaps, i progetti (json) per la mappa si trovano qui: <a href=
 codice per includere la mappa in una pagina HTML:
 
 ```javascript
-<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/dispatch.htm?ui=embed&basemap=ll&legend=1&project=project=https://raw.githubusercontent.com/gjrichter/viz/master/Amministratori/ixmaps_project_ammcom_pointer_offsetmean.json"></iframe>
+<iframe id="map" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/dispatch.htm?ui=embed&basemap=ll&legend=1&project=project=https://raw.githubusercontent.com/gjrichter/viz/master/Amministratori/ixmaps_project_ammcom_pointer_offsetmean.json"></iframe>
 ```
 
 
