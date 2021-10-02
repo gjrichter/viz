@@ -21,11 +21,11 @@ Tutto il codice dei [progetti](https://github.com/gjrichter/viz/tree/master/Ammi
 
 Oltre all'applicazione ci sono altri strumenti per vedere e conoscere i progetti:
 
-- [ ] Una lista di tutti progetti si può avere qui:
+- [ ] una **lista di tutti progetti** si può avere qui:
   [https://gjrichter.github.io/ixmaps/app/ProjectP/html/index.html?projects=gjrichter/viz/contents/Amministratori](https://gjrichter.github.io/ixmaps/app/ProjectP/html/index.html?projects=gjrichter/viz/contents/Amministratori)
-- [ ] Una galleria con alcune mappa interattive definite con questi progetti si apre qui: [https://gjrichter.github.io/viz/Amministratori/gallery]( https://gjrichter.github.io/viz/Amministratori/gallery ) 
+- [ ] una **galleria con alcune mappe** interattive definite con questi progetti si apre qui: [https://gjrichter.github.io/viz/Amministratori/gallery]( https://gjrichter.github.io/viz/Amministratori/gallery ) 
   (Sotto le mappe nella galleria si trova il codice per includerli in una pagina HTML).
-- [ ] C'è una mappa sviluppato passo per passo da consultare nella piattaforma **ObervableHQ**
+- [ ] una mappa sviluppato **passo per passo** da consultare nella piattaforma **ObervableHQ**
   [https://observablehq.com/@gjrichter/ixmaps-sample-covid-19-vaccini-1-dose-project]( https://observablehq.com/@gjrichter/ixmaps-sample-covid-19-vaccini-1-dose-project ) 
 
 
