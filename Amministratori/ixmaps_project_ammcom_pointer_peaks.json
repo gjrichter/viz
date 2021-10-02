@@ -1,4 +1,4 @@
-{
+	{
 	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
 	"metadata": {
 		"title": "",
@@ -90,7 +90,7 @@
 				"valuescale": "1",
 				"fadenegative": "0.1",
 				"title": "Amministratori locali in carica al 9 Settembre 2021",
-				"snippet": "<h4>(Dis)parità di genere nel consiglio comunale rispetto alla rappresentanza feminile/maschile al 50 %</h4>",
+				"snippet": "<h4>(Dis)parità di genere. Comuni con bassa (meno di 20%) rappresentanza femminile</h4>",
 				"description": "<br><h5>fonte: <a href='https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-in-carica' target='blank'>Eligendo</a> licenza: <a href='https://www.dati.gov.it/content/italian-open-data-license-v20' target='blank'>IODL v2.0</a></h5>"
 				}
 			},{
@@ -127,7 +127,7 @@
 				"valuescale": "1",
 				"fadenegative": "0.1",
 				"title": "Amministratori locali in carica al 9 Settembre 2021",
-				"snippet": "<h4>(Dis)parità di genere nel consiglio comunale rispetto alla rappresentanza feminile/maschile al 50 %</h4>",
+				"snippet": "<h4>(Dis)parità di genere. Comuni con alta (più di 60%) rappresentanza femminile</h4>",
 				"description": "<br><h5>fonte: <a href='https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-in-carica' target='blank'>Eligendo</a> licenza: <a href='https://www.dati.gov.it/content/italian-open-data-license-v20' target='blank'>IODL v2.0</a></h5>"
 				}
 			}],
