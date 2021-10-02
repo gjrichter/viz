@@ -56,16 +56,16 @@
 		},
 	"themes": [{
 			"layer": "Com2019_name_upper",
-			"field": "sesso",
+			"field": "M|F",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|CENTER|ZEROISVALUE|NEGATIVEISVALUE|CATEGORICAL|BOX|TITLE|LINEAR|AGGREGATE|RECT|SUM",
+				"type": "CHART|SYMBOL|SEQUENCE|CENTER|LINEAR|BOX|TITLE|AGGREGATE|RECT|SUM",
 				"colorscheme": [
 					"#0070C0",
 					"#FF0000"],
 				"fillopacity": "1",
 				"shadow": "false",
-				"dbtable": "ammcom_extended",
+				"dbtable": "ammcom_pivot",
 				"dbtableUrl": "",
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/Amministratori/dataprovider.js",
@@ -75,9 +75,6 @@
 				"showdata": "true",
 				"symbols": [
 					"circle"],
-				"values": [
-					"M",
-					"F"],
 				"label": [
 					"Maschi",
 					"Femmine"],
