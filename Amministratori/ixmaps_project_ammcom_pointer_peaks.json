@@ -1,0 +1,139 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sat Oct 02 2021 10:12:46 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2019/italia_comuni_2019_s_nome_upper_eligendo.svgz",
+		"attribution": "powered by <a href=\"https://www.ixmaps.com\" target=\"_blank\" style=\"color:#0E77B2\">iXMaps</a>  - dati: <a href=\"https://istat.com\" target=\"_blank\" style=\"color:#0E77B2\">ISTAT - CC BY 4.0</a>",
+		"basemap": "Stamen - toner",
+		"legend": "<h1>Amministratori locali in carica al 9 Settembre 2021</h1><h1>(Dis)parità di genere</h1><h4>Rappresentanza femminile più o meno di 50 % nei consiglio comunali.</h2><h4>fonte: <a href='https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-in-carica' target='blank'>Eligendo</a> licenza: <a href='https://www.dati.gov.it/content/italian-open-data-license-v20' target='blank'>IODL v2.0</a></h4>",
+		"item": "html",
+		"scaleParam": {
+			"lineScaling": "0.5",
+			"normalSizeScale": "5000000"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushPaintShape": "10000",
+			"flushChartDraw": "10000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "43.92163712834673",
+			"lng": "13.128662109375002"
+			},
+		"zoom": "7"
+		},
+	"required": [
+		"https://d3js.org/d3.v3.min.js",
+		"https://gjrichter.github.io/viz/Amministratori/chart.js"],
+	"themes": [{
+			"layer": "Com2019_name_upper",
+			"field": "quota",
+			"field100": "",
+			"style": {
+				"type": "CHART|USER|SIZEP4|DIFFERENCE|RELATIVE|SIMPLELEGEND|BOX|TITLE|SUM|COUNT|VALUES|NEGATIVEISNOTVALUE",
+				"colorscheme": [
+					"#2288ff"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"filter": "WHERE \"quota\" BETWEEN 0 AND 20",
+				"dbtable": "ammcom_pivot",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/Amministratori/dataprovider.js",
+				"datacache": "true",
+				"lookupfield": "denominazione_comune",
+				"lookuptoupper": "true",
+				"userdraw": "pinnacleChart",
+				"label": [
+					" ",
+					" "],
+				"units": "%",
+				"legendunits": "      ",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1000",
+				"scale": "1",
+				"rangescale": "1",
+				"textscale": "1",
+				"titlefield": "denominazione_comune",
+				"valueupper": "1:150000",
+				"boxupper": "1:150000",
+				"valuescale": "1",
+				"fadenegative": "0.1",
+				"title": "Amministratori locali in carica al 9 Settembre 2021",
+				"snippet": "<h4>(Dis)parità di genere nel consiglio comunale rispetto alla rappresentanza feminile/maschile al 50 %</h4>",
+				"description": "<br><h5>fonte: <a href='https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-in-carica' target='blank'>Eligendo</a> licenza: <a href='https://www.dati.gov.it/content/italian-open-data-license-v20' target='blank'>IODL v2.0</a></h5>"
+				}
+			},{
+			"layer": "Com2019_name_upper",
+			"field": "quota",
+			"field100": "",
+			"style": {
+				"type": "CHART|USER|SIZEP4|DIFFERENCE|RELATIVE|SIMPLELEGEND|BOX|TITLE|SUM|COUNT|VALUES|NEGATIVEISNOTVALUE",
+				"colorscheme": [
+					"#ff4422"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"filter": "WHERE \"quota\" BETWEEN 60 AND 100",
+				"dbtable": "ammcom_pivot",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/Amministratori/dataprovider.js",
+				"datacache": "true",
+				"lookupfield": "denominazione_comune",
+				"lookuptoupper": "true",
+				"userdraw": "pinnacleChart",
+				"label": [
+					" ",
+					" "],
+				"units": "%",
+				"legendunits": "    ",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1000",
+				"scale": "1",
+				"rangescale": "1",
+				"textscale": "1",
+				"titlefield": "denominazione_comune",
+				"valueupper": "1:150000",
+				"boxupper": "1:150000",
+				"valuescale": "1",
+				"fadenegative": "0.1",
+				"title": "Amministratori locali in carica al 9 Settembre 2021",
+				"snippet": "<h4>(Dis)parità di genere nel consiglio comunale rispetto alla rappresentanza feminile/maschile al 50 %</h4>",
+				"description": "<br><h5>fonte: <a href='https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-in-carica' target='blank'>Eligendo</a> licenza: <a href='https://www.dati.gov.it/content/italian-open-data-license-v20' target='blank'>IODL v2.0</a></h5>"
+				}
+			}],
+	"layerMask": {
+		"Com2019_name_upper": {
+			"display": "none"
+			}
+		}
+	}
