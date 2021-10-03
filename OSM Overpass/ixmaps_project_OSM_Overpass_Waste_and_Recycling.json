@@ -74,6 +74,10 @@
 					"recycling",
 					"waste_basket"
 				],
+				"label": [
+					"Recycling container",
+					"Waste basket"
+				],
 				"units": "",
 				"refreshtimeout": "0",
 				"normalsizescale": "10",
