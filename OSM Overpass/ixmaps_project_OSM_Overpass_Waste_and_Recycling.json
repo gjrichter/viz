@@ -88,7 +88,7 @@
 					"white"],
 				"linewidth": "1",
 				"valuescale": "1",
-				"gridwidthpx": "20",
+				"gridwidthpx": "10",
 				"name": "features",
 				"title": "Waste and Recycle Bins",
 				"description": "<i>Note: points and capacities are aggregated on a zoom dependent grid</i>"
