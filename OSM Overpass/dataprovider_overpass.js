@@ -178,6 +178,48 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 
+	ixmaps.OSM_dataquery_recycling  = function(data,option){
+
+		var bounds = ixmaps.oldBounds = ixmaps.getBoundingBox();
+		var szBounds = bounds[0].lng+'/'+bounds[0].lat+'/'+bounds[1].lng+'/'+bounds[1].lat;
+
+		query = 
+			'[out:json][timeout:100][bbox:'+
+				   bounds[0].lat+','+
+				   bounds[0].lng+','+
+				   bounds[1].lat+','+
+				   bounds[1].lng+'];'+
+			'('+
+				' node["amenity"="waste_basket"];'+ 
+				' node["amenity"="recycling"];'+ 
+				');'+
+			'out body center qt;'+
+			'>;'+
+			'out skel qt;';									 
+
+		var szUrl = "https://overpass-api.de/api/interpreter?data="+query;
+		var myfeed = Data.feed({"source":szUrl,"type":"json"}).load(function(mydata){
+
+			ixmaps.in_query = false;
+			ixmaps.setTitle("");
+
+			if ( myfeed.data.elements && myfeed.data.elements.length ){
+				geo = osmtogeojson(myfeed.data);
+				ixmaps.setExternalData(geo,{type:"geojson",name:option.name});
+			}else{
+				ixmaps.setTitleBox("no points in map view");
+				ixmaps.setExternalData(null,{type:"geojson",name:option.name});
+			}
+
+		})
+		.error(function(e){
+			ixmaps.setTitleBox("error while loading","RGBA(128,0,0,0.5)");
+			ixmaps.setExternalData(null,{name:option.name});
+			ixmaps.in_query = false;
+		});
+
+	};
+
 	ixmaps.setTitleBox = function(szTitle,szColor){
 		ixmaps.setTitle("<span style='padding: 0.3em 1em;border:solid #ddd 1px;border-radius:0.2em;font-family:courier new,Raleway,arial,helvetica;background:"+(szColor||"rgba(255,255,255,0.9)")+";color:"+(szColor?"#fff":"#888")+"'>"+szTitle+"</span");
 	};
