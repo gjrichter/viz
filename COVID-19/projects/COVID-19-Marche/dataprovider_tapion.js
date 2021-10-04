@@ -34,7 +34,7 @@ window.ixmaps = window.ixmaps || {};
 				
 			function (dataA) {
 
-			var szUrl = "https://corsme.herokuapp.com/https://contagi-marche.tapion.it/contagi_marche.json";		
+			var szUrl = "https://api.allorigins.win/raw?url=https://contagi-marche.tapion.it/contagi_marche.json";		
 			$.get(szUrl,
 				function(data){
 
@@ -102,7 +102,7 @@ window.ixmaps = window.ixmaps || {};
 				
 			function (dataA) {
 
-			var szUrl = "https://corsme.herokuapp.com/https://contagi-marche.tapion.it/contagi_marche.json";		
+			var szUrl = "https://api.allorigins.win/raw?url=https://contagi-marche.tapion.it/contagi_marche.json";		
 			$.get(szUrl,
 				function(data){
 
@@ -247,7 +247,7 @@ window.ixmaps = window.ixmaps || {};
 				
 			function (dataA) {
 
-			var szUrl = "https://corsme.herokuapp.com/https://contagi-marche.tapion.it/contagi_marche.json";		
+			var szUrl = "https://api.allorigins.win/raw?url=https://contagi-marche.tapion.it/contagi_marche.json";		
 			$.get(szUrl,
 				function(data){
 
@@ -352,7 +352,7 @@ window.ixmaps = window.ixmaps || {};
 				
 			function (dataA) {
 
-			var szUrl = "https://corsme.herokuapp.com/https://contagi-marche.tapion.it/contagi_marche.json";		
+			var szUrl = "https://api.allorigins.win/raw?url=https://contagi-marche.tapion.it/contagi_marche.json";		
 			$.get(szUrl,
 				function(data){
 
@@ -433,7 +433,7 @@ window.ixmaps = window.ixmaps || {};
 				
 			function (dataA) {
 
-			var szUrl = "https://corsme.herokuapp.com/https://contagi-marche.tapion.it/contagi_marche.json";		
+			var szUrl = "https://api.allorigins.win/raw?url=https://contagi-marche.tapion.it/contagi_marche.json";		
 			$.get(szUrl,
 				function(data){
 
@@ -524,7 +524,7 @@ window.ixmaps = window.ixmaps || {};
 		// -----------------------------------------------------------------------------------------------               
 		// read actual COVID data
 		// ----------------------------------------------------------------------------------------------- 
-		var szUrl1 = "https://corsme.herokuapp.com/https://www.regione.marche.it/DesktopModules/Covid19Stat/WSGetStatComu.ashx/GetPersonData?giornoScelto="+szDate+"&_=1615072154587";
+		var szUrl1 = "https://api.allorigins.win/raw?url=https://www.regione.marche.it/DesktopModules/Covid19Stat/WSGetStatComu.ashx/GetPersonData?giornoScelto="+szDate+"&_=1615072154587";
 		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/popolazione_gennaio_2020_totale.csv";
 
 		// -----------------------------------------------------------------------------------------------               
@@ -575,7 +575,7 @@ window.ixmaps = window.ixmaps || {};
 	
 	ixmaps.COVID_MARCHE_POSITIVI_LATEST_DIFF = function (theme,options) {
 
-		var szUrl = "https://corsme.herokuapp.com/https://contagi-marche.tapion.it/contagi_marche.json";		
+		var szUrl = "https://api.allorigins.win/raw?url=https://contagi-marche.tapion.it/contagi_marche.json";		
 		$.get(szUrl,
 			function(data){
 
@@ -630,7 +630,7 @@ window.ixmaps = window.ixmaps || {};
 	
 	ixmaps.COVID_MARCHE_POSITIVI_LATEST_DIFF_7 = function (theme,options) {
 
-		var szUrl = "https://corsme.herokuapp.com/https://contagi-marche.tapion.it/contagi_marche.json";		
+		var szUrl = "https://api.allorigins.win/raw?url=https://contagi-marche.tapion.it/contagi_marche.json";		
 		$.get(szUrl,
 			function(data){
 
@@ -706,7 +706,7 @@ window.ixmaps = window.ixmaps || {};
 		
 		var szUrlA = [];
 		for ( i in szDateA ){
-			szUrlA.push("https://corsme.herokuapp.com/https://www.regione.marche.it/DesktopModules/Covid19Stat/WSGetStatComu.ashx/GetPersonData?giornoScelto="+szDateA[i]+"&_=1615072154587");
+			szUrlA.push("https://api.allorigins.win/raw?url=https://www.regione.marche.it/DesktopModules/Covid19Stat/WSGetStatComu.ashx/GetPersonData?giornoScelto="+szDateA[i]+"&_=1615072154587");
 		}
 		
 		// -----------------------------------------------------------------------------------------------               
