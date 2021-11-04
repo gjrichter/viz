@@ -60,7 +60,7 @@
 			"field": "$item$",
 			"field100": "",
 			"style": {
-				"type": "CHART|DOT",
+				"type": "CHART|DOT|NOLEGEND",
 				"colorscheme": [
 					"RGBA(0,78,46,0.5)"
 					],
