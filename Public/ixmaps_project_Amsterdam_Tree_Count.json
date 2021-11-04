@@ -15,6 +15,7 @@
 		"basemap": "Stamen - toner-lite",
 		"legend": "",
 		"item": "",
+		"layout": "minimal",
 		"scaleParam": {
 			"normalSizeScale": "177165354"
 			},
