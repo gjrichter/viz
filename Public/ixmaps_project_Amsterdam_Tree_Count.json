@@ -1,0 +1,114 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "this is a test",
+		"snippet": "what do you want to know",
+		"descriptrion": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "I can't explain it all !!!",
+		"created": "Thu Nov 04 2021 22:57:32 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svgz",
+		"attribution": "iXMaps",
+		"basemap": "Stamen - toner-lite",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "177165354"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "dynamic",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "52.35065062061594",
+			"lng": "4.927368164062501"
+			},
+		"zoom": "12"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|DOT",
+				"colorscheme": [
+					"RGBA(0,78,46,0.5)"
+					],
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Amsterdam/BOMEN.json.gz",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"child": "true",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"chartupper": "1:10000",
+				"valuescale": "1",
+				"title": "Amsterdam Tree Count"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|GRIDSIZE|VALUES|AGGREGATE|FAST|SUM|DOPACITY",
+				"colorscheme": [
+					"1",
+					"RGB(254,253,223)",
+					"RGB(0,138,86)",
+					"dynamic",
+					"warm"],
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Amsterdam/BOMEN.json.gz",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"child": "true",
+				"symbols": [
+					"hexagon"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"dopacitypow": "2",
+				"dopacityscale": "0.8624880000000001",
+				"valuescale": "1",
+				"gridwidthpx": "49.5",
+				"title": "Amsterdam Tree Count"
+				}
+			}],
+	"layerMask": {
+		}
+	}
