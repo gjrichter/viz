@@ -10,7 +10,7 @@
 		"created": "Thu Nov 04 2021 22:57:32 GMT+0100 (Ora standard dell’Europa centrale)"
 		},
 	"map": {
-		"map": "../../maps/svg/maps/generic/mercator.svgz",
+		"map": "",
 		"attribution": "iXMaps",
 		"basemap": "Stamen - toner-lite",
 		"legend": "",
