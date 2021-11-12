@@ -60,7 +60,7 @@
 			"field": "1800|1810|1820|1830|1840|1850|1860|1870|1880|1890|1900|1910|1920|1930|1940|1950|1960|1970|1980|1990|2000|2010",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|LOLLIPOP|GRID|BOX|FIXSIZE|ZEROISVALUE|NEGATIVEISVALUE|AGGREGATE|RECT|RELOCATE|SUM",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|LOLLIPOP|GRID|BOX|TITLE|FIXSIZE|ZEROISVALUE|NEGATIVEISVALUE|AGGREGATE|RECT|RELOCATE|SUM",
 				"colorscheme": [
 					"12",
 					"#aa7733",
@@ -156,6 +156,7 @@
 				"linewidth": "20",
 				"boxopacity": "0.1",
 				"titlefield": "City",
+				"textcolor": "#aa5533",
 				"valuescale": "1",
 				"fadenegative": "1",
 				"aggregationscale": [
