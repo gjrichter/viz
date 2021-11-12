@@ -10,7 +10,7 @@
 		"created": "Fri Nov 12 2021 22:11:39 GMT+0100 (Ora standard dell’Europa centrale)"
 		},
 	"map": {
-		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"map": "",
 		"attribution": "iXMaps",
 		"basemap": "Stamen - toner-lite",
 		"legend": "<h1>US Historical Populations<br>in cities from 1790 to 2010</h1><h5>data: U.S. Census Bureau and Erik Steiner, Spatial History Project, Center for Spatial and Textual Analysis, Stanford University <a href='https://github.com/cestastanford/historical-us-city-populations' target='_blank'>GitHub</a></h5>", 
