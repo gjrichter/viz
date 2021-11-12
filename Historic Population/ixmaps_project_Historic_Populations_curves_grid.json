@@ -71,7 +71,7 @@
 				"shadow": "false",
 				"filter": "WHERE \"Place Type\" like City",
 				"dbtable": "themeDataObj",
-				"dbtableUrl": "http://data.ixmaps.com.s3-website-eu-west-1.amazonaws.com/US_Historical_Populations/Historical_Populations_master_merged.js",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/US_Historical_Populations/Historical_Populations_master_merged.js",
 				"dbtableType": "jsonDB",
 				"datacache": "true",
 				"lookupfield": "lat|lon",
