@@ -342,7 +342,7 @@
 				"scale": "2",
 				"valuefield": "weight (estimated)",
 				"sizefield": "weight (estimated)",
-				"valuescale": "2",
+				"valuescale": "1",
 				"valuedecimals": "2",
 				"chartlower": "1:10000",
 				"aggregationlower": "1:10000",
