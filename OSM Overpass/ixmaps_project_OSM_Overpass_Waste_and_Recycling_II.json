@@ -1,0 +1,104 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Nov 21 2021 10:58:33 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"layout": "minimal",
+		"scaleParam": {
+			"normalSizeScale": "100000"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"mapopacity": "1",
+			"flushChartDraw": "1000",
+			"basemapopacity": "1",
+			"panHidden": "true"
+			},
+		"center": {
+			"lat": "41.87147825471",
+			"lng": "12.536773681640627"
+			},
+		"zoom": "12"
+		},
+	"required": [
+		"https://unpkg.com/osmtogeojson@3.0.0-beta.4/osmtogeojson.js"],
+	"themes": [{
+			"layer": "osm",
+			"field": "amenity",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|CATEGORICAL|AGGREGATE|RELOCATE|SIZE|VALUES|ZEROISVALUE|COMPACTLEGEND|SUM",
+				"colorscheme": [
+					"#4EA779",
+					"#4E79A7"],
+				"shadow": "false",
+				"dbtable": "OSM_dataquery_recycling",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/OSM Overpass/dataprovider_overpass.js",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"showdata": "true",
+				"symbols": [
+					"circle"],
+				"values": [
+					"recycling",
+					"waste_basket"],
+				"label": [
+					"Recycling container",
+					"Waste basket"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizescale": "10",
+				"scale": "1",
+				"textcolor": [
+					"#ffffff"],
+				"linecolor": [
+					"white"],
+				"linewidth": "1",
+				"valuescale": "1",
+				"gridwidthpx": "20",
+				"name": "features",
+				"title": "Waste and Recycle Bins",
+				"snippet": "data: OSM Overpass<br>",
+				"description": "<i>Note: points and capacities are aggregated on a zoom dependent grid. You can zoom and pan freely around the world, data will be refreshed below 1:28000 </i>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
