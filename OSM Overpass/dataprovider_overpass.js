@@ -232,7 +232,7 @@ window.ixmaps = window.ixmaps || {};
 
 		if (ixmaps.getZoom() < 14 ){
 			ixmaps.htmlgui_onRemoveTheme("features");
-			ixmaps.setTitleBox("please zoom in or <a style='pointer-events:all' href='javascript:ixmaps.refreshTheme(null,\"features\")'>refresh</a>");
+			ixmaps.setTitleBox("<span style='background-color:yellow'>please zoom in or <a style='pointer-events:all' href='javascript:ixmaps.refreshTheme(null,\"features\")'>refresh</a></span>");
 			ixmaps.htmlgui_onZoomAndPan_old(nZoom);
 			return;
 		}
