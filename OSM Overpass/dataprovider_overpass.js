@@ -208,7 +208,7 @@ window.ixmaps = window.ixmaps || {};
 				ixmaps.setExternalData(geo,{type:"geojson",name:option.name});
 			}else{
 				ixmaps.setTitleBox("no points in map view");
-				ixmaps.setExternalData(null,{type:"geojson",name:option.name});
+				ixmaps.setExternalData();
 			}
 
 		})
