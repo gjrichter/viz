@@ -62,7 +62,7 @@
 				"type": "IMAGE|WMS",
 				"server":"https://image.discomap.eea.europa.eu/arcgis/rest/services/UrbanAtlas/UA_StreetTreeLayer_2018/MapServer/export",
 				"opacity":"0.5",
-				"chartlower": "1:100",
+				"chartlower": "1:10000",
 				"title":"Copernicus Canopy (street level) - WMS Image"
 				}
 			},{
