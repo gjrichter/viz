@@ -59,6 +59,129 @@ window.ixmaps = window.ixmaps || {};
 						});
 			});
 	};
+	
+	ixmaps.CSSE_COVID_LAST_7_DAILY = function (theme, options) {
+		
+		// to get the last date in the time series 
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		
+		// root url to daily reports 
+		var szUrl2 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/";
+
+		new Data.Broker()
+			.addSource(szUrl1, "csv")
+			.realize(
+				function (dataA) {
+
+					var date = dataA[0].columnNames().pop();
+					dateA = date.split("/");
+					date = new Date(Number("20" + dateA[2]), Number(dateA[0]) - 1, Number(dateA[1]), 18);
+					
+					var lastDate = date.toLocaleDateString();
+					
+					szDate1 = date.toISOString();
+					dateA = szDate1.split("T")[0].split("-");
+					szDate1 = dateA[1] + "-" + dateA[2] + "-" + dateA[0];
+					
+					date = new Date(date.getTime() - 1000*60*60*24*7);
+					szDate2 = date.toISOString();
+					dateA = szDate2.split("T")[0].split("-");
+					szDate2 = dateA[1] + "-" + dateA[2] + "-" + dateA[0];
+					
+					new Data.Broker()
+						.addSource(szUrl2 + szDate1 + ".csv", "csv")
+						.addSource(szUrl2 + szDate2 + ".csv", "csv")
+						.realize(
+							function (dataA) {
+								
+							// merge the two data tables	
+								
+							var merger = new Data.Merger();
+							merger.addSource(dataA[0], {
+								lookup: "Combined_Key",
+								columns: dataA[0].columnNames()
+							});
+							merger.addSource(dataA[1], {
+								lookup: "Combined_Key",
+								columns: dataA[1].columnNames()
+							});
+
+							merger.realize(function (data) {
+
+									var iConfirmed = data.column("Confirmed.1").index;
+									var iDeaths = data.column("Deaths.1").index;
+									var iRecovered = data.column("Recovered.1").index;
+									var iIncident = data.column("Incident_Rate.1").index;
+								
+									var iConfirmed_7 = data.column("Confirmed.2").index;
+									var iDeaths_7 = data.column("Deaths.2").index;
+									var iRecovered_7 = data.column("Recovered.2").index;
+									var iIncident_7 = data.column("Incident_Rate.2").index;
+								
+									// get Confirmed of last 7 days
+
+									data.addColumn({
+										destination: "Confirmed_7"
+									}, function (row) {
+										return (Number(row[iConfirmed]) - Number(row[iConfirmed_7]));
+									});
+								
+									// get Deaths of last 7 days
+								
+									data.addColumn({
+										destination: "Deaths_7"
+									}, function (row) {
+										return (Number(row[iDeaths]) - Number(row[iDeaths_7]));
+									});
+								
+									// get Incidence of last 7 days
+								
+									data.addColumn({
+										destination: "Incident_7"
+									}, function (row) {
+										return (Number(row[iIncident]) - Number(row[iIncident_7]));
+									});
+
+									// get pop 
+								
+									data.addColumn({
+										destination: "pop"
+									}, function (row) {
+										return (Number(row[iConfirmed])/Number(row[iIncident]) *100000 );
+									});
+								
+									var iDeaths_7 = data.column("Deaths_7").index;
+									var ipop = data.column("pop").index;
+								
+									// get Deaths of last 7 days
+								
+									data.addColumn({
+										destination: "Deaths_7_Incident"
+									}, function (row) {
+										return (Number(row[iDeaths_7]) / Number(row[ipop]) *100000);
+									});
+
+									data.column("Lat.1").rename("Lat");
+									data.column("Long_.1").rename("Long_");
+									data.column("Country_Region.1").rename("Country_Region");
+									data.column("Case_Fatality_Ratio.1").rename("Case-Fatality_Ratio");
+								
+									ixmaps.setTitle("<span style='font-family:courier new,Raleway,arial,helvetica;font-size:18px;color:#444444'>aggiornato al " + lastDate + "</span>", "right");
+									
+									// --------------------------------------
+									// deploy the data
+									// --------------------------------------
+
+									options.setData(data, {
+										type: "dbtable",
+										name: options.name
+									});
+
+							});
+					});
+			});
+	};
+	
 
 	ixmaps.CSSE_COVID_LAST_28_DAILY = function (theme, options) {
 		
