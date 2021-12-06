@@ -12,7 +12,7 @@
 		"map": "../../maps/svg/maps/generic/winkel.svg",
 		"attribution": "<h3>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href=\"https://github.com/CSSEGISandData/COVID-19\" target=\"_blank\">Johns Hopkins CSSE</a><br>data: Data Repository by <a href=\"covid-19-data/public/data/vaccinations/\" target=\"_blank\">Our World in Data</a><br>citation: Mathieu, E., Ritchie, H., Ortiz-Ospina, E. et al. A global database of COVID-19 vaccinations. Nat Hum Behav (2021). <a href=\"https://doi.org/10.1038/s41562-021-01122-8\" target=\"_blank\">https://doi.org/10.1038/s41562-021-01122-8</a></h3>",
 		"basemap": "white",
-		"legend": "<h2>% completamente vaccinati, hotspot pandemia ed incidenze</h2><h4>cerchi: nuovi positivi 24 ore<br>frecce: tasso di crescita</h4>",
+		"legend": "<h3>% completamente vaccinati, hotspot pandemia ed incidenze</h3><h4>cerchi: nuovi positivi 24 ore<br>frecce: tasso di crescita</h4>",
 		"item": "",
 		"layout": "minimal",
 		"scaleParam": {
