@@ -102,7 +102,7 @@
 				"refreshtimeout": "0",
 				"scale": "1",
 				"linecolor": [
-					"#ffffff"],
+					"#eeeeee"],
 				"linewidth": "0.1",
 				"valuescale": "1",
 				"valuedecimals": "0",
@@ -130,8 +130,8 @@
 				"refreshtimeout": "0",
 				"scale": "1",
 				"linecolor": [
-					"#ffffff"],
-				"linewidth": "0.3",
+					"#eeeeee"],
+				"linewidth": "0.1",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"title": "Nuts_2"
@@ -157,8 +157,8 @@
 				"refreshtimeout": "0",
 				"scale": "1",
 				"linecolor": [
-					"#ffffff"],
-				"linewidth": "0.3",
+					"#eeeeee"],
+				"linewidth": "0.1",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"title": "Nuts_2"
@@ -184,8 +184,8 @@
 				"refreshtimeout": "0",
 				"scale": "1",
 				"linecolor": [
-					"#ffffff"],
-				"linewidth": "0.3",
+					"#cccccc"],
+				"linewidth": "0.5",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"title": "Nuts_00"
@@ -218,7 +218,7 @@
 				"fillopacity": "1",
 				"shadow": "false",
 				"dbtable": "EU_COVID_DATA",
-				"dbtableUrl": "https://api.allorigins.win/raw?url=https://opendata.ecdc.europa.eu/covid19/movementindicators/csv/data.csv",
+				"dbtableUrl": "https://corsme.herokuapp.com/https://opendata.ecdc.europa.eu/covid19/movementindicators/csv/data.csv",
 				"dbtableType": "csv",
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-EU/process_data.js",
 				"datacache": "true",
