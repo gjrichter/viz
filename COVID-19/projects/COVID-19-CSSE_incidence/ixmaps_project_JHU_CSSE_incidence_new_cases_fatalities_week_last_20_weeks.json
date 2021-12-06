@@ -1,0 +1,142 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Wed Nov 03 2021 17:15:52 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "",
+		"attribution": "iXMaps",
+		"basemap": "ArcGIS - Light Gray Base",
+		"legend": "<h1>COVID-19 <br> <b style='color:rgba(200,120,120,1)'>new cases</b> and <b>deaths</b> </h1><h2><b> 7 days cumulative incidence</b> of the last <b>20 weeks</b></h2><h4>Every curve has its own scale to fit into the plot space:  <b style='color:rgba(200,120,120,1)'>cases 0-1000</b>,<b> fatalities 0-10</b> </h4><h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a></h4>",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "55364168",
+			"dynamicScalePow": "2"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "true"
+			},
+		"center": {
+			"lat": "49.42526716083718",
+			"lng": "13.820800781250002"
+			},
+		"zoom": "5"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|BOX|GRID|COLOR|DIFFERENCE|SUM|FIXSIZE|NOLEGEND",
+				"colorscheme": [
+					"rgba(200,150,150,1)"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "CSSE_COVID_LAST_20_WEEKLY_INCIDENCE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects//COVID-19-CSSE_incidence/dataprovider_CSSE_COVID_incidence.js",
+				"datacache": "false",
+				"lookupfield": "Lat|Long",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"align": "23right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "2",
+				"scale": "0.1",
+				"rangescale": "1",
+				"minvalue": "0",
+				"maxvalue": "1000",
+				"linewidth": "15",
+				"bordercolor": "none",
+				"boxopacity": "0.01",
+				"titlefield": "Country/Region",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"name": "new_cases_curves_2",
+				"title": "COVID-19 - new cases/day <br> last 56 days",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|LOLLIPOP|DIFFERENCE|SUM|BOX|LONGTITLE|GRID|RIGHT|RECT|FIXSIZE|NOLEGEND",
+				"colorscheme": [
+					"rgba(120, 120, 120,0.5)"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "CSSE_COVID_LAST_20_WEEKLY_INCIDENCE_FATALITIES",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects//COVID-19-CSSE_incidence/dataprovider_CSSE_COVID_incidence.js",
+				"datacache": "false",
+				"lookupfield": "Lat|Long",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"align": "23right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "2",
+				"scale": "0.1",
+				"rangescale": "1",
+				"minvalue": "0",
+				"maxvalue": "10",
+				"linewidth": "10",
+				"bordercolor": "none",
+				"borderradius": "50",
+				"boxcolor": "black",
+				"boxopacity": "0.003",
+				"titlefield": "Country/Region",
+				"titleupper": "1:10000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"gridwidthpx": "250",
+				"aggregationlower": "1:50000000000",
+				"name": "new_cases_curves",
+				"title": "COVID-19 - deaths/day <br> last 56 days",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
