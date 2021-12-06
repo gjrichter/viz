@@ -91,7 +91,7 @@
 					"#A8DAB5",
 					"#0D652D",
 					"2low"],
-				"fillopacity": "0.2",
+				"fillopacity": "0.1",
 				"shadow": "false",
 				"dbtable": "themeDataObj",
 				"dbtableUrl": "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv",
