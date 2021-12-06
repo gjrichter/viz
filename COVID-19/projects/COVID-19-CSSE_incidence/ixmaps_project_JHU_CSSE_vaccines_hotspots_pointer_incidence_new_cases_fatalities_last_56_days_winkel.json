@@ -1,0 +1,303 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Sun Dec 05 2021 09:08:03 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/winkel.svg",
+		"attribution": "<h3>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href=\"https://github.com/CSSEGISandData/COVID-19\" target=\"_blank\">Johns Hopkins CSSE</a><br>data: Data Repository by <a href=\"covid-19-data/public/data/vaccinations/\" target=\"_blank\">Our World in Data</a><br>citation: Mathieu, E., Ritchie, H., Ortiz-Ospina, E. et al. A global database of COVID-19 vaccinations. Nat Hum Behav (2021). <a href=\"https://doi.org/10.1038/s41562-021-01122-8\" target=\"_blank\">https://doi.org/10.1038/s41562-021-01122-8</a></h3>",
+		"basemap": "white",
+		"legend": "<h1>% completamente vaccinati, hotspot pandemia ed incidenze</h1><h4>cerchi: nuovi positivi 24 ore<br>frecce: tasso di crescita</h4>",
+		"item": "",
+		"layout": "minimal",
+		"scaleParam": {
+			"lineScaling": "0.13348388671875",
+			"normalSizeScale": "55364168"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "12.211180191503997",
+			"lng": "12.656250000000002"
+			},
+		"zoom": "1"
+		},
+	"themes": [{
+			"layer": "World_countries",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"#dddddd"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "WORLD_ISO_3_ALPHA",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects//COVID-19-CSSE_incidence/dataprovider_topojson_world_iso3.js",
+				"datacache": "true",
+				"itemfield": "id",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "0.5",
+				"valuescale": "1",
+				"title": "Nuts_2"
+				}
+			},{
+			"layer": "World_countries",
+			"field": "people_fully_vaccinated_per_hundred",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|AGGREGATE|MAX|DOPACITYMAX|NOLEGEND|",
+				"colorscheme": [
+					"15",
+					"#A8DAB5",
+					"#0D652D",
+					"2low"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "iso_code",
+				"units": "%",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"dopacitypow": "3",
+				"dopacityscale": "2",
+				"textcolor": "white",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"clipparts": "10",
+				"aggregationfield": "iso_code",
+				"title": "Percent of population fully vaccinated"
+				}
+			},{
+			"layer": "World_countries",
+			"field": "people_fully_vaccinated_per_hundred",
+			"field100": "",
+			"style": {
+				"type": "CHART|LABEL|VALUES|AGGREGATE|MAX|NOLEGEND|",
+				"colorscheme": [
+					"7",
+					"#A8DAB5",
+					"#0D652D",
+					"linear"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"filter": "WHERE people_fully_vaccinated > 100000",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "iso_code",
+				"units": "%",
+				"align": "center",
+				"refreshtimeout": "0",
+				"normalsizevalue": "50",
+				"scale": "1",
+				"textcolor": "white",
+				"linecolor": [
+					"none"],
+				"linewidth": "1",
+				"chartupper": "1:20000000",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"clipparts": "10",
+				"aggregationfield": "iso_code",
+				"title": "Percent of population fully vaccinated"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|BOX|GRID|COLOR|DIFFERENCE|SUM|FIXSIZE|NOLEGEND",
+				"colorscheme": [
+					"rgba(200,150,150,1)"],
+				"fillopacity": "0.4",
+				"shadow": "false",
+				"dbtable": "CSSE_COVID_LAST_56_DAILY_INCIDENCE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects//COVID-19-CSSE_incidence/dataprovider_CSSE_COVID_incidence.js",
+				"datacache": "false",
+				"lookupfield": "Lat|Long",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"align": "23right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "2",
+				"scale": "0.03",
+				"rangescale": "1",
+				"minvalue": "0",
+				"maxvalue": "1000",
+				"linewidth": "30",
+				"bordercolor": "none",
+				"boxopacity": "0.01",
+				"titlefield": "Country/Region",
+				"chartupper": "1:10000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"name": "new_cases_curves_2",
+				"title": "COVID-19 - new cases/day <br> last 56 days",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|LOLLIPOP|DIFFERENCE|SUM|BOX|LONGTITLE|GRID|RIGHT|RECT|FIXSIZE|NOLEGEND",
+				"colorscheme": [
+					"rgba(0, 0, 0,0.5)"],
+				"fillopacity": "0.4",
+				"shadow": "false",
+				"dbtable": "CSSE_COVID_LAST_56_DAILY_INCIDENCE_FATALITIES",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE_incidence/dataprovider_CSSE_COVID_incidence.js",
+				"datacache": "false",
+				"lookupfield": "Lat|Long",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"align": "23right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "2",
+				"scale": "0.03",
+				"rangescale": "1",
+				"minvalue": "0",
+				"maxvalue": "10",
+				"linewidth": "15",
+				"bordercolor": "none",
+				"borderradius": "50",
+				"boxcolor": "black",
+				"boxopacity": "0.003",
+				"titlefield": "Country/Region",
+				"titleupper": "1:20000000",
+				"chartupper": "1:10000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"gridwidthpx": "250",
+				"name": "new_cases_curves",
+				"title": "COVID-19 - deaths/day <br> last 56 days",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "12/3/21",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|SIGN|SIZE|VALUES|SUM|NOLEGEND",
+				"colorscheme": [
+					"rgba(100, 160, 220,1)"],
+				"fillopacity": "0.0001",
+				"shadow": "false",
+				"filter": "WHERE Country/Region != Others",
+				"dbtable": "CSSE_COVID_LAST_DIFF_CONFIRMED_MEAN_7",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
+				"datacache": "false",
+				"lookupfield": "Lat|Long",
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "10000",
+				"scale": "1",
+				"textcolor": [
+					"rgba(150,150,150,0.4)"],
+				"linecolor": [
+					"rgba(200,150,150,1)"],
+				"linewidth": "0.7",
+				"titlefield": "Country/Region",
+				"chartlower": "1:5000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "new_cases",
+				"title": "COVID-19 - new cases last 24h",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
+				"description": "aggiornato: 12/3/21"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "diff_percent",
+			"field100": "",
+			"style": {
+				"type": "CHART|BAR|POINTER|SIZEP3|NOLEGEND|",
+				"colorscheme": [
+					"#aa0000"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"filter": "WHERE diff > 100",
+				"dbtable": "CSSE_COVID_LAST_DAILY_DIFF_GLOBAL_MEAN_7",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE/databroker_CSSE_COVID.js",
+				"datacache": "true",
+				"lookupfield": "Lat|Long",
+				"units": "%",
+				"align": "bottom",
+				"refreshtimeout": "0",
+				"normalsizevalue": "5",
+				"scale": "1",
+				"textcolor": [
+					"#aa8888"],
+				"linecolor": [
+					"#dd88ff"],
+				"linewidth": "0",
+				"titlefield": "Country/Region",
+				"chartlower": "1:10000000",
+				"valuescale": "0.7",
+				"valuedecimals": "2",
+				"name": "new_cases_2",
+				"title": "COVID-19 - tasso di crescita",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
+				"description": "aggiornato: 12/4/21"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
