@@ -2452,7 +2452,7 @@ window.ixmaps = window.ixmaps || {};
 					var szXaxisA = [];
 					for (i in fieldsA) {
 						var dte = new Date(fieldsA[i]);
-						szXaxisA.push(szMonth[dte.getMonth()]);
+						szXaxisA.push(szMonth[dte.getMonth()] +" "+ (dte.getYear()+1900));
 						dte.getMonth();
 					}
 					
