@@ -59,7 +59,7 @@
 			"style": {
 				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|LOLLIPOP|BOX|GRID|LONGTITLE|DIFFERENCE|SUM|FIXSIZE|NOLEGEND",
 				"colorscheme": [
-					"#E53F72"],
+					"#DE6D7A"],
 				"fillopacity": "0.1",
 				"shadow": "false",
 				"dbtable": "CSSE_COVID_CONFIRMED_28",
