@@ -83,7 +83,7 @@
 				"align": "23right",
 				"refreshtimeout": "0",
 				"normalsizevalue": "2",
-				"scale": "0.02",
+				"scale": "0.04",
 				"rangescale": "0.5",
 				"timefield": "$item$",
 				"minvalue": "0",
