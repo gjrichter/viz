@@ -305,6 +305,84 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 
+	ixmaps.VACCINI_SOMMINISTRAZIONI_ETA_BOOSTER_DOSE_LAST_POPOLAZIONE = function (theme,options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/master/dati/somministrazioni-vaccini-latest.csv";
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_2020_regioni_classe_et%C3%A0.csv";
+
+		var broker = new Data.Broker()
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+			function (dataA) {
+
+				var mydata = dataA[0];
+				var dataPop = dataA[1];
+
+				mydata = mydata.pivot(
+					{lead:"nome_area",
+					 columns:"fascia_anagrafica",
+					 value:"dose_addizionale_booster",
+					 keep:["nome_area","codice_NUTS2"],
+					 calc:"sum"}
+				);
+
+				var i0 = mydata.column("50-59").index;	
+				var i1 = mydata.column("60-69").index;	
+				var i2 = mydata.column("70-79").index;	
+				var i3 = mydata.column("80-89").index;	
+				var i4 = mydata.column("90+").index;	
+				mydata.addColumn({destination:"80+"},function(row){
+					return Number(row[i3]) + Number(row[i4]);
+				})
+				mydata.addColumn({destination:"70+"},function(row){
+					return Number(row[i2]) + Number(row[i3]) + Number(row[i4]);
+				})
+				mydata.addColumn({destination:"60+"},function(row){
+					return Number(row[i1]) + Number(row[i2]) + Number(row[i3]) + Number(row[i4]);
+				})
+				mydata.addColumn({destination:"50+"},function(row){
+					return Number(row[i0]) + Number(row[i1]) + Number(row[i2]) + Number(row[i3]) + Number(row[i4]);
+				})
+				
+				var i0 = dataPop.column("50-59").index;	
+				var i1 = dataPop.column("60-69").index;	
+				var i2 = dataPop.column("70-79").index;	
+				var i3 = dataPop.column("80-89").index;	
+				var i4 = dataPop.column("90+").index;	
+				dataPop.addColumn({destination:"80+"},function(row){
+					return Number(row[i3]) + Number(row[i4]);
+				})
+				dataPop.addColumn({destination:"70+"},function(row){
+					return Number(row[i2]) + Number(row[i3]) + Number(row[i4]);
+				})
+				dataPop.addColumn({destination:"60+"},function(row){
+					return Number(row[i1]) + Number(row[i2]) + Number(row[i3]) + Number(row[i4]);
+				})
+				dataPop.addColumn({destination:"50+"},function(row){
+					return Number(row[i0]) + Number(row[i1]) + Number(row[i2]) + Number(row[i3]) + Number(row[i4]);
+				})
+
+				var merger = new Data.Merger();
+				merger.addSource(mydata, {
+					lookup: "nome_area",
+					columns: mydata.columnNames()
+				});
+				merger.addSource(dataPop, {
+					lookup: "Territorio",
+					columns: dataPop.columnNames()
+				});
+				merger.realize(function (dbTable) {
+
+					ixmaps.setExternalData(dbTable, {
+						type: "dbtable",
+						name: options.name
+					});
+				});
+			});
+
+	};
+
 	ixmaps.VACCINI_SOMMINISTRAZIONI_ETA_PRIMA_SECONDA_DOSE_LAST_POPOLAZIONE = function (theme,options) {
 
 		var szUrl1 = "https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/master/dati/somministrazioni-vaccini-latest.csv";
