@@ -371,7 +371,37 @@ window.ixmaps = window.ixmaps || {};
 		return table;
      }; 
 	
-    var __get_fatalityratio = function(data,options) { 
+	__mean_7 = function(table) {
+		
+		// make mean of 7 days
+		var records = table.records;
+		for ( var r=0; r<records.length; r++ ){
+			for ( var c=records[r].length-1; c>=10; c--){
+				records[r][c] = ((Number(records[r][c])+
+								 Number(records[r][c-1])+
+								 Number(records[r][c-2])+
+								 Number(records[r][c-3])+
+								 Number(records[r][c-4])+
+								 Number(records[r][c-5])+
+								 Number(records[r][c-6]))/7).toFixed(2);
+			}
+		}
+		var columns = table.columnNames();
+		table.column(columns[4]).remove();
+		table.column(columns[5]).remove();
+		table.column(columns[6]).remove();
+		table.column(columns[7]).remove();
+		table.column(columns[8]).remove();
+		table.column(columns[9]).remove();
+		
+		return table;
+    }; 
+
+	
+	
+	
+	
+	var __get_fatalityratio = function(data,options) { 
 
 		var deathTab   = __get_deaths(data);
 		var casiTab    = __process(data);
@@ -6073,6 +6103,113 @@ window.ixmaps = window.ixmaps || {};
 
 	};
 	
+	ixmaps.PCM_DPC_COVID_SEQUENCE_CUMUL_7_DEATHS_INCIDENCE_56 = function (theme, options) {
+		
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the sources and generate the viz data table
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+
+			function (dataA) {
+
+				// get population lookup for incidence
+				var dataPop = dataA[1];
+				// correct region names in population table
+				dataPop.column("Territorio").map(function (value) {
+					if (value == "Provincia Autonoma Bolzano / Bozen") {
+						return "P.A. Bolzano";
+					} else
+					if (value == "Provincia Autonoma Trento") {
+						return "P.A. Trento";
+					} else {
+						return value.split(" /")[0].replace(/-/, " ");
+					}
+				});
+				var pop = [];
+				var terrA = dataPop.column("Territorio").values();
+				var popA = dataPop.column("Value").values();
+				for (var i = 0; i < terrA.length; i++) {
+					pop[terrA[i]] = popA[i];
+				}
+
+				var pivot = __get_deaths(dataA[0], options);
+			
+				pivot.column("Total").remove();
+				var indexName = pivot.column("denominazione_regione").index;
+
+				// make moving average of 7 days
+				var records = pivot.records;
+				for (var r=0; r<records.length;r++){
+					for (var c=records[r].length-1; c>=10;c--){
+						records[r][c] = (Number(records[r][c])+
+										 Number(records[r][c-1])+
+										 Number(records[r][c-2])+
+										 Number(records[r][c-3])+
+										 Number(records[r][c-4])+
+										 Number(records[r][c-5])+
+										 Number(records[r][c-6])
+										);
+						records[r][c] =  (records[r][c]/pop[records[r][indexName].replace(/\-/," ")]*100000);
+					}
+				}
+				
+					// get the columns with date 
+				var columns = pivot.columnNames();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+			
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+				columns.shift();
+
+				for ( var i=0; i<columns.length; i++ ){
+					pivot.column(columns[i]).rename(new Date(columns[i]).toLocaleDateString());
+					columns[i] = new Date(columns[i]).toLocaleDateString();	
+				}
+				
+				// data used in DIFFERENC theme, 56 -> 57
+				columns = columns.slice(-57);
+				var last = columns.length - 1;
+
+				// and configure the theme
+				theme.szFields = columns.slice().join('|');
+				theme.szFieldsA = columns.slice();
+
+				// and set the label (for DIFFERENCE 1 less)
+				columns.shift();
+				theme.szLabelA = columns.slice();
+
+				theme.szXaxisA = __get_xaxis(columns);
+			
+				theme.szSnippet = "dal " + columns[0] + " al " + columns[last - 1];
+				ixmaps.setTitle("<span style='color:#666666;font-family:courier new,Raleway,arial,helvetica;'> date:"+columns[last - 1]+"</span>");
+		
+				// ----------------------------------------------------------------------------------------------- 
+				// deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(pivot, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			});
+
+	};
+	
 	ixmaps.PCM_DPC_COVID_SEQUENCE_MEAN_7_56 = function (theme, options) {
 
 
@@ -6360,6 +6497,799 @@ window.ixmaps = window.ixmaps || {};
 
 			});
 
+	};
+	
+	ixmaps.PCM_DPC_COVID_HOSPITALIZED_LAST_DOUBLETIME_7 = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+			.addSource(szUrl1, "csv")
+			.realize(
+				function (dataA) {
+
+					var mydata = dataA[0];
+					
+					// make pivot: one row x province, data = column 4 ---> 
+					var pivot = __get_hospitalized(mydata,options);
+					
+					var lastColumn = pivot.columnNames().length - 2;
+
+					pivot.addColumn({destination:"doubletime"},function(row){
+						var last   = (Number(row[lastColumn]  )+
+									  Number(row[lastColumn-1])+
+									  Number(row[lastColumn-2])+
+									  Number(row[lastColumn-3])+
+									  Number(row[lastColumn-4])+
+									  Number(row[lastColumn-5])+
+									  Number(row[lastColumn-6]))/7;
+						var before = (Number(row[lastColumn-1])+
+									  Number(row[lastColumn-2])+
+									  Number(row[lastColumn-3])+
+									  Number(row[lastColumn-4])+
+									  Number(row[lastColumn-5])+
+									  Number(row[lastColumn-6])+
+									  Number(row[lastColumn-7]))/7;
+						var diff = last-before;
+						var ret = 0;
+						if ( before > 0 && Math.log(1 + (diff / before)) > 0 ){
+							ret = Math.log(2)/Math.log(1 + (diff / before));
+						}
+						return ret;
+				    });
+					
+					// set theme data source 
+					//
+					theme.szFields = "doubletime";
+					theme.szFieldsA = ["doubletime"];
+					
+					theme.szSnippet = "aggiornato al " + pivot.columnNames()[lastColumn].split("T")[0];
+
+					// -----------------------------------------------------------------------------------------------               
+					// deploy the data
+					// ----------------------------------------------------------------------------------------------- 
+
+					ixmaps.setExternalData(pivot, {
+						type: "dbtable",
+						name: options.name
+					});
+
+				});
+
+	};
+
+	ixmaps.PCM_DPC_COVID_HOSPITALIZED_LAST_DOUBLETIME_7_ALT = function (theme, options) {
+		ixmaps.PCM_DPC_COVID_HOSPITALIZED_LAST_DOUBLETIME_7(theme, options);		
+	};
+	
+	ixmaps.PCM_DPC_COVID_INTENSIVE_LAST_DOUBLETIME_7 = function (theme, options) {
+
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the ArcGis Feature service
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+			.addSource(szUrl1, "csv")
+			.realize(
+				function (dataA) {
+
+					var mydata = dataA[0];
+					
+					// make pivot: one row x province, data = column 4 ---> 
+					var pivot = __get_intensive(mydata,options);
+					
+					var lastColumn = pivot.columnNames().length - 2;
+
+					pivot.addColumn({destination:"doubletime"},function(row){
+						var last   = (Number(row[lastColumn]  )+
+									  Number(row[lastColumn-1])+
+									  Number(row[lastColumn-2])+
+									  Number(row[lastColumn-3])+
+									  Number(row[lastColumn-4])+
+									  Number(row[lastColumn-5])+
+									  Number(row[lastColumn-6]))/7;
+						var before = (Number(row[lastColumn-1])+
+									  Number(row[lastColumn-2])+
+									  Number(row[lastColumn-3])+
+									  Number(row[lastColumn-4])+
+									  Number(row[lastColumn-5])+
+									  Number(row[lastColumn-6])+
+									  Number(row[lastColumn-7]))/7;
+						var diff = last-before;
+						var ret = 0;
+						if ( before > 0 && Math.log(1 + (diff / before)) > 0 ){
+							ret = Math.log(2)/Math.log(1 + (diff / before));
+						}
+						return ret;
+				    });
+					
+					// set theme data source 
+					//
+					theme.szFields = "doubletime";
+					theme.szFieldsA = ["doubletime"];
+					
+					theme.szSnippet = "aggiornato al " + pivot.columnNames()[lastColumn].split("T")[0];
+
+					// -----------------------------------------------------------------------------------------------               
+					// deploy the data
+					// ----------------------------------------------------------------------------------------------- 
+
+					ixmaps.setExternalData(pivot, {
+						type: "dbtable",
+						name: options.name
+					});
+
+				});
+
+	};
+
+	ixmaps.PCM_DPC_COVID_INTENSIVE_LAST_DOUBLETIME_7_ALT = function (theme, options) {
+		ixmaps.PCM_DPC_COVID_INTENSIVE_LAST_DOUBLETIME_7(theme, options);		
+	};
+
+	
+	/**
+	***
+	*** Incidenze
+	***
+	**/
+	
+	__every_7 = function(table) {
+		
+		// remove columns to get a table with data every 28 day
+		var columnsA = table.columnNames();
+
+		// skip first 4 columns 
+		columnsA.shift();
+		columnsA.shift();
+		columnsA.shift();
+		columnsA.shift();
+
+		var len = columnsA.length;
+		for (var i = 0; i < len; i++) {
+		  if ( i%7 ){
+			table.column(columnsA[len-1-i]).remove();
+		  }
+		}
+	
+		return table;
+    };	
+
+	ixmaps.PCM_DPC_COVID_ALL_WEEKLY_INCIDENCE = function (theme, options) {
+		
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+		
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the data
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+
+			function (dataA) {
+
+				// get population lookup for incidence
+				var dataPop = dataA[1];
+				// correct region names in population table
+				dataPop.column("Territorio").map(function (value) {
+					if (value == "Provincia Autonoma Bolzano / Bozen") {
+						return "P.A. Bolzano";
+					} else
+					if (value == "Provincia Autonoma Trento") {
+						return "P.A. Trento";
+					} else 
+					if (value == "Friuli-Venezia Giulia") {
+						return "Friuli Venezia Giulia";
+					} else {
+						return value;
+					}
+				});
+				var pop = [];
+				var terrA = dataPop.column("Territorio").values();
+				var popA = dataPop.column("Value").values();
+				for (var i = 0; i < terrA.length; i++) {
+					pop[terrA[i]] = popA[i];
+				}
+
+				var pivot = __process(dataA[0], options);
+				pivot.column("Total").remove();
+				
+				var confirmed_7 = __every_7(pivot);
+				columnsA = confirmed_7.columnNames();
+				
+				console.log(confirmed_7);
+				console.log(pop);
+				
+				for (var i = 4; i<columnsA.length; i++){
+					confirmed_7.column(columnsA[i]).map(function(value,row){
+						return (Number(value)/Number(pop[row[3]])*100000).toFixed(2);
+					})
+				}
+				
+				theme.szFields = columnsA.slice(4).join("|");
+				
+				var szLabel = columnsA.slice(4);
+				for ( var i=0; i < szLabel.length; i++ ){
+					szLabel[i] = new Date(szLabel[i]).toLocaleDateString();
+				}
+				var szXaxis = columnsA.slice(4);
+				for ( var i=0; i < szXaxis.length; i++ ){
+					szXaxis[i] = new Date(szXaxis[i]).toLocaleDateString();
+				}
+				var flag = false;
+				for ( var i=1; i < szXaxis.length-1; i++ ){
+					if (flag || !szXaxis[i].match("2021")){
+						szXaxis[i] = " ";
+					}else{
+						szXaxis[i] = "2021";
+						flag = true;
+					}
+				}
+				theme.style.setProperties({
+					"label":szLabel,
+					"xaxis":szXaxis
+				});
+
+
+				var date = new Date(columnsA.pop());
+				var lastDate = date.toLocaleDateString();
+				ixmaps.setTitle("<span style='font-family:courier new,Raleway,arial,helvetica;font-size:18px;color:#444444'>aggiornato al " + lastDate + "</span>", "right");
+
+				// ---------------------------------------------------------------------------------------------- 
+				// deploy the data
+				// ---------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(pivot, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			});
+		
+	};
+	
+	ixmaps.PCM_DPC_COVID_ALL_WEEKLY_INCIDENCE_FATALITIES = function (theme, options) {
+		
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+		
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the data
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+
+			function (dataA) {
+
+				// get population lookup for incidence
+				var dataPop = dataA[1];
+				// correct region names in population table
+				dataPop.column("Territorio").map(function (value) {
+					if (value == "Provincia Autonoma Bolzano / Bozen") {
+						return "P.A. Bolzano";
+					} else
+					if (value == "Provincia Autonoma Trento") {
+						return "P.A. Trento";
+					} else 
+					if (value == "Friuli-Venezia Giulia") {
+						return "Friuli Venezia Giulia";
+					} else {
+						return value;
+					}
+				});
+				var pop = [];
+				var terrA = dataPop.column("Territorio").values();
+				var popA = dataPop.column("Value").values();
+				for (var i = 0; i < terrA.length; i++) {
+					pop[terrA[i]] = popA[i];
+				}
+
+				var pivot = __get_deaths(dataA[0], options);
+				pivot.column("Total").remove();
+				pivot = __mean_7(pivot);
+
+				var confirmed_7 = __every_7(pivot);
+				columnsA = confirmed_7.columnNames();
+				
+				for (var i = 4; i<columnsA.length; i++){
+					confirmed_7.column(columnsA[i]).map(function(value,row){
+						return (Number(value)/Number(pop[row[3]])*100000).toFixed(2);
+					})
+				}
+
+				theme.szFields = columnsA.slice(4).join("|");
+				
+				var date = new Date(columnsA.pop());
+				var lastDate = date.toLocaleDateString();
+				ixmaps.setTitle("<span style='font-family:courier new,Raleway,arial,helvetica;font-size:18px;color:#444444'>aggiornato al " + lastDate + "</span>", "right");
+
+				// ---------------------------------------------------------------------------------------------- 
+				// deploy the data
+				// ---------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(pivot, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			});
+		
+	};
+	
+	ixmaps.PCM_DPC_COVID_LAST_54_WEEKLY_INCIDENCE = function (theme, options) {
+		
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+		
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the data
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+
+			function (dataA) {
+
+				// get population lookup for incidence
+				var dataPop = dataA[1];
+				// correct region names in population table
+				dataPop.column("Territorio").map(function (value) {
+					if (value == "Provincia Autonoma Bolzano / Bozen") {
+						return "P.A. Bolzano";
+					} else
+					if (value == "Provincia Autonoma Trento") {
+						return "P.A. Trento";
+					} else 
+					if (value == "Friuli-Venezia Giulia") {
+						return "Friuli Venezia Giulia";
+					} else {
+						return value;
+					}
+				});
+				var pop = [];
+				var terrA = dataPop.column("Territorio").values();
+				var popA = dataPop.column("Value").values();
+				for (var i = 0; i < terrA.length; i++) {
+					pop[terrA[i]] = popA[i];
+				}
+
+				var pivot = __process(dataA[0], options);
+				pivot.column("Total").remove();
+				
+				var confirmed_7 = __every_7(pivot);
+				columnsA = confirmed_7.columnNames();
+				
+				console.log(confirmed_7);
+				console.log(pop);
+				
+				for (var i = 4; i<columnsA.length; i++){
+					confirmed_7.column(columnsA[i]).map(function(value,row){
+						return (Number(value)/Number(pop[row[3]])*100000).toFixed(2);
+					})
+				}
+				
+				var label = columnsA.slice(-55);
+				var xaxis = columnsA.slice(-55);
+
+				theme.szFields = columnsA.slice(-56).join("|");
+
+				var date = new Date(columnsA.pop());
+				var lastDate = date.toLocaleDateString();
+				ixmaps.setTitle("<span style='font-family:courier new,Raleway,arial,helvetica;font-size:18px;color:#444444'>aggiornato al " + lastDate + "</span>", "right");
+
+				// ---------------------------------------------------------------------------------------------- 
+				// deploy the data
+				// ---------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(pivot, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			});
+		
+	};
+	
+	ixmaps.PCM_DPC_COVID_LAST_54_WEEKLY_INCIDENCE_FATALITIES = function (theme, options) {
+		
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+		
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the data
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+
+			function (dataA) {
+
+				// get population lookup for incidence
+				var dataPop = dataA[1];
+				// correct region names in population table
+				dataPop.column("Territorio").map(function (value) {
+					if (value == "Provincia Autonoma Bolzano / Bozen") {
+						return "P.A. Bolzano";
+					} else
+					if (value == "Provincia Autonoma Trento") {
+						return "P.A. Trento";
+					} else 
+					if (value == "Friuli-Venezia Giulia") {
+						return "Friuli Venezia Giulia";
+					} else {
+						return value;
+					}
+				});
+				var pop = [];
+				var terrA = dataPop.column("Territorio").values();
+				var popA = dataPop.column("Value").values();
+				for (var i = 0; i < terrA.length; i++) {
+					pop[terrA[i]] = popA[i];
+				}
+
+				var pivot = __get_deaths(dataA[0], options);
+				pivot.column("Total").remove();
+				pivot = __mean_7(pivot);
+
+				var confirmed_7 = __every_7(pivot);
+				columnsA = confirmed_7.columnNames();
+				
+				for (var i = 4; i<columnsA.length; i++){
+					confirmed_7.column(columnsA[i]).map(function(value,row){
+						return (Number(value)/Number(pop[row[3]])*100000).toFixed(2);
+					})
+				}
+
+				var label = columnsA.slice(-55);
+				var xaxis = columnsA.slice(-55);
+
+				theme.szFields = columnsA.slice(-56).join("|");
+
+				var date = new Date(columnsA.pop());
+				var lastDate = date.toLocaleDateString();
+				ixmaps.setTitle("<span style='font-family:courier new,Raleway,arial,helvetica;font-size:18px;color:#444444'>aggiornato al " + lastDate + "</span>", "right");
+
+				// ---------------------------------------------------------------------------------------------- 
+				// deploy the data
+				// ---------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(pivot, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			});
+		
+	};
+	
+	ixmaps.PCM_DPC_COVID_LAST_54_WEEKLY_INCIDENCE_INTENSIVE = function (theme, options) {
+		
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+		
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the data
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+
+			function (dataA) {
+
+				// get population lookup for incidence
+				var dataPop = dataA[1];
+				// correct region names in population table
+				dataPop.column("Territorio").map(function (value) {
+					if (value == "Provincia Autonoma Bolzano / Bozen") {
+						return "P.A. Bolzano";
+					} else
+					if (value == "Provincia Autonoma Trento") {
+						return "P.A. Trento";
+					} else 
+					if (value == "Friuli-Venezia Giulia") {
+						return "Friuli Venezia Giulia";
+					} else {
+						return value;
+					}
+				});
+				var pop = [];
+				var terrA = dataPop.column("Territorio").values();
+				var popA = dataPop.column("Value").values();
+				for (var i = 0; i < terrA.length; i++) {
+					pop[terrA[i]] = popA[i];
+				}
+
+				var pivot = __get_intensive(dataA[0], options);
+				pivot.column("Total").remove();
+				pivot = __mean_7(pivot);
+
+				var confirmed_7 = __every_7(pivot);
+				columnsA = confirmed_7.columnNames();
+				
+				for (var i = 4; i<columnsA.length; i++){
+					confirmed_7.column(columnsA[i]).map(function(value,row){
+						return (Number(value)/Number(pop[row[3]])*100000).toFixed(2);
+					})
+				}
+
+				var label = columnsA.slice(-55);
+				var xaxis = columnsA.slice(-55);
+
+				theme.szFields = columnsA.slice(-56).join("|");
+
+				var date = new Date(columnsA.pop());
+				var lastDate = date.toLocaleDateString();
+				ixmaps.setTitle("<span style='font-family:courier new,Raleway,arial,helvetica;font-size:18px;color:#444444'>aggiornato al " + lastDate + "</span>", "right");
+
+				// ---------------------------------------------------------------------------------------------- 
+				// deploy the data
+				// ---------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(pivot, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			});
+		
+	};
+	
+	ixmaps.PCM_DPC_COVID_LAST_20_WEEKLY_INCIDENCE = function (theme, options) {
+		
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+		
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the data
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+
+			function (dataA) {
+
+				// get population lookup for incidence
+				var dataPop = dataA[1];
+				// correct region names in population table
+				dataPop.column("Territorio").map(function (value) {
+					if (value == "Provincia Autonoma Bolzano / Bozen") {
+						return "P.A. Bolzano";
+					} else
+					if (value == "Provincia Autonoma Trento") {
+						return "P.A. Trento";
+					} else 
+					if (value == "Friuli-Venezia Giulia") {
+						return "Friuli Venezia Giulia";
+					} else {
+						return value;
+					}
+				});
+				var pop = [];
+				var terrA = dataPop.column("Territorio").values();
+				var popA = dataPop.column("Value").values();
+				for (var i = 0; i < terrA.length; i++) {
+					pop[terrA[i]] = popA[i];
+				}
+
+				var pivot = __process(dataA[0], options);
+				pivot.column("Total").remove();
+				
+				var confirmed_7 = __every_7(pivot);
+				columnsA = confirmed_7.columnNames();
+				
+				console.log(confirmed_7);
+				console.log(pop);
+				
+				for (var i = 4; i<columnsA.length; i++){
+					confirmed_7.column(columnsA[i]).map(function(value,row){
+						return (Number(value)/Number(pop[row[3]])*100000).toFixed(2);
+					})
+				}
+				
+				var label = columnsA.slice(-19);
+				var xaxis = columnsA.slice(-19);
+
+				theme.szFields = columnsA.slice(-20).join("|");
+
+				var date = new Date(columnsA.pop());
+				var lastDate = date.toLocaleDateString();
+				ixmaps.setTitle("<span style='font-family:courier new,Raleway,arial,helvetica;font-size:18px;color:#444444'>aggiornato al " + lastDate + "</span>", "right");
+
+				// ---------------------------------------------------------------------------------------------- 
+				// deploy the data
+				// ---------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(pivot, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			});
+		
+	};
+	
+	ixmaps.PCM_DPC_COVID_LAST_20_WEEKLY_INCIDENCE_FATALITIES = function (theme, options) {
+		
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+		
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the data
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+
+			function (dataA) {
+
+				// get population lookup for incidence
+				var dataPop = dataA[1];
+				// correct region names in population table
+				dataPop.column("Territorio").map(function (value) {
+					if (value == "Provincia Autonoma Bolzano / Bozen") {
+						return "P.A. Bolzano";
+					} else
+					if (value == "Provincia Autonoma Trento") {
+						return "P.A. Trento";
+					} else 
+					if (value == "Friuli-Venezia Giulia") {
+						return "Friuli Venezia Giulia";
+					} else {
+						return value;
+					}
+				});
+				var pop = [];
+				var terrA = dataPop.column("Territorio").values();
+				var popA = dataPop.column("Value").values();
+				for (var i = 0; i < terrA.length; i++) {
+					pop[terrA[i]] = popA[i];
+				}
+
+				var pivot = __get_deaths(dataA[0], options);
+				pivot.column("Total").remove();
+				pivot = __mean_7(pivot);
+
+				var confirmed_7 = __every_7(pivot);
+				columnsA = confirmed_7.columnNames();
+				
+				for (var i = 4; i<columnsA.length; i++){
+					confirmed_7.column(columnsA[i]).map(function(value,row){
+						return (Number(value)/Number(pop[row[3]])*100000).toFixed(2);
+					})
+				}
+
+				var label = columnsA.slice(-19);
+				var xaxis = columnsA.slice(-19);
+
+				theme.szFields = columnsA.slice(-20).join("|");
+
+				var date = new Date(columnsA.pop());
+				var lastDate = date.toLocaleDateString();
+				ixmaps.setTitle("<span style='font-family:courier new,Raleway,arial,helvetica;font-size:18px;color:#444444'>aggiornato al " + lastDate + "</span>", "right");
+
+				// ---------------------------------------------------------------------------------------------- 
+				// deploy the data
+				// ---------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(pivot, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			});
+		
+	};
+	
+	ixmaps.PCM_DPC_COVID_LAST_20_WEEKLY_INCIDENCE_INTENSIVE = function (theme, options) {
+		
+		var szUrl1 = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+		
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_13032020145850184.csv";
+
+		// -----------------------------------------------------------------------------------------------               
+		// read the data
+		// ----------------------------------------------------------------------------------------------- 
+
+		var broker = new Data.Broker()
+
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+
+			function (dataA) {
+
+				// get population lookup for incidence
+				var dataPop = dataA[1];
+				// correct region names in population table
+				dataPop.column("Territorio").map(function (value) {
+					if (value == "Provincia Autonoma Bolzano / Bozen") {
+						return "P.A. Bolzano";
+					} else
+					if (value == "Provincia Autonoma Trento") {
+						return "P.A. Trento";
+					} else 
+					if (value == "Friuli-Venezia Giulia") {
+						return "Friuli Venezia Giulia";
+					} else {
+						return value;
+					}
+				});
+				var pop = [];
+				var terrA = dataPop.column("Territorio").values();
+				var popA = dataPop.column("Value").values();
+				for (var i = 0; i < terrA.length; i++) {
+					pop[terrA[i]] = popA[i];
+				}
+
+				var pivot = __get_intensive(dataA[0], options);
+				pivot.column("Total").remove();
+				pivot = __mean_7(pivot);
+
+				var confirmed_7 = __every_7(pivot);
+				columnsA = confirmed_7.columnNames();
+				
+				for (var i = 4; i<columnsA.length; i++){
+					confirmed_7.column(columnsA[i]).map(function(value,row){
+						return (Number(value)/Number(pop[row[3]])*100000).toFixed(2);
+					})
+				}
+
+				var label = columnsA.slice(-19);
+				var xaxis = columnsA.slice(-19);
+
+				theme.szFields = columnsA.slice(-20).join("|");
+
+				var date = new Date(columnsA.pop());
+				var lastDate = date.toLocaleDateString();
+				ixmaps.setTitle("<span style='font-family:courier new,Raleway,arial,helvetica;font-size:18px;color:#444444'>aggiornato al " + lastDate + "</span>", "right");
+
+				// ---------------------------------------------------------------------------------------------- 
+				// deploy the data
+				// ---------------------------------------------------------------------------------------------- 
+
+				ixmaps.setExternalData(pivot, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			});
+		
 	};
 	
 	
