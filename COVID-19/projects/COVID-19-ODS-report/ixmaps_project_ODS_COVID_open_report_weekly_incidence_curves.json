@@ -12,7 +12,7 @@
 		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "<p>data: <a href=\"https://github.com/opendatasicilia/covid-open-report-sicilia\" target=\"_blank\">Open Data Sicilia</a> Covid-19 database. <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC-BY-4.0</a><br>powered by iXMaps</p>",
 		"basemap": "CartoDB - Positron",
-		"legend": "<h1>Casi</h1><h4>Casi cumulativi settimanale dei Comuni della Regione Sicilia</br>nuovi casi in 7 giorni</h4><h4><a style='border: #888 solid 1px;padding: 0em 0.3em;border-radius: 1em;width: 1em;color: #888;text-decoration:none' href='javascript:ixmaps.map().changeThemeStyle(null,\"scale:0.66\",\"factor\")'>-</a> size <a style='border: #888 solid 1px;padding: 0em 0.3em;border-radius: 1em;width: 1em;color: #888;text-decoration:none' href='javascript:ixmaps.map().changeThemeStyle(null,\"scale:1.5\",\"factor\")'>+</a></h4>",
+		"legend": "<h1>Incidenza</h1><h4>Incidenza settimanale dei Comuni della Regione Sicilia</br>nuovi casi in 7 giorni</h4><h4><a style='border: #888 solid 1px;padding: 0em 0.3em;border-radius: 1em;width: 1em;color: #888;text-decoration:none' href='javascript:ixmaps.map().changeThemeStyle(null,\"scale:0.66\",\"factor\")'>-</a> size <a style='border: #888 solid 1px;padding: 0em 0.3em;border-radius: 1em;width: 1em;color: #888;text-decoration:none' href='javascript:ixmaps.map().changeThemeStyle(null,\"scale:1.5\",\"factor\")'>+</a></h4>",
 		"item": "",
 		"scaleParam": {
 			"normalSizeScale": "3000000",
