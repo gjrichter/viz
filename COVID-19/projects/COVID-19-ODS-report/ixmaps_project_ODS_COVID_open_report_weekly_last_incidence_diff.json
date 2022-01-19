@@ -1,0 +1,157 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Wed Jan 19 2022 17:46:51 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "<p>data: <a href=\"https://dev.socrata.com/foundry/data.cdc.gov/8xkx-amqh\" target=\"_blank\">Data.CDC.gov</a><br>powered by iXMaps</p>",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>Incidenza e differenza casi</h1><h4>Differenza percentuale dei nuovi casi settimanali nelle ultime due settimane e l'incidenza attuale</h4><h4><a style='border: #888 solid 1px;padding: 0em 0.3em;border-radius: 1em;width: 1em;color: #888;text-decoration:none' href='javascript:ixmaps.map().changeThemeStyle(null,\"scale:0.66\",\"factor\")'>-</a> size <a style='border: #888 solid 1px;padding: 0em 0.3em;border-radius: 1em;width: 1em;color: #888;text-decoration:none' href='javascript:ixmaps.map().changeThemeStyle(null,\"scale:1.5\",\"factor\")'>+</a></h4>",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "5000000"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"dynamicScalePow": "3",
+			"flushChartDraw": "10000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "37.70002197821145",
+			"lng": "14.376110578948174"
+			},
+		"zoom": "8"
+		},
+	"themes": [{
+			"layer": "Comuni",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "DBTABLE61073655",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_sicilia.geojson",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "PRO_COM_T",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"none"],
+				"linewidth": "0.2",
+				"valuescale": "1",
+				"title": "layer"
+				}
+			},{
+			"layer": "Comuni",
+			"field": "2022-01-12",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH",
+				"colorscheme": [
+					"7",
+					"#ffffff",
+					"#dd0000",
+					"2high"],
+				"fillopacity": "0.6",
+				"shadow": "false",
+				"dbtable": "DBTABLE96551570",
+				"dbtableUrl": "https://raw.githubusercontent.com/opendatasicilia/covid-open-report-sicilia/main/dati/incidenza/incidenza.csv",
+				"dbtableType": "csv",
+				"dbtableProcess": "function(data,options){        var pivot = data.pivot({     lead: \"pro_com_t\",     columns: \"data\",     keep: \"comune\",     value: \"incidenza\"    });     pivot.column(\"Total\").remove();     /** get columns */    var columnsA = pivot.columnNames().slice(2);           /** set as data fields in actual theme */    options.theme.setProperties({     fields:columnsA.slice(-1)[0]    });     /** set label and xaxis in actual theme */    options.theme.style.setProperties({     \"snippet\" :\"al \" + columnsA[columnsA.length-1]    });     /** set the date frame as map title */    ixmaps.setTitle(\"<span style='font-family:courier new,Raleway,arial,helvetica;font-size:24px;color:#444444'>\" + \" al \" + columnsA[columnsA.length-1] +\"</span>\");        return pivot;   }",
+				"datacache": "true",
+				"lookupfield": "pro_com_t",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuescale": "1",
+				"title": "incidenza settimanale",
+				"snippet": "al 2022-01-12",
+				"splash": "loading and aggregating data ...",
+				"description": "values aggregated by dynamic grid"
+				}
+			},{
+			"layer": "Comuni",
+			"field": "2022-01-06|2022-01-12",
+			"field100": "",
+			"style": {
+				"type": "CHART|BAR|POINTER|THIN|DIFFERENCE|RELATIVE|BOX|BOTTOMTITLE|VALUES|DTEXT|AGGREGATE|SIMPLELEGEND",
+				"colorscheme": [
+					"green",
+					"#dd0000"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "COVID_19_SICILIA",
+				"dbtableUrl": "https://raw.githubusercontent.com/opendatasicilia/covid-open-report-sicilia/main/dati/incidenza/incidenza.csv",
+				"dbtableType": "csv",
+				"dbtableProcess": "function(data,options){     var pivot = data.pivot({     lead: \"pro_com_t\",     columns: \"data\",     keep: \"comune\",     value: \"casi\"    });     pivot.column(\"Total\").remove();     /** get columns */    var columnsA = pivot.columnNames().slice(2);           /** set as data fields in actual theme */    options.theme.setProperties({     fields:columnsA.slice(-2).join(\"|\")    });     /** set label and xaxis in actual theme */    options.theme.style.setProperties({     \"snippet\" :\"al \" + columnsA[columnsA.length-1]    });     /** set the date frame as map title */    ixmaps.setTitle(\"<span style='font-family:courier new,Raleway,arial,helvetica;font-size:24px;color:#444444'>\" + \" al \" + columnsA[columnsA.length-1] +\"</span>\");     return pivot;   }",
+				"datacache": "false",
+				"lookupfield": "pro_com_t",
+				"rangecentervalue": "0",
+				"symbols": [
+					"circle"],
+				"units": "%",
+				"align": "right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1000",
+				"scale": "1",
+				"rangescale": "1",
+				"linewidth": "1",
+				"bordercolor": "none",
+				"boxopacity": "0.01",
+				"titlefield": "comune",
+				"titleupper": "1:20000000",
+				"valueupper": "1:250000",
+				"boxupper": "1:10000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "0.7",
+				"title": "nuovi casi settimanali",
+				"snippet": "al 2022-01-12",
+				"splash": "loading and aggregating data ...",
+				"description": "values aggregated by dynamic grid"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
