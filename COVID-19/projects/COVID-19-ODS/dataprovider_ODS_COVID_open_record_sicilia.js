@@ -56,7 +56,7 @@ window.ixmaps.COVID_19_SICILIA_INCIDENZA_LATEST = window.ixmaps.COVID_19_SICILIA
 
 		/** set as data fields in actual theme */
 		options.theme.setProperties({
-			fields:columnsA.slice(-1)
+			fields:columnsA.slice(-2).join("|");
 		});
 
 		/** set label and xaxis in actual theme */
