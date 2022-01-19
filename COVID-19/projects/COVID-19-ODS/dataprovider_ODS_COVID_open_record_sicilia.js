@@ -6,6 +6,7 @@
 
 window.ixmaps = window.ixmaps || {};
 window.ixmaps.COVID_19_SICILIA_CASI_DIFF_LATEST = window.ixmaps.COVID_19_SICILIA_CASI_DIFF_LATEST || {};
+window.ixmaps.COVID_19_SICILIA_INCIDENZA_LATEST = window.ixmaps.COVID_19_SICILIA_INCIDENZA_LATEST || {};
 
 (function () {
 	
