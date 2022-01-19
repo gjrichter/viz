@@ -33,5 +33,15 @@ codice per includere la mappa in una pagina HTML:
 
 <iframe id="map" width="100%" height="650" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&popout=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-ODS-report/ixmaps_project_ODS_COVID_open_report_weekly_last_incidence_diff.json"></iframe>
 
+## Sequenza dei casi per settimana 
+
+codice per includere la mappa in una pagina HTML:
+
+```javascript
+<iframe id="map" width="100%" height="850" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&popout=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-ODS-report/ixmaps_project_ODS_COVID_open_report_weekly_curves.json"></iframe>
+```
+
+<iframe id="map" width="100%" height="650" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&popout=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-ODS-report/ixmaps_project_ODS_COVID_open_report_weekly_curves.json"></iframe>
+
 
 
