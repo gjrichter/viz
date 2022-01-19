@@ -39,6 +39,36 @@ window.ixmaps.COVID_19_SICILIA_CASI_DIFF_LATEST = window.ixmaps.COVID_19_SICILIA
 		return pivot;
 	};
 
+	ixmaps.COVID_19_SICILIA_INCIDENZA_LATEST.process = function(data,options){
+
+		var pivot = data.pivot({
+			lead: "pro_com_t",
+			columns: "data",
+			keep: "comune",
+			value: "incidenza"
+		  });
+
+		pivot.column("Total").remove();
+
+		/** get columns */
+		var columnsA = pivot.columnNames().slice(2);
+
+		/** set as data fields in actual theme */
+		options.theme.setProperties({
+			fields:columnsA.slice(-1)
+		});
+
+		/** set label and xaxis in actual theme */
+		options.theme.style.setProperties({
+			"snippet" :"al " + columnsA[columnsA.length-1]
+		});
+
+		/** set the date frame as map title */
+		ixmaps.setTitle("<span style='font-family:courier new,Raleway,arial,helvetica;font-size:24px;color:#444444'>" + " al " + columnsA[columnsA.length-1] +"</span>");
+
+		return pivot;
+	};
+
  	
 })();
 
