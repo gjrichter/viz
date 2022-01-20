@@ -1,0 +1,124 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Jan 03 2022 16:49:49 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "html",
+		"scaleParam": {
+			"normalSizeScale": "832532",
+			"dynamicScalePow": "2"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "100000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "true"
+			},
+		"center": {
+			"lat": "43.96514454266273",
+			"lng": "13.194580078125002"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "Com2019_PRO_COM_",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"dbtable": "COMUNI",
+				"dbtableUrl": "https://gjrichter.github.io/viz/Amministratori/comuni_2019_U.geojson",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "PRO_COM_T",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0",
+				"valuescale": "1",
+				"title": "Italy Comuni 2019"
+				}
+			},{
+			"layer": "Com2019_PRO_COM_",
+			"field": "Richiesta contributo",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|MULTIPLE|UP|SUM|VALUES",
+				"colorscheme": [
+					"green",
+					"red"],
+				"colorfield": "finanziato",
+				"colorvalues": [
+					"si",
+					"no"],
+				"fillopacity": "0.4",
+				"shadow": "false",
+				"dbtable": "PNRR_PROGETTI_NON_FINANZIATI",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/PNRR%20-%20riqualificazione%20urbana/dataprovider_PNRR.js",
+				"datacache": "false",
+				"lookupfield": "Codice_ISTAT_Comune",
+				"showdata": "true",
+				"symbols": [
+					"roundrect"],
+				"values": [
+					"si",
+					"no"],
+				"units": "€",
+				"scale": "1.6",
+				"linewidth": "2",
+				"valuefield": "Richiesta contributo",
+				"sizefield": "Richiesta contributo",
+				"titlefield": "Ente",
+				"textscale": "3",
+				"valuesupper": "1:500000",
+				"valuescale": "1.2",
+				"valuedecimals": "0",
+				"title": "PNRR <br> rigenerazione urbana",
+				"snippet": "progetti ammessi in graduatoria e poi finanziati o no",
+				"description": ""
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
