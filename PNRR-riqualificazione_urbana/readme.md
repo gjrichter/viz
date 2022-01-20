@@ -9,7 +9,7 @@ Tutto il codice dei [progetti](https://github.com/gjrichter/viz/tree/master/Ammi
 Oltre all'applicazione ci sono altri strumenti per vedere e conoscere i progetti:
 
 - [ ] una **lista di tutti progetti** si può avere qui:
-  [https://gjrichter.github.io/ixmaps/app/ProjectP/html/index.html?projects=gjrichter/viz/contents/PNRR-riqualificazione_urbana/projects](https://gjrichter.github.io/ixmaps/app/ProjectP/html/index.html?projects=gjrichter/viz/contents/PNRR-riqualificazione_rbana/projects)
+  [https://gjrichter.github.io/ixmaps/app/ProjectP/html/index.html?projects=gjrichter/viz/contents/PNRR-riqualificazione_urbana/projects](https://gjrichter.github.io/ixmaps/app/ProjectP/html/index.html?projects=gjrichter/viz/contents/PNRR-riqualificazione_urbana/projects)
   
 - [ ] una **galleria con alcune mappe** interattive definite con questi progetti si apre qui: [https://gjrichter.github.io/viz/PNRR-riqualificazione_urbana/gallery]( https://gjrichter.github.io/viz/PNRR-riqualificazione_urbana//gallery ) 
   (Sotto le mappe nella galleria si trova il codice per includerli in una pagina HTML).
