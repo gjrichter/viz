@@ -15,7 +15,8 @@
 		"legend": "",
 		"item": "html",
 		"scaleParam": {
-			"normalSizeScale": "432532"
+			"normalSizeScale": "832532",
+			"dynamicScalePow": "2"
 			},
 		"options": {
 			"": "undefined",
@@ -76,13 +77,17 @@
 				}
 			},{
 			"layer": "Com2019_PRO_COM_",
-			"field": "finanziato",
+			"field": "Richiesta contributo",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|MULTIPLE|UP|CATEGORICAL|SUM|SUM",
+				"type": "CHART|SYMBOL|MULTIPLE|UP|SUM|VALUES",
 				"colorscheme": [
 					"green",
 					"red"],
+				"colorfield": "finanziato",
+				"colorvalues": [
+					"si",
+					"no"],
 				"fillopacity": "0.4",
 				"shadow": "false",
 				"dbtable": "PNRR_PROGETTI_NON_FINANZIATI",
@@ -97,14 +102,15 @@
 					"si",
 					"no"],
 				"units": "€",
-				"refreshtimeout": "0",
-				"scale": "2",
+				"scale": "1.6",
+				"linewidth": "2",
 				"valuefield": "Richiesta contributo",
 				"sizefield": "Richiesta contributo",
-				"valuescale": "1",
+				"titlefield": "Ente",
+				"textscale": "3",
+				"valuesupper": "1:500000",
+				"valuescale": "1.2",
 				"valuedecimals": "0",
-				"centerpart": "max",
-				"gridwidthpx": "50",
 				"title": "PNRR <br> rigenerazione urbana",
 				"snippet": "progetti ammessi in graduatoria e poi finanziati o no",
 				"description": ""
