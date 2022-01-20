@@ -1,0 +1,118 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Jan 02 2022 11:26:57 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "html",
+		"scaleParam": {
+			"normalSizeScale": "3460260",
+			"dynamicScalePow": "5"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "100000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "true"
+			},
+		"center": {
+			"lat": "44.04811573082351",
+			"lng": "11.414794921875"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "Com2019_PRO_COM_",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"dbtable": "COMUNI",
+				"dbtableUrl": "https://gjrichter.github.io/viz/Amministratori/comuni_2019_U.geojson",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "PRO_COM_T",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0",
+				"valuescale": "1",
+				"title": "Italy Comuni 2019"
+				}
+			},{
+				"layer": "Com2019_PRO_COM_",
+				"field": "finanziato",
+				"field100": "",
+				"style": {
+					"type": "CHART|SYMBOL|SEQUENCE|STAR|SORT|RANDOM|AGGREGATE|RECT|CATEGORICAL|SUM|VALUES|BOX|TITLE",
+					"colorscheme": [
+						"green",
+						"red"],
+					"fillopacity": "0.4",
+					"shadow": "false",
+					"dbtable": "PNRR_PROGETTI_NON_FINANZIATI",
+					"dbtableType": "ext",
+					"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/PNRR-riqualificazione_urbana/dataprovider_PNRR.js",
+					"datacache": "true",
+					"lookupfield": "Codice_ISTAT_Comune",
+					"showdata": "true",
+					"symbols": [
+						"roundrect"],
+					"units": "€",
+					"refreshtimeout": "0",
+					"scale": "2",
+					"sizefield": "Richiesta contributo",
+					"textscale": "3",
+					"boxopacity": "1",
+					"titlefield": "Ente",
+					"boxupper": "1:1000000",
+					"valuescale": "1",
+					"valuedecimals": "0",
+					"gridwidthpx": "50",
+					"title": "Domande accettate in graduatoria e finanziate o no",
+					"snippet": "L'indice relevate per il finanziomento è IVSM",
+					"description": ""
+					}
+			   }],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
