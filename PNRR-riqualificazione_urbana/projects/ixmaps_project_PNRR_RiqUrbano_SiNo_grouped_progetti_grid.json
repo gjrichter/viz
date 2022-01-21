@@ -103,8 +103,8 @@
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"gridwidthpx": "50",
-				"title": "Domande accettate in graduatoria e finanziate o no",
-				"snippet": "L'indice relevate per il finanziomento è IVSM",
+				"title": "Domande accettate e finanziate (si/no)",
+				"snippet": "In base all'indice IVSM",
 				"description": ""
 				}
 			}],
