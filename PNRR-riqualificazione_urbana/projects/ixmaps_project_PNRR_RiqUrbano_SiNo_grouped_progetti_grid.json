@@ -103,6 +103,7 @@
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"gridwidthpx": "50",
+				"titlefield": "Ente",
 				"title": "Domande accettate e finanziate (si/no)",
 				"snippet": "In base all'indice IVSM",
 				"description": ""
