@@ -213,11 +213,14 @@ window.ixmaps = window.ixmaps || {};
 					
 					szDate3 = "08-01-2020";
 					
+					szDate4 = "01-01-2021";
+					
 
 					new Data.Broker()
 						.addSource(szUrl2 + szDate1 + ".csv", "csv")
 						.addSource(szUrl2 + szDate2 + ".csv", "csv")
 						.addSource(szUrl2 + szDate3 + ".csv", "csv")
+						.addSource(szUrl2 + szDate4 + ".csv", "csv")
 						.realize(
 							function (dataA) {
 								
@@ -236,6 +239,10 @@ window.ixmaps = window.ixmaps || {};
 								lookup: "Combined_Key",
 								columns: dataA[2].columnNames()
 							});
+							merger.addSource(dataA[3], {
+								lookup: "Combined_Key",
+								columns: dataA[3].columnNames()
+							});
 
 							merger.realize(function (data) {
 
@@ -250,6 +257,10 @@ window.ixmaps = window.ixmaps || {};
 									var iConfirmed_ref = data.column("Confirmed.3").index;
 									var iDeaths_ref = data.column("Deaths.3").index;
 									var iRecovered_ref = data.column("Recovered.3").index;
+
+									var iConfirmed_ref_2 = data.column("Confirmed.4").index;
+									var iDeaths_ref_2 = data.column("Deaths.4").index;
+									var iRecovered_ref_2 = data.column("Recovered.4").index;
 
 									// get Confirmed of last 28 days
 
@@ -269,8 +280,8 @@ window.ixmaps = window.ixmaps || {};
 								
 									// calcolate Case-Fatality_Ratio from this
 								
-									iConfirmed = data.column("Confirmed_28").index;
-									iDeaths = data.column("Deaths_28").index;
+									var iConfirmed = data.column("Confirmed_28").index;
+									var iDeaths = data.column("Deaths_28").index;
 								
 									data.addColumn({
 										destination: "Case-Fatality_Ratio_28"
@@ -301,6 +312,49 @@ window.ixmaps = window.ixmaps || {};
 									}, function (row) {
 										if (Number(row[iConfirmed_ref])){
 											return (Number(row[iDeaths_ref]) / Number(row[iConfirmed_ref]) * 100);
+										}else{
+											return 0;
+										}
+									});
+
+									// calcolate Case-Fatality_Ratio at ref date 08-01-2021
+
+									data.addColumn({
+										destination: "Case-Fatality_Ratio_01-01-2021"
+									}, function (row) {
+										if (Number(row[iConfirmed_ref])){
+											return (Number(row[iDeaths_ref_2]) / Number(row[iConfirmed_ref_2]) * 100);
+										}else{
+											return 0;
+										}
+									});
+								
+									// get Confirmed of last year
+								
+									data.addColumn({
+										destination: "Confirmed_2021"
+									}, function (row) {
+										return (Number(row[iConfirmed]) - Number(row[iConfirmed_ref_2]));
+									});
+								
+									// get Deaths of last 28 days
+								
+									data.addColumn({
+										destination: "Deaths_2021"
+									}, function (row) {
+										return (Number(row[iDeaths]) - Number(row[iDeaths_ref_2]));
+									});
+								
+									// calcolate Case-Fatality_Ratio from this
+								
+									var iConfirmed = data.column("Confirmed_2021").index;
+									var iDeaths = data.column("Deaths_2021").index;
+								
+									data.addColumn({
+										destination: "Case-Fatality_Ratio_2021"
+									}, function (row) {
+										if (Number(row[iConfirmed])){
+											return (Number(row[iDeaths]) / Number(row[iConfirmed]) * 100);
 										}else{
 											return 0;
 										}
@@ -359,15 +413,23 @@ window.ixmaps = window.ixmaps || {};
 					szDate3 = date.toISOString();
 					dateA = szDate3.split("T")[0].split("-");
 					szDate3 = dateA[1] + "-" + dateA[2] + "-" + dateA[0];
-
-					szDate4 = "08-01-2020";
 					
+					date = new Date(date.getTime() - 1000*60*60*24*180);
+					szDate4 = date.toISOString();
+					dateA = szDate4.split("T")[0].split("-");
+					szDate4 = dateA[1] + "-" + dateA[2] + "-" + dateA[0];
+
+					szDate5 = "08-01-2020";
+					
+					szDate6 = "12-31-2020";
 
 					new Data.Broker()
 						.addSource(szUrl2 + szDate1 + ".csv", "csv")
 						.addSource(szUrl2 + szDate2 + ".csv", "csv")
 						.addSource(szUrl2 + szDate3 + ".csv", "csv")
 						.addSource(szUrl2 + szDate4 + ".csv", "csv")
+						.addSource(szUrl2 + szDate5 + ".csv", "csv")
+						.addSource(szUrl2 + szDate6 + ".csv", "csv")
 						.realize(
 							function (dataA) {
 								
@@ -390,6 +452,14 @@ window.ixmaps = window.ixmaps || {};
 								lookup: "Combined_Key",
 								columns: dataA[3].columnNames()
 							});
+							merger.addSource(dataA[4], {
+								lookup: "Combined_Key",
+								columns: dataA[4].columnNames()
+							});
+							merger.addSource(dataA[5], {
+								lookup: "Combined_Key",
+								columns: dataA[5].columnNames()
+							});
 
 							merger.realize(function (data) {
 
@@ -405,9 +475,17 @@ window.ixmaps = window.ixmaps || {};
 									var iDeaths_56 = data.column("Deaths.3").index;
 									var iRecovered_56 = data.column("Recovered.3").index;
 
-									var iConfirmed_ref = data.column("Confirmed.4").index;
-									var iDeaths_ref = data.column("Deaths.4").index;
+									var iConfirmed_180 = data.column("Confirmed.4").index;
+									var iDeaths_180 = data.column("Deaths.4").index;
+									var iRecovered_180 = data.column("Recovered.4").index;
+
+									var iConfirmed_ref = data.column("Confirmed.5").index;
+									var iDeaths_ref = data.column("Deaths.5").index;
 									var iRecovered_ref = data.column("Recovered.4").index;
+
+									var iConfirmed_ref_2020 = data.column("Confirmed.6").index;
+									var iDeaths_ref_2020 = data.column("Deaths.6").index;
+									var iRecovered_ref_2020 = data.column("Recovered.6").index;
 
 									// get Confirmed of last 28 days
 
@@ -470,8 +548,8 @@ window.ixmaps = window.ixmaps || {};
 								
 									// calcolate Case-Fatality_Ratio from this
 								
-									iConfirmed_calc = data.column("Confirmed_56").index;
-									iDeaths_calc = data.column("Deaths_56").index;
+									var iConfirmed_calc = data.column("Confirmed_56").index;
+									var iDeaths_calc = data.column("Deaths_56").index;
 								
 									data.addColumn({
 										destination: "Case-Fatality_Ratio_56"
@@ -495,6 +573,48 @@ window.ixmaps = window.ixmaps || {};
 										}
 									});
 
+									// get Confirmed of last 180 days
+
+									data.addColumn({
+										destination: "Confirmed_180"
+									}, function (row) {
+										return (Number(row[iConfirmed]) - Number(row[iConfirmed_180]));
+									});
+								
+									// get Deaths of last 180 days
+								
+									data.addColumn({
+										destination: "Deaths_180"
+									}, function (row) {
+										return (Number(row[iDeaths]) - Number(row[iDeaths_180]));
+									});
+								
+									// calcolate Case-Fatality_Ratio from this
+								
+									var iConfirmed_calc = data.column("Confirmed_180").index;
+									var iDeaths_calc = data.column("Deaths_180").index;
+								
+									data.addColumn({
+										destination: "Case-Fatality_Ratio_180"
+									}, function (row) {
+										if (Number(row[iConfirmed_calc])){
+											return (Number(row[iDeaths_calc]) / Number(row[iConfirmed_calc]) * 100);
+										}else{
+											return 0;
+										}
+									});
+								
+									// calcolate Case-Fatality_Ratio before this
+
+									data.addColumn({
+										destination: "Case-Fatality_Ratio_before_180"
+									}, function (row) {
+										if (Number(row[iConfirmed_180])){
+											return (Number(row[iDeaths_180]) / Number(row[iConfirmed_180]) * 100);
+										}else{
+											return 0;
+										}
+									});
 									// calcolate Case-Fatality_Ratio at ref date 08-01-2020
 
 									data.addColumn({
@@ -502,6 +622,18 @@ window.ixmaps = window.ixmaps || {};
 									}, function (row) {
 										if (Number(row[iConfirmed_ref])){
 											return (Number(row[iDeaths_ref]) / Number(row[iConfirmed_ref]) * 100);
+										}else{
+											return 0;
+										}
+									});
+
+									// calcolate Case-Fatality_Ratio at ref date 12-31-2020
+
+									data.addColumn({
+										destination: "Case-Fatality_Ratio_12-31-2020"
+									}, function (row) {
+										if (Number(row[iConfirmed_ref_2020])){
+											return (Number(row[iDeaths_ref_2020]) / Number(row[iConfirmed_ref_2020]) * 100);
 										}else{
 											return 0;
 										}
@@ -603,8 +735,8 @@ window.ixmaps = window.ixmaps || {};
 								
 									// calcolate Case-Fatality_Ratio from this
 								
-									iConfirmed = data.column("Confirmed_56").index;
-									iDeaths = data.column("Deaths_56").index;
+									var iConfirmed = data.column("Confirmed_56").index;
+									var iDeaths = data.column("Deaths_56").index;
 								
 									data.addColumn({
 										destination: "Case-Fatality_Ratio_56"
@@ -758,10 +890,10 @@ window.ixmaps = window.ixmaps || {};
 								
 									// get Confirmed/Deaths of before 28 days
 								
-									iConfirmed 		= data.column("Confirmed.5").index;
-									iDeaths 		= data.column("Deaths.5").index;
-									iConfirmed_28 	= data.column("Confirmed.4").index;
-									iDeaths_28 		= data.column("Deaths.4").index;
+									var iConfirmed 		= data.column("Confirmed.5").index;
+									var iDeaths 		= data.column("Deaths.5").index;
+									var iConfirmed_28 	= data.column("Confirmed.4").index;
+									var iDeaths_28 		= data.column("Deaths.4").index;
 								
 									data.addColumn({
 										destination: "Case-Fatality_Ratio_4"
@@ -776,10 +908,10 @@ window.ixmaps = window.ixmaps || {};
 								
 									// get Confirmed/Deaths of before 28 days
 								
-									iConfirmed 		= data.column("Confirmed.4").index;
-									iDeaths 		= data.column("Deaths.4").index;
-									iConfirmed_28 	= data.column("Confirmed.3").index;
-									Deaths_28 		= data.column("Deaths.3").index;
+									var iConfirmed 		= data.column("Confirmed.4").index;
+									var iDeaths 		= data.column("Deaths.4").index;
+									var iConfirmed_28 	= data.column("Confirmed.3").index;
+									var iDeaths_28 		= data.column("Deaths.3").index;
 								
 									data.addColumn({
 										destination: "Case-Fatality_Ratio_3"
@@ -794,10 +926,10 @@ window.ixmaps = window.ixmaps || {};
 								
 									// get Confirmed/Deaths of before 28 days
 								
-									iConfirmed 		= data.column("Confirmed.3").index;
-									iDeaths 		= data.column("Deaths.3").index;
-									iConfirmed_28 	= data.column("Confirmed.2").index;
-									iDeaths_28 		= data.column("Deaths.2").index;
+									var iConfirmed 		= data.column("Confirmed.3").index;
+									var iDeaths 		= data.column("Deaths.3").index;
+									var iConfirmed_28 	= data.column("Confirmed.2").index;
+									var iDeaths_28 		= data.column("Deaths.2").index;
 								
 									data.addColumn({
 										destination: "Case-Fatality_Ratio_2"
@@ -812,10 +944,10 @@ window.ixmaps = window.ixmaps || {};
 								
 									// get Confirmed/Deaths of before 28 days
 								
-									iConfirmed 		= data.column("Confirmed.2").index;
-									iDeaths 		= data.column("Deaths.2").index;
-									iConfirmed_28 	= data.column("Confirmed.1").index;
-									iDeaths_28 		= data.column("Deaths.1").index;
+									var iConfirmed 		= data.column("Confirmed.2").index;
+									var iDeaths 		= data.column("Deaths.2").index;
+									var iConfirmed_28 	= data.column("Confirmed.1").index;
+									var iDeaths_28 		= data.column("Deaths.1").index;
 								
 									data.addColumn({
 										destination: "Case-Fatality_Ratio_1"
@@ -852,39 +984,116 @@ window.ixmaps = window.ixmaps || {};
 			});
 	};
 
-	ixmaps.CSSE_COVID_NEW_CONFIRMED_14 = function (theme, options) {
+	ixmaps.CSSE_COVID_NEW_CONFIRMED_INCIDENCE_CUMULATIVE_14 = function (theme, options) {
 
 		// to get the last date in the time series 
 		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
 		
+		// to get the contry population 
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/World/API_SP.POP.TOTL_DS2_en_csv_v2_1926760.csv";
+
 		new Data.Broker()
 			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
 			.realize(
 				function (dataA) {
 					
 				var data_Confirmed = dataA[0];	
-
-				var lastDataColumnName = data_Confirmed.columnNames().pop();
+				var data_Pop = dataA[1];	
+					
+				// make lookupArray: country name ==> population
+				data_Pop.column("Country Name").map(function(value){
+					if (value == "United States"){
+						return "US";
+					}
+					if (value == "Russian Federation"){
+						return "Russia";
+					}
+					return value;
+				});
+				var popA = data_Pop.lookupArray("2019","Country Name");
+				console.log(popA);	
+	
 				// get last 14 columns
-				var last_14 = data.columnNames().slice(-14);
+				var last_14 = data_Confirmed.columnNames().slice(-14);
 				// get first and last	
-				    lastDataColumnName  = data_Confirmed.columnNames().pop();
-				var firstDataColumnName = data_Confirmed.columnNames().shift();
+				var lastDataColumnName  = last_14.pop();
+				var firstDataColumnName = last_14.shift();
 				var firstIndex = data_Confirmed.column(firstDataColumnName).index;
 				var lastIndex  = data_Confirmed.column(lastDataColumnName).index;
-					
+				var popIndex = data_Confirmed.column("Country/Region").index;
+				console.log("-------------------------");	
+				console.log(firstIndex);	
+				console.log(lastIndex);	
+				console.log("-------------------------");	
 			    data_Confirmed.addColumn({"destination":"14gg"},function(row){
-					return (Number(row[lastIndex])-Number(row[firstIndex]));
+					return ((Number(row[lastIndex])-Number(row[firstIndex]))/Number(popA[row[popIndex]])*100000).toFixed(2);
 				});
 
 				// set as data fields in actual theme
-				options.theme.szFields = last_28.slice().join("|");
-				options.theme.szFieldsA = last_28.slice();
+				options.theme.szFields = "14gg";
+				options.theme.szFieldsA = ["14gg"];
 
-				// make label ! -1 because of DIFFERENC theme
-				options.theme.szLabelA = "14gg";
-				options.theme.szXaxisA = "14gg";
+				// -----------------------------------------------------------------------------------------------             // deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+				ixmaps.setExternalData(data_Confirmed, {
+					type: "dbtable",
+					name: options.name
+				});
 					
+			});
+	};
+
+	ixmaps.CSSE_COVID_NEW_CONFIRMED_INCIDENCE_CUMULATIVE_7 = function (theme, options) {
+
+		// to get the last date in the time series 
+		var szUrl1 = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+		
+		// to get the contry population 
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/World/API_SP.POP.TOTL_DS2_en_csv_v2_1926760.csv";
+
+		new Data.Broker()
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+				function (dataA) {
+					
+				var data_Confirmed = dataA[0];	
+				var data_Pop = dataA[1];	
+					
+				// make lookupArray: country name ==> population
+				data_Pop.column("Country Name").map(function(value){
+					if (value == "United States"){
+						return "US";
+					}
+					if (value == "Russian Federation"){
+						return "Russia";
+					}
+					return value;
+				});
+				var popA = data_Pop.lookupArray("2019","Country Name");
+				console.log(popA);	
+	
+				// get last 14 columns
+				var last_7 = data_Confirmed.columnNames().slice(-7);
+				// get first and last	
+				var lastDataColumnName  = last_7.pop();
+				var firstDataColumnName = last_7.shift();
+				var firstIndex = data_Confirmed.column(firstDataColumnName).index;
+				var lastIndex  = data_Confirmed.column(lastDataColumnName).index;
+				var popIndex = data_Confirmed.column("Country/Region").index;
+				console.log("-------------------------");	
+				console.log(firstIndex);	
+				console.log(lastIndex);	
+				console.log("-------------------------");	
+			    data_Confirmed.addColumn({"destination":"7gg"},function(row){
+					return ((Number(row[lastIndex])-Number(row[firstIndex]))/Number(popA[row[popIndex]])*100000).toFixed(2);
+				});
+
+				// set as data fields in actual theme
+				options.theme.szFields = "7gg";
+				options.theme.szFieldsA = ["7gg"];
+
 				// -----------------------------------------------------------------------------------------------             // deploy the data
 				// ----------------------------------------------------------------------------------------------- 
 				ixmaps.setExternalData(data_Confirmed, {
@@ -896,6 +1105,75 @@ window.ixmaps = window.ixmaps || {};
 	};
 
 
+	ixmaps.CSSE_COVID_VACCINATIONS_POP = function (theme, options) {
+
+		// to get the last date in the time series 
+		var szUrl1 = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv";
+		
+		// to get the contry population 
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/World/API_SP.POP.TOTL_DS2_en_csv_v2_1926760.csv";
+
+		new Data.Broker()
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+				function (dataA) {
+					
+				var data_Vaccinations = dataA[0];	
+				var data_Pop = dataA[1];	
+					
+				var popA = data_Pop.lookupArray("2019","Country Code");
+	
+			    data_Vaccinations.addColumn({"source":"iso_code","destination":"pop"},function(code){
+					return popA[code];
+				});
+
+				// -----------------------------------------------------------------------------------------------             // deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+				ixmaps.setExternalData(data_Vaccinations, {
+					type: "dbtable",
+					name: options.name
+				});
+					
+			});
+	};
+	
+	ixmaps.CSSE_COVID_VACCINATIONS_POP_MAX = function (theme, options) {
+
+		// to get the last date in the time series 
+		var szUrl1 = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv";
+		
+		// to get the contry population 
+		var szUrl2 = "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/World/API_SP.POP.TOTL_DS2_en_csv_v2_1926760.csv";
+
+		new Data.Broker()
+			.addSource(szUrl1, "csv")
+			.addSource(szUrl2, "csv")
+			.realize(
+				function (dataA) {
+					
+				var data_Vaccinations = dataA[0];	
+				var data_Pop = dataA[1];	
+					
+				var popA = data_Pop.lookupArray("2019","Country Code");
+	
+			    data_Vaccinations.addColumn({"source":"iso_code","destination":"pop"},function(code){
+					return popA[code];
+				});
+
+				data_Vaccinations.condense("iso_code",{"calc":"max"});
+					
+				// -----------------------------------------------------------------------------------------------             // deploy the data
+				// ----------------------------------------------------------------------------------------------- 
+				ixmaps.setExternalData(data_Vaccinations, {
+					type: "dbtable",
+					name: options.name
+				});
+					
+			});
+	};
+
+	
 })();
 
 /**
