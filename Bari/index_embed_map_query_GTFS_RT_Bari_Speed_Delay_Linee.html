@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+<!-- **********************************************************************
+
+index_only_map_embed.html
+
+$Comment: ixmaps map template; embedded version
+$Source : index_only_map_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:index_only_map_embed.html 1 2021-10-17 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:index_only_map_embed.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="ixmaps embed example">
+	<meta name="author" content="guenter richter">
+	<link rel="shortcut icon" href="https://gjrichter.github.io/ixmaps/ui/resources/images/ixmaps_logo.png">
+
+	<title>iXMaps test Api 2</title>
+
+</head>
+
+<body>
+	<div id="mymap" style="max-width:1200px"></div>
+
+    <!--========================================================================= -->
+
+	<script src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
+	
+    <!--========================================================================= -->
+
+	<script type="text/javascript" charset="utf-8"> 
+
+		// define the function to query the actual data from AMTAB open data API
+		// this functiuon will be loaded (toString()) into the theme definition
+		
+		query = function(data,options){
+			
+			ixmaps.tmp = ixmaps.tmp || {};
+			ixmaps.tmp.positions = null;
+
+			ixmaps.oldP = ixmaps.oldP || [];
+			ixmaps.lastP = ixmaps.lastP || [];
+			
+			function xmlParser(xml) {
+				updates = [];
+				$(xml).find("FeedEntity").each(function () {
+					var entity = {};
+					entity["TripId"] = $(this).find("TripId").text();
+					entity["Delay"] = $(this).find("Arrival").find("Delay").text();
+					updates[entity["TripId"]] = entity;
+				  });
+				result = [{Id:"0",RouteId:"0",TripId:"0",Latitude:"0",Longitude:"0",
+						   OldLat:"0",OldLon:"0",LastLat:"0",LastLon:"0",Speed:"0",Delay:"0"}];
+				$(ixmaps.tmp.positions).find("FeedEntity").each(function () {
+					var entity = {};
+					
+					var id = $(this).find("Id").text();
+					ixmaps.oldP[id] = ixmaps.oldP[id] || {};
+					ixmaps.lastP[id] = ixmaps.lastP[id] || {};
+
+					entity["Id"] = $(this).find("Id").text();
+					entity["RouteId"] = $(this).find("RouteId").text();
+					entity["TripId"] = $(this).find("TripId").text();
+					entity["Latitude"] = $(this).find("Latitude").text();
+					entity["Longitude"] = $(this).find("Longitude").text();
+					entity["Speed"] = $(this).find("Speed").text();
+					
+					if ( (ixmaps.lastP[id].lat != entity["Latitude"]) ||
+					   	 (ixmaps.lastP[id].lon != entity["Longitude"])){
+						ixmaps.oldP[id].lat = ixmaps.lastP[id].lat || entity["Latitude"];
+						ixmaps.oldP[id].lon = ixmaps.lastP[id].lon || entity["Longitude"];
+					}
+					
+					entity["LastLat"] = ixmaps.lastP[id].lat || entity["Latitude"];
+					entity["LastLon"] = ixmaps.lastP[id].lon || entity["Longitude"];
+					
+					ixmaps.lastP[id].lat = entity["Latitude"];
+					ixmaps.lastP[id].lon = entity["Longitude"];
+					
+					entity["OldLat"] = ixmaps.oldP[id].lat || entity["Latitude"];
+					entity["OldLon"] = ixmaps.oldP[id].lon || entity["Longitude"];
+
+					entity["Delay"] = updates[entity["TripId"]]?updates[entity["TripId"]].Delay:0;
+					
+					result.push(entity);
+				  });
+				options.type = "json",
+				ixmaps.setExternalData(result,options);
+			}			
+			
+			function getTripUpdate(positions) {
+				ixmaps.tmp.positions = positions;
+				$.ajax({
+					type: "GET",
+					url: "https://corsme.herokuapp.com/https://avl.amtab.it/WSExportGTFS_RT/api/gtfs/TripUpdates",
+					dataType: "xml",
+					success: xmlParser,
+					error: function (xhr, ajaxOptions, thrownError) {
+						options.type = "json",
+						result = [{Id:"0",RouteId:"0",TripId:"0",Latitude:"0",Longitude:"0",OldLat:"0",OldLon:"0",Speed:"0",Delay:"0"}];
+						ixmaps.setExternalData(result,options);
+					  }
+				});
+			}			
+
+			$.ajax({
+				type: "GET",
+				url: "https://corsme.herokuapp.com/https://avl.amtab.it/WSExportGTFS_RT/api/gtfs/VechiclePosition",
+				dataType: "xml",
+				success: getTripUpdate,
+				error: function (xhr, ajaxOptions, thrownError) {
+					options.type = "json",
+					result = [{Id:"0",RouteId:"0",TripId:"0",Latitude:"0",Longitude:"0",OldLat:"0",OldLon:"0",Speed:"0",Delay:"0"}];
+					ixmaps.setExternalData(result,options);
+				  }
+			});
+		};
+
+		// -----------------------------------------------
+		// create the map with GBFS-RT data from AMTAM Bari
+		// 	1 layer lines 
+		//  4 layer vehicle data 
+		// -----------------------------------------------
+			
+		document.activeElement.appendChild(
+
+			ixmaps.embed("mymap", { 
+			  mapCdn: "https://gjrichter.github.io/ixmaps",
+			  mapType: "white",	
+			  legend: "true"
+			  },
+			  map => map
+				.options({objectscaling:"dynamic",
+						 normalSizeScale:"20000",
+						 panhidden:"false"})
+				.view([41.10548442658741,16.840496063232425],12)
+				.attribution("Data: <a href='https://www.amtab.it/it/openmobilitydata' target='_blank'>GTFS-RT Bari</a>")
+				.legend("<h1>Bari - Status TPL AMTAB</h1><h4  style='margin-top:-1em'>Positioni dei veicoli ed informazioni vari<br>dati: <a href='https://www.amtab.it/it/openmobilitydata' target='_blank'>GTFS-RT Bari</a> - aggiortnati ogni 10 secondi</h4><h4><span style='color:green'>&#9635; in tempo&nbsp; </span><span style='color:orange'> &#9635; in ritardo&nbsp; </span><span style='color:red'> &#9635; ritardo > 10 min </span></h4>")			 
+				.localize("loading data ..."," ") 			 
+				.localize("... refreshing theme ..."," ") 			 
+				.localize("... loading data ...","&#x21E3;") 
+						 
+				// bus lines
+
+				.layer(ixmaps.theme("generic")
+				  .data({
+					type: "geojson",
+					url: "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bari/Linee.geojson"
+				  })
+				  .binding({id:"shape_id"})
+				  .style({type: "FEATURES|CHOROPLETH|CATEGORICAL|NOLEGEND",
+					colorscheme: ["#88aadd"],linewidth:"5",opacity:"0.5"})
+				  .define()
+				)
+						 
+			   .layer(ixmaps.theme("generic")
+				  .data({
+					type: "csv",
+					url: "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bari/stops.csv"
+				  })
+				  .binding({
+					id: "stop_id",
+					position: "stop_lat|stop_lon"})
+				  .style({
+					type: "CHART|BUBBLE|BOX|TITLE",
+					colorscheme: [
+						"#88aadd"],
+					scale:"0.2",chartupper:"1:10000",titlefield:"stop_name",
+					textscale:"10",textcolor:"#6688bb",textcolor:"#6688bb",boxopacity:"0",showdata:"true"
+					})
+				  .meta({title:"",snippet:"Posizioni Vehicoli"})    
+				  .define()
+				)
+
+				// last position vector
+						 
+			   .layer(ixmaps.theme("generic")
+				  .data({
+					name: "TripData",
+					type: "ext",
+					query: query.toString()
+				  })
+				  .binding({
+					position: "OldLat|OldLon",
+					position2: "Latitude|Longitude",
+					value: "Delay"})
+				  .style({
+					type: "CHART|VECTOR|BEZIER|FADEIN|NOSCALE|FAST",
+					colorscheme: [
+						"green",
+						"red"],
+					ranges: "-100,0,100",
+					fillopacity:"0.8",linecolor:"#444444",linewidth:"0.05",rangescale:"0",
+					scale:"4",refresh:"10"})
+				  .define()
+				)
+						 
+				// vehicel position with animation (move to actual position)
+						 
+			   .layer(ixmaps.theme("generic")
+				  .data({name: "TripData"})
+				  .binding({
+					position: "LastLat|LastLon",
+					position2: "Latitude|Longitude",
+					value: "Delay"})
+				  .style({
+					type: "CHART|SYMBOL|NOSIZE|VALUES|INLINETEXT|ZEROISVALUE|FAST|ANIMATEPOSITION",
+					colorscheme: [
+						"7",
+						"green",
+						"red",
+						"3high",
+						"orange"],
+					ranges: "-100,0,3,8",
+					symbols: [
+						"roundrect"],
+					fillopacity:"0.6",linecolor:"#888888",valuefield:"RouteId",scale:"5",valuedecimals:"0",showdata:"true",
+					refresh:"10"})
+				  .meta({title:"",snippet:"Posizioni Vehicoli"})    
+				  .define()
+				)
+						 
+				// vehicel information (actual trip data)
+						 
+			   .layer(ixmaps.theme("generic")
+				  .data({name: "TripData"})
+				  .binding({
+					position: "Latitude|Longitude",
+					value: "Speed"})
+				  .style({
+					type: "CHART|LABEL|NOSIZE|VALUES|INLINETEXT",
+					colorscheme: [
+						"white"],
+					units: "kmh",
+					align: "above",
+					fillopacity:"0.3",textcolor:"#888888",linecolor:"none",scale:"2",valuedecimals:"1",showdata:"true",
+					chartupper:"1:20000",refresh:"10"})
+				  .define()
+				)
+			   .layer(ixmaps.theme("generic")
+				  .data({name: "TripData"})
+				  .binding({
+					position: "Latitude|Longitude",
+					value: "Delay"})
+				  .style({
+					type: "CHART|LABEL|NOSIZE|VALUES|INLINETEXT|NEGATIVEISVALUE",
+					colorscheme: [
+						"3",
+						"red",
+						"green",
+						"linear"],
+					ranges: "0,0.1,10,50",
+					units: "min",
+					align: "below",
+					fillopacity:"0.003",textcolor:"red",linecolor:"none",scale:"1.7",valuedecimals:"0",showdata:"true",
+					chartupper:"1:100000",refresh:"10"})
+				  .define()
+				)
+			)
+		 ); 			
+
+	</script>	
+	
+	<!-- make a digial clock -->
+		
+	<div id="txt" style="font-family:open sans;font-size:1.35em;font-weight:bold;color:#666666;position:absolute;top:25px;left:20px"></div>
+
+	<script>
+		function startTime() {
+		  const today = new Date();
+		  let h = today.getHours();
+		  let m = today.getMinutes();
+		  let s = today.getSeconds();
+		  m = checkTime(m);
+		  s = checkTime(s);
+		  document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+		  setTimeout(startTime, 1000);
+		}
+
+		function checkTime(i) {
+		  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+		  return i;
+		}
+		startTime();
+	</script>
+	
+  </body>
+</html>
