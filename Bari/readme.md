@@ -13,9 +13,9 @@ codice per includere la mappa in una pagina HTML:
 
 some links to full screen maps:
 
-shorted url to the above map: [https://tinyurl.com/y2g8q3dx](https://tinyurl.com/y2g8q3dx)
+shorted url to the above map: [https://gjrichter.github.io/viz/Bari/index_embed_map_query_GTFS_RT_Bari_Speed_Delay_Linee.html](https://gjrichter.github.io/viz/Bari/index_embed_map_query_GTFS_RT_Bari_Speed_Delay_Linee.html)
 
-original url to the above map with esplicit project link: [Map with_aggregated videos and timeline](https://gjrichter.github.io/ixmaps/ui/dispatch.htm?ui=embed&basemap=ll&legend=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/Parler/final/ixmaps_project_Parler_clean_6_DC_Riot_Geo_aggregated_timeline_satellite.json)
+original url to the above map with esplicit project link: [Map with_aggregated videos and timeline](https://gjrichter.github.io/ixmaps/ui/dispatch.htm?ui=embed&basemap=ll&legend=1&project=https://raw.githubusercontent.com/gjrichter/viz/master/Bari/ixmaps_project_GTFS_RT_Bari_Speed_Delay_Linee.json)
 
 
 
