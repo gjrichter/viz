@@ -1,0 +1,213 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Wed Feb 23 2022 11:45:11 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "Data: <a href=\"https://www.amtab.it/it/openmobilitydata\" target=\"_blank\">GTFS-RT Bari</a>",
+		"basemap": "white",
+		"legend": "<h1>Bari - Status TPL AMTAB</h1><h4  style='margin-top:-1em'>Positioni dei veicoli ed informazioni varie<br>dati: <a href='https://www.amtab.it/it/openmobilitydata' target='_blank'>GTFS-RT Bari</a> - aggiortnati ogni 10 secondi</h4><h4><span style='color:green'>&#9635; in tempo&nbsp; </span><span style='color:orange'> &#9635; in ritardo&nbsp; </span><span style='color:red'> &#9635; ritardo > 10 min </span></h4>",
+		"item": "",
+		"localize" : {
+			"loading data ...":" ",
+			"... loading data ...":"&#x21E3;",
+			"... refreshing theme ...":" "
+			},
+		"scaleParam": {
+			"normalSizeScale": "20000"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"mapopacity": "1",
+			"flushChartDraw": "1000",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "41.10548442658741",
+			"lng": "16.840496063232425"
+			},
+		"zoom": "12"
+		},
+	"themes": [{
+			"layer": "generic",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|CHOROPLETH|CATEGORICAL|NOLEGEND|NOLEGEND",
+				"colorscheme": [
+					"#88aadd"],
+				"opacity": "0.5",
+				"shadow": "false",
+				"dbtable": "DBTABLE55540828",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bari/Linee.geojson",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "shape_id",
+				"lookupfield": "geometry",
+				"linewidth": "5",
+				"title": "Linea"
+				}
+			},{
+			"layer": "generic",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|BOX|TITLE|NOLEGEND",
+				"colorscheme": [
+					"#88aadd"],
+				"shadow": "false",
+				"dbtable": "DBTABLE21333818",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bari/stops.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"itemfield": "stop_id",
+				"lookupfield": "stop_lat|stop_lon",
+				"showdata": "true",
+				"scale": "0.2",
+				"textcolor": "#6688bb",
+				"textscale": "10",
+				"boxopacity": "0",
+				"titlefield": "stop_name",
+				"chartupper": "1:10000",
+				"title":"Bus stop"
+				}
+			},{
+			"layer": "generic",
+			"field": "Delay",
+			"field100": "",
+			"style": {
+				"type": "CHART|VECTOR|BEZIER|FADEIN|NOSCALE|FAST|NOLEGEND",
+				"colorscheme": [
+					"green",
+					"red"],
+				"fillopacity": "0.8",
+				"shadow": "false",
+				"dbtable": "TripData",
+				"dbtableType": "ext",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/Bari/dataprovider.js",
+				"datacache": "true",
+				"lookupfield": "OldLat|OldLon",
+				"lookupfield2": "Latitude|Longitude",
+				"ranges": [
+					"-100",
+					"0",
+					"100"],
+				"refreshtimeout": "10000",
+				"scale": "4",
+				"linecolor": [
+					"#444444"],
+				"linewidth": "0.05",
+				"title": "last position"
+				}
+			},{
+			"layer": "generic",
+			"field": "Delay",
+			"field100": "",
+			"style": {
+				"name": "vehicles",
+				"type": "CHART|SYMBOL|SORT|NOSIZE|VALUES|INLINETEXT|ZEROISVALUE|FAST|ANIMATEPOSITION",
+				"colorscheme": [
+					"7",
+					"green",
+					"red",
+					"3high",
+					"orange"],
+				"fillopacity": "0.6",
+				"shadow": "false",
+				"dbtable": "TripData",
+				"datacache": "true",
+				"lookupfield": "LastLat|LastLon",
+				"lookupfield2": "Latitude|Longitude",
+				"showdata": "true",
+				"datafields": ["RouteId","TripId","Speed","Delay"],
+				"ranges": [
+					"-100",
+					"0",
+					"3",
+					"10"],
+				"symbols": [
+					"roundrect"],
+				"refreshtimeout": "10000",
+				"scale": "5",
+				"valuefield": "RouteId",
+				"titlefield": "RouteId",
+				"linecolor": [
+					"#888888"],
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Veicolo & Linea"
+				}
+			},{
+			"layer": "generic",
+			"field": "Speed",
+			"field100": "",
+			"style": {
+				"type": "CHART|LABEL|NOSIZE|VALUES|INLINETEXT|NOLEGEND",
+				"colorscheme": [
+					"white"],
+				"fillopacity": "0.3",
+				"shadow": "false",
+				"dbtable": "TripData",
+				"datacache": "true",
+				"lookupfield": "Latitude|Longitude",
+				"showdata": "true",
+				"units": "kmh",
+				"align": "above",
+				"refreshtimeout": "10000",
+				"scale": "2",
+				"textcolor": "#888888",
+				"linecolor": [
+					"none"],
+				"chartupper": "1:20000",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "layer"
+				}
+			},{
+			"layer": "generic",
+			"field": "Delay",
+			"field100": "",
+			"style": {
+				"type": "CHART|LABEL|NOSIZE|VALUES|INLINETEXT|NEGATIVEISVALUE|NOLEGEND",
+				"colorscheme": [
+					"3",
+					"red",
+					"green",
+					"linear"],
+				"fillopacity": "0.003",
+				"shadow": "false",
+				"dbtable": "TripData",
+				"datacache": "true",
+				"lookupfield": "Latitude|Longitude",
+				"showdata": "true",
+				"ranges": [
+					"0",
+					"0.1",
+					"10",
+					"1000"],
+				"units": "min",
+				"align": "below",
+				"refreshtimeout": "10000",
+				"scale": "1.7",
+				"textcolor": "red",
+				"linecolor": [
+					"none"],
+				"chartupper": "1:100000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "layer"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

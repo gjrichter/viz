@@ -161,6 +161,7 @@ $Log:index_only_map_embed.html,v $
 				  .binding({id:"shape_id"})
 				  .style({type: "FEATURES|CHOROPLETH|CATEGORICAL|NOLEGEND",
 					colorscheme: ["#88aadd"],linewidth:"5",opacity:"0.5"})
+				  .meta({title:"Linea"})    
 				  .define()
 				)
 						 
@@ -173,13 +174,13 @@ $Log:index_only_map_embed.html,v $
 					id: "stop_id",
 					position: "stop_lat|stop_lon"})
 				  .style({
-					type: "CHART|BUBBLE|BOX|TITLE",
+					type: "CHART|BUBBLE|BOX|TITLE|NOLEGEND",
 					colorscheme: [
 						"#88aadd"],
 					scale:"0.2",chartupper:"1:10000",titlefield:"stop_name",
 					textscale:"10",textcolor:"#6688bb",textcolor:"#6688bb",boxopacity:"0",showdata:"true"
 					})
-				  .meta({title:"",snippet:"Posizioni Vehicoli"})    
+				  .meta({title:"Stop"})    
 				  .define()
 				)
 
@@ -196,13 +197,14 @@ $Log:index_only_map_embed.html,v $
 					position2: "Latitude|Longitude",
 					value: "Delay"})
 				  .style({
-					type: "CHART|VECTOR|BEZIER|FADEIN|NOSCALE|FAST",
+					type: "CHART|VECTOR|BEZIER|FADEIN|NOSCALE|FAST|NOLEGEND",
 					colorscheme: [
 						"green",
 						"red"],
 					ranges: "-100,0,100",
 					fillopacity:"0.8",linecolor:"#444444",linewidth:"0.05",rangescale:"0",
 					scale:"4",refresh:"10"})
+				  .meta({title:"Last Position"})    
 				  .define()
 				)
 						 
@@ -222,16 +224,18 @@ $Log:index_only_map_embed.html,v $
 						"red",
 						"3high",
 						"orange"],
-					ranges: "-100,0,3,8",
+					ranges: "-100,0,3,10",
 					symbols: [
 						"roundrect"],
-					fillopacity:"0.6",linecolor:"#888888",valuefield:"RouteId",scale:"5",valuedecimals:"0",showdata:"true",
+					fillopacity:"0.6",linecolor:"#888888",valuefield:"RouteId",titlefield:"RouteId",
+					scale:"5",valuedecimals:"0",showdata:"true",
+					datafields: ["RouteId","TripId","Speed","Delay"],
 					refresh:"10"})
-				  .meta({title:"",snippet:"Posizioni Vehicoli"})    
+				  .meta({title:"Veicolo & Linea"})    
 				  .define()
 				)
 						 
-				// vehicel information (actual trip data)
+				// vehicle information (actual trip data)
 						 
 			   .layer(ixmaps.theme("generic")
 				  .data({name: "TripData"})
@@ -239,7 +243,7 @@ $Log:index_only_map_embed.html,v $
 					position: "Latitude|Longitude",
 					value: "Speed"})
 				  .style({
-					type: "CHART|LABEL|NOSIZE|VALUES|INLINETEXT",
+					type: "CHART|LABEL|NOSIZE|VALUES|INLINETEXT|NOLEGEND",
 					colorscheme: [
 						"white"],
 					units: "kmh",
@@ -254,13 +258,13 @@ $Log:index_only_map_embed.html,v $
 					position: "Latitude|Longitude",
 					value: "Delay"})
 				  .style({
-					type: "CHART|LABEL|NOSIZE|VALUES|INLINETEXT|NEGATIVEISVALUE",
+					type: "CHART|LABEL|NOSIZE|VALUES|INLINETEXT|NEGATIVEISVALUE|NOLEGEND",
 					colorscheme: [
 						"3",
 						"red",
 						"green",
 						"linear"],
-					ranges: "0,0.1,10,50",
+					ranges: "0,0.1,10,1000",
 					units: "min",
 					align: "below",
 					fillopacity:"0.003",textcolor:"red",linecolor:"none",scale:"1.7",valuedecimals:"0",showdata:"true",
