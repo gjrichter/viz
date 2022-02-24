@@ -44,7 +44,7 @@ Questo *dataprovider* è referito nella definizione del progetto iXmaps per la v
 ...    
 ```
 
-
+<br>
 
 #### Altre conformazioni della Mappe 
 
@@ -64,5 +64,5 @@ La mappa in modo schermo intero:
 
 Un Notebook su ObservableHQ:
 
-https://observablehq.com/@gjrichter/ixmaps-example-real-time-gtfs-rt-amtab-bari-layer-def
+[https://observablehq.com/@gjrichter/ixmaps-example-real-time-gtfs-rt-amtab-bari-layer-def](https://observablehq.com/@gjrichter/ixmaps-example-real-time-gtfs-rt-amtab-bari-layer-def)
 
