@@ -155,8 +155,8 @@ $Log:index_only_map_embed.html,v $
 
 				.layer(ixmaps.theme("generic")
 				  .data({
-					type: "geojson",
-					url: "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bari/Linee.geojson"
+					type: "topojson",
+					url: "https://raw.githubusercontent.com/gjrichter/viz/master/Bari/transit/Linee.topojson"
 				  })
 				  .binding({id:"shape_id"})
 				  .style({type: "FEATURES|CHOROPLETH|CATEGORICAL|NOLEGEND",
@@ -168,7 +168,7 @@ $Log:index_only_map_embed.html,v $
 			   .layer(ixmaps.theme("generic")
 				  .data({
 					type: "csv",
-					url: "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bari/stops.csv"
+					url: "https://raw.githubusercontent.com/gjrichter/viz/master/Bari/transit/stops.csv"
 				  })
 				  .binding({
 					id: "stop_id",
