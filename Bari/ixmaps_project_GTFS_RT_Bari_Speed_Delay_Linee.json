@@ -158,7 +158,7 @@
 				"datacache": "true",
 				"lookupfield": "Latitude|Longitude",
 				"showdata": "true",
-				"units": "kmh",
+				"units": "km/h",
 				"align": "above",
 				"refreshtimeout": "10000",
 				"scale": "2",
