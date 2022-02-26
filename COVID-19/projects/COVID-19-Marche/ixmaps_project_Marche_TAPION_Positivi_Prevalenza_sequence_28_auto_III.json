@@ -60,9 +60,6 @@
 			"style": {
 				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|TITLE|FIXSIZE|SIMPLELEGEND",
 				"colorscheme": [
-					"green",
-					"#F1D8DE",
-					"#F4A7BC",
 					"#DD0044"],
 				"fillopacity": "0.1",
 				"shadow": "false",
@@ -71,19 +68,8 @@
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Marche/dataprovider_tapion.js",
 				"datacache": "false",
 				"lookupfield": "Comune",
-				"ranges": [
-					"0",
-					"100",
-					"500",
-					"1000",
-					"10000"],
 				"symbols": [
 					"circle"],
-				"label": [
-					"< 100",
-					"100 -499",
-					"500 - 999",
-					">= 1000"],
 				"units": "casi /100.000",
 				"align": "center|top",
 				"refreshtimeout": "0",
