@@ -58,7 +58,7 @@
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|TITLE|FIXSIZE|SIMPLELEGEND",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|LOLLIPOP|GRID|BOX|TITLE|FIXSIZE|SIMPLELEGEND",
 				"colorscheme": [
 					"#DD0044"],
 				"fillopacity": "0.1",
