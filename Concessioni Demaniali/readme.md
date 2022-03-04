@@ -9,7 +9,7 @@ Questi progetti si trovano in questo [Github ripository](https://github.com/gjri
 ### micro storia con le mappe interattiva
 
 ![](.\story.png)
-L'applicazione è accessibile con questa URL: https://gjrichter.github.io/ixmaps/app/Viewer/index.html?layout=right&sidebar=35%&sidebarbutton=0&story=https://gjrichter.github.io/viz/Concessioni%20Demaniali/stories/Concessioni_Demaniali/index.html
+L'applicazione è accessibile con questa URL: [https://gjrichter.github.io/ixmaps/app/Viewer/index.html?layout=right&sidebar=35%&sidebarbutton=0&story=https://gjrichter.github.io/viz/Concessioni%20Demaniali/stories/Concessioni_Demaniali/index.html](https://gjrichter.github.io/ixmaps/app/Viewer/index.html?layout=right&sidebar=35%&sidebarbutton=0&story=https://gjrichter.github.io/viz/Concessioni%20Demaniali/stories/Concessioni_Demaniali/index.html)
 
 
 
