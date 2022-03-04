@@ -1,0 +1,90 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Tue Mar 01 2022 21:53:46 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/ConcessioniBalneari/oggetti_demaniali.svgz",
+		"attribution": "dati: <a href=\"https://dati.mit.gov.it/catalog/dataset/concessioni-demaniali-marittime-a-maggio-2021\" target=\"_blank\">Ministero delle Infrastrutture</a>, trasformati da A.Borruso",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "27033"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"mapopacity": "1",
+			"flushChartDraw": "1000",
+			"basemapopacity": "1",
+			"panHidden": "true"
+			},
+		"center": {
+			"lat": "39.96449067924025",
+			"lng": "15.979614257812502"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "tipo",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|CATEGORICAL|VALUES|SUM",
+				"colorscheme": [
+					"10",
+					"tableau10"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"filter": "WHERE \"categoria\" = \"STABILIMENTO BALNEARE PUBBLICO\"",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ConcessioniDemaniali/concessioni.geojson.gz",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"sizefield": "canone",
+				"valuefield": "canone",
+				"units": "€",
+				"showdata": "true",
+				"refreshtimeout": "0",
+				"normalsizevalue": "10000",
+				"valuesupper": "1:50000",
+				"scale": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Concessioni & Canoni"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

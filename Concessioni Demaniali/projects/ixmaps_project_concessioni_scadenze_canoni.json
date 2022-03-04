@@ -1,0 +1,96 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Wed Mar 02 2022 23:47:04 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/ConcessioniBalneari/oggetti_demaniali.svgz",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "946598"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"dynamicScalePow": "8",
+			"mapopacity": "1",
+			"flushChartDraw": "1000",
+			"basemapopacity": "1",
+			"panHidden": "true"
+			},
+		"center": {
+			"lat": "42.742978093466434",
+			"lng": "13.496704101562502"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "WORLD",
+			"field": "scaduto",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|CENTER|SORT|UP|RINGS|UNDEFINEDISVALUE|AGGREGATE|RELOCATE|CATEGORICAL|SUM",
+				"colorscheme": [
+					"green",
+					"orange",
+					"red"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"filter": "WHERE \"categoria\" = \"STABILIMENTO BALNEARE PUBBLICO\"",
+				"dbtable": "DBTABLE35656282",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ConcessioniDemaniali/concessioni.geojson.gz",
+				"dbtableType": "geojson",
+				"dbtableProcess": "function(data,options){ data.addColumn({source:\"scadenza\",destination:\"scaduto\"},(value)=>{ var valueA = value.split(\"/\"); var scad = new Date(valueA[2]+\"/\"+valueA[1]+\"/\"+valueA[0]); var act = new Date(); var years = Math.floor((act.getTime() - scad.getTime())/(1000*60*60*24*356)); if (years < 0) {return \"non scaduta\";} if (years <= 10) {return \"scaduta da 1 a 10 annni\";} if (years > 10 ) {return \"scaduta da più di 10 anni\";} return (\"\"); }); return data; }",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"showdata": "true",
+				"symbols": [
+					"circle"],
+				"values": [
+					"non scaduta",
+					"scaduta da 1 a 10 annni",
+					"scaduta da più di 10 anni"],
+				"units": "€",
+				"refreshtimeout": "0",
+				"scale": "2.9039931217309354",
+				"valuefield": "canone",
+				"sizefield": "canone",
+				"valuescale": "1",
+				"centerpart": "max",
+				"gridwidthpx": "1",
+				"title": "Concessioni & Scadenze"
+				}
+			}],
+	"layerMask": {
+		}
+	}

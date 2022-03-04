@@ -1,0 +1,94 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Thu Mar 03 2022 11:36:08 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/ConcessioniBalneari/oggetti_demaniali.svgz",
+		"attribution": "dati: <a href=\"https://dati.mit.gov.it/catalog/dataset/concessioni-demaniali-marittime-a-maggio-2021\" target=\"_blank\">Ministero delle Infrastrutture</a>, trasformati da A.Borruso",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "3492872"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"dynamicScalePow": "3",
+			"mapopacity": "1",
+			"flushChartDraw": "1000",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "41.87774145109676",
+			"lng": "14.831542968750002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "WORLD",
+			"field": "scaduto_classi",
+			"field100": "",
+			"style": {
+				"type": "CHART|GLOW|SYMBOL|SEQUENCE|CENTER|SORT|UP|RINGS|UNDEFINEDISVALUE|AGGREGATE|RELOCATE|CATEGORICAL|LEGEND",
+				"colorscheme": [
+					"green",
+					"orange",
+					"red"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"filter": "WHERE \"categoria\" = \"STABILIMENTO BALNEARE PUBBLICO\"",
+				"dbtable": "DBTABLE86100153",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ConcessioniDemaniali/concessioni.geojson.gz",
+				"dbtableType": "geojson",
+				"dbtableProcess": "function(data,options){ data.addColumn({source:\"scadenza\",destination:\"scaduto\"},(value)=>{ var valueA = value.split(\"/\"); var scad = new Date(valueA[2]+\"/\"+valueA[1]+\"/\"+valueA[0]); var act = new Date(); return (Math.floor((act.getTime() - scad.getTime())/(1000*60*60*24*356))); }); data.addColumn({source:\"scaduto\",destination:\"scaduto_classi\"},(years)=>{ if (years < 0) {return \"non scaduta\";} if (years <= 10) {return \"scaduta da 1 a 10 annni\";} if (years > 10 ) {return \"scaduta da più di 10 anni\";} return (\"\"); }); return data; }",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"showdata": "true",
+				"symbols": [
+					"circle"],
+				"values": [
+					"non scaduta",
+					"scaduta da 1 a 10 annni",
+					"scaduta da più di 10 anni"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0.3",
+				"valuefield": "scaduto",
+				"valuescale": "1",
+				"gridwidthpx": "2",
+				"glowlower": "1:50000",
+				"title": "Concessioni & Scadenze",
+				"description": "singole concessioni e strutture visibili con zoom"
+				}
+			}],
+	"layerMask": {
+		}
+	}
