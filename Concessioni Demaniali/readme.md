@@ -17,6 +17,8 @@ L'applicazione è accessibile con questa URL: [https://gjrichter.github.io/ixmap
 
 Tutto il codice dei [progetti](https://github.com/gjrichter/viz/tree/master/Concessioni%20Demaniali/projects) dell'applicazione e del framework [iXmaps](https://gjrichter.github.io/ixmaps/) è pubblicato su GitHub.
 
+Oltre la **scala di 1:20 000** sono visibili anche le **strutture** relative alle concessioni. Un grazie a **Andrea Borruso**  per aver trasformato il dataset pubblicato del ministero (shp) in coordinate utilizzabili per la visualizzazione. E' stato poi trasformato in 'vector tiles' (SVG) per la pittaforma iXMaps e spostato su **Amazon S3**.
+
 Oltre all'applicazione ci sono altri strumenti per vedere e conoscere i progetti:
 
 - [ ] una **lista di tutti progetti** si può vedere qui:
