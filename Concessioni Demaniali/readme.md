@@ -1,17 +1,15 @@
-# Amministratori - (dis)parità di genere
+# Concessioni demaniali - Canoni e scadenze
 
-Progetti iXmaps per analizzare il data set degli amministratori comunali in carica al 9. settembre 2021 ed creare mappe per visualizzare la parità di genere. 
+Progetti iXmaps ispirato da questo articolo del [Post](https://www.ilpost.it/2022/03/01/mappa-canoni-concessioni-stabilimenti-balneari/) analizza e visualizza  i dati pubblicati dal dal ministero delle Infrastrutture sul suo sito in una [pagina](https://dati.mit.gov.it/catalog/dataset/concessioni-demaniali-marittime-a-maggio-2021) dedicata ai open data in merito. 
 
-Fonte: <a href="https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-in-carica" target="_blank">Ministero dell'Interno</a>  
-
-Questi progetti si trovano in questo [Github ripository](https://github.com/gjrichter/viz/tree/master/Amministratori) è sono alla base di una mappa interattiva per analizzare la parità di genere con alcuni temi e filtri.
+Questi progetti si trovano in questo [Github ripository](https://github.com/gjrichter/viz/tree/master/Concessioni%20Demaniali/projects) e sono alla base di alcune mappa interattiva per esplorare canoni e scadenze delle concessioni demaniali.
 
 
 
-### la mappa interattiva
+### micro storia con le mappe interattiva
 
-![](https://gjrichter.github.io/viz/Amministratori/ixmaps_Amministratori.png)
-L'applicazione è accessibile con questa URL: [https://gjrichter.github.io/viz/Amministratori/ixmaps_Amministratori.html](https://gjrichter.github.io/viz/Amministratori/ixmaps_Amministratori.html)
+![](.\story.png)
+L'applicazione è accessibile con questa URL: https://gjrichter.github.io/ixmaps/app/Viewer/index.html?layout=right&sidebar=35%&sidebarbutton=0&story=https://gjrichter.github.io/viz/Concessioni%20Demaniali/stories/Concessioni_Demaniali/index.html
 
 
 
