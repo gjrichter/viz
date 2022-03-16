@@ -2,7 +2,7 @@
 
 Alcune mappa per esplorare dati pubblicati dal **Ministero dello** **sviluppo economico** in una [pagina](https://www.mise.gov.it/index.php/it/open-data/elenco-dataset/2032336-carburanti-prezzi-praticati-e-anagrafica-degli-impianti) dedicata ai open data in merito.
 
-
+# Benzina
 
 <iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&scrollsafe=1&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/MISE/ixmaps_project_Prezzo_medio_per_Benzina.json"></iframe>
 
@@ -15,7 +15,7 @@ sotto il codice per includere la mappa in una pagina HTML:
 
 <br>
 
-
+# Gasolio
 
 <iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&scrollsafe=1&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/MISE/ixmaps_project_Prezzo_medio_per_Gasolio.json"></iframe>
 
@@ -28,7 +28,7 @@ sotto il codice per includere la mappa in una pagina HTML:
 
 <br>
 
-
+# GPL
 
 <iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&scrollsafe=1&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/MISE/ixmaps_project_Prezzo_medio_per_GPL.json"></iframe>
 
@@ -41,7 +41,7 @@ sotto il codice per includere la mappa in una pagina HTML:
 
 <br>
 
-
+# Metano
 
 <iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&scrollsafe=1&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/MISE/ixmaps_project_Prezzo_medio_per_Metano.json"></iframe>
 
@@ -54,7 +54,7 @@ sotto il codice per includere la mappa in una pagina HTML:
 
 <br>
 
-
+# Super
 
 <iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&scrollsafe=1&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/MISE/ixmaps_project_Prezzo_medio_per_Super.json"></iframe>
 
