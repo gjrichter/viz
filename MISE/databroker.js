@@ -9,13 +9,13 @@ window.ixmaps = window.ixmaps || {};
 		// get multiple data sources and process 
 		// --------------------------------------------------------------------------------------------
 
-		ixmaps.prezzi_tipo_latlon = function(){
+		ixmaps.prezzi_tipo_latlon = function(theme,options){
 
-			Data.feed({source:"https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/uploads/anagrafica_impianti_attivi.csv.gz",
+			Data.feed({source:"http://corsme.herokuapp.com/https://www.mise.gov.it/images/exportCSV/anagrafica_impianti_attivi.csv",
 					   type:"csv",
 					   parser: {comments: "Estrazione"}
 					  }).load(function(impianti){
-			Data.feed({source:"https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/uploads/prezzo_alle_8.csv.gz",
+			Data.feed({source:"http://corsme.herokuapp.com/https://www.mise.gov.it/images/exportCSV/prezzo_alle_8.csv",
 					   type:"csv",
 					   parser: {comments: "Estrazione"}
 					  }).load(function(prezzi){
