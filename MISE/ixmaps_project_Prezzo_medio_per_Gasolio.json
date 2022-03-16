@@ -62,7 +62,7 @@
 					"3colors",
 					"#DDA729"],
 				"shadow": "false",
-				"filter": "WHERE descCarburante.1 like GPL",
+				"filter": "WHERE descCarburante.1 like Gasolio|Diesel",
 				"dbtable": "prezzi_tipo_latlon",
 				"dbtableType": "ext",
 				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/MISE/databroker.js",
@@ -89,7 +89,7 @@
 					"10px",
 					"1:1000000",
 					"5px"],
-				"title": "Prezzo medio per GPL",
+				"title": "Prezzo medio per Gasolio",
 				"snippet": "prezzi praticati alle 8 di mattina",
 				"description": "fonte: <a href='https://www.mise.gov.it/index.php/it/open-data/elenco-dataset/2032336-carburanti-prezzi-praticati-e-anagrafica-degli-impianti' target=''>Ministero dello sviluppo economico</a>",
 				"splash": "caricando dati attuali ..."
