@@ -11,11 +11,11 @@ window.ixmaps = window.ixmaps || {};
 
 		ixmaps.prezzi_tipo_latlon = function(theme,options){
 
-			Data.feed({source:"http://corsme.herokuapp.com/https://www.mise.gov.it/images/exportCSV/anagrafica_impianti_attivi.csv",
+			Data.feed({source:"https://corsme.herokuapp.com/https://www.mise.gov.it/images/exportCSV/anagrafica_impianti_attivi.csv",
 					   type:"csv",
 					   parser: {comments: "Estrazione"}
 					  }).load(function(impianti){
-			Data.feed({source:"http://corsme.herokuapp.com/https://www.mise.gov.it/images/exportCSV/prezzo_alle_8.csv",
+			Data.feed({source:"https://corsme.herokuapp.com/https://www.mise.gov.it/images/exportCSV/prezzo_alle_8.csv",
 					   type:"csv",
 					   parser: {comments: "Estrazione"}
 					  }).load(function(prezzi){
