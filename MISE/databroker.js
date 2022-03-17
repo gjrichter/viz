@@ -11,6 +11,11 @@ window.ixmaps = window.ixmaps || {};
 
 		ixmaps.prezzi_tipo_latlon = function(theme,options){
 
+			var szUrl = "https://corsme.herokuapp.com/https://www.mise.gov.it/images/exportCSV/prezzo_alle_8.csv";		
+			$.get(szUrl,
+				  function(data){
+				  ixmaps.setTitleBox("<span style='font-family:open sans,arial;vertical-align:-1px'>"+data.substr(0,25)+"</span>");
+
 			Data.feed({source:"https://corsme.herokuapp.com/https://www.mise.gov.it/images/exportCSV/anagrafica_impianti_attivi.csv",
 					   type:"csv",
 					   parser: {comments: "Estrazione"}
@@ -29,6 +34,7 @@ window.ixmaps = window.ixmaps || {};
 
 			});	// end Data.feed 1
 			});	// end Data.feed 2
+			});	// end $.get()
 
 		};	// end ixmaps.prezzi_tipo_latlon
 
