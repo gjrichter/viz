@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<!-- **********************************************************************
+
+index_only_map_embed.html
+
+$Comment: ixmaps map template; embedded version
+$Source : index_only_map_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:index_only_map_embed.html 1 2021-10-17 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:index_only_map_embed.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="ixmaps embed example">
+	<meta name="author" content="guenter richter">
+	<link rel="shortcut icon" href="https://gjrichter.github.io/ixmaps/ui/resources/images/ixmaps_logo.png">
+
+	<title>iXMaps test Api 2</title>
+
+</head>
+
+<body>
+	<div id="mymap" style="max-width:1200px"></div>
+
+    <!--========================================================================= -->
+
+	<script src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
+	
+    <!--========================================================================= -->
+
+	<script type="text/javascript" charset="utf-8"> 
+
+		// define the function to query the actual data from AMTAB open data API
+		// this functiuon will be loaded (toString()) into the theme definition
+		
+		query = function(data,options){
+			
+			ixmaps.tmp = ixmaps.tmp || {};
+			ixmaps.tmp.positions = null;
+
+			ixmaps.oldP = ixmaps.oldP || [];
+			ixmaps.lastP = ixmaps.lastP || [];
+			
+			var myFeed = Data.feed({
+				source:"https://corsme.herokuapp.com/https://admin-api-prod.helbizscooters.com//reporting/palermo/gbfs/free_bike_status.json",
+				type:"json"
+			  }).error(function(error){
+				ixmaps.error(error);
+			  }).load(function(json){
+
+				ixmaps.setTitle("");
+
+				var bikes = myFeed.data.data.bikes;
+				
+				for ( i in bikes ){
+					var id = bikes[i].bike_id;
+					ixmaps.oldP[id] = ixmaps.oldP[id] || {}; 
+					ixmaps.lastP[id] = ixmaps.lastP[id] || {};
+					
+					if ( (ixmaps.lastP[id].lat != bikes[i].lat) ||
+					   	 (ixmaps.lastP[id].lon != bikes[i].lon) ){
+						ixmaps.oldP[id].lat = ixmaps.lastP[id].lat || bikes[i].lat;
+						ixmaps.oldP[id].lon = ixmaps.lastP[id].lon || bikes[i].lon;
+					}
+					
+					bikes[i].LastLat = ixmaps.lastP[id].lat || bikes[i].lat;
+					bikes[i].LastLon = ixmaps.lastP[id].lon || bikes[i].lon;
+					ixmaps.lastP[id].lat = bikes[i].lat;
+					ixmaps.lastP[id].lon = bikes[i].lon;
+					
+					bikes[i].OldLat = ixmaps.oldP[id].lat || bikes[i].lat;
+					bikes[i].OldLon = ixmaps.oldP[id].lon || bikes[i].lon;
+					
+					bikes[i].is_moved = (Math.abs(ixmaps.oldP[id].lat-bikes[i].lat) > 0.00005)?"1":"0";
+				}
+
+				ixmaps.bikeUTC = myFeed.data.last_updated;
+				var d = new Date(ixmaps.bikeUTC*1000);
+
+				if ( myFeed.data.data.bikes && myFeed.data.data.bikes.length ){
+					ixmaps.setExternalData(myFeed.data.data.bikes,{"type":"json","name":"free_bike_status"});
+				}else{
+					ixmaps.error("no bike positions");
+					ixmaps.setExternalData(null,{"type":"jsonDB","name":"free_bike_status"});
+				}
+			});
+			
+		};
+
+		// -----------------------------------------------
+		// create the map with GBFS-RT data from AMTAM Bari
+		// 	1 layer lines 
+		//  4 layer vehicle data 
+		// -----------------------------------------------
+			
+		document.activeElement.appendChild(
+
+			ixmaps.embed("mymap", { 
+			  mapCdn: "https://gjrichter.github.io/ixmaps",
+			  mapType: "CartoDB - Positron",
+			  legend: "true"
+			  },
+			  map => map
+				.options({objectscaling:"dynamic",
+						 normalSizeScale:"20000",
+						 dynamicScalePow:"6",
+						 panhidden:"false"})
+				.view([38.125543272620284,13.358044624328613],14)
+				.attribution("Data: <a href='https://admin-api-prod.helbizscooters.com//reporting/palermo/gbfs/free_bike_status.json' target='_blank'>GBFS Palermo</a>")
+				.legend("<h1>Palermo - Helbiz Scooter</h1><h4  style='margin-top:-1em'>Positioni dei veicoli ed informazioni su movimenti<br>dati: <a href='https://admin-api-prod.helbizscooters.com//reporting/palermo/gbfs/free_bike_status.json' target='_blank'>GBFS Palermo</a> - aggiortnati ogni 10 secondi</h4><h4><span style='color:RGB(57,162,225)'>&#9635; scooter fermi; </span><span style='color:RGB(80,185,35)'> &#9635; in movimento&nbsp; </span></h4>")			 
+				.localize("loading data ..."," ") 			 
+				.localize("... refreshing theme ..."," ") 			 
+				.localize("... loading data ...","&#x21E3;") 
+						 
+				// last positions
+						 
+			   .layer(ixmaps.theme("generic")
+				  .data({
+					name: "free_bike_status",
+					type: "ext",
+					query: query.toString(),
+					cache: "false"
+				  })
+				  .binding({
+					position: "LastLat|LastLon",
+					position2: "lat|lon",
+					value: "is_moved"
+			      })
+				  .style({
+					type: "CHART|SYMBOL|SEQUENCE|AGGREGATE|SIZEP3|CATEGORICAL|FAST|SUM|VALUES|COMPACTLEGEND|ANIMATEPOSITION",
+					colorscheme: [
+						"RGB(57,162,225)",
+						"RGB(120,225,35)"],
+					fillopacity:"0.7",
+					textcolor: "white",
+					symbols: [
+						"circle"],
+					values: [
+						"0",
+						"1"],
+					label: [
+						"available",
+						"disabled"],
+					units: "",
+					refreshtimeout: "10000",
+					scale: "1",
+					sizefield: "$item$",
+					valuescale: "1",
+					fadenegative: "1",
+					gridwidth: "5px",
+					name: "chart",
+			   	  })
+				  .meta({
+					title: "Helbiz Palermo",
+					snippet: "<p>last updated: 7/12/54197 14:36:24</p>",
+					splash: "loading and aggregating data ...<br>this may take a bit ...<br>please give me some time ...",
+					description: "free vehicles, aggregated by dynamic grid"
+			      })	  
+				  .define()
+				)
+						 
+				// last position vector
+						 
+			   .layer(ixmaps.theme("generic")
+				  .data({
+					name: "free_bike_status",
+					type: "ext",
+					query: query.toString()
+				  })
+				  .binding({
+					position: "OldLat|OldLon",
+					position2: "lat|lon",
+					value: "$item$"})
+				  .style({
+					type: "CHART|VECTOR|BEZIER|FADEIN|NOSCALE|FAST",
+					colorscheme: [
+						"green",
+						"red"],
+					ranges: "-100,0,100",
+					fillopacity:"0.8",linecolor:"red",linewidth:"0.05",rangescale:"0",
+					scale:"4",refresh:"10"})
+				  .define()
+				)
+			)
+		 ); 			
+
+	</script>	
+	
+	<!-- make a digial clock -->
+		
+	<div id="txt" style="font-family:open sans;font-size:1.35em;font-weight:bold;color:#666666;position:absolute;top:25px;left:20px"></div>
+
+	<script>
+		function startTime() {
+		  const today = new Date();
+		  let h = today.getHours();
+		  let m = today.getMinutes();
+		  let s = today.getSeconds();
+		  m = checkTime(m);
+		  s = checkTime(s);
+		  document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+		  setTimeout(startTime, 1000);
+		}
+
+		function checkTime(i) {
+		  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+		  return i;
+		}
+		startTime();
+	</script>
+	
+  </body>
+</html>
