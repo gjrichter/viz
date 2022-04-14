@@ -6,7 +6,7 @@
 		"description": "",
 		"thumbnail": "",
 		"about": "",
-		"created": "Wed Apr 13 2022 15:39:39 GMT+0200 (Ora legale dell’Europa centrale)"
+		"created": "Thu Apr 14 2022 16:30:10 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Francia/francia_comuni_2022_bounds.svgz",
@@ -48,46 +48,28 @@
 			"flushPaintShape": "1000000",
 			"flushChartDraw": "1000000",
 			"basemapopacity": "1",
-			"panHidden": "true"
+			"panHidden": "false"
 			},
 		"center": {
-			"lat": "46.210249600187225",
+			"lat": "46.21785176740301",
 			"lng": "4.636230468750001"
 			},
 		"zoom": "6"
 		},
 	"themes": [{
 			"layer": "COMUNI_2022",
-			"field": "MACRON|LE PEN|MÉLENCHON|PÉCRESSE|LASSALLE|DUPONT-AIGNAN|ZEMMOUR|JADOT|HIDALGO|ROUSSEL|POUTOU|ARTHAUD",
+			"field": "MACRON|LE PEN|MÉLENCHON",
 			"field100": "",
 			"style": {
-				"type": "CHOROPLETH|DOMINANT|SIMPLELEGEND",
+				"type": "CHOROPLETH|COMPOSECOLOR|SUBTRACTIVE|DOPACITYMAX|SIMPLELEGEND",
 				"colorscheme": [
-					"#FF9F0E",
-					"#8D6026",
-					"#FF3333",
-					"#0890C5",
-					"#617B75",
-					"#2443A7",
-					"#654519",
-					"#23B73D",
-					"#FF6D90",
-					"#F1001C",
-					"#CE2929",
-					"#9D0D16"],
+					"#FFA006",
+					"#0492C7",
+					"#FF688D"],
 				"label": [
 					"E.Macron",
 					"M.Le Pen",
-					"J-L.Mélenchon",
-					"V.Précresse",
-					"J.Lassalle",
-					"N.Dupont-Aignan",
-					"E.Zemmour",
-					"Y.Jadot",
-					"A.Hidalgo",
-					"F.Roussel",
-					"P.Poutou",
-					"N.Arthaud"],
+					"J-L.Mélenchon"],
 				"opacity": "1",
 				"fillopacity": "1",
 				"shadow": "false",
@@ -100,19 +82,17 @@
 				"units": "",
 				"refreshtimeout": "0",
 				"scale": "1",
-				"dopacitypow": "0.4",
-				"dopacityscale": "3",
+				"alphafield": "Inscrits",
+				"alphafield100": "$density$",
+				"dopacitypow": "2",
+				"dopacityscale": "12",
+				"brightness": "1.3",
 				"valuescale": "1",
 				"valuedecimals": "0",
-				"dominantfilter": "min",
-				"dominantdfilter": "0",
 				"title": "Élections présidentielle 2022 - Premier tour",
 				"description": "<a href='https://www.data.gouv.fr/fr/datasets/election-presidentielle-des-10-et-24-avril-2022-resultats-du-1er-tour/' target='_blank'>data.gouv.fr<a>"
 				}
 			}],
 	"layerMask": {
-		"World Mercator": {
-			"display": "none"
-			}
 		}
 	}

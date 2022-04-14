@@ -61,7 +61,7 @@
 			"field": "MACRON|LE PEN|MÉLENCHON|PÉCRESSE|LASSALLE|DUPONT-AIGNAN|ZEMMOUR|JADOT|HIDALGO|ROUSSEL|POUTOU|ARTHAUD",
 			"field100": "",
 			"style": {
-				"type": "CHOROPLETH|DOMINANT|SIMPLELEGEND",
+				"type": "CHOROPLETH|DOMINANT|DOPACITYMAX|SIMPLELEGEND",
 				"colorscheme": [
 					"#FF9F0E",
 					"#8D6026",
@@ -100,8 +100,10 @@
 				"units": "",
 				"refreshtimeout": "0",
 				"scale": "1",
-				"dopacitypow": "0.4",
-				"dopacityscale": "3",
+				"alphafield": "Inscrits",
+				"alphafield100": "$density$",
+				"dopacitypow": "1.5",
+				"dopacityscale": "30",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"dominantfilter": "min",
