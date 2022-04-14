@@ -11,7 +11,7 @@
 	"map": {
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Francia/francia_comuni_2022.svgz",
 		"attribution": "iXMaps",
-		"basemap": "CartoDB - Positron",
+		"basemap": "white",
 		"legend": "",
 		"item": "",
 		"scaleParam": {
