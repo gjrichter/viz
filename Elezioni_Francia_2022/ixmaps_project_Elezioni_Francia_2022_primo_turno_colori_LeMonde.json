@@ -61,7 +61,7 @@
 			"field": "MACRON|LE PEN|MÉLENCHON|PÉCRESSE|LASSALLE|DUPONT-AIGNAN|ZEMMOUR|JADOT|HIDALGO|ROUSSEL|POUTOU|ARTHAUD",
 			"field100": "",
 			"style": {
-				"type": "CHOROPLETH|DOMINANT|SIMPLELEGEND",
+				"type": "CHOROPLETH|DOMINANT|HORZ|SORT|SIMPLELEGEND",
 				"colorscheme": [
 					"#FF9F0E",
 					"#8D6026",
@@ -97,7 +97,7 @@
 				"dbtableProcess": "function(data,options){data.column(\"Code du département\").map(function(value){if(value.match(/Z/))return(\"97\");return value;});data.addColumn({destination:\"code\"},function(row){return(row[0]+row[2])});return data;}",
 				"datacache": "true",
 				"lookupfield": "code",
-				"units": "",
+				"units": "%",
 				"refreshtimeout": "0",
 				"scale": "1",
 				"dopacitypow": "0.4",
@@ -106,6 +106,7 @@
 				"valuedecimals": "0",
 				"dominantfilter": "min",
 				"dominantdfilter": "0",
+				"titlefield": "Libellé de la commune",
 				"title": "Élections présidentielle 2022 - Premier tour",
 				"description": "<a href='https://www.data.gouv.fr/fr/datasets/election-presidentielle-des-10-et-24-avril-2022-resultats-du-1er-tour/' target='_blank'>data.gouv.fr<a>"
 				}
