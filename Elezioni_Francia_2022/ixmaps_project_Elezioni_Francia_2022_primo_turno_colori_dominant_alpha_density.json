@@ -66,6 +66,10 @@
 					"#FFA006",
 					"#0492C7",
 					"#FF688D"],
+				"label": [
+					"E.Macron",
+					"M.Le Pen",
+					"J-L.Mélenchon"],
 				"opacity": "1",
 				"fillopacity": "1",
 				"shadow": "false",
