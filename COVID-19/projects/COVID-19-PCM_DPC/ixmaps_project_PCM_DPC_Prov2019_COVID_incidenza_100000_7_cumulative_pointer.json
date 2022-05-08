@@ -150,7 +150,6 @@
 					"100000"],
 				"units": "nuovi casi x 100 000",
 				"refreshtimeout": "0",
-				"normalsizevalue": "200",
 				"scale": "1",
 				"rangescale": "1",
 				"dopacitypow": "1",
