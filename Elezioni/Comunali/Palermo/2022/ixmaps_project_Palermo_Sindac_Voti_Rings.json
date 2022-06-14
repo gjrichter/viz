@@ -81,7 +81,7 @@
 			"field": "Candidato Sindaco",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|CENTERVALUES|AGGREGATE|CATEGORICAL|SUM|VALUES",
+				"type": "CHART|SYMBOL|SEQUENCE|CENTERVALUES|AGGREGATE|CATEGORICAL|SUM",
 				"colorscheme": [
 					"#0067B7",
 					"#FF2600",
