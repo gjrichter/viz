@@ -74,6 +74,24 @@
 				"title": "layer"
 				}
 			},{
+			"layer": "circoscrizioni",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND",
+				"colorscheme": [
+					"RGBA(255,255,255,0.1)"],
+				"linecolor": "#aaaaaa",
+				"linewidth": "2",
+				"dbtable": "circoscrizioni",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Palermo/palermo_circoscrizioni.geojson",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "name",
+				"lookupfield": "geometry",
+				"title": "layer"
+				}
+			},{
 			"layer": "seggi_elettorali",
 			"field": "Candidato Sindaco",
 			"field100": "",
