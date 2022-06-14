@@ -2,7 +2,7 @@
 
 Visualizzazioni cartografiche sulla base di dati pubblicati dalla Città di Palermo.
 
-Fonte:  <a href="https://risultatipalermo.maggiolicloud.it/web2206/htm/comunali/ODTOT_1_82053.xml" target="_blank">Elezioni Comunali - PALERMO Open Data</a> (dati su ca 95% dei seggi)
+Fonte:  <a href="https://risultatipalermo.maggiolicloud.it/web2206/htm/comunali/ODTOT_1_82053.xml" target="_blank">Elezioni Comunali - PALERMO Open Data</a> 
 
 In seguito  varie mappe per valutare il risultato sul territorio:
 
