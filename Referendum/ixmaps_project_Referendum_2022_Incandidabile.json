@@ -1,0 +1,117 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Wed Jun 15 2022 17:26:21 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/regioni_2018/italia_regioni_2018_g_nome_upper.svgz",
+		"attribution": "powered by iXMaps, dati: <a href=\"https://github.com/ondata/elezioni_2022\" target=\"_blank\">onData</a>",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>Referendum 2020</h1><h2>'Abrogazione del Testo unico delle disposizioni in materia di incandidabilità e di divieto di ricoprire cariche elettive e di Governo conseguenti a sentenze definitive di condanna per delitti non colposi'</h2><h2>dati: <a href='https://github.com/ondata/elezioni_2022' target='_blank'>onData</a></h2>",
+		"item": "html",
+		"scaleParam": {
+			"normalSizeScale": "6920521"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "100000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "41.672911819602085",
+			"lng": "15.479736328125002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "Com2019_name_upper",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"dbtable": "COMUNI",
+				"dbtableUrl": "https://gjrichter.github.io/viz/Amministratori/comuni_2019_U.geojson",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "PRO_COM_T",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0",
+				"valuescale": "1",
+				"title": "Italy Comuni 2019"
+				}
+			},{
+			"layer": "Com2019_name_upper",
+			"field": "voti_si",
+			"field100": "vot_t",
+			"style": {
+				"type": "CHART|PIE|AUTOCOMPLETE|MULTIPLE|UP|AGGREGATE|RECT|SIZEP3|AUTOSIZE|SUM|VALUES|NOLEGEND",
+				"colorscheme": [
+					"#73D672"],
+				"fillopacity": "0.9",
+				"shadow": "true",
+				"filter": "WHERE \"desc\" = \"Abrogazione del Testo unico delle disposizioni in materia di incandidabilità e di divieto di ricoprire cariche elettive e di Governo conseguenti a sentenze definitive di condanna per delitti non colposi.\"",
+				"dbtable": "ammcom_pivot",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/elezioni_2022/main/referendum/output/scrutini.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "CODICE ISTAT",
+				"showdata": "true",
+				"symbols": [
+					"circle"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"scale": "1.5",
+				"valuefield": "$title$",
+				"sizefield": "vot_t",
+				"minvalue": "1",
+				"textcolor": "#666666",
+				"textscale": "3",
+				"linewidth": "0.1",
+				"bordercolor": "black",
+				"borderwidth": "0.2",
+				"boxopacity": "0.05",
+				"nodatacolor": "RGB(247,102,95)",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridwidthpx": "50",
+				"title": "Referendum 2020 - schede bianche",
+				"snippet": "la percentuale delle schede bianche",
+				"description": ""
+				}
+			}],
+	"layerMask": {
+		}
+	}
