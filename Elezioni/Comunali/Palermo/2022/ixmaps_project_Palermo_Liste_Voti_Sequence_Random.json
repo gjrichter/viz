@@ -1,0 +1,178 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Tue Jun 14 2022 18:13:18 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "data: <a href=\"https://risultatipalermo.maggiolicloud.it/web2206/htm/comunali/ODTOT_1_82053.xml\" target=\"_blank\">Città di Palermo - Open Data - Elezioni Comunali</a>",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "100000"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"scrollSafeSilent": "true",
+			"mapopacity": "1",
+			"flushChartDraw": "1000",
+			"basemapopacity": "1",
+			"panHidden": "true"
+			},
+		"center": {
+			"lat": "38.11568475170349",
+			"lng": "13.378086090087892"
+			},
+		"zoom": "14"
+		},
+	"themes": [{
+			"layer": "seggi_elettorali",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"dbtable": "DBTABLE93081502",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Palermo/seggi_elettorali.geojson",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "sezione",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0",
+				"valuescale": "1",
+				"title": "layer"
+				}
+			},{
+			"layer": "circoscrizioni",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND",
+				"colorscheme": [
+					"RGBA(255,255,255,0.1)"],
+				"shadow": "false",
+				"dbtable": "circoscrizioni",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Palermo/palermo_circoscrizioni.geojson",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "name",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"#aaaaaa"],
+				"linewidth": "2",
+				"valuescale": "1",
+				"title": "layer"
+				}
+			},{
+			"layer": "seggi_elettorali",
+			"field": "Nome Lista",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|STAR|SORT|RANDOM|DOPACITY|AGGREGATE|CATEGORICAL|SUM|SUM|DTEXT|VALUES",
+				"colorscheme": [
+					"#FF4707",
+					"#21A3EC",
+					"#1E598D",
+					"#334F82",
+					"#41A22D",
+					"#C13D22",
+					"#FEE600",
+					"#0067B7",
+					"#297DBA",
+					"#FF2800",
+					"#C0E3FA",
+					"#21A4ED",
+					"#1F5D92",
+					"#B1380D",
+					"#171415",
+					"#FAA000",
+					"#2A57A6",
+					"#59C11D",
+					"#294E63",
+					"#962719"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "DBTABLE84070361",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Palermo/VotiSEZ_Liste_82053.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "sezione",
+				"showdata": "true",
+				"symbols": [
+					"circle"],
+				"values":[
+					"PARTITO DEMOCRATICO",
+					"FORZA ITALIA-BERLUSCONI",
+					"FRATELLI D'ITALIA",
+					"LAVORIAMO PER PALERMO",
+					"AZIONE CON CALENDA FERRANDELLI SINDACO + EUROPA",
+					"PROGETTO PALERMO",
+					"LISTA MOVIMENTO CINQUE STELLE",
+					"DEMOCRAZIA CRISTIANA",
+					"PRIMA L'ITALIA",
+					"SINISTRA CIVICA ECOLOGISTA",
+					"ALLEANZA PER PALERMO",
+					"LAGALLA SINDACO UNIONE DI CENTRO",
+					"NOI CON L'ITALIA - LAGALLA SINDACO",
+					"RITA BARBERA SINDACA",
+					"RINASCITA PALERMO DONATO SINDACO",
+					"E TU SPLENDI PALERMO",
+					"SICILIANI LIBERI-POPOLO DELLA FAMIGLIA-CON PARAGONE PALERMO NON MOLLA MAI-CIRO LOMONTE SINDACO",
+					"ROMPI IL SISTEMA - FERRANDELLI SINDACO",
+					"MODERATI PER LAGALLA SINDACO",
+					"POTERE AL POPOLO!"
+					],
+ 				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1000",
+				"scale": "1",
+				"sizefield": "Voti validi",
+				"valuescale": "1",
+				"centerpart": "max",
+				"evidence": "isolate_gray",
+				"title": "Voti validi per lista",
+				"snippet": "dati: <a href=\"https://risultatipalermo.maggiolicloud.it/web2206/htm/comunali/ODTOT_1_82053.xml\" target=\"_blank\">Città di Palermo - Open Data - Elezioni Comunali</a>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
