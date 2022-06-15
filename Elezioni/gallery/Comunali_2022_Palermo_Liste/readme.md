@@ -23,7 +23,11 @@ codice per includere la mappa in una pagina HTML:
 ```javascript
 <iframe id="map" width="100%" height="900" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Comunali/Palermo/2022/ixmaps_project_Palermo_Liste_Voti_Sequence_Random.json"></iframe>
 ```
+<br><br>
+## le 3  liste con il numero più alto di voti
 
+
+I risultati sono aggregati per i luoghi fisici dei seggi elettorali 
 
 <iframe id="map" width="100%" height="840" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Comunali/Palermo/2022/ixmaps_project_Palermo_Liste_Voti_Sequence_3.json?id=123"></iframe>
 codice per includere la mappa in una pagina HTML:
