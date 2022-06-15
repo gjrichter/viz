@@ -1,0 +1,124 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Wed Jun 15 2022 18:47:53 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "100000"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "10000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "50.88153913009135",
+			"lng": "4.73012924194336"
+			},
+		"zoom": "14"
+		},
+	"themes": [{
+			"layer": "FEATURES",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://telraam.net/api/segments/traffic-snapshot",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "segment_id",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1.25",
+				"linewidth": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "[title]"
+				}
+			},{
+			"layer": "FEATURES",
+			"field": "heavy|car|bike|pedestrian",
+			"field100": "",
+			"style": {
+				"type": "CHART|PIE|DONUT|SIZE|VALUES|VALUEBACKGROUND|AGGREGATE|RELOCATE|SUM",
+				"colorscheme": [
+					"black",
+					"red",
+					"#0088dd",
+					"#88dd00"],
+				"label": [
+					"heavy",
+					"car",
+					"bike",
+					"pedestrian"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://telraam.net/api/segments/traffic-snapshot",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"lookupfield": "segment_id",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "500",
+				"scale": "1",
+				"valueupper": "1:10000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"gridwidth": "50px",
+				"centerpart": "max",
+				"title": "Telraam",
+				"snippet": "last hour measurements"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
