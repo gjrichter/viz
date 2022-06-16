@@ -96,6 +96,7 @@
 				"scale": "1.5",
 				"valuefield": "$title$",
 				"sizefield": "vot_t",
+				"titlefield": "CODICE ISTAT",
 				"minvalue": "1",
 				"textcolor": "#666666",
 				"textscale": "3",
