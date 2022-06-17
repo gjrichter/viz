@@ -28,7 +28,7 @@ codice per includere la mappa in una pagina HTML:
 <iframe id="map" width="100%" height="900" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&legend=1&name=map3&sync=false&footer=true&project=https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Comunali/Palermo/2022/ixmaps_project_Palermo_Sindac_Voti_Sezioni_Deviation.json"></iframe>
 ```
 
-## la percentuale voti compone il colore - candidati  sindaco
+## la percentuale dei voti compone il colore - candidati  sindaco
 
 il colore di una sezione viene mescolato dai colori dei candidati sindaco in proporzione al percentuale del candidato
 
