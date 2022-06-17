@@ -2,6 +2,8 @@
 
 Visualizzazioni cartografiche sulla base di dati pubblicati dalla Città di Palermo e poligoni delle sezioni elettorali italiane creati da Gabriele Pinto.
 
+In tutte le mappe l'intensità dei colori rappresenta la densità dei votanti. 
+
 Per maggiori informazioni sul metodo della determinazione dei sezioni elettorali  vedi <a href="https://github.com/gabrielepinto/dati-sezioni-elettorali" target="_blank">qui</a> 
 
 Fonte:  <a href="https://risultatipalermo.maggiolicloud.it/web2206/htm/comunali/ODTOT_1_82053.xml" target="_blank">Elezioni Comunali - PALERMO Open Data</a> 
