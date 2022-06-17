@@ -84,7 +84,7 @@
 			"field": "Lagalla Roberto|Miceli Francesco|Ferrandelli Fabrizio|Lomonte Ciro|Barbera Giuseppa|Donato Francesca",
 			"field100": "Totale Risultato",
 			"style": {
-				"type": "CHOROPLETH|DOMINANT|DOPACITY|HORZ|SORT|SUM|COMPACTLEGEND",
+				"type": "CHOROPLETH|DOMINANT|DOPACITY|HORZ|SORT|SUM|SIMPLELEGEND",
 				"colorscheme": [
 					"#0067B7",
 					"#FF2600",
