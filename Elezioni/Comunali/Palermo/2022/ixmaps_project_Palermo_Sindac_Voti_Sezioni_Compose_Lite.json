@@ -1,0 +1,129 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Fri Jun 17 2022 10:04:20 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "108133"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"mapopacity": "1",
+			"flushChartDraw": "1000",
+			"basemapopacity": "1",
+			"panHidden": "true"
+			},
+		"center": {
+			"lat": "38.11895981896271",
+			"lng": "13.367614746093752"
+			},
+		"zoom": "13"
+		},
+	"themes": [{
+			"layer": "precints",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURE|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"dbtable": "themeDataObj1",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Palermo/precincts_palermo_census_area.geojson",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "SEZIONE",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"sizefield": "Shape_Area",
+				"linecolor": [
+					"white"],
+				"linewidth": "0.1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "[title]"
+				}
+			},{
+			"layer": "precints",
+			"field": "Lagalla Roberto|Miceli Francesco|Ferrandelli Fabrizio|Lomonte Ciro|Barbera Giuseppa|Donato Francesca",
+			"field100": "Totale Risultato",
+			"style": {
+				"type": "CHOROPLETH|COMPOSECOLOR|DOPACITY|HORZ|SORT|SUM|COMPACTLEGEND",
+				"colorscheme": [
+					"#0067B7",
+					"#FF2600",
+					"#59C11D",
+					"#2A57A6",
+					"#B03606",
+					"#FB8238"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "DBTABLE84070361",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Palermo/VotiSEZ_Sind_82053_pivot.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "sezione",
+				"showdata": "true",
+				"symbols": [
+					"roundrect"],
+				"label": [
+					"Lagalla Roberto",
+					"Miceli Francesco",
+					"Ferrandelli Fabrizio",
+					"Lomonte Ciro",
+					"Barbera Giuseppa",
+					"Donato Francesca"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"alphafield": "Totale Risultato",
+				"alphafield100": "$density$",
+				"dopacitypow": "1.9531250000000004",
+				"dopacityscale": "0.6871947673600012",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Elezioni Sindaco 2022"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
