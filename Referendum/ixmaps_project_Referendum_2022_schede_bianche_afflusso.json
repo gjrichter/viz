@@ -1,0 +1,159 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Fri Jun 17 2022 09:13:02 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/regioni_2018/italia_regioni_2018_g_nome_upper.svgz",
+		"attribution": "powered by iXMaps, dati: <a href=\"https://github.com/ondata/elezioni_2022\" target=\"_blank\">onData</a>",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>Referendum 2020</br>Quorum e schede bianche</h1><h4>Le <b>dimensioni dei pallini</b> sono <b>proporzionali al afflusso</b>, la percentuale di persone avendo diritto che hanno votato, e si trova anche sotto ai grafici in modo testuale.</h4><h4>La <b>percentuale delle schede bianche</b> viene calcolata dalle somme dei votanti e schede bianche aggregati per la griglia</h4><h2>dati: <a href='https://github.com/ondata/elezioni_2022' target='_blank'>onData</a></h2>",
+		"item": "html",
+		"scaleParam": {
+			"normalSizeScale": "6920521"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "100000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "true"
+			},
+		"center": {
+			"lat": "37.54131068652799",
+			"lng": "14.249267578125002"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "Com2019_name_upper",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"dbtable": "COMUNI",
+				"dbtableUrl": "https://gjrichter.github.io/viz/Amministratori/comuni_2019_U.geojson",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "PRO_COM_T",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0",
+				"valuescale": "1",
+				"title": "Italy Comuni 2019"
+				}
+			},{
+			"layer": "Com2019_name_upper",
+			"field": "perc_vot",
+			"field100": "",
+			"style": {
+				"type": "CHART|LABEL|AGGREGATE|RECT|SIZEP3|MEAN|VALUES|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "0.9",
+				"shadow": "false",
+				"filter": "WHERE \"desc\" = \"Separazione delle funzioni dei magistrati. Abrogazione delle norme in materia di ordinamento giudiziario che consentono il passaggio dalle funzioni giudicanti a quelle requirenti e viceversa nella carriera dei magistrati.\"",
+				"dbtable": "ammcom_pivot",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/elezioni_2022/main/referendum/output/scrutini.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "CODICE ISTAT",
+				"showdata": "true",
+				"symbols": [
+					"circle"],
+				"units": "%",
+				"align": "top",
+				"refreshtimeout": "0",
+				"normalsizevalue": "500",
+				"scale": "1",
+				"sizefield": "perc_vot",
+				"minvalue": "1",
+				"textcolor": "#aaaaaa",
+				"textscale": "3",
+				"linewidth": "0.1",
+				"bordercolor": "black",
+				"borderwidth": "0.2",
+				"boxopacity": "0.05",
+				"nodatacolor": "RGBA(128,128,128,0.1)",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"gridwidthpx": "50",
+				"title": "Referendum 2020 - schede bianche",
+				"snippet": "la percentuale delle schede bianche",
+				"description": ""
+				}
+			},{
+			"layer": "Com2019_name_upper",
+			"field": "sk_bianche",
+			"field100": "vot_t",
+			"style": {
+				"type": "CHART|PIE|AUTOCOMPLETE|MULTIPLE|UP|AGGREGATE|RECT|SIZE|MAX|VALUES|NOLEGEND",
+				"colorscheme": [
+					"white"],
+				"fillopacity": "0.9",
+				"shadow": "true",
+				"filter": "WHERE \"desc\" = \"Separazione delle funzioni dei magistrati. Abrogazione delle norme in materia di ordinamento giudiziario che consentono il passaggio dalle funzioni giudicanti a quelle requirenti e viceversa nella carriera dei magistrati.\"",
+				"dbtable": "ammcom_pivot",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/elezioni_2022/main/referendum/output/scrutini.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "CODICE ISTAT",
+				"showdata": "true",
+				"symbols": [
+					"circle"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"normalsizevalue": "200",
+				"scale": "1",
+				"sizefield": "perc_vot",
+				"minvalue": "1",
+				"textcolor": "#ffffff",
+				"textscale": "3",
+				"linewidth": "0.1",
+				"bordercolor": "black",
+				"borderwidth": "0.2",
+				"boxopacity": "0.05",
+				"nodatacolor": "RGBA(128,128,128,0.1)",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridwidthpx": "50",
+				"title": "Referendum 2020 - schede bianche",
+				"snippet": "la percentuale delle schede bianche",
+				"description": ""
+				}
+			}],
+	"layerMask": {
+		}
+	}
