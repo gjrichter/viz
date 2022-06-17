@@ -20,6 +20,7 @@ codice per includere la mappa in una pagina HTML:
 <br>
 ### valutato con il quorum
 In questa visualizzazione la **grandezza** dei grafici è **proporzionale al afflusso**.
+
 I risultati sono aggregati per una griglia rettangolare. Ingrandendo la mappa l'aggregazione viene ricalcolata fino alla risoluzione per singoli comuni.
 
 
