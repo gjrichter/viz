@@ -1,0 +1,175 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Fri Dec 17 2021 21:01:39 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
+		"attribution": "iXMaps",
+		"basemap": "white",
+		"legend": "<div style='color:#777777'><h1></h1><h1>COVID-19 <br> <b style='color:#00aacc'>ospedalizzati </b> e <b style='color:#F28E2B'>in terapia intensiva</b> <br> ultimi <b>56</b> giorni</h1><h4>Le <b>curve</b> mostrano <b>l'incidenza</b> delle persone ospedalizzati o in terapia intensiva, misurati in <b>casi</b> per <b>100.000</b> abitanti smussati per una <b>media di 7 giorni</b>.</h4><h4><b>Nota bene:</b> le due curve hanno scale diverse per poter confrontarli; <b style='color:#00aacc'>0 - 50</b> vs <b style='color:#F28E2B'>0 - 5</b></h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
+		"item": "html",
+		"scaleParam": {
+			"lineScaling": "4.213991769547325",
+			"normalSizeScale": "4638029"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"worksilent": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "42.553080288955826",
+			"lng": "15.106201171875002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "regioni_nuts2",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"#e8e8e8"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "Regioni",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/nuts/main/processing/NUTS2_g.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "NUTS2",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "features",
+				"title": "Italy nuts2"
+				}
+			},{
+			"layer": "generic_chart",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|COLOR|BOX|FIXSIZE|SUM|NOLEGEND|NOOUTLIER",
+				"colorscheme": [
+					"#00aacc"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_HOSPITALIZED_SEQUENCE_MEAN_7_INCIDENCE_56",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC_regioni_new/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "false",
+				"itemfield": "codice_regione",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"units": "ospedalizzati per 100.000 abitanti",
+				"align": "23right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "0.8",
+				"scale": "0.05",
+				"rangescale": "1",
+				"minvalue": "0",
+				"maxvalue": "50",
+				"textcolor": "#880000",
+				"linewidth": "35",
+				"bordercolor": "none",
+				"boxopacity": "0",
+				"boxmargin": "10",
+				"titlefield": "denominazione_regione",
+				"titleupper": "1:3000000",
+				"boxupper": "1:10000000",
+				"valuescale": "1",
+				"valuedecimals": "2",
+				"fadenegative": "1",
+				"title": "Persone decedute - media mobile 7 giorno",
+				"snippet": "dal 23/10/2021 al 16/12/2021"
+				}
+			},{
+			"layer": "generic_chart",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|RIGHT|COLOR|BOX|TITLE|FIXSIZE|SUM|NOLEGEND|NOOUTLIER",
+				"colorscheme": [
+					"#F28E2B"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_INTENSIVE_SEQUENCE_MEAN_7_INCIDENCE_56",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC_regioni_new/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "false",
+				"itemfield": "codice_regione",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"units": "in terapia intensiva per 100.000 abitanti",
+				"align": "23right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "0.8",
+				"scale": "0.05",
+				"rangescale": "1",
+				"minvalue": "0",
+				"maxvalue": "5",
+				"textcolor": "#880000",
+				"linewidth": "35",
+				"bordercolor": "none",
+				"boxopacity": "0",
+				"boxmargin": "10",
+				"titlefield": "denominazione_regione",
+				"titleupper": "1:3000000",
+				"boxupper": "1:10000000",
+				"valuescale": "1",
+				"valuedecimals": "2",
+				"fadenegative": "1",
+				"title": "Persone decedute - media mobile 7 giorno",
+				"snippet": "dal 23/10/2021 al 16/12/2021"
+				}
+			}],
+	"layerMask": {
+		"Prov2019_nome": {
+			"display": "none"
+			}
+		}
+	}

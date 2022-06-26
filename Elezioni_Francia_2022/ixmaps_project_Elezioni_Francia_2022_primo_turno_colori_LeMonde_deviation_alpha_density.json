@@ -1,0 +1,121 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Wed Apr 13 2022 15:39:39 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Francia/francia_comuni_2022_bounds.svgz",
+		"attribution": "iXMaps",
+		"basemap": "white",
+		"legend": "",
+		"item": "",
+		"layout": "minimal",
+		"scaleParam": {
+			"lineScaling": "0.2",
+			"normalSizeScale": "177165354"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"mapopacity": "1",
+			"flushPaintShape": "1000000",
+			"flushChartDraw": "1000000",
+			"basemapopacity": "1",
+			"panHidden": "true"
+			},
+		"center": {
+			"lat": "46.210249600187225",
+			"lng": "4.636230468750001"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "COMUNI_2022",
+			"field": "MACRON|LE PEN|MÉLENCHON|PÉCRESSE|LASSALLE|DUPONT-AIGNAN|ZEMMOUR|JADOT|HIDALGO|ROUSSEL|POUTOU|ARTHAUD",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|DOMINANT|DEVIATION|DOPACITYMAX|SIMPLELEGEND",
+				"colorscheme": [
+					"#FF9F0E",
+					"#8D6026",
+					"#FF3333",
+					"#0890C5",
+					"#617B75",
+					"#2443A7",
+					"#654519",
+					"#23B73D",
+					"#FF6D90",
+					"#F1001C",
+					"#CE2929",
+					"#9D0D16"],
+				"label": [
+					"E.Macron",
+					"M.Le Pen",
+					"J-L.Mélenchon",
+					"V.Précresse",
+					"J.Lassalle",
+					"N.Dupont-Aignan",
+					"E.Zemmour",
+					"Y.Jadot",
+					"A.Hidalgo",
+					"F.Roussel",
+					"P.Poutou",
+					"N.Arthaud"],
+				"opacity": "1",
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ElezioniFrancia2022/resultats-par-niveau-subcom-t1-france-small.csv.gz",
+				"dbtableType": "csv",
+				"dbtableProcess": "function(data,options){data.column(\"Code du département\").map(function(value){if(value.match(/Z/))return(\"97\");return value;});data.addColumn({destination:\"code\"},function(row){return(row[0]+row[2])});return data;}",
+				"datacache": "true",
+				"lookupfield": "code",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"alphafield": "Inscrits",
+				"alphafield100": "$density$",
+				"dopacitypow": "1.5",
+				"dopacityscale": "30",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"dominantfilter": "min",
+				"dominantdfilter": "0",
+				"titlefield": "Libellé de la commune",
+				"title": "Élections présidentielle 2022 - Premier tour",
+				"description": "The color shows the candidate with the best result resp. his own mean result.<br>Please <b>click on a color</b> to see only this candidate.<br><a href='https://www.data.gouv.fr/fr/datasets/election-presidentielle-des-10-et-24-avril-2022-resultats-du-1er-tour/' target='_blank'>data.gouv.fr<a>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

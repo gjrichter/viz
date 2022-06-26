@@ -1,0 +1,90 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Thu Feb 13 2020 16:45:04 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3-eu-west-1.amazonaws.com/cdn.ixmaps.com/ixmaps/maps/svg/maps/world_base_ISO/world_ISO3_winkel_soft.svgz",
+		"attribution": "",
+		"basemap": "black",
+		"legend": "",
+		"layout": "minimal",
+		"scaleParam": {
+			"normalSizeScale": "55364168"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "19.973348786110613",
+			"lng": "33.22265625000001"
+			},
+		"zoom": "2"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "AREA",
+			"field100": "H75_AREA",
+			"style": {
+				"type": "CHART|LOG|DIFFERENCE|RELATIVE|BUBBLE|COMPATIBLE|GLOW|",
+				"colorscheme": [
+					"5",
+					"RGB(207,255,51)",
+					"RGB(221,0,0)",
+					"3colors",
+					"RGB(148,204,200)"],
+				"opacity": "0.9",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/EuroStat/GHS_STAT_UCDB2015MT_GLOBE_R2019A_V1_1.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "GCPNT_LAT|GCPNT_LON",
+				"units": "%",
+				"refreshtimeout": "0",
+				"normalsizevalue": "10000",
+				"scale": "1",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "Urban expansion",
+				"description": "data: GHSL Global Urban Centre Database 2015",
+				"splash":"loading data ..."
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

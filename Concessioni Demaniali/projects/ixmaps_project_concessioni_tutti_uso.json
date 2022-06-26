@@ -1,0 +1,120 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sat Mar 05 2022 20:18:53 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/ConcessioniBalneari/oggetti_demaniali.svgz",
+		"attribution": "dati: <a href=\"https://dati.mit.gov.it/catalog/dataset/concessioni-demaniali-marittime-a-maggio-2021\" target=\"_blank\">Ministero delle Infrastrutture</a>, trasformati da A.Borruso",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "3492872"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"dynamicScalePow": "3",
+			"mapopacity": "1",
+			"flushChartDraw": "1000",
+			"basemapopacity": "1",
+			"panHidden": "true"
+			},
+		"center": {
+			"lat": "42.65820178455667",
+			"lng": "14.930419921875002"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "generic",
+			"field": "uso",
+			"field100": "",
+			"style": {
+				"type": "CHART|GLOW|SYMBOL|SEQUENCE|CENTER|SORT|UP|RINGS|UNDEFINEDISVALUE|AGGREGATE|RELOCATE|CATEGORICAL|SUM|LEGEND",
+				"colorscheme": [
+					"9",
+					"tableau10"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "DBTABLE86100153",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ConcessioniDemaniali/concessioni.csv.gz",
+				"dbtableType": "csv",
+				"dbtableProcess": "function(data,options){ data.addColumn({source:\"scadenza\",destination:\"scaduto\"},(value)=>{ var valueA = value.split(\"/\"); var scad = new Date(valueA[2]+\"/\"+valueA[1]+\"/\"+valueA[0]); var act = new Date(); return (Math.floor((act.getTime() - scad.getTime())/(1000*60*60*24*356))); }); data.addColumn({source:\"scaduto\",destination:\"scaduto_classi\"},(years)=>{ if (years < 0) {return \"non scaduta\";} if (years <= 10) {return \"scaduta da 1 a 10 annni\";} if (years > 10 ) {return \"scaduta da più di 10 anni\";} return (\"\"); }); return data; }",
+				"datacache": "true",
+				"lookupfield": "ycoord|xcoord",
+				"showdata": "true",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0.25",
+				"valuefield": "canone",
+				"glowlower": "1:50000",
+				"valuescale": "1",
+				"gridwidthpx": "2",
+				"title": "Concessioni & Scadenze",
+				"description": "singole concessioni e strutture visibili con zoom"
+				}
+			},{
+			"layer": "generic",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|LABEL|TEXTONLY|SIZEP4|CATEGORICAL|VALUES|SUM",
+				"colorscheme": [
+					"#dddddd"],
+				"textcolor":"#888888",
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ConcessioniDemaniali/concessioni.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "ycoord|xcoord",
+				"showdata": "true",
+				"units": "€",
+				"align": "2left",
+				"refreshtimeout": "0",
+				"normalsizevalue": "50000",
+				"scale": "0.2",
+				"valuefield": "canone",
+				"sizefield": "canone",
+				"valueupper": "1:50000",
+				"chartupper": "1:10000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "Concessioni & Canoni"
+				}
+			}],
+	"layerMask": {
+		}
+	}

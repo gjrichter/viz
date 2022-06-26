@@ -1,0 +1,131 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Wed Dec 15 2021 22:37:37 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Dark matter",
+		"legend": "",
+		"item": "html",
+		"scaleParam": {
+			"lineScaling": "0.5",
+			"normalSizeScale": "5000000"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "100000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "43.50872101129687",
+			"lng": "12.310180664062502"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "Province",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"filter": "WHERE CNTR_CODE = IT",
+				"dbtable": "PROVINCE",
+				"dbtableUrl": "https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/NUTS_RG_10M_2021_4326_LEVL_3.geojson",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "NUTS_ID",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"#222222"],
+				"linewidth": "1",
+				"valuescale": "1",
+				"title": "Regioni"
+				}
+			},{
+			"layer": "Province",
+			"field": "Furti di autovetture|Furti in abitazione|Rapine|Delitti informatici",
+			"field100": "",
+			"style": {
+				"type": "CHART|PIE|STARBURST|XLRAYS|AGGREGATE|MEAN|RECT|RELOCATE|BOX|TITLE|DOPACITY|HARMONIZE|ORDER|SIMPLELEGEND",
+				"colorscheme": [
+					"10",
+					"fruit"],
+				"fillopacity": "0.7",
+				"shadow": "true",
+				"dbtable": "QDV_DATA",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Sole24Ore/20201214_QDV2021_001_pivot.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "CODICE NUTS 3 2021",
+				"showdata": "true",
+				"symbols": [
+					"roundrect"],
+				"label": [
+					"Furti di autovetture",
+					"Furti in abitazione",
+					"Rapine",
+					"Delitti informatici"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"textcolor": "black",
+				"textscale": "1.5",
+				"linewidth": "0",
+				"evidence": "isolate_gray",
+				"borderwidth": "0",
+				"boxcolor": "none",
+				"titlefield": "DENOMINAZIONE CORRENTE",
+				"boxupper": "1:2000000",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"fadenegative": "1",
+				"gridwidthpx": "50",
+				"title": "Beneficiari di reddito di cittadinanza",
+				"snippet": "Nuclei ogni mille abitanti<br>fonte: <a href='https://github.com/IlSole24ORE/QDV2021' target='blank'>IlSole24Ore</a><br>licenza: <a href='https://creativecommons.org/licenses/by-nc/4.0/deed.it' target='blank'>CC-BY-NC-4.0."
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

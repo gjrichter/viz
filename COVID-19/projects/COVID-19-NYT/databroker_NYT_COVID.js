@@ -774,38 +774,35 @@ window.ixmaps = window.ixmaps || {};
 					columns.shift();
 					columns.shift();
 
-					// and configure the theme
-					theme.szFields = columns.slice().join('|');
-					theme.szFieldsA = columns.slice();
-
 					// prepare label and xaxis for DIFFERENCE theme 
 					columns.shift();
 					last = columns.length - 1;
 					
-					// and set the label
-					theme.szLabelA = columns.slice();
-					
-					theme.szSnippet = "from " + columns[0] + " to " + columns[last];
-					ixmaps.setTitle("<span style='font-family:arial'>" + columns[0] + " to " + columns[last] +"</span>");
-					
-					// set colors = columns 
-					theme.origColorScheme[0] = columns.length;
-
 					// get last 28 columns
 					var last_28 = pivot.columnNames().slice(-28);
 
 					// set as data fields in actual theme
-					options.theme.szFields = last_28.slice().join("|");
-					options.theme.szFieldsA = last_28.slice();
-
-					// make label ! -1 because of DIFFERENC theme
-					options.theme.szLabelA = last_28.slice(-27);
-					options.theme.szXaxisA = last_28.slice(-27);
+					theme.szFields = last_28.slice().join("|");
+					theme.szFieldsA = last_28.slice();
 					
-					for ( var i=1; i < options.theme.szXaxisA.length-1; i++ ){
-						options.theme.szXaxisA[i] = " ";
+					// make label ! -1 because of DIFFERENC theme
+					var szLabel = last_28.slice(-27);
+					var szXaxis = last_28.slice(-27);
+					for ( var i=1; i < szXaxis.length-1; i++ ){
+						szXaxis[i] = " ";
 					}
 					
+					theme.style.setProperties({
+						"label":szLabel,
+						"xaxis":szXaxis,
+						"snippet" :"from " + columns[last-28] + " to " + columns[last],
+						"linewidth":50,
+						"fillopacity":0.2
+					});
+					
+					ixmaps.setTitle("<span style='font-family:arial'>" + columns[last-28] + " to " + columns[last] +"</span>");
+					
+
 					// -----------------------------------------------------------------------------------------------               
 					// deploy the data
 					// ----------------------------------------------------------------------------------------------- 
@@ -878,6 +875,12 @@ window.ixmaps = window.ixmaps || {};
 	}
 	ixmaps.NYT_COVID_SEQUENCE_LAST_28_CASES_AVG_PER_100k = function (theme, options) {
 		return 	ixmaps.NYT_COVID_SEQUENCE_LAST_28(theme, options,"cases_avg_per_100k");
+	}
+	ixmaps.NYT_COVID_SEQUENCE_LAST_28_DEATHS_AVG = function (theme, options) {
+		return 	ixmaps.NYT_COVID_SEQUENCE_LAST_28(theme, options,"deaths_avg");
+	}
+	ixmaps.NYT_COVID_SEQUENCE_LAST_28_DEATHS_AVG_PER_100k = function (theme, options) {
+		return 	ixmaps.NYT_COVID_SEQUENCE_LAST_28(theme, options,"deaths_avg_per_100k");
 	}
 
 

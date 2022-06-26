@@ -1,0 +1,239 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Thu Dec 09 2021 21:22:12 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
+		"attribution": "iXMaps",
+		"basemap": "white",
+		"legend": "<div style='color:#777777'><h1></h1><h1>COVID-19 <br> <b style='color:#498823'>3. dose 50+ anni</b>, <b style='color:rgba(200,150,150,1)'>incidenza cumulativa </b> e <b>deceduti</b> <br> ultimi <b>54</b> settimane</h1><h4>I <b>positivi</b> sono misurati in <b>nuovi casi</b> per <b>100.000</b> abitanti <b>accumulati</b> per <b>7 giorni</b>, i <b>deceduti</b>in casi <b>giornalieri</b> per <b>100.000</b> abitanti con media mobile di 7 giorni. <br><b>Nota bene:</b> le due curve hanno scale diverse per poter confrontarli</h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
+		"item": "html",
+		"scaleParam": {
+			"lineScaling": "4.213991769547325",
+			"normalSizeScale": "4638029"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"worksilent": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "44.134913443750726",
+			"lng": "12.227783203125002"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "nuts2",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"#e8e8e8"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "barrios",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/nuts/main/processing/NUTS2_g.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "NUTS2",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"name": "features",
+				"title": "Italy nuts2"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "50+.1",
+			"field100": "50+.2",
+			"style": {
+				"type": "CHOROPLETH|QUANTILE|SIMPLELEGEND",
+				"colorscheme": [
+			"15",
+			"#A9DD8A",
+			"#006623",
+			"2low"],
+				"fillopacity": "0.3",
+				"shadow": "false",
+				"dbtable": "VACCINI_SOMMINISTRAZIONI_ETA_BOOSTER_DOSE_LAST_POPOLAZIONE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata_age.js",
+				"datacache": "true",
+				"lookupfield": "codice_NUTS2.1",
+				"units": "%",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"textcolor": "black",
+				"linecolor": [
+					"#F28E2B"],
+				"linewidth": "1",
+				"titlefield": "nome_area.1",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "Percentuale della popolazione protetta con 2 dosi",
+				"snippet": "<h5>fonte: <a  href='https://github.com/italia/covid19-opendata-vaccini' target='_blank'>opendata vaccini - GitHub</a></br>2021 (c) Commissario straordinario per l'emergenza Covid-19 - Presidenza del Consiglio dei Ministri.</h5>"
+				}
+			},{
+			"layer": "nuts2",
+			"field": "50+.1",
+			"field100": "50+.2",
+			"style": {
+				"type": "CHART|LABEL|VALUES|AGGREGATE|MAX",
+				"colorscheme": [
+					"7",
+					"#A8DAB5",
+					"#0D652D",
+					"linear"],
+				"opacity": "0.1",
+				"shadow": "false",
+				"dbtable": "VACCINI_SOMMINISTRAZIONI_ETA_BOOSTER_DOSE_LAST_POPOLAZIONE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata_age.js",
+				"datacache": "true",
+				"lookupfield": "codice_NUTS2.1",
+				"units": "%",
+				"align": "center",
+				"refreshtimeout": "0",
+				"normalsizevalue": "10",
+				"scale": "1",
+				"textcolor": "#ffffff",
+				"linecolor": [
+					"none"],
+				"linewidth": "1",
+				"chartupper": "1:20000000",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "Percent of population fully vaccinated"
+				}
+			},{
+			"layer": "Prov2019_nome",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|DIFFERENCE|GRID|COLOR|BOX|FIXSIZE|COMPATIBLE|SUM|NOLEGEND",
+				"colorscheme": [
+					"rgba(200,150,150,1)"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_LAST_54_WEEKLY_INCIDENCE",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "false",
+				"itemfield": "codice_regione",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"units": "positivi",
+				"align": "23right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "0.8",
+				"scale": "0.05",
+				"rangescale": "1",
+				"minvalue": "0",
+				"maxvalue": "1000",
+				"textcolor": "#880000",
+				"linewidth": "35",
+				"bordercolor": "none",
+				"boxopacity": "0",
+				"boxmargin": "10",
+				"titlefield": "denominazione_regione",
+				"titleupper": "1:3000000",
+				"boxupper": "1:10000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"title": "Incidenza cumulativa di 7 giorni",
+				"snippet": "dal 13/10/2021 al 6/12/2021"
+				}
+			},{
+			"layer": "Prov2019_nome",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|LOLLIPOP|DIFFERENCE|SUM|BOX|BOTTOMTITLE|GRID|RIGHT|RECT|FIXSIZE|NOLEGEND",
+				"colorscheme": [
+					"rgba(120, 120, 120,0.5)"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "PCM_DPC_COVID_LAST_54_WEEKLY_INCIDENCE_FATALITIES",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-PCM_DPC/databroker_PCM_DPC_COVID_Regioni.js",
+				"datacache": "false",
+				"itemfield": "codice_regione",
+				"lookupfield": "lat|long",
+				"lookuptonumber": "true",
+				"symbols": [
+					"circle"],
+				"units": "deceduti",
+				"align": "23right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "2",
+				"scale": "0.05",
+				"rangescale": "1",
+				"minvalue": "0",
+				"maxvalue": "10",
+				"textcolor": "#880000",
+				"linewidth": "15",
+				"bordercolor": "none",
+				"boxopacity": "0",
+				"boxmargin": "10",
+				"titlefield": "denominazione_regione",
+				"titleupper": "1:3000000",
+				"boxupper": "1:10000000",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"fadenegative": "1",
+				"title": "Incidenza cumulativa di 7 giorni",
+				"snippet": "dal 13/10/2021 al 7/12/2021"
+				}
+			}],
+	"layerMask": {
+		"Prov2019_nome": {
+			"display": "none"
+			}
+		}
+	}

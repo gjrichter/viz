@@ -1,0 +1,115 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Jan 02 2022 23:16:05 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "html",
+		"scaleParam": {
+			"normalSizeScale": "6920521"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "100000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "true"
+			},
+		"center": {
+			"lat": "44.09547572946637",
+			"lng": "12.755126953125002"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "Com2019_PRO_COM_",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"dbtable": "COMUNI",
+				"dbtableUrl": "https://gjrichter.github.io/viz/Amministratori/comuni_2019_U.geojson",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "PRO_COM_T",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0",
+				"valuescale": "1",
+				"title": "Italy Comuni 2019"
+				}
+			},{
+			"layer": "Com2019_PRO_COM_",
+			"field": "Ammesso/Non ammesso",
+			"field100": "",
+			"style": {
+				"type": "CHART|PIE|SIZE|AGGREGATE|RECT|CATEGORICAL|SUM|SUM|DTEXT|VALUEBACKGROUND",
+				"colorscheme": [
+					"#589550",
+					"orange",
+					"red"],
+				"fillopacity": "0.4",
+				"shadow": "false",
+				"dbtable": "rigenerazioneurbana",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/datiBeneComuneMonitoraggio/main/catalogo/PNRRcontributiComuniRigenerazioneUrbana/output/decreto-fl-30-12-2021-all-1.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "Codice_ISTAT_Comune",
+				"showdata": "true",
+				"symbols": [
+					"roundrect"],
+				"units": "€",
+				"refreshtimeout": "0",
+				"scale": "2",
+				"sizefield": "Richiesta contributo",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"centerpart": "max",
+				"gridwidthpx": "50",
+				"title": "Amministratori locali in carica al<br> 9 Settembre 2021.",
+				"snippet": "diametro = popolazione<br>colore = quota femminile",
+				"description": ""
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

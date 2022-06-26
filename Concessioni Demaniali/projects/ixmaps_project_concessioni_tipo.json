@@ -15,7 +15,8 @@
 		"legend": "",
 		"item": "",
 		"scaleParam": {
-			"normalSizeScale": "27033"
+			"normalSizeScale": "27033",
+			"dynamicScalePow": "3"
 			},
 		"options": {
 			"featurescaling": "true",

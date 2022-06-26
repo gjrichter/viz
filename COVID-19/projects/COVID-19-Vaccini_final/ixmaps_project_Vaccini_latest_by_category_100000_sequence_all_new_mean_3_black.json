@@ -102,7 +102,7 @@
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata.js",
 				"datacache": "true",
-				"lookupfield": "codice_NUTS2",
+				"lookupfield": "N2",
 				"symbols": [
 					"circle"],
 				"label": [

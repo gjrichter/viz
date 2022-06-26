@@ -109,7 +109,7 @@
 				"shadow": "false",
 				"fillopacity":"0.7",
 				"align":"23right",
-				"lookupfield": "codice_NUTS2",
+				"lookupfield": "N2",
 				"symbols": [
 					"circle"],
 				"units": "",

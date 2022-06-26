@@ -1,0 +1,123 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Wed Sep 29 2021 20:46:03 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "",
+		"attribution": "powered by <a href=\"https://www.ixmaps.com\" target=\"_blank\" style=\"color:#0E77B2\">iXMaps</a>  - dati: <a href=\"https://istat.com\" target=\"_blank\" style=\"color:#0E77B2\">ISTAT - CC BY 4.0</a>",
+		"basemap": "Stamen - toner",
+		"legend": "<h1>Amministratori locali in carica al 9 Settembre 2021</h1><h1>(Dis)parità di genere</h1><h2><b>Piu o meno parità</b> di genere rispetto alla <b>media di tutti comuni</b>.</h2><h4>fonte: <a href='https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-in-carica' target='blank'>Eligendo</a> licenza: <a href='https://www.dati.gov.it/content/italian-open-data-license-v20' target='blank'>IODL v2.0</a></h4>",
+		"item": "html",
+		"scaleParam": {
+			"lineScaling": "0.5",
+			"normalSizeScale": "5000000"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushPaintShape": "10000",
+			"flushChartDraw": "10000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "45.58713413436411",
+			"lng": "9.264907836914064"
+			},
+		"zoom": "10"
+		},
+	"themes": [{
+			"layer": "Com2019_name_upper",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"scale":"0",
+				"dbtable": "comuni",
+				"dbtableUrl": "https://gjrichter.github.io/viz/Amministratori//comuni_2019_U.geojson",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "COMUNE_U",
+				"lookupfield": "geometry",
+				"title": "Italy Comuni 2019"
+				}
+			},{
+			"layer": "Com2019_name_upper",
+			"field": "quota",
+			"field100": "",
+			"style": {
+				"type": "CHART|BAR|POINTER|SIZEP3|OFFSETMEAN|SIMPLELEGEND|BOX|TITLE|COUNT|VALUES",
+				"colorscheme": [
+					"RGB(0,140,225)",
+					"RGB(255,140,120)"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"dbtable": "ammcom_pivot",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/Amministratori/dataprovider.js",
+				"datacache": "true",
+				"lookupfield": "denominazione_comune",
+				"lookuptoupper": "true",
+				"rangecentervalue": "0",
+				"units": "%",
+				"label":[
+					"  ",
+					"  "
+				],
+				"refreshtimeout": "0",
+				"scale": "3",
+				"rangescale": "2",
+				"sizefield": "popolazione_censita",
+				"textscale": "1",
+				"linecolor": [
+					"white"],
+				"linewidth": "0.5",
+				"bordercolor": "none",
+				"boxopacity": "0",
+				"titlefield": "denominazione_comune",
+				"valueupper": "1:150000",
+				"boxupper": "1:150000",
+				"valuescale": "1",
+				"fadenegative": "0.8",
+				"dominantfilter": "min",
+				"dominantdfilter": "0",
+				"title": "Amministratori locali in carica al 9 Settembre 2021",
+				"snippet": "<h2>(Dis)parità di genere nel consiglio comunale.</h2><h4>Le frecce indicano più (rosa) o meno (blue) rappresentanza femminile rispetto alla media di tutti comuni</h4><h4>La grandezza delle frecce corrisponde alla popolazione censita del comune</h4>",
+				"description": "<br><h5>fonte: <a href='https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-in-carica' target='blank'>Eligendo</a> licenza: <a href='https://www.dati.gov.it/content/italian-open-data-license-v20' target='blank'>IODL v2.0</a></h5>"
+				}
+			}],
+	"layerMask": {
+		"Com2019_name_upper": {
+			"display": "none"
+			}
+		}
+	}

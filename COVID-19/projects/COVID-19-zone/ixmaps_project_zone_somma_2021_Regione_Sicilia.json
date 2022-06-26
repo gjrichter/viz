@@ -1,0 +1,118 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Tue Jan 11 2022 19:00:05 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "4638029"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"mapopacity": "1",
+			"flushChartDraw": "1000",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "37.70002197821145",
+			"lng": "14.376110578948174"
+			},
+		"zoom": "8"
+		},
+	"themes": [{
+			"layer": "Comuni",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "Comuni",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_sicilia.geojson",
+				"dbtableType": "geojson",
+				"datacache": "false",
+				"itemfield": "PRO_COM",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"#eeeeee"],
+				"linewidth": "1",
+				"valuescale": "1",
+				"title": "Comuni della Regione Sicilia"
+				}
+			},{
+			"layer": "Comuni",
+			"field": "",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SIZE|VALUES|CLIP",
+				"colorscheme": [
+					"10",
+					"office"],
+				"colorfield": "pro",
+				"colorvalues": ["Agrigento","Caltanissetta","Catania","Enna","Messinia","Palermo","Ragusa","Siracusa","Trapani"],
+				"fillopacity": "0.5",
+				"shadow": "true",
+				"dbtable": "ORDINANZE_PIVOT",
+				"dbtableExt": "../../projects/COVID-19-ODS/dataprovider_ODS_COVID_ORDINANZE_Sicilia.js",
+				"dbtableType": "ext",
+				"datacache": "true",
+				"lookupfield": "pro_com",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "100000",
+				"scale": "1",
+				"textcolor": "black",
+				"titlefield": "comune",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"clipframes": "331",
+				"clipframerate": "24",
+				"title": "... in 'zona rossa'",
+				"description": "Comuni in zona rossa, storico e totale giorni<h4><a style='border: #888 solid 1px;padding: 0em 0.3em;border-radius: 1em;width: 1em;color: #888;text-decoration:none' href='javascript:ixmaps.map().changeThemeStyle(null,\"scale:0.66\",\"factor\")'>-</a> size <a style='border: #888 solid 1px;padding: 0em 0.3em;border-radius: 1em;width: 1em;color: #888;text-decoration:none' href='javascript:ixmaps.map().changeThemeStyle(null,\"scale:1.5\",\"factor\")'>+</a></h4>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

@@ -1,0 +1,147 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Fri Dec 17 2021 12:51:45 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "ArcGIS - Light Gray Base",
+		"legend": "<h1>COVID-19 <br> <b style='color:rgba(200,120,120,1)'>new cases</b> and <b>deaths</b> </h1><h2><b> 7 days cumulative incidence</b> of the last <b>54</b> weeks</h2><h4>Every curve has its own scale to fit into the plot space:  <b style='color:rgba(200,120,120,1)'>cases 0-1000</b>,<b> fatalities 0-10</b> </h4><h4>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a></h4>",
+		"item": "",
+		"scaleParam": {
+			"objectScaling": "1.3333333333333333",
+			"normalSizeScale": "55364168",
+			"dynamicScalePow": "2"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "21.207458730482653",
+			"lng": "12.128906250000002"
+			},
+		"zoom": "3"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "1/30/20|2/6/20|2/13/20|2/20/20|2/27/20|3/5/20|3/12/20|3/19/20|3/26/20|4/2/20|4/9/20|4/16/20|4/23/20|4/30/20|5/7/20|5/14/20|5/21/20|5/28/20|6/4/20|6/11/20|6/18/20|6/25/20|7/2/20|7/9/20|7/16/20|7/23/20|7/30/20|8/6/20|8/13/20|8/20/20|8/27/20|9/3/20|9/10/20|9/17/20|9/24/20|10/1/20|10/8/20|10/15/20|10/22/20|10/29/20|11/5/20|11/12/20|11/19/20|11/26/20|12/3/20|12/10/20|12/17/20|12/24/20|12/31/20|1/7/21|1/14/21|1/21/21|1/28/21|2/4/21|2/11/21|2/18/21|2/25/21|3/4/21|3/11/21|3/18/21|3/25/21|4/1/21|4/8/21|4/15/21|4/22/21|4/29/21|5/6/21|5/13/21|5/20/21|5/27/21|6/3/21|6/10/21|6/17/21|6/24/21|7/1/21|7/8/21|7/15/21|7/22/21|7/29/21|8/5/21|8/12/21|8/19/21|8/26/21|9/2/21|9/9/21|9/16/21|9/23/21|9/30/21|10/7/21|10/14/21|10/21/21|10/28/21|11/4/21|11/11/21|11/18/21|11/25/21|12/2/21|12/9/21|12/16/21",
+			"field100": "",
+			"style": {
+				"type": "CHART|PIE|DONUT|STARBURST|DIFFERENCE|SUM|NOSORT|AGGREGATE|MEAN|RECT|RELOCATE",
+				"colorscheme": [
+					"#000000"],
+				"fillopacity": "0.6",
+				"shadow": "false",
+				"dbtable": "CSSE_COVID_ALL_WEEKLY_INCIDENCE_FATALITIES",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-CSSE-Incidence/dataprovider_CSSE_COVID_incidence.js",
+				"datacache": "false",
+				"lookupfield": "Lat|Long",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"align": "23right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "2",
+				"scale": "0.07",
+				"rangescale": "0.7",
+				"minvalue": "0",
+				"maxvalue": "10",
+				"linewidth": "1",
+				"bordercolor": "none",
+				"borderradius": "50",
+				"boxcolor": "black",
+				"boxopacity": "0.003",
+				"titlefield": "Country/Region",
+				"titleupper": "1:10000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"gridwidthpx": "70",
+				"name": "new_cases_curves",
+				"title": "COVID-19 - deaths/day <br> last 56 days",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "1/23/20|1/30/20|2/6/20|2/13/20|2/20/20|2/27/20|3/5/20|3/12/20|3/19/20|3/26/20|4/2/20|4/9/20|4/16/20|4/23/20|4/30/20|5/7/20|5/14/20|5/21/20|5/28/20|6/4/20|6/11/20|6/18/20|6/25/20|7/2/20|7/9/20|7/16/20|7/23/20|7/30/20|8/6/20|8/13/20|8/20/20|8/27/20|9/3/20|9/10/20|9/17/20|9/24/20|10/1/20|10/8/20|10/15/20|10/22/20|10/29/20|11/5/20|11/12/20|11/19/20|11/26/20|12/3/20|12/10/20|12/17/20|12/24/20|12/31/20|1/7/21|1/14/21|1/21/21|1/28/21|2/4/21|2/11/21|2/18/21|2/25/21|3/4/21|3/11/21|3/18/21|3/25/21|4/1/21|4/8/21|4/15/21|4/22/21|4/29/21|5/6/21|5/13/21|5/20/21|5/27/21|6/3/21|6/10/21|6/17/21|6/24/21|7/1/21|7/8/21|7/15/21|7/22/21|7/29/21|8/5/21|8/12/21|8/19/21|8/26/21|9/2/21|9/9/21|9/16/21|9/23/21|9/30/21|10/7/21|10/14/21|10/21/21|10/28/21|11/4/21|11/11/21|11/18/21|11/25/21|12/2/21|12/9/21|12/16/21",
+			"field100": "",
+			"style": {
+				"type": "CHART|PIE|DONUT|STARBURST|DIFFERENCE|SUM|NOSORT|AGGREGATE|MEAN|RECT|RELOCATE",
+				"colorscheme": [
+					"100",
+					"red",
+					"cyan",
+					"2colors",
+					"yellow"],
+				"fillopacity": "0.51",
+				"shadow": "false",
+				"dbtable": "CSSE_COVID_ALL_WEEKLY_INCIDENCE",
+				"dbtableType": "ext",
+				"dbtableExt": "../../projects/COVID-19-CSSE-Incidence/dataprovider_CSSE_COVID_incidence.js",
+				"datacache": "false",
+				"lookupfield": "Lat|Long",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"align": "23right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "2",
+				"scale": "0.03",
+				"rangescale": "0.7",
+				"minvalue": "0",
+				"maxvalue": "1000",
+				"linewidth": "1",
+				"bordercolor": "none",
+				"boxopacity": "0.01",
+				"titlefield": "Country/Region",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"gridwidthpx": "70",
+				"name": "new_cases_curves_2",
+				"title": "COVID-19 - new cases/day <br> last 56 days",
+				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

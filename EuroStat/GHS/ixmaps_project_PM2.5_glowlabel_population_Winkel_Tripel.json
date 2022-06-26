@@ -1,0 +1,126 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "<H1>Concentration of PM2.5 in 2014</H1><h4>the total concertation of PM2.5 for reference epoch 2014, calculated over the Urban Centre spatial domain of 2015, and expressed in μg/m3.</h4>",
+		"created": "Mon Feb 17 2020 17:38:21 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3-eu-west-1.amazonaws.com/cdn.ixmaps.com/ixmaps/maps/svg/maps/world_base_ISO/world_ISO3_winkel_white.svgz",
+		"attribution": "",
+		"basemap": "white",
+		"layout": "minimal",
+		"legend": "<H1>Concentration of PM2.5 in 2014</H1><h4>the total concentration of PM2.5 for reference epoch 2014, calculated over the Urban Centre spatial domain of 2015, and expressed in μg/m3</h4><h4>color: concentration, size: number of people/urban centre</h4><h4>data: GHS Urban Centre Database 2015</h4>",
+		"scaleParam": {
+			"normalSizeScale": "55364168"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "19.973348786110613",
+			"lng": "33.22265625000001"
+			},
+		"zoom": "2"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "E_CPM2_T14",
+			"field100": "",
+			"style": {
+				"type": "CHART|LABEL|TEXTONLY|GLOW|QUANTILE|VALUES",
+				"colorscheme": [
+					"5",
+					"#F2F226",
+					"#100050",
+					"3colors",
+					"#CC4878"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "themeDataObj1",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/EuroStat/GHS/databroker.js",
+				"dbtableType": "ext",
+				"datacache": "true",
+				"lookupfield": "GCPNT_LAT|GCPNT_LON",
+				"rangecentervalue": "0",
+				"units": "μg",
+				"units100": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "10000000",
+				"scale": "1",
+				"sizefield": "P15",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"maxcharts": "100",
+				"title": "Concertation of PM2.5 in 2014",
+				"description": "data: GHS Urban Centre Database 2015"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "E_CPM2_T14",
+			"field100": "",
+			"style": {
+				"type": "GLOW|CHART|BUBBLE|SIZE|AGGREGATE|MEAN",
+				"colorscheme": [
+					"7",
+					"#F2F226",
+					"#100050",
+					"3colors",
+					"#CC4878"],
+				"opacity": "0.7",
+				"fillopacity": "0.0001",
+				"shadow": "false",
+				"dbtable": "themeDataObj2",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/EuroStat/GHS/databroker.js",
+				"dbtableType": "ext",
+				"datacache": "true",
+				"lookupfield": "GCPNT_LAT|GCPNT_LON",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0.5",
+				"linecolor": [
+					"none"],
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridwidthpx": "5",
+				"xxchartlower":"1:1000000",
+				"title": "Concertation of PM2.5 in 2014",
+				"description": "data: GHS Urban Centre Database 2015"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

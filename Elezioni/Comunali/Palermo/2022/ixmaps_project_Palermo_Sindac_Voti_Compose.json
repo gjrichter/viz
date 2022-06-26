@@ -10,7 +10,7 @@
 		},
 	"map": {
 		"map": "../../maps/svg/maps/generic/mercator.svg",
-		"attribution": "data: <a href=\"https://risultatipalermo.maggiolicloud.it/web2206/htm/comunali/ODTOT_1_82053.xml\" target=\"_blank\">Città di Palermo - Open Data - Elezioni Comunali</a>",
+		"attribution": "data: <a href=\"https://			risultatipalermo.maggiolicloud.it/web2206/htm/comunali/ODTOT_1_82053.xml\" target=\"_blank\">Città di Palermo - Open Data - Elezioni Comunali</a>",
 		"basemap": "CartoDB - Positron",
 		"legend": "",
 		"item": "",

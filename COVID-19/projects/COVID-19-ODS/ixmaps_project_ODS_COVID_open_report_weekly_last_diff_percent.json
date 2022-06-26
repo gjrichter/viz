@@ -1,0 +1,128 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Wed Jan 19 2022 09:25:03 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "<p>data: <a href=\"https://github.com/opendatasicilia/covid-open-report-sicilia\" target=\"_blank\">Open Data Sicilia</a> Covid-19 database. <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\">CC-BY-4.0</a><br>powered by iXMaps</p>",
+		"basemap": "ArcGIS - Topo",
+		"legend": "<h1>% differenza casi</h1><h4>Differenza percentuale dei casi cumulativi settimanale dei Comuni della Regione Sicilia</br>nuovi casi in 7 giorni</h4><h4><a style='border: #888 solid 1px;padding: 0em 0.3em;border-radius: 1em;width: 1em;color: #888;text-decoration:none' href='javascript:ixmaps.map().changeThemeStyle(null,\"scale:0.66\",\"factor\")'>-</a> size <a style='border: #888 solid 1px;padding: 0em 0.3em;border-radius: 1em;width: 1em;color: #888;text-decoration:none' href='javascript:ixmaps.map().changeThemeStyle(null,\"scale:1.5\",\"factor\")'>+</a></h4>",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "5000000",
+			"dynamicScalePow": "4"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"dynamicScalePow": "2",
+			"mapopacity": "1",
+			"flushChartDraw": "1000",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "37.438883664067525",
+			"lng": "14.250640869140627"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "Comuni",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"dbtable": "Comuni",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_sicilia.geojson",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "PRO_COM_T",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"none"],
+				"valuescale": "1",
+				"title": "georef"
+				}
+			},{
+			"layer": "Comuni",
+			"field": "2022-01-06|2022-01-12",
+			"field100": "",
+			"style": {
+				"type": "CHART|BAR|POINTER|THIN|DIFFERENCE|RELATIVE|BOX|BOTTOMTITLE|VALUES|DTEXT|AGGREGATE|SIMPLELEGEND",
+				"colorscheme": [
+					"green",
+					"#dd0000"],
+				"fillopacity": "0.3",
+				"shadow": "false",
+				"dbtable": "COVID_19_SICILIA_CASI_DIFF_LATEST",
+				"dbtableUrl": "https://raw.githubusercontent.com/opendatasicilia/covid-open-report-sicilia/main/dati/incidenza/incidenza.csv",
+				"dbtableType": "csv",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-ODS/dataprovider_ODS_COVID_open_record_sicilia.js",
+				"datacache": "false",
+				"lookupfield": "pro_com_t",
+				"rangecentervalue": "0",
+				"symbols": [
+					"circle"],
+				"units": "%",
+				"align": "right",
+				"refreshtimeout": "0",
+				"normalsizevalue": "1000",
+				"scale": "1",
+				"rangescale": "1",
+				"minvalue": "0",
+				"maxvalue": "auto",
+				"linewidth": "1",
+				"bordercolor": "none",
+				"boxopacity": "0.01",
+				"titlefield": "comune",
+				"valuesupper": "1:250000",
+				"titleupper": "1:20000000",
+				"boxupper": "1:10000000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "0.7",
+				"title": "nuovi casi settimanali",
+				"snippet": "al 2022-01-12",
+				"splash": "loading and aggregating data ...",
+				"description": "values aggregated by dynamic grid"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

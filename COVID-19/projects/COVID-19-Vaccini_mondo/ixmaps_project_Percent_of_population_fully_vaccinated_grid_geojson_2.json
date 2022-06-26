@@ -1,0 +1,164 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Oct 04 2021 10:33:37 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1>COVID-19 <br> % of population <b style='color:rgba(0, 150, 90,1)'>vaccinated</b> (<b style='color:rgba(0, 150, 90,0.5)'>1 dose</b>/<b style='color:rgba(0, 150, 90,1)'>fully</b>)</h1><h4>data: Data Repository by <a href='https://github.com/owid/covid-19-data/tree/master/public/data/vaccinations' target='_blank'><b>Our World in Data</b></a></h4><h5>citation: Mathieu, E., Ritchie, H., Ortiz-Ospina, E. et al. A global database of COVID-19 vaccinations. Nat Hum Behav (2021).</h5><h4><a href='https://doi.org/10.1038/s41562-021-01122-8' target='_blank'><b>https://doi.org/10.1038/s41562-021-01122-8</a></b></h4>",
+		"item": "",
+		"layout": "minimal",
+		"scaleParam": {
+			"normalSizeScale": "55364168",
+			"dynamicScalePow": "2.5"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "0.6"
+			},
+		"center": {
+			"lat": "31.952162238024975",
+			"lng": "48.55957031250001"
+			},
+		"zoom": "4"
+		},
+	"themes": [{
+			"layer": "World_countries_shp0",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "WORLD_ISO_3_ALPHA_X",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini_mondo/dataprovider_geojson.js",
+				"datacache": "true",
+				"itemfield": "id",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"none"],
+				"linewidth": "0.5",
+				"valuescale": "1",
+				"title": "Nuts_2"
+				}
+			},{
+			"layer": "World_countries_shp0",
+			"field": "people_vaccinated",
+			"field100": "pop",
+			"style": {
+				"type": "CHART|PIE|AUTOCOMPLETE|SIZE|NOLEGEND|AGGREGATE|RECT|RELOCATE",
+				"colorscheme": [
+					"rgba(10,100,50,0.3)"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "CSSE_COVID_VACCINATIONS_POP_MAX",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini_mondo/dataprovider_OWID_Vaccination.js",
+				"datacache": "true",
+				"lookupfield": "iso_code",
+				"label": [
+					"fully vaccinated"],
+				"units": "",
+				"units100": "",
+				"align": "center",
+				"refreshtimeout": "0",
+				"normalsizevalue": "100000000",
+				"scale": "2",
+				"rangescale": "1",
+				"sizefield": "pop",
+				"textcolor": "rgb(182, 152, 53)",
+				"linecolor": [
+					"rgba(10,100,50,0)"],
+				"linewidth": "0.3",
+				"nodatacolor": "rgb(232, 222, 193, 0)",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"gridwidthpx": "25",
+				"evidence": "isolate_gray",
+				"title": "Percent of population fully vaccinated"
+				}
+			},{
+			"layer": "World_countries_shp0",
+			"field": "people_fully_vaccinated",
+			"field100": "pop",
+			"style": {
+				"type": "CHART|PIE|AUTOCOMPLETE|SIZE|NOLEGEND|VALUES|AGGREGATE|RECT|RELOCATE|BOX|TITLE",
+				"colorscheme": [
+					"#2D854D"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "CSSE_COVID_VACCINATIONS_POP_MAX",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini_mondo/dataprovider_OWID_Vaccination.js",
+				"datacache": "true",
+				"lookupfield": "iso_code",
+				"label": [
+					"fully vaccinated"],
+				"units": "",
+				"units100": "",
+				"align": "center",
+				"refreshtimeout": "0",
+				"normalsizevalue": "100000000",
+				"scale": "2",
+				"rangescale": "1",
+				"sizefield": "pop",
+				"textcolor": "#7Db56D",
+				"linecolor": [
+					"#2D854D"],
+				"linewidth": "0.7",
+				"boxopacity": "0.3",
+				"titlefield": "location",
+				"nodatacolor": "rgb(232, 222, 193, 0)",
+				"boxupper": "1:20000000",
+				"shadowupper": "1:20000000",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"gridwidthpx": "25",
+				"evidence": "isolate_gray",
+				"title": "Percent of population fully vaccinated"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

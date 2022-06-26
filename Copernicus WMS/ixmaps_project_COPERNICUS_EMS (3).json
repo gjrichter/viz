@@ -1,0 +1,123 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "<h2>Rischio allagamento (PAI) e zone inondate rilevate da Copernicus EMS</h2><p>Questa mappa unisce le zone a rishio alluvione del PAI della Regione Sicilia ed il mapping d'emergenza da Copernicus EMS, richiesto in seguito ai allagamenti a Catania e Siracusa nel ottobre 2021</p>",
+		"created": "Wed Nov 03 2021 23:36:45 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Sicilia/rischi_sicilia.svgz",
+		"attribution": "iXMaps",
+		"basemap": "OpenTopoMap",
+		"legend": "",
+		"item": "",
+		"info": "<h2>Rischio allagamento (PAI) e zone inondate rilevate da Copernicus EMS</h2><p>Questa mappa unisce le zone a rishio alluvione del PAI della Regione Sicilia ed il mapping d'emergenza da Copernicus EMS, richiesto in seguito ai allagamenti a Catania e Siracusa nel ottobre 2021</p>",
+		"layout": "minimal",
+		"scaleParam": {
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"mapopacity": "1",
+			"flushChartDraw": "1000",
+			"panhidden": "true",
+			"basemapopacity": "0.5"
+			},
+		"center": {
+			"lat": "37.38979975341983",
+			"lng": "14.971189498901369"
+			},
+		"zoom": "13"
+		},
+	"themes": [{
+			"layer": "Copernicus_2",
+			"field": "area",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|COMPACTLEGEND|SUM",
+				"colorscheme": [
+					"#004488"],
+				"fillopacity": "1",
+				"shadow": "true",
+				"dbtable": "themeDataObj_2",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Copernicus/EMSR548_AOI02_FEP_PRODUCT_observedEventA_r1_v1.json",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"label": [
+					"flooded areas"],
+				"units": "ha",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linewidth": "0.1",
+				"valuescale": "1",
+				"title": "COPERNICUS EMS"
+				}
+			},{
+			"layer": "Copernicus_1",
+			"field": "area",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|COMPACTLEGEND|SUM",
+				"colorscheme": [
+					"#004488"],
+				"fillopacity": "1",
+				"shadow": "true",
+				"dbtable": "themeDataObj_1",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Copernicus/EMSR548_AOI01_FEP_PRODUCT_observedEventA_r1_v1.json",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"label": [
+					"flooded areas"],
+				"units": "ha",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linewidth": "0.1",
+				"valuescale": "1",
+				"title": "COPERNICUS EMS"
+				}
+			}],
+	"layerMask": {
+		"P_Crolli_Sprof_GEO": {
+			"on": []
+			},
+		"Rischio_GEO": {
+			"on": []
+			},
+		"D_P_GEO": {
+			"on": []
+			},
+		"S_A_GEO": {
+			"display": "none"
+			},
+		"Buffer_P3_P4_GEO": {
+			"display": "none"
+			}
+		}
+	}
