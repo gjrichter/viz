@@ -1,0 +1,251 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon May 02 2022 11:07:06 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "OpenStreetMap - FR",
+		"legend": " ",
+		"attribution": "dati: ISTAT - <a href='https://www.istat.it/it/statistiche-sperimentali' target='_blank'>Statistiche sperimentali</a>",
+		"item": "html",
+		"scaleParam": {
+			"objectScaling": "1.7777777777777777",
+			"normalSizeScale": "5000000"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "100000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "38.04782070244462",
+			"lng": "13.38615417480469"
+			},
+		"zoom": "11"
+		},
+	"themes": [{
+			"layer": "Regioni_2018",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"linecolor": "black",
+				"linewidth": "0.5",
+				"shadow": "false",
+				"dbtable": "REGIONI",
+				"dbtableUrl": "https://raw.githubusercontent.com/openpolis/geojson-italy/master/topojson/limits_IT_regions.topo.json",
+				"dbtableType": "topojson",
+				"datacache": "true",
+				"itemfield": "reg_istat_code_num",
+				"lookupfield": "geometry",
+				"title": "Italy Regioni"
+				}
+			},{
+			"layer": "Com2019_pro_com",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"dbtable": "COMUNI",
+				"dbtableUrl": "https://gjrichter.github.io/viz/Amministratori/comuni_2019_U.geojson",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "PRO_COM",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0",
+				"valuescale": "1",
+				"title": "Italy Comuni 2019"
+				}
+			},{
+			"layer": "Com2019_pro_com",
+			"field": "Anno",
+			"field100": "",
+			"style": {
+				"type": "CHART|BAR|AGGREGATE|CATEGORICAL|GRID|BOX|TITLE|NEGATIVEISVALUE|ZEROISVALUE|MEAN|NOLEGEND",
+				"colorscheme": [
+					"#444444"],
+				"fillopacity": "0.0005",
+				"shadow": "true",
+				"filter": "WHERE Anno != 2020",
+				"dbtable": "indicatori_strutturali",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/PrevisioniDemografiche/Tassi_generici_del_movimento_anagrafico.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "Codice comune",
+				"showdata": "true",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "20",
+				"scale": "2",
+				"rangescale": "1",
+				"sizefield": "Tasso di mortalità",
+				"maxvalue": "36",
+				"linecolor": [
+					"#444444"],
+				"linewidth": "1",
+				"boxopacity": "0.9",
+				"boxmargin": "2",
+				"titlefield": "Comune",
+				"boxupper": "1:5000000",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"fadenegative": "0.1",
+				"title": "Tasso di mortalità 2021 - 2030",
+				"description": ""
+				}
+			},{
+			"layer": "Com2019_pro_com",
+			"field": "Anno",
+			"field100": "",
+			"style": {
+				"type": "CHART|BAR|AGGREGATE|CATEGORICAL|NEGATIVEISVALUE|ZEROISVALUE|MEAN|NOLEGEND",
+				"colorscheme": [
+					"#a9eF08"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"filter": "WHERE Anno != 2020",
+				"dbtable": "indicatori_strutturali",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/PrevisioniDemografiche/Tassi_generici_del_movimento_anagrafico.csv",
+				"dbtableType": "csv",
+				"dbtableProcess": "function(data,options){data.addColumn({destination:\"nettoMigNat\"},function(row){return(Number(row[5].replace(',','.'))+Number(row[7].replace(',','.')))});return data;}",
+				"datacache": "true",
+				"lookupfield": "Codice comune",
+				"showdata": "true",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "20",
+				"scale": "2",
+				"rangescale": "1",
+				"sizefield": "Tasso di natalità",
+				"titlefield": "Comune",
+				"linecolor": [
+					"green"],
+				"linewidth": "0.3",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"fadenegative": "0.1",
+				"title": "Tasso di natalità 2021 - 2030",
+				"description": ""
+				}
+			},{
+			"layer": "Com2019_pro_com",
+			"field": "Anno",
+			"field100": "",
+			"style": {
+				"type": "CHART|BAR|AGGREGATE|CATEGORICAL|NEGATIVEISVALUE|ZEROISVALUE|MEAN|NOLEGEND",
+				"colorscheme": [
+					"#a9eF08"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"filter": "WHERE Anno != 2020",
+				"dbtable": "indicatori_strutturali",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/PrevisioniDemografiche/Tassi_generici_del_movimento_anagrafico.csv",
+				"dbtableType": "csv",
+				"dbtableProcess": "function(data,options){data.addColumn({destination:\"nettoMigNat\"},function(row){return(Number(row[5].replace(',','.'))+Number(row[7].replace(',','.')))});return data;}",
+				"datacache": "true",
+				"lookupfield": "Codice comune",
+				"showdata": "true",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "20",
+				"scale": "2",
+				"rangescale": "1",
+				"sizefield": "nettoMigNat",
+				"linecolor": [
+					"green"],
+				"linewidth": "0.3",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"fadenegative": "0.1",
+				"title": "Tasso di crescita netto 2021 - 2030",
+				"description": ""
+				}
+			},{
+			"layer": "Com2019_pro_com",
+			"field": "Anno",
+			"field100": "",
+			"style": {
+				"type": "CHART|BAR|POINTER|AGGREGATE|CATEGORICAL|NEGATIVEISVALUE|ZEROISVALUE|MEAN|NOLEGEND|AXIS|VALUES|NOINLINETEXT",
+				"colorscheme": [
+					"#00aaff"],
+				"fillopacity": "0.8",
+				"shadow": "true",
+				"filter": "WHERE Anno != 2020",
+				"dbtable": "indicatori_strutturali",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/PrevisioniDemografiche/Tassi_generici_del_movimento_anagrafico.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "Codice comune",
+				"showdata": "true",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "20",
+				"scale": "2",
+				"rangescale": "0.9",
+				"sizefield": "Tasso migratorio netto",
+				"linecolor": [
+					"#0088dd"],
+				"linewidth": "0.1",
+				"boxopacity": "0.001",
+				"boxmargin": "2",
+				"titlefield": "Comune",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"fadenegative": "0.4",
+				"title": "Tasso migratorio netto 2021 - 2030",
+				"description": ""
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
