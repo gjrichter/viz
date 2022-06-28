@@ -11,7 +11,7 @@
 	"map": {
 		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "iXMaps",
-		"basemap": "OpenStreetMap - wikipedia",
+		"basemap": "OpenStreetMap - FR",
 		"legend": " ",
 		"attribution": "dati: ISTAT - <a href='https://www.istat.it/it/statistiche-sperimentali' target='_blank'>Statistiche sperimentali</a>",
 		"item": "html",
