@@ -12,8 +12,8 @@
 		"map": "../../maps/svg/maps/generic/mercator.svg",
 		"attribution": "iXMaps",
 		"basemap": "ArcGIS - Hillshade",
-		"legend": "<h1 style='margin-bottom:-0.1em'>PREVISIONI DEMOGRAFICHE COMUNALI 2021 - 2030</h1><img src='../../projects/ISTAT/demography_change_flower.png' style='height:200px'><h3>dati: ISTAT - <a style='pointer-events:all' href='https://www.istat.it/it/statistiche-sperimentali' target='_blank'>Statistiche sperimentali</a></h3>",
-		"item": "../../projects/ISTAT/item.html",
+		"legend": "<h1 style='margin-bottom:-0.1em'>PREVISIONI DEMOGRAFICHE COMUNALI 2021 - 2030</h1><img src='https://raw.githubusercontent.com/gjrichter/viz/master/ISTAT/demography_change_flower.png' style='height:200px'><h3>dati: ISTAT - <a style='pointer-events:all' href='https://www.istat.it/it/statistiche-sperimentali' target='_blank'>Statistiche sperimentali</a></h3>",
+		"item": "https://raw.githubusercontent.com/gjrichter/viz/master/ISTAT/item.html",
 		"scaleParam": {
 			"normalSizeScale": "3460260"
 			},
