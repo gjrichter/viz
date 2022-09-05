@@ -14,7 +14,7 @@
 		"basemap": "OpenStreetMap - FR",
 		"legend": "<h1>Elezioni 2022 - Camera</h1><h3>Candidati nei collegi uninominali</h3><h4>Per vedere i candidati si prega di clickare sui poligoni dei collegi</h4><h4>fonte: <a href='https://github.com/ondata/elezioni-politiche-2022/tree/main/liste' target='_blank'>OnData</a></h4>",
 		"layout": "minimal",
-		"item": "../../../../projects/ElezioniPolitiche2022/item.html",
+		"item": "https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Politiche/2022/item.html",
 		"scaleParam": {
 			"normalSizeScale": "177165354"
 			},
