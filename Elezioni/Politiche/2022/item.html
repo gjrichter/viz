@@ -23,7 +23,7 @@
 		td {
 			font-weight: 400;
 			font-size: 1.1em;
-			padding: 0.1em 0.5em;
+			padding: 0.1em 0em;
 			vertical-align: top;
 		}
 
@@ -86,7 +86,7 @@
 		}
 		
 		th, td {
-		  border-bottom: 1px solid #ddd;
+		  xxborder-bottom: 1px solid #ddd;
 		}
 	</style>
 	<script
@@ -221,17 +221,17 @@
 						szHtml += "</section>";
 						
 						szHtml += "<section>";
-						szHtml += "<table style='margin:1em 1em 1em 1em'>";
+						szHtml += "<table style='margin:1em 1em 1em 1em;font-family: arial narrow, system;'>";
 						
 						for ( a in data){
 							if(data[a].sesso=='F'){
-								szHtml += "<tr style='background:#fff8f8'><td>"+data[a].nome_c+" "+data[a].cogn_c+"</td><td>"+data[a].eta+" anni</td><tr>";
+								szHtml += "<tr style='background:#fff8f8'><td style='width:300px'>"+data[a].nome_c+" "+data[a].cogn_c+"</td><td style='font-size:1em;'>"+data[a].eta+" anni</td></tr><tr><td style='font-size:0.6em;width:300px;padding-bottom:0.5em'>"+data[a].coalizione||""+"</td><tr>";
 								eta += data[a].eta;
 							}
 						}
 						for ( a in data){
 							if(data[a].sesso=='M'){
-								szHtml += "<tr style='background:#f8f8ff'><td>"+data[a].nome_c+" "+data[a].cogn_c+"</td><td>"+data[a].eta+" anni</td><tr>";
+								szHtml += "<tr style='background:#f8f8ff'><td style='width:300px'>"+data[a].nome_c+" "+data[a].cogn_c+"</td><td style='font-size:1em;'>"+data[a].eta+" anni</td></tr><tr><td style='font-size:0.6em;width:300px;padding-bottom:0.5em'>"+data[a].coalizione||""+"</td><tr>";
 								eta += data[a].eta;
 							}
 						}
