@@ -213,6 +213,8 @@
 					var data = ixmaps.map().getData(szId);
 					if (data) {
 						
+						var nMaxHeight = window.innerHeight-200;
+						
 						var eta = 0;
 
 						szHtml += "<section>";
@@ -220,8 +222,9 @@
 						szHtml += "<div style='margin:1em 1em 1em 1em'><h3>"+data[0].desc_ente+"</h3></div>"
 						szHtml += "</section>";
 						
-						szHtml += "<section>";
-						szHtml += "<table style='margin:1em 1em 1em 1em;font-family: arial narrow, system;'>";
+						szHtml += "<section style='max-height:"+nMaxHeight+"px;overflow:auto'>";
+						
+						szHtml += "<table style='margin:0em 1em 0em 1em;font-family: arial narrow, system;'>";
 						
 						for ( a in data){
 							if(data[a].sesso=='F'){
@@ -240,7 +243,7 @@
 						szHtml += "</section>";
 						
 						szHtml += "<section>";
-						szHtml += "<div style='margin:1em 1em 1em 1em'><h4>"+data.length+" candidati, età media: "+Math.floor(eta/data.length*10)/10+"<h4></div>"
+						szHtml += "<div style='margin:0em 1em 0em 1em'><h4 style='font-size:1.1em'>"+data.length+" candidati, età media: "+Math.floor(eta/data.length*10)/10+"<h4></div>"
 						szHtml += "<div style='height:0.1em'></div>"
 						szHtml += "</section>";
 				
