@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta name="copyright" content="Guenter Richter" />
+	<meta name="author" content="service@medienobjekte.de" />
+	<meta name="description" content="Interactive &amp; estensible maps in SVG" />
+	<meta name="revisit-after" content="30 days" />
+	<meta name="distribution" content="Global" />
+
+	<link rel="stylesheet" href="../../app/Viewer/stories/master/index.css" type="text/css" />
+
+	<style type="text/css">
+		body {
+			font-family: courier new, Raleway, Roboto Slab, monospace, Lato, arial, helvetica;
+			color: #444;
+			font-weight: 300;
+		}
+
+		td {
+			font-weight: 400;
+			font-size: 1.1em;
+			padding: 0.1em 0.5em;
+			vertical-align: top;
+		}
+
+		.label {
+			text-align: right;
+			font-size: 0.8em;
+			padding-top: 0.4em;
+			color: #888;
+			width: 33%;
+		}
+
+		.value {
+			text-align: left;
+			color: #000;
+			font-weight: 600;
+		}
+
+		.clip {
+			max-width: 100px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		.item-list {
+			margin-right: 0em;
+			padding: 1em 0.5em 1.5em 0.66em;
+			color: #aaa;
+		}
+
+		a {
+			color: #4466ff;
+		}
+
+		object {
+			margin: 0;
+			padding: 0;
+			margin-right: -1em;
+			width: 100%;
+			height: 1000px;
+		}
+
+		#container {
+			margin-top: 2.1em;
+			margin-left: 0em;
+			margin-right: 0em;
+			xxpadding-bottom: 1em;
+			xxpadding-right: 2em;
+			vertical-align: middle;
+			background-color: rgba(239, 235, 239, 0.7);
+		}
+
+		#tooltip {
+			font-family: arial narrow, system;
+			background: white;
+			border: 0.5px solid black;
+			border-radius: 5px;
+			padding: 5px;
+			max-width: 80%;
+		}
+		
+		th, td {
+		  border-bottom: 1px solid #ddd;
+		}
+	</style>
+	<script
+	  src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+	  integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
+	  crossorigin="anonymous"></script>
+	</head>
+
+<body style="margin:0px;padding:0px;" onload="">
+
+	<!-- Container -->
+	<div id="container" style="background:#fff;">
+
+		<div id="chart-div" style="position:relative;top:0px">
+		</div>
+		<div id="chart-div2" style="position:relative;top:-420px;pointer-events:none;max-height:0px">
+		</div>
+
+		<div id="result-div">
+			<div id="result">
+			</div>
+			<div>
+
+			</div>
+
+			<div id="tooltip" style="position: absolute; display: none;"></div>
+
+ 			<script type="text/javascript" src="assets/plugins/jquery-1.10.2.js"></script>
+			<script type="text/javascript">
+				if ( typeof(ixmaps) == "undefined" ){
+					var ixmaps = null;
+					if ( window.opener ){
+						ixmaps = window.opener.ixmaps;
+					}else
+					if ( parent ){
+						ixmaps = parent.window.ixmaps;
+					}
+					else{
+						alert("error: missing parent window for themes !");
+					}
+
+					ixmaps.initialized = true;
+				}
+				
+				// ===================================
+				// define local functions
+				// ===================================
+
+				// ------------------------
+				// tooltips for SVG charts
+				// ------------------------
+
+				var showTooltip = function(evt, text) {
+					if (text && text.length) {
+						var tooltip = document.getElementById("tooltip");
+						//var sidebar = document.getElementById("sidebar");
+						tooltip.innerHTML = text;
+						tooltip.style.display = "block";
+						var left = 0; //parseInt(sidebar.style.getPropertyValue("left"));
+						tooltip.style.left = evt.pageX - left - 20 + 'px';
+						tooltip.style.top = evt.pageY + 20 + 'px';
+					}
+				}
+
+				var hideTooltip = function() {
+					var tooltip = document.getElementById("tooltip");
+					tooltip.style.display = "none";
+				}
+
+				ixmaps.onMouseOver = function() {
+					var szTooltip = null;
+					var source = event.target;
+					while (!szTooltip && source) {
+						szTooltip = source.getAttribute("tooltip");
+						source = source.parentNode;
+					}
+					showTooltip(event, szTooltip);
+					event.stopPropagation();
+					event.preventDefault();
+				};
+
+				ixmaps.onMouseOut = function() {
+					hideTooltip();
+				};
+
+				var DonutCharts = {};
+				DonutCharts.partOver = function() {};
+				DonutCharts.partOut = function() {};
+
+
+				// ===================================
+				// ===================================
+				//
+				// here we go and make the item info
+				//
+				// ===================================
+				// ===================================
+
+				ixmaps.makeItemContent = function() {
+
+					var szId = ixmaps.szMapItemId;
+					
+					if ( !szId.match(/chart/i))	{
+						
+						var obj = ixmaps.embeddedSVG.window.SVGDocument.getElementById(szId);
+
+						// get theme chart if present
+						// --------------------------
+						var szChartId = szId.match(/::/) ? szId : obj.parentNode.getAttribute("id");
+						var szIdA = szChartId.split("#");
+						if (szIdA.length > 1) {
+							var szIdAA = szIdA[1].split(/\b::\b/);
+							szChartId = szIdA[0] + "::" + szIdAA[1];
+							szTitle = szIdAA[1];
+						}
+						szId = ixmaps.getThemes()[1].szId + ":" + szChartId + ":chartgroup";
+						
+					}			
+
+					var themeObj = ixmaps.getThemeObj(szId.split(":")[0]);
+					
+					var szHtml = "";
+					
+					var data = ixmaps.map().getData(szId);
+					if (data) {
+						
+						var eta = 0;
+
+						szHtml += "<section>";
+						szHtml += "<div style='height:0.1em'></div>"
+						szHtml += "<div style='margin:1em 1em 1em 1em'><h3>"+data[0].desc_ente+"</h3></div>"
+						szHtml += "</section>";
+						
+						szHtml += "<section>";
+						szHtml += "<table style='margin:1em 1em 1em 1em'>";
+						
+						for ( a in data){
+							if(data[a].sesso=='F'){
+								szHtml += "<tr style='background:#fff8f8'><td>"+data[a].nome_c+" "+data[a].cogn_c+"</td><td>"+data[a].eta+" anni</td><tr>";
+								eta += data[a].eta;
+							}
+						}
+						for ( a in data){
+							if(data[a].sesso=='M'){
+								szHtml += "<tr style='background:#f8f8ff'><td>"+data[a].nome_c+" "+data[a].cogn_c+"</td><td>"+data[a].eta+" anni</td><tr>";
+								eta += data[a].eta;
+							}
+						}
+						
+						szHtml += "</table>";
+						szHtml += "</section>";
+						
+						szHtml += "<section>";
+						szHtml += "<div style='margin:1em 1em 1em 1em'><h4>"+data.length+" candidati, età media: "+Math.floor(eta/data.length*10)/10+"<h4></div>"
+						szHtml += "<div style='height:0.1em'></div>"
+						szHtml += "</section>";
+				
+					}
+					
+
+					// show the item legend when its ready
+					$("#result").html(szHtml);
+					$("#result-div").show();
+
+					var height = 600; //($("#result-div").height()) + 20;
+					ixmaps.resizeDialog(null,height);
+					
+					//ixmaps.sidebar(1);
+
+
+				};
+
+				setTimeout("ixmaps.makeItemContent()", 100);
+
+			</script>
+
+</body>
+
+</html>
