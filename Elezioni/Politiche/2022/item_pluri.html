@@ -211,9 +211,10 @@
 					var data = ixmaps.map().getData(szId);
 					if (data) {
 
-						var nMaxHeight = window.innerHeight - 200;
+						var nMaxHeight = window.screen.availHeight - 350;
 
 						var eta = 0;
+						var desc_lista = null;
 
 						szHtml += "<section>";
 						szHtml += "<div style='height:0.1em'></div>"
@@ -226,17 +227,24 @@
 						szHtml += "<table style='margin:0em 1em 0em 1em;font-family: arial narrow, system;'>";
 
 						for (a in data) {
+
+							if (!desc_lista || (desc_lista != data[a].desc_lista)) {
+								szHtml += "<tr><td style='font-size:0.5em'>&nbsp;</td></tr>";
+								szHtml += "<tr><td style='font-size:0.8em'>" + data[a].desc_lista + "</td></tr>";
+							}
+
 							if (data[a].sesso == 'F') {
-								szHtml += "<tr style='background:#fff0f0'><td style='width:300px'>" + data[a].nome_c + " " + data[a].cogn_c + "</td><td style='font-size:1em;'>" + data[a].eta + " anni</td></tr><tr><td style='font-size:0.6em;width:300px;padding-bottom:0.5em'>" + data[a].coalizione || "" + "</td><tr>";
+								szHtml += "<tr style='background:#fff4f4'><td style='width:300px'>" + data[a].num_c + " " + data[a].nome_c + " " + data[a].cogn_c + "</td><td style='font-size:1em;'>" + data[a].eta + " anni</td></tr>";
 								eta += data[a].eta;
 							}
-						}
-						for (a in data) {
 							if (data[a].sesso == 'M') {
-								szHtml += "<tr style='background:#f0f0ff'><td style='width:300px'>" + data[a].nome_c + " " + data[a].cogn_c + "</td><td style='font-size:1em;'>" + data[a].eta + " anni</td></tr><tr><td style='font-size:0.6em;width:300px;padding-bottom:0.5em'>" + data[a].coalizione || "" + "</td><tr>";
+								szHtml += "<tr style='background:#f4f4ff'><td style='width:300px'>" + data[a].num_c + " " + data[a].nome_c + " " + data[a].cogn_c + "</td><td style='font-size:1em;'>" + data[a].eta + " anni</td></tr>";
 								eta += data[a].eta;
 							}
+							desc_lista = data[a].desc_lista;
 						}
+
+						szHtml += "<tr><td>---</td></tr>";
 
 						szHtml += "</table>";
 						szHtml += "</section>";
@@ -245,6 +253,7 @@
 						szHtml += "<div style='margin:0em 1em 0em 1em'><h4 style='font-size:1.1em'>" + data.length + " candidati, età media: " + Math.floor(eta / data.length * 10) / 10 + "<h4></div>"
 						szHtml += "<div style='height:0.1em'></div>"
 						szHtml += "</section>";
+
 
 					}
 
