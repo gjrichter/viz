@@ -13,7 +13,6 @@
 		"attribution": "iXMaps",
 		"basemap": "OpenStreetMap - FR",
 		"legend": "<h1>Elezioni 2022 - Camera</h1><h3>Candidati nei collegi uninominali</h3><h4>Per vedere i candidati si prega di clickare sui poligoni dei collegi</h4><h4>fonte: <a href='https://github.com/ondata/elezioni-politiche-2022/tree/main/liste' target='_blank'>OnData</a></h4>",
-		"layout": "minimal",
 		"item": "https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Politiche/2022/item.html",
 		"scaleParam": {
 			"normalSizeScale": "177165354"
@@ -64,47 +63,47 @@
 					"none"],
 				"fillopacity": "0.1",
 				"shadow": "false",
-				"dbtable": "themeDataObj",
+				"dbtable": "themeDataObj_CU",
 				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/CollegiElettoraliBasiGeografiche/CAMERA_CollegiUNINOMINALI_2020_GEO_S.topojson.gz",
 				"dbtableType": "topojson",
 				"dbtableProcess": "function(data){data.column('CU20_DEN').map(function(value){value=value.replace(\"Valle d'aosta/Vallée d'Aoste\",\"Valle d'aosta\");return value.toUpperCase();});return data;}",
-				"datacache": "true",
+				"datacache": "false",
 				"lookupfield": "geometry",
 				"itemfield": "CU20_DEN",
 				"units": "",
 				"refreshtimeout": "0",
 				"scale": "1",
 				"linecolor": [
-					"#aa88aa"],
-				"linewidth": "2",
+					"#4F467F"],
+				"linewidth": "1",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"showdata": "true",
 				"title": "CAMERA Collegi Uninominali 2020",
-				"snippet": "Colorato per Popolazione 2011"
+				"snippet": "Poligoni"
 				}
 			},{
 			"layer": "CAMERA_Collegi_Uninominali_2020",
 			"field": "$item$",
 			"field100": "",
 			"style": {
-				"type": "CHOROPLETH|AGGREGATE|SUM|NOLEGEND",
+				"type": "CHOROPLETH|AGGREGATE|SUM|FORCE|NOLEGEND",
 				"colorscheme": [
-					"white"],
-				"fillopacity": "0.5",
+					"#00248F"],
+				"autoopacity": "true",
 				"shadow": "false",
-				"dbtable": "DBTABLE43068735",
+				"dbtable": "themeDataObj",
 				"dbtableType": "ext",
 				"dbtableQuery": "function(data,options){ var szUrl1 = \"https://raw.githubusercontent.com/ondata/elezioni-politiche-2022/main/liste/processing/CAMERA_ITALIA_20220925_uni.csv\"; var szUrl2 = \"https://raw.githubusercontent.com/ondata/elezioni-politiche-2022/main/liste/processing/CAMERA_ITALIA_20220925_uni_coalizioni_nested.csv\"; var broker = new Data.Broker() .addSource(szUrl1, \"csv\") .addSource(szUrl2, \"csv\") .realize( function (dataA) { var canditati = dataA[0]; var coalizioni = dataA[1]; var coalizioniIndexA = coalizioni.lookupArray({key:\"cod_cand\",value:\"desc_lista\"}); canditati.addColumn({destination:\"coalizione\",source:\"cod_cand\"},function(value){ return coalizioniIndexA[value]; }); canditati.addColumn({destination:'eta',source:'dt_nasc'},function(value){ return 2022-value; }); canditati.addColumn({destination:'f_eta',source:'eta'},function(value){ return Math.floor(value/10)*10; }); options.type = \"dbtable\"; ixmaps.setExternalData(canditati,options); }); }",
-				"datacache": "true",
+				"datacache": "false",
 				"lookupfield": "desc_ente",
 				"valuedecimals": "0",
 				"linecolor": [
-					"#dd88dd"],
+					"#00248F"],
 				"aggregationfield": "desc_ente",
 				"showdata": "true",
-				"title": "Candidati - CAMERA Collegi Uninominali 2020",
-				"snippet": "Colorato per sesso"
+				"title": "Collegi Uninominali CAMERA ",
+				"snippet": "Clicca sui collegi per vedere i candidati"
 				}
 			}],
 	"layerMask": {
