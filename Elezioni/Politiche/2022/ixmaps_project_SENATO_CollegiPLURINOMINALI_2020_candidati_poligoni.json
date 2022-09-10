@@ -1,0 +1,115 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Aug 08 2022 12:11:19 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "OpenStreetMap - FR",
+		"legend": "<h1>Elezioni 2022 - Senato</h1><h3>Candidati nei collegi uninominali</h3><h4>Per vedere i candidati si prega di clickare sui poligoni dei collegi</h4><h4>fonte: <a href='https://github.com/ondata/elezioni-politiche-2022/tree/main/liste' target='_blank'>OnData</a></h4>",
+		"item": "https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Politiche/2022/item_pluri.html",
+		"scaleParam": {
+			"normalSizeScale": "177165354"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "normal",
+			"objectscaling": "normal",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "10000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "41.551752175627705",
+			"lng": "15.036451717776169"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "SENATO_Collegi_Plurinominali_2020",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURE|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "themeDataObj_SP",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/CollegiElettoraliBasiGeografiche/SENATO_CollegiPLURINOMINALI_2020_GEO_S.topojson.gz",
+				"dbtableType": "topojson",
+				"dbtableProcess": "function(data){data.column('SP20_DEN').map(function(value){value=value.replace(\"Valle d'aosta/Vallée d'Aoste\",\"Valle d'aosta\");return value.toUpperCase();});return data;}",
+				"datacache": "false",
+				"lookupfield": "geometry",
+				"itemfield": "SP20_DEN",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"#aa4488"],
+				"linewidth": "2",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"showdata": "true",
+				"title": "SENATO Collegi Plurinominali 2020",
+				"snippet": "base geografica"
+				}
+			},{
+			"layer": "SENATO_Collegi_Plurinominali_2020",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|AGGREGATE|SUM|NOLEGEND|FORCE",
+				"colorscheme": [
+					"#9F161F"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/elezioni-politiche-2022/main/liste/processing/SENATO_ITALIA_20220925_pluri.csv",
+				"dbtableType": "csv",
+				"dbtableProcess": "function(data){data.addColumn({destination:'eta',source:'dt_nasc'},function(value){return 2022-value;});data.addColumn({destination:'f_eta',source:'eta'},function(value){return Math.floor(value/10)*10;});return data;}",
+				"datacache": "false",
+				"lookupfield": "desc_ente",
+				"valuedecimals": "0",
+				"linecolor": [
+					"#9F161F"],
+				"aggregationfield": "desc_ente",
+				"showdata": "true",
+				"title": "Plurinominali SENATO",
+				"snippet": "Clicca sui collegi per vedere i candidati"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
