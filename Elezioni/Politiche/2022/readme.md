@@ -6,3 +6,4 @@ In questo ripository si trovono i progetti iXmaps per mappare i collegi ed candi
 
 La mappa interattiva si trova qui: [mappa dei collegi e candidate/i](https://gjrichter.github.io/ixmaps/app/Viewer/?layout=right&title&false&sidebar=35%&sidebarbutton=0&story=https://gjrichter.github.io/viz/Elezioni/Politiche/2022/stories/Elezioni_Politiche_2022/index.html).
 
+![https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Politiche/2022/Storymap_Elezioni_Politiche_2022_Candidati.png](Storymap_Elezioni_Politiche_2022_Candidati.png)
