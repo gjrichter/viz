@@ -11,8 +11,57 @@
 	<meta name="revisit-after" content="30 days" />
 	<meta name="distribution" content="Global" />
 
-	<link rel="stylesheet" href="../../app/Viewer/stories/master/index.css" type="text/css" />
-
+	<style type="text/css">
+	
+	/* Style for our header texts
+	* --------------------------------------- */
+	h1{
+		font-size: 2.5em;
+		font-family: courier new,Raleway,arial,helvetica;
+		font-weight: 400;
+		margin: 0.5em 0;
+		padding:0;
+		text-align:left;
+		margin-left: 0px;
+	}
+	h2{
+		font-size: 2em;
+		font-family: courier new,Raleway,arial,helvetica;
+		font-weight: 300;
+		margin:0.5em 0 0em 0;
+		padding:0;
+		text-align:left;
+		margin-left: 0px;
+	}
+	h3{
+		font-size: 2em;
+		font-family: courier new,Raleway,arial,helvetica;
+		font-weight: 300;
+		margin:0;
+		padding:0;
+		text-align:left;
+	}
+	h4{
+		font-size: 1.5em;
+		font-family: courier new,Raleway,arial,helvetica;
+		font-weight: 300;
+		margin:0.5em 0 0em 0;
+		padding:0;
+		text-align:left;
+	}
+	h5{
+		font-family: courier new,Raleway,arial,helvetica;
+		font-weight: 300;
+		margin:0;
+		padding:0;
+		text-align:left;
+	}
+	a {
+		color: #d0d8d0;
+		text-decoration: none;
+	}
+	</style>
+	
 	<style type="text/css">
 		body {
 			font-family: courier new, Raleway, Roboto Slab, monospace, Lato, arial, helvetica;
@@ -113,7 +162,6 @@
 
 			<div id="tooltip" style="position: absolute; display: none;"></div>
 
-			<script type="text/javascript" src="assets/plugins/jquery-1.10.2.js"></script>
 			<script type="text/javascript">
 				if (typeof(ixmaps) == "undefined") {
 					var ixmaps = null;
@@ -234,11 +282,13 @@
 							}
 
 							if (data[a].sesso == 'F') {
-								szHtml += "<tr style='background:#fff4f4'><td style='width:300px'>" + data[a].num_c + " " + data[a].nome_c + " " + data[a].cogn_c + "</td><td style='font-size:1em;'>" + data[a].eta + " anni</td></tr>";
+								var link = "https://www.google.com/search?q="+data[a].nome_c + "+ " + data[a].cogn_c;
+								szHtml += "<tr style='background:#fff4f4'><td style='width:300px'><a style='color:#666666' href='"+link+"' target='_blank'>" + data[a].num_c + " " + data[a].nome_c + " " + data[a].cogn_c + "</td><td style='font-size:1em;'>" + data[a].eta + " anni</a></td></tr>";
 								eta += data[a].eta;
 							}
 							if (data[a].sesso == 'M') {
-								szHtml += "<tr style='background:#f4f4ff'><td style='width:300px'>" + data[a].num_c + " " + data[a].nome_c + " " + data[a].cogn_c + "</td><td style='font-size:1em;'>" + data[a].eta + " anni</td></tr>";
+								var link = "https://www.google.com/search?q="+data[a].nome_c + "+ " + data[a].cogn_c;
+								szHtml += "<tr style='background:#f4f4ff'><td style='width:300px'><a style='color:#666666' href='"+link+"' target='_blank'>" + data[a].num_c + " " + data[a].nome_c + " " + data[a].cogn_c + "</td><td style='font-size:1em;'>" + data[a].eta + " anni</a></td></tr>";
 								eta += data[a].eta;
 							}
 							desc_lista = data[a].desc_lista;
