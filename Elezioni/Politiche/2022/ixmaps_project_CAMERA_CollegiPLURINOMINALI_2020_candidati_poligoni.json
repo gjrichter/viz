@@ -10,9 +10,9 @@
 		},
 	"map": {
 		"map": "../../maps/svg/maps/generic/mercator.svg",
-		"attribution": "iXMaps",
+		"attribution": "di <a href='https://twitter.com/grichter' target='_blank'>Guenter Richter</a> powered by iXMaps",
 		"basemap": "OpenStreetMap - FR",
-		"legend": "<h1>Elezioni 2022 - Camera</h1><h3>Candidati nei collegi plurinominali</h3><h4>Per vedere i candidati si prega di cliccare sui poligoni dei collegi</h4><h4>fonte: <a href='https://github.com/ondata/elezioni-politiche-2022/tree/main/liste' target='_blank'>OnData</a></h4>",
+		"legend": "<h1>Elezioni 2022 - Camera</h1><h4 style='margin-top:-0.5em;margin-bottom:1em'>di <a href='https://twitter.com/grichter' target='_blank'>Guenter Richter</a><h4><h3>Candidati nei collegi plurinominali</h3><h4>Per vedere i candidati si prega di cliccare sui poligoni dei collegi</h4><h4>fonte: <a href='https://github.com/ondata/elezioni-politiche-2022/tree/main/liste' target='_blank'>OnData</a></h4>",
 		"item": "https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Politiche/2022/item_pluri.html",
 		"scaleParam": {
 			"normalSizeScale": "177165354"
