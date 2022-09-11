@@ -275,14 +275,14 @@
 
 						for (a in data) {
 							if (data[a].sesso == 'F') {
-								var link = "https://www.google.com/search?q="+data[a].nome_c + "+ " + data[a].cogn_c;
+								var link = "https://www.google.com/search?q=%22"+data[a].nome_c + "++" + data[a].cogn_c +"%22++politiche++2022";
 								szHtml += "<tr style='background:#fff0f0'><td style='width:300px'><a style='color:#666666' href='"+link+"' target='_blank'>" + data[a].nome_c + " " + data[a].cogn_c + "</td><td style='font-size:1em;'>" + data[a].eta + " anni</td></tr><tr><td style='font-size:0.6em;width:300px;padding-bottom:0.5em'>" + data[a].coalizione || "" + "</a></td><tr>";
 								eta += data[a].eta;
 							}
 						}
 						for (a in data) {
 							if (data[a].sesso == 'M') {
-								var link = "https://www.google.com/search?q="+data[a].nome_c + "+ " + data[a].cogn_c;
+								var link = "https://www.google.com/search?q=%22"+data[a].nome_c + "++" + data[a].cogn_c +"%22++politiche++2022";
 								szHtml += "<tr style='background:#f0f0ff'><td style='width:300px'><a style='color:#666666' href='"+link+"' target='_blank'>" + data[a].nome_c + " " + data[a].cogn_c + "</td><td style='font-size:1em;'>" + data[a].eta + " anni</td></tr><tr><td style='font-size:0.6em;width:300px;padding-bottom:0.5em'>" + data[a].coalizione || "" + "</a></td><tr>";
 								eta += data[a].eta;
 							}
