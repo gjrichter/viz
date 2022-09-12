@@ -95,7 +95,7 @@
 				"dbtable": "themeDataObj",
 				"dbtableUrl": "https://raw.githubusercontent.com/ondata/elezioni-politiche-2022/main/liste/processing/SENATO_ITALIA_20220925_pluri.csv",
 				"dbtableType": "csv",
-				"dbtableProcess": "function(data){data.addColumn({destination:'eta',source:'dt_nasc'},function(value){return 2022-value;});data.addColumn({destination:'f_eta',source:'eta'},function(value){return Math.floor(value/10)*10;});return data;}",
+				"dbtableProcess": "function(data){data.addColumn({destination:'eta',source:'dt_nasc'},function(value){return 2022-value;});data.addColumn({destination:'f_eta',source:'eta'},function(value){return Math.floor(value/10)*10;});data.sort('num_c');data.sort('desc_lista');return data;}",
 				"datacache": "false",
 				"lookupfield": "desc_ente",
 				"valuedecimals": "0",
