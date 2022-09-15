@@ -1,0 +1,128 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Sep 04 2022 11:23:23 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "white",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "177165354"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "normal",
+			"objectscaling": "normal",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "10000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "41.549700145132725",
+			"lng": "15.029296875000002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "CAMERA_Collegi_Uninominali_2020",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURE|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "themeDataObj_xx",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/CollegiElettoraliBasiGeografiche/CAMERA_CollegiUNINOMINALI_2020_GEO_S.topojson.gz",
+				"dbtableType": "topojson",
+				"dbtableProcess": "function(data){data.column('CU20_DEN').map(function(value){value=value.replace(\"Valle d'aosta/Vallée d'Aoste\",\"Valle d'aosta\");return value.toUpperCase();});return data;}",
+				"datacache": "false",
+				"itemfield": "CU20_DEN",
+				"lookupfield": "geometry",
+				"showdata": "true",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"#888888"],
+				"linewidth": "0.5",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "CAMERA Collegi Uninominali 2020",
+				"snippet": "Colorato per Popolazione 2011"
+				}
+			},{
+			"layer": "CAMERA_Collegi_Uninominali_2020",
+			"field": "sesso",
+			"field100": "",
+			"style": {
+				"type": "CHART|PIE|HALF|CATEGORICAL|AGGREGATE|RECT|SUM|AUTOSIZE",
+				"colorscheme": [
+					"#FF4D4D",
+					"#4C63CE"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "themeDataObj_2",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/elezioni-politiche-2022/main/liste/processing/CAMERA_ITALIA_20220925_uni.csv",
+				"dbtableType": "csv",
+				"dbtableProcess": "function(data){data.addColumn({destination:'eta',source:'dt_nasc'},function(value){return 2022-value;});data.addColumn({destination:'f_eta',source:'eta'},function(value){return Math.floor(value/10)*10;});return data;}",
+				"datacache": "false",
+				"lookupfield": "desc_ente",
+				"showdata": "true",
+				"values": [
+					"F",
+					"M"],
+				"label": [
+					"Femmine",
+					"Maschi"],
+				"units": "candidati",
+				"refreshtimeout": "0",
+				"scale": "2",
+				"normalsizevalue": "100",
+				"linecolor": [
+					"white"],
+				"linewidth": "0.2",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridwidthpx": "50",
+				"title": "Collegi Uninominali CAMERA",
+				"snippet": "la mappa aggrega i candidati dei collegi uninominali in una griglia rettangolare e mostra il rapporto femmine/maschi per questa aggregazione"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

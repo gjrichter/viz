@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta name="copyright" content="Guenter Richter" />
+	<meta name="author" content="Guenter Richter" />
+	<meta name="description" content="item data page" />
+	<meta name="revisit-after" content="30 days" />
+	<meta name="distribution" content="Global" />
+
+	<style type="text/css">
+	
+	/* Style for our header texts
+	* --------------------------------------- */
+	#result h1{
+		font-size: 2.5em;
+		font-family: courier new,Raleway,arial,helvetica;
+		font-weight: 400;
+		margin: 0.5em 0;
+		padding:0;
+		text-align:left;
+		margin-left: 0px;
+	}
+	#result h2{
+		font-size: 2em;
+		font-family: courier new,Raleway,arial,helvetica;
+		font-weight: 300;
+		margin:0.5em 0 0em 0;
+		padding:0;
+		text-align:left;
+		margin-left: 0px;
+	}
+	#result h3{
+		font-size: 2em;
+		font-family: courier new,Raleway,arial,helvetica;
+		font-weight: 300;
+		margin:0;
+		padding:0;
+		text-align:left;
+	}
+	#result h4{
+		font-size: 1.5em;
+		font-family: courier new,Raleway,arial,helvetica;
+		font-weight: 300;
+		margin:0.5em 0 0em 0;
+		padding:0;
+		text-align:left;
+	}
+	#result h5{
+		font-family: courier new,Raleway,arial,helvetica;
+		font-weight: 300;
+		margin:0;
+		padding:0;
+		text-align:left;
+	}
+	a {
+		color: #d0d8d0;
+		text-decoration: none;
+	}
+	</style>
+	
+	<style type="text/css">
+		td {
+			font-weight: 400;
+			font-size: 1.1em;
+			padding: 0.1em 0em;
+			vertical-align: top;
+		}
+
+		.label {
+			text-align: right;
+			font-size: 0.8em;
+			padding-top: 0.4em;
+			color: #888;
+			width: 33%;
+		}
+
+		.value {
+			text-align: left;
+			color: #000;
+			font-weight: 600;
+		}
+
+		.clip {
+			max-width: 100px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		.item-list {
+			margin-right: 0em;
+			padding: 1em 0.5em 1.5em 0.66em;
+			color: #aaa;
+		}
+
+		a {
+			color: #4466ff;
+		}
+
+		object {
+			margin: 0;
+			padding: 0;
+			margin-right: -1em;
+			width: 100%;
+			height: 1000px;
+		}
+
+		#container {
+			margin-top: 2.1em;
+			margin-left: 0em;
+			margin-right: 0em;
+			xxpadding-bottom: 1em;
+			xxpadding-right: 2em;
+			vertical-align: middle;
+			background-color: rgba(239, 235, 239, 0.7);
+		}
+
+		#tooltip {
+			font-family: arial narrow, system;
+			background: white;
+			border: 0.5px solid black;
+			border-radius: 5px;
+			padding: 5px;
+			max-width: 80%;
+		}
+
+		th,
+		td {
+			xxborder-bottom: 1px solid #ddd;
+		}
+
+	</style>
+	
+</head>
+
+<body style="margin:0px;padding:0px;" onload="">
+
+	<!-- Container -->
+	<div id="container" style="background:#fff;">
+
+		<div id="chart-div" style="position:relative;top:0px">
+		</div>
+		
+		<div id="chart-div2" style="position:relative;top:-420px;pointer-events:none;max-height:0px">
+		</div>
+
+		<div id="result-div" style="overflow:auto">
+			
+			<div id="result">
+			</div>
+			<div>
+			</div>
+
+			<div id="tooltip" style="position: absolute; display: none;"></div>
+
+			<script type="text/javascript">
+				if (typeof(ixmaps) == "undefined") {
+					var ixmaps = null;
+					if (window.opener) {
+						ixmaps = window.opener.ixmaps;
+					} else
+					if (parent) {
+						ixmaps = parent.window.ixmaps;
+					} else {
+						alert("error: missing parent window for themes !");
+					}
+
+					ixmaps.initialized = true;
+				}
+
+				// ===================================
+				// define local functions
+				// ===================================
+
+				// ------------------------
+				// tooltips for SVG charts
+				// ------------------------
+
+				var showTooltip = function(evt, text) {
+					if (text && text.length) {
+						var tooltip = document.getElementById("tooltip");
+						//var sidebar = document.getElementById("sidebar");
+						tooltip.innerHTML = text;
+						tooltip.style.display = "block";
+						var left = 0; //parseInt(sidebar.style.getPropertyValue("left"));
+						tooltip.style.left = evt.pageX - left - 20 + 'px';
+						tooltip.style.top = evt.pageY + 20 + 'px';
+					}
+				}
+
+				var hideTooltip = function() {
+					var tooltip = document.getElementById("tooltip");
+					tooltip.style.display = "none";
+				}
+
+				ixmaps.onMouseOver = function() {
+					var szTooltip = null;
+					var source = event.target;
+					while (!szTooltip && source) {
+						szTooltip = source.getAttribute("tooltip");
+						source = source.parentNode;
+					}
+					showTooltip(event, szTooltip);
+					event.stopPropagation();
+					event.preventDefault();
+				};
+
+				ixmaps.onMouseOut = function() {
+					hideTooltip();
+				};
+
+				var DonutCharts = {};
+				DonutCharts.partOver = function() {};
+				DonutCharts.partOut = function() {};
+
+
+				// ===================================
+				// ===================================
+				//
+				// here we go and make the item info
+				//
+				// ===================================
+				// ===================================
+
+				ixmaps.makeItemContent = function() {
+
+					var szId = ixmaps.szMapItemId;
+
+					if (!szId.match(/chart/i)) {
+
+						var obj = ixmaps.embeddedSVG.window.SVGDocument.getElementById(szId);
+
+						// get theme chart if present
+						// --------------------------
+						var szChartId = szId.match(/::/) ? szId : obj.parentNode.getAttribute("id");
+						var szIdA = szChartId.split("#");
+						if (szIdA.length > 1) {
+							var szIdAA = szIdA[1].split(/\b::\b/);
+							szChartId = szIdA[0] + "::" + szIdAA[1];
+							szTitle = szIdAA[1];
+						}
+						szId = ixmaps.getThemes()[1].szId + ":" + szChartId + ":chartgroup";
+
+					}
+
+					var themeObj = ixmaps.getThemeObj(szId.split(":")[0]);
+
+					var szHtml = "";
+
+					var data = ixmaps.map().getData(szId);
+					if (data) {
+
+						var nMaxHeight = window.screen.availHeight - 350;
+
+						var eta = 0;
+						var desc_lista = null;
+
+						szHtml += "<section>";
+						szHtml += "<div style='height:0.1em'></div>"
+						szHtml += "<div style='margin:-2.5em 1em 1em 1em'><h4>" + themeObj.szTitle + "</h4></div>"
+						szHtml += "<div style='margin:1em 1em 1em 1em'><h3>" + data[0].desc_ente + "</h3></div>"
+						szHtml += "</section>";
+
+						szHtml += "<section>";
+
+						szHtml += "<table style='margin:0em 1em 0em 1em;font-family: arial narrow, system;'>";
+
+						for (a in data) {
+
+							if (!desc_lista || (desc_lista != data[a].desc_lista)) {
+								szHtml += "<tr><td style='font-size:0.5em'>&nbsp;</td></tr>";
+								szHtml += "<tr><td style='font-size:0.8em'>" + data[a].desc_lista + "</td></tr>";
+							}
+
+							if (data[a].sesso == 'F') {
+								var link = "https://www.google.com/search?q=%22"+data[a].nome_c + "++" + data[a].cogn_c +"%22++politiche++2022";
+								szHtml += "<tr style='background:#fff4f4'><td style='width:80%'><a style='color:#666666' href='"+link+"' target='_blank'>" + data[a].num_c + " " + data[a].nome_c + " " + data[a].cogn_c + "</td><td style='font-size:1em;'>" + data[a].eta + " anni</a></td></tr>";
+								eta += data[a].eta;
+							}
+							if (data[a].sesso == 'M') {
+								var link = "https://www.google.com/search?q=%22"+data[a].nome_c + "++" + data[a].cogn_c +"%22++politiche++2022";
+								szHtml += "<tr style='background:#f4f4ff'><td style='width:80%'><a style='color:#666666' href='"+link+"' target='_blank'>" + data[a].num_c + " " + data[a].nome_c + " " + data[a].cogn_c + "</td><td style='font-size:1em;'>" + data[a].eta + " anni</a></td></tr>";
+								eta += data[a].eta;
+							}
+							desc_lista = data[a].desc_lista;
+						}
+
+						szHtml += "<tr><td>---</td></tr>";
+
+						szHtml += "</table>";
+						szHtml += "</section>";
+
+						szHtml += "<section>";
+						szHtml += "<div style='margin:0em 1em 0em 1em'><h4 style='font-size:1.1em'>" + data.length + " candidate/candidati, età media: " + Math.floor(eta / data.length * 10) / 10 + "<h4></div>"
+						szHtml += "<div style='height:0.1em'></div>"
+						szHtml += "</section>";
+
+
+					}
+
+
+					// show the item data created
+					document.getElementById("result").innerHTML = szHtml;
+					document.getElementById("result-div").setAttribute("display","inline");
+
+					var height = window.innerHeight-100; 
+					document.getElementById("result").style.setProperty("height",height+"px");
+
+				};
+
+				setTimeout("ixmaps.makeItemContent()", 100);
+
+			</script>
+
+</body>
+
+</html>

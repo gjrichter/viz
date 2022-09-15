@@ -1,0 +1,594 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content="en-us" http-equiv="Content-Language">
+
+	<title>Airbnb listings venice</title>
+	<meta name="author" content="Guenter Richter" />
+	<meta name="description" content="ixmaps iteractive map to explore airbnb listigs in venice,italy" />
+	<meta name="keywords" content="ixmaps,airbnb,inside,listings,map,char,interactice,SVG" />
+	<meta name="Resource-type" content="Document" />
+
+	<!-- BOOTSTRAP CORE STYLE CSS -->
+	<link href="assets/css/bootstrap.css" rel="stylesheet" />
+	<!-- GOOGLE FONT -->
+	<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+
+
+	<link href="assets/css/icomoon.css" rel="stylesheet" />
+	<link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="assets/css/main.css" rel="stylesheet" />
+	<link href="./inline_legend.css" rel="stylesheet" />
+
+	<link rel="stylesheet" type="text/css" href="assets/css/jquery.fullPage.css" />
+	<style type="text/css">
+		.container {
+			color: #aaaaaa;
+			margin-left: 1em;
+		}
+		.title {
+			margin-top: 3em;
+			margin-bottom: 0em;
+		}
+		/* Overwriting fullPage.js tooltip color
+		* --------------------------------------- */
+
+		.fp-tooltip {
+			color: #AAA;
+		}
+
+		#fp-nav span,
+		.fp-slidesNav span {
+			border-color: #AAA;
+		}
+
+		#fp-nav li .active span,
+		.fp-slidesNav .active span {
+			background: #AAA;
+		}
+
+		.shareIcon {
+			font-size: 24px;
+			margin-right: 0.5em;
+		}
+
+		.active a {
+			color: #666;
+		}
+		.blog-content a {
+			color: #08d;
+		}
+
+		body {
+			-webkit-user-select: none;
+			/* Chrome all / Safari all */
+			-moz-user-select: none;
+			/* Firefox all */
+			-ms-user-select: none;
+			/* IE 10+ */
+			user-select: none;
+			/* Likely future */
+		}
+		
+		h3 {
+			margin-right: 2em;
+		}
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+</head>
+
+<body style="background:RGBA(255,255,255,1)">
+
+	<div id="fullpage" style="margin-top:0px;font-weight:500;display:none">
+
+		<div class="section">
+
+			<!-- 2. Camera Coleggi Uninominali -->
+
+			<div class="slide container" >
+				<div class="intro down">
+					<h3 class="title"><b>Canditati alle Elezioni Politiche 2022<br></b></h3>
+					<p>dati: <a href='https://github.com/ondata/elezioni-politiche-2022/tree/main/liste' target='_blank'><img src='https://avatars.githubusercontent.com/u/10263296?s=200&v=4' height='22px'> OnData</a>,  
+					  fonte: <a href='https://dait.interno.gov.it/elezioni/trasparenza/elezioni-politiche-2022' target='_blank'>Ministero dell'Interno </a></p>
+					<p><b>scorri giu</b> per altre mappe</p>
+					
+					<h3 class="title"><b>1. Collegi - UNINOMINALI</b></h3><br>
+					<img alt="Risultati immagini per camera" id="dimg_23" src="data:image/png;base64,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" data-atf="1" data-frt="0" style="width: 200px; height: 100px; margin-left: 0px; margin-right: 0px; margin-top: 0px;">
+					<p>
+						<br>cliccare sui poligoni<br> per vedere i candidati/le candidate del collegio
+						<a class="theme button" href='javascript:ixmaps.map().loadProject("https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Politiche/2022_test/ixmaps_project_CAMERA_CollegiUNINOMINALI_2020_candidati_poligoni_coalizioni.json","keepview");' style='display:none'>dummy</a>
+					</p>
+					<h4 style="margin-top:2em"> Altre mappe: </h4>
+					&rarr; <a href="javascript:ixmaps.moveToSection(2)">Collegi Uninominali - Senato</a><br>
+					&rarr; <a href="javascript:ixmaps.moveToSection(3)">Collegi Plurinominali - Camera </a><br>
+					&rarr; <a href="javascript:ixmaps.moveToSection(4)">Collegi Plurinominali - Senato</a><br>
+					<br>
+					&rarr; <a href="javascript:ixmaps.moveToSection(5)">Gender Maps I</a> 
+							<a href="javascript:ixmaps.moveToSection(6)">II</a> 
+				</div>
+			</div>
+
+		</div>
+
+		<div class="section">
+
+			<!-- 2. Senato Coleggi Uninominali -->
+
+			<div class="slide container" >
+				<div class="intro up down">
+					<h3 class="title"><b>Canditati alle Elezioni Politiche 2022<br></b></h3>
+					<p>dati: <a href='https://github.com/ondata/elezioni-politiche-2022/tree/main/liste' target='_blank'><img src='https://avatars.githubusercontent.com/u/10263296?s=200&v=4' height='22px'> OnData</a>,  
+					  fonte: <a href='https://dait.interno.gov.it/elezioni/trasparenza/elezioni-politiche-2022' target='_blank'>Ministero dell'Interno </a></p>
+					<p><b>scorri giu</b> per altre mappe</p>
+					
+					<h3 class="title"><b>2. Collegi - UNINOMINALI</b></h3><br>
+					<img alt="Image result for senato" id="dimg_39" src="data:image/png;base64,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" data-atf="1" data-frt="0" style="width: 200px; height: 84px; margin-left: 0px; margin-right: 0px; margin-top: 0px;">
+					<p>
+						<br>cliccare sui poligoni
+						<a class="theme button" href='javascript:ixmaps.map().loadProject("https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Politiche/2022_test/ixmaps_project_SENATO_CollegiUNINOMINALI_2020_candidati_poligoni_coalizioni.json","keepview	");' style='display:none'>dummy</a>
+					</p>
+				</div>
+			</div>
+
+		</div>
+		
+		<div class="section">
+		
+			<!-- 3. Camera Plurinominali -->
+
+			<div class="slide container" >
+				<div class="intro up down">
+					<h3 class="title"><b>Canditati alle Elezioni Politiche 2022<br></b></h3>
+					<p>dati: <a href='https://github.com/ondata/elezioni-politiche-2022/tree/main/liste' target='_blank'><img src='https://avatars.githubusercontent.com/u/10263296?s=200&v=4' height='22px'> OnData</a>,  
+					  fonte: <a href='https://dait.interno.gov.it/elezioni/trasparenza/elezioni-politiche-2022' target='_blank'>Ministero dell'Interno </a></p>
+					<p><b>scorri giu</b> per altre mappe</p>
+					
+					<h3 class="title"><b>3. Collegi - PLURINOMINALI</b></h3><br>
+					<img alt="Risultati immagini per camera" id="dimg_23" src="data:image/png;base64,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" data-atf="1" data-frt="0" style="width: 200px; height: 100px; margin-left: 0px; margin-right: 0px; margin-top: 0px;">
+					<p>
+						<br>cliccare sui poligoni
+						<a class="theme button" href='javascript:ixmaps.map().loadProject("https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Politiche/2022_test/ixmaps_project_CAMERA_CollegiPLURINOMINALI_2020_candidati_poligoni.json","keepview");' style='display:none'>dummy</a>
+					</p>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="section">
+
+			<!-- 4. Senato Plurinominali -->
+
+			<div class="slide container" >
+				<div class="intro up down">
+					<h3 class="title"><b>Canditati alle Elezioni Politiche 2022<br></b></h3>
+					<p>dati: <a href='https://github.com/ondata/elezioni-politiche-2022/tree/main/liste' target='_blank'><img src='https://avatars.githubusercontent.com/u/10263296?s=200&v=4' height='22px'> OnData</a>,  
+					  fonte: <a href='https://dait.interno.gov.it/elezioni/trasparenza/elezioni-politiche-2022' target='_blank'>Ministero dell'Interno </a></p>
+					<p><b>scorri giu</b> per altre mappe</p>
+					
+					<h3 class="title"><b>4. Collegi - PLURINOMINALI</b></h3><br>
+					<img alt="Image result for senato" id="dimg_39" src="data:image/png;base64,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" data-atf="1" data-frt="0" style="width: 200px; height: 84px; margin-left: 0px; margin-right: 0px; margin-top: 0px;">
+					<p>
+						<br>cliccare sui poligoni
+						<a class="theme button" href='javascript:ixmaps.map().loadProject("https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Politiche/2022_test/ixmaps_project_SENATO_CollegiPLURINOMINALI_2020_candidati_poligoni.json","keepview");' style='display:none'>dummy</a>
+					</p>
+				</div>
+			</div>
+
+
+		</div>
+
+		<div class="section">
+
+			<!-- 5. Gender Map I -->
+
+			<div class="slide container" >
+				<div class="intro up down">
+					<h3 class="title"><b>Canditati alle Elezioni Politiche 2022<br></b></h3>
+					<p>dati: <a href='https://github.com/ondata/elezioni-politiche-2022/tree/main/liste' target='_blank'><img src='https://avatars.githubusercontent.com/u/10263296?s=200&v=4' height='22px'> OnData</a>,  
+					  fonte: <a href='https://dait.interno.gov.it/elezioni/trasparenza/elezioni-politiche-2022' target='_blank'>Ministero dell'Interno </a></p>
+					<p><b>scorri giu</b> per altre mappe</p>
+					
+					<h3 class="title"><b>5. Gender Maps</b></h3>
+					<p>
+						<a class="theme button" href='javascript:ixmaps.map().loadProject("https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Politiche/2022_test/ixmaps_project_CAMERA_CollegiUNINOMINALI_2020_candidati_pie_half.json","clear");' style='display:none'>dummy</a>
+					</p>
+				</div>
+			</div>
+
+
+		</div>
+
+		<div class="section">
+
+			<!-- 6. Gender Map II -->
+
+			<div class="slide container" >
+				<div class="intro up down">
+					<h3 class="title"><b>Canditati alle Elezioni Politiche 2022<br></b></h3>
+					<p>dati: <a href='https://github.com/ondata/elezioni-politiche-2022/tree/main/liste' target='_blank'><img src='https://avatars.githubusercontent.com/u/10263296?s=200&v=4' height='22px'> OnData</a>,  
+					  fonte: <a href='https://dait.interno.gov.it/elezioni/trasparenza/elezioni-politiche-2022' target='_blank'>Ministero dell'Interno </a></p>
+					<p><b>scorri giu</b> per altre mappe</p>
+					
+					<h3 class="title"><b>5. Gender Maps</b></h3>
+					<p>
+						<a class="theme button" href='javascript:ixmaps.map().loadProject("https://raw.githubusercontent.com/gjrichter/viz/master/Elezioni/Politiche/2022_test/ixmaps_project_CAMERA_CollegiPLURINOMINALI_2020_candidati_pie_half.json","keepview");' style='display:none'>dummy</a>
+					</p>
+					<h4 style="margin-top:2em"> applica un filtro: </h4>
+					&rarr; <a href="javascript:ixmaps.map().changeThemeStyle(null,'filter:WHERE num_c = 1','add')">solo 1. posti</a> | 
+					&rarr; <a href="javascript:ixmaps.map().changeThemeStyle(null,'filter:WHERE num_c = 2','set')">solo 2. posti</a> | 
+					&rarr; <a href="javascript:ixmaps.map().changeThemeStyle(null,'filter:','set')">reset</a><br>
+				</div>
+			</div>
+
+
+		</div>
+
+
+		<div class="section  intro up" >
+			
+			<!-- About & Attributes -->
+			
+			<div class="container" id="contact" name="contact">
+				<div class="row">
+					<div class="col-lg-8 blog-content">
+
+						<h3 class="title">di queste mappe ...</h3>
+						<h4>queste mappe visualizzano dati rilascati dal Ministaro dell'Interno riguardante le liste dei candidati per le elezioni politiche del 25.09.2022</h4>
+						<h3 class="title">Attribuzioni</h3>
+						<h4><b>dati:</b><a href='https://github.com/ondata/elezioni-politiche-2022/tree/main/liste' target='_blank'><img src='https://avatars.githubusercontent.com/u/10263296?s=200&v=4' height='22px'> OnData</a>,  
+							<b>fonte:</b> <a href='https://dait.interno.gov.it/elezioni/trasparenza/elezioni-politiche-2022' target='_blank'>Ministero dell'Interno </a></h4>
+						<h4>elaborazione dati: A.Borruso</h4>
+						<h4>visualizzazione: iXMaps</h4>
+
+					</div>
+				</div><!-- row -->
+
+			</div><!-- container -->
+		</div>
+
+	</div>
+
+	<div id="header" style="position: fixed;top:0;left:0px;width:90%;height:40px;">
+		<div class="container" style="margin-top:11px">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="header" aria-hidden="true">
+						<div class="linkSocialContainer" style="float:left">
+							<span class="linkContainer"></span>
+							<span class="shareBtns" style="font-size:24px;">
+								<a href="javascript:ixmaps.popupShare()">
+								<span class="shareIcon fa fa-share fa-fw" title="share actual map" ></span></a>
+								<a href="javascript:ixmaps.loadStoryTool('./filter.html',{frame:true})" >
+								<i class="shareIcon blackHover share_bitly icon-filter" title="Filter" tabindex="-1" style="margin-left:0.2em" ></i></a>
+								<a href="javascript:ixmaps.loadStoryTool('./layer.html')" >
+								<i class="shareIcon blackHover share_bitly icon-map" title="Layer" tabindex="-1" style="margin-left:0.2em" ></i></a>
+								<a href="javascript:ixmaps.loadStoryTool('./about.html')" >
+								<i class="shareIcon blackHover share_bitly icon-info" title="About" tabindex="-1" style="margin-left:0.2em" ></i></a>
+								<a href="javascript:ixmaps.loadStoryTool('./menu.html')" >
+								<i class="shareIcon blackHover share_bitly icon-list2" title="Menu" tabindex="-1" style="margin-left:0.1em" ></i></a>
+								<a href="javascript:ixmaps.loadStoryTool('./table.html',{frame:true})" >
+								<i class="shareIcon blackHover share_bitly icon-table2" title="Menu" tabindex="-1" style="margin-left:0.2em" ></i></a>
+								</a>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ==== MODAL DIALOG ==== -->
+	<div id="modal-dialog-1" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="background:white;z-index:9999">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				...
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+	<div id="modal-dialog-2" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="background:white;z-index:9999">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				...
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="assets/plugins/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
+	<script type="text/javascript" src="assets/js/masonry.pkgd.min.js"></script>
+	<script type="text/javascript" src="assets/js/imagesloaded.js"></script>
+	<script type="text/javascript" src="assets/js/classie.js"></script>
+	<script type="text/javascript" src="assets/js/AnimOnScroll.js"></script>
+
+	<script type="text/javascript" src="assets/plugins/jquery.fullPage.min.js"></script>
+	<script type="text/javascript" src="themes.js"></script>
+
+	<script type="text/javascript">
+		var mymap = null;
+		// --------------------------------
+		// get ixmaps API from parent 
+		// --------------------------------
+
+		var ixmaps = null;
+		if (window.opener) {
+			ixmaps = window.opener.ixmaps;
+		} else
+		if (parent) {
+			ixmaps = parent.window.ixmaps;
+		} else {
+			alert("error: missing parent window for themes !");
+		}
+
+		ixmaps.initialized = false;
+
+		// don't synchronise multiple map frames
+		ixmaps.setSyncMultiMaps(false);
+
+		var nLegendDiv = 0;
+		var legendA = Array(0);
+		ixmaps.setLegendDiv = function(n) {
+			nLegendDiv = n;
+		};
+
+		ixmaps.setLoading = function() {
+			ixmaps.showLoading("... caricando ...");
+		};
+
+		// define some helper for the sidebar menu
+
+		ixmaps.moveSectionsDown = function(nr) {
+			nr = nr || 1;
+			for (var i = 0; i < nr; i++) {
+				setTimeout("$.fn.fullpage.moveSectionDown();", i * 100);
+			}
+		};
+
+		ixmaps.moveToSection = function(nr, slide) {
+			ixmaps.fMoveToSection = true;
+			$.fn.fullpage.moveTo(nr, slide);
+		};
+
+		ixmaps.moveSlideRight = function(nr) {
+			nr = nr || 1;
+			for (var i = 0; i < nr; i++) {
+				setTimeout("$.fn.fullpage.moveSlideRight();", i * 100);
+			}
+		};
+
+		// --------------------------------
+		// p a g e 
+		// --------------------------------
+
+		// enumerate sections, slides and theme
+		// and create the right id's for fullpage slide handling
+		// -----------------------------------------------------
+		var section = 0;
+		$(".section").each(function() {
+			$(this).attr("id", "section" + (++section));
+			var slide = 0;
+			$(this).find(".slide").each(function() {
+				$(this).attr("id", "section" + section + "slide" + (++slide));
+				$(this).find(".theme").each(function() {
+					$(this).attr("id", "theme_" + section + "" + slide);
+				});
+			});
+		});
+
+		// CUSTOM SCROLL SCRIPT FUNCTION FOR NAVBAR
+		$(function() {
+			$('.scrollclass a').bind('click', function(event) { //just pass scrollclass in design and start scrolling
+				var $anchor = $(this);
+				$('html, body').stop().animate({
+					scrollTop: $($anchor.attr('href')).offset().top
+				}, 1000, 'easeInOutQuad');
+				event.preventDefault();
+			});
+		});
+		//ADD REMOVE PADDING CLASS ON SCROLL
+		$(window).scroll(function() {
+			if ($(document).scrollTop() > 40) {
+				$(".navbar-fixed-top").addClass("navbar-pad-original");
+			} else {
+				$(".navbar-fixed-top").removeClass("navbar-pad-original");
+			}
+		});
+
+		//var html = '<a href="javascript:$.fn.fullpage.moveSectionDown();"><div class="row scrollclass fp-controlArrow fp-down" style="left:' + (window.innerWidth / 2 - 33) + 'px;text-align:center;margin-top:-0.7em;margin-bottom:1em;"></div></a>';
+		//$('.down').append(html);
+
+		//var html = '<a href="javascript:$.fn.fullpage.moveSectionUp();"><div class="row scrollclass fp-controlArrow fp-up" style="left:' + (window.innerWidth / 2 - 33) + 'px;text-align:center;margin-top:-2.2em;margin-bottom:3em;margin-left:1em"></div></a>';
+		//$('.up').append(html);
+
+		var html = '<div class="row scrollclass" style="position:absolute;top:' + (window.innerHeight - 150) + 'px;right:' + (20) + 'px;text-align:center;"><a href="javascript:$.fn.fullpage.moveSectionDown();"><span class="icon icon-arrow-down tip" data-tip="next" style="font-size:36px;color:#666666;"></span></a></div>';
+		$('.down').append(html);
+
+		var html = '<div class="row scrollclass" style="position:absolute;top:' + (70) + 'px;right:' + (20) + 'px;text-align:center;"><a href="javascript:$.fn.fullpage.moveSectionUp();"><span class="icon icon-arrow-up tip" data-tip="next" style="font-size:36px;color:#666666;"></span></a></div>';
+		$('.up').append(html);
+
+
+		$(document).ready(function() {
+
+			var __section = null;
+			var __slide = null;
+			var __fMoveActive = false;
+
+			__onChange = function() {
+				if (!ixmaps.initialized) {
+					setTimeout("__onChange()",100);
+					return;
+				}
+				__doTheme("theme_" + __section + (__slide + 1));
+			};
+			$('#fullpage').fullpage({
+				'scrollOverflow': true,
+				'scrollOverflowOptions': {
+					scrollbars: false
+				},
+				'verticalCentered': false,
+				'css3': true,
+				'navigation': true,
+				'navigationPosition': 'right',
+				'navigationTooltips': ['Incidenti', 'Analisi temporali', 'Pericolosità', 'Natura del incidente', 'Attribuzioni'],
+
+				'afterLoad': function(a, index, c, d) {
+					__section = index;
+					__slide = 0;
+					$.fn.fullpage.silentMoveTo(index, __slide);
+				},
+				'afterSlideLoad': function(a, index, c, d) {
+					__slide = d;
+					__onChange();
+				},
+
+				'onLeave': function(index, nextIndex, direction) {}
+			});
+			$('#fullpage').fadeIn("slow");
+		});
+
+		__doThemeOldTheme = null;
+		__doThemeTimeout = null;
+		__doTheme = function(szName) {
+			if (szName == __doThemeOldTheme) {
+				return;
+			}
+			__doThemeOldTheme = szName;
+			if (__doThemeTimeout) {
+				clearTimeout(__doThemeTimeout);
+			}
+			__doThemeTimeout = setTimeout("__doThemeOnTimeout('" + szName + "')", 100);
+		}
+		__doThemeOnTimeout = function(szName) {
+			$("#" + szName).click();
+			eval($("#" + szName).attr("href"));
+		}
+
+		// ------------------------------
+		// set resize handler
+		// ------------------------------
+		$(window).resize(function() {
+			// refresh scrollspy !!!
+			$('[data-spy="scroll"]').each(function() {
+				var $spy = $(this).scrollspy('refresh')
+			});
+		});
+
+
+		// --------------------------------------------------------------
+		// define click extension to
+		// check/highlight the theme button 
+		// --------------------------------------------------------------
+
+		// array to store the clicked objects for onRemoveTheme callback
+		var clickA = new Array(0);
+
+		// store the last clicked object for onNewTheme callback
+		var lastClicked = null;
+		$("a").click(function() {
+			if (String($(this).attr("href")).match(/newtheme/i) || String($(this).attr("href")).match(/loadProject/i)) {
+				lastClicked = $(this);
+			}
+		});
+
+		// -----------------------------------
+		// adapt legend background to map type
+		// -----------------------------------
+
+		/**
+		 * set legend background on map type change
+		 * @type void
+		 */
+		__changeCss = function(className, classValue) {
+
+			var cssMainContainer = $('#css-modifier-container');
+			if (cssMainContainer.length == 0) {
+				var cssMainContainer = $('<style id="css-modifier-container"></style>');
+				cssMainContainer.appendTo($('head'));
+			}
+			cssMainContainer.append(className + " {" + classValue + "}\n");
+		};
+
+		ixmaps.htmlgui_setMapTypeBG = function(szId) {return;
+
+			$("#css-modifier-container").remove();
+
+			if (szId.match(/dark/i) || szId.match(/black/i)) {
+				__changeCss(".story-body", "background-color:rgba(25,25,25,0.3)");
+				__changeCss(".inline-legend", "background-color:rgba(25,25,25,0.7)");
+				__changeCss(".title", "background-color:rgba(25,25,25,0.7)");
+			} else {
+				__changeCss(".body-story", "background-color:rgba(255,255,255,0.1)");
+				__changeCss(".inline-legend", "background-color:rgba(255,255,255,0.5)");
+				__changeCss(".title", "background-color:rgba(255,255,255,0.5)");
+			}
+		};
+
+		// -----------------------------------------------
+		// load themes script
+		// and initialize map if all loaded
+		// -----------------------------------------------
+
+		$.when(
+			$.getScript("./index.js"),
+			$.getScript("./inline_legend.js"),
+			$.Deferred(function(deferred) {
+				$(deferred.resolve);
+			})
+		).done(function() {
+
+			// ------------------------------
+			// initialize map
+			// ------------------------------
+
+			ixmaps.waitForMap(null, function(map) {
+
+				ixmaps.initialized = true;
+
+				map.setLocalString("... processing ...", "...");
+				map.setLocalString("... creating theme ...", "...");
+				map.setLocalString("cleaning up ...", "");
+				map.setLocalString("loading data ...", "... caricando dati ...");
+				
+				map.setView([41.74672584176937,11.392822265625],6);
+				mymap = map;
+
+			});
+
+		}).fail(function() {
+			alert("script loading " + arguments[2].toString());
+		});
+
+		/**
+		 * open/close the about dialog 
+		 * @param flag 'show' or 'hide'
+		 * @type void
+		 */
+		__aboutDialog = function(flag){
+			var about = "../../app/Viewer/stories/Master/about_it-IT.html";
+			if ( ixmaps.loadedProject.metadata.about && ixmaps.loadedProject.metadata.about.length ){
+				about = ixmaps.loadedProject.metadata.about;
+			}
+			ixmaps.embeddedApi.embeddedApi.openDialog(null,'about-dialog',about,'about this map','200,50',600,600);
+		};
+		
+	</script>
+
+
+</body>
+
+</html>
