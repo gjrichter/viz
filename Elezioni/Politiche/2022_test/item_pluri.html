@@ -148,11 +148,11 @@
 		<div id="chart-div2" style="position:relative;top:-420px;pointer-events:none;max-height:0px">
 		</div>
 
-		<div id="result-div" style="overflow:auto">
-			
+		<div id="result-div">
 			<div id="result">
 			</div>
 			<div>
+
 			</div>
 
 			<div id="tooltip" style="position: absolute; display: none;"></div>
@@ -261,11 +261,11 @@
 
 						szHtml += "<section>";
 						szHtml += "<div style='height:0.1em'></div>"
-						szHtml += "<div style='margin:-2.5em 1em 1em 1em'><h4>" + themeObj.szTitle + "</h4></div>"
+						szHtml += "<div style='margin:1em 1em 1em 1em'><h4>" + themeObj.szTitle + "</h4></div>"
 						szHtml += "<div style='margin:1em 1em 1em 1em'><h3>" + data[0].desc_ente + "</h3></div>"
 						szHtml += "</section>";
 
-						szHtml += "<section>";
+						szHtml += "<section style='max-height:" + nMaxHeight + "px;overflow:auto'>";
 
 						szHtml += "<table style='margin:0em 1em 0em 1em;font-family: arial narrow, system;'>";
 
