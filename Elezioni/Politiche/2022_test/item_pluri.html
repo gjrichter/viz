@@ -148,11 +148,11 @@
 		<div id="chart-div2" style="position:relative;top:-420px;pointer-events:none;max-height:0px">
 		</div>
 
-		<div id="result-div">
+		<div id="result-div" style="overflow:auto">
+			
 			<div id="result">
 			</div>
 			<div>
-
 			</div>
 
 			<div id="tooltip" style="position: absolute; display: none;"></div>
@@ -254,7 +254,7 @@
 					var data = ixmaps.map().getData(szId);
 					if (data) {
 
-						var nMaxHeight = window.screen.availHeight - 350;
+						var nMaxHeight = window.innerHeight - 200;
 
 						var eta = 0;
 						var desc_lista = null;
