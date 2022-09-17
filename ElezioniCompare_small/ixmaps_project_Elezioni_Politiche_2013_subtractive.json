@@ -77,7 +77,7 @@
 				"dbtable": "scrutiniCIComuni_voti",
 				"dbtableType": "jsondb",
 				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ElezioniPolitiche2013/risultati_comuni_camera_2013.js",
-				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/ElezioniCompare/process_comuni_2013.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/ElezioniCompare_small/process_comuni_2013.js",
 				"datacache": "true",
 				"itemfield": "Comune",
 				"lookupfield": "Comune",
