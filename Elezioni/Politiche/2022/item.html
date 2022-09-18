@@ -6,8 +6,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<meta http-equiv="Content-Language" content="en-us" />
 	<meta name="copyright" content="Guenter Richter" />
-	<meta name="author" content="service@medienobjekte.de" />
-	<meta name="description" content="Interactive &amp; estensible maps in SVG" />
+	<meta name="author" content="Guenter Richter" />
+	<meta name="description" content="item data page" />
 	<meta name="revisit-after" content="30 days" />
 	<meta name="distribution" content="Global" />
 
@@ -15,7 +15,7 @@
 	
 	/* Style for our header texts
 	* --------------------------------------- */
-	h1{
+	#result h1{
 		font-size: 2.5em;
 		font-family: courier new,Raleway,arial,helvetica;
 		font-weight: 400;
@@ -24,7 +24,7 @@
 		text-align:left;
 		margin-left: 0px;
 	}
-	h2{
+	#result h2{
 		font-size: 2em;
 		font-family: courier new,Raleway,arial,helvetica;
 		font-weight: 300;
@@ -33,7 +33,7 @@
 		text-align:left;
 		margin-left: 0px;
 	}
-	h3{
+	#result h3{
 		font-size: 2em;
 		font-family: courier new,Raleway,arial,helvetica;
 		font-weight: 300;
@@ -41,7 +41,7 @@
 		padding:0;
 		text-align:left;
 	}
-	h4{
+	#result h4{
 		font-size: 1.5em;
 		font-family: courier new,Raleway,arial,helvetica;
 		font-weight: 300;
@@ -49,7 +49,7 @@
 		padding:0;
 		text-align:left;
 	}
-	h5{
+	#result h5{
 		font-family: courier new,Raleway,arial,helvetica;
 		font-weight: 300;
 		margin:0;
@@ -63,12 +63,6 @@
 	</style>
 	
 	<style type="text/css">
-		body {
-			font-family: courier new, Raleway, Roboto Slab, monospace, Lato, arial, helvetica;
-			color: #444;
-			font-weight: 300;
-		}
-
 		td {
 			font-weight: 400;
 			font-size: 1.1em;
@@ -140,7 +134,7 @@
 		}
 
 	</style>
-	<script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+	
 </head>
 
 <body style="margin:0px;padding:0px;" onload="">
@@ -150,14 +144,15 @@
 
 		<div id="chart-div" style="position:relative;top:0px">
 		</div>
+		
 		<div id="chart-div2" style="position:relative;top:-420px;pointer-events:none;max-height:0px">
 		</div>
 
-		<div id="result-div">
+		<div id="result-div" style="overflow:auto">
+			
 			<div id="result">
 			</div>
 			<div>
-
 			</div>
 
 			<div id="tooltip" style="position: absolute; display: none;"></div>
@@ -269,21 +264,21 @@
 						szHtml += "<div style='margin:1em 1em 1em 1em'><h3>" + data[0].desc_ente + "</h3></div>"
 						szHtml += "</section>";
 
-						szHtml += "<section style='max-height:" + nMaxHeight + "px;overflow:auto'>";
+						szHtml += "<section >";
 
 						szHtml += "<table style='margin:0em 1em 0em 1em;font-family: arial narrow, system;'>";
 
 						for (a in data) {
 							if (data[a].sesso == 'F') {
 								var link = "https://www.google.com/search?q=%22"+data[a].nome_c + "++" + data[a].cogn_c +"%22++politiche++2022";
-								szHtml += "<tr style='background:#fff0f0'><td style='width:300px'><a style='color:#666666' href='"+link+"' target='_blank'>" + data[a].nome_c + " " + data[a].cogn_c + "</td><td style='font-size:1em;'>" + data[a].eta + " anni</td></tr><tr><td style='font-size:0.6em;width:300px;padding-bottom:0.5em'>" + data[a].coalizione || "" + "</a></td><tr>";
+								szHtml += "<tr style='background:#fff0f0'><td style='width:80%'><a style='color:#666666' href='"+link+"' target='_blank'>" + data[a].nome_c + " " + data[a].cogn_c + "</td><td style='font-size:1em;'>" + data[a].eta + " anni</td></tr><tr><td style='font-size:0.6em;width:80%;padding-bottom:0.5em'>" + data[a].coalizione || "" + "</a></td><tr>";
 								eta += data[a].eta;
 							}
 						}
 						for (a in data) {
 							if (data[a].sesso == 'M') {
 								var link = "https://www.google.com/search?q=%22"+data[a].nome_c + "++" + data[a].cogn_c +"%22++politiche++2022";
-								szHtml += "<tr style='background:#f0f0ff'><td style='width:300px'><a style='color:#666666' href='"+link+"' target='_blank'>" + data[a].nome_c + " " + data[a].cogn_c + "</td><td style='font-size:1em;'>" + data[a].eta + " anni</td></tr><tr><td style='font-size:0.6em;width:300px;padding-bottom:0.5em'>" + data[a].coalizione || "" + "</a></td><tr>";
+								szHtml += "<tr style='background:#f0f0ff'><td style='width:80%'><a style='color:#666666' href='"+link+"' target='_blank'>" + data[a].nome_c + " " + data[a].cogn_c + "</td><td style='font-size:1em;'>" + data[a].eta + " anni</td></tr><tr><td style='font-size:0.6em;width:80%;padding-bottom:0.5em'>" + data[a].coalizione || "" + "</a></td><tr>";
 								eta += data[a].eta;
 							}
 						}
@@ -298,16 +293,12 @@
 
 					}
 
+					// show the item data created
+					document.getElementById("result").innerHTML = szHtml;
+					document.getElementById("result-div").setAttribute("display","inline");
 
-					// show the item legend when its ready
-					$("#result").html(szHtml);
-					$("#result-div").show();
-
-					var height = 600; //($("#result-div").height()) + 20;
-					ixmaps.resizeDialog(null, height);
-
-					//ixmaps.sidebar(1);
-
+					var height = window.innerHeight-100; 
+					document.getElementById("result").style.setProperty("height",height+"px");
 
 				};
 
