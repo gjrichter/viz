@@ -58,7 +58,7 @@
 			"field100": "",
 			"style": {
 				"name":"trees",
-				"type": "CHART|BUBBLE|SIZE|COUNT|GLOW|GAUGE|HORZ|COMPACTLEGEND",
+				"type": "CHART|BUBBLE|SIZE|COUNT|GLOW|GAUGE|HORZ|COMPACTLEGEND|NOSORT",
 				"colorscheme": [
 					"11",
 					"#CFFF33",
