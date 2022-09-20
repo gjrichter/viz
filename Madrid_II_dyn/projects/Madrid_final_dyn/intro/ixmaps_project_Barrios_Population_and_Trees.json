@@ -99,7 +99,7 @@
 			"style": {
 				"type": "FEATURES|NOLEGEND|LOCKED",
 				"colorscheme": [
-					"RGB(64, 64, 199)"],
+					"RGB(64, 164, 199)"],
 				"fillopacity": "0.2",
 				"shadow": "false",
 				"dbtable": "idrografia",
@@ -168,6 +168,7 @@
 				"refreshtimeout": "0",
 				"scale": "1",
 				"chartupper": "1:10000",
+				"chartlower": "1:1000",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"title": "Population by Seccionado 2011"
@@ -340,13 +341,14 @@
 				"offsety": "9",
 				"refreshtimeout": "0",
 				"scale": "2",
+				"valuescale": "0.1",
 				"valuefield": "weight (estimated)",
 				"sizefield": "weight (estimated)",
-				"valuescale": "1",
+				"valuescale": "2",
 				"valuedecimals": "2",
 				"chartlower": "1:10000",
 				"aggregationlower": "1:10000",
-				"valuesupper":"1:20000",
+				"valuesupper":"1:2000",
 				"name": "home_theme",
 				"title": "Trees"
 				}
