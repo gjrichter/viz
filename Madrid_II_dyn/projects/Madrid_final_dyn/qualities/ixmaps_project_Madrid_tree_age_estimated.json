@@ -93,7 +93,7 @@
 					"circle"],
 				"units": "",
 				"refreshtimeout": "0",
-				"scale": "0.5120000000000001",
+				"scale": "0.2",
 				"titlefield": "NOMBRE_COMUN",
 				"valuescale": "1",
 				"fadenegative": "1",
