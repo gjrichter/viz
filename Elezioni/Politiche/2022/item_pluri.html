@@ -247,7 +247,23 @@
 				// ===================================
 
 				ixmaps.makeItemContent = function() {
-
+					
+					// helper function which transforms NAME -> Name
+					// ----------------------------------------------
+					__toLowerName = function(szName){
+						var nome_cA = szName.split(" ");
+						for ( i in nome_cA ){
+							nome_cA[i] = nome_cA[i].substr(0,1)+nome_cA[i].substr(1).toLowerCase();
+							nome_cA[i] = nome_cA[i].replace("a'","à");
+							nome_cA[i] = nome_cA[i].replace("o'","ò");
+							nome_cA[i] = nome_cA[i].replace("u'","ù");
+							nome_cA[i] = nome_cA[i].replace("i'","ì");
+							nome_cA[i] = nome_cA[i].replace("e'","è");
+						}
+						return nome_cA.join(" ");
+					};
+					// ----------------------------------------------
+					
 					var szId = ixmaps.szMapItemId;
 
 					if (!szId.match(/chart/i)) {
@@ -291,21 +307,39 @@
 
 						for (a in data) {
 
+							var nome_c = __toLowerName(data[a].nome_c);
+							var cogn_c = __toLowerName(data[a].cogn_c);
+							
+							var link = "https://www.google.com/search?q=%22"+nome_c + "++" + cogn_c +"%22++politiche++2022";
+							var linkW = "https://it.wikipedia.org/wiki/"+nome_c + "_" + cogn_c +"";
+							
+							var bgColor = "#ffffff";	
+							if (data[a].sesso == 'F') {
+								bgColor = "#fff4f4";
+							}
+							if (data[a].sesso == 'M') {
+								bgColor = "#f4f4ff";
+							}
+							
+							// create list row
+							// ----------------
 							if (!desc_lista || (desc_lista != data[a].desc_lista)) {
 								szHtml += "<tr><td style='font-size:0.5em'>&nbsp;</td></tr>";
 								szHtml += "<tr><td style='font-size:0.8em'>" + data[a].desc_lista + "</td></tr>";
 							}
-
-							if (data[a].sesso == 'F') {
-								var link = "https://www.google.com/search?q=%22"+data[a].nome_c + "++" + data[a].cogn_c +"%22++politiche++2022";
-								szHtml += "<tr style='background:#fff4f4'><td style='width:80%'><a style='color:#666666' href='"+link+"' target='_blank'>" + data[a].num_c + " " + data[a].nome_c + " " + data[a].cogn_c + "</td><td style='font-size:1em;'>" + data[a].eta + " anni</a></td></tr>";
-								eta += data[a].eta;
-							}
-							if (data[a].sesso == 'M') {
-								var link = "https://www.google.com/search?q=%22"+data[a].nome_c + "++" + data[a].cogn_c +"%22++politiche++2022";
-								szHtml += "<tr style='background:#f4f4ff'><td style='width:80%'><a style='color:#666666' href='"+link+"' target='_blank'>" + data[a].num_c + " " + data[a].nome_c + " " + data[a].cogn_c + "</td><td style='font-size:1em;'>" + data[a].eta + " anni</a></td></tr>";
-								eta += data[a].eta;
-							}
+							szHtml += 
+								"<tr style='background:"+bgColor+"'><td style='width:80%'>";
+							szHtml += 
+								"<a style='color:#666666' href='"+link+"' 	target='_blank'>" + data[a].num_c + " " + nome_c + " " + cogn_c +"</a>";
+							szHtml += 
+								"<a href='"+link+"' target='_blank'> <img src='https://upload.wikimedia.org/wikipedia/commons/0/0b/Search_Icon.svg' height='14px' title='cerca sul Web'></a>";
+							szHtml += 
+								"<a href='"+linkW+"' target='_blank'> <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/OOjs_UI_icon_logo-wikipedia.svg/640px-OOjs_UI_icon_logo-wikipedia.svg.png' height='14px' title='cerca su Wikipedia'></a>";
+							szHtml += 
+								"</td><td style='font-size:1em;'>" + data[a].eta + " anni</td></tr>";
+							// ----------------
+							
+							eta += data[a].eta;
 							desc_lista = data[a].desc_lista;
 						}
 
