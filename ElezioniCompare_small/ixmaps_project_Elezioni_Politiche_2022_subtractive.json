@@ -56,7 +56,7 @@
 		"zoom": "6"
 		},
 	"require": [
-		"../../projects/ElezioniCompare_small/tooltip.js"
+		"https://raw.githubusercontent.com/gjrichter/viz/master/ElezioniCompare_small/tooltip.js"
 	],
 	"themes": [{
 			"layer": "ITALIA_Comuni_2022",
