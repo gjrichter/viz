@@ -121,7 +121,8 @@
 				"titlefield": "desc_com",
 				"valuescale": "1",
 				"valuedecimals": "1",
-				"title": "<b>2022</b> - Elezioni Europee"
+				"title": "Elezioni Politiche <b>2022</b>",
+				"snippet": "Camera - colori composti dai colori dei partiti nella leggenda valutati con il risultato proporzionale del partito nel comune"
 				}
 			}],
 	"layerMask": {
