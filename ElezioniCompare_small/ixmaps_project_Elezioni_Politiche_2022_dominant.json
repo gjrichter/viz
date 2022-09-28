@@ -9,7 +9,7 @@
 		},
 	"map": {
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2019/italia_comuni_2019_g_nome_upper_noacc.svgz",
-		"basemap": "CartoDB - Positron",
+		"basemap": "Stamen - toner-lite",
 		"localize" : {
 			"loading data ...":" ",
 			"... loading data ...":"&#x21E3;",
@@ -47,11 +47,11 @@
 			"flushChartDraw": "50000",
 			"flushPaintShape": "50000",
 			"mapopacity": "1",
-			"basemapopacity": "1"
+			"basemapopacity": "0.3"
 			},
 		"center": {
 			"lat": "41.89818843043047",
-			"lng": "13.661743164062502"
+			"lng": "12.661743164062502"
 			},
 		"zoom": "6"
 		},
