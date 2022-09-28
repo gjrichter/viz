@@ -51,7 +51,7 @@
 			},
 		"center": {
 			"lat": "41.89818843043047",
-			"lng": "12.661743164062502"
+			"lng": "13.661743164062502"
 			},
 		"zoom": "6"
 		},
@@ -122,7 +122,7 @@
 				"valuescale": "1",
 				"valuedecimals": "1",
 				"title": "Elezioni Politiche <b>2022</b>",
-				"snippet": "Camera - colori composti dai colori dei partiti nella leggenda valutati con il risultato proporzionale del partito nel comune"
+				"snippet": "Camera plurinominale - colori composti dai colori dei partiti nella leggenda valutati con il risultato proporzionale del partito nel comune"
 				}
 			}],
 	"layerMask": {
