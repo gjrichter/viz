@@ -85,7 +85,7 @@
 				}
 			},{
 			"layer": "ITALIA_Comuni_2022",
-			"field": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA|MOVIMENTO 5 STELLE|FORZA ITALIA|LEGA PER SALVINI PREMIER|FRATELLI D'ITALIA CON GIORGIA MELONI|AZIONE - ITALIA VIVA - CALENDA",
+			"field": "PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA|MOVIMENTO 5 STELLE|FORZA ITALIA|LEGA PER SALVINI PREMIER|FRATELLI D'ITALIA CON GIORGIA MELONI|AZIONE - ITALIA VIVA - CALENDA|SUD CHIAMA NORD|SÜDTIROLER VOLKSPARTEI (SVP) - PATT",
 			"field100": "Total",
 			"style": {
 				"name": "compose",
@@ -96,7 +96,9 @@
 					"RGB(5,177,240)",
 					"#04d487",
 					"#0C416D",
-					"#ff00ff"],
+					"#ff00ff",
+					"#dd8800",
+					"#444444"],
 				"shadow": "false",
 				"dbtable": "themeDataObj",
 				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ElezioniPolitiche2022/Camera2022_scrutini_pivot.csv.gz",
@@ -111,7 +113,9 @@
 					"FORZA ITALIA",
 					"LEGA",
 					"FRATELLI D'ITALIA",
-					"AZIONE - ITALIA VIVA - CALENDA"],
+					"AZIONE - ITALIA VIVA - CALENDA",
+					"SUD CHIAMA NORD",
+					"SVP"],
 				"units": "%",
 				"units100": "",
 				"refreshtimeout": "0",
