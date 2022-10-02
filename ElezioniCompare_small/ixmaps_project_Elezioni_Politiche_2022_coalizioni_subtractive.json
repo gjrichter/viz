@@ -8,7 +8,7 @@
 		"created": "Fri Oct 04 2019 23:20:43 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
-		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2019/italia_comuni_2019_g_nome_upper_noacc.svgz",
+		"map": "",
 		"basemap": "Stamen - toner-lite",
 		"localize" : {
 			"loading data ...":" ",
@@ -65,13 +65,13 @@
 			"style": {
 				"type": "FEATURES|NOLEGEND",
 				"colorscheme": [
-					"none"],
+					"white"],
 				"shadow": "false",
 				"dbtable": "DBTABLE59318246",
 				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2022/Com01012022_s_WGS84.topojson.gz",
 				"dbtableType": "topojson",
 				"datacache": "true",
-				"itemfield": "PRO_COM",
+				"itemfield": "PRO_COM_T",
 				"lookupfield": "geometry",
 				"sizefield":"Shape_Area",
 				"units": "",
@@ -85,7 +85,7 @@
 				}
 			},{
 			"layer": "ITALIA_Comuni_2022",
-			"field": "CSN|CDX|MOVIMENTO 5 STELLE|AZIONE - ITALIA VIVA - CALENDA",
+			"field": "CSN|CDX|MOVIMENTO 5 STELLE|AZIONE - ITALIA VIVA - CALENDA|SUD CHIAMA NORD|SÜDTIROLER VOLKSPARTEI (SVP) - PATT",
 			"field100": "Total",
 			"style": {
 				"name": "compose",
@@ -94,10 +94,12 @@
 					"#E41B22",
 					"RGB(5,77,200)",
 					"RGB(238,217,36)",
-					"#ff00ff"],
+					"#ff00ff",
+					"#dd8800",
+					"#666666"],
 				"shadow": "false",
 				"dbtable": "themeDataObj",
-				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ElezioniPolitiche2022/Camera2022_scrutini_pivot_piu.csv.gz",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ElezioniPolitiche2022/Camera2022_scrutini_pivot_coalizioni.csv.gz",
 				"dbtableType": "csv",
 				"datacache": "true",
 				"fillopacity": "auto",
@@ -107,7 +109,9 @@
 					"Centro Sinistra",
 					"Centro Destra",
 					"Movimento 5 Stelle",
-					"AZIONE - ITALIA VIVA - CALENDA"],
+					"AZIONE - ITALIA VIVA - CALENDA",
+					"SUD CHIAMA NORD",
+					"SVP"],
 				"units": "%",
 				"units100": "",
 				"refreshtimeout": "0",
@@ -120,7 +124,7 @@
 				"valuescale": "1",
 				"valuedecimals": "1",
 				"title": "Elezioni Politiche <b>2022</b>",
-				"snippet": "Camera plurinominale - colori composti dai colori dei partiti nella leggenda valutati con il risultato proporzionale del partito nel comune"
+				"snippet": "Camera plurinominale - colori composti dai colori dei coalizioni/partiti nella leggenda valutati con il risultato proporzionale del partito nel comune"
 				}
 			}],
 	"layerMask": {

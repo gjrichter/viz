@@ -17,7 +17,7 @@
 			"... creating theme ...":"..."
 			},
 		"scaleParam": {
-			"normalSizeScale": "1528452"
+			"normalSizeScale": "100000"
 			},
 		"options": {
 			"featurescaling": "true",
@@ -89,7 +89,7 @@
 			"field100": "Total",
 			"style": {
 				"name": "compose",
-				"type": "CHOROPLETH|DOMINANT|HORZ|SORT|SIMPLELEGEND",
+				"type": "CHOROPLETH|DOMINANT|DOPACITYMAX|HORZ|SORT|SIMPLELEGEND",
 				"colorscheme": [
 					"#E41B22",
 					"RGB(5,77,200)",
@@ -116,6 +116,8 @@
 				"units100": "",
 				"refreshtimeout": "0",
 				"scale": "1",
+				"dopacitypow": "0.5",
+				"dopacityscale": "2",
 				"titlefield": "desc_com",
 				"valuescale": "1",
 				"valuedecimals": "1",
