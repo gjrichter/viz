@@ -27,7 +27,7 @@ window.ixmaps = window.ixmaps || {};
 		var xPos = evt.clientX;
 		var yPos = evt.clientY;
 
-		var fontsize = 12 / 1200 * window.innerWidth;
+		var fontsize = Math.max(12,(12 / 1200 * window.innerWidth));
 
 		szHtml += "<div id='tooltipDiv' style='position:absolute;left:" + xPos + "px;top:" + yPos + "px;font-family: arial narrow, system;font-size:" + fontsize + "px;color: #444;background: white;border: 0.5px solid black;border-radius: 5px'>";
 		console.log(szText);
@@ -159,7 +159,7 @@ window.ixmaps = window.ixmaps || {};
 
 			szHtml += "<section>";
 			szHtml += "<div style='height:0.1em'></div>"
-			szHtml += "<div style='margin:1em 1em 1em 1em;min-width:300px'><h3>" + data[0]["Collegio o ripartizione"] + "</h3></div>"
+			szHtml += "<div style='margin:1em 1em 1em 1em;min-width:"+window.innerWidth+"'px'><h3>" + data[0]["Collegio o ripartizione"] + "</h3></div>"
 			szHtml += "</section>";
 
 			szHtml += "<section>";
