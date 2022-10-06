@@ -159,7 +159,7 @@ window.ixmaps = window.ixmaps || {};
 
 			szHtml += "<section>";
 			szHtml += "<div style='height:0.1em'></div>"
-			szHtml += "<div style='margin:1em 1em 1em 1em;width:100%'><h3>" + data[0]["Collegio o ripartizione"] + "</h3></div>"
+			szHtml += "<div style='margin:1em 1em 1em 1em;min-width:300px'><h3>" + data[0]["Collegio o ripartizione"] + "</h3></div>"
 			szHtml += "</section>";
 
 			szHtml += "<section>";
