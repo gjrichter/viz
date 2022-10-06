@@ -173,7 +173,7 @@ window.ixmaps = window.ixmaps || {};
 			}
 			for (a in data) {
 				if (data[a].sesso == 'M') {
-					szHtml += "<tr style='background:#f8f8ff'><td style='width:80%;max-width:250px'>" + data[a]["Cognome e nome"] + "</td><td>" + data[a].eta + " anni</td></tr><tr><td style='font-size:0.8em;max-width:250px'>" + data[a].Lista || data[a].Coalizione + "</td><tr>";
+					szHtml += "<tr style='background:#f8f8ff'><td style='width:80%;max-width:250px'>" + data[a]["Cognome e nome"] + "</td><td>" + data[a].eta + " anni</td></tr><tr><td style='font-size:0.8em;max-width:250px'>" + (data[a].Lista || data[a].Coalizione) + "</td><tr>";
 					eta += data[a].eta;
 				}
 			}
