@@ -190,6 +190,7 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.htmlgui_onItemClick = function (evt, szId) {
 		__fTooltipPinned = false;
 		__fTooltipPin = true;
+		ixmaps.fOnItemClicked = true;
 		return ixmaps.htmlgui_onItemOver(evt, szId);
 	}
 	ixmaps.htmlgui_deleteItemPinned = function () {
