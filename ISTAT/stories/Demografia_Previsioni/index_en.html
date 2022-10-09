@@ -1,0 +1,552 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content="en-us" http-equiv="Content-Language">
+
+	<title>Airbnb listings venice</title>
+	<meta name="author" content="Guenter Richter" />
+	<meta name="description" content="ixmaps iteractive map to explore airbnb listigs in venice,italy" />
+	<meta name="keywords" content="ixmaps,airbnb,inside,listings,map,char,interactice,SVG" />
+	<meta name="Resource-type" content="Document" />
+
+	<!-- BOOTSTRAP CORE STYLE CSS -->
+	<link href="assets/css/bootstrap.css" rel="stylesheet" />
+	<!-- GOOGLE FONT -->
+	<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+
+
+	<link href="assets/css/icomoon.css" rel="stylesheet" />
+	<link href="assets/css/main.css" rel="stylesheet" />
+	<link href="./inline_legend.css" rel="stylesheet" />
+
+	<link rel="stylesheet" type="text/css" href="assets/css/jquery.fullPage.css" />
+	<style type="text/css">
+		.container {
+			margin-left: 1em;
+		}
+		.title {
+			margin-top: 3em;
+			margin-bottom: 0em;
+		}
+		/* Overwriting fullPage.js tooltip color
+		* --------------------------------------- */
+
+		.fp-tooltip {
+			color: #AAA;
+		}
+
+		#fp-nav span,
+		.fp-slidesNav span {
+			border-color: #AAA;
+		}
+
+		#fp-nav li .active span,
+		.fp-slidesNav .active span {
+			background: #AAA;
+		}
+
+		.shareIcon {
+			font-size: 32px;
+		}
+
+		.active a {
+			color: inherit;
+		}
+
+		body {
+			-webkit-user-select: none;
+			/* Chrome all / Safari all */
+			-moz-user-select: none;
+			/* Firefox all *
+			-ms-user-select: none;
+			/* IE 10+ */
+			user-select: none;
+			/* Likely future */
+		}
+		
+		h3 {
+			margin-right: 2em;
+		}
+		
+		p {
+			font-family: Lato,Helvetica;
+			font-size: 1em;
+			font-weight: normal;
+		}
+		
+		p.note {
+			padding-left:1em;
+			border-left:dotted 3px;
+			font-style:italic;
+		}
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+</head>
+
+<body style="background:none">
+
+	<div id="fullpage" style="margin-top:0px;font-weight:500;display:none">
+
+		<div class="section">
+
+			<!-- città colorata -->
+
+			<div class="slide container" style="color:#888888">
+				<div class="intro down">
+				  	<h1 style="font-size:3em;font-weight:100;margin-top:1em;margin-bottom:0.2em">DEMOGRAPHIC FORECASTS</h1>
+			  	  	<h2 style="font-size:1.2em;font-weight:400;margin-bottom:0em">Visualizzazioni
+					del dataset 'MUNICIPAL DEMOGRAPHIC PROJECTIONS - JANUARY 1, 2020/JANUARY 1, 2030' released by  <a href="https://www.istat.it/it/archivio/273725" target="_blank"><img src="https://www.istat.it/img/logo.png" style="display:inline;height:24px"></a></h2>
+					<p>
+						<a class="theme button" href='javascript:mymap.loadProject("https://raw.githubusercontent.com/gjrichter/viz/master/ISTAT/ixmaps_project_istat_projezione_popolazione_2030_flowers_1_all_white_polar.json","themeonly");' style='display:none'>dummy</a><br>
+					</p>
+					<h3>I. Mortality Rate</h3>
+					<p>
+						Deceased persons per 1,000 population estimated by ISTAT for the years 2021 to 2030. 
+					<p>
+						The graphs display estimated values for municipalities as a flower like polar chart, clockwise departing from noon.</p>
+					<p>
+						The rate (per 1000 population) ranges from 7.2 to 17.2.
+						The national average (2019) is 10.6 per thousand, represented in the graphs by a white circle in the background.</p>
+					<br>
+					<p>please <b>scroll down</b> for the next view</p>
+					<br>
+					<p>zoom at:</p>
+					<a href="javascript:mymap.flyTo([45.02792105147572,7.626914978027345],11)">Torino</a> | 
+					<a href="javascript:mymap.flyTo([45.49672163945861,9.163970947265627],11)">Milano e Brianza</a> | 
+					<a href="javascript:mymap.flyTo([44.536653425107495,11.523284912109375],9)">Emilia-Romagna</a> | 
+					<a href="javascript:mymap.flyTo([43.49178653083377,10.763854980468752],9)">Toscana</a> | 
+					<a href="javascript:mymap.flyTo([43.04279812270172,13.0078125],9)">Centro</a> | 
+					<a href="javascript:mymap.flyTo([41.7508241355329,12.357559204101564],10)">Roma</a> | 
+					<a href="javascript:mymap.flyTo([40.900279369669875,14.371490478515627],11)">Napoli</a> | 
+					<a href="javascript:mymap.flyTo([40.629587853312174,17.14004516601563],9)">Puglia</a> | 
+					<a href="javascript:mymap.flyTo([38.14103736644331,14.820556640625002],8)">Sicilia e Calabria</a> 
+				</div>
+			</div>
+
+		</div>
+
+		<div class="section">
+
+			<!-- pile -->
+
+			<div class="slide container" style="color:#008800">
+				<div class="intro up down">
+					<h3 class="title"><b>ISTAT - Demographic Forecasts</b></h3>
+					<p>
+						<a class="theme button" href='javascript:mymap.loadProject("https://raw.githubusercontent.com/gjrichter/viz/master/ISTAT/ixmaps_project_istat_projezione_popolazione_2030_flowers_2_all_white_polar.json","themeonly");' style='display:none'>dummy</a><br>
+					</p>
+					<h3>II. Birth Rate</h3><br>
+					<p>The <span style="color:#ffffff;">mortality rate</span> is compensated by the <b><span style="color:#43C412;font-size:1.1em;">birth rate</span></b>,
+					 measured in nasctites per 1000 population.</p>
+					<p>Only in a few cities does the birth rate offset or even exceed the death rate and creates a positive natural demographic balance.</p>
+					<br>
+					<p>please <b>scroll down</b> for the next view</p>
+					<br>
+					<p>zoom at:</p>
+					<a href="javascript:mymap.flyTo([45.02792105147572,7.626914978027345],11)">Torino</a> | 
+					<a href="javascript:mymap.flyTo([45.49672163945861,9.163970947265627],11)">Milano e Brianza</a> | 
+					<a href="javascript:mymap.flyTo([44.536653425107495,11.523284912109375],9)">Emilia-Romagna</a> | 
+					<a href="javascript:mymap.flyTo([43.49178653083377,10.763854980468752],9)">Toscana</a> | 
+					<a href="javascript:mymap.flyTo([43.04279812270172,13.0078125],9)">Centro</a> | 
+					<a href="javascript:mymap.flyTo([41.7508241355329,12.357559204101564],10)">Roma</a> | 
+					<a href="javascript:mymap.flyTo([40.900279369669875,14.371490478515627],11)">Napoli</a> | 
+					<a href="javascript:mymap.flyTo([40.629587853312174,17.14004516601563],9)">Puglia</a> | 
+					<a href="javascript:mymap.flyTo([38.14103736644331,14.820556640625002],8)">Sicilia e Calabria</a> 
+					
+				</div>
+			</div>
+
+		</div>
+
+		<div class="section">
+
+			<!-- l'invasione -->
+
+			<div class="slide container" style="color:#ffffff">
+				<div class="intro up down">
+					<h3 class="title"><b>ISTAT - Demographic Forecasts</b></h3>
+					<p>
+						<a class="theme button" href='javascript:mymap.loadProject("https://raw.githubusercontent.com/gjrichter/viz/master/ISTAT/ixmaps_project_istat_projezione_popolazione_2030_flowers_3_all_white_polar.json","themeonly");' style='display:none'>dummy</a><br>
+					</p>
+					<h3>III. Migration</h3><br>
+					<p>In the last view, the <span style='color:#0044a9'>Net migration rate</span> which can be positive or negative, is added to the natural demographic balance <b></b>.<b></b>
+						In general, the migration rate affects the growth of a place more than the natural balance.</p>
+					<p class="note">If the <b>migration balance</b> is negative, it does not directly appear as a <b>'blue'</b> color in the graphic, but the <b>'green' part</b>, the birth rate, decreases</p>
+					<p>A negative migration balance contributes to 'emptying' the place. Overall, the 'white' part of the graph gives a measure for the municipality's population decline.</p>
+					<br>
+					<p>zoom at:</p>
+					<a href="javascript:mymap.flyTo([45.02792105147572,7.626914978027345],11)">Torino</a> | 
+					<a href="javascript:mymap.flyTo([45.49672163945861,9.163970947265627],11)">Milano e Brianza</a> | 
+					<a href="javascript:mymap.flyTo([44.536653425107495,11.523284912109375],9)">Emilia-Romagna</a> | 
+					<a href="javascript:mymap.flyTo([43.49178653083377,10.763854980468752],9)">Toscana</a> | 
+					<a href="javascript:mymap.flyTo([43.04279812270172,13.0078125],9)">Centro</a> | 
+					<a href="javascript:mymap.flyTo([41.7508241355329,12.357559204101564],10)">Roma</a> | 
+					<a href="javascript:mymap.flyTo([40.900279369669875,14.371490478515627],11)">Napoli</a> | 
+					<a href="javascript:mymap.flyTo([40.629587853312174,17.14004516601563],9)">Puglia</a> | 
+					<a href="javascript:mymap.flyTo([38.14103736644331,14.820556640625002],8)">Sicilia e Calabria</a> 
+				</div>
+			</div>
+
+		</div>
+
+		<div class="section  intro up" style="color:#ffffff">
+			<div class="container" id="contact" name="contact">
+				<div class="row">
+					<div class="col-lg-8 blog-content">
+
+						<h3 class="title">Attributions</h3>
+						<br>
+						<p>Source: ISTAT</p>
+						<p>data: <a href="https://www.istat.it/it/archivio/263355" target="_blank">Visualizzazioni
+					del dataset 'PREVISIONI DEMOGRAFICHE COMUNALI - 1° GENNAIO 2020/1°
+				  	GENNAIO 2030'</a>
+						</p>
+
+					</div>
+				</div><!-- row -->
+
+			</div><!-- container -->
+		</div>
+
+	</div>
+
+	<div id="header" style="position: fixed;top:0;left:0px;width:90%;height:40px;">
+		<div class="container" style="margin-top:11px">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="header" aria-hidden="true">
+						<div class="linkSocialContainer" style="float:left">
+							<span class="linkContainer"></span>
+							<span class="shareBtns" style="font-size:24px">
+								<a href="javascript:ixmaps.popupShare()">
+									<i class="shareIcon blackHover share_bitly icon-share" title="Share a short link" tabindex="-1"></i></a>
+								<a href="javascript:__aboutDialog()">
+									<i class="shareIcon blackHover share_bitly icon-info" title="Info" tabindex="-1" style="margin-left:0.2em"></i></a>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ==== MODAL DIALOG ==== -->
+	<div id="modal-dialog-1" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="background:white;z-index:9999">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				...
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+	<div id="modal-dialog-2" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="background:white;z-index:9999">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				...
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="assets/plugins/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
+	<script type="text/javascript" src="assets/js/masonry.pkgd.min.js"></script>
+	<script type="text/javascript" src="assets/js/imagesloaded.js"></script>
+	<script type="text/javascript" src="assets/js/classie.js"></script>
+	<script type="text/javascript" src="assets/js/AnimOnScroll.js"></script>
+
+	<script type="text/javascript" src="assets/plugins/jquery.fullPage.min.js"></script>
+	<script type="text/javascript" src="themes.js"></script>
+
+	<script type="text/javascript">
+		var mymap = null;
+		// --------------------------------
+		// get ixmaps API from parent 
+		// --------------------------------
+
+		var ixmaps = null;
+		if (window.opener) {
+			ixmaps = window.opener.ixmaps;
+		} else
+		if (parent) {
+			ixmaps = parent.window.ixmaps;
+		} else {
+			alert("error: missing parent window for themes !");
+		}
+
+		ixmaps.initialized = false;
+
+		// don't synchronise multiple map frames
+		ixmaps.setSyncMultiMaps(false);
+
+		var nLegendDiv = 0;
+		var legendA = Array(0);
+		ixmaps.setLegendDiv = function(n) {
+			nLegendDiv = n;
+		};
+
+		ixmaps.setLoading = function() {
+			ixmaps.showLoading("... caricando ...");
+		};
+
+		// define some helper for the sidebar menu
+
+		ixmaps.moveSectionsDown = function(nr) {
+			nr = nr || 1;
+			for (var i = 0; i < nr; i++) {
+				setTimeout("$.fn.fullpage.moveSectionDown();", i * 100);
+			}
+		};
+
+		ixmaps.moveToSection = function(nr, slide) {
+			ixmaps.fMoveToSection = true;
+			$.fn.fullpage.silentMoveTo(nr, slide);
+		};
+
+		ixmaps.moveSlideRight = function(nr) {
+			nr = nr || 1;
+			for (var i = 0; i < nr; i++) {
+				setTimeout("$.fn.fullpage.moveSlideRight();", i * 100);
+			}
+		};
+
+		// --------------------------------
+		// p a g e 
+		// --------------------------------
+
+		// enumerate sections, slides and theme
+		// and create the right id's for fullpage slide handling
+		// -----------------------------------------------------
+		var section = 0;
+		$(".section").each(function() {
+			$(this).attr("id", "section" + (++section));
+			var slide = 0;
+			$(this).find(".slide").each(function() {
+				$(this).attr("id", "section" + section + "slide" + (++slide));
+				$(this).find(".theme").each(function() {
+					$(this).attr("id", "theme_" + section + "" + slide);
+				});
+			});
+		});
+
+		// CUSTOM SCROLL SCRIPT FUNCTION FOR NAVBAR
+		$(function() {
+			$('.scrollclass a').bind('click', function(event) { //just pass scrollclass in design and start scrolling
+				var $anchor = $(this);
+				$('html, body').stop().animate({
+					scrollTop: $($anchor.attr('href')).offset().top
+				}, 1000, 'easeInOutQuad');
+				event.preventDefault();
+			});
+		});
+		//ADD REMOVE PADDING CLASS ON SCROLL
+		$(window).scroll(function() {
+			if ($(document).scrollTop() > 40) {
+				$(".navbar-fixed-top").addClass("navbar-pad-original");
+			} else {
+				$(".navbar-fixed-top").removeClass("navbar-pad-original");
+			}
+		});
+
+		//var html = '<a href="javascript:$.fn.fullpage.moveSectionDown();"><div class="row scrollclass fp-controlArrow fp-down" style="left:' + (window.innerWidth / 2 - 33) + 'px;text-align:center;margin-top:-0.7em;margin-bottom:1em;"></div></a>';
+		//$('.down').append(html);
+
+		//var html = '<a href="javascript:$.fn.fullpage.moveSectionUp();"><div class="row scrollclass fp-controlArrow fp-up" style="left:' + (window.innerWidth / 2 - 33) + 'px;text-align:center;margin-top:-2.2em;margin-bottom:3em;margin-left:1em"></div></a>';
+		//$('.up').append(html);
+
+		var html = '<div class="row scrollclass" style="position:absolute;top:' + (window.innerHeight - 100) + 'px;left:' + (window.innerWidth - 30) + 'px;text-align:center;"><a href="javascript:$.fn.fullpage.moveSectionDown();"><span class="icon icon-arrow-down tip" data-tip="next" style="font-size:36px;color:#dddddd;"></span></a></div>';
+		$('.down').append(html);
+
+		var html = '<div class="row scrollclass" style="position:absolute;top:' + (18) + 'px;left:' + (window.innerWidth - 30) + 'px;text-align:center;"><a href="javascript:$.fn.fullpage.moveSectionUp();"><span class="icon icon-arrow-up tip" data-tip="next" style="font-size:36px;color:#dddddd;"></span></a></div>';
+		$('.up').append(html);
+
+
+		$(document).ready(function() {
+
+			var __section = null;
+			var __slide = null;
+			var __fMoveActive = false;
+
+			__onChange = function() {
+				if (!ixmaps.initialized) {
+					setTimeout("__onChange()",100);
+					return;
+				}
+				if (ixmaps.fMoveToSection) {
+					ixmaps.fMoveToSection = false;
+					return;
+				}
+				__doTheme("theme_" + __section + (__slide + 1));
+			};
+			$('#fullpage').fullpage({
+				'scrollOverflow': true,
+				'scrollOverflowOptions': {
+					scrollbars: false
+				},
+				'verticalCentered': false,
+				'css3': true,
+				'sectionsColor': ['#FFFFFF', '#B3E442' ,'#4E80CB' ,'#4E80CB', '#666666', '#DD614A', '#B14A4A'],
+				'navigation': true,
+				'navigationPosition': 'right', 
+				'navigationTooltips': ['Mortalità', '+Natalità', '+Migrazione', '+Migrazione II', 'Attribuzioni'],
+
+				'afterLoad': function(a, index, c, d) {
+					__section = index;
+					__slide = 0;
+					$.fn.fullpage.silentMoveTo(index, __slide);
+				},
+				'afterSlideLoad': function(a, index, c, d) {
+					__slide = d;
+					__onChange();
+				},
+
+				'onLeave': function(index, nextIndex, direction) {}
+			});
+			$('#fullpage').fadeIn("slow");
+		});
+
+		__doThemeOldTheme = null;
+		__doThemeTimeout = null;
+		__doTheme = function(szName) {
+			if (szName == __doThemeOldTheme) {
+				return;
+			}
+			__doThemeOldTheme = szName;
+			if (__doThemeTimeout) {
+				clearTimeout(__doThemeTimeout);
+			}
+			__doThemeTimeout = setTimeout("__doThemeOnTimeout('" + szName + "')", 100);
+		}
+		__doThemeOnTimeout = function(szName) {
+			$("#" + szName).click();
+			eval($("#" + szName).attr("href"));
+		}
+
+		// ------------------------------
+		// set resize handler
+		// ------------------------------
+		$(window).resize(function() {
+			// refresh scrollspy !!!
+			$('[data-spy="scroll"]').each(function() {
+				var $spy = $(this).scrollspy('refresh')
+			});
+		});
+
+
+		// --------------------------------------------------------------
+		// define click extension to
+		// check/highlight the theme button 
+		// --------------------------------------------------------------
+
+		// array to store the clicked objects for onRemoveTheme callback
+		var clickA = new Array(0);
+
+		// store the last clicked object for onNewTheme callback
+		var lastClicked = null;
+		$("a").click(function() {
+			if (String($(this).attr("href")).match(/newtheme/i) || String($(this).attr("href")).match(/loadProject/i)) {
+				lastClicked = $(this);
+			}
+		});
+
+		// -----------------------------------
+		// adapt legend background to map type
+		// -----------------------------------
+
+		/**
+		 * set legend background on map type change
+		 * @type void
+		 */
+		__changeCss = function(className, classValue) {
+
+			var cssMainContainer = $('#css-modifier-container');
+			if (cssMainContainer.length == 0) {
+				var cssMainContainer = $('<style id="css-modifier-container"></style>');
+				cssMainContainer.appendTo($('head'));
+			}
+			cssMainContainer.append(className + " {" + classValue + "}\n");
+		};
+
+		ixmaps.htmlgui_setMapTypeBG = function(szId) {
+
+			$("#css-modifier-container").remove();
+
+			if (szId.match(/dark/i) || szId.match(/black/i)) {
+				__changeCss(".story-body", "background-color:rgba(25,25,25,0.3)");
+				__changeCss(".inline-legend", "background-color:rgba(25,25,25,0.7)");
+				__changeCss(".title", "background-color:rgba(25,25,25,0.7)");
+			} else {
+				__changeCss(".body-story", "background-color:rgba(255,255,255,0.1)");
+				__changeCss(".inline-legend", "background-color:rgba(255,255,255,0.5)");
+				__changeCss(".title", "background-color:rgba(255,255,255,0.5)");
+			}
+		};
+
+		// -----------------------------------------------
+		// load themes script
+		// and initialize map if all loaded
+		// -----------------------------------------------
+
+		$.when(
+			$.getScript("./index.js"),
+			$.getScript("./inline_legend.js"),
+			$.Deferred(function(deferred) {
+				$(deferred.resolve);
+			})
+		).done(function() {
+
+			// ------------------------------
+			// initialize map
+			// ------------------------------
+
+			ixmaps.waitForMap(null, function(map) {
+
+				ixmaps.initialized = true;
+
+				map.setLocalString("... processing ...", "...");
+				map.setLocalString("... creating theme ...", "...");
+				map.setLocalString("cleaning up ...", "");
+				map.setLocalString("loading data ...", "... caricando dati ...");
+
+				mymap = map;
+				map.loadProject("https://raw.githubusercontent.com/gjrichter/viz/master/ISTAT/ixmaps_project_istat_projezione_popolazione_2030_flowers_1_all_white_polar.json");
+
+			});
+
+		}).fail(function() {
+			alert("script loading " + arguments[2].toString());
+		});
+
+		/**
+		 * open/close the about dialog 
+		 * @param flag 'show' or 'hide'
+		 * @type void
+		 */
+		__aboutDialog = function(flag){
+			var about = "https://gjrichter.github.io/viz/ISTAT/stories/Demografia_Previsioni/about_en-EN.html";
+			if ( ixmaps.loadedProject.metadata.about && ixmaps.loadedProject.metadata.about.length ){
+				about = ixmaps.loadedProject.metadata.about;
+			}
+			ixmaps.embeddedApi.embeddedApi.openDialog(null,'about-dialog',about,'about this map','200,50',600,600);
+		};
+		
+	</script>
+
+
+</body>
+
+</html>
