@@ -8,8 +8,8 @@
 		"created": "Fri Oct 04 2019 23:20:43 GMT+0200 (Ora legale dell’Europa centrale)"
 		},
 	"map": {
-		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2019/italia_comuni_2019_g_nome_upper_noacc.svgz",
-		"basemap": "Stamen - toner-lite",
+		"map": "",
+		"basemap": "white",
 		"localize" : {
 			"loading data ...":" ",
 			"... loading data ...":"&#x21E3;",
@@ -47,7 +47,7 @@
 			"flushChartDraw": "50000",
 			"flushPaintShape": "50000",
 			"mapopacity": "1",
-			"basemapopacity": "0.3"
+			"basemapopacity": "1"
 			},
 		"center": {
 			"lat": "41.89818843043047",
