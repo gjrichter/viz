@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<script id="tinyhippos-injected">
+	if (window.top.ripple) {
+		window.top.ripple("bootstrap").inject(window, document);
+	}
+
+</script>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<title>COVID-19 World</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+
+	</style>
+	<!-- Custom styles for this template -->
+	<link href="./css/pricing.css" rel="stylesheet">
+
+	<!-- CSS App -->
+	<link rel="stylesheet" type="text/css" href="./css/dashboard/style.css">
+	<link rel="stylesheet" type="text/css" href="./css/dashboard/themes/flat-blue.css">
+	<link rel="stylesheet" type="text/css" href="./lib/css/font-awesome.min.css">
+
+	<style>
+		.active {
+			border: 2px solid #AFCDEA;
+			border-radius: 0.2em;
+		}
+
+	</style>
+
+
+</head>
+
+<body data-gr-c-s-loaded="true">
+	<div class="d-flex flex-column flex-md-row align-items-center p-2 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+		<h3 class="my-0 mr-md-auto font-weight-normal">2019 Novel Coronavirus COVID-19</h3>
+		<nav class="my-2 my-md-0 mr-md-3">
+			<a class="p-1 text-dark" style="font-size:18px" href="#footer">Fonti & Attributioni</a>
+		</nav>
+		<a class="btn btn-outline-primary" href="https://gjrichter.github.io/viz/COVID-19/dashboard/COVID_dashboard_italy/index.html">Situazione in Italia &rarr;</a>
+	</div>
+
+	<div class="container">
+		<div class=" mb-3 text-center">
+			<div class="mb-4">
+				<div class="">
+					<h4 class="my-0 font-weight-normal"><b>Situazione a livello globale</b></h4>
+				</div>
+				<div class="">
+					<h5 class="pricing-card-title"><small class="text-muted">2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>Johns Hopkins CSSE</a></small></h5>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+	<!--                                                                 -->
+	<!-- Top Jumbo Map 													 -->
+	<!--                                                                 -->
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+	
+	<div id="map_div" style="margin-top:-16px;padding:0;" background="#f8f8f8" onclick="event.stopPropagation();return false;">
+	</div>
+
+	<!-- --------------------------------------------------------------- -->
+	<!--                                                                 -->
+	<!-- CSSE - Incidences - 54 weeks									 -->
+	<!--                                                                 -->
+	<!-- --------------------------------------------------------------- -->
+
+	<div class="container">
+		<div class=" mb-3 text-center">
+			<div class="mb-4 shadow-sm">
+				<div class="">
+					<h4 class="my-0 font-weight-normal"><b>Incidenza cumulativa 54 settimane</b></h4>
+				</div>
+				<div class="">
+					<h5 class="pricing-card-title"><small class="text-muted">Casi per 100.000 abitnti in 7 giorni</small></h5>
+					<div class="no-padding">
+						<iframe id="map0" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="../../ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;name=map0&amp;basemap=ll&amp;align=right&amp;scrollsafesilent=1&amp;legend=1&amp;sync=false&amp;footer=1&amp;project=../../projects/COVID-19-CSSE-Incidence/ixmaps_project_JHU_CSSE_incidence_new_cases_fatalities_week_last_54_weeks_vaccinated.json"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- --------------------------------------------------------------- -->
+	<!--                                                                 -->
+	<!-- PCM_DPC - Incidences - 54 weeks								 -->
+	<!--                                                                 -->
+	<!-- --------------------------------------------------------------- -->
+
+	<div class="container">
+		<div class=" mb-3 text-center">
+			<div class="mb-4 shadow-sm">
+				<div class="">
+					<h4 class="my-0 font-weight-normal"><b>Incidenza cumulativa 54 settimane</b></h4>
+				</div>
+				<div class="">
+					<h5 class="pricing-card-title"><small class="text-muted">Casi per 100.000 abitnti in 7 giorni</small></h5>
+					<div class="no-padding">
+						<iframe id="map0" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="../../ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;name=map0&amp;basemap=ll&amp;align=right&amp;scrollsafesilent=1&amp;legend=1&amp;sync=false&amp;footer=1&amp;project=../../projects/COVID-19-PCM_DPC_regioni_new/ixmaps_project_PCM_DPC_Reg2019_COVID_new_cases+fatalities_incidence_weeks_last_54_vaccini_50+_white.json"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- --------------------------------------------------------------- -->
+	<!--                                                                 -->
+	<!-- CSSE - Incidences - 28 days 56 days, 20 weeks, 54 weeks         -->
+	<!--                                                                 -->
+	<!-- --------------------------------------------------------------- -->
+	
+	<div class="container">
+		<div class=" mb-3 text-center">
+			<div class="mb-4 shadow-sm">
+				<div class="">
+					<h4 class="my-0 font-weight-normal"><b>Incidenze cumulative</b></h4>
+				</div>
+	<div class="text-center" >
+
+		<a class="btn btn-default btn-lg app-btn" role="button" href="javascript:ixmaps.loadProject('map2','../../projects/COVID-19-CSSE-Incidence/ixmaps_project_JHU_CSSE_incidence_new_cases_fatalities_day_last_28_days.json','keepview')">
+			last 28 days </a>
+		<a class="btn btn-default btn-lg app-btn" role="button" href="javascript:ixmaps.loadProject('map2','../../projects/COVID-19-CSSE-Incidence/ixmaps_project_JHU_CSSE_incidence_new_cases_fatalities_day_last_56_days.json','keepview')">
+			last 56 days </a>
+		<a class="btn btn-default btn-lg app-btn active" role="button" href="javascript:ixmaps.loadProject('map2','../../projects/COVID-19-CSSE-Incidence/ixmaps_project_JHU_CSSE_incidence_new_cases_fatalities_week_last_20_weeks.json','keepview')">
+			last 20 weeks </a>
+		<a class="btn btn-default btn-lg app-btn" role="button" href="javascript:ixmaps.loadProject('map2','../../projects/COVID-19-CSSE-Incidence/ixmaps_project_JHU_CSSE_incidence_new_cases_fatalities_week_last_54_weeks.json','keepview')">
+			last 54 weeks </a>
+		<a class="btn btn-default btn-lg app-btn" role="button" href="javascript:ixmaps.loadProject('map2','../../projects/COVID-19-CSSE-Incidence/ixmaps_project_JHU_CSSE_incidence_new_cases_fatalities_week_all_weeks.json','keepview')">
+			all weeks </a>
+		
+	</div>
+				<div class="">
+					<h5 class="pricing-card-title"><small class="text-muted">Casi per 100.000 abitnti in 7 giorni</small></h5>
+					<div class="no-padding">
+						<iframe id="map2" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="../../ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&basemap=ll&align=right&scrollsafesilent=1&legend=1&name=map2&sync=false&footer=1&project=../../projects/COVID-19-CSSE-Incidence/ixmaps_project_JHU_CSSE_incidence_new_cases_fatalities_week_last_20_weeks.json"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- --------------------------------------------------------------- -->
+	<!--                                                                 -->
+	<!-- PCM_DPC - Incidences - 28 days 56 days, 20	weeks, 54 weeks	 	 -->
+	<!--                                                                 -->
+	<!-- --------------------------------------------------------------- -->
+
+	<div class="container">
+		<div class=" mb-3 text-center">
+			<div class="mb-4 shadow-sm">
+				<div class="">
+					<h4 class="my-0 font-weight-normal"><b>Incidenze cumulative</b></h4>
+				</div>
+	<div class="text-center" >
+
+		<a class="btn btn-default btn-lg app-btn" role="button" href="javascript:ixmaps.loadProject('map5','../../projects/COVID-19-PCM_DPC_regioni_new/ixmaps_project_PCM_DPC_Reg2019_COVID_new_cases+fatalities_incidence_days_last_28_white.json','themeonly')">
+			last 28 days </a>
+		<a class="btn btn-default btn-lg app-btn" role="button" href="javascript:ixmaps.loadProject('map5','../../projects/COVID-19-PCM_DPC_regioni_new/ixmaps_project_PCM_DPC_Reg2019_COVID_new_cases+fatalities_incidence_days_last_56_white.json','themeonly')">
+			last 56 days </a>
+		<a class="btn btn-default btn-lg app-btn active" role="button" href="javascript:ixmaps.loadProject('map5','../../projects/COVID-19-PCM_DPC_regioni_new/ixmaps_project_PCM_DPC_Reg2019_COVID_new_cases+fatalities_incidence_weeks_last_20_vaccini_50+_white.json','clear')">
+			last 20 weeks </a>
+		<a class="btn btn-default btn-lg app-btn" role="button" href="javascript:ixmaps.loadProject('map5','../../projects/COVID-19-PCM_DPC_regioni_new/ixmaps_project_PCM_DPC_Reg2019_COVID_new_cases+fatalities_incidence_weeks_last_54_white.json','clear')">
+			last 54 weeks </a>
+		<a class="btn btn-default btn-lg app-btn" role="button" href="javascript:ixmaps.loadProject('map5','../../projects/COVID-19-PCM_DPC_regioni_new/ixmaps_project_PCM_DPC_Reg2019_COVID_new_cases+fatalities_incidence_weeks_all_white.json','clear')">
+			all weeks </a>
+		
+	</div>
+				<div class="">
+					<h5 class="pricing-card-title"><small class="text-muted">Casi per 100.000 abitnti in 7 giorni</small></h5>
+					<div class="no-padding">
+						<iframe id="map5" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="../../ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;name=map5&amp;basemap=ll&amp;align=right&amp;scrollsafesilent=1&amp;legend=1&amp;sync=false&amp;footer=1&amp;project=../../projects/COVID-19-PCM_DPC_regioni_new/ixmaps_project_PCM_DPC_Reg2019_COVID_new_cases+fatalities_incidence_weeks_last_20_vaccini_50+_white.json"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	<!-- --------------------------------------------------------------- -->
+	<!--                                                                 -->
+	<!-- PCM_DPC - Incidences - 56 days + raw 							 -->
+	<!--                                                                 -->
+	<!-- --------------------------------------------------------------- -->
+
+	<div class="container">
+		<div class=" mb-3 text-center">
+			<div class="mb-4 shadow-sm">
+				<div class="">
+					<h4 class="my-0 font-weight-normal"><b>Incidenza cumulativa 56 giorni</b></h4>
+				</div>
+				<div class="">
+					<h5 class="pricing-card-title"><small class="text-muted">Casi per 100.000 abitnti in 7 giorni</small></h5>
+					<div class="no-padding">
+						<iframe id="map6" width="100%" height="750" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="../../ixmaps/ui/html/embed_sync_Leaflet.html?ui=embed&amp;name=map6&amp;basemap=ll&amp;align=right&amp;scrollsafesilent=1&amp;legend=1&amp;sync=false&amp;footer=1&amp;project=../../projects/COVID-19-PCM_DPC_regioni_new/ixmaps_project_PCM_DPC_Reg2019_COVID_new_cases+fatalities_incidence_days_last_56_white_raw.json"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+	<!--                                                                 -->
+	<!-- F O O T E R          		               					 	 -->
+	<!--                                                                 -->
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+
+	<footer id="footer" class="container border-top">
+		<div class="row">
+			<div class="col-4">
+				<h5>Fonti</h5>
+				<ul class="list-unstyled text-small">
+					<li>
+						<a class='btn btn-primary' href='https://github.com/CSSEGISandData/COVID-19/' target='_blank'>2019 Novel Coronavirus COVID-19 (2019-nCoV)</a> Data Repository</a> by Johns Hopkins CSSE<br>
+						Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></li>
+					<li>&nbsp;</li>
+					<li>
+						<a class='btn btn-primary' href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>COVID-19 Italia - Monitoraggio situazione</a> Dipartimento della Protezione Civile, Italia<br>
+						Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></li>
+					<li>&nbsp;</li>
+					<li><a class="text-muted" href="https://istat.it">Popolazione 2019, ISTAT</a></li>
+				</ul>
+			</div>
+			<div class="col-4">
+				<h5>Attribuzioni</h5>
+				<ul class="list-unstyled text-small">
+					<li> chart.js - <span style="color:#888888">grafici a barra e curve sono realizzati con Chart.js, licenza: <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a></span><br>
+						Papa Parse - <span style="color:#888888">.csv parser integtegrato in data.js, usato per caricare e manipolare i dati dai siti ufficiali, licenza: <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a></span><br>
+						Flat Admin Bootstrap Templates - <span style="color:#888888">HTML5 Bootstrap template alola base di questo dasboard, licenza: <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a></span><br>
+					</li>
+				</ul>
+			</div>
+			<div class="col-4">
+				<h5>About</h5>
+				<ul class="list-unstyled text-small">
+					<li><a class="text-muted" href="https://ixmaps.com">powered by iXMaps</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+	<!--                                                                 -->
+	<!-- C O D E	          		               					 	 -->
+	<!--                                                                 -->
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+
+	<script type="text/javascript" src="./lib/js/jquery.min.js"></script>
+	<script type="text/javascript" src="./lib/js/bootstrap.bundle.min.js"></script>
+
+	<script type="text/javascript" src="./lib/js/Chart.bundle.js"></script>
+
+	<script type="text/javascript" src="../../ixmaps/ui/js/htmlgui_api.js"></script>
+	<script type="text/javascript" src="https://gjrichter.github.io/data.js/data.js"></script>
+
+	<script type="text/javascript" src="./js/index.js"></script>
+
+	<!-- Javascript -->
+	<script>
+		// ---------------------------------------------------------------------------------------
+		// infuse HTML snippets
+		// ---------------------------------------------------------------------------------------
+
+		infuseHTML = function(szElement, szUrl, szDiv) {
+
+			szStoryRoot = "";
+
+			if (typeof($("#" + szElement)[0]) == "undefined") {
+				return;
+			}
+			$("#" + szElement).load(szUrl + ' #' + szDiv, function(response, status, xhr) {
+				if (status == "error") {
+					var msg = "Sorry but there was an error: ";
+					$("#story").html(msg + xhr.status + "<br><br> '" + szStoryRoot + szUrl + "'<br><br> " + xhr.statusText);
+				}
+			});
+		};
+
+		infuseHTML("menu", "./menu.html", "menu");
+
+		var makeProvinceListT = null;
+		var provinceFilterA = [];
+
+		$(document).ready(function() {
+
+			refreshProvinceList = function() {
+				makeProvinceList(provinceFilterA.join(','));
+			};
+
+
+			mainMap = null;
+			ixmaps.embedMap("map_div", {
+					"mapService": "ll",
+					"mapType": "white",
+					"width": "100%",
+					"height": (window.innerHeight * 0.85) + "px",
+					"legend": true,
+					"silent": true,
+					"footer": true,
+					"align": "left",
+					"scrollsafesilent": true,
+					"autoSwitchInfo": true,
+					"search": false,
+					"name": "map"
+				},
+				function(map) {
+					mainMap = map;
+					map.setOptions({
+							"autoSwitchInfo": true,
+							"panHidden": false,
+							"syncMap": false,	
+							"mode": "info"
+						})
+						.setView([9.44906182688142,23.203125000000004],1)
+						.loadProject("../../projects/COVID-19-CSSE-incidence/ixmaps_project_JHU_CSSE_vaccines_hotspots_pointer_incidence_new_cases_fatalities_last_56_days_winkel.json","keepview");
+
+					ixmaps.htmlgui_onDrawTheme = function(szId) {
+
+						if ((szId == "actual")) {
+
+							var themeObj = ixmaps.getThemeObj("map", szId);
+							var nValue = themeObj.partsA[0].nSum;
+
+							// show count sum as map overlay
+							/**
+							var szOverlay = 
+								"<div class='map-legend' style='position:absolute;top:0px;left:40.3em;color:#666666;background:rgba(255,255,255,0.5);font-size:24px;font-weight:normal;padding:0.2em 0.5em;min-width:200px'>"+ixmaps.__formatValue(themeObj.partsA[0].nSum,0)+"<br><span style='font-size:14px;vertical-align:20%'>deceduti</span></div>";
+								szOverlay += 
+								"<div class='map-legend' style='position:absolute;top:0px;left:30.3em;color:#0066dd;background:rgba(255,255,255,0.5);font-size:24px;font-weight:normal;padding:0.2em 0.5em;min-width:200px'>"+ixmaps.__formatValue(themeObj.partsA[1].nSum,0)+"<br><span style='font-size:14px;vertical-align:20%'>attualmente positivi</span></div>";
+								szOverlay += 
+								"<div class='map-legend' style='position:absolute;top:0px;left:20.3em;color:#66aa44;background:rgba(255,255,255,0.5);font-size:24px;font-weight:normal;padding:0.2em 0.5em;min-width:200px'>"+ixmaps.__formatValue(themeObj.partsA[2].nSum,0)+"<br><span style='font-size:14px;vertical-align:20%'>dismessi / guariti</span></div>";
+							**/
+							var szOverlay =
+								"<div style='position:relative;left:400px'>";
+							szOverlay +=
+								"<div class='' style='float:left;color:rgba(0, 0, 0,0.8);background:rgba(255,255,255,0.5);font-size:24px;line-height:0.9em;font-weight:normal;padding:0.4em 0.5em;border-radius:0.5em;border:rgba(155, 200, 100,0.8) solid 5px;width:200px'> " +
+								ixmaps.__formatValue(themeObj.partsA[2].nSum, 0) +
+								"<br><span style='font-size:14px;vertical-align:20%'>dismessi / guariti</span></div>";
+							szOverlay +=
+								"<div class='' style='float:left;color:rgba(0, 0, 0,0.8);background:rgba(255,255,255,0.5);font-size:24px;line-height:0.9em;font-weight:normal;padding:0.4em 0.5em;border-radius:0.5em;border:rgba(100, 160, 220,0.8) solid 5px;;min-width:200px'> " +
+								ixmaps.__formatValue(themeObj.partsA[1].nSum, 0) +
+								"<br><span style='font-size:14px;vertical-align:20%'>attualmente positivi</span></div>";
+							szOverlay +=
+								"<div class='' style='float:left;color:rgba(0, 0, 0,0.8);background:rgba(255,255,255,0.5);font-size:24px;line-height:0.9em;font-weight:normal;padding:0.4em 0.5em;border-radius:0.5em;border:rgba(70, 70, 70,0.5) solid 5px;min-width:200px'> " +
+								ixmaps.__formatValue(themeObj.partsA[0].nSum, 0) +
+								"<br><span style='font-size:14px;vertical-align:20%'>deceduti</span></div>";
+							szOverlay +=
+								"<div class='' style='float:left;font-size:24px;line-height:0.9em;font-weight:normal;padding:0.4em 0.5em;width:200px'><span style='font-size:0.7em;line-height:1em;'>i valori sono aggregati su griglia esagonale è rappresentai con grafici concentrici dove la superfice equivale al valore</div>";
+							szOverlay +=
+								"/div>"
+
+							ixmaps.setMapOverlayHTML(szOverlay);
+						} else
+						if ((szId == "new_cases")) {
+
+							var themeObj = ixmaps.getThemeObj("map", szId);
+							var nValue = themeObj.partsA[0].nSum;
+
+							// show count sum as map overlay
+							var szOverlay =
+								"<div class='map-legend' style='position:absolute;top:-5px;left:15.3em;color:rgba(0, 0, 0,0.8);background:rgba(255,255,255,0.5);font-size:24px;line-height:0.9em;font-weight:normal;padding:0.4em 0.5em;border-radius:0.5em;border:rgba(100, 160, 220,0.8) solid 5px;;min-width:200px'>+ " +
+								ixmaps.__formatValue(themeObj.partsA[0].nSum, 0) +
+								"<br><span style='font-size:14px;vertical-align:20%'>casi in 24 ore</span></div>";
+
+							ixmaps.setMapOverlayHTML(szOverlay);
+						} else
+						if ((szId == "new_cases_curves")) {
+
+							var szOverlay = "";
+							ixmaps.setMapOverlayHTML(szOverlay);
+						} else
+						if ((szId == "stacked_curves")) {
+
+							var szOverlay = "";
+							ixmaps.setMapOverlayHTML(szOverlay);
+						} else
+						if ((szId == "clip")) {
+
+							var szOverlay = "";
+							ixmaps.setMapOverlayHTML(szOverlay);
+						}
+					};
+
+				}
+			);
+
+			$('a').on('click', event => {
+				$('a').removeClass('active');
+				$(event.target).addClass('active');
+			});
+
+			var szUrl = "https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv";
+			var myfeed = Data.feed({
+				"source": szUrl,
+				"type": "csv"
+			}).load(function(mydata) {
+				$("#data_italia").html(new Date(mydata.column("data").values().pop()).toLocaleString());
+			});
+
+
+		});
+
+	</script>
+
+
+</body>
+
+</html>
