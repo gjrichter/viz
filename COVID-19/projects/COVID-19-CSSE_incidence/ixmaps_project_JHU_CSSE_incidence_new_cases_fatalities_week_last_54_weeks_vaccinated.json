@@ -124,7 +124,7 @@
 				"shadow": "false",
 				"dbtable": "CSSE_COVID_LAST_54_WEEKLY_INCIDENCE",
 				"dbtableType": "ext",
-				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE_Incidence/dataprovider_CSSE_COVID_incidence.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE_incidence/dataprovider_CSSE_COVID_incidence.js",
 				"datacache": "false",
 				"lookupfield": "Lat|Long",
 				"symbols": [
@@ -160,7 +160,7 @@
 				"shadow": "false",
 				"dbtable": "CSSE_COVID_LAST_54_WEEKLY_INCIDENCE_FATALITIES",
 				"dbtableType": "ext",
-				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE_Incidence/dataprovider_CSSE_COVID_incidence.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/COVID-19/projects/COVID-19-CSSE_incidence/dataprovider_CSSE_COVID_incidence.js",
 				"datacache": "false",
 				"lookupfield": "Lat|Long",
 				"symbols": [
