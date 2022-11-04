@@ -76,11 +76,11 @@
 				"align": "23right",
 				"refreshtimeout": "0",
 				"normalsizevalue": "2",
-				"scale": "0.1",
+				"scale": "0.2",
 				"rangescale": "1",
 				"minvalue": "0",
-				"maxvalue": "1000",
-				"linewidth": "15",
+				"maxvalue": "auto",
+				"linewidth": "10",
 				"bordercolor": "none",
 				"boxopacity": "0.01",
 				"titlefield": "Country/Region",
@@ -88,7 +88,7 @@
 				"valuedecimals": "0",
 				"fadenegative": "1",
 				"name": "new_cases_curves_2",
-				"title": "COVID-19 - new cases/day <br> last 56 days",
+				"title": "COVID-19 - new cases/day <br> last 20 weeks",
 				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>"
 				}
 			},{
@@ -98,7 +98,7 @@
 			"style": {
 				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|LOLLIPOP|DIFFERENCE|SUM|BOX|LONGTITLE|GRID|RIGHT|RECT|FIXSIZE|NOLEGEND",
 				"colorscheme": [
-					"rgba(120, 120, 120,0.5)"],
+					"rgba(120, 120, 120,1)"],
 				"fillopacity": "0.1",
 				"shadow": "false",
 				"dbtable": "CSSE_COVID_LAST_20_WEEKLY_INCIDENCE_FATALITIES",
@@ -112,11 +112,11 @@
 				"align": "23right",
 				"refreshtimeout": "0",
 				"normalsizevalue": "2",
-				"scale": "0.1",
+				"scale": "0.2",
 				"rangescale": "1",
 				"minvalue": "0",
-				"maxvalue": "10",
-				"linewidth": "10",
+				"maxvalue": "auto",
+				"linewidth": "5",
 				"bordercolor": "none",
 				"borderradius": "50",
 				"boxcolor": "black",
@@ -130,7 +130,7 @@
 				"gridwidthpx": "250",
 				"aggregationlower": "1:50000000000",
 				"name": "new_cases_curves",
-				"title": "COVID-19 - deaths/day <br> last 56 days",
+				"title": "COVID-19 - deaths/day <br> last 20 weeks",
 				"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>"
 				}
 			}],
