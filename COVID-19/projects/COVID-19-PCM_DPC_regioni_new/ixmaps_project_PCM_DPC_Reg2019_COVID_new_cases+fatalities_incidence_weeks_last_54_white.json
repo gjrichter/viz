@@ -61,7 +61,7 @@
 			"field": "$item$",
 			"field100": "",
 			"style": {
-				"type": "FEATURES|NOLEGEND|LOCKED",
+				"type": "FEATURES|NOLEGEND",
 				"colorscheme": [
 					"#e8e8e8"],
 				"fillopacity": "1",
@@ -89,7 +89,7 @@
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|DIFFERENCE|GRID|COLOR|BOX|FIXSIZE|COMPATIBLE|SUM|NOLEGEND|NOOUTLIER",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|DIFFERENCE|GRID|COLOR|BOX|FIXSIZE|COMPATIBLE|SUM|NOLEGEND|NOOUTLIER|NOCLIP",
 				"colorscheme": [
 					"rgba(200,150,150,1)"],
 				"fillopacity": "0.2",
@@ -110,7 +110,7 @@
 				"scale": "0.05",
 				"rangescale": "1",
 				"minvalue": "0",
-				"maxvalue": "1000",
+				"maxvalue": "2000",
 				"textcolor": "#880000",
 				"linewidth": "35",
 				"bordercolor": "none",
@@ -130,7 +130,7 @@
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|LOLLIPOP|DIFFERENCE|SUM|BOX|LONGTITLE|GRID|RIGHT|RECT|FIXSIZE|NOLEGEND",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|LOLLIPOP|DIFFERENCE|SUM|BOX|LONGTITLE|GRID|RIGHT|RECT|FIXSIZE|NOLEGEND|NOCLIP",
 				"colorscheme": [
 					"rgba(120, 120, 120,0.5)"],
 				"fillopacity": "0.1",
@@ -151,7 +151,7 @@
 				"scale": "0.05",
 				"rangescale": "1",
 				"minvalue": "0",
-				"maxvalue": "10",
+				"maxvalue": "20",
 				"linewidth": "15",
 				"textcolor": "#880000",
 				"bordercolor": "none",
