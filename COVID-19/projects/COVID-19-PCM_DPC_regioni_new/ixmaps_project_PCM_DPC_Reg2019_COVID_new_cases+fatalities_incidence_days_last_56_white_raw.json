@@ -12,7 +12,7 @@
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
 		"attribution": "iXMaps",
 		"basemap": "white",
-		"legend": "<div style='color:#777777'><h1></h1><h1>COVID-19 <br> <b style='color:rgba(200,150,150,1)'>incidenza cumulativa </b> <br> ultimi <b>56</b> giorni</h1><h4>I <b>positivi</b> sono misurati in <b>nuovi casi</b> per <b>100.000</b> abitanti <b>accumulati</b> per <b>7 giorni</b>, i <b>deceduti</b>in casi <b>giornalieri</b> per <b>100.000</b> abitanti con media mobile di 7 giorni. <br><b>Nota bene:</b> le due curve hanno scale diverse per poter confrontarli</h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
+		"legend": "<div style='color:#777777'><h1></h1><h1>COVID-19 <br> <b style='color:rgba(160,110,110,1)'>incidenza cumulativa </b> e <b style='color:rgba(220,170,170,1)'>giornaliera</b> <br> ultimi <b>56</b> giorni</h1><h4>L'<b>incidenza cumulativa</b> è calcolata in <b>nuovi casi</b> per <b>100.000</b> abitanti <b>accumulati</b> per <b>7 giorni</b> </h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
 		"item": "html",
 		"scaleParam": {
 			"lineScaling": "4.213991769547325",
@@ -61,7 +61,7 @@
 			"field": "$item$",
 			"field100": "",
 			"style": {
-				"type": "FEATURES|NOLEGEND|LOCKED",
+				"type": "FEATURES|NOLEGEND",
 				"colorscheme": [
 					"#e8e8e8"],
 				"fillopacity": "1",
@@ -89,7 +89,7 @@
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|COLOR|BOX|FIXSIZE|SUM|NOLEGEND",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|NOCLIP|LINES|AREA|COLOR|BOX|FIXSIZE|SUM|NOLEGEND",
 				"colorscheme": [
 					"rgba(200,150,150,1)"],
 				"fillopacity": "0.3",
@@ -110,7 +110,7 @@
 				"scale": "0.05",
 				"rangescale": "1",
 				"minvalue": "0",
-				"maxvalue": "1000",
+				"maxvalue": "2000",
 				"textcolor": "#880000",
 				"linewidth": "0",
 				"bordercolor": "none",
@@ -130,7 +130,7 @@
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|COLOR|BOX|BOTTOMTITLE|FIXSIZE|SUM|NOLEGEND|NOOUTLIER",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|NOCLIP|LINES|AREA|GRID|COLOR|BOX|BOTTOMTITLE|FIXSIZE|SUM|NOLEGEND|NOOUTLIER",
 				"colorscheme": [
 					"rgba(200,150,150,1)"],
 				"fillopacity": "0.0002",
@@ -151,7 +151,7 @@
 				"scale": "0.05",
 				"rangescale": "1",
 				"minvalue": "0",
-				"maxvalue": "1000",
+				"maxvalue": "2000",
 				"textcolor": "#880000",
 				"linewidth": "35",
 				"bordercolor": "none",
