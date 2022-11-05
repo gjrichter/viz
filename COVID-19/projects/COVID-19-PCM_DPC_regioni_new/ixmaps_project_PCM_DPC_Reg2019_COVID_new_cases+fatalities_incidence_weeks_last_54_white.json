@@ -51,8 +51,8 @@
 			"panHidden": "true"
 			},
 		"center": {
-			"lat": "42.374778361114195",
-			"lng": "14.073486328125002"
+			"lat": "42.553080288955826",
+			"lng": "15.106201171875002"
 			},
 		"zoom": "6"
 		},
@@ -61,7 +61,7 @@
 			"field": "$item$",
 			"field100": "",
 			"style": {
-				"type": "FEATURES|NOLEGEND",
+				"type": "FEATURES|NOLEGEND|FORCE",
 				"colorscheme": [
 					"#e8e8e8"],
 				"fillopacity": "1",
@@ -116,8 +116,6 @@
 				"bordercolor": "none",
 				"boxopacity": "0",
 				"boxmargin": "10",
-				"titlefield": "denominazione_regione",
-				"titleupper": "1:3000000",
 				"boxupper": "1:10000000",
 				"valuescale": "1",
 				"valuedecimals": "0",
@@ -158,7 +156,7 @@
 				"boxopacity": "0",
 				"boxmargin": "10",
 				"titlefield": "denominazione_regione",
-				"titleupper": "1:3000000",
+				"titleupper": "1:30000000",
 				"boxupper": "1:10000000",
 				"valuescale": "1",
 				"valuedecimals": "1",
