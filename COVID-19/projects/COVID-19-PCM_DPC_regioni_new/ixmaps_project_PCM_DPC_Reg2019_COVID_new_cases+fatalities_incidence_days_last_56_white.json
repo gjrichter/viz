@@ -9,7 +9,7 @@
 		"created": "Fri Dec 17 2021 21:01:39 GMT+0100 (Ora standard dell’Europa centrale)"
 		},
 	"map": {
-		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
+		"map": "",
 		"attribution": "iXMaps",
 		"basemap": "white",
 		"legend": "<div style='color:#777777'><h1></h1><h1>COVID-19 <br> <b style='color:rgba(200,150,150,1)'>incidenza cumulativa </b> e <b>deceduti</b> <br> ultimi <b>56</b> giorni</h1><h4>I <b>positivi</b> sono misurati in nuovi casi per <b>100.000</b> abitanti <b>accumulati</b> per <b>7 giorni</b>, i <b>deceduti</b>in <b>casi giornalieri</b> per <b>100.000</b> abitanti con media mobile di 7 giorni.</h4><h4><b>Nota bene: </b>le due curve hanno scale diverse: <b><span style='color:rgba(200,150,150,1)'>0-2000 per positivi</span>, 0-20 per le fatalità</b>.</h4><<h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
