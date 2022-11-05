@@ -61,7 +61,7 @@
 			"field": "$item$",
 			"field100": "",
 			"style": {
-				"type": "FEATURES|NOLEGEND|LOCKED",
+				"type": "FEATURES|NOLEGEND",
 				"colorscheme": [
 					"#e8e8e8"],
 				"fillopacity": "1",
@@ -102,7 +102,7 @@
 				"dbtableType": "ext",
 				"dbtableExt": "https://gjrichter.github.io/viz/COVID-19/projects/COVID-19-Vaccini/dataprovider_Vaccini_opendata_age.js",
 				"datacache": "true",
-				"lookupfield": "codice_NUTS2.1",
+				"lookupfield": "N2.1",
 				"units": "%",
 				"units100": "",
 				"refreshtimeout": "0",
@@ -111,7 +111,7 @@
 				"linecolor": [
 					"#F28E2B"],
 				"linewidth": "1",
-				"titlefield": "nome_area.1",
+				"titlefield": "reg.1",
 				"valuescale": "1",
 				"valuedecimals": "1",
 				"title": "Percentuale della popolazione protetta con 2 dosi",
