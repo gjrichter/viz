@@ -9,7 +9,7 @@
 		"created": "Thu Dec 09 2021 21:22:12 GMT+0100 (Ora standard dell’Europa centrale)"
 		},
 	"map": {
-		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2019/italia_province_2019_g_cod_prov.svgz",
+		"map": "",
 		"attribution": "iXMaps",
 		"basemap": "white",
 		"legend": "<div style='color:#777777'><h1></h1><h1>COVID-19 <br> <b style='color:rgb(46, 142, 139)'>% vaccinati</b>, <b style='color:rgba(200,150,150,1)'>incidenza cumulativa </b> e <b>deceduti</b> <br> ultimi <b>20</b> settimane</h1><h4>I <b>positivi</b> sono misurati in <b>nuovi casi</b> per <b>100.000</b> abitanti <b>accumulati</b> per <b>7 giorni</b>, i <b>deceduti</b>in casi <b>giornalieri</b> per <b>100.000</b> abitanti con media mobile di 7 giorni. <br><b>Nota bene:</b> le due curve hanno scale diverse per poter confrontarli</h4><h4>Fonte: <a href='https://github.com/pcm-dpc/COVID-19/' target='_blank'>Protezione Civile</a><br>Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a></h4></div>",
@@ -61,7 +61,7 @@
 			"field": "$item$",
 			"field100": "",
 			"style": {
-				"type": "FEATURES|NOLEGEND",
+				"type": "FEATURES|NOLEGEND|FORCE",
 				"colorscheme": [
 					"#e8e8e8"],
 				"fillopacity": "1",
