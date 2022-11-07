@@ -1,6 +1,6 @@
 ## CODID-19 - CSSE
 
-## Visualizations of data from the Johns Hopkins CSSE COVID-19 repository on GitHub
+## New cases, week by week, from January 2020 to now
 
 Visualization of actual data from the COVID-19 data repository on GitHub maintained by the Johns Hopkins University. 
 
