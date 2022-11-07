@@ -10,7 +10,11 @@ The HTML/Javascript code of the above map is  <a href="https://github.com/gjrich
 Below the HTML code to embed the above map:
 
 ```javascript
-<iframe id="map" width="100%" height="680" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://gjrichter.github.io/viz/COVID-19/pages/index_embed_JHU_CSSE_confirmed_clip_diff_glow.html"></iframe></iframe>
+<iframe id="map" width="100%" height="680" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+
+src="https://gjrichter.github.io/viz/COVID-19/pages/index_embed_JHU_CSSE_confirmed_clip_diff_glow.html">
+    
+</iframe>
 ```
 
 <br>
