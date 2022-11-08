@@ -3068,6 +3068,8 @@ window.ixmaps = window.ixmaps || {};
 					
 					theme.szSnippet = "dal " + columns[last - 2] + " al " + columns[last - 1];
 					
+					ixmaps.setTitle("<f2 style='color:#888888;background-color:rgba(255,255,255,0.1);padding:0.3em 0.5em;border:#888888 solid 0.5px;border-radius:0.2em'>aggiornato: "+(columns[last - 1])+"</f2>");
+					
 					// -----------------------------------------------------------------------------------------------               
 					// deploy the data
 					// ----------------------------------------------------------------------------------------------- 
