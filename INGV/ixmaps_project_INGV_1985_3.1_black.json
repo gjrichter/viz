@@ -1,0 +1,83 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Fri Dec 07 2018 19:49:55 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"basemap": "CartoDB - Dark matter",
+		"scaleParam": {
+			"normalSizeScale": "10000000"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1"
+			},
+		"center": {
+			"lat": "42.14304156290942",
+			"lng": "15.089721679687502"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "Depth/Km",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|LINEAR|GLOW|QUANTILE",
+				"colorscheme": [
+					"7",
+					"RGB(245,41,38)",
+					"RGB(74,74,255)",
+					"dynamic"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "http://webservices.ingv.it/fdsnws/event/1/query?starttime=1985-01-01T00%3A00%3A00&minmag=3.1&maxmag=10&mindepth=-10&maxdepth=1000&minlat=-90&maxlat=90&minlon=-180&maxlon=180&minversion=100&orderby=time-asc&format=text&limit=15000",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"itemfield": "Latitude|Longitude",
+				"lookupfield": "Latitude|Longitude",
+				"units": "",
+				"scale": "0.057999999999999996",
+				"sizefield": "Magnitude",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "World Mercator [$item$]"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
