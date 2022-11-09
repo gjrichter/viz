@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<!-- **********************************************************************
+
+index_only_map_embed.html
+
+$Comment: ixmaps map template; embedded version
+$Source : index_only_map_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:index_only_map_embed.html 1 2021-10-17 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:index_only_map_embed.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="ixmaps embed example">
+	<meta name="author" content="guenter richter">
+	<link rel="shortcut icon" href="https://gjrichter.github.io/ixmaps/ui/resources/images/ixmaps_logo.png">
+
+	<title>iXMaps</title>
+
+</head>
+
+<body style="margin:0;padding:0">
+
+	<!--========================================================================= -->
+
+	<script src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
+
+	<!--========================================================================= -->
+
+	<script type="text/javascript" charset="utf-8">
+		query = function(data, options) {
+
+			var date = new Date();
+			var uTime = date.getTime();
+
+			/* 7 days to the past */
+			uTime -= 1000 * 60 * 60 * 24 * 7;
+
+			date = new Date(uTime);
+
+			var year = date.getFullYear();
+			var month = date.getMonth() + 1;
+			var day = date.getDate();
+
+			var szStartdate = year + "-" + String("0" + month).slice(-2) + "-" + String("0" + day).slice(-2);
+
+			Data.feed({
+				source: "https://webservices.ingv.it/fdsnws/event/1/query?starttime=" + szStartdate + "T00%3A00%3A00&minmag=1&maxmag=10&mindepth=-10&maxdepth=1000&minlat=-90&maxlat=90&minlon=-180&maxlon=180&minversion=100&orderby=time-asc&format=text&limit=10000",
+				type: "csv",
+			}).load(function(newData) {
+				newData.addTimeColumns({
+					"source": "Time"
+				});
+				options.type = "jsonDB",
+					ixmaps.setExternalData(newData, options);
+			});
+		};
+
+		DISS_1 =
+			ixmaps.layer("DISS_3.3.0_1")
+			.data({
+				name: "DSS330",
+				url: "https://raw.githubusercontent.com/gjrichter/data/master/TopoJSON/INGV/DISS_3.3.0.json",
+				type: "topojson"
+			})
+			.style({
+				colorscheme: ["#9FA0FF"],
+				linecolor: "#9FA0FF"
+			})
+			.define()
+
+		DISS_2 =
+			ixmaps.layer("DISS_3.3.0_2")
+			.data({
+				name: "ISS330",
+				url: "https://raw.githubusercontent.com/gjrichter/data/master/TopoJSON/INGV/DISS_3.3.0.json",
+				type: "topojson"
+			})
+			.style({
+				colorscheme: ["none"],
+				linecolor: "#FD7A00"
+			})
+			.define()
+
+		DISS_3 =
+			ixmaps.layer("DISS_3.3.0_3")
+			.data({
+				name: "CSSPLN330",
+				url: "https://raw.githubusercontent.com/gjrichter/data/master/TopoJSON/INGV/DISS_3.3.0.json",
+				type: "topojson"
+			})
+			.style({
+				colorscheme: ["#FD7A00"],
+				opacity: "0.3",
+				linecolor: "none"
+			})
+			.define()
+
+		DISS_4 =
+			ixmaps.layer("DISS_3.3.0_4")
+			.data({
+				name: "CSSTOP330",
+				url: "https://raw.githubusercontent.com/gjrichter/data/master/TopoJSON/INGV/DISS_3.3.0.json",
+				"type": "topojson"
+			})
+			.style({
+				colorscheme: ["#FD7A00"],
+				linewidth: "0.3"
+			})
+			.define()
+
+		DISS_5 =
+			ixmaps.layer("DISS_3.3.0_5")
+			.data({
+				name: "SUBDCNT330",
+				url: "https://raw.githubusercontent.com/gjrichter/data/master/TopoJSON/INGV/DISS_3.3.0.json",
+				type: "topojson"
+			})
+			.style({
+				colorscheme: ["#888888"],
+				linewidth: "0.2"
+			})
+			.define()
+
+		TERREMOTI =
+			ixmaps.theme("generic")
+			.data({
+				type: "ext",
+				query: query.toString(),
+				cache: "false",
+				refresh: "60"
+			})
+			.binding({
+				value: "Depth/Km",
+				position: "Latitude|Longitude",
+				size: "Magnitude",
+				title: "EventLocationName"
+			})
+			.style({
+				type: "CHART|BUBBLE|QUANTILE|LINEAR|VALUES|COUNT",
+				colorscheme: ["7", "RGB(245,41,38)", "RGB(74,74,255)", "dynamic"],
+				fillopacity: "0.7",
+				shadow: "true",
+				legendunits: "km",
+				normalsizevalue: "5",
+				timefield: "Time", // get the time from this column
+				valuefield: "Magnitude", // show the magnitude as text, the color comes from Depth/km
+				valuescale: "1.2",
+				valuedecimals: "1",
+				showdata: "true"
+			})
+			.meta({
+				title: "Terremoti della ultima settimana",
+				snippet: "Il colore rappresenta la profondità mentra la grandezza la magnitudine",
+				description: "Fonte: INGV Centro Nazionale Terremoti licenza cc-by-4.0"
+			})
+			.define()
+
+		var attribution =
+			"<p style='margin-bottom:1em'>data: DISS Working Group. (2021). Database of Individual Seismogenic Sources<a href='https://doi.org/10.13127/diss3.3.0' target='_blank'> (DISS), version 3.3.0</a><br>Data terremoti: <a href='http://terremoti.ingv.it' target='_blank'>Istituto Nazionale di Geofisica e Vulcanologia (INGV)</p>";
+
+
+		// ----------------------------------------
+		// create the map with DISS and earthquakes
+		// 	5 layer DISS
+		//  1 layer actual earthquakes
+		// ----------------------------------------
+
+		document.activeElement.appendChild(
+
+			map = ixmaps.embed("mymap", {
+
+					mapCdn: "https://gjrichter.github.io/ixmaps",
+					width: "100%",
+					height: "720px",
+					legend: "true",
+					item: "html"
+				},
+
+				map => map
+				.mapType("OpenStreetMap - FR")
+				.view([41.577354839557856, 15.468750000000002], 6)
+				.attribution(attribution)
+				.require("../../ui/js/tools/tooltip_basic.js")			   
+				.localize("loading data ...", " &#x2B73; data")
+				.options({
+					featurescaling: "dynamic",
+					objectscaling: "dynamic",
+					normalSizeScale: "10000000",
+					panhidden: "false",
+					basemapopacity: "0.7"
+				})
+				.layer(DISS_1)
+				.layer(DISS_2)
+				.layer(DISS_3)
+				.layer(DISS_4)
+				.layer(DISS_5)
+				.layer(TERREMOTI)
+			)
+		);
+
+	</script>
+</body>
+
+</html>
