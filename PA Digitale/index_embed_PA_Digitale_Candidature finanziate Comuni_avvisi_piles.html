@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<!-- **********************************************************************
+
+index_only_map_embed.html
+
+$Comment: ixmaps map template; embedded version
+$Source : index_only_map_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:index_only_map_embed.html 1 2021-10-17 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:index_only_map_embed.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="ixmaps embed example">
+	<meta name="author" content="guenter richter">
+	<link rel="shortcut icon" href="https://gjrichter.github.io/ixmaps/ui/resources/images/ixmaps_logo.png">
+
+	<title>iXMaps test Api 2</title>
+
+</head>
+
+<body>
+
+	<!--========================================================================= -->
+
+	<script src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
+
+	<!--========================================================================= -->
+
+	<script type="text/javascript" charset="utf-8">
+
+		var georef =
+			ixmaps.layer("ITALIA_Comuni_2022")
+			.data({
+				url: "https://raw.githubusercontent.com/aborruso/centroidiurbanfabric/master/output/ElencoUnitaAmministrative2011.geojson",
+				type: "geojson"
+			})
+			.binding({
+				id: "COMUNE",
+				position: "geometry"
+			})
+			.type("FEATURES|NOLEGEND")
+			.style({
+				colorscheme: ["none"],
+				linecolor: "none",
+				linewidth: "1",
+				scale: "0",
+				sizefield: "POP_2011"
+			})
+			.define();
+
+		var bubble_chart =
+			ixmaps.layer("ITALIA_Comuni_2022")
+			.data({
+				url: "https://raw.githubusercontent.com/teamdigitale/padigitale2026-opendata/main/data/candidature_comuni_finanziate.csv",
+				type: "csv"
+			})
+			.binding({
+				value: "avviso",
+				position: "comune"
+			})
+			.type("CHART|SYMBOL|SEQUENCE|MULTIPLE|UP|SORT|UP|AGGREGATE|RELOCATE|SUM|CATEGORICAL|VALUES|BOX|TITLE|COMPACTLEGEND")
+			.style({
+				colorscheme: [
+					"10",
+					"tableau10"],
+				fillopacity: "0.7",
+				shadow: "false",
+				symbols: [
+					"label"],
+				units: "€",
+				normalsizevalue: "5000000",
+				sizefield: "importo_finanziamento",
+				textscale: "1.5",
+				linecolor: "white",
+				titlefield: "comune",
+				rangescale: "2",
+				valuescale: "1.3",
+				valuedecimals: "0",
+				showdata: "true",
+				boxopacity: "0",
+				aggregationscale: [
+					"1:1","comune",
+					"1:500000","provincia",
+					"1:3000000","regione",
+					"1:10000000","500px"
+					],
+			})
+			.meta({
+				title: "PA Digitale - Candidature finanziate Comuni"
+			})
+			.define();
+		
+		var attribution = "dati: <a href='https://padigitale2026.gov.it/opendata/?fbclid=IwAR0XNJHx-ZdhE3OpQZKV8apN7yi_6Zftl9d-ZuRSxn4f6Qd94lJ36b9RZkA' target='_blank'>PA Digitale - Open Data</a>, 	licenza: <a href='https://creativecommons.org/licenses/by/4.0/deed.it target='_blank'>CC-BY-4.0</a>"
+
+		// ----------------------------------------
+		// create the map with DISS and earthquakes
+		// 	5 layer DISS
+		//  1 layer actual earthquakes
+		// ----------------------------------------
+
+		document.activeElement.appendChild(
+
+			ixmaps.embed("map2", {
+					mapCdn: "https://gjrichter.github.io/ixmaps",
+					maptype: "Stamen - toner-lite",
+					width: "90%",
+					height: "800px",
+					legend: 1,
+					align: "center",
+					mode: "pan",
+					tools: "true"
+				},
+				map => map
+				.view([41.94314874732696, 12.656250000000002], 6)
+				.attribution(attribution)
+				.require("../../ui/js/tools/tooltip_basic.js")
+				.options({
+					scrollSafeSilent: "true",
+					objectscaling: "dynamic",
+					normalSizeScale: "6920521",
+					dynamicScalePow: "1.7",
+					panhidden: "false",
+					basemapopacity: "0.3"
+				})
+				.layer(georef)
+				.layer(bubble_chart)
+			)
+		);
+
+	</script>
+</body>
+
+</html>
