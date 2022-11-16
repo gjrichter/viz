@@ -32,3 +32,9 @@ Qui il codice per includere la mappa in una pagina HTML:
 src="https://gjrichter.github.io/viz/PA%20Digitale/index_embed_PA_Digitale_Candidature finanziate Comuni_avvisi_pie.html">
 </iframe>
  ```
+
+
+
+Infine un link ad altre mappa per approfondire il tema:
+
+- [Dashboard finanziamenti PA Digitale](https://gjrichter.github.io/pages/PA%20Digitale/PA_Digitale_Candidature%20finanziate_dashboard_I.html)
