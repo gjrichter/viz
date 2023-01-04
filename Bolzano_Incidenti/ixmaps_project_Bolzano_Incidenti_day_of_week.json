@@ -1,0 +1,118 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Feb 08 2021 10:03:04 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "13516"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "46.48669306753273",
+			"lng": "11.356249572972105"
+			},
+		"zoom": "13"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "day",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|BOX|GRID|AREA|EXACT|FIXSIZE|GRIDSIZE|ZEROISVALUE|NEGATIVEISVALUE|AGGREGATE|RECT|SUM|CLEAR|FORCE",
+				"colorscheme": [
+					"#0079C6",
+					"#0079C6",
+					"#0079C6",
+					"#0079C6",
+					"#0079C6",
+					"RGB(237,124,137)",
+					"RGB(237,124,137)"],
+				"shadow": "true",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.csv.gz",
+				"dbtableType": "csv",
+				"dbtableExt":"../../projects/Bolzano-Incidenti/process_data.js",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"symbols": [
+					"circle"],
+				"values": [
+					"1",
+					"2",
+					"3",
+					"4",
+					"5",
+					"6",
+					"0"],
+				"label": [
+					"Lunedì",
+					"Martedì",
+					"Mercoledì",
+					"Giovedì",
+					"Venerdì",
+					"Sabato",
+					"Domenica"],
+				"xaxis": [
+					"L",
+					"M",
+					"M",
+					"G",
+					"V",
+					"S",
+					"D"],
+				"units": "",
+				"normalsizevalue": "20",
+				"scale": "0.95",
+				"rangescale": "0.8",
+				"minvalue": "0",
+				"boxopacity": "0.1",
+				"gridwidthpx": "100",
+				"title": "Incidenti Lecce6",
+				"snippet": "Incidenti aggregati per griglia geografica e per giorno della settimana"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

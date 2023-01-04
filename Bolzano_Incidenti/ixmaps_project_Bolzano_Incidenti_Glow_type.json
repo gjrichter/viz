@@ -1,0 +1,94 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Nov 27 2022 22:15:18 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "13516"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "46.48979490152569",
+			"lng": "11.342074871063234"
+			},
+		"zoom": "15"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "NATURA",
+			"field100": "",
+			"style": {
+				"type": "CHART|GLOW|SYMBOL|SEQUENCE|CENTER|SORT|DOWN|RINGS|AGGREGATE|RECT|RELOCATE|CATEGORICAL|SUM|SUM",
+				"colorscheme": [
+					"14",
+					"tableau"],
+				"opacity": "0.6",
+				"fillopacity": "1",
+				"autoopacity": "false",
+				"shadow": "false",
+				"filter": "WHERE ANNOINC = 2021",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1.2800000000000011",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"fadenegative": "1",
+				"centerpart": "max",
+				"gridwidthpx": "15.625000000000012",
+				"title": "Incidenti Bolzano<br>2021"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

@@ -1,0 +1,88 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Feb 08 2021 10:03:04 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "13516"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panhidden": "false"
+			},
+		"center": {
+			"lat": "46.48669306753273",
+			"lng": "11.356249572972105"
+			},
+		"zoom": "13"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|GLOW|CENTER|SORT|UP|LINEAR|RINGS|AGGREGATE|RECT|RELOCATE|SUM|SIZE",
+				"colorscheme": [
+					"RGB(77,184,173)"],
+				"opacity": "0.6",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "2",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridwidthpx": "10",
+				"timefield": "DTINCID",
+				"title": "Incidenti Bolzano<br>2021"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

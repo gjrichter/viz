@@ -1,0 +1,96 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Feb 08 2021 10:03:04 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "27033",
+			"dynamicScalePow": "1.1"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panhidden": "false"
+			},
+		"center": {
+			"lat": "46.48669306753273",
+			"lng": "11.356249572972105"
+			},
+		"zoom": "13"
+		},
+	"require":["../../ui/js/tools/tooltip_basic.js"],
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "ILLESI|FERITI|MORTI",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|GLOW|SEQUENCE|CENTER|SORT|DOWN|LINEAR|AGGREGATE|RECT|RELOCATE|SUM|SIZE|FORCE",
+				"colorscheme": [
+					"RGBA(77,184,73,0.5)",
+					"RGB(255,92,92)",
+					"RGB(3,3,3)"],
+				"opacity": "0.6",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"symbols": [
+					"circle"],
+				"label": [
+					"illesi",
+					"feriti",
+					"morti"],
+				"units": "persone",
+				"normalsizevalue": "50",
+				"scale": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridwidthpx": "10",
+				"showdata": "true",
+				"title": "Incidenti Bolzano<br>2019 - 2022"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

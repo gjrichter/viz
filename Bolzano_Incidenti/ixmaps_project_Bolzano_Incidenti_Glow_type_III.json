@@ -1,0 +1,106 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sat Dec 10 2022 19:56:25 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "27033",
+			"dynamicScalePow": "1.5"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"dynamicScalePow": "1.1",
+			"mapopacity": "1",
+			"flushChartDraw": "100000",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "46.48669306753273",
+			"lng": "11.336249572972106"
+			},
+		"zoom": "14"
+		},
+	"themes": [{
+			"layer": "generic",
+			"field": "NATURA",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|CATEGORICAL|GLOW|SEQUENCE|STAR|SORT|DOWN|LINEAR|AGGREGATE|RECT|RELOCATE|SUM|SIZE|COMPACTLEGEND",
+				"colorscheme": [
+					"15",
+					"tableau"],
+				"opacity": "0.5",
+				"shadow": "false",
+				"filter": "WHERE year BETWEEN 2019 AND 2022",
+				"dbtable": "themeDataObj_enhanced",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.csv.gz",
+				"dbtableType": "csv",
+				"dbtableProcess": "function(data) { data.addColumn({source:\"DATA\",destination:\"year\"},function(value){ return (value.split(\"/\")[2]); }); data.addColumn({source:\"DATA\",destination:\"month\"},function(value){ return (value.split(\"/\")[1]); }); data.addColumn({source:\"DATA\",destination:\"day\"},function(value){ var a = value.split(\"/\"); var date = new Date(a[2],a[1],a[0]); return (date.getDay()); }); var illesiIndex = data.column(\"ILLESI\").index; var feritiIndex = data.column(\"FERITI\").index; var mortiIndex = data.column(\"MORTI\").index; data.addColumn({destination:\"pericolo\"},function(row){ return ((row[illesiIndex]||0)*1+(row[feritiIndex]||0)*10+(row[mortiIndex]||0)*50); }); }",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"symbols": [
+					"circle"],
+				"values": [
+					"Scontro frontale-laterale",
+					"Scontro laterale fra veicoli in marcia",
+					"Investimento di pedone",
+					"Urto con veicolo in momentanea fermata o arresto",
+					"Scontro frontale fra veicoli in marcia",
+					"Tamponamento",
+					"Urto con ostacolo accidentale",
+					"Fuoriuscita",
+					"Infortunio per sola frenata improvvisa",
+					"Infortunio per caduta da veicolo",
+					"Veicolo in marcia contro veicolo in sosta",
+					"Veicolo in marcia contro veicoli in sosta",
+					"Veicolo in marcia che urta buche nella carreggiata",
+					"Veicolo in marcia contro treno"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "25",
+				"scale": "2",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridwidthpx": "10",
+				"title": "Incidenti Bolzano 2019 - 2022"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
