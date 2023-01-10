@@ -261,7 +261,7 @@
 				"showdata": "true",
 				"symbols": [
 					"none",
-					"https://raw.githubusercontent.com/gjrichter/viz/master/PNRR/projects/img/icons/515345.png",
+					"https://raw.githubusercontent.com/gjrichter/viz/master/PNRR/projects/img/icons/terminated.png",
 					"https://raw.githubusercontent.com/gjrichter/viz/master/PNRR/projects/img/icons/progettazione.png",
 					"none",
 					"https://raw.githubusercontent.com/gjrichter/viz/master/PNRR/projects/img/icons/collaudo.png",
@@ -269,11 +269,11 @@
 					"https://raw.githubusercontent.com/gjrichter/viz/master/PNRR/projects/img/icons/progettazione.png",
 					"circle",
 					"https://raw.githubusercontent.com/gjrichter/viz/master/PNRR/projects/img/icons/started.png",
-					"https://raw.githubusercontent.com/gjrichter/viz/master/PNRR/projects/img/icons/515345.png",
+					"https://raw.githubusercontent.com/gjrichter/viz/master/PNRR/projects/img/icons/terminated.png",
 					"https://raw.githubusercontent.com/gjrichter/viz/master/PNRR/projects/img/icons/progettazione.png",
 					"https://raw.githubusercontent.com/gjrichter/viz/master/PNRR/projects/img/icons/started.png",
-					"https://raw.githubusercontent.com/gjrichter/viz/master/PNRR/projects/img/icons/515345.png",
-					"https://raw.githubusercontent.com/gjrichter/viz/master/PNRR/projects/img/icons/515345.png"],
+					"https://raw.githubusercontent.com/gjrichter/viz/master/PNRR/projects/img/icons/terminated.png",
+					"https://raw.githubusercontent.com/gjrichter/viz/master/PNRR/projects/img/icons/terminated.png"],
 				"values": [
 					"NULL",
 					"Esecuzione  Lavori completata",
