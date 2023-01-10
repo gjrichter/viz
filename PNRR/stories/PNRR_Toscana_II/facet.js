@@ -110,6 +110,8 @@ window.ixmaps.data = window.ixmaps.data || {};
 
 		mydata.records = records;
 		
+		console.log("=== make statistic facets - 1 ===");
+		
 		// if we have already a filter on the map,
 		// filter data before creating facets
 		// ------------------------------------
@@ -137,6 +139,8 @@ window.ixmaps.data = window.ixmaps.data || {};
 		// make facets from data fields
 		// ----------------------------
 
+		console.log("=== make statistic facets - 2 ===");
+		
 		var a, u;
 		
 		szFieldsA = szFieldsA || mydata.columnNames();
@@ -368,6 +372,7 @@ window.ixmaps.data = window.ixmaps.data || {};
 				}
 			}
 		}
+		console.log("=== make statistic facets - end ===");
 		return facetsA;
 	};
 
