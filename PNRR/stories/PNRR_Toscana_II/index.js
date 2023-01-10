@@ -457,6 +457,8 @@ $(function () {
 							];
 			var facetsA = ixmaps.data.getFacets(lastFilter,'user_legend',szFieldsA,szId,"map");
 			
+			console.log("=== statistic facets done ===");
+			
 			// main 4 numbers
 			
 			var projects = __formatValue(facetsA[1].data.length, 0, "BLANK");
