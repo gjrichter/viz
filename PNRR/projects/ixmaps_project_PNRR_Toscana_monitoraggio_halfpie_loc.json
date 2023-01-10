@@ -1,0 +1,172 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Dec 11 2022 10:03:23 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "865065"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "normal",
+			"objectscaling": "normal",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "10000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "43.42799059427024",
+			"lng": "11.697692871093752"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "FEATURE",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURE|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"filter": "WHERE DEN_REG = Toscana",
+				"visible": "true",
+				"dbtable": "regioni",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/regioni_2022/Reg01012022_g_WGS84.topojson.gz",
+				"dbtableType": "topojson",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"#0088dd"],
+				"linewidth": "1",
+				"valuescale": "1",
+				"title": "project"
+				}
+			},{
+			"layer": "FEATURE_PROV",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURE|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"filter": "WHERE COD_REG = 9",
+				"visible": "true",
+				"dbtable": "province",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2022/Prov01012022_g_WGS84.topojson.gz",
+				"dbtableType": "topojson",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"#aaccee"],
+				"linewidth": "2",
+				"valuescale": "1",
+				"featurelower": "1:150000",
+				"title": "Province"
+				}
+			},{
+			"layer": "Com2022_PRO_COM_T",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"filter": "WHERE COD_REG = 9",
+				"visible": "true",
+				"dbtable": "COMUNI",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2022/Com01012022_g_WGS84.topojson.gz",
+				"dbtableType": "topojson",
+				"datacache": "true",
+				"itemfield": "PRO_COM_T",
+				"lookupfield": "geometry",
+				"showdata": "true",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0",
+				"linecolor": [
+					"#444444"],
+				"titlefield": "PRO_COM_T",
+				"valuescale": "1",
+				"title": "Italy Comuni 2022"
+				}
+			},{
+			"layer": "Com2022_PRO_COM_T",
+			"field": "monitoraggio",
+			"field100": "",
+			"style": {
+				"type": "GAUGE|CATEGORICAL|AGGREGATE|RECT|CHART|PIE|HALF|SIZEP4|FAST|SUM|COMPACTLEGEND",
+				"colorscheme": [
+					"RGB(57,162,225)",
+					"RGB(157,205,225)",
+					"none"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://www301.regione.toscana.it/bancadati/pnrrPerSitoWeb/getOpenData_v4.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "geo_map_lat|geo_map_long",
+				"values": [
+					"Avviato",
+					"Non disponibile",
+					"Non previsto"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "2",
+				"linecolor": [
+					"RGB(57,162,225)"],
+				"linewidth": "0.5",
+				"valuescale": "1",
+				"gridwidthpx": "50",
+				"title": " ",
+				"name": "monitoraggio"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

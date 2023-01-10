@@ -1,0 +1,371 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Fri Dec 23 2022 20:48:32 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "13516"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "normal",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "10000",
+			"mapopacity": "0.30000000000000004",
+			"basemapopacity": "0.5",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "43.74413141970119",
+			"lng": "11.440134853350454"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "FEATURE",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURE|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"filter": "WHERE DEN_REG = Toscana",
+				"visible": "true",
+				"dbtable": "regioni",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/regioni_2022/Reg01012022_g_WGS84.topojson.gz",
+				"dbtableType": "topojson",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"#0088dd"],
+				"linewidth": "8",
+				"valuescale": "1",
+				"title": "project"
+				}
+			},{
+			"layer": "Com2022_PRO_COM_T",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"filter": "WHERE COD_REG = 9",
+				"visible": "true",
+				"dbtable": "COMUNI",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2022/Com01012022_g_WGS84.topojson.gz",
+				"dbtableType": "topojson",
+				"datacache": "true",
+				"itemfield": "PRO_COM_T",
+				"lookupfield": "geometry",
+				"showdata": "true",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0.3",
+				"linecolor": [
+					"#444444"],
+				"titlefield": "PRO_COM_T",
+				"valuescale": "1",
+				"title": "Italy Comuni 2022"
+				}
+			},{
+			"layer": "Com2022_PRO_COM_T",
+			"field": "missione",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|DOMINANT|CATEGORICAL|AGGREGATE|SUM|DOPACITYMAX|NOLEGEND",
+				"colorscheme": [
+					"#5BBBEB",
+					"#92C151",
+					"#EA425B",
+					"#F49E4B",
+					"#B671DC",
+					"#FACB49",
+					"#dddddd"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"visible": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://www301.regione.toscana.it/bancadati/pnrrPerSitoWeb/getOpenData_v4.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "cod_istat",
+				"symbols": [
+					"circle"],
+				"values": [
+					"M1",
+					"M2",
+					"M3",
+					"M4",
+					"M5",
+					"M6",
+					"NULL"],
+				"label": [
+					"M1 - Digitalizzazione, innovazione, competitività, cultura e turismo",
+					"M2 - Rivoluzione verde e transizione ecologica",
+					"M3 - Infrastrutture per una mobilità sostenibile",
+					"M4 - Istruzione e ricerca",
+					"M5 - Inclusione e coesione",
+					"M6 - Sanità territoriale, Innovazione del Servizio sanitario",
+					"PNC - Piano nazionale complementare"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "2",
+				"rangescale": "3",
+				"valuefield": "$item$",
+				"sizefield": "$item$",
+				"dopacitypow": "2",
+				"dopacityscale": "1",
+				"titlefield": "localizzazione",
+				"valueupper": "1:250000",
+				"chartlower": "1:100000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"aggregationfield": "cod_istat",
+				"dominantfilter": "min",
+				"dominantdfilter": "0",
+				"title": "I soldi del PNRR"
+				}
+			},{
+			"layer": "Com2022_PRO_COM_T",
+			"field": "missione",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|CATEGORICAL|MULTIGRID|SIZE|SUM|COMPACTLEGEND|VALUES|INLINETEXT|DOPACITY|BOX|TITLE",
+				"colorscheme": [
+					"#5BBBEB",
+					"#92C151",
+					"#EA425B",
+					"#F49E4B",
+					"#B671DC",
+					"#FACB49",
+					"#dddddd"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"visible": "true",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://www301.regione.toscana.it/bancadati/pnrrPerSitoWeb/getOpenData_v4.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "cod_istat",
+				"showdata": "true",
+				"symbols": [
+					"circle"],
+				"values": [
+					"M1",
+					"M2",
+					"M3",
+					"M4",
+					"M5",
+					"M6",
+					"NULL"],
+				"label": [
+					"M1",
+					"M2",
+					"M3",
+					"M4",
+					"M5",
+					"M6",
+					"PNC"],
+				"units": "progetti",
+				"refreshtimeout": "0",
+				"normalsizevalue": "10",
+				"scale": "1",
+				"rangescale": "1.15",
+				"valuefield": "importo_progetto",
+				"dopacityscale": "1000",
+				"textscale": "2",
+				"linecolor": [
+					"none"],
+				"linewidth": "0.3",
+				"boxopacity": "0",
+				"titlefield": "localizzazione",
+				"valueupper": "1:10000",
+				"boxupper": "1:250000",
+				"valuescale": "0.4",
+				"valuedecimals": "0",
+				"centerpart": "max",
+				"name": "progetti",
+				"title": " "
+				}
+			},{
+			"layer": "Com2022_PRO_COM_T",
+			"field": "tipo_data_inizio",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|CATEGORICAL|MULTIGRID|NOLEGEND|SILENT",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "0.5",
+				"shadow": "true",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://www301.regione.toscana.it/bancadati/pnrrPerSitoWeb/getOpenData_v4.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "cod_istat",
+				"showdata": "true",
+				"symbols": [
+					"../../../../pages/PNRR Toscana Monitoraggio/515345.png",
+					"none",
+					"none"],
+				"values": [
+					"effettiva",
+					"prevista",
+					"NULL"],
+				"units": "",
+				"offsety": "-5",
+				"offsetx": "-15",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"rangescale": "1.15",
+				"bordercolor": "black",
+				"boxopacity": "0.2",
+				"chartupper": "1:500000",
+				"chartlower": "1:10000",
+				"valuescale": "1",
+				"name": "datainizio",
+				"title": "I soldi del PNRR"
+				}
+			},{
+			"layer": "Com2022_PRO_COM_T",
+			"field": "monitoraggio",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SEQUENCE|CATEGORICAL|MULTIGRID|NOLEGEND|SILENT",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "0.5",
+				"shadow": "true",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://www301.regione.toscana.it/bancadati/pnrrPerSitoWeb/getOpenData_v4.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "cod_istat",
+				"showdata": "true",
+				"symbols": [
+					"../../../../pages/PNRR Toscana Monitoraggio/inlineicons.com_67539_eye-svg-icon-4-2_.svg",
+					"none",
+					"none"],
+				"values": [
+					"Avviato",
+					"Non disponibile",
+					"Non previsto"],
+				"units": "",
+				"offsety": "14",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"rangescale": "1.15",
+				"bordercolor": "black",
+				"boxopacity": "0.2",
+				"chartupper": "1:500000",
+				"chartlower": "1:10000",
+				"valuescale": "1",
+				"name": "monitoraggio",
+				"title": "I soldi del PNRR"
+				}
+			},{
+			"layer": "Com2022_PRO_COM_T",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "RECT|CHART|SYMBOLS|GRIDSIZE|SILENT|AGGREGATE|SUM|NOLEGEND",
+				"colorscheme": [
+					"rgba(255,255,255,0.3)"],
+				"fillopacity": "0.6",
+				"shadow": "false",
+				"visible": "true",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://www301.regione.toscana.it/bancadati/pnrrPerSitoWeb/getOpenData_v4.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "cod_istat",
+				"symbols": [
+					"square"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"textcolor": "rgb(90,135,65)",
+				"linecolor": [
+					"black"],
+				"linewidth": "0.5",
+				"chartlower": "1:250000",
+				"valuescale": "1.2",
+				"gridwidthpx": "150",
+				"name": "griglia",
+				"title": "I soldi del PNRR"
+				}
+			},{
+			"layer": "Com2022_PRO_COM_T",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "RECT|CHART|SYMBOLS|GRIDSIZE|TEXTONLY|AGGREGATE|VALUES|SUM|NOLEGEND",
+				"colorscheme": [
+					"rgba(255,255,255,1)"],
+				"fillopacity": "0.3",
+				"shadow": "false",
+				"visible": "true",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://www301.regione.toscana.it/bancadati/pnrrPerSitoWeb/getOpenData_v4.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "cod_istat",
+				"symbols": [
+					"label"],
+				"units": "progetti",
+				"refreshtimeout": "0",
+				"scale": "0.5",
+				"textcolor": "rgb(90,135,65)",
+				"linecolor": [
+					"none"],
+				"linewidth": "2",
+				"chartlower": "1:250000",
+				"valuescale": "1.5",
+				"gridwidthpx": "150",
+				"name": "griglia_text",
+				"title": "I soldi del PNRR"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

@@ -1,0 +1,317 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sat Dec 10 2022 22:28:38 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "865065"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "normal",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "10000",
+			"mapopacity": "1",
+			"basemapopacity": "0.5",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "43.02673743559375",
+			"lng": "12.186584472656252"
+			},
+		"zoom": "8"
+		},
+	"themes": [{
+			"layer": "FEATURE",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURE|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"filter": "WHERE DEN_REG = Toscana",
+				"visible": "true",
+				"dbtable": "regioni",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/regioni_2022/Reg01012022_g_WGS84.topojson.gz",
+				"dbtableType": "topojson",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"#aaccee"],
+				"linewidth": "3",
+				"valuescale": "1",
+				"title": "Regione"
+				}
+			},{
+			"layer": "FEATURE_PROV",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURE|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"filter": "WHERE COD_REG = 9",
+				"visible": "true",
+				"dbtable": "province",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2022/Prov01012022_g_WGS84.topojson.gz",
+				"dbtableType": "topojson",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"#aaccee"],
+				"linewidth": "2",
+				"valuescale": "1",
+				"featurelower": "1:150000",
+				"title": "Province"
+				}
+			},{
+			"layer": "Com2022_PRO_COM_T",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"filter": "WHERE COD_REG = 9",
+				"visible": "true",
+				"dbtable": "COMUNI",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2022/Com01012022_g_WGS84.topojson.gz",
+				"dbtableType": "topojson",
+				"datacache": "true",
+				"itemfield": "PRO_COM_T",
+				"lookupfield": "geometry",
+				"showdata": "true",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0.1",
+				"linecolor": [
+					"#888888"],
+				"titlefield": "PRO_COM_T",
+				"valuescale": "1",
+				"title": "Comuni 2022"
+				}
+			},{
+			"layer": "Com2022_PRO_COM_T",
+			"field": "missione",
+			"field100": "",
+			"style": {
+				"type": "CHOROPLETH|DOMINANT|CATEGORICAL|AGGREGATE|SUM|DOPACITYMAX|NOLEGEND",
+				"colorscheme": [
+					"#5BBBEB",
+					"#92C151",
+					"#EA425B",
+					"#F49E4B",
+					"#B671DC",
+					"#FACB49",
+					"#dddddd"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://www301.regione.toscana.it/bancadati/pnrrPerSitoWeb/getOpenData_v4.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "cod_istat",
+				"symbols": [
+					"circle"],
+				"values": [
+					"M1",
+					"M2",
+					"M3",
+					"M4",
+					"M5",
+					"M6",
+					"NULL"],
+				"label": [
+					"M1 - Digitalizzazione, innovazione, competitività, cultura e turismo",
+					"M2 - Rivoluzione verde e transizione ecologica",
+					"M3 - Infrastrutture per una mobilità sostenibile",
+					"M4 - Istruzione e ricerca",
+					"M5 - Inclusione e coesione",
+					"M6 - Sanità territoriale, Innovazione del Servizio sanitario",
+					"PNC - Piano nazionale complementare"],
+				"units": "€",
+				"refreshtimeout": "0",
+				"scale": "2",
+				"valuefield": "finanziato_pnrr",
+				"sizefield": "finanziato_pnrr",
+				"titlefield": "localizzazione",
+				"valueupper": "1:250000",
+				"chartlower": "1:100000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"dopacitypow": "2",
+				"dopacityscale": "0.3",
+				"rangescale": "3",
+				"aggregationfield": "cod_istat",
+				"title": "Somme per comune (choropleth)"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "missione",
+			"field100": "",
+			"style": {
+				"type": "CHART|AURA|SYMBOL|SIZEP3|CATEGORICAL|AGGREGATE|RECT|RELOCATE|SUM|DTEXT|VALUES|COMPACTLEGEND",
+				"colorscheme": [
+					"#5BBBEB",
+					"#92C151",
+					"#EA425B",
+					"#F49E4B",
+					"#B671DC",
+					"#FACB49",
+					"#dddddd"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://www301.regione.toscana.it/bancadati/pnrrPerSitoWeb/getOpenData_v4.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"showdata": "true",
+				"lookupfield": "geo_map_lat|geo_map_long",
+				"symbols": [
+					"circle"],
+				"values": [
+					"M1",
+					"M2",
+					"M3",
+					"M4",
+					"M5",
+					"M6",
+					"NULL"],
+				"label": [
+					"M1",
+					"M2",
+					"M3",
+					"M4",
+					"M5",
+					"M6",
+					"PNC"],
+				"units": "€",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuefield": "finanziato_pnrr",
+				"sizefield": "finanziato_pnrr",
+				"normalsizevalue": "50000000",
+				"valueupper": "1:250000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridwidthpx": "5",
+				"titlefield": "localizzazione",
+				"title": "Finanziamenti",
+				"name": "finanziati"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "finanziato_pnrr",
+			"field100": "",
+			"style": {
+				"type": "RECT|CHART|SYMBOLS|SIZEP4|TEXTONLY|AGGREGATE|VALUES|SUM|NOLEGEND",
+				"colorscheme": [
+					"#aaddff"],
+				"fillopacity": "0.3",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://www301.regione.toscana.it/bancadati/pnrrPerSitoWeb/getOpenData_v4.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "geo_map_lat|geo_map_long",
+				"symbols": [
+					"label"],
+				"linecolor": "white",
+				"linewidth": "2",
+				"units": "€",
+				"scale": "3",
+				"textcolor": "white",
+				"valuescale": "1.5",
+				"aggregationfield": "provincia",
+				"titlefield": "provincia",
+				"showdata": "true",
+				"chartlower": "1:250000",
+				"name": "griglia_text",
+				"title": "I soldi del PNRR"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "finanziato_pnrr",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|NOSIZE|AGGREGATE|RECT|VALUES|DTEXT|VALUEBACKGROUND|TITLE|BOX|NOLEGEND",
+				"colorscheme": [
+					"rgba(255,255,255,0)"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"offsety": "8",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://www301.regione.toscana.it/bancadati/pnrrPerSitoWeb/getOpenData_v4.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "geo_map_lat|geo_map_long",
+				"symbols": [
+					"label"],
+				"units": "€",
+				"refreshtimeout": "0",
+				"scale": "3.5",
+				"textcolor": "rgb(90,135,65)",
+				"linecolor": [
+					"none"],
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridwidth": "100px",
+				"boxupper": "1:10000",
+				"boxopacity": "0.3",
+				"borderradius": "2",
+				"bordercolor": "rgb(90,135,65)",
+				"borderwidth": "0.2",
+				"titlefield": "descrizione_sintetica",
+				"textscale": "0.5",
+				"chartupper": "1:5000",
+				"showdata": "true",
+				"title": "Particolari"
+				}
+			},{
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

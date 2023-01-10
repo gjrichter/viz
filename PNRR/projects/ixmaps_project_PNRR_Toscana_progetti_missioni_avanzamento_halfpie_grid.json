@@ -1,0 +1,190 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Wed Dec 21 2022 23:06:41 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "865065"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "normal",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "10000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "43.33462241832508",
+			"lng": "11.50056389444418"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "FEATURE",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURE|FORCE|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"filter": "WHERE DEN_REG = Toscana",
+				"visible": "true",
+				"dbtable": "regioni",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/regioni_2022/Reg01012022_g_WGS84.topojson.gz",
+				"dbtableType": "topojson",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"#0088dd"],
+				"linewidth": "2",
+				"valuescale": "1",
+				"title": "project"
+				}
+			},{
+			"layer": "FEATURE_PROV",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURE|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"filter": "WHERE COD_REG = 9",
+				"visible": "true",
+				"dbtable": "province",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2022/Prov01012022_g_WGS84.topojson.gz",
+				"dbtableType": "topojson",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"#aaccee"],
+				"linewidth": "2",
+				"valuescale": "1",
+				"featurelower": "1:150000",
+				"title": "Province"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "avanzamento",
+			"field100": "",
+			"style": {
+				"type": "CHART|PIE|HALF|CATEGORICAL|DTEXT|COMPACTLEGEND|SIZEP4|AGGREGATE|RECT|SUM",
+				"colorscheme": [
+					"#A0CBE8",
+					"#F28E2B",
+					"#FFBE7D",
+					"#59A14F",
+					"#8CD17D",
+					"#B6992D",
+					"#F1CE63",
+					"#499894",
+					"#86BCB6",
+					"#E15759",
+					"#FF9D9A",
+					"#79706E",
+					"#BAB0AC",
+					"rgba(55,55,55,0)"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"visible": "true",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://www301.regione.toscana.it/bancadati/pnrrPerSitoWeb/getOpenData_v4.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "geo_map_lat|geo_map_long",
+				"showdata": "true",
+				"symbols": [
+					"circle"],
+				"values": [
+					"Esecuzione  Lavori completata",
+					"Progettazione Definitiva completata",
+					"Progettazione Esecutiva avviata",
+					"Collaudo avviata",
+					"Progettazione di fattibilità tecnica ed economica avviata",
+					"Progettazione di fattibilità tecnica ed economica completata",
+					"Progettazione Definitiva avviata",
+					"Esecuzione  Lavori avviata",
+					"Chiusura intervento completata",
+					"Progettazione Esecutiva completata",
+					"Funzionalita'� avviata",
+					"Funzionalita'� completata",
+					"Collaudo completata",
+					"NULL"],
+				"label": [
+					"Esecuzione  Lavori completata",
+					"Progettazione Definitiva completata",
+					"Progettazione Esecutiva avviata",
+					"Collaudo avviata",
+					"Progettazione di fattibilità tecnica ed economica avviata",
+					"Progettazione di fattibilità tecnica ed economica completata",
+					"Progettazione Definitiva avviata",
+					"Esecuzione  Lavori avviata",
+					"Chiusura intervento completata",
+					"Progettazione Esecutiva completata",
+					"Funzionalita'� avviata",
+					"Funzionalita'� completata",
+					"Collaudo completata",
+					"NULL"],
+				"units": " progetti",
+				"refreshtimeout": "0",
+				"scale": "2",
+				"linewidth": "0.3",
+				"linecolor": "#aaaaaa",
+				"valuefield": "$item$",
+				"sizefield": "$item$",
+				"valueupper": "1:250000",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridwidthpx": "50",
+				"evidence": "isolate_gray",
+				"name": "progetti",
+				"title": " "
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

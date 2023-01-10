@@ -1,0 +1,146 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun Dec 11 2022 10:11:37 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "865065"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "normal",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "10000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "43.425995886628506",
+			"lng": "11.697692871093752"
+			},
+		"zoom": "9"
+		},
+	"themes": [{
+			"layer": "FEATURE",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURE|FORCE|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"filter": "WHERE DEN_REG = Toscana",
+				"visible": "true",
+				"dbtable": "regioni",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/regioni_2022/Reg01012022_g_WGS84.topojson.gz",
+				"dbtableType": "topojson",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"#aaccee"],
+				"linewidth": "2",
+				"valuescale": "1",
+				"title": "project"
+				}
+			},{
+			"layer": "FEATURE_PROV",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURE|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"filter": "WHERE COD_REG = 9",
+				"visible": "true",
+				"dbtable": "province",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/province_2022/Prov01012022_g_WGS84.topojson.gz",
+				"dbtableType": "topojson",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linecolor": [
+					"#aaccee"],
+				"linewidth": "2",
+				"valuescale": "1",
+				"featurelower": "1:150000",
+				"title": "Province"
+				}
+			},{
+			"layer": "World Mercator",
+			"field": "tipo_data_inizio",
+			"field100": "",
+			"style": {
+				"type": "GAUGE|CATEGORICAL|AGGREGATE|RECT|CHART|PIE|HALF|SIZEP4|FAST|SUM",
+				"colorscheme": [
+					"RGB(77,185,105)",
+					"RGBA(77,185,105,0.2)",
+					"none"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://www301.regione.toscana.it/bancadati/pnrrPerSitoWeb/getOpenData_v4.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "geo_map_lat|geo_map_long",
+				"values": [
+					"effettiva",
+					"prevista",
+					"NULL"],
+				"units": "progetti",
+				"refreshtimeout": "0",
+				"scale": "2",
+				"sizefield": "$item$",
+				"linecolor": [
+					"RGB(57,165,115)"],
+				"linewidth": "0.5",
+				"valuescale": "1",
+				"gridwidthpx": "50",
+				"name": "data_inizio",
+				"title": "I soldi del PNRR"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
