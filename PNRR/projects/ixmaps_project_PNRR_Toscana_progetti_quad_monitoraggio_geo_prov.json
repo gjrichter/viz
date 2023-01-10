@@ -345,7 +345,7 @@
 				"lookupfield": "geo_map_lat|geo_map_long",
 				"showdata": "false",
 				"symbols": [
-					"../../../../pages/PNRR Toscana Monitoraggio/inlineicons.com_67539_eye-svg-icon-4-2_.svg",
+					"https://raw.githubusercontent.com/gjrichter/viz/master/PNRR/projects/img/icons/inlineicons.com_67539_eye-svg-icon-4-2_.svg",
 					"none",
 					"none"],
 				"values": [
