@@ -10,32 +10,76 @@ window.ixmaps = window.ixmaps || {};
 		// --------------------------------------------------------------------------------------------
 
 		ixmaps.prezzi_tipo_latlon = function(theme,options){
+			
+			function decodeHTMLEntities(text) {
+			  var textArea = document.createElement('textarea');
+			  textArea.innerHTML = text;
+			  return textArea.value;
+			}
 
-			var szUrl = "https://corsme.herokuapp.com/https://www.mise.gov.it/images/exportCSV/prezzo_alle_8.csv";		
+			var szUrl = "https://raw.githubusercontent.com/gjrichter/data/master//anagrafica_impianti_attivi.csv";		
 			$.get(szUrl,
 				  function(data){
 				  ixmaps.setTitleBox("<span style='font-family:open sans,arial;vertical-align:-1px'>"+data.substr(0,25)+"</span>");
-
-			Data.feed({source:"https://corsme.herokuapp.com/https://www.mise.gov.it/images/exportCSV/anagrafica_impianti_attivi.csv",
+				
+			data = decodeHTMLEntities(data);	
+			data = data.replace(/\"/g,"");
+				
+			Data.object({source:data,
 					   type:"csv",
 					   parser: {comments: "Estrazione"}
-					  }).load(function(impianti){
-			Data.feed({source:"https://corsme.herokuapp.com/https://www.mise.gov.it/images/exportCSV/prezzo_alle_8.csv",
+					  }).import(function(impianti){
+			Data.feed({source:"https://raw.githubusercontent.com/gjrichter/data/master/prezzo_alle_8.csv",
 					   type:"csv",
 					   parser: {comments: "Estrazione"}
 					  }).load(function(prezzi){
 
-				Data.merger()
-				    .addSource(prezzi,{lookup:"idImpianto",columns:["descCarburante","prezzo","isSelf","dtComu"]})
-				    .addSource(impianti,{lookup:"idImpianto",columns:["Bandiera","Nome Impianto","Gestore","Indirizzo","Comune","Latitudine","Longitudine"]})
-				    .realize(function(newData){
-						ixmaps.setExternalData(newData,{"type":"jsonDB","name":"prezzi_tipo_latlon"});
-					});
+				var merger = new Data.Merger();
+					merger.addSource(prezzi,{lookup:"idImpianto",columns:["descCarburante","prezzo","isSelf","dtComu"]});
+					merger.addSource(impianti,{lookup:"idImpianto",columns:["Bandiera","Latitudine","Longitudine"]});
+				var newData = merger.realize();
 
-			});	// end Data.feed 1
-			});	// end Data.feed 2
+				ixmaps.setExternalData(newData, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			});	// end Data.feed
+			});	// end Data.feed
 			});	// end $.get()
 
-		};	// end ixmaps.prezzi_tipo_latlon
+		};	// end data provider
+
+		ixmaps.impianti_latlon = function(theme,options){
+			
+			function decodeHTMLEntities(text) {
+			  var textArea = document.createElement('textarea');
+			  textArea.innerHTML = text;
+			  return textArea.value;
+			}
+
+			var szUrl = "https://raw.githubusercontent.com/gjrichter/data/master/anagrafica_impianti_attivi.csv";		
+			$.get(szUrl,
+				  function(data){
+				  ixmaps.setTitleBox("<span style='font-family:open sans,arial;vertical-align:-1px'>"+data.substr(0,25)+"</span>");
+				
+			data = decodeHTMLEntities(data);	
+			data = data.replace(/\"/g,"");
+				
+			Data.object({source:data,
+					   type:"csv",
+					   parser: {comments: "Estrazione"}
+					  }).import(function(impianti){
+	
+				ixmaps.setExternalData(impianti, {
+					type: "dbtable",
+					name: options.name
+				});
+
+			});	// end Data.object
+			});	// end $.get()
+
+		};	// end data provider
+
 
 })();
