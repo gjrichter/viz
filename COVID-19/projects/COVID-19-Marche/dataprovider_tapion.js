@@ -34,9 +34,11 @@ window.ixmaps = window.ixmaps || {};
 				
 			function (dataA) {
 
-			var szUrl = "https://corsme.herokuapp.com/https://contagi-marche.tapion.it/contagi_marche.json";		
+			var szUrl = "https://raw.githubusercontent.com/gjrichter/data/master/contagi_marche.json";		
 			$.get(szUrl,
 				function(data){
+
+				data = JSON.parse(data);
 
 				var dbtable = {fields:[],records:[],table:{}};
 
@@ -102,9 +104,11 @@ window.ixmaps = window.ixmaps || {};
 				
 			function (dataA) {
 
-			var szUrl = "https://corsme.herokuapp.com/https://contagi-marche.tapion.it/contagi_marche.json";		
+			var szUrl = "https://raw.githubusercontent.com/gjrichter/data/master/contagi_marche.json";		
 			$.get(szUrl,
 				function(data){
+
+				data = JSON.parse(data);
 
 				var dbtable = {fields:[],records:[],table:{}};
 
@@ -247,9 +251,11 @@ window.ixmaps = window.ixmaps || {};
 				
 			function (dataA) {
 
-			var szUrl = "https://corsme.herokuapp.com/https://contagi-marche.tapion.it/contagi_marche.json";		
+			var szUrl = "https://raw.githubusercontent.com/gjrichter/data/master/contagi_marche.json";		
 			$.get(szUrl,
 				function(data){
+				
+				data = JSON.parse(data);
 
 				var dbtable = {fields:[],records:[],table:{}};
 
@@ -352,9 +358,11 @@ window.ixmaps = window.ixmaps || {};
 				
 			function (dataA) {
 
-			var szUrl = "https://corsme.herokuapp.com/https://contagi-marche.tapion.it/contagi_marche.json";		
+			var szUrl = "https://raw.githubusercontent.com/gjrichter/data/master/contagi_marche.json";		
 			$.get(szUrl,
 				function(data){
+
+				data = JSON.parse(data);
 
 				var dbtable = {fields:[],records:[],table:{}};
 
@@ -433,9 +441,11 @@ window.ixmaps = window.ixmaps || {};
 				
 			function (dataA) {
 
-			var szUrl = "https://corsme.herokuapp.com/https://contagi-marche.tapion.it/contagi_marche.json";		
+			var szUrl = "https://raw.githubusercontent.com/gjrichter/data/master/contagi_marche.json";		
 			$.get(szUrl,
 				function(data){
+
+				data = JSON.parse(data);
 
 				var dbtable = {fields:[],records:[],table:{}};
 
@@ -575,9 +585,11 @@ window.ixmaps = window.ixmaps || {};
 	
 	ixmaps.COVID_MARCHE_POSITIVI_LATEST_DIFF = function (theme,options) {
 
-		var szUrl = "https://corsme.herokuapp.com/https://contagi-marche.tapion.it/contagi_marche.json";		
+		var szUrl = "https://raw.githubusercontent.com/gjrichter/data/master/contagi_marche.json";		
 		$.get(szUrl,
 			function(data){
+
+			data = JSON.parse(data);
 
 			var dbtable = {fields:[],records:[],table:{}};
 
@@ -630,9 +642,11 @@ window.ixmaps = window.ixmaps || {};
 	
 	ixmaps.COVID_MARCHE_POSITIVI_LATEST_DIFF_7 = function (theme,options) {
 
-		var szUrl = "https://corsme.herokuapp.com/https://contagi-marche.tapion.it/contagi_marche.json";		
+		var szUrl = "https://raw.githubusercontent.com/gjrichter/data/master/contagi_marche.json";		
 		$.get(szUrl,
 			function(data){
+
+			data = JSON.parse(data);
 
 			var dbtable = {fields:[],records:[],table:{}};
 
