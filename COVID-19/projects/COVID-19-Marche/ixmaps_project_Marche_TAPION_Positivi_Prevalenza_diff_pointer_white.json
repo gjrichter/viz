@@ -140,7 +140,7 @@
 			"field": "3.1",
 			"field100": "3.2",
 			"style": {
-				"type": "CHART|BAR|POINTER|DIFFERENCE|SIGN|SIZEP4|VALUES|SIMPLELEGEND|COUNT",
+				"type": "CHART|BAR|POINTER|DIFFERENCE|SIGN|SIZEP4|VALUES|NOLEGEND|COUNT",
 				"colorscheme": [
 					"#DD0044"],
 				"ranges":"-100000,0,100000",
