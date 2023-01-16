@@ -142,11 +142,10 @@
 			"style": {
 				"type": "CHART|BAR|POINTER|DIFFERENCE|SIGN|SIZEP4|VALUES|SIMPLELEGEND|COUNT",
 				"colorscheme": [
-					"green",
 					"#DD0044"],
 				"ranges":"-100000,0,100000",
 				"opacity":"0.7",
-				"fadenegative":"1",
+				"fadenegative":"0.1",
 				"shadow": "false",
 				"dbtable": "COVID_MARCHE_POSITIVI_LATEST_DIFF",
 				"dbtableType": "ext",
@@ -163,7 +162,7 @@
 				"titlefield": "Comune",
 				"nodatacolor": "RGB(170,170,170)",
 				"linecolor":"white",
-				"linewidth":"1",
+				"linewidth":"3",
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"valueupper":"1:500000",
