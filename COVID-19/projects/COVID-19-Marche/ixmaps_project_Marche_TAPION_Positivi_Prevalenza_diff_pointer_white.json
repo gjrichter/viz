@@ -133,7 +133,8 @@
 				"valuescale": "1",
 				"valuedecimals": "0",
 				"title": "Attualmente positivi Covid-19",
-				"snippet": "Attualmente positivi per 100.000 abitanti"
+				"snippet": "Attualmente positivi per 100.000 abitanti",
+				"description": "numeri: actualmente positivi<br>frecce: variazione da ieri"
 				}
 			},{
 			"layer": "Com2019_nome",
