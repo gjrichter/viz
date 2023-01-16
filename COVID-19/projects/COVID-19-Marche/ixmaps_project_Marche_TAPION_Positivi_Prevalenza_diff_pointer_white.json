@@ -165,7 +165,7 @@
 				"linewidth":"3",
 				"valuescale": "1",
 				"valuedecimals": "0",
-				"valueupper":"1:500000",
+				"valueupper":"1:250000",
 				"title": "Tendenza positivi Covid-19",
 				"snippet": "<b>Frecce</b>: variazione in percentuale del giorno precedente",
 				"description":"*) solo per per comuni con pià di 25 positivi"
