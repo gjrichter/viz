@@ -17,7 +17,7 @@ window.ixmaps = window.ixmaps || {};
 			  return textArea.value;
 			}
 
-			var szUrl = "https://raw.githubusercontent.com/gjrichter/data/master//anagrafica_impianti_attivi.csv";		
+			var szUrl = "https://raw.githubusercontent.com/gjrichter/data/master/MISE/anagrafica_impianti_attivi.csv";		
 			$.get(szUrl,
 				  function(data){
 				  ixmaps.setTitleBox("<span style='font-family:open sans,arial;vertical-align:-1px'>"+data.substr(0,25)+"</span>");
@@ -29,7 +29,7 @@ window.ixmaps = window.ixmaps || {};
 					   type:"csv",
 					   parser: {comments: "Estrazione"}
 					  }).import(function(impianti){
-			Data.feed({source:"https://raw.githubusercontent.com/gjrichter/data/master/prezzo_alle_8.csv",
+			Data.feed({source:"https://raw.githubusercontent.com/gjrichter/data/master/MISE/prezzo_alle_8.csv",
 					   type:"csv",
 					   parser: {comments: "Estrazione"}
 					  }).load(function(prezzi){
@@ -58,7 +58,7 @@ window.ixmaps = window.ixmaps || {};
 			  return textArea.value;
 			}
 
-			var szUrl = "https://raw.githubusercontent.com/gjrichter/data/master/anagrafica_impianti_attivi.csv";		
+			var szUrl = "https://raw.githubusercontent.com/gjrichter/data/master/MISE/anagrafica_impianti_attivi.csv";		
 			$.get(szUrl,
 				  function(data){
 				  ixmaps.setTitleBox("<span style='font-family:open sans,arial;vertical-align:-1px'>"+data.substr(0,25)+"</span>");
