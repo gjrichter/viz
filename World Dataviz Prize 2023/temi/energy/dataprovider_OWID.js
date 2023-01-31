@@ -27,7 +27,7 @@ window.ixmaps = window.ixmaps || {};
 		 **/
 
 		var feed = Data.feed({
-			source: "../../data/World Dataviz Prize 2023/energy/electricity-production-by-source.csv",
+			source: "https://raw.githubusercontent.com/gjrichter/viz/master/World Dataviz Prize 2023/data/OWID/energy/electricity-production-by-source.csv",
 			type: "csv"
 		}).load(function(newData) {
 
