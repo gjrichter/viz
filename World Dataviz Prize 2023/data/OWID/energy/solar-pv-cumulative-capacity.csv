@@ -1,0 +1,1660 @@
+Entity,Code,Year,Value
+Africa,,1996,1.1124252
+Africa,,1997,3.1372757
+Africa,,1998,5.162126
+Africa,,1999,8.199402
+Africa,,2000,10927
+Africa,,2001,13.028999
+Africa,,2002,15243
+Africa,,2003,18.019001
+Africa,,2004,21996
+Africa,,2005,25965
+Africa,,2006,34268
+Africa,,2007,46.656002
+Africa,,2008,63.372997
+Africa,,2009,106845
+Africa,,2010,193842
+Africa,,2011,266388
+Africa,,2012,345954
+Africa,,2013,666973
+Africa,,2014,1573.12
+Africa,,2015,1930761
+Africa,,2016,2988417
+Africa,,2017,4711063
+Africa,,2018,7210268
+Africa,,2019,8415319
+Africa,,2020,9703859
+Africa,,2021,10302.26
+Africa (BP),,1996,1.0124252
+Africa (BP),,1997,3.0372756
+Africa (BP),,1998,5.062126
+Africa (BP),,1999,8.099401
+Africa (BP),,2000,10927
+Africa (BP),,2001,13029
+Africa (BP),,2002,15243
+Africa (BP),,2003,18019
+Africa (BP),,2004,21996
+Africa (BP),,2005,25965
+Africa (BP),,2006,34268
+Africa (BP),,2007,46656
+Africa (BP),,2008,63373
+Africa (BP),,2009,106845
+Africa (BP),,2010,193842
+Africa (BP),,2011,266388
+Africa (BP),,2012,345954
+Africa (BP),,2013,666973
+Africa (BP),,2014,1573.12
+Africa (BP),,2015,1930761
+Africa (BP),,2016,2988417
+Africa (BP),,2017,4711063
+Africa (BP),,2018,7210268
+Africa (BP),,2019,8415319
+Africa (BP),,2020,9703859
+Africa (BP),,2021,10302.26
+Algeria,DZA,1996,0
+Algeria,DZA,1997,0
+Algeria,DZA,1998,0
+Algeria,DZA,1999,0
+Algeria,DZA,2000,0
+Algeria,DZA,2001,0
+Algeria,DZA,2002,0
+Algeria,DZA,2003,0
+Algeria,DZA,2004,0
+Algeria,DZA,2005,0
+Algeria,DZA,2006,0
+Algeria,DZA,2007,0
+Algeria,DZA,2008,0
+Algeria,DZA,2009,0
+Algeria,DZA,2010,0
+Algeria,DZA,2011,0
+Algeria,DZA,2012,0
+Algeria,DZA,2013,0
+Algeria,DZA,2014,1.1
+Algeria,DZA,2015,49.1
+Algeria,DZA,2016,219.1
+Algeria,DZA,2017,400
+Algeria,DZA,2018,423
+Algeria,DZA,2019,423
+Algeria,DZA,2020,423
+Algeria,DZA,2021,423
+Argentina,ARG,1996,0
+Argentina,ARG,1997,0
+Argentina,ARG,1998,0
+Argentina,ARG,1999,0
+Argentina,ARG,2000,25
+Argentina,ARG,2001,26
+Argentina,ARG,2002,26
+Argentina,ARG,2003,26
+Argentina,ARG,2004,26
+Argentina,ARG,2005,26
+Argentina,ARG,2006,26
+Argentina,ARG,2007,26
+Argentina,ARG,2008,26
+Argentina,ARG,2009,26
+Argentina,ARG,2010,26
+Argentina,ARG,2011,1252
+Argentina,ARG,2012,6252
+Argentina,ARG,2013,8257
+Argentina,ARG,2014,8252
+Argentina,ARG,2015,8618
+Argentina,ARG,2016,8806
+Argentina,ARG,2017,8806
+Argentina,ARG,2018,191236
+Argentina,ARG,2019,442111
+Argentina,ARG,2020,764135
+Argentina,ARG,2021,1071366
+Asia,,1996,61
+Asia,,1997,93.8
+Asia,,1998,139.3
+Asia,,1999,221.4
+Asia,,2000,371.12
+Asia,,2001,506.22998
+Asia,,2002,712151
+Asia,,2003,950.82
+Asia,,2004,1241006
+Asia,,2005,1610.6339
+Asia,,2006,1972485
+Asia,,2007,2298976
+Asia,,2008,2878011
+Asia,,2009,3764.5862
+Asia,,2010,5629264
+Asia,,2011,9884.05
+Asia,,2012,16545.69
+Asia,,2013,36577152
+Asia,,2014,61170582
+Asia,,2015,91588.62
+Asia,,2016,142653.52
+Asia,,2017,217310.88
+Asia,,2018,284532.44
+Asia,,2019,344220.16
+Asia,,2020,423603.56
+Asia,,2021,501576.28
+Asia Pacific (BP),,1996,77
+Asia Pacific (BP),,1997,112.5
+Asia Pacific (BP),,1998,162
+Asia Pacific (BP),,1999,246
+Asia Pacific (BP),,2000,395655
+Asia Pacific (BP),,2001,534.56
+Asia Pacific (BP),,2002,745181
+Asia Pacific (BP),,2003,988.45
+Asia Pacific (BP),,2004,1285106
+Asia Pacific (BP),,2005,1659171
+Asia Pacific (BP),,2006,2029164
+Asia Pacific (BP),,2007,2363006
+Asia Pacific (BP),,2008,2951403
+Asia Pacific (BP),,2009,4052475
+Asia Pacific (BP),,2010,6625174
+Asia Pacific (BP),,2011,12136772
+Asia Pacific (BP),,2012,20023832
+Asia Pacific (BP),,2013,40644.08
+Asia Pacific (BP),,2014,65618234
+Asia Pacific (BP),,2015,96157164
+Asia Pacific (BP),,2016,146799.78
+Asia Pacific (BP),,2017,218844.47
+Asia Pacific (BP),,2018,284156.84
+Asia Pacific (BP),,2019,344116.62
+Asia Pacific (BP),,2020,425327.16
+Asia Pacific (BP),,2021,501615.3
+Australia,AUS,1996,16
+Australia,AUS,1997,19
+Australia,AUS,1998,23
+Australia,AUS,1999,25
+Australia,AUS,2000,25
+Australia,AUS,2001,29
+Australia,AUS,2002,34
+Australia,AUS,2003,39
+Australia,AUS,2004,46
+Australia,AUS,2005,52
+Australia,AUS,2006,61
+Australia,AUS,2007,70
+Australia,AUS,2008,82
+Australia,AUS,2009,329
+Australia,AUS,2010,1088
+Australia,AUS,2011,2470
+Australia,AUS,2012,3796
+Australia,AUS,2013,4565
+Australia,AUS,2014,5284
+Australia,AUS,2015,5943
+Australia,AUS,2016,6686
+Australia,AUS,2017,7352
+Australia,AUS,2018,8623
+Australia,AUS,2019,12967
+Australia,AUS,2020,17342
+Australia,AUS,2021,19074
+Austria,AUT,1996,1.7
+Austria,AUT,1997,2.2
+Austria,AUT,1998,2.9
+Austria,AUT,1999,3.7
+Austria,AUT,2000,5
+Austria,AUT,2001,7
+Austria,AUT,2002,9
+Austria,AUT,2003,23
+Austria,AUT,2004,27
+Austria,AUT,2005,21018
+Austria,AUT,2006,22387
+Austria,AUT,2007,24238
+Austria,AUT,2008,30.12
+Austria,AUT,2009,48915
+Austria,AUT,2010,88813
+Austria,AUT,2011,174.07
+Austria,AUT,2012,337483
+Austria,AUT,2013,625974
+Austria,AUT,2014,785246
+Austria,AUT,2015,937098
+Austria,AUT,2016,1096016
+Austria,AUT,2017,1268971
+Austria,AUT,2018,1455132
+Austria,AUT,2019,1702093
+Austria,AUT,2020,2042934
+Austria,AUT,2021,2691934
+Belgium,BEL,1996,0
+Belgium,BEL,1997,0
+Belgium,BEL,1998,0
+Belgium,BEL,1999,0
+Belgium,BEL,2000,0
+Belgium,BEL,2001,0
+Belgium,BEL,2002,1
+Belgium,BEL,2003,1
+Belgium,BEL,2004,1
+Belgium,BEL,2005,2
+Belgium,BEL,2006,2
+Belgium,BEL,2007,20
+Belgium,BEL,2008,62
+Belgium,BEL,2009,386
+Belgium,BEL,2010,1006.6
+Belgium,BEL,2011,1978.6
+Belgium,BEL,2012,2646.6
+Belgium,BEL,2013,2901.6
+Belgium,BEL,2014,3015
+Belgium,BEL,2015,3131.6
+Belgium,BEL,2016,3328.8
+Belgium,BEL,2017,3620.6
+Belgium,BEL,2018,4000
+Belgium,BEL,2019,4636.6
+Belgium,BEL,2020,5574.8
+Belgium,BEL,2021,6584.6
+Brazil,BRA,1996,0
+Brazil,BRA,1997,0
+Brazil,BRA,1998,0
+Brazil,BRA,1999,0
+Brazil,BRA,2000,0
+Brazil,BRA,2001,36
+Brazil,BRA,2002,36
+Brazil,BRA,2003,716
+Brazil,BRA,2004,718
+Brazil,BRA,2005,718
+Brazil,BRA,2006,718
+Brazil,BRA,2007,718
+Brazil,BRA,2008,764
+Brazil,BRA,2009,814
+Brazil,BRA,2010,854
+Brazil,BRA,2011,6097
+Brazil,BRA,2012,6608
+Brazil,BRA,2013,12528
+Brazil,BRA,2014,20697
+Brazil,BRA,2015,45567
+Brazil,BRA,2016,127789
+Brazil,BRA,2017,1206787
+Brazil,BRA,2018,2435022
+Brazil,BRA,2019,4613191
+Brazil,BRA,2020,7879157
+Brazil,BRA,2021,13054926
+Bulgaria,BGR,1996,0
+Bulgaria,BGR,1997,0
+Bulgaria,BGR,1998,0
+Bulgaria,BGR,1999,0
+Bulgaria,BGR,2000,0
+Bulgaria,BGR,2001,0
+Bulgaria,BGR,2002,0
+Bulgaria,BGR,2003,0
+Bulgaria,BGR,2004,0
+Bulgaria,BGR,2005,0
+Bulgaria,BGR,2006,0
+Bulgaria,BGR,2007,0.03
+Bulgaria,BGR,2008,0.1
+Bulgaria,BGR,2009,2
+Bulgaria,BGR,2010,25
+Bulgaria,BGR,2011,154
+Bulgaria,BGR,2012,1013
+Bulgaria,BGR,2013,1020
+Bulgaria,BGR,2014,1026
+Bulgaria,BGR,2015,1029
+Bulgaria,BGR,2016,1028
+Bulgaria,BGR,2017,1035.57
+Bulgaria,BGR,2018,1032679
+Bulgaria,BGR,2019,1047.95
+Bulgaria,BGR,2020,1097357
+Bulgaria,BGR,2021,1186357
+CIS (BP),,1996,0
+CIS (BP),,1997,0
+CIS (BP),,1998,0
+CIS (BP),,1999,0
+CIS (BP),,2000,0
+CIS (BP),,2001,0
+CIS (BP),,2002,0
+CIS (BP),,2003,0
+CIS (BP),,2004,0
+CIS (BP),,2005,63
+CIS (BP),,2006,79
+CIS (BP),,2007,697
+CIS (BP),,2008,485
+CIS (BP),,2009,298
+CIS (BP),,2010,1577
+CIS (BP),,2011,2018
+CIS (BP),,2012,3529
+CIS (BP),,2013,19021
+CIS (BP),,2014,88825
+CIS (BP),,2015,216823
+CIS (BP),,2016,307539
+CIS (BP),,2017,512376
+CIS (BP),,2018,1217.78
+CIS (BP),,2019,2618.92
+CIS (BP),,2020,3348.32
+CIS (BP),,2021,4911386
+Canada,CAN,1996,3
+Canada,CAN,1997,3
+Canada,CAN,1998,5
+Canada,CAN,1999,6
+Canada,CAN,2000,7
+Canada,CAN,2001,9
+Canada,CAN,2002,10
+Canada,CAN,2003,12
+Canada,CAN,2004,14
+Canada,CAN,2005,18
+Canada,CAN,2006,22
+Canada,CAN,2007,29
+Canada,CAN,2008,38
+Canada,CAN,2009,107
+Canada,CAN,2010,249
+Canada,CAN,2011,628
+Canada,CAN,2012,766
+Canada,CAN,2013,1210
+Canada,CAN,2014,1843
+Canada,CAN,2015,2519
+Canada,CAN,2016,2665
+Canada,CAN,2017,2932
+Canada,CAN,2018,3095
+Canada,CAN,2019,3327
+Canada,CAN,2020,3342
+Canada,CAN,2021,3629.6
+Chile,CHL,1996,0
+Chile,CHL,1997,0
+Chile,CHL,1998,0
+Chile,CHL,1999,0
+Chile,CHL,2000,0
+Chile,CHL,2001,0
+Chile,CHL,2002,0
+Chile,CHL,2003,0
+Chile,CHL,2004,0
+Chile,CHL,2005,0
+Chile,CHL,2006,0
+Chile,CHL,2007,0
+Chile,CHL,2008,0
+Chile,CHL,2009,0
+Chile,CHL,2010,0
+Chile,CHL,2011,0
+Chile,CHL,2012,2
+Chile,CHL,2013,15
+Chile,CHL,2014,221
+Chile,CHL,2015,576
+Chile,CHL,2016,1125
+Chile,CHL,2017,1809
+Chile,CHL,2018,2137
+Chile,CHL,2019,2653698
+Chile,CHL,2020,3205438
+Chile,CHL,2021,4360007
+China,CHN,1996,1
+China,CHN,1997,2.5
+China,CHN,1998,5
+China,CHN,1999,10
+China,CHN,2000,33515
+China,CHN,2001,38.02
+China,CHN,2002,56.53
+China,CHN,2003,66.6
+China,CHN,2004,76.6
+China,CHN,2005,141.2
+China,CHN,2006,160.2
+China,CHN,2007,199
+China,CHN,2008,253
+China,CHN,2009,414.8
+China,CHN,2010,1021.8
+China,CHN,2011,3107.8
+China,CHN,2012,6717.8
+China,CHN,2013,17747.8
+China,CHN,2014,28387.8
+China,CHN,2015,43537.8
+China,CHN,2016,77787.8
+China,CHN,2017,130801.29
+China,CHN,2018,175015.86
+China,CHN,2019,204574.8
+China,CHN,2020,253417.8
+China,CHN,2021,306402.8
+Czechia,CZE,1996,0
+Czechia,CZE,1997,0
+Czechia,CZE,1998,0
+Czechia,CZE,1999,0
+Czechia,CZE,2000,0.1
+Czechia,CZE,2001,0.1
+Czechia,CZE,2002,0.2
+Czechia,CZE,2003,0.3
+Czechia,CZE,2004,0.4
+Czechia,CZE,2005,586
+Czechia,CZE,2006,841
+Czechia,CZE,2007,3961
+Czechia,CZE,2008,39.5
+Czechia,CZE,2009,464.6
+Czechia,CZE,2010,1727
+Czechia,CZE,2011,1913
+Czechia,CZE,2012,2022
+Czechia,CZE,2013,2063.5
+Czechia,CZE,2014,2067.4
+Czechia,CZE,2015,2074.9
+Czechia,CZE,2016,2067.9
+Czechia,CZE,2017,2069.5
+Czechia,CZE,2018,2075072
+Czechia,CZE,2019,2086424
+Czechia,CZE,2020,2122711
+Czechia,CZE,2021,2119211
+Denmark,DNK,1996,0
+Denmark,DNK,1997,0
+Denmark,DNK,1998,0
+Denmark,DNK,1999,0
+Denmark,DNK,2000,1
+Denmark,DNK,2001,1
+Denmark,DNK,2002,2
+Denmark,DNK,2003,2
+Denmark,DNK,2004,2
+Denmark,DNK,2005,3
+Denmark,DNK,2006,3
+Denmark,DNK,2007,3
+Denmark,DNK,2008,3
+Denmark,DNK,2009,5
+Denmark,DNK,2010,7
+Denmark,DNK,2011,17
+Denmark,DNK,2012,402
+Denmark,DNK,2013,571
+Denmark,DNK,2014,607
+Denmark,DNK,2015,782108
+Denmark,DNK,2016,850953
+Denmark,DNK,2017,906.35
+Denmark,DNK,2018,998
+Denmark,DNK,2019,1080
+Denmark,DNK,2020,1304294
+Denmark,DNK,2021,1540294
+Egypt,EGY,1996,0.1
+Egypt,EGY,1997,0.1
+Egypt,EGY,1998,0.1
+Egypt,EGY,1999,0.1
+Egypt,EGY,2000,0.1
+Egypt,EGY,2001,0.5
+Egypt,EGY,2002,0.6
+Egypt,EGY,2003,0.6
+Egypt,EGY,2004,0.6
+Egypt,EGY,2005,0.6
+Egypt,EGY,2006,0.6
+Egypt,EGY,2007,0.7
+Egypt,EGY,2008,0.9
+Egypt,EGY,2009,1.3
+Egypt,EGY,2010,15
+Egypt,EGY,2011,15
+Egypt,EGY,2012,15
+Egypt,EGY,2013,15
+Egypt,EGY,2014,15
+Egypt,EGY,2015,16
+Egypt,EGY,2016,39
+Egypt,EGY,2017,160
+Egypt,EGY,2018,744.2
+Egypt,EGY,2019,1627.2
+Egypt,EGY,2020,1655.39
+Egypt,EGY,2021,1655.39
+Europe,,1996,66.9
+Europe,,1997,87.3
+Europe,,1998,105.4
+Europe,,1999,131.5
+Europe,,2000,200.1
+Europe,,2001,300.36002
+Europe,,2002,384.99402
+Europe,,2003,623771
+Europe,,2004,1335364
+Europe,,2005,2315507
+Europe,,2006,3266667
+Europe,,2007,5039852
+Europe,,2008,10458.16
+Europe,,2009,16835742
+Europe,,2010,30119166
+Europe,,2011,53564973
+Europe,,2012,71716375
+Europe,,2013,81860.5
+Europe,,2014,88780.95
+Europe,,2015,97348.3
+Europe,,2016,103888.94
+Europe,,2017,110135.02
+Europe,,2018,119689.72
+Europe,,2019,141237.8
+Europe,,2020,161782.77
+Europe,,2021,184948.38
+Europe (BP),,1996,66.9
+Europe (BP),,1997,87.3
+Europe (BP),,1998,105.4
+Europe (BP),,1999,131.5
+Europe (BP),,2000,200.2
+Europe (BP),,2001,300.66
+Europe (BP),,2002,385594
+Europe (BP),,2003,624771
+Europe (BP),,2004,1336864
+Europe (BP),,2005,2317507
+Europe (BP),,2006,3269167
+Europe (BP),,2007,5042852
+Europe (BP),,2008,10461.86
+Europe (BP),,2009,16840441
+Europe (BP),,2010,30124855
+Europe (BP),,2011,53571.65
+Europe (BP),,2012,71727984
+Europe (BP),,2013,81876945
+Europe (BP),,2014,88815.96
+Europe (BP),,2015,97535984
+Europe (BP),,2016,104645.62
+Europe (BP),,2017,113330.4
+Europe (BP),,2018,124217
+Europe (BP),,2019,145956.62
+Europe (BP),,2020,167022.31
+Europe (BP),,2021,191102.9
+France,FRA,1996,4
+France,FRA,1997,6
+France,FRA,1998,8
+France,FRA,1999,9
+France,FRA,2000,7
+France,FRA,2001,7
+France,FRA,2002,8
+France,FRA,2003,9
+France,FRA,2004,11
+France,FRA,2005,13
+France,FRA,2006,15
+France,FRA,2007,26
+France,FRA,2008,80
+France,FRA,2009,277
+France,FRA,2010,1044
+France,FRA,2011,3003574
+France,FRA,2012,4358754
+France,FRA,2013,5277289
+France,FRA,2014,6034418
+France,FRA,2015,7137517
+France,FRA,2016,7702081
+France,FRA,2017,8610437
+France,FRA,2018,9672296
+France,FRA,2019,10807874
+France,FRA,2020,12022225
+France,FRA,2021,14709225
+Germany,DEU,1996,28
+Germany,DEU,1997,42
+Germany,DEU,1998,54
+Germany,DEU,1999,70
+Germany,DEU,2000,114
+Germany,DEU,2001,195
+Germany,DEU,2002,260
+Germany,DEU,2003,435
+Germany,DEU,2004,1105
+Germany,DEU,2005,2056
+Germany,DEU,2006,2899
+Germany,DEU,2007,4170
+Germany,DEU,2008,6120
+Germany,DEU,2009,10564
+Germany,DEU,2010,18004
+Germany,DEU,2011,25914
+Germany,DEU,2012,34075
+Germany,DEU,2013,36708
+Germany,DEU,2014,37898
+Germany,DEU,2015,39222
+Germany,DEU,2016,40677
+Germany,DEU,2017,42291
+Germany,DEU,2018,45156
+Germany,DEU,2019,48912
+Germany,DEU,2020,53719
+Germany,DEU,2021,58459
+Greece,GRC,1996,0
+Greece,GRC,1997,0
+Greece,GRC,1998,0
+Greece,GRC,1999,0
+Greece,GRC,2000,0
+Greece,GRC,2001,1
+Greece,GRC,2002,1
+Greece,GRC,2003,1
+Greece,GRC,2004,1
+Greece,GRC,2005,1
+Greece,GRC,2006,5
+Greece,GRC,2007,9
+Greece,GRC,2008,12
+Greece,GRC,2009,46
+Greece,GRC,2010,202
+Greece,GRC,2011,612
+Greece,GRC,2012,1536
+Greece,GRC,2013,2579
+Greece,GRC,2014,2596
+Greece,GRC,2015,2604
+Greece,GRC,2016,2604
+Greece,GRC,2017,2605.53
+Greece,GRC,2018,2651.57
+Greece,GRC,2019,2833794
+Greece,GRC,2020,3287.72
+Greece,GRC,2021,3530
+High-income countries,,1996,154.9
+High-income countries,,1997,210
+High-income countries,,1998,276.5
+High-income countries,,1999,382.5
+High-income countries,,2000,733.2
+High-income countries,,2001,999.3
+High-income countries,,2002,1315.53
+High-income countries,,2003,1809.75
+High-income countries,,2004,2863.97
+High-income countries,,2005,4279644
+High-income countries,,2006,5754938
+High-income countries,,2007,8076.8394
+High-income countries,,2008,14195.2
+High-income countries,,2009,22023602
+High-income countries,,2010,38649695
+High-income countries,,2011,67329.72
+High-income countries,,2012,90870625
+High-income countries,,2013,112369.3
+High-income countries,,2014,135422.44
+High-income countries,,2015,163549.58
+High-income countries,,2016,191791.88
+High-income countries,,2017,217127.05
+High-income countries,,2018,246040.3
+High-income countries,,2019,290912.5
+High-income countries,,2020,340517.56
+High-income countries,,2021,395409.47
+Honduras,HND,1996,0
+Honduras,HND,1997,0
+Honduras,HND,1998,0
+Honduras,HND,1999,1
+Honduras,HND,2000,1599
+Honduras,HND,2001,1804
+Honduras,HND,2002,1975
+Honduras,HND,2003,2128
+Honduras,HND,2004,2376
+Honduras,HND,2005,2668
+Honduras,HND,2006,2872
+Honduras,HND,2007,3228
+Honduras,HND,2008,3228
+Honduras,HND,2009,3512
+Honduras,HND,2010,3728
+Honduras,HND,2011,4479
+Honduras,HND,2012,5156
+Honduras,HND,2013,5156
+Honduras,HND,2014,5156
+Honduras,HND,2015,393156
+Honduras,HND,2016,414156
+Honduras,HND,2017,453786
+Honduras,HND,2018,513686
+Honduras,HND,2019,514
+Honduras,HND,2020,514
+Honduras,HND,2021,514
+Hungary,HUN,1996,0
+Hungary,HUN,1997,0
+Hungary,HUN,1998,0
+Hungary,HUN,1999,0
+Hungary,HUN,2000,0
+Hungary,HUN,2001,0
+Hungary,HUN,2002,0
+Hungary,HUN,2003,0
+Hungary,HUN,2004,0
+Hungary,HUN,2005,0
+Hungary,HUN,2006,0
+Hungary,HUN,2007,0.4
+Hungary,HUN,2008,1
+Hungary,HUN,2009,1
+Hungary,HUN,2010,2
+Hungary,HUN,2011,4
+Hungary,HUN,2012,12
+Hungary,HUN,2013,35
+Hungary,HUN,2014,89
+Hungary,HUN,2015,172
+Hungary,HUN,2016,235
+Hungary,HUN,2017,344
+Hungary,HUN,2018,728
+Hungary,HUN,2019,1400
+Hungary,HUN,2020,2131
+Hungary,HUN,2021,2131
+India,IND,1996,0
+India,IND,1997,0
+India,IND,1998,0
+India,IND,1999,0
+India,IND,2000,1084
+India,IND,2001,5535
+India,IND,2002,6705
+India,IND,2003,7885
+India,IND,2004,7.81
+India,IND,2005,11567
+India,IND,2006,9603
+India,IND,2007,25099
+India,IND,2008,27723
+India,IND,2009,39362
+India,IND,2010,65362
+India,IND,2011,563315
+India,IND,2012,978582
+India,IND,2013,1445827
+India,IND,2014,3444008
+India,IND,2015,5364984
+India,IND,2016,9650521
+India,IND,2017,17923256
+India,IND,2018,27124598
+India,IND,2019,34860906
+India,IND,2020,39042656
+India,IND,2021,49341508
+Israel,ISR,1996,0
+Israel,ISR,1997,0.3
+Israel,ISR,1998,0.3
+Israel,ISR,1999,0.4
+Israel,ISR,2000,0
+Israel,ISR,2001,0
+Israel,ISR,2002,0
+Israel,ISR,2003,0
+Israel,ISR,2004,0
+Israel,ISR,2005,1
+Israel,ISR,2006,1.3
+Israel,ISR,2007,1.8
+Israel,ISR,2008,3
+Israel,ISR,2009,24.5
+Israel,ISR,2010,69.9
+Israel,ISR,2011,189.7
+Israel,ISR,2012,272
+Israel,ISR,2013,376.8
+Israel,ISR,2014,587.1
+Israel,ISR,2015,765.7
+Israel,ISR,2016,873.6
+Israel,ISR,2017,982.3
+Israel,ISR,2018,1285.2
+Israel,ISR,2019,1807.4
+Israel,ISR,2020,2230
+Israel,ISR,2021,2313
+Italy,ITA,1996,16
+Italy,ITA,1997,17
+Italy,ITA,1998,18
+Italy,ITA,1999,18
+Italy,ITA,2000,19
+Italy,ITA,2001,20
+Italy,ITA,2002,22
+Italy,ITA,2003,26
+Italy,ITA,2004,31
+Italy,ITA,2005,34
+Italy,ITA,2006,45
+Italy,ITA,2007,110
+Italy,ITA,2008,483
+Italy,ITA,2009,1264
+Italy,ITA,2010,3592
+Italy,ITA,2011,13131
+Italy,ITA,2012,16785
+Italy,ITA,2013,18185
+Italy,ITA,2014,18594
+Italy,ITA,2015,18901
+Italy,ITA,2016,19283
+Italy,ITA,2017,19682293
+Italy,ITA,2018,20107.59
+Italy,ITA,2019,20865275
+Italy,ITA,2020,21650.04
+Italy,ITA,2021,22692.04
+Japan,JPN,1996,60
+Japan,JPN,1997,91
+Japan,JPN,1998,133
+Japan,JPN,1999,209
+Japan,JPN,2000,330
+Japan,JPN,2001,453
+Japan,JPN,2002,637
+Japan,JPN,2003,860
+Japan,JPN,2004,1132
+Japan,JPN,2005,1422
+Japan,JPN,2006,1708
+Japan,JPN,2007,1919
+Japan,JPN,2008,2144
+Japan,JPN,2009,2627
+Japan,JPN,2010,3618
+Japan,JPN,2011,4914
+Japan,JPN,2012,6632
+Japan,JPN,2013,13599
+Japan,JPN,2014,23339
+Japan,JPN,2015,34150
+Japan,JPN,2016,42040
+Japan,JPN,2017,49500
+Japan,JPN,2018,56162
+Japan,JPN,2019,63192
+Japan,JPN,2020,69764
+Japan,JPN,2021,74191
+Jordan,JOR,1996,0
+Jordan,JOR,1997,0
+Jordan,JOR,1998,0
+Jordan,JOR,1999,0
+Jordan,JOR,2000,15
+Jordan,JOR,2001,15
+Jordan,JOR,2002,15
+Jordan,JOR,2003,15
+Jordan,JOR,2004,15
+Jordan,JOR,2005,15
+Jordan,JOR,2006,15
+Jordan,JOR,2007,15
+Jordan,JOR,2008,15
+Jordan,JOR,2009,15
+Jordan,JOR,2010,15
+Jordan,JOR,2011,43
+Jordan,JOR,2012,73
+Jordan,JOR,2013,141
+Jordan,JOR,2014,236
+Jordan,JOR,2015,5557
+Jordan,JOR,2016,286593
+Jordan,JOR,2017,396588
+Jordan,JOR,2018,699623
+Jordan,JOR,2019,1185.67
+Jordan,JOR,2020,1448375
+Jordan,JOR,2021,1520575
+Lower-middle-income countries,,1996,0.1
+Lower-middle-income countries,,1997,0.1
+Lower-middle-income countries,,1998,0.1
+Lower-middle-income countries,,1999,1.1
+Lower-middle-income countries,,2000,9485
+Lower-middle-income countries,,2001,14947
+Lower-middle-income countries,,2002,17216
+Lower-middle-income countries,,2003,19419
+Lower-middle-income countries,,2004,22633
+Lower-middle-income countries,,2005,28.74
+Lower-middle-income countries,,2006,29319
+Lower-middle-income countries,,2007,46556
+Lower-middle-income countries,,2008,51.28
+Lower-middle-income countries,,2009,69824
+Lower-middle-income countries,,2010,115948
+Lower-middle-income countries,,2011,810338
+Lower-middle-income countries,,2012,1437833
+Lower-middle-income countries,,2013,2337.78
+Lower-middle-income countries,,2014,4502354
+Lower-middle-income countries,,2015,7127592
+Lower-middle-income countries,,2016,12678287
+Lower-middle-income countries,,2017,21732004
+Lower-middle-income countries,,2018,32703129
+Lower-middle-income countries,,2019,50293746
+Lower-middle-income countries,,2020,67738734
+Lower-middle-income countries,,2021,79343734
+Malaysia,MYS,1996,0
+Malaysia,MYS,1997,0
+Malaysia,MYS,1998,0
+Malaysia,MYS,1999,0
+Malaysia,MYS,2000,0
+Malaysia,MYS,2001,0
+Malaysia,MYS,2002,0
+Malaysia,MYS,2003,0
+Malaysia,MYS,2004,0
+Malaysia,MYS,2005,0
+Malaysia,MYS,2006,0
+Malaysia,MYS,2007,0.45
+Malaysia,MYS,2008,0.54
+Malaysia,MYS,2009,0.54
+Malaysia,MYS,2010,544
+Malaysia,MYS,2011,544
+Malaysia,MYS,2012,31584
+Malaysia,MYS,2013,138674
+Malaysia,MYS,2014,205388
+Malaysia,MYS,2015,266285
+Malaysia,MYS,2016,344108
+Malaysia,MYS,2017,393808
+Malaysia,MYS,2018,545075
+Malaysia,MYS,2019,893595
+Malaysia,MYS,2020,1482597
+Malaysia,MYS,2021,1786747
+Mexico,MEX,1996,10
+Mexico,MEX,1997,11
+Mexico,MEX,1998,12
+Mexico,MEX,1999,13
+Mexico,MEX,2000,14
+Mexico,MEX,2001,15
+Mexico,MEX,2002,16
+Mexico,MEX,2003,16
+Mexico,MEX,2004,16
+Mexico,MEX,2005,16
+Mexico,MEX,2006,16
+Mexico,MEX,2007,19
+Mexico,MEX,2008,19
+Mexico,MEX,2009,25.1
+Mexico,MEX,2010,29.8
+Mexico,MEX,2011,42.4
+Mexico,MEX,2012,72.8
+Mexico,MEX,2013,109
+Mexico,MEX,2014,174
+Mexico,MEX,2015,287
+Mexico,MEX,2016,632.6
+Mexico,MEX,2017,1125.74
+Mexico,MEX,2018,2541
+Mexico,MEX,2019,4426208
+Mexico,MEX,2020,5149
+Mexico,MEX,2021,7026
+Middle East (BP),,1996,0
+Middle East (BP),,1997,0.3
+Middle East (BP),,1998,0.3
+Middle East (BP),,1999,0.4
+Middle East (BP),,2000,365
+Middle East (BP),,2001,0.37
+Middle East (BP),,2002,0.37
+Middle East (BP),,2003,0.37
+Middle East (BP),,2004,0.4
+Middle East (BP),,2005,1.4
+Middle East (BP),,2006,1742
+Middle East (BP),,2007,2273
+Middle East (BP),,2008,4423
+Middle East (BP),,2009,36113
+Middle East (BP),,2010,84823
+Middle East (BP),,2011,208583
+Middle East (BP),,2012,302721
+Middle East (BP),,2013,462.61
+Middle East (BP),,2014,712524
+Middle East (BP),,2015,969952
+Middle East (BP),,2016,1475.52
+Middle East (BP),,2017,2110663
+Middle East (BP),,2018,3253536
+Middle East (BP),,2019,5732761
+Middle East (BP),,2020,7030.54
+Middle East (BP),,2021,7969056
+Morocco,MAR,1996,0
+Morocco,MAR,1997,0
+Morocco,MAR,1998,0
+Morocco,MAR,1999,0
+Morocco,MAR,2000,6.7
+Morocco,MAR,2001,7
+Morocco,MAR,2002,7.7
+Morocco,MAR,2003,8.4
+Morocco,MAR,2004,9.1
+Morocco,MAR,2005,10
+Morocco,MAR,2006,10.8
+Morocco,MAR,2007,11945
+Morocco,MAR,2008,12845
+Morocco,MAR,2009,13445
+Morocco,MAR,2010,13545
+Morocco,MAR,2011,14174
+Morocco,MAR,2012,15174
+Morocco,MAR,2013,15174
+Morocco,MAR,2014,19.6
+Morocco,MAR,2015,19.8
+Morocco,MAR,2016,21.87
+Morocco,MAR,2017,23895
+Morocco,MAR,2018,193895
+Morocco,MAR,2019,193903
+Morocco,MAR,2020,194
+Morocco,MAR,2021,234.3
+Netherlands,NLD,1996,0.7
+Netherlands,NLD,1997,1
+Netherlands,NLD,1998,1
+Netherlands,NLD,1999,5
+Netherlands,NLD,2000,13
+Netherlands,NLD,2001,21
+Netherlands,NLD,2002,26
+Netherlands,NLD,2003,46
+Netherlands,NLD,2004,50
+Netherlands,NLD,2005,51
+Netherlands,NLD,2006,53
+Netherlands,NLD,2007,54
+Netherlands,NLD,2008,59
+Netherlands,NLD,2009,69
+Netherlands,NLD,2010,90
+Netherlands,NLD,2011,149
+Netherlands,NLD,2012,287
+Netherlands,NLD,2013,650
+Netherlands,NLD,2014,1007
+Netherlands,NLD,2015,1526
+Netherlands,NLD,2016,2135
+Netherlands,NLD,2017,2911
+Netherlands,NLD,2018,4608
+Netherlands,NLD,2019,7226
+Netherlands,NLD,2020,10949.72
+Netherlands,NLD,2021,14249
+North America,,1996,26.9
+North America,,1997,28.6
+North America,,1998,32.2
+North America,,1999,36.6
+North America,,2000,198599
+North America,,2001,238804
+North America,,2002,282975
+North America,,2003,323128
+North America,,2004,395376
+North America,,2005,529.66797
+North America,,2006,738872
+North America,,2007,1025228
+North America,,2008,1213228
+North America,,2009,1749612
+North America,,2010,3191528
+North America,,2011,5846879
+North America,,2012,8980956
+North America,,2013,13083156
+North America,,2014,18006156
+North America,,2015,24883156
+North America,,2016,36669758
+North America,,2017,45868527
+North America,,2018,55961688
+North America,,2019,67335.21
+North America,,2020,82818.7
+North America,,2021,104882.62
+North America (BP),,1996,26.9
+North America (BP),,1997,28.6
+North America (BP),,1998,32.2
+North America (BP),,1999,35.6
+North America (BP),,2000,197
+North America (BP),,2001,237
+North America (BP),,2002,281
+North America (BP),,2003,321
+North America (BP),,2004,393
+North America (BP),,2005,527
+North America (BP),,2006,736
+North America (BP),,2007,1022
+North America (BP),,2008,1210
+North America (BP),,2009,1746.1
+North America (BP),,2010,3187.8
+North America (BP),,2011,5842.4
+North America (BP),,2012,8975.8
+North America (BP),,2013,13078
+North America (BP),,2014,18001
+North America (BP),,2015,24490
+North America (BP),,2016,36255.6
+North America (BP),,2017,45414.74
+North America (BP),,2018,55448.14
+North America (BP),,2019,66821.34
+North America (BP),,2020,82304836
+North America (BP),,2021,104368.75
+Oceania,,1996,16
+Oceania,,1997,19
+Oceania,,1998,23
+Oceania,,1999,25
+Oceania,,2000,25
+Oceania,,2001,29
+Oceania,,2002,34
+Oceania,,2003,39
+Oceania,,2004,46
+Oceania,,2005,52
+Oceania,,2006,61
+Oceania,,2007,70
+Oceania,,2008,82
+Oceania,,2009,329
+Oceania,,2010,1088
+Oceania,,2011,2470
+Oceania,,2012,3796
+Oceania,,2013,4565
+Oceania,,2014,5284
+Oceania,,2015,5943
+Oceania,,2016,6686
+Oceania,,2017,7352
+Oceania,,2018,8623
+Oceania,,2019,12967
+Oceania,,2020,17342
+Oceania,,2021,19074
+Pakistan,PAK,1996,0
+Pakistan,PAK,1997,0
+Pakistan,PAK,1998,0
+Pakistan,PAK,1999,0
+Pakistan,PAK,2000,0
+Pakistan,PAK,2001,0
+Pakistan,PAK,2002,0
+Pakistan,PAK,2003,0
+Pakistan,PAK,2004,0
+Pakistan,PAK,2005,0
+Pakistan,PAK,2006,0
+Pakistan,PAK,2007,0.14
+Pakistan,PAK,2008,1.14
+Pakistan,PAK,2009,6.67
+Pakistan,PAK,2010,9275
+Pakistan,PAK,2011,18632
+Pakistan,PAK,2012,45783
+Pakistan,PAK,2013,100658
+Pakistan,PAK,2014,165363
+Pakistan,PAK,2015,265512
+Pakistan,PAK,2016,589505
+Pakistan,PAK,2017,654699
+Pakistan,PAK,2018,679109
+Pakistan,PAK,2019,763313
+Pakistan,PAK,2020,860313
+Pakistan,PAK,2021,1083313
+Philippines,PHL,1996,0
+Philippines,PHL,1997,0
+Philippines,PHL,1998,0
+Philippines,PHL,1999,0
+Philippines,PHL,2000,0
+Philippines,PHL,2001,0
+Philippines,PHL,2002,0
+Philippines,PHL,2003,0
+Philippines,PHL,2004,2
+Philippines,PHL,2005,2.02
+Philippines,PHL,2006,2.02
+Philippines,PHL,2007,2.02
+Philippines,PHL,2008,2.02
+Philippines,PHL,2009,2.02
+Philippines,PHL,2010,2.02
+Philippines,PHL,2011,2.02
+Philippines,PHL,2012,2.02
+Philippines,PHL,2013,3047
+Philippines,PHL,2014,27737
+Philippines,PHL,2015,172.55
+Philippines,PHL,2016,784145
+Philippines,PHL,2017,908376
+Philippines,PHL,2018,916961
+Philippines,PHL,2019,982246
+Philippines,PHL,2020,1057881
+Philippines,PHL,2021,1369734
+Poland,POL,1997,0
+Poland,POL,1998,0
+Poland,POL,1999,0
+Poland,POL,2000,0
+Poland,POL,2001,0
+Poland,POL,2002,0
+Poland,POL,2003,0
+Poland,POL,2004,0
+Poland,POL,2005,0
+Poland,POL,2006,0
+Poland,POL,2007,0
+Poland,POL,2008,0
+Poland,POL,2009,0
+Poland,POL,2010,0
+Poland,POL,2011,1.11
+Poland,POL,2012,1.3
+Poland,POL,2013,2393
+Poland,POL,2014,27.15
+Poland,POL,2015,107777
+Poland,POL,2016,187247
+Poland,POL,2017,287091
+Poland,POL,2018,561976
+Poland,POL,2019,1539259
+Poland,POL,2020,3954963
+Poland,POL,2021,6256754
+Portugal,PRT,1996,0.4
+Portugal,PRT,1997,0.5
+Portugal,PRT,1998,0.6
+Portugal,PRT,1999,0.9
+Portugal,PRT,2000,1
+Portugal,PRT,2001,1
+Portugal,PRT,2002,1
+Portugal,PRT,2003,2
+Portugal,PRT,2004,2
+Portugal,PRT,2005,2
+Portugal,PRT,2006,3
+Portugal,PRT,2007,24
+Portugal,PRT,2008,59
+Portugal,PRT,2009,115
+Portugal,PRT,2010,134
+Portugal,PRT,2011,172
+Portugal,PRT,2012,238
+Portugal,PRT,2013,296
+Portugal,PRT,2014,415
+Portugal,PRT,2015,447
+Portugal,PRT,2016,512824
+Portugal,PRT,2017,579236
+Portugal,PRT,2018,667431
+Portugal,PRT,2019,901438
+Portugal,PRT,2020,1100292
+Portugal,PRT,2021,1801292
+Romania,ROU,1996,0
+Romania,ROU,1997,0
+Romania,ROU,1998,0
+Romania,ROU,1999,0
+Romania,ROU,2000,0
+Romania,ROU,2001,0
+Romania,ROU,2002,0
+Romania,ROU,2003,0
+Romania,ROU,2004,0
+Romania,ROU,2005,0
+Romania,ROU,2006,0
+Romania,ROU,2007,0
+Romania,ROU,2008,0.1
+Romania,ROU,2009,0.1
+Romania,ROU,2010,0.1
+Romania,ROU,2011,1
+Romania,ROU,2012,41
+Romania,ROU,2013,761
+Romania,ROU,2014,1293
+Romania,ROU,2015,1326
+Romania,ROU,2016,1372
+Romania,ROU,2017,1374129
+Romania,ROU,2018,1385.82
+Romania,ROU,2019,1397705
+Romania,ROU,2020,1382539
+Romania,ROU,2021,1397539
+Russia,RUS,1996,0
+Russia,RUS,1997,0
+Russia,RUS,1998,0
+Russia,RUS,1999,0
+Russia,RUS,2000,0
+Russia,RUS,2001,0
+Russia,RUS,2002,0
+Russia,RUS,2003,0
+Russia,RUS,2004,0
+Russia,RUS,2005,0
+Russia,RUS,2006,0
+Russia,RUS,2007,0
+Russia,RUS,2008,0
+Russia,RUS,2009,0
+Russia,RUS,2010,0.01
+Russia,RUS,2011,23
+Russia,RUS,2012,93
+Russia,RUS,2013,1259
+Russia,RUS,2014,5
+Russia,RUS,2015,61.32
+Russia,RUS,2016,76.32
+Russia,RUS,2017,225.32
+Russia,RUS,2018,535.32
+Russia,RUS,2019,1276.32
+Russia,RUS,2020,1427.82
+Russia,RUS,2021,1661.02
+Slovakia,SVK,1996,0
+Slovakia,SVK,1997,0
+Slovakia,SVK,1998,0
+Slovakia,SVK,1999,0
+Slovakia,SVK,2000,0
+Slovakia,SVK,2001,0
+Slovakia,SVK,2002,0
+Slovakia,SVK,2003,0
+Slovakia,SVK,2004,0
+Slovakia,SVK,2005,0
+Slovakia,SVK,2006,0
+Slovakia,SVK,2007,0
+Slovakia,SVK,2008,0
+Slovakia,SVK,2009,0
+Slovakia,SVK,2010,19
+Slovakia,SVK,2011,496
+Slovakia,SVK,2012,513
+Slovakia,SVK,2013,533
+Slovakia,SVK,2014,533
+Slovakia,SVK,2015,533
+Slovakia,SVK,2016,533
+Slovakia,SVK,2017,528
+Slovakia,SVK,2018,472
+Slovakia,SVK,2019,590
+Slovakia,SVK,2020,535
+Slovakia,SVK,2021,535
+South Africa,ZAF,1996,0
+South Africa,ZAF,1997,2
+South Africa,ZAF,1998,4
+South Africa,ZAF,1999,6
+South Africa,ZAF,2000,0
+South Africa,ZAF,2001,0
+South Africa,ZAF,2002,0
+South Africa,ZAF,2003,0
+South Africa,ZAF,2004,0
+South Africa,ZAF,2005,0
+South Africa,ZAF,2006,0
+South Africa,ZAF,2007,0
+South Africa,ZAF,2008,0
+South Africa,ZAF,2009,0
+South Africa,ZAF,2010,1959
+South Africa,ZAF,2011,5658
+South Africa,ZAF,2012,11303
+South Africa,ZAF,2013,261625
+South Africa,ZAF,2014,1062901
+South Africa,ZAF,2015,1251656
+South Africa,ZAF,2016,1974026
+South Africa,ZAF,2017,3146.73
+South Africa,ZAF,2018,4400929
+South Africa,ZAF,2019,4404991
+South Africa,ZAF,2020,5489578
+South Africa,ZAF,2021,5721095
+South America,,1996,0
+South America,,1997,0
+South America,,1998,0
+South America,,1999,0
+South America,,2000,25
+South America,,2001,62
+South America,,2002,62
+South America,,2003,0.74200004
+South America,,2004,744
+South America,,2005,744
+South America,,2006,744
+South America,,2007,744
+South America,,2008,0.79
+South America,,2009,0.84000003
+South America,,2010,0.88
+South America,,2011,7349
+South America,,2012,14.86
+South America,,2013,35785
+South America,,2014,249949
+South America,,2015,630185
+South America,,2016,1261595
+South America,,2017,3024593
+South America,,2018,4763258
+South America,,2019,7709
+South America,,2020,11848.73
+South America,,2021,18486299
+South Korea,KOR,1996,0
+South Korea,KOR,1997,0
+South Korea,KOR,1998,0
+South Korea,KOR,1999,0
+South Korea,KOR,2000,4
+South Korea,KOR,2001,5
+South Korea,KOR,2002,5
+South Korea,KOR,2003,6
+South Korea,KOR,2004,9
+South Korea,KOR,2005,14
+South Korea,KOR,2006,36
+South Korea,KOR,2007,81
+South Korea,KOR,2008,357
+South Korea,KOR,2009,524
+South Korea,KOR,2010,650
+South Korea,KOR,2011,730
+South Korea,KOR,2012,1024
+South Korea,KOR,2013,1555
+South Korea,KOR,2014,2481
+South Korea,KOR,2015,3615
+South Korea,KOR,2016,4502
+South Korea,KOR,2017,5835
+South Korea,KOR,2018,8099
+South Korea,KOR,2019,11952
+South Korea,KOR,2020,14574791
+South Korea,KOR,2021,18160574
+South and Central America (BP),,1996,0
+South and Central America (BP),,1997,0
+South and Central America (BP),,1998,0
+South and Central America (BP),,1999,2
+South and Central America (BP),,2000,4522
+South and Central America (BP),,2001,7367
+South and Central America (BP),,2002,9671
+South and Central America (BP),,2003,12.42
+South and Central America (BP),,2004,14613
+South and Central America (BP),,2005,17013
+South and Central America (BP),,2006,22773
+South and Central America (BP),,2007,28982
+South and Central America (BP),,2008,37997
+South and Central America (BP),,2009,62194
+South and Central America (BP),,2010,119739
+South and Central America (BP),,2011,188162
+South and Central America (BP),,2012,365503
+South and Central America (BP),,2013,479338
+South and Central America (BP),,2014,807515
+South and Central America (BP),,2015,1902919
+South and Central America (BP),,2016,2756455
+South and Central America (BP),,2017,5282815
+South and Central America (BP),,2018,7508274
+South and Central America (BP),,2019,11024064
+South and Central America (BP),,2020,15544097
+South and Central America (BP),,2021,22816424
+Spain,ESP,1996,1
+Spain,ESP,1997,1
+Spain,ESP,1998,1
+Spain,ESP,1999,2
+Spain,ESP,2000,10
+Spain,ESP,2001,13
+Spain,ESP,2002,17
+Spain,ESP,2003,22
+Spain,ESP,2004,33
+Spain,ESP,2005,52
+Spain,ESP,2006,130
+Spain,ESP,2007,494
+Spain,ESP,2008,3384
+Spain,ESP,2009,3423
+Spain,ESP,2010,3873
+Spain,ESP,2011,4283
+Spain,ESP,2012,4569
+Spain,ESP,2013,4690
+Spain,ESP,2014,4697
+Spain,ESP,2015,4704
+Spain,ESP,2016,4713
+Spain,ESP,2017,4723
+Spain,ESP,2018,4763607
+Spain,ESP,2019,8839253
+Spain,ESP,2020,10285477
+Spain,ESP,2021,13648477
+Sweden,SWE,1996,2
+Sweden,SWE,1997,2
+Sweden,SWE,1998,2
+Sweden,SWE,1999,3
+Sweden,SWE,2000,3
+Sweden,SWE,2001,3
+Sweden,SWE,2002,3
+Sweden,SWE,2003,4
+Sweden,SWE,2004,4
+Sweden,SWE,2005,4
+Sweden,SWE,2006,5
+Sweden,SWE,2007,6
+Sweden,SWE,2008,8
+Sweden,SWE,2009,9
+Sweden,SWE,2010,11
+Sweden,SWE,2011,12
+Sweden,SWE,2012,24
+Sweden,SWE,2013,43
+Sweden,SWE,2014,60
+Sweden,SWE,2015,104
+Sweden,SWE,2016,153
+Sweden,SWE,2017,244
+Sweden,SWE,2018,428
+Sweden,SWE,2019,714
+Sweden,SWE,2020,1107
+Sweden,SWE,2021,1577.4
+Switzerland,CHE,1996,8
+Switzerland,CHE,1997,10
+Switzerland,CHE,1998,12
+Switzerland,CHE,1999,13
+Switzerland,CHE,2000,16
+Switzerland,CHE,2001,18
+Switzerland,CHE,2002,20
+Switzerland,CHE,2003,22
+Switzerland,CHE,2004,24
+Switzerland,CHE,2005,28
+Switzerland,CHE,2006,30
+Switzerland,CHE,2007,37
+Switzerland,CHE,2008,49
+Switzerland,CHE,2009,79
+Switzerland,CHE,2010,125
+Switzerland,CHE,2011,223
+Switzerland,CHE,2012,437
+Switzerland,CHE,2013,756
+Switzerland,CHE,2014,1061
+Switzerland,CHE,2015,1394
+Switzerland,CHE,2016,1664
+Switzerland,CHE,2017,1906
+Switzerland,CHE,2018,2173
+Switzerland,CHE,2019,2498
+Switzerland,CHE,2020,2973.39
+Switzerland,CHE,2021,3448.78
+Taiwan,TWN,1996,0
+Taiwan,TWN,1997,0
+Taiwan,TWN,1998,0
+Taiwan,TWN,1999,0
+Taiwan,TWN,2000,0.1
+Taiwan,TWN,2001,0.2
+Taiwan,TWN,2002,0.33
+Taiwan,TWN,2003,0.45
+Taiwan,TWN,2004,0.57
+Taiwan,TWN,2005,1.04
+Taiwan,TWN,2006,1.41
+Taiwan,TWN,2007,2.44
+Taiwan,TWN,2008,5.58
+Taiwan,TWN,2009,9.51
+Taiwan,TWN,2010,34555
+Taiwan,TWN,2011,129912
+Taiwan,TWN,2012,231281
+Taiwan,TWN,2013,409938
+Taiwan,TWN,2014,635951
+Taiwan,TWN,2015,884251
+Taiwan,TWN,2016,1245055
+Taiwan,TWN,2017,1767702
+Taiwan,TWN,2018,2738119
+Taiwan,TWN,2019,4149539
+Taiwan,TWN,2020,5817205
+Taiwan,TWN,2021,7700213
+Thailand,THA,1996,0
+Thailand,THA,1997,0
+Thailand,THA,1998,0
+Thailand,THA,1999,0
+Thailand,THA,2000,0
+Thailand,THA,2001,0
+Thailand,THA,2002,0
+Thailand,THA,2003,0
+Thailand,THA,2004,0
+Thailand,THA,2005,0
+Thailand,THA,2006,30.41
+Thailand,THA,2007,32.25
+Thailand,THA,2008,32.35
+Thailand,THA,2009,37
+Thailand,THA,2010,48.6
+Thailand,THA,2011,78.7
+Thailand,THA,2012,376.7
+Thailand,THA,2013,823.5
+Thailand,THA,2014,1298.5
+Thailand,THA,2015,1419.6
+Thailand,THA,2016,2446.1
+Thailand,THA,2017,2697.26
+Thailand,THA,2018,2962.44
+Thailand,THA,2019,2982.62
+Thailand,THA,2020,2982.62
+Thailand,THA,2021,3043.62
+Turkey,TUR,1996,0
+Turkey,TUR,1997,0
+Turkey,TUR,1998,0
+Turkey,TUR,1999,0
+Turkey,TUR,2000,0.1
+Turkey,TUR,2001,0.3
+Turkey,TUR,2002,0.6
+Turkey,TUR,2003,1
+Turkey,TUR,2004,1.5
+Turkey,TUR,2005,2
+Turkey,TUR,2006,2.5
+Turkey,TUR,2007,3
+Turkey,TUR,2008,3.7
+Turkey,TUR,2009,4.7
+Turkey,TUR,2010,5.7
+Turkey,TUR,2011,6.7
+Turkey,TUR,2012,11.7
+Turkey,TUR,2013,17.7
+Turkey,TUR,2014,40
+Turkey,TUR,2015,249
+Turkey,TUR,2016,833
+Turkey,TUR,2017,3420.7
+Turkey,TUR,2018,5062608
+Turkey,TUR,2019,5995155
+Turkey,TUR,2020,6667355
+Turkey,TUR,2021,7815555
+Ukraine,UKR,1996,0
+Ukraine,UKR,1997,0
+Ukraine,UKR,1998,0
+Ukraine,UKR,1999,0
+Ukraine,UKR,2000,0
+Ukraine,UKR,2001,0
+Ukraine,UKR,2002,0
+Ukraine,UKR,2003,0
+Ukraine,UKR,2004,0
+Ukraine,UKR,2005,0
+Ukraine,UKR,2006,0
+Ukraine,UKR,2007,0
+Ukraine,UKR,2008,0
+Ukraine,UKR,2009,0
+Ukraine,UKR,2010,2.5
+Ukraine,UKR,2011,188.2
+Ukraine,UKR,2012,371.6
+Ukraine,UKR,2013,748.4
+Ukraine,UKR,2014,819.1
+Ukraine,UKR,2015,841.2
+Ukraine,UKR,2016,954.7
+Ukraine,UKR,2017,1200
+Ukraine,UKR,2018,2002688
+Ukraine,UKR,2019,5935688
+Ukraine,UKR,2020,7331
+Ukraine,UKR,2021,8062
+United Arab Emirates,ARE,1996,0
+United Arab Emirates,ARE,1997,0
+United Arab Emirates,ARE,1998,0
+United Arab Emirates,ARE,1999,0
+United Arab Emirates,ARE,2000,0
+United Arab Emirates,ARE,2001,0
+United Arab Emirates,ARE,2002,0
+United Arab Emirates,ARE,2003,0
+United Arab Emirates,ARE,2004,0
+United Arab Emirates,ARE,2005,0
+United Arab Emirates,ARE,2006,0
+United Arab Emirates,ARE,2007,0
+United Arab Emirates,ARE,2008,0
+United Arab Emirates,ARE,2009,10076
+United Arab Emirates,ARE,2010,10826
+United Arab Emirates,ARE,2011,12751
+United Arab Emirates,ARE,2012,13206
+United Arab Emirates,ARE,2013,25802
+United Arab Emirates,ARE,2014,33171
+United Arab Emirates,ARE,2015,33406
+United Arab Emirates,ARE,2016,40406
+United Arab Emirates,ARE,2017,255036
+United Arab Emirates,ARE,2018,498305
+United Arab Emirates,ARE,2019,1817.87
+United Arab Emirates,ARE,2020,2205397
+United Arab Emirates,ARE,2021,2605047
+United Kingdom,GBR,1996,0.2
+United Kingdom,GBR,1997,0.4
+United Kingdom,GBR,1998,0.5
+United Kingdom,GBR,1999,0.9
+United Kingdom,GBR,2000,2
+United Kingdom,GBR,2001,3
+United Kingdom,GBR,2002,4
+United Kingdom,GBR,2003,6
+United Kingdom,GBR,2004,8
+United Kingdom,GBR,2005,11
+United Kingdom,GBR,2006,14
+United Kingdom,GBR,2007,18
+United Kingdom,GBR,2008,23
+United Kingdom,GBR,2009,27
+United Kingdom,GBR,2010,95
+United Kingdom,GBR,2011,1000
+United Kingdom,GBR,2012,1753
+United Kingdom,GBR,2013,2937
+United Kingdom,GBR,2014,5528
+United Kingdom,GBR,2015,9601219
+United Kingdom,GBR,2016,11914
+United Kingdom,GBR,2017,12760
+United Kingdom,GBR,2018,13073
+United Kingdom,GBR,2019,13346
+United Kingdom,GBR,2020,13462.48
+United Kingdom,GBR,2021,13689
+United States,USA,1996,13.9
+United States,USA,1997,14.6
+United States,USA,1998,15.2
+United States,USA,1999,16.6
+United States,USA,2000,176
+United States,USA,2001,213
+United States,USA,2002,255
+United States,USA,2003,293
+United States,USA,2004,363
+United States,USA,2005,493
+United States,USA,2006,698
+United States,USA,2007,974
+United States,USA,2008,1153
+United States,USA,2009,1614
+United States,USA,2010,2909
+United States,USA,2011,5172
+United States,USA,2012,8137
+United States,USA,2013,11759
+United States,USA,2014,15984
+United States,USA,2015,21684
+United States,USA,2016,32958
+United States,USA,2017,41357
+United States,USA,2018,49812
+United States,USA,2019,59068
+United States,USA,2020,73813.7
+United States,USA,2021,93713016
+Upper-middle-income countries,,1996,11
+Upper-middle-income countries,,1997,15.5
+Upper-middle-income countries,,1998,21
+Upper-middle-income countries,,1999,29
+Upper-middle-income countries,,2000,47.655003
+Upper-middle-income countries,,2001,53397
+Upper-middle-income countries,,2002,73207
+Upper-middle-income countries,,2003,84.356995
+Upper-middle-income countries,,2004,94859
+Upper-middle-income countries,,2005,159959
+Upper-middle-income countries,,2006,209869
+Upper-middle-income countries,,2007,254489
+Upper-middle-income countries,,2008,309595
+Upper-middle-income countries,,2009,485.09497
+Upper-middle-income countries,,2010,1134408
+Upper-middle-income countries,,2011,3404.2173
+Upper-middle-income countries,,2012,8288913
+Upper-middle-income countries,,2013,20901484
+Upper-middle-income countries,,2014,33521773
+Upper-middle-income countries,,2015,49487402
+Upper-middle-income countries,,2016,86917.14
+Upper-middle-income countries,,2017,145832.73
+Upper-middle-income countries,,2018,196807.61
+Upper-middle-income countries,,2019,233240.31
+Upper-middle-income countries,,2020,289188.34
+Upper-middle-income countries,,2021,351687.62
+Vietnam,VNM,2000,2
+Vietnam,VNM,2001,108
+Vietnam,VNM,2002,236
+Vietnam,VNM,2003,406
+Vietnam,VNM,2004,747
+Vietnam,VNM,2005,1885
+Vietnam,VNM,2006,3424
+Vietnam,VNM,2007,3424
+Vietnam,VNM,2008,3424
+Vietnam,VNM,2009,3515
+Vietnam,VNM,2010,4518
+Vietnam,VNM,2011,4518
+Vietnam,VNM,2012,4518
+Vietnam,VNM,2013,4518
+Vietnam,VNM,2014,5.29
+Vietnam,VNM,2015,5.29
+Vietnam,VNM,2016,5.29
+Vietnam,VNM,2017,7992
+Vietnam,VNM,2018,104992
+Vietnam,VNM,2019,4993.49
+Vietnam,VNM,2020,16660.49
+Vietnam,VNM,2021,16660.49
+World,OWID_WRL,1996,171.81242
+World,OWID_WRL,1997,231.73727
+World,OWID_WRL,1998,304.96213
+World,OWID_WRL,1999,423.5994
+World,OWID_WRL,2000,808669
+World,OWID_WRL,2001,1092986
+World,OWID_WRL,2002,1437059
+World,OWID_WRL,2003,1965.03
+World,OWID_WRL,2004,3051979
+World,OWID_WRL,2005,4548119
+World,OWID_WRL,2006,6093193
+World,OWID_WRL,2007,8506466
+World,OWID_WRL,2008,14729541
+World,OWID_WRL,2009,22844467
+World,OWID_WRL,2010,40337.81
+World,OWID_WRL,2011,72215.97
+World,OWID_WRL,2012,101745.33
+World,OWID_WRL,2013,137226.97
+World,OWID_WRL,2014,175617.17
+World,OWID_WRL,2015,223203.6
+World,OWID_WRL,2016,295228.9
+World,OWID_WRL,2017,390206.53
+World,OWID_WRL,2018,483011.8
+World,OWID_WRL,2019,584685.7
+World,OWID_WRL,2020,710281.1
+World,OWID_WRL,2021,843086.06
