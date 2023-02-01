@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<!-- **********************************************************************
+
+index_only_map_embed.html
+
+$Comment: ixmaps map template; embedded version
+$Source : index_only_map_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:index_only_map_embed.html 1 2021-10-17 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:index_only_map_embed.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="ixmaps embed example">
+	<meta name="author" content="guenter richter">
+	<link rel="shortcut icon" href="https://gjrichter.github.io/ixmaps/ui/resources/images/ixmaps_logo.png">
+
+	<title>iXMaps really simple embed</title>
+
+</head>
+
+<body style='text-align:center'>
+
+    <!--========================================================================= -->
+
+	<script type="text/javascript" src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
+	
+    <!--========================================================================= -->
+
+	<script type="text/javascript" charset="utf-8"> 
+
+		query = function(data,options){
+			
+			$.ajax({
+				url: "https://data.cdc.gov/resource/8xkx-amqh.json",
+				type: "GET",
+				data: {
+				  "$limit" : 5000,
+				}
+			}).success(function(data) {
+				options.type = "json";
+				ixmaps.setExternalData(data,options);
+			});
+		};
+		
+		legend = 
+			"<h1><b style='color:rgb(86, 142, 89)'> % of popolation vaccinated</b><br><b style='color:rgb(150, 150, 150)'>fatality ratio at 01.01.2021</b> and for the last 56 days</h1>";
+		
+		attribution = 
+			"<h3 style='margin-bottom:-1em'>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href=\"https://github.com/CSSEGISandData/COVID-19\" target=\"_blank\">Johns Hopkins CSSE</a><br>data: Data Repository by <a href=\"covid-19-data/public/data/vaccinations/\" target=\"_blank\">Our World in Data</a><br>citation: Mathieu, E., Ritchie, H., Ortiz-Ospina, E. et al. A global database of COVID-19 vaccinations. Nat Hum Behav (2021). <a href=\"https://doi.org/10.1038/s41562-021-01122-8\" target=\"_blank\">https://doi.org/10.1038/s41562-021-01122-8</a></h3>";
+		
+		document.activeElement.appendChild(
+			
+			ixmaps.embed("mymap", 
+				{ 
+				mapService: "leaflet",
+				mapType:	"white",
+				map:     	"../../maps/svg/maps/generic/winkel.svg",
+				mode:		"pan",
+				width:    	"100%",
+				scrollsafe: true,
+				legend:     true,
+				align:      "center"
+				},
+				map => map
+					.view([13.239945499286312,23.203125000000004],2)
+					.options({
+						objectscaling: "dynamic",       
+						normalSizeScale: "100000000",
+						dynamicScalePow: "3",         
+						panhidden: "false"             
+					})
+					.require("../../ui/js/tools/tooltip_basic.js")
+					.attribution(attribution) 
+					.legend(legend)
+					.localize("...","")	 
+					.localize("loading data ...", " &#x2B73; data")	 
+						 
+					// load geometries
+					.layer(
+						ixmaps.layer("World_countries")
+						.data({
+							url: "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/topojson/CNTR_RG_10M_2020_4326.json",
+							type: "topojson"
+						})
+						.binding({id:"ISO3_CODE"})
+						.style({
+							type: "FEATURES|NOLEGEND|LOCKED",
+							colorscheme: ["#eeeeee"],
+							fillopacity: "0.7",
+							linecolor: ["white"],
+							linewidth: "0.5",
+							title: "World Countries"
+						})
+						.json()
+					)
+
+					// vaccines - choropleth, countries
+						 
+					.layer(
+						ixmaps.theme("World_countries")
+						.data({
+							name: "themeDataObj",
+							url: "https://raw.githubusercontent.com/gjrichter/viz/master/World%20Dataviz%20Prize%202023/data/Dashboard_of_the_present_future.csv",
+							type: "csv",
+							cache: "true"
+						})
+						.binding({
+							geo: "ISO Country code", 
+							value: "GINI index", 
+							title: "Country"
+						})
+						.style({
+							"type": "CHOROPLETH|DOPACITYMAX",
+							"colorscheme": [
+								"15",
+								"red"],
+							"fillopacity": "0.2",
+							"shadow": "false",
+							"dopacitypow": "1",
+							"dopacityscale": "2",
+							"textcolor": "black",
+							"valuescale": "1",
+							"valuedecimals": "1",
+							"title": "COVID-19",
+							"snippet": "Percent of population fully vaccinated"
+						}) 
+						.json()
+					)
+						 
+					// fatalities - chart, lat,lon
+						 
+					.layer(
+						ixmaps.theme("World_countries")
+						.data({
+							name: "themeDataObj",
+							url: "https://raw.githubusercontent.com/gjrichter/viz/master/World%20Dataviz%20Prize%202023/data/Dashboard_of_the_present_future.csv",
+							type: "csv",
+							cache: "true"
+						})
+						.binding({
+							geo: "ISO Country code", 
+							value: "happy planet index 2016|happy planet index 2019", 
+							title: "Country"
+						})
+						.type("CHART|SYMBOL|SEQUENCE|PLOT|LINES|SIZE|"+
+							  "AGGREGATE|RECT|RELOCATE|MEAN|NOCLIP|"+
+							  "VALUES|VALUEBACKGROUND|INLINETEXT|DTEXT")
+						.style({
+							"colorscheme": [
+								"#FFFFdd",
+								"#FFDF2D"],
+							"fillopacity": "1",
+							"shadow": "false",
+							"symbols": [
+								"circle"],
+							"label": [
+								"2020 ratio",
+								"2021 ratio"],
+							"units": "",
+							"normalsizevalue": "100",
+							"scale": "0.8",
+							"minvalue": "0",
+							"linewidth": "1.5",
+							"textcolor":"#888888",
+							"linecolor":"#444444",
+							"valueupper": "1:100000000",
+							"valuescale": "1",
+							"valuedecimals": "0",
+							"valuescale": "1.3",
+							"fadenegative": "0.1",
+							"gridwidth": "50px"})
+						.meta({	
+							"name": "ttrend",
+							"title": "COVID-19 case-fatality ratio change",
+							"snippet": "fonte: <a href='https://github.com/CSSEGISandData/COVID-19' target='_blank'>JHU CCSE</a>",
+							"splash": "Loading data ..." })
+						.json()
+					)
+			)
+		);
+
+		
+		
+
+	</script>	
+  </body>
+</html>

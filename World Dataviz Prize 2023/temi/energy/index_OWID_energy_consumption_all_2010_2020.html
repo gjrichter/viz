@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+
+<!-- **********************************************************************
+
+ixmaps map embed html
+
+$Comment: ixmaps map template; embedded version
+$Source : index_only_map_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:index_only_map_embed.html 1 2021-10-17 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:index_only_map_embed.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="ixmaps embed example">
+	<meta name="author" content="guenter richter">
+	<link rel="shortcut icon" href="https://gjrichter.github.io/ixmaps/ui/resources/images/ixmaps_logo.png">
+
+	<title>iXMaps really simple embed</title>
+
+</head>
+
+<body style='text-align:center'>
+
+
+	<!--========================================================================= -->
+
+	<script type="text/javascript" src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
+
+	<!--========================================================================= -->
+
+	<script type="text/javascript" charset="utf-8">
+		ixmaps.tmp = ixmaps.tmp || {};
+
+		/**
+		 ** strings used by the map 	
+		 **/
+
+		attribution =
+			"<h3 style=\"margin-bottom:-2em\">powered by <a href=\"http://ixmaps.com\" target=\"_blank\">iXMaps</a></h3>";
+		ixmaps.tmp.title =
+			"energy consumption (TWh) by sources 2010-2020";
+		ixmaps.tmp.legend =
+			"<h1 style='font-size:3em;'>" + ixmaps.tmp.title + "</h1>";
+		ixmaps.tmp.source =
+			"https://raw.githubusercontent.com/gjrichter/viz/master/World Dataviz Prize 2023/data/OWID/energy/energy-consumption-by-source-and-country.csv";
+		ixmaps.tmp.color =
+			"rgb(26, 152, 169)";
+
+		/**
+		 ** query data from Word Bank API and preprocess for the map 
+		 ** 1. get the JSON from Worl Bank with all data of an indicator 
+		 ** 2. get the data part from the raw data = feed.data[1]
+		 ** 3. import this part of the JSON into a Data object
+		 ** 4. make a pivot table width one row pwe country and columns = years
+		 ** 5. get an array with all the year columns in the pivot
+		 ** 6. set theme definition properties with the years array (theme data, clip frames, ...) 
+		 ** 7. deploy the data 
+		 **
+		 ** the query function will be included into the theme definitions below
+		 **/
+
+		/**
+		 ** indicator SH.XPD.CHEX.GD.ZS health expenditure % of GDP
+		 **/
+
+		query = function(theme, options) {
+
+			var feed = Data.feed({
+				source: "https://raw.githubusercontent.com/gjrichter/viz/master/World Dataviz Prize 2023/data/OWID/energy/energy-consumption-by-source-and-country.csv",
+				type: "csv"
+			}).load(function(newData) {
+
+				var table = newData;
+
+				table = table.select("WHERE Year BETWEEN 2010 AND 2020");
+
+				var pivot1 = table.pivot({
+					lead: "Code",
+					keep: "Entity",
+					columns: "Year",
+					value: "Oil Consumption - TWh (zero filled)"
+				});
+				var pivot2 = table.pivot({
+					lead: "Code",
+					keep: "Entity",
+					columns: "Year",
+					value: "Coal Consumption - TWh (zero filled)"
+				});
+				var pivot7 = table.pivot({
+					lead: "Code",
+					keep: "Entity",
+					columns: "Year",
+					value: "Solar Consumption - TWh (zero filled)"
+				});
+				var pivot4 = table.pivot({
+					lead: "Code",
+					keep: "Entity",
+					columns: "Year",
+					value: "Nuclear Consumption - TWh (zero filled)"
+				});
+				var pivot5 = table.pivot({
+					lead: "Code",
+					keep: "Entity",
+					columns: "Year",
+					value: "Hydro Consumption - TWh (zero filled)"
+				});
+				var pivot6 = table.pivot({
+					lead: "Code",
+					keep: "Entity",
+					columns: "Year",
+					value: "Wind Consumption - TWh (zero filled)"
+				});
+				var pivot3 = table.pivot({
+					lead: "Code",
+					keep: "Entity",
+					columns: "Year",
+					value: "Gas Consumption - TWh (zero filled)"
+				});
+				var pivot8 = table.pivot({
+					lead: "Code",
+					keep: "Entity",
+					columns: "Year",
+					value: "Geo Biomass Other - TWh (zero filled)"
+				});
+				var pivot9 = table.pivot({
+					lead: "Code",
+					keep: "Entity",
+					columns: "Year",
+					value: "Biofuels Consumption - TWh (zero filled)"
+				});
+
+				var years = pivot1.columnNames();
+				years = years.slice(2);
+				years.pop();
+
+				var merger = new Data.Merger();
+				merger.addSource(pivot1, {
+					lookup: "Code",
+					columns: pivot1.columnNames()
+				});
+				merger.addSource(pivot2, {
+					lookup: "Code",
+					columns: pivot2.columnNames()
+				});
+				merger.addSource(pivot3, {
+					lookup: "Code",
+					columns: pivot3.columnNames()
+				});
+				merger.addSource(pivot4, {
+					lookup: "Code",
+					columns: pivot4.columnNames()
+				});
+				merger.addSource(pivot5, {
+					lookup: "Code",
+					columns: pivot5.columnNames()
+				});
+				merger.addSource(pivot6, {
+					lookup: "Code",
+					columns: pivot7.columnNames()
+				});
+				merger.addSource(pivot7, {
+					lookup: "Code",
+					columns: pivot7.columnNames()
+				});
+				merger.addSource(pivot8, {
+					lookup: "Code",
+					columns: pivot8.columnNames()
+				});
+				merger.addSource(pivot9, {
+					lookup: "Code",
+					columns: pivot9.columnNames()
+				});
+				merger.realize(function(dbTable) {
+
+					fieldsA = [];
+					for (i in years) {
+						fieldsA.push(years[i] + ".1");
+						fieldsA.push(years[i] + ".2");
+						fieldsA.push(years[i] + ".3");
+						fieldsA.push(years[i] + ".4");
+						fieldsA.push(years[i] + ".5");
+						fieldsA.push(years[i] + ".6");
+						fieldsA.push(years[i] + ".7");
+						fieldsA.push(years[i] + ".8");
+						fieldsA.push(years[i] + ".9");
+					}
+
+					var xaxisA = [];
+					var i = 0;
+					for (i in years) {
+						xaxisA.push((i % 10) ? " " : String(Number(years[0]) + Number(i)));
+					}
+					if (i % 10 > 5) {
+						xaxisA.pop();
+						xaxisA.push(Number(years[0]) + Number(i));
+					}
+
+					if (theme.szId == "curves") {
+						theme.setProperties({
+							fields: fieldsA.join("|"),
+							xaxis: xaxisA.join("|"),
+							scale: 1.7 / years.length
+						});
+					} else {
+						theme.setProperties({
+							field: years[years.length - 1]
+						});
+					}
+
+					console.log(dbTable);
+
+					options.type = "jsonDB",
+						ixmaps.setExternalData(dbTable, options);
+				});
+			});
+		};
+
+		/**
+		 ** create the interactive map an append it to the document 
+		 **/
+
+		document.activeElement.appendChild(
+
+			ixmaps.embed("mymap", {
+					mapService: "leaflet",
+					mapType: "white",
+					map: "../../maps/svg/maps/generic/winkel.svg",
+					mode: "pan",
+					width: "100%",
+					legend: true,
+					scrollsafesilent: true,
+					align: "center"
+				},
+				map => map
+				.view([13.239945499286312, 23.203125000000004], 2)
+				.options({
+					objectscaling: "dynamic",
+					normalSizeScale: "1000000000",
+					dynamicScalePow: "3",
+					panhidden: "false"
+				})
+				.require("../../ui/js/tools/tooltip_basic.js")
+				.attribution(attribution)
+				//.legend("<h4><a class='btn btn-default theme-tool-button' style='color:#0088aa;' href='javascript:ixmaps.legend.showItemGrid(\"curves\")'>grid view <span class='icon icon-table2' style='font-size:18px;vertical-align:-10%;'></span></a></h4>")
+
+				// the world map 
+
+				.layer(
+					ixmaps.layer("World_countries")
+					.data({
+						url: "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/topojson/CNTR_RG_10M_2020_4326.json",
+						type: "topojson"
+					})
+					.binding({
+						id: "ISO3_CODE"
+					})
+					.type("FEATURES|SILENT")
+					.style({
+						colorscheme: ["#dddddd"],
+						fillopacity: "0.7",
+						linecolor: "#888888",
+						linewidth: "0.1",
+					})
+					.json()
+				)
+
+				// the data visualization 	
+
+				.layer(
+					ixmaps.layer("World_countries")
+					.data({
+						name: "themeDataObj_2",
+						query: query.toString(),
+						cache: "true"
+					})
+					.binding({
+						geo: "Code.1",
+						value: "",
+						title: "Entity.1"
+					})
+					.type("CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|LASTPOP|GRID|BOX|TITLE|ZEROISVALUE|UNDEFINEDISVALUE|AGGREGATE|RECT|SUM|SIMPLELEGEND")
+					.style({
+						name: "curves",
+						colorscheme: [
+							"#91754B",
+							"black",
+							"#ffffaa",
+							"#F7E000",
+							"#006FC9",
+							"#66dFE9",
+							"orange",
+							"#dd88dd",
+							"#008800"
+						],
+						label: [
+							"Oil",
+							"Coal",
+							"Gas",
+							"Nuclear",
+							"Hydro",
+							"Wind",
+							"Solar",
+							"Other",
+							"Bioenergy"
+						],
+						gridx: "9",
+						fillopacity: "0.5",
+						shadow: "false",
+						symbols: [
+							"none"
+						],
+						units: "TWh",
+						maxvalue: "auto",
+						align: "center|23right",
+						rangescale: "1.2",
+						scale: "0.15",
+						linewidth: "3",
+						boxopacity: "0.003",
+						boxmargin: "5",
+						boxupper: "1:10000000",
+						titleupper: "1:10000000",
+						textcolor: ixmaps.tmp.color,
+						textscale: "1",
+						valuedecimals: "2",
+						minaggregation: "auto",
+						aggregationscale: [
+							"1:1", "0",
+							"1:10000000", "500px"
+						],
+						title: "<span style='font-size:1.5em'>" + ixmaps.tmp.title + "</span>"
+					})
+					.json()
+				)
+			)
+		);
+
+	</script>
+
+	<!-- ------------------------------------- -->
+	<!-- user buttons to change the map charts -->
+	<!-- ------------------------------------- -->
+
+	<div style="position:absolute;top:6em;right:2em">
+
+		<script>
+		var sizeCharts = function(nFactor) {
+			ixmaps.changeThemeStyle(null,'curves','scale:' + nFactor, 'factor');
+		}
+		var opacityCharts = function(nFactor) {
+			ixmaps.changeThemeStyle(null,'curves','fillopacity:' + nFactor, 'factor');
+		}
+		</script>
+		
+		<style>
+			
+			table{
+				background:rgba(255,255,255,0.8);
+				border-radius: 0.3em;
+				padding:0.4em 0.8em;
+			}
+			button{
+				background:white;
+				border:#dddddd solid 1px;
+				border-radius: 0.3em;
+				padding:0.4em 0.8em;
+			}
+		</style>
+		
+		<table>
+			<tr>
+				<td>
+					<button onclick="sizeCharts(0.90)">-</button>
+				</td>
+				<td>
+					<span style="font-size:0.8em"> &nbsp; chart size &nbsp;</span>
+				</td>
+				<td>
+					<button onclick="sizeCharts(1.1)">+</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button onclick="opacityCharts(0.75)">-</button>
+				</td>
+				<td>
+					<span style="font-size:0.8em"> &nbsp; opacity &nbsp;</span>
+				</td>
+				<td>
+					<button onclick="opacityCharts(1.5)">+</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+					<button onclick="ixmaps.changeThemeStyle(null,'curves','type:STACKED','toggle');">stacked y / n </button>
+				</td>
+				<td>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+					<button onclick="ixmaps.changeThemeStyle(null,'curves','type:AGGREGATE','toggle');">aggregated y / n </button>
+				</td>
+				<td>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+
+</html>

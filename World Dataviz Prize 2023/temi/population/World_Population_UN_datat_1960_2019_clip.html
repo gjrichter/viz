@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<!-- **********************************************************************
+
+index_only_map_embed.html
+
+$Comment: ixmaps map template; embedded version
+$Source : index_only_map_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:index_only_map_embed.html 1 2021-10-17 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:index_only_map_embed.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="ixmaps embed example">
+	<meta name="author" content="guenter richter">
+	<link rel="shortcut icon" href="https://gjrichter.github.io/ixmaps/ui/resources/images/ixmaps_logo.png">
+
+	<title>iXMaps really simple embed</title>
+
+</head>
+
+<body style='text-align:center'>
+
+    <!--========================================================================= -->
+
+	<script type="text/javascript" src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
+	
+    <!--========================================================================= -->
+
+	<script type="text/javascript" charset="utf-8"> 
+		
+		attribution = 
+			"<h3 style=\"margin-bottom:-2em\">powered by <a href=\"http://ixmaps.com\" target=\"_blank\">iXMaps</a></h3>";
+		legend = 
+			"<h1 style='font-family:open sans;font-size:3em;font-weight:50;color:#444444'>Urban Population 1960 - 2035</h1><h3 style='color:#888888'><i>source</i>: UN - Department of Economics and Social Affairs - <a href='https://population.un.org/wup/Download/' target='_blank'>Urban Agglomerations, File 12</a></h3>";
+		
+		document.activeElement.appendChild(
+			
+			ixmaps.embed("mymap", 
+				{ 
+				mapService: "leaflet",
+				mapType:	"white",
+				map:     	"../../maps/svg/maps/generic/winkel.svg",
+				mode:		"pan",
+				width:    	"100%",
+				legend:     true,
+				align:      "center"
+				},
+				map => map
+					.view([13.239945499286312,23.203125000000004],2)
+					.options({
+						objectscaling: "dynamic",       
+						featurescaling: "dynamic",       
+						normalSizeScale: "100000000",
+						dynamicScalePow: "1.8",         
+						panhidden: "false"             
+					})
+					.attribution(attribution)
+					.legend(legend)
+					.layer(
+						ixmaps.layer("World_countries")
+						.data({
+							url: "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/topojson/CNTR_RG_10M_2020_4326.json",
+							type: "topojson"
+						})
+						.binding({id:"ISO3_CODE"})
+						.style({
+							colorscheme: ["#dddddd"],
+							fillopacity: "0.7",
+							linecolor: ["white"],
+							linewidth: "0.5",
+						})
+						.json()
+					)
+					.layer(
+						ixmaps.theme("generic")
+						.data({
+							name: "themeDataObj",
+							url: "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/UN/WUP2018-F12-Cities_Over_300K.csv",
+							type: "csv",
+							cache: "true"
+						})
+						.binding({
+							geo: "Latitude|Longitude", 
+							value: "1960", 
+							title: "Urban Agglomeration"
+						})
+						.style({
+							type: "CHART|SYMBOL",
+							colorscheme: [
+								"#ccd8bb"],
+							fillopacity: "1",
+							shadow: "false",
+							units: "people",
+							normalsizevalue: "100000",
+							valuedecimals:"0",
+							title: "Urban population 1960"
+						})
+						.json()
+					)
+					.layer(
+						ixmaps.theme("generic")
+						.data({
+							name: "themeDataObj",
+							url: "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/UN/WUP2018-F12-Cities_Over_300K.csv",
+							type: "csv",
+							cache: "true"
+						})
+						.binding({
+							geo: "Latitude|Longitude", 
+							value: "1960|1965|1970|1975|1980|1985|1990|1995|2000|2005|2010|2015|2020|2025|2030|2035", 
+							title: "Urban Agglomeration"
+						})
+						.style({
+							type: "CHART|SYMBOL|SUM|CLIP|LOOP",
+							colorscheme: [
+								"rgb(26, 172, 189)"],
+							fillopacity: "1",
+							xaxis: "1960|1965|1970|1975|1980|1985|1990|1995|2000|2005|2010|2015|2020|2025|2030|2035", 
+							shadow: "false",
+							units: "people",
+							normalsizevalue: "100000",
+							clipframes: "16",
+							clipframerate: "8",
+							valuedecimals:"0",
+							name: "clip",
+							title: "Urban population 1960-2035"
+						})
+						.json()
+					)
+					.layer(
+						ixmaps.theme("generic")
+						.data({
+							name: "themeDataObj",
+							url: "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/UN/WUP2018-F12-Cities_Over_300K.csv",
+							type: "csv",
+							cache: "true"
+						})
+						.binding({
+							geo: "Latitude|Longitude", 
+							value: "1960", 
+							title: "Urban Agglomeration"
+						})
+						.style({
+							type: "CHART|SYMBOL",
+							colorscheme: [
+								"#ccd8bb"],
+							fillopacity: "1",
+							shadow: "false",
+							units: "people",
+							normalsizevalue: "100000",
+							valuedecimals:"0",
+							title: "Urban population 1960"
+						})
+						.json()
+					)
+			)
+		);
+		
+
+	</script>	
+  </body>
+</html>

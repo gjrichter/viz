@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<!-- **********************************************************************
+
+ixmaps map embed html
+
+$Comment: ixmaps map template; embedded version
+$Source : index_only_map_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:index_only_map_embed.html 1 2021-10-17 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:index_only_map_embed.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="ixmaps embed example">
+	<meta name="author" content="guenter richter">
+	<link rel="shortcut icon" href="https://gjrichter.github.io/ixmaps/ui/resources/images/ixmaps_logo.png">
+
+	<title>iXMaps really simple embed</title>
+
+</head>
+
+<body style='text-align:center'>
+
+	
+	<!--========================================================================= -->
+
+	<script type="text/javascript" src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
+
+	<!--========================================================================= -->
+
+	<script type="text/javascript" charset="utf-8">
+		
+		ixmaps.tmp = ixmaps.tmp || {};
+		
+		/**
+		 ** strings used by the map 	
+		 **/
+
+		attribution =
+			"<h3 style=\"margin-bottom:-2em\">powered by <a href=\"http://ixmaps.com\" target=\"_blank\">iXMaps</a></h3>";
+		ixmaps.tmp.title =
+			"Annual CO₂ emissions - 2010-2020";
+		ixmaps.tmp.legend =
+			"<h1 style='font-size:3em;'>"+ixmaps.tmp.title+"</h1>";
+		ixmaps.tmp.source = 
+			"https://raw.githubusercontent.com/gjrichter/viz/master/World%20Dataviz%20Prize%202023/data/OWID/energy/annual-co-emissions-by-region.csv";
+		ixmaps.tmp.column = 
+			"Annual CO₂ emissions (zero filled)";
+		ixmaps.tmp.color = 
+			"#666666";
+
+		/**
+		 ** get OWD data table and preprocess for the map 
+		 ** 1. read CSV data  
+		 ** 2. select year scope
+		 ** 3. make a pivot table width one row per country and columns = years
+		 ** 4. get an array with all the year columns in the pivot
+		 ** 5. set theme definition properties with the years array (theme data, clip frames, ...) 
+		 ** 6. deploy the data 
+		 **
+		 ** the query function will be included into the theme definitions below
+		 **/
+
+		query = function(theme, options) {
+			
+			var feed = Data.feed({
+				source: "https://raw.githubusercontent.com/gjrichter/viz/master/World%20Dataviz%20Prize%202023/data/OWID/energy/annual-co-emissions-by-region.csv",
+				type: "csv"
+			}).load(function(newData) {
+				
+				var table = newData;
+				
+				table = table.select("WHERE Year BETWEEN 2010 AND 2020");
+				
+				var pivot = table.pivot({
+					lead: "Code",
+					keep: "Entity",
+					columns: "Year",
+					value: "Annual CO₂ emissions (zero filled)"
+				});
+				
+				var years = pivot.columnNames();
+				years = years.slice(2);
+				years.pop();
+				
+				var xaxisA = [];
+				var i = 0;
+				for ( i in years ){
+					xaxisA.push((i%10)?" ":String(Number(years[0])+Number(i)));
+				}
+				if(i%10 > 5){
+					xaxisA.pop();
+					xaxisA.push(Number(years[0])+Number(i));
+				}
+				
+				if (theme.szId == "curves"){
+					theme.setProperties({
+						fields:		years.join("|"),
+						xaxis:		xaxisA.join("|"),
+						scale:      1.5/years.length
+					});
+				}else{
+					theme.setProperties({
+						fields:		years[years.length-1]
+					});
+				}
+
+				options.type = "jsonDB",
+				ixmaps.setExternalData(pivot, options);
+			});
+		};
+
+		/**
+		 ** create the interactive map an append it to the document 
+		 **/
+
+		document.activeElement.appendChild(
+
+			ixmaps.embed("mymap", {
+					mapService: "leaflet",
+					mapType: "white",
+					map: "../../maps/svg/maps/generic/winkel.svg",
+					mode: "pan",
+					width: "100%",
+					scrollsafesilent: true,
+					legend: true,
+					align: "center"
+				},
+				map => map
+				.view([13.239945499286312, 23.203125000000004], 2)
+				.options({
+					objectscaling: "dynamic",
+					normalSizeScale: "10000000000",
+					dynamicScalePow: "4",
+					panhidden: "false"
+				})
+				.require("../../ui/js/tools/tooltip_basic.js")		 
+				.attribution(attribution)
+				.legend(ixmaps.tmp.legend)
+						 
+				// the world map 
+
+				.layer(
+					ixmaps.layer("World_countries")
+					.data({
+						url: "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/topojson/CNTR_RG_10M_2020_4326.json",
+						type: "topojson"
+					})
+					.binding({
+						id: "ISO3_CODE"
+					})
+					.style({
+						colorscheme: ["#dddddd"],
+						fillopacity: "0.7",
+						linecolor: "#dddddd",
+						linewidth: "0.3",
+					})
+					.json()
+				)
+
+				// the choropleth theme 
+
+				.layer(
+					ixmaps.theme("World_countries")
+					.data({
+						name: "themeDataObj",
+						query: query.toString(),
+						cache: "true"
+					})
+					.binding({
+						geo: "Code", 
+						value: "2019", 
+						title: "Entity"
+					})
+					.style({
+						name: "choropleth",
+						type: "CHOROPLETH|QUANTILE|DOPACITYMAX",
+						colorscheme: [
+							"7",
+							"white",
+							ixmaps.tmp.color],
+						dopacitypow: "2",
+						dopacityscale: "3",
+						units: "kWh",
+						title: ixmaps.tmp.title
+					})
+					.json()
+				)
+
+				// the text theme (aggregated)
+
+				.layer(
+					ixmaps.theme("World_countries")
+					.data({
+						name: "themeDataObj_1",
+						query: query.toString(),
+						cache: "true"
+					})
+					.binding({
+						geo: "Code", 
+						value: "2019", 
+						title: "Entity"
+					})
+					.style({
+						name: "texts",
+						type: "CHART|LABEL|VALUES|TEXTONLY|SIZE|ZEROISVALUE|NEGATIVEISVALUE|AGGREGATE|RECT|MEAN",
+						colorscheme: [
+							ixmaps.tmp.color],
+						units: "t",
+						valuedecimals: "0",
+						scale: "0.5",
+						textcolor: "#224400",
+						minchartsize: "1",
+						aggregationscale: [
+							"1:1", "0",
+							"1:10000000", "500px"
+						],
+						title: ixmaps.tmp.title
+					})
+					.json()
+				)
+
+				// the curves theme (aggregated) 	
+
+				.layer(
+					ixmaps.layer("World_countries")
+					.data({
+						name: "themeDataObj_2",
+						query: query.toString(),
+						cache: "true"
+					})
+					.binding({
+						geo: "Code",
+						value: "",
+						title: "Entity"
+					})
+					.type("CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|LASTPOP|GRID|BOX|TITLE|ZEROISVALUE|UNDEFINEDISVALUE|AGGREGATE|RECT|MEAN|COMPACTLEGEND")
+					.style({
+						name: "curves",
+						colorscheme: [
+							ixmaps.tmp.color],
+						fillopacity: "0.002",
+						shadow: "false",
+						symbols: [
+							"none"],
+						units: "million tonnes",
+						align: "center|23right",
+						scale: "1",
+						maxvalue: "auto",
+						weights: "0.000001",
+						linewidth: "10",
+						boxopacity: "0.01",
+						boxmargin: "5",
+						boxupper: "1:10000000",
+						titleupper: "1:10000000",
+						textcolor: ixmaps.tmp.color,
+						textscale: "1",
+						valuedecimals: "2",
+						minaggregation: "auto",
+						aggregationscale: [
+							"1:1", "0",
+							"1:10000000", "500px"
+						],
+						title: ixmaps.tmp.title
+					})
+					.json()
+				)
+			)
+		);
+		
+		var sizeCharts = function(nFactor) {
+			ixmaps.changeThemeStyle(null,'curves','scale:' + nFactor, 'factor');
+			ixmaps.changeThemeStyle(null,'texts','scale:' + nFactor, 'factor');
+		}
+		var opacityCharts = function(nFactor) {
+			ixmaps.changeThemeStyle(null,'curves','fillopacity:' + nFactor, 'factor');
+		}
+
+	</script>
+
+	<div style="position:absolute;top:6em;right:2em">
+		<table style="background:white;">
+			<tr>
+				<td>
+					<button style="background:white;border-radius:0em;border:#dddddd solid 1px;padding:0.4em 0.8em" onclick="sizeCharts(0.90)">-</button>
+				</td>
+				<td>
+					<span style="font-size:0.8em"> &nbsp; chart size &nbsp;</span>
+				</td>
+				<td>
+					<button style="background:white;border-radius:0em;border:#dddddd solid 1px;padding:0.4em 0.8em" onclick="sizeCharts(1.1)">+</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button style="background:white;border-radius:0em;border:#dddddd solid 1px;padding:0.4em 0.8em" onclick="opacityCharts(0.75)">-</button>
+				</td>
+				<td>
+					<span style="font-size:0.8em"> &nbsp; opacity &nbsp;</span>
+				</td>
+				<td>
+					<button style="background:white;border-radius:0em;border:#dddddd solid 1px;padding:0.4em 0.8em" onclick="opacityCharts(1.5)">+</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+					<button style="background:white;border-radius:0em;border:#dddddd solid 1px;padding:0.4em 0.8em" onclick="ixmaps.changeThemeStyle(null,'curves','type:AGGREGATE','toggle');ixmaps.changeThemeStyle(null,'texts','type:AGGREGATE','toggle')">aggregated y / n </button>
+				</td>
+				<td>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+
+</html>
