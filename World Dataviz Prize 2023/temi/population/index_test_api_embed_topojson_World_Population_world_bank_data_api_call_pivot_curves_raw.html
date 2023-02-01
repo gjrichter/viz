@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<!-- **********************************************************************
+
+ixmaps map embed html
+
+$Comment: ixmaps map template; embedded version
+$Source : index_only_map_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:index_only_map_embed.html 1 2021-10-17 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:index_only_map_embed.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="ixmaps embed example">
+	<meta name="author" content="guenter richter">
+	<link rel="shortcut icon" href="https://gjrichter.github.io/ixmaps/ui/resources/images/ixmaps_logo.png">
+
+	<title>iXMaps really simple embed</title>
+
+</head>
+
+<body style='text-align:center'>
+
+	
+	<!--========================================================================= -->
+
+	<script type="text/javascript" src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
+
+	<!--========================================================================= -->
+
+	<script type="text/javascript" charset="utf-8">
+		
+		/**
+		 ** strings used by the map 	
+		 **/
+
+		attribution =
+			"<h3 style=\"margin-bottom:-2em\">powered by <a href=\"http://ixmaps.com\" target=\"_blank\">iXMaps</a></h3>";
+		legend =
+			"<h1 style='font-size:3em;'>Word Population 1960-2021 (World Bank Data API call - pivot - curves)</h1>";
+
+		/**
+		 ** query data from Word Bank API and preprocess for the map 
+		 ** 1. get the JSON from Worl Bank with all data of an indicator 
+		 ** 2. get the data part from the raw data = feed.data[1]
+		 ** 3. import this part of the JSON into a Data object
+		 ** 4. make a pivot table width one row pwe country and columns = years
+		 ** 5. get an array with all the year columns in the pivot
+		 ** 6. set theme definition properties with the years array (theme data, clip frames, ...) 
+		 ** 7. deploy the data 
+		 **
+		 ** the query function will be included into the theme definitions below
+		 **/
+
+		query = function(theme, options) {
+
+			var feed = Data.feed({
+				source: "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=25000",
+				type: "json",
+			}).load(function(newData) {
+				var table = Data.import({
+					source: feed.data[1],
+					type: "json"
+				});
+				var pivot = table.pivot({
+					lead: "countryiso3code",
+					keep: "country.value",
+					columns: "date",
+					value: "value"
+				});
+				
+				var years = pivot.columnNames();
+				years = years.slice(2);
+				years.pop();
+				
+				var xaxisA = [];
+				var i = 0;
+				for ( i in years ){
+					xaxisA.push((i%10)?" ":String(Number(years[0])+Number(i)));
+				}
+				if(i%10 > 5){
+					xaxisA.pop();
+					xaxisA.push(Number(years[0])+Number(i));
+				}
+				
+				theme.setProperties({
+					fields:		years.join("|"),
+					xaxis:		xaxisA.join("|")
+				});
+
+				options.type = "jsonDB",
+					ixmaps.setExternalData(pivot, options);
+			});
+		};
+
+		/**
+		 ** create the interactive map an append it to the document 
+		 **/
+
+		document.activeElement.appendChild(
+
+			ixmaps.embed("mymap", {
+					mapService: "leaflet",
+					mapType: "white",
+					map: "../../maps/svg/maps/generic/winkel.svg",
+					mode: "info",
+					width: "100%",
+					legend: true,
+					align: "center"
+				},
+				map => map
+				.view([13.239945499286312, 23.203125000000004], 2)
+				.options({
+					objectscaling: "dynamic",
+					normalSizeScale: "100000000",
+					dynamicScalePow: "1.8",
+					panhidden: "false"
+				})
+				.require("../../ui/js/tools/tooltip_basic.js")		 
+				.attribution(attribution)
+				.legend(legend)
+
+				// the world map 
+
+				.layer(
+					ixmaps.layer("World_countries")
+					.data({
+						url: "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/topojson/CNTR_RG_10M_2020_4326.json",
+						type: "topojson"
+					})
+					.binding({
+						id: "ISO3_CODE"
+					})
+					.type("FEATURES|SILENT") 
+					.style({
+						colorscheme: ["#dddddd"],
+						fillopacity: "0.7",
+						linecolor: ["white"],
+						linewidth: "0.1",
+					})
+					.json()
+				)
+
+				// the data visualization 	
+
+				.layer(
+					ixmaps.layer("World_countries")
+					.data({
+						name: "themeDataObj",
+						query: query.toString(),
+						cache: "true"
+					})
+					.binding({
+						geo: "countryiso3code",
+						value: "",
+						title: "country.value"
+					})
+					.type("CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|ZEROISVALUE|AGGREGATE|RECT|SUM|COMPACTLEGEND")
+					.style({
+						colorscheme: [
+							"rgb(26, 122, 169)"],
+						fillopacity: "0.05",
+						shadow: "false",
+						symbols: [
+							"circle"],
+						units: "",
+						align: "center|23right",
+						scale: "0.05",
+						linewidth: "50",
+						weights: "0.000001",
+						maxvalue: "100",
+						xaxis: "",
+						maxvalue: "auto",
+						boxopacity: "0.003",
+						boxmargin: "20",
+						titleupper: "1:10000000",
+						textscale: "0.5",
+						valuedecimals: "0",
+						title: "Word Population 1960-2021 (millions)",
+						name: "curves"
+					})
+					.json()
+				)
+			)
+		);
+		
+		
+		
+	</script>
+</body>
+
+</html>

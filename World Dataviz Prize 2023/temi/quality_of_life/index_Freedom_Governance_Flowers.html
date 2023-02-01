@@ -41,7 +41,7 @@ $Log:index_only_map_embed.html,v $
 		
 		attribution = 
 			"<h3 style=\"margin-bottom:-2em\">powered by <a href=\"http://ixmaps.com\" target=\"_blank\">iXMaps</a></h3>";
-		legend = "<h1 style='font-size:3em;font-weight:50;'>Freedom Scores and Happy Planet Index</h1><h3 style='margin-top:-1.4em;font-size:1.5em;'><i class='icon icon-radio-checked2' style='color:#A4B9D0'/><i class='icon icon-radio-checked2' style='color:#CFE4F3'/><i class='icon icon-radio-checked2' style='color:#F8C695'/><i class='icon icon-radio-checked2' style='color:#FFDEBE'/> freedom scores 2018 <a href='https://freedomhouse.org' target='_blank'>https://freedomhouse.org</a> <i class='icon icon-radio-checked2' style='color:#ffdd22'/>  Happy Planet Index 2019 <a href='https://happyplanetindex.org/' target='_blank'>https://happyplanetindex.org/</a><h3>";
+		legend = "<h1 style='font-size:3em;'>Freedom and governance</h1><h3 style='margin-top:-1.4em;font-size:1.5em;'><i class='icon icon-radio-checked2' style='color:#B4dd00'/> freedom scores 2018 <a href='https://freedomhouse.org' target='_blank'>https://freedomhouse.org</a> <i class='icon icon-radio-checked2' style='color:#ffdd22'/>  Worldwide Governance Indicators 2021 <a href='https://databank.worldbank.org/source/worldwide-governance-indicators' target='_blank'>https://databank.worldbank.org</a><h3>";
 		
 		document.activeElement.appendChild(
 			
@@ -75,7 +75,7 @@ $Log:index_only_map_embed.html,v $
 						})
 						.binding({id:"ISO3_CODE"})
 						.style({
-							colorscheme: ["#eeeeee"],
+							colorscheme: ["#dddddd"],
 							fillopacity: "0.7",
 							linecolor: ["#888888"],
 							linewidth: "0.3",
@@ -93,24 +93,25 @@ $Log:index_only_map_embed.html,v $
 						},
 						"binding": {
 							geo: "ISO Country code", 
-							value: "political rights score 2022|civil liberties score 2022|government integrity score 2022|financial freedom score 2022", 
+							value: "political rights score 2022|civil liberties score 2022|judicial effectiveness score 2022|government integrity score 2022|overall economic freedom score 2022|financial freedom score 2022", 
 							title: "Country"
 						},
 						"style": {
-							"type": "CHART|PIE|XLRAYS|STARBURST|POLAR|SIZE|BOX|TITLE|NOLEGEND|AGGREGATE|RECT|MEAN",
+							"type": "CHART|PIE|XLRAYS|STARBURST|POLAR|SIZE|BOX|TITLE|NOLEGEND",
 							"colorscheme": [
-								"10",
-								"tableau"],
-							"fillopacity": "0.5",
+								"#B4dd00"],
+							"fillopacity": "0.4",
 							"shadow": "false",
 							"label": [
 								"political rights score 2018",
 								"civil liberties score 2018",
+								"judicial effectiveness score 2018",
 								"government integrity score 2018",
+								"overall economic freedom score 2017",
 								"financial freedom score 2018"],
 							"units": "",
 							"refreshtimeout": "0",
-							"normalsizevalue": "100",
+							"normalsizevalue": "300",
 							"scale": "1",
 							"xxsizefield": "mean_overall",
 							"maxvalue": "100",
@@ -124,39 +125,50 @@ $Log:index_only_map_embed.html,v $
 							"boxopacity": "0",
 							"bordercolor": "none",
 							"evidence": "isolate_gray",
-							"gridwidth": "50px",
 							"title": "Freedom scores 2018"
 							}
 					})
 
 					.layer({
-						layer: "World_countries",
-						data: {
+						"layer": "World_countries",
+						"data": {
 							name: "themeDataObj",
 							url: "https://raw.githubusercontent.com/gjrichter/viz/master/World%20Dataviz%20Prize%202023/data/Dashboard_of_the_present_future.csv",
 							type: "csv",
 							cache: "true"
 						},
-						binding: {
+						"binding": {
 							geo: "ISO Country code", 
-							value: "happy planet index 2019", 
+							value: "political stability & absence of violence 2021|government effectiveness 2021|regulatory quality 2021|rule of law 2021|control of corruption 2021", 
 							title: "Country"
 						},
-						style: {
-							type: "CHART|SYMBOL|LINEAR|AGGREGATE|RECT|MEAN|VALUES",
-							colorscheme: [
-								"#FFDF2D"],
-							fillopacity: "1",
-							shadow: "true",
-							units: "",
-							textcolor:"#000000",
-							linecolor:"#444444",
-							linewidth:"1",
-							scale: "1.2",
-							valuedecimals:"0",
-							showdata: "true",
-							gridwidth: "50px",
-							title: "World population 2018"
+						"style": {
+							"type": "CHART|PIE|XLRAYS|STARBURST|SIZE|NOLEGEND",
+							"colorscheme": [
+								"#ffdd22"],
+							"fillopacity": "0.6",
+							"shadow": "false",
+							"label": [
+								"political stability & absence of violence 2021",
+								"government effectiveness 2021",
+								"regulatory quality 2021",
+								"rule of law 2021",
+								"control of corruption 2021"],
+							"units": "",
+							"refreshtimeout": "0",
+							"normalsizevalue": "10",
+							"scale": "1",
+							"maxvalue": "2",
+							"linecolor": [
+								"#882200"],
+							"linewidth": "1",
+							"titlefield": "country",
+							"valuescale": "1",
+							"valuedecimals": "2",
+							"fadenegative": "1",
+							"centerpart": "max",
+							"evidence": "isolate_gray",
+							"title": "Worldwide Governance Indicators 2021"
 							}
 					})
 			)

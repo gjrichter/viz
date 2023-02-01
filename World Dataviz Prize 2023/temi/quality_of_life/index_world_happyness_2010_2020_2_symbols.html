@@ -40,25 +40,34 @@ $Log:index_only_map_embed.html,v $
 
 	<script type="text/javascript" charset="utf-8"> 
 
-		query = function(data,options){
+		query = function(theme, options) {
 			
-			$.ajax({
-				url: "https://data.cdc.gov/resource/8xkx-amqh.json",
-				type: "GET",
-				data: {
-				  "$limit" : 5000,
-				}
-			}).success(function(data) {
-				options.type = "json";
-				ixmaps.setExternalData(data,options);
+			var feed = Data.feed({
+				source: "https://raw.githubusercontent.com/gjrichter/viz/master/World%20Dataviz%20Prize%202023/data//happy-planet-index-2006-2020-public-data-set-all.csv",
+				type: "csv"
+			}).load(function(newData) {
+				
+				var table = newData;
+				
+				table = table.select("WHERE Year BETWEEN 2010 AND 2020");
+				
+				var pivot = table.pivot({
+					lead: "ISO",
+					keep: "Country",
+					columns: "Year",
+					value: "HPI"
+				});
+				
+				options.type = "jsonDB",
+					ixmaps.setExternalData(pivot, options);
 			});
 		};
 		
 		legend = 
-			"<h1><b style='color:rgb(86, 142, 89)'> % of popolation vaccinated</b><br><b style='color:rgb(150, 150, 150)'>fatality ratio at 01.01.2021</b> and for the last 56 days</h1>";
+			"<h1 style='font-size:3em;font-weight:50'>Happy Planet Index - 2010-2019</h1>";
 		
 		attribution = 
-			"<h3 style='margin-bottom:-1em'>data: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by <a href=\"https://github.com/CSSEGISandData/COVID-19\" target=\"_blank\">Johns Hopkins CSSE</a><br>data: Data Repository by <a href=\"covid-19-data/public/data/vaccinations/\" target=\"_blank\">Our World in Data</a><br>citation: Mathieu, E., Ritchie, H., Ortiz-Ospina, E. et al. A global database of COVID-19 vaccinations. Nat Hum Behav (2021). <a href=\"https://doi.org/10.1038/s41562-021-01122-8\" target=\"_blank\">https://doi.org/10.1038/s41562-021-01122-8</a></h3>";
+			"<h3 style=\"margin-bottom:-2em\">powered by <a href=\"http://ixmaps.com\" target=\"_blank\">iXMaps</a></h3>";
 		
 		document.activeElement.appendChild(
 			
@@ -87,55 +96,59 @@ $Log:index_only_map_embed.html,v $
 					.localize("...","")	 
 					.localize("loading data ...", " &#x2B73; data")	 
 						 
-					// load geometries
-					.layer(
-						ixmaps.layer("World_countries")
-						.data({
-							url: "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/topojson/CNTR_RG_10M_2020_4326.json",
-							type: "topojson"
-						})
-						.binding({id:"ISO3_CODE"})
-						.style({
-							type: "FEATURES|NOLEGEND|LOCKED",
-							colorscheme: ["#eeeeee"],
-							fillopacity: "0.7",
-							linecolor: ["white"],
-							linewidth: "0.5",
-							title: "World Countries"
-						})
-						.json()
-					)
+				// ------------------		 
+				// the world map 
+				// ------------------		 
 
-					// vaccines - choropleth, countries
+				.layer(
+					ixmaps.layer("World_countries")
+					.data({
+						url: "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/topojson/CNTR_RG_10M_2020_4326.json",
+						type: "topojson"
+					})
+					.binding({
+						id: "ISO3_CODE"
+					})
+					.style({
+						colorscheme: ["#eeeeee"],
+						fillopacity: "0.7",
+						linecolor: ["#888888"],
+						linewidth: "0.1",
+					})
+					.json()
+				)
+
+				// ----------------------		 
+				// 1. theme - choropleth 
+				// ----------------------	
 						 
 					.layer(
 						ixmaps.theme("World_countries")
 						.data({
-							name: "themeDataObj",
+							name: "themeDataObj_c",
 							url: "https://raw.githubusercontent.com/gjrichter/viz/master/World%20Dataviz%20Prize%202023/data/Dashboard_of_the_present_future.csv",
 							type: "csv",
 							cache: "true"
 						})
 						.binding({
 							geo: "ISO Country code", 
-							value: "GINI index", 
+							value: "happy planet index 2019", 
 							title: "Country"
 						})
 						.style({
-							"type": "CHOROPLETH|DOPACITYMAX",
-							"colorscheme": [
-								"15",
-								"red"],
-							"fillopacity": "0.2",
-							"shadow": "false",
-							"dopacitypow": "1",
-							"dopacityscale": "2",
-							"textcolor": "black",
-							"valuescale": "1",
-							"valuedecimals": "1",
-							"title": "COVID-19",
-							"snippet": "Percent of population fully vaccinated"
-						}) 
+							name: "choropleth",
+							type: "CHOROPLETH|QUANTILE|SUM|DOPACITYMAX",
+							colorscheme: [
+								"7",
+								"#FFDF2D",
+								"#FFDF2D",
+								"dynamic",
+								"cold"],
+							dopacitypow: "0.3",
+							dopacityscale: "1",
+							units: "",
+							title: "health expenditure % of GDP"
+						})
 						.json()
 					)
 						 
@@ -145,38 +158,39 @@ $Log:index_only_map_embed.html,v $
 						ixmaps.theme("World_countries")
 						.data({
 							name: "themeDataObj",
-							url: "https://raw.githubusercontent.com/gjrichter/viz/master/World%20Dataviz%20Prize%202023/data/Dashboard_of_the_present_future.csv",
-							type: "csv",
+							query: query.toString(),
+							type: "ext",
 							cache: "true"
 						})
 						.binding({
-							geo: "ISO Country code", 
-							value: "happy planet index 2016|happy planet index 2019", 
+							geo: "ISO", 
+							value: "2010|2019", 
 							title: "Country"
 						})
-						.type("CHART|SYMBOL|SEQUENCE|PLOT|LINES|SIZE|"+
+						.type("CHART|SYMBOL|SEQUENCE|PLOT|LINES|SIZE|LINEAR|"+
 							  "AGGREGATE|RECT|RELOCATE|MEAN|NOCLIP|"+
 							  "VALUES|VALUEBACKGROUND|INLINETEXT|DTEXT")
 						.style({
 							"colorscheme": [
-								"rgba(210, 230, 190)",
-								"#99CD7A"],
+								"rgba(255,255,255,0.7)",
+								"#FFDF2D"],
 							"fillopacity": "1",
-							"shadow": "false",
+							"shadow": "true",
 							"symbols": [
 								"circle"],
 							"label": [
-								"2020 ratio",
-								"2021 ratio"],
+								"2010",
+								"2019"],
 							"units": "",
-							"normalsizevalue": "200",
-							"scale": "1",
+							"normalsizevalue": "80",
+							"showdata": "true",
+							"scale": "0.8",
 							"minvalue": "0",
 							"linewidth": "1.5",
+							"linecolor":"#000000",
 							"valueupper": "1:100000000",
 							"valuescale": "1",
 							"valuedecimals": "0",
-							"textcolor": "white",
 							"valuescale": "1.3",
 							"fadenegative": "0.1",
 							"gridwidth": "50px"})
