@@ -74,8 +74,8 @@
 				"refreshtimeout": "0",
 				"scale": "1",
 				"linecolor": [
-					"#aaaaaa"],
-				"linewidth": "0.1",
+					"white"],
+				"linewidth": "1",
 				"valuescale": "1",
 				"title": "Province 2019"
 				}
@@ -210,9 +210,9 @@
 			"field": "",
 			"field100": "",
 			"style": {
-				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|FIXSIZE|COMPATIBLE|SUM|NOLEGEND",
+				"type": "CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|GRID|BOX|FIXSIZE|COMPATIBLE|SUM|NOLEGEND",
 				"colorscheme": [
-					"green",
+					"#E0C7CD",
 					"#E0C7CD",
 					"#E396AB",
 					"#CC0033"],
@@ -246,7 +246,6 @@
 				"scale": "0.06",
 				"rangescale": "0.95",
 				"minvalue": "0",
-				"maxvalue": "2000",
 				"textcolor": "#dd0000",
 				"linewidth": "20",
 				"bordercolor": "none",
