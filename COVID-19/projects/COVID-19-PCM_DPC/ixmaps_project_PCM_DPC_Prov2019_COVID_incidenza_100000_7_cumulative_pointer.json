@@ -61,7 +61,7 @@
 			"style": {
 				"type": "FEATURES|NOLEGEND",
 				"colorscheme": [
-					"#f8f8f8"],
+					"#dddddd"],
 				"fillopacity": "0.1",
 				"shadow": "false",
 				"dbtable": "Province_2019",
@@ -74,8 +74,8 @@
 				"refreshtimeout": "0",
 				"scale": "1",
 				"linecolor": [
-					"#dddddd"],
-				"linewidth": "0.5",
+					"#aaaaaa"],
+				"linewidth": "0.1",
 				"valuescale": "1",
 				"title": "Province 2019"
 				}
@@ -86,7 +86,7 @@
 			"style": {
 				"type": "CHOROPLETH|QUANTILE|SIMPLELEGEND|DOPACITYMAX",
 				"colorscheme": [
-					"green",
+					"#dddddd",
 					"#F1D8DE",
 					"#F4A7BC",
 					"#DD0044",
@@ -117,8 +117,8 @@
 				"units": "",
 				"refreshtimeout": "0",
 				"scale": "1",
-				"dopacitypow": "1",
-				"dopacityscale": "1",
+				"dopacitypow": "2",
+				"dopacityscale": "3",
 				"titlefield": "denominazione_provincia",
 				"valueupper": "1:1000000",
 				"valuescale": "1",
@@ -156,7 +156,7 @@
 				"dopacityscale": "3",
 				"titlefield": "denominazione_provincia",
 				"linecolor":"#DD0044",
-				"linewidth":"4",
+				"linewidth":"2",
 				"valuescale": "1",
 				"valuedecimals": "1",
 				"title": "2021-04-14T17:00:00",
