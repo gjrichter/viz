@@ -61,7 +61,7 @@
 			"style": {
 				"type": "FEATURES|NOLEGEND",
 				"colorscheme": [
-					"#dddddd"],
+					"#f8f8f8"],
 				"fillopacity": "0.1",
 				"shadow": "false",
 				"dbtable": "Province_2019",
