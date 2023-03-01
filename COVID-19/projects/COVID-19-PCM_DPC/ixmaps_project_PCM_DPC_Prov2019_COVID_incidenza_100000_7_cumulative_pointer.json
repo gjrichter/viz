@@ -75,7 +75,7 @@
 				"scale": "1",
 				"linecolor": [
 					"white"],
-				"linewidth": "1",
+				"linewidth": "0.5",
 				"valuescale": "1",
 				"title": "Province 2019"
 				}
