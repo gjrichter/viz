@@ -232,7 +232,7 @@ window.ixmaps = window.ixmaps || {};
 
 		if (ixmaps.getZoom() < 14 ){
 			ixmaps.htmlgui_onRemoveTheme("features");
-			ixmaps.setTitleBox("<span style='background-color:yellow'>please zoom in or <a style='pointer-events:all' href='javascript:ixmaps.refreshTheme(null,\"features\")'>refresh</a></span>");
+			ixmaps.setTitleBox("<span style='background-color:yellow'>please zoom in or <a style='pointer-events:all' href='javascript:ixmaps.refreshTheme(\"features\")'>refresh</a></span>");
 			ixmaps.htmlgui_onZoomAndPan_old(nZoom);
 			return;
 		}
@@ -262,7 +262,7 @@ window.ixmaps = window.ixmaps || {};
 			clearTimeout(ixmaps.refreshTimeout);
 			ixmaps.refreshTimeout = null;
 		}
-		ixmaps.refreshTimeout = setTimeout('ixmaps.refreshTheme(null,"features")',250);
+		ixmaps.refreshTimeout = setTimeout('ixmaps.refreshTheme("features")',250);
 		
 		ixmaps.oldBounds = bounds;
 		ixmaps.htmlgui_onZoomAndPan_old(nZoom);
