@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+
+<!-- **********************************************************************
+
+ixmaps map embed html
+
+$Comment: ixmaps map template; embedded version
+$Source : index_only_map_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:index_only_map_embed.html 1 2021-10-17 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:index_only_map_embed.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="ixmaps embed example">
+	<meta name="author" content="guenter richter">
+	<link rel="shortcut icon" href="https://gjrichter.github.io/ixmaps/ui/resources/images/ixmaps_logo.png">
+
+	<title>iXMaps really simple embed</title>
+
+</head>
+
+<body style='text-align:center'>
+
+	<div id="map" style="max-width:1024px;margin:auto"></div>
+
+	<!--========================================================================= -->
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
+	<script type="text/javascript" src="https://gjrichter.github.io/data.min.js/data.js"></script>
+
+	<!--========================================================================= -->
+	
+  	<link href="./worldbankexplorer.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="./worldbankexplorer.js"></script>
+
+	<script type="text/javascript" charset="utf-8">
+		ixmaps.tmp = ixmaps.tmp || {};
+
+		/**
+		 ** strings used by the map 	
+		 **/
+
+		ixmaps.tmp.attribution =
+			"<h3 style=\"margin-bottom:-2em\">powered by <a href=\"http://ixmaps.com\" target=\"_blank\">iXMaps</a></h3>";
+		ixmaps.tmp.title =
+			"test";
+		ixmaps.tmp.indicator =
+			"SP.POP.TOTL";
+
+		/**
+		 ** query data from Word Bank API and preprocess for the map 
+		 ** 1. get the JSON from Worl Bank with all data of an indicator 
+		 ** 2. get the data part from the raw data = feed.data[1]
+		 ** 3. import this part of the JSON into a Data object
+		 ** 4. make a pivot table width one row pwe country and columns = years
+		 ** 5. get an array with all the year columns in the pivot
+		 ** 6. set theme definition properties with the years array (theme data, clip frames, ...) 
+		 ** 7. deploy the data 
+		 **
+		 ** the query function will be included into the theme definitions below
+		 **/
+
+		/**
+		 ** indicator SH.XPD.CHEX.GD.ZS health expenditure % of GDP
+		 **/
+
+		query = function(theme, options) {
+			var feed = Data.feed({
+				source: "https://api.worldbank.org/v2/country/all/indicator/" + theme.szSnippet + "?format=json&per_page=25000",
+				type: "json",
+			}).load(function(newData) {
+
+				var table = Data.import({
+					source: feed.data[1],
+					type: "json"
+				});
+
+				/** table = table.select("WHERE date BETWEEN 2010 AND 2020"); **/
+
+				var pivot = table.pivot({
+					lead: "countryiso3code",
+					keep: "country.value",
+					columns: "date",
+					value: "value"
+				});
+
+				var years = pivot.columnNames();
+				years = years.slice(2);
+				years.pop();
+
+				var xaxisA = [];
+				var i = 0;
+				for (i in years) {
+					xaxisA.push((i % 10) ? " " : String(Number(years[0]) + Number(i)));
+				}
+				if (i % 10 > 5) {
+					xaxisA.pop();
+					xaxisA.push(Number(years[0]) + Number(i));
+				}
+
+				if (theme.szId == "curves") {
+					theme.setProperties({
+						fields: years.join("|"),
+						xaxis: xaxisA.join("|"),
+						scale: 2 / years.length,
+						linewidth: 1 * years.length
+					});
+				} else {
+					theme.setProperties({
+						fields: years[years.length - 1]
+					});
+				}
+
+				options.type = "jsonDB",
+					ixmaps.setExternalData(pivot, options);
+			});
+		};
+
+		/**
+		 ** create the interactive map an append it to the document 
+		 **/
+
+		start_map = function(element) {
+			
+			if(element[0].hasChildNodes()){
+				element.html("");
+			}
+
+			element[0].appendChild(
+
+				ixmaps.embed("mymap", {
+						mapService: "leaflet",
+						mapType: "white",
+						map: "../../maps/svg/maps/generic/winkel.svg",
+						mode: "pan",
+						width: "100%",
+						height: "640px",
+						legend: true,
+						align: "center"
+					},
+					map => map
+					.view([13.239945499286312, 23.203125000000004], 2)
+					.options({
+						objectscaling: "dynamic",
+						normalSizeScale: "100000000",
+						dynamicScalePow: "3",
+						panhidden: "false"
+					})
+					.require("../../ui/js/tools/tooltip_basic.js")
+					.attribution(ixmaps.tmp.attribution)
+					.legend("<h1 style='font-size:3em;'>" + ixmaps.tmp.title + "</h1>")
+					// the world map 
+
+					.layer(
+						ixmaps.layer("World_countries")
+						.data({
+							url: "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/topojson/CNTR_RG_10M_2020_4326.json",
+							type: "topojson"
+						})
+						.binding({
+							id: "ISO3_CODE"
+						})
+						.style({
+							colorscheme: ["none"],
+							fillopacity: "0.7",
+							linecolor: ["#eeeeee"],
+							linewidth: "1",
+						})
+						.json()
+					)
+
+					.layer(
+						ixmaps.theme("World_countries")
+						.data({
+							name: "themeDataObj",
+							query: query.toString(),
+							cache: "true"
+						})
+						.binding({
+							geo: "countryiso3code",
+							value: "2019",
+							title: "country.value"
+						})
+						.style({
+							type: "CHOROPLETH|ZEROISVALUE|NEGATIVEISVALUE|DOPACITYMAX",
+							colorscheme: [
+								"#669900"
+							],
+							dopacitypow: "3",
+							dopacityscale: "0.8",
+							units: "%",
+							title: ixmaps.tmp.title,
+							snippet: ixmaps.tmp.indicator
+						})
+						.json()
+					)
+
+					// the data visualization 	
+					.layer(
+						ixmaps.layer("World_countries")
+						.data({
+							name: "themeDataObj_2",
+							query: query.toString(),
+							cache: "true"
+						})
+						.binding({
+							geo: "countryiso3code",
+							value: "",
+							title: "country.value"
+						})
+						.filter("WHERE country.value != \"San Marino\"")
+						.type("CHART|SYMBOL|SEQUENCE|PLOT|LINES|AREA|LASTPOP|GRID|BOX|BOTTOMTITLE|ZEROISVALUE|UNDEFINEDISVALUE|AGGREGATE|RECT|RELOCATE|MAX|COMPACTLEGEND|NOCLIP")
+						.style({
+							colorscheme: [
+								"#669900"
+							],
+							fillopacity: "0.2",
+							shadow: "false",
+							symbols: [
+								"none"
+							],
+							units: "",
+							align: "center|23right",
+							scale: "0.15",
+							linewidth: "10",
+							bordercolor: "none",
+							boxopacity: "0.003",
+							boxmargin: "20",
+							boxupper: "1:10000000",
+							titleupper: "1:10000000",
+							textcolor: "#669900",
+							textscale: "1.2",
+							maxvalue: "auto",
+							valuedecimals: "2",
+							minaggregation: "auto",
+							aggregationscale: [
+								"1:1", "0",
+								"1:50000000", "10000000"
+							],
+							title: ixmaps.tmp.title,
+							snippet: ixmaps.tmp.indicator,
+							name: "curves"
+						})
+						.json()
+					)
+
+					.layer(
+						ixmaps.theme("World_countries")
+						.data({
+							name: "themeDataObj_3",
+							query: query.toString(),
+							cache: "true"
+						})
+						.binding({
+							geo: "countryiso3code",
+							value: "2019",
+							title: "country.value"
+						})
+						.filter("WHERE country.value != \"San Marino\"")
+						.style({
+							type: "CHART|LABEL|VALUES|TEXTONLY|SIZEP4|ZEROISVALUE|NEGATIVEISVALUE|AGGREGATE|RECT|MAX",
+							colorscheme: [
+								"#669900"
+							],
+							units: "",
+							valuedecimals: "1",
+							textcolor: "#224400",
+							align: "below|left",
+							aggregationscale: [
+								"1:1", "0",
+								"1:50000000", "10000000"
+							],
+							title: ixmaps.tmp.title,
+							snippet: ixmaps.tmp.indicator,
+							name: "texts"
+						})
+						.json()
+					)
+				)
+			);
+		};
+
+		var sizeCharts = function(nFactor) {
+			var szMap = null;
+			for (i in ixmaps.embeddedApiA){
+				szMap = i;
+			}
+			ixmaps.changeThemeStyle(szMap, 'texts', 'scale:' + nFactor, 'factor');
+			ixmaps.changeThemeStyle(szMap, 'curves', 'scale:' + nFactor, 'factor');
+		}
+
+		ixmaps.setIndicatorToMap = function(szIndicator){
+			ixmaps.tmp.indicator = szIndicator;
+			var feed1 = Data.feed({
+				source: "https://api.worldbank.org/v2/indicator/" + ixmaps.tmp.indicator + "?format=json",
+				type: "json",
+			}).load(function(newData) {
+				ixmaps.tmp.title = feed1.data[1][0].name;
+				$("#note").html(feed1.data[1][0].sourceNote);
+				start_map($("#map"));
+			});
+		}
+
+		var code = window.location.search;
+		if (code && code.length > 1) {
+			ixmaps.tmp.indicator = code.split("?")[1];
+		};
+		
+		ixmaps.getTopics(1);
+		ixmaps.getIndicatorsOfTopic(1);
+		
+		ixmaps.setIndicatorToMap(ixmaps.tmp.indicator);
+
+	</script>
+
+	<div style="position:absolute;top:6em;right:2em">
+		<button style="border-radius:1em;border-color:#dddddd;padding:0.2em 0.6em" onclick="sizeCharts(0.90)">-</button>
+		<span style="font-size:0.8em"> &nbsp; size charts &nbsp;</span>
+		<button style="border-radius:1em;border-color:#dddddd;padding:0.2em 0.5em" onclick="sizeCharts(1.1)">+</button>
+	</div>
+
+	<div id="note" style="max-width:1024px;margin:auto;margin-top:1em;font-size:1.1em;text-align:left"></div>
+
+	<div id="topics" style="position:absolute;top:1.5em;left:0em;margin:0;padding:0;">
+		<div id="selectTopic" style="position:relative;width:250px;">
+			<select id="selectTopic-select" onchange="javascript:ixmaps.selectTopic();" style="width:100%;font-weight:bold">
+			</select>
+		</div>
+		<div id="indicator-selector" class="scrollbar-light" style="position:relative;top:-1px;width:225px;height:580px;overflow:auto;border:solid #dddddd 1px;">
+		</div>
+		<div id="data-result" style="position:absolute;top:0px;left:400px;">
+		</div>
+	</div>
+
+
+</body>
+
+</html>

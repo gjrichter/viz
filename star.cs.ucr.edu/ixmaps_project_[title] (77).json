@@ -1,0 +1,88 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sun May 29 2022 18:51:10 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "<h1><a style='color:black;background-color:rgba(255,255,255,0.7);padding:0.2em 0.5em;border-radius:0.5em;' href='javascript:ixmaps.refreshTheme(null,\"features\")' > refresh </a></h1>",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "177165354"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"mapopacity": "1",
+			"flushChartDraw": "100000",
+			"basemapopacity": "1",
+			"panHidden": "true"
+			},
+		"center": {
+			"lat": "48.86646088273749",
+			"lng": "2.356373868575745"
+			},
+		"zoom": "16"
+		},
+	"themes": [{
+			"layer": "generic",
+			"field": "uname",
+			"field100": "",
+			"style": {
+				"type": "CHART|DOT|CATEGORICAL",
+				"colorscheme": [
+					"222",
+					"tableau20"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"filter": "WHERE \"tagsMap.natural\" = \"tree\"",
+				"dbtable": "DBTABLE79189282",
+				"dbtableType": "ext",
+				"dbtableQuery": "function(data,options){ var bounds = ixmaps.oldBounds = ixmaps.getBoundingBox(); var szBounds = bounds[0].lng+','+bounds[0].lat+','+bounds[1].lng+','+bounds[1].lat; var szUrl = \"https://star.cs.ucr.edu/datasets/osm21/pois/download.geojson?mbr=\"+szBounds; var myfeed = Data.feed({\"source\":szUrl,\"type\":\"geojson\"}).load(function(mydata){ console.log(mydata); if ( mydata ){ ixmaps.setExternalData(mydata,{type:\"jsonDB\",name:options.name}); } })}",
+				"datacache": "true",
+				"itemfield": "$item$",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"linewidth": "0.5",
+				"valuescale": "1",
+				"name": "features",
+				"title": "[title]"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

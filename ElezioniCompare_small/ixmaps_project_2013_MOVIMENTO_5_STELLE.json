@@ -1,0 +1,132 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Tue Aug 16 2022 17:13:12 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2013/italia_comuni_2013_g_nome.svgz",
+		"attribution": "fonte dati: <a href='https://elezioni.interno.gov.it/report' target='_blank'>Eligendo - Ministero dell'Interno</a>",
+		"basemap": "white",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"lineScaling": "0.5",
+			"normalSizeScale": "5000000"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "false",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushPaintShape": "500000",
+			"labelscaling": "dynamic",
+			"mapopacity": "1",
+			"flushChartDraw": "1000",
+			"basemapopacity": "1",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "41.89818843043047",
+			"lng": "12.661743164062502"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "Com2013_nome",
+			"field": "MoVimento 5 Stelle - beppegrillo.it",
+			"field100": "Totale",
+			"style": {
+				"type": "CHOROPLETHE|EQUIDISTANT|VALUES|DTEXT|AGGREGATE",
+				"colorscheme": [
+					"7",
+					"#fffff8",
+					"RGB(238,217,36)",
+					"dynamic",
+					"cold"],
+				"opacity": "0.9",
+				"fillopacity": "0.9",
+				"shadow": "false",
+				"dbtable": "scrutiniCIComuni_voti",
+				"dbtableType": "jsondb",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ElezioniPolitiche2013/risultati_comuni_camera_2013.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/ElezioniCompare_small/process_comuni_2013.js",
+				"datacache": "true",
+				"lookupfield": "Comune",
+				"units": "%",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"maxvalue": "100",
+				"textcolor": "#eeeeee",
+				"titlefield": "Comune",
+				"nodatacolor": "red",
+				"valueupper": "1:250000",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"aggregationfield": "Comune",
+				"title": "MOVIMENTO 5 STELLE",
+				"snippet": "Elezioni Politiche 2013 - Camera"
+				}
+			},{
+			"layer": "Com2013_nome",
+			"field": "MoVimento 5 Stelle - beppegrillo.it",
+			"field100": "Totale",
+			"style": {
+				"type": "CHART|SYMBOL|CENTER|SIZE|TEXTONLY|DTEXT|ZEROISVALUE|NEGATIVEISVALUE|AGGREGATE|RELOCATE",
+				"colorscheme": [
+					"7",
+					"#fffff8",
+					"RGB(238,217,36)",
+					"dynamic",
+					"cold"],
+				"fillopacity": "1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "scrutiniCIComuni_voti",
+				"dbtableType": "jsondb",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ElezioniPolitiche2013/risultati_comuni_camera_2013.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/ElezioniCompare_small/process_comuni_2013.js",
+				"datacache": "true",
+				"lookupfield": "Comune",
+				"symbols": [
+					"label"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"maxvalue": "100",
+				"textcolor": "#dddddd",
+				"nodatacolor": "red",
+				"valueupper": "1:250000",
+				"valuescale": "1",
+				"gridwidthpx": "20",
+				"title": "MOVIMENTO 5 STELLE",
+				"snippet": "Elezioni Politiche 2013 - Camera"
+				}
+			}],
+	"layerMask": {
+		}
+	}

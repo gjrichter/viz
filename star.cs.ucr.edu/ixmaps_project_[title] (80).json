@@ -1,0 +1,89 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Fri Jun 03 2022 11:36:20 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "1000"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "5000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "48.8603598795578",
+			"lng": "2.3959422111511235"
+			},
+		"zoom": "16"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "genus",
+			"field100": "",
+			"style": {
+				"type": "CHART|BUBBLE|GLOW|CATEGORICAL|SIZEP1|COUNT",
+				"colorscheme": [
+					"192",
+					"harvest"],
+				"fillopacity": "0.5",
+				"shadow": "false",
+				"filter": "WHERE \"tagsMap\" like \"natural\" AND \"tagsMap\" like \"tree\"",
+				"dbtable": "DBTABLE28464434",
+				"dbtableType": "ext",
+				"dbtableQuery": "function(data, options) { var bounds = ixmaps.oldBounds = ixmaps.getBoundingBox(); var szBounds = bounds[0].lng + ',' + bounds[0].lat + ',' + bounds[1].lng + ',' + bounds[1].lat; var szUrl = \"https://star.cs.ucr.edu/datasets/osm21/pois/download.geojson?mbr=\"+szBounds; var myfeed = Data.feed({\"source\":szUrl,\"type\":\"geojson\"}).load(function(mydata){ console.log(mydata); if ( mydata ){ mydata.addColumn({destination:\"genus\",source:\"tagsMap\"},function(value){ var json = JSON.parse(value); return json[\"taxon:species\"]||\"\"; }); mydata.addColumn({destination:\"circumference\",source:\"tagsMap\"},function(value){ var json = JSON.parse(value); return json[\"circumference\"]||\"\"; }); ixmaps.setExternalData(mydata,{type:\"jsonDB\",name:options.name}); ixmaps.setTitle(\"\"); } }) }",
+				"datacache": "false",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0.60037250625",
+				"sizefield": "circumference",
+				"timefield": "timestamp",
+				"linewidth": "0.5",
+				"valuescale": "1",
+				"name": "features",
+				"title": "[title]"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

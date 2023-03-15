@@ -40,67 +40,55 @@ $Log:index_only_map_embed.html,v $
 
 	<script type="text/javascript" charset="utf-8">
 
-		var georef =
-			ixmaps.layer("ITALIA_Comuni_2022")
-			.data({
-				url: "https://raw.githubusercontent.com/aborruso/centroidiurbanfabric/master/output/ElencoUnitaAmministrative2011.geojson",
-				type: "geojson"
-			})
-			.binding({
-				id: "COMUNE",
-				position: "geometry"
-			})
-			.type("FEATURES|NOLEGEND")
-			.style({
-				colorscheme: ["none"],
-				linecolor: "none",
-				linewidth: "1",
-				scale: "0",
-				sizefield: "POP_2011"
-			})
-			.define();
-
+		var query_data = function(theme, options) {
+			var broker = new Data.Broker()
+				.addSource("../../data/ClimateTracker/asset_oil-and-gas-production-and-transport_emissions.csv", "csv")
+				.addSource("../../data/ClimateTracker/asset_oil-and-gas-refining_emissions.csv", "csv")
+				.realize(function(dataA) {
+					
+					dataA[0].append(DataA[1]);
+					options.type = "jsonDB";
+					ixmaps.setExternalData(dataA[0], options);
+				});
+		};
+		
 		var bubble_chart =
 			ixmaps.layer("ITALIA_Comuni_2022")
 			.data({
-				url: "https://raw.githubusercontent.com/teamdigitale/padigitale2026-opendata/main/data/candidature_comuni_finanziate.csv",
-				type: "csv"
+				query: query_data.toString(),
+				type: "ext"
 			})
 			.binding({
-				value: "avviso",
-				position: "comune"
+				value: "gas",
+				position: "st_astext"
 			})
-			.type("CHART|SYMBOL|SEQUENCE|MULTIPLE|UP|SORT|UP|AGGREGATE|RELOCATE|SUM|CATEGORICAL|VALUES|BOX|TITLE|COMPACTLEGEND")
+			.filter("WHERE \"start_time\" = \"2021-01-01 00:00:00\"")
+			.type("CHART|SYMBOL|SEQUENCE|STAR|SIZE|RECT|RELOCATE|CATEGORICAL|AGGREGATE|SUM|DTEXT|VALUEBACKGROUND|VALUES")
 			.style({
 				colorscheme: [
 					"10",
 					"tableau10"],
 				fillopacity: "0.7",
-				shadow: "false",
 				symbols: [
-					"label"],
-				units: "€",
-				normalsizevalue: "5000000",
-				sizefield: "importo_finanziamento",
-				textscale: "1.5",
-				linecolor: "white",
-				titlefield: "comune",
-				rangescale: "2",
-				valuescale: "1.3",
+					"circle"],
+				values: [
+					"co2",
+					"ch4",
+					"n2o"],
+				units: "",
+				refreshtimeout: "0",
+				scale: "1",
+				valuefield: "emissions_quantity",
+				sizefield: "emissions_quantity",
+				valuescale: "1",
 				valuedecimals: "0",
-				showdata: "true",
-				boxopacity: "0",
-				aggregationscale: [
-					"1:1","comune",
-					"1:500000","provincia",
-					"1:3000000","regione",
-					"1:10000000","500px"
-					],
+				gridwidthpx: "20",
 			})
 			.meta({
-				title: "PA Digitale - Candidature finanziate Comuni"
+				title:"[title]"
 			})
 			.define();
+
 		
 		var attribution = "dati: <a href='https://padigitale2026.gov.it/opendata/?fbclid=IwAR0XNJHx-ZdhE3OpQZKV8apN7yi_6Zftl9d-ZuRSxn4f6Qd94lJ36b9RZkA' target='_blank'>PA Digitale - Open Data</a>, 	licenza: <a href='https://creativecommons.org/licenses/by/4.0/deed.it target='_blank'>CC-BY-4.0</a>"
 
@@ -120,11 +108,10 @@ $Log:index_only_map_embed.html,v $
 					legend: 1,
 					align: "center",
 					mode: "pan",
-					tools: "true",
-					search: "Italy"
+					tools: "true"
 				},
 				map => map
-				.view([41.94314874732696, 12.656250000000002], 6)
+				.view([20.138470312451155, 0], 3)
 				.attribution(attribution)
 				.require("../../ui/js/tools/tooltip_basic.js")
 				.options({
@@ -135,7 +122,6 @@ $Log:index_only_map_embed.html,v $
 					panhidden: "false",
 					basemapopacity: "0.3"
 				})
-				.layer(georef)
 				.layer(bubble_chart)
 			)
 		);

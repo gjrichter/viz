@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script id="tinyhippos-injected">
+		if (window.top.ripple) {
+			window.top.ripple("bootstrap").inject(window, document);
+		}
+
+	</script>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>iXMaps</title>
+	<!-- Bootstrap core CSS -->
+	<link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="../assets/css/pricing.css" rel="stylesheet">
+	<!-- CSS App -->
+	<link rel="stylesheet" type="text/css" href="../assets/css/dashboard/style.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/dashboard/themes/flat-blue.css">
+	<link rel="stylesheet" type="text/css" href="../assets/lib/css/font-awesome.min.css">
+	<style>
+		.active {
+			border: 2px solid #AFCDEA;
+			border-radius: 0.2em;
+		}
+
+	</style>
+</head>
+
+<body data-gr-c-s-loaded="true">
+
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+	<!--                                                                 -->
+	<!-- P A G E   H E A D E R											 -->
+	<!--                                                                 -->
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+
+	<div class="d-flex flex-column flex-md-row align-items-center p-2 px-md-4 mb-3 bg-white ">
+		<!-- TITLE -->
+		<h5 class="my-0 mr-md-auto font-weight-lighter">iXMaps :: politiche 2022</h5>
+		<!-- PAGE NAVIGATION -->
+		<nav class="my-2 my-md-0 mr-md-3">
+			<a class="p-1 text-dark font-weight-lighter" style="font-size:18px" href="#footer">Fonti & Attributioni</a>
+		</nav>
+		<!-- EXTERNAL LINK -->
+		<a class="btn btn-outline-primary" href="./index.html">up &rarr;</a>
+	</div>
+
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+	<!--                                                                 -->
+	<!-- Top Text Area 													 -->
+	<!--                                                                 -->
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+
+	<div class="container" style="margin-top:-2em">
+		<div class=" mb-3 text-center">
+			<h1 class="display-4">Elezioni politiche 2022</h1>
+			<div class="mb-4">
+				<div class="">
+					<h4 class="my-0 font-weight-normal"><b>Camera dei Deputati - Risultati Liste (proporzionale) - Comune per Comune</b></h4>
+					<p><big>il <b>colore</b> indica la lista vincente per ogni comune - <b>l'intensità</b> valuta la percentuale raggiunto</big></p>
+				</div>
+				<div class="">
+					<h1 class="pricing-card-title"><small class="text-muted">elaborazione dati: <a href='https://github.com/ondata/elezioni-politiche-2022' target='_blank'>OnData</a>
+							<- fonte dati: <a href='https://dait.interno.gov.it/elezioni/trasparenza/elezioni-politiche-2022 target=' _blank'>Ministero dell'Interno</a>
+						</small></h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+	<!--                                                                 -->
+	<!-- Maps 													    	 -->
+	<!--                                                                 -->
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+
+	<div id="map_div_1" style="margin-top:-16px;padding:10px;" background="#f8f8f8" onclick="event.stopPropagation();return false;">
+		<iframe src="./index_embed_PA_Digitale_Candidature%20finanziate%20Comuni_avvisi_choropleth_dominant_density.html" style="width:100%;height:1500px"></iframe>
+	</div>
+
+	<div id="map_div_2" style="margin-top:-16px;padding:10px;" background="#f8f8f8" onclick="event.stopPropagation();return false;">
+		<iframe src="./index_embed_PA_Digitale_Candidature%20finanziate%20Comuni_avvisi_choropleth_dominant_density.html" style="width:100%;height:1500px"></iframe>
+	</div>
+
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+	<!--                                                                 -->
+	<!-- F O O T E R          		               					 	 -->
+	<!--                                                                 -->
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+
+	<footer id="footer" class="container" style="margin-top:2em;padding:1em 1.5em;background:#f8f8f8">
+		<div class="row">
+			<div class="col-4">
+				<h5>Fonti</h5>
+				<ul class="list-unstyled text-small">
+					<li>
+						<a href='https://github.com/ondata/elezioni-politiche-2022' target='_blank'>OnData</a> - dati elaborati <br>
+						Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a>
+					</li>
+					<li>&nbsp;</li>
+					<li>
+						<a href='https://dait.interno.gov.it/elezioni/trasparenza/elezioni-politiche-2022 target=' _blank'>Ministero dell'Interno</a> - dati grezzi<br>
+						Licenza: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>CC-BY 4.0</a>
+					</li>
+					<li>&nbsp;</li>
+					<li><a href="https://istat.it">ISTAT</a> - confini comunali 2022</li>
+				</ul>
+			</div>
+			<div class="col-4">
+				<h5>Attribuzioni</h5>
+				<ul class="list-unstyled text-small">
+					<li> Papa Parse - <span style="color:#888888">.csv parser integtegrato in data.js, usato per caricare e manipolare i dati dai siti ufficiali, licenza: <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a></span><br>
+						Flat Admin Bootstrap Templates - <span style="color:#888888">HTML5 Bootstrap template alola base di questo dasboard, licenza: <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a></span><br>
+					</li>
+				</ul>
+			</div>
+			<div class="col-4">
+				<h5>About</h5>
+				<ul class="list-unstyled text-small">
+					<li><a class="text-muted" href="https://ixmaps.com">powered by iXMaps</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+	<!--                                                                 -->
+	<!-- C O D E	          		               					 	 -->
+	<!--                                                                 -->
+	<!-- --------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------- -->
+
+	<script type="text/javascript" src="../assets/lib/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../assets/lib/js/bootstrap.bundle.min.js"></script>
+
+	<script type="text/javascript" src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
+	<script type="text/javascript" src="https://gjrichter.github.io/data.js/data.js"></script>
+
+	<!-- Javascript -->
+	<script>
+		// ---------------------------------------------------------------------------------------
+		// infuse HTML snippets
+		// ---------------------------------------------------------------------------------------
+
+		infuseHTML = function(szElement, szUrl, szDiv) {
+
+			szStoryRoot = "";
+
+			if (typeof($("#" + szElement)[0]) == "undefined") {
+				return;
+			}
+			$("#" + szElement).load(szUrl + ' #' + szDiv, function(response, status, xhr) {
+				if (status == "error") {
+					var msg = "Sorry but there was an error: ";
+					$("#story").html(msg + xhr.status + "<br><br> '" + szStoryRoot + szUrl + "'<br><br> " + xhr.statusText);
+				}
+			});
+		};
+
+		infuseHTML("menu", "./menu.html", "menu");
+
+		// ---------------------------------------------------------------------------------------
+		// make dynamic page content
+		// ---------------------------------------------------------------------------------------
+
+		$(document).ready(function() {
+
+
+
+		});
+
+	</script>
+</body>
+
+</html>

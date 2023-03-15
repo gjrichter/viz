@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<!-- **********************************************************************
+
+ixmaps_simple_embed.html
+
+$Comment: map template for Ricostruzione Trasparente; embedded version
+$Source : ixmaps_comuni_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:ixmaps_comuni_embed.html 1 2017-07-22 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:ixmaps_simple_embed.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport">
+	<meta content="" name="description">
+	<meta content="" name="author">
+	<link href="assets/img/favicon.png" rel="shortcut icon">
+	<title>iXMaps</title>
+
+	<style>
+		a {
+			color: #888888;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: darkcyan;
+		}
+
+	</style>
+</head>
+
+<body style="margin:0;paddig:0">
+	<div background="#f8f8f8" id="map_div" onclick="event.stopPropagation();return false;"></div>
+	<div id="footer"></div>
+	<div id="themeselect" style="max-width:1024;position:absolute;top:2px;left:2%;padding:1em">
+		<select class="form-control" id="theme-source-select" onchange="eval(document.getElementById('theme-source-select').value)" style="padding:0.4em;background:#f8f6f6;font-size:1.2em;border-radius:5px;color:#666">
+			<option selected value="__setCarburante('Benzina');">
+				Benzina
+			</option>
+			<option value="__setCarburante('Super');">
+				Super
+			</option>
+			<option value="__setCarburante('Diesel|Gasolio');">
+				Diesel
+			</option>
+			<option value="__setCarburante('GPL');">
+				GPL
+			</option>
+			<option value="__setCarburante('Metano');">
+				Metano
+			</option>
+		</select> <select class="form-control" id="theme-classes-select" onchange="eval(document.getElementById('theme-classes-select').value)" style="padding:0.4em;background:#f8f6f6;font-size:1.2em;border-radius:5px;color:#666">
+			<option value="__setStyle('tema_prezzo_grid_label');">
+				etichette
+			</option>
+			<option value="__setStyle('tema_prezzo_grid_circle');">
+				griglia prezzi medi
+			</option>
+			<option selected value="__setStyle('tema_prezzo_grid_circle_glow');">
+				a grappolo
+			</option>
+			<option value="__setStyle('tema_prezzo_grid_circle');">
+				griglia prezzi medi
+			</option>
+			<option value="__setStyle('tema_prezzo_grid_square');">
+				griglia ed impianti
+			</option>
+		</select>
+	</div>
+
+	<div id="attribution" style="position:absolute;top:-25px;right:20px;padding:1em;font-family:open sans;font-size:1.2em;color:#666">
+		<p>
+			fonte: <a href="https://www.mise.gov.it/index.php/it/open-data/elenco-dataset/carburanti-prezzi-praticati-e-anagrafica-degli-impianti" target="_blank">Ministero delle Imprese e del Made in Italy<br>Carburanti - Prezzi praticati e anagrafica degli impianti</a>
+		</p>
+	</div>
+
+	<script src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js" type="text/javascript"></script>
+
+	<script charset="utf-8" type="text/javascript">
+		
+		// ---------------------------------------------------
+		// dynamic theme creation on change of selection boxes
+		// ---------------------------------------------------
+		
+		ixmaps.carburante = "Benzina";
+		ixmaps.style = "tema_prezzo_grid_circle_glow";
+
+		__getTheme = function() {
+			return (eval(ixmaps.style + "('" + ixmaps.carburante + "')"));
+		};
+		__setCarburante = function(carburante) {
+			ixmaps.carburante = carburante;
+			__setStyle(ixmaps.style);
+		};
+		__setStyle = function(style) {
+			if (style == "tema_prezzo_grid_square") {
+				ixmaps.style = "tema_prezzo_grid_circle_raw";
+				ixmaps.newTheme('map', 'title', __getTheme(), 'clear');
+				ixmaps.style = style;
+				ixmaps.newTheme('map', 'title', __getTheme());
+				ixmaps.style = "tema_prezzo_grid_square_text";
+				ixmaps.newTheme('map', 'title', __getTheme());
+				ixmaps.style = style;
+			}else{
+				ixmaps.style = style;
+				ixmaps.newTheme('map', 'title', __getTheme(),'clear');
+			}
+		};
+
+		// --------------------------------------------
+		// T H E M E S
+		// --------------------------------------------
+
+		// -----------------------
+		// data query function
+		// -----------------------
+		
+		ixmaps.prezzi_tipo_latlon = function(theme, options) {
+
+			function decodeHTMLEntities(text) {
+				var textArea = document.createElement('textarea');
+				textArea.innerHTML = text;
+				return textArea.value;
+			}
+
+			var szUrl = "https://raw.githubusercontent.com/gjrichter/data/master/MISE/anagrafica_impianti_attivi.csv";
+			$.get(szUrl,
+				function(data) {
+					ixmaps.setTitleBox("<span style='font-family:open sans,arial;vertical-align:-1px'>" + data.substr(0, 25) + "</span>");
+
+					data = decodeHTMLEntities(data);
+					data = data.replace(/\"/g, "");
+
+					Data.object({
+						source: data,
+						type: "csv",
+						parser: {
+							comments: "Estrazione"
+						}
+					}).import(function(impianti) {
+						Data.feed({
+							source: "https://raw.githubusercontent.com/gjrichter/data/master/MISE/prezzo_alle_8.csv",
+							type: "csv",
+							parser: {
+								comments: "Estrazione"
+							}
+						}).load(function(prezzi) {
+
+							var merger = new Data.Merger();
+							merger.addSource(prezzi, {
+								lookup: "idImpianto",
+								columns: ["descCarburante", "prezzo", "isSelf", "dtComu"]
+							});
+							merger.addSource(impianti, {
+								lookup: "idImpianto",
+								columns: ["Bandiera", "Latitudine", "Longitudine"]
+							});
+							var newData = merger.realize();
+
+							ixmaps.setExternalData(newData, {
+								type: "dbtable",
+								name: options.name
+							});
+
+						});
+					});
+				});
+
+		}; 
+
+		// -----------------------
+		// theme definitions
+		// -----------------------
+
+		var tema_prezzo_grid_circle_glow = function(carburante) {
+			return (
+				ixmaps.theme("geo")
+				.data({
+					name: "prezzi_tipo_latlon",
+					query: ixmaps.prezzi_tipo_latlon.toString()
+				})
+				.binding({
+					value: "prezzo.1",
+					position: "Latitudine.2|Longitudine.2"
+				})
+				.filter("WHERE descCarburante.1 like " + carburante)
+				.type("GLOW|CHART|SYMBOL|SIZE|NOOUTLIER|ZEROISNOTVALUE|VALUES|QUANTILE|AGGREGATE|RECT|MEAN|GRIDSIZE|GAP")
+				.style({
+					colorscheme: [
+						"9",
+						"#56A651",
+						"#794073",
+						"3colors",
+						"#DDA729"
+					],
+					shadow: "true",
+					shadowupper: "1:10000",
+					showdata: "true",
+					symbols: [
+						"circle"
+					],
+					legendunits: "€",
+					textcolor: "white",
+					linecolor: "none",
+					valueupper: "1:500000",
+					valuedecimals: "3",
+					aggregationscale: [
+						"1:1",
+						"30px",
+						"1:500000",
+						"10px",
+						"1:1000000",
+						"5px"
+					],
+				})
+				.meta({
+					"title": "Prezzi comunicati alle ore 8 del giorno"
+				})
+				.define()
+			)
+		};
+
+		var tema_prezzo_grid_circle = function(carburante) {
+			return (
+				ixmaps.theme("geo")
+				.data({
+					name: "prezzi_tipo_latlon",
+					query: ixmaps.prezzi_tipo_latlon.toString()
+				})
+				.encoding({
+					value: "prezzo.1",
+					position: "Latitudine.2|Longitudine.2"
+				})
+				.filter("WHERE descCarburante.1 like " + carburante)
+				.type("CHART|SYMBOL|SIZE|NOOUTLIER|DTEXT|VALUES|VALUEBACKGROUND|QUANTILE|RECT|AGGREGATE|MEAN|GRIDSIZE|GAP|DOPACITY")
+				.style({
+					colorscheme: [
+						"9",
+						"#56A651",
+						"#794073",
+						"3colors",
+						"#DDA729"
+					],
+					shadow: "false",
+					showdata: "true",
+					symbols: [
+						"circle"
+					],
+					legendunits: "€",
+					alphafield: "$count$",
+					dopacitypow: "2",
+					dopacityscale: "4",
+					textcolor: "white",
+					linecolor: "none",
+					valuedecimals: "3",
+					gridwidthpx: "33",
+				})
+				.meta({
+					"title": "Prezzi comunicati alle ore 8 del giorno"
+				})
+				.define()
+			)
+		};
+
+		var tema_prezzo_grid_label = function(carburante) {
+			return (
+				ixmaps.theme("geo")
+				.data({
+					name: "prezzi_tipo_latlon",
+					query: ixmaps.prezzi_tipo_latlon.toString()
+				})
+				.encoding({
+					value: "prezzo.1",
+					position: "Latitudine.2|Longitudine.2"
+				})
+				.filter("WHERE descCarburante.1 like " + carburante)
+				.type("GAP|CHART|LABEL|SIZE|NOOUTLIER|DTEXT|VALUES|VALUEBACKGROUND|QUANTILE|RECT|AGGREGATE|MEAN|GRIDSIZE")
+				.style({
+					colorscheme: [
+						"9",
+						"#56A651",
+						"#794073",
+						"3colors",
+						"#DDA729"
+					],
+					shadow: "false",
+					showdata: "true",
+					symbols: [
+						"circle"
+					],
+					legendunits: "€",
+					scale: "0.8",
+					textcolor: "white",
+					linecolor: "white",
+					linewidth: "1",
+					valuedecimals: "3",
+					gridwidthpx: "33"
+				})
+				.meta({
+					"title": "Prezzi comunicati alle ore 8 del giorno"
+				})
+				.define()
+			)
+		};
+
+		var tema_prezzo_grid_square = function(carburante) {
+			return (
+				ixmaps.theme("geo")
+				.data({
+					name: "prezzi_tipo_latlon",
+					query: ixmaps.prezzi_tipo_latlon.toString()
+				})
+				.encoding({
+					value: "prezzo.1",
+					position: "Latitudine.2|Longitudine.2"
+				})
+				.filter("WHERE descCarburante.1 like " + carburante)
+				.type("CHART|SYMBOL|SIZE|NOOUTLIER|ZEROISNOTVALUE|QUANTILE|AGGREGATE|RECT|MEAN|GRIDSIZE|DOPACITYMINMAX")
+				.style({
+					colorscheme: [
+						"9",
+						"#56A651",
+						"#794073",
+						"3colors",
+						"#DDA729"
+					],
+					fillopacity: "0.7",
+					shadow: "false",
+					showdata: "true",
+					symbols: [
+						"square"
+					],
+					legendunits: "€",
+					linecolor: [
+						"black"],
+					linewidth: [
+						"0.2"],
+					aggregationscale: [
+						"1:1",
+						"200px",
+						"1:100000",
+						"100px",
+						"1:1000000",
+						"50px"
+					],
+					minaggregation: "auto"
+				})
+				.meta({
+					"title": "Prezzi comunicati alle ore 8 del giorno"
+				})
+				.define()
+			)
+		};
+
+		var tema_prezzo_grid_square_text = function(carburante) {
+			return (
+				ixmaps.theme("geo")
+				.data({
+					name: "prezzi_tipo_latlon",
+					query: ixmaps.prezzi_tipo_latlon.toString()
+				})
+				.encoding({
+					value: "prezzo.1",
+					position: "Latitudine.2|Longitudine.2"
+				})
+				.filter("WHERE descCarburante.1 like " + carburante)
+				.type("CHART|SYMBOL|SIZE|NOOUTLIER|ZEROISNOTVALUE|VALUES|TEXTONLY|QUANTILE|AGGREGATE|RECT|MEAN|GRIDSIZE")
+				.style({
+					colorscheme: [
+						"white"],
+					fillopacity: "0.5",
+					showdata: "true",
+					symbols: [
+						"label"],
+					units: "€",
+					legendunits: "€",
+					scale: "0.5",
+					textcolor: "white",
+					linecolor: [
+						"white"],
+					linewidth: [
+						"0.2"],
+					valuescale: "0.5",
+					valuedecimals: "3",
+					aggregationscale: [
+						"1:1",
+						"200px",
+						"1:100000",
+						"100px",
+						"1:1000000",
+						"50px"],
+					minaggregation: "auto",
+				})
+				.meta({
+					"title": "Prezzi comunicati alle ore 8 del giorno"
+				})
+				.define()
+			)
+		};
+
+		var tema_prezzo_grid_circle_raw = function(carburante) {
+			return (
+				ixmaps.theme("geo")
+				.data({
+					name: "prezzi_tipo_latlon",
+					query: ixmaps.prezzi_tipo_latlon.toString()
+				})
+				.encoding({
+					value: "prezzo.1",
+					position: "Latitudine.2|Longitudine.2"
+				})
+				.filter("WHERE descCarburante.1 like " + carburante)
+				.type("CHART|SYMBOL|SIZE|NOOUTLIER|ZEROISNOTVALUE|VALUES|QUANTILE|AGGREGATE|RECT|MEAN|GRIDSIZE|GAP")
+				.style({
+					colorscheme: [
+						"9",
+						"#56A651",
+						"#794073",
+						"3colors",
+						"#DDA729"
+					],
+					fillopacity: "0.7",
+					shadow: "false",
+					showdata: "true",
+					symbols: [
+						"circle"
+					],
+					units: "",
+					legendunits: "€",
+					scale: "10",
+					textcolor: "white",
+					linecolor: [
+						"none"
+					],
+					valueupper: "1:200000",
+					shadowupper: "1:10000",
+					valuescale: "1",
+					valuedecimals: "3",
+					aggregationscale: [
+						"1:1",
+						"3px",
+						"1:100000",
+						"1px",
+						"1:1000000",
+						"0.4px"
+					],
+				})
+				.meta({
+					"title": "Prezzi comunicati alle ore 8 del giorno"
+				})
+				.define()
+			)
+		};
+		
+		// -----------------------
+		// finally create the map
+		// -----------------------
+
+		var attribution = '<h3 style="font-family:open sans;margin-bottom:-2em">powered by <a href="http://ixmaps.com" target="_blank">iXMaps</a></h3>';
+
+		ixmaps.embed("map_div", {
+				mapService: "leaflet",
+				mapType: "CartoDB - Positron",
+				mapUrl: "",
+				width: "100%",
+				height: (window.innerHeight - 5) + "px",
+				mapSilent: true,
+				mapLegend: true,
+				legend: true,
+				align: "center"
+			},
+			function(map) {
+
+				map.setView([43.93350594453702, 12.002563476562502], 7)
+					.setOptions({
+						flushChartDraw: '5000',
+						objectscaling: "dynamic",
+						autoSwitchInfo: true,
+						panHidden: true,
+						silent: true,
+						legend: true
+					})
+					.attribution(attribution)
+					.setScaleParam("normalSizeScale:10000000;")
+					.setLocal("painting map", "")
+					.setLocal("... processing ...", "&#9716;")
+					.setLocal("... creating theme ...", "&#9717;")
+					.setLocal("...", "&#9717;")
+					.setLocal(" ... ", "&#9718;")
+					.setLocal("... drawing ...", "&9719;")
+			
+					.setLocal("loading data ...", "&#x2B73;")
+					.setLocal("aggregating", "&#9881;")
+					.setLocal("please wait ...", "&#9717;")
+					.setLocal("drawing", "&#9718;")
+			
+			
+			
+					.newTheme('title', __getTheme(), 'clear');
+
+			}
+		);
+
+	</script>
+</body>
+
+</html>

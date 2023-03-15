@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html>
+
+<!-- **********************************************************************
+
+ixmaps map embed html
+
+$Comment: ixmaps map template; embedded version
+$Source : index_only_map_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:index_only_map_embed.html 1 2021-10-17 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:index_only_map_embed.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="ixmaps embed example">
+	<meta name="author" content="guenter richter">
+	<link rel="shortcut icon" href="https://gjrichter.github.io/ixmaps/ui/resources/images/ixmaps_logo.png">
+
+	<title>iXMaps really simple embed</title>
+
+</head>
+
+<body style='text-align:center;background:#F6F0E3'>
+
+	<!--========================================================================= -->
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
+
+	<!--========================================================================= -->
+
+	<script type="text/javascript" charset="utf-8">
+		ixmaps.tmp = ixmaps.tmp || {};
+
+		/**
+		 ** strings used by the map 	
+		 **/
+
+		attribution =
+			"powered by <a href=\"http://ixmaps.com\" target=\"_blank\">iXMaps</a>";
+
+		/**
+		 ** the process function will be included into the theme definitions below
+		 **/
+
+		var process = function(data, options) {
+			data.addColumn({
+				source: "DATA",
+				destination: "year"
+			}, function(value) {
+				return (value.split("/")[2]);
+			});
+			data.addColumn({
+				source: "DATA",
+				destination: "month"
+			}, function(value) {
+				return (value.split("/")[1]);
+			});
+			data.addColumn({
+				source: "DATA",
+				destination: "day"
+			}, function(value) {
+				var a = value.split("/");
+				var date = new Date(a[2], a[1], a[0]);
+				return (date.getDay());
+			});
+			var illesiIndex = data.column("ILLESI").index;
+			var feritiIndex = data.column("FERITI").index;
+			var mortiIndex = data.column("MORTI").index;
+			data.addColumn({
+				destination: "pericolo"
+			}, function(row) {
+				return ((row[illesiIndex] || 0) * 0.3 + (row[feritiIndex] || 0) * 3 + (row[mortiIndex] || 0) * 10);
+			});
+		};
+
+
+		/**
+		 **
+		 ** define the themes 
+		 **
+		 **/
+
+		// conteggio aggregato degli incidenti 
+		// --------------------------------------
+		var __incidenti =
+			ixmaps.layer("Mercator")
+			.data({
+				name: "themeDataObj",
+				url: "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.csv.gz",
+				type: "csv",
+				process: process.toString(),
+				cache: "true",
+			})
+			.binding({
+				position: "geometry",
+				value: "$item$"
+			})
+			.filter("WHERE ANNOINC BETWEEN 2019 AND 2022")
+			.type("CHART|SYMBOL|GLOW|AGGREGATE|RECT|RELOCATE|SUM|SIZE|VALUES")
+			.style({
+				name: "test",
+				colorscheme: [
+					"7",
+					"#FFEDA0",
+					"#800026",
+					"3colors",
+					"#FC5E2A"
+				],
+				opacity: "0.6",
+				shadow: "false",
+				symbols: [
+					"circle"
+				],
+				units: "",
+				scale: "1",
+				valuescale: "1",
+				valuedecimals: "0",
+				gridwidthpx: "10",
+				showdata: "true",
+				title: "Incidenti Bolzano 2019 - 2022 - aggregati per griglia di 10 pixel dello schermo"
+			})
+			.define();
+
+		// illesi, feriti, morti 
+		// ---------------------
+		var __persone =
+			ixmaps.layer("Mercator")
+			.data({
+				name: "themeDataObj",
+				url: "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.csv.gz",
+				type: "csv",
+				process: process.toString(),
+				cache: "true",
+			})
+			.binding({
+				position: "geometry",
+				value: "ILLESI|FERITI|MORTI"
+			})
+			.filter("WHERE ANNOINC BETWEEN 2019 AND 2022")
+			.type("CHART|SYMBOL|GLOW|SEQUENCE|CENTER|SORT|DOWN|LINEAR|AGGREGATE|RECT|RELOCATE|SUM|SIZE|COMPACTLEGEND")
+			.style({
+				name: "test",
+				colorscheme: [
+					"RGBA(77,184,73,0.5)",
+					"RGB(255,92,92)",
+					"RGB(3,3,3)"
+				],
+				opacity: "0.6",
+				shadow: "false",
+				symbols: [
+					"circle"
+				],
+				label: [
+					"illesi",
+					"feriti",
+					"morti"
+				],
+				units: "persone",
+				normalsizevalue: "50",
+				scale: "1",
+				valuescale: "1",
+				valuedecimals: "0",
+				gridwidthpx: "10",
+				title: "Incidenti Bolzano 2019 - 2020 - Esito dell'incidente per le persone coinvolte"
+			})
+			.define();
+
+		// indice sintetico di pericolosità 
+		// ---------------------------------
+		var __pericolosita =
+			ixmaps.layer("Mercator")
+			.data({
+				name: "themeDataObj",
+				url: "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.csv.gz",
+				type: "csv",
+				process: process.toString(),
+				cache: "true",
+			})
+			.binding({
+				position: "geometry",
+				value: "pericolo"
+			})
+			.filter("WHERE ANNOINC BETWEEN 2019 AND 2022")
+			.type("CHART|SYMBOLS|SIZE|LINEAR|GLOW|NORMALIZE|ZEROISNOTVALUE|CLEAR|AGGREGATE|RELOCATE|SUM|RECT|VALUES|CLIPTOGEOBOUNDS")
+			.style({
+				name: "test",
+				colorscheme: [
+					"7",
+					"#36A6B1",
+					"#b94023",
+					"3colors",
+					"#DDA729"
+				],
+				opacity: "0.6",
+				shadow: "false",
+				symbols: [
+					"circle"
+				],
+				units: "",
+				scale: "1",
+				normalsizevalue: "1",
+				valuescale: "1",
+				valuedecimals: "1",
+				gridwidthpx: "10",
+				title: "Incidenti Bolzano 2021 - Indice sintetico di pericolosità"
+			})
+			.define();
+
+
+		// natura dell'incidente 
+		// ---------------------------------
+		var __natura =
+			ixmaps.layer("Mercator")
+			.data({
+				name: "themeDataObj",
+				url: "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.csv.gz",
+				type: "csv",
+				process: process.toString(),
+				cache: "true",
+			})
+			.binding({
+				position: "geometry",
+				value: "NATURA"
+			})
+			.filter("WHERE ANNOINC BETWEEN 2019 AND 2022")
+			.type("CHART|SYMBOL|CATEGORICAL|GLOW|VALUES|SEQUENCE|STAR|SORT|DOWN|LINEAR|AGGREGATE|RECT|RELOCATE|SUM|SIZE|COMPACTLEGEND")
+			.style({
+				name: "test",
+				colorscheme: [
+					"15",
+					"tableau"
+				],
+				opacity: "0.5",
+				shadow: "false",
+				symbols: [
+					"circle"
+				],
+				values: [
+					"Scontro frontale-laterale",
+					"Scontro laterale fra veicoli in marcia",
+					"Investimento di pedone",
+					"Urto con veicolo in momentanea fermata o arresto",
+					"Scontro frontale fra veicoli in marcia",
+					"Tamponamento",
+					"Urto con ostacolo accidentale",
+					"Fuoriuscita",
+					"Infortunio per sola frenata improvvisa",
+					"Infortunio per caduta da veicolo",
+					"Veicolo in marcia contro veicolo in sosta",
+					"Veicolo in marcia contro veicoli in sosta",
+					"Veicolo in marcia che urta buche nella carreggiata",
+					"Veicolo in marcia contro treno"
+				],
+				units: "",
+				refreshtimeout: "0",
+				linecolor: [
+					"white"
+				],
+				linewidth: "1",
+				scale: "1",
+				normalsizevalue: "25",
+				valuescale: "1",
+				valuedecimals: "0",
+				gridwidthpx: "10",
+				title: "Incidenti Bolzano 2019 - 2022 - Natura dell'incidente"
+			})
+			.define();
+
+		// natura dell'incidente - 2
+		// ---------------------------------
+		var __natura_2 =
+			ixmaps.layer("Mercator")
+			.data({
+				name: "themeDataObj",
+				url: "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.csv.gz",
+				type: "csv",
+				process: process.toString(),
+				cache: "true",
+			})
+			.binding({
+				position: "geometry",
+				value: "NATURA"
+			})
+			.filter("WHERE ANNOINC BETWEEN 2019 AND 2022")
+			.type("GLOW|CHART|SYMBOL|SEQUENCE|STAR|SORT|DOWN|LINEAR|CATEGORICAL|AGGREGATE|COUNT|RELOCATE|VALUES|COMPACTLEGEND|RECT|CLIPTOGEOBOUNDS")
+			.style({
+				name: "test",
+				colorscheme: [
+					"#ddbb22",
+					"#ddbb22",
+					"#ff0088",
+					"#00cccc",
+					"#ddbb22",
+					"#0066cc",
+					"#00cccc",
+					"#ddbb22",
+					"#ddbb22",
+					"#ddbb22",
+					"#00cccc",
+					"#00cccc",
+					"#666666",
+					"#006666"
+				],
+				opacity: "0.3",
+				fillopacity: "0.7",
+				shadow: "false",
+				symbols: [
+					"circle"
+				],
+				values: [
+					"Scontro frontale-laterale",
+					"Scontro laterale fra veicoli in marcia",
+					"Investimento di pedone",
+					"Urto con veicolo in momentanea fermata o arresto",
+					"Scontro frontale fra veicoli in marcia",
+					"Tamponamento",
+					"Urto con ostacolo accidentale",
+					"Fuoriuscita",
+					"Infortunio per sola frenata improvvisa",
+					"Infortunio per caduta da veicolo",
+					"Veicolo in marcia contro veicolo in sosta",
+					"Veicolo in marcia contro veicoli in sosta",
+					"Veicolo in marcia che urta buche nella carreggiata",
+					"Veicolo in marcia contro treno"
+				],
+				units: "",
+				refreshtimeout: "0",
+				linecolor: [
+					"white"
+				],
+				textcolor: [
+					"#dddddd"
+				],
+				linewidth: "1",
+				scale: "1",
+				normalsizevalue: "15",
+				valuescale: "1",
+				valuedecimals: "0",
+				gridwidthpx: "10",
+				evidence: "isolate_gray",
+				title: "Incidenti Bolzano 2019 - 2022 - Natura dell'incidente"
+			})
+			.define();
+
+		// tutti incidenti - peaks
+		// ---------------------------------
+		var __peaks =
+			ixmaps.layer("Mercator")
+			.data({
+				name: "themeDataObj_csv",
+				url: "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.csv.gz",
+				type: "csv",
+				cache: "true",
+			})
+			.binding({
+				position: "geometry",
+				value: "$item$"
+			})
+			.type("CHART|USER|AGGREGATE|RECT|3D|RELOCATE|SUM|SIZE|DTEXT|VALUES|VALUEBACKGROUND|NOLEGEND")
+			.style({
+				name: "test",
+				userdraw: "pinnacleChart",
+				colorscheme: [
+					"7",
+					"#eeaaaa",
+					"#dd0000",
+					"dynamic",
+					"cold"
+				],
+				opacity: "0.6",
+				shadow: "false",
+				refreshtimeout: "0",
+				scale: "1",
+				rangescale: "1",
+				normalsizevalue: "300",
+				linewidth: "3",
+				valuescale: "1",
+				valuedecimals: "0",
+				gridwidthpx: "10",
+				title: "Incidenti Bolzano 2021"
+			})
+			.define();
+
+		// grid - helper
+		// ---------------------------------
+		var __grid =
+			ixmaps.layer("Mercator")
+			.data({
+				name: "themeDataObj_csv",
+				url: "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.csv.gz",
+				type: "csv",
+				cache: "true",
+			})
+			.binding({
+				position: "geometry",
+				value: "$item$"
+			})
+			.type("CHART|SYMBOL|SIZE|NOOUTLIER|ZEROISNOTVALUE|QUANTILE|AGGREGATE|RECT|MEAN|GRIDSIZE|NOLEGEND")
+			.style({
+				name: "test",
+				colorscheme: [
+					"none"
+				],
+				opacity: "0.6",
+				shadow: "false",
+				"symbols": [
+					"square"
+				],
+				scale: "1",
+				linecolor: [
+					"black"
+				],
+				linewidth: [
+					"0.2"
+				],
+				gridwidthpx: "100"
+			})
+			.define();
+
+		// grid - curves
+		// ---------------------------------
+		var __curves =
+			ixmaps.layer("Mercator")
+			.data({
+				name: "themeDataObj",
+				url: "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.csv.gz",
+				type: "csv",
+				process: process.toString(),
+				cache: "true",
+			})
+			.binding({
+				position: "geometry",
+				value: "year"
+			})
+			.type("CHART|SYMBOL|PLOT|LINES|BOX|AREA|LASTARROW|CATEGORICAL|FIXSIZE|GRIDSIZE|ZEROISNOTVALUE|AGGREGATE|RECT|SUM|NOSORT|NOLEGEND")
+			.style({
+				name: "curves",
+				colorscheme: [
+					"#800026"
+				],
+				fillopacity: "0.1",
+				shadow: "true",
+				values: [
+					"2013",
+					"2014",
+					"2015",
+					"2016",
+					"2017",
+					"2018",
+					"2019",
+					"2020",
+					"2021",
+					"2022"
+				],
+				label: [
+					"2013",
+					"2014",
+					"2015",
+					"2016",
+					"2017",
+					"2018",
+					"2019",
+					"2020",
+					"2021",
+					"2022"
+				],
+				xaxis: [
+					"2013",
+					"2014",
+					"2015",
+					"2016",
+					"2017",
+					"2018",
+					"2019",
+					"2020",
+					"2021",
+					"2022"
+				],
+				units: "",
+				refreshtimeout: "0",
+				normalsizevalue: "20",
+				scale: "0.95",
+				rangescale: "0.8",
+				minvalue: "0",
+				linewidth: "5",
+				markersize: "2.2",
+				boxopacity: "0.1",
+				valuescale: "1",
+				gridwidthpx: "100",
+				title: "Incidenti Bolzano<br>2013 - 2022",
+				snippet: "Incidenti per anno, aggregati per griglia rettangolare"
+			})
+			.define();
+
+		// conteggio aggregato degli incidenti 2023 - 2021
+		// ------------------------------------------------
+		var __incidenti_tutti =
+			ixmaps.layer("Mercator")
+			.data({
+				name: "themeDataObj",
+				url: "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.csv.gz",
+				type: "csv",
+				process: process.toString(),
+				cache: "true",
+			})
+			.binding({
+				position: "geometry",
+				value: "$item$"
+			})
+			.type("CHART|SYMBOL|GLOW|AGGREGATE|RECT|RELOCATE|SUM|SIZE|DTEXT|VALUES|VALUEBACKGROUND|COMPACTLEGEND")
+			.style({
+				name: "tutti",
+				colorscheme: [
+					"7",
+					"#FFEDA0",
+					"#800026",
+					"3colors",
+					"#FC5E2A"
+				],
+				opacity: "0.6",
+				fillopacity: "0.1",
+				autoopacity: "true",
+				shadow: "false",
+				symbols: [
+					"circle"
+				],
+				units: "",
+				scale: "1",
+				linewidth: "3",
+				valuescale: "1",
+				valuedecimals: "0",
+				gridwidthpx: "10",
+				title: "Incidenti Bolzano 2013 - 2022"
+			})
+			.define();
+
+		/**
+		 ** *******************************************************
+		 ** *******************************************************
+		 ** *******************************************************
+		 **
+		 ** create the interactive map an append it to the document 
+		 **
+		 ** *******************************************************
+		 ** *******************************************************
+		 ** *******************************************************
+		 **/
+
+		document.activeElement.appendChild(
+
+			ixmaps.embed("mymap", {
+					mapService: "leaflet",
+					mapType: "OpenStreetMap - FR",
+					map: "../../maps/svg/maps/generic/mercator.svg",
+					mode: "pan",
+					width: "100%",
+					width: (window.innerWidth - 280) + "px",
+					height: (window.innerHeight * 0.88) + "px",
+					legend: "true",
+					align: "center"
+				},
+				map => map
+				.view([46.48669306753273, 11.336249572972105], 14)
+				.options({
+					objectscaling: "dynamic",
+					normalSizeScale: "27033",
+					dynamicScalePow: "3",
+					flushChartDraw: "1000000",
+					basemapopacity: "0.4",
+					panhidden: "false"
+				})
+				.local("aggregated", "")
+				.require("../../ui/js/tools/tooltip_basic.js")
+				.require("https://d3js.org/d3.v3.min.js")
+				.require("https://raw.githubusercontent.com/gjrichter/viz/master/Bolzano_Incidenti/projects/chart.js")
+				.attribution(attribution)
+
+				// -----------------------------		 
+				// the data visualization layer 
+				// -----------------------------
+
+				.layer(__incidenti)
+			)
+		);
+
+	</script>
+
+	<!-- ------------------------------------- -->
+	<!-- ------------------------------------- -->
+	<!-- ------------------------------------- -->
+
+	<!-- user buttons to change the map charts -->
+
+	<!-- ------------------------------------- -->
+	<!-- ------------------------------------- -->
+	<!-- ------------------------------------- -->
+
+	<div style="position:absolute;top:6em;right:2em">
+
+		<script>
+			var sizeCharts = function(nFactor) {
+				ixmaps.changeThemeStyle(null, 'curves', 'scale:' + nFactor, 'factor');
+			}
+			var heightCharts = function(nFactor) {
+				ixmaps.changeThemeStyle(null, 'curves', 'rangescale:' + nFactor, 'factor');
+			}
+			var opacityCharts = function(nFactor) {
+				ixmaps.changeThemeStyle(null, 'curves', 'fillopacity:' + nFactor, 'factor');
+			}
+			var filterCharts = function(szFilter) {
+				ixmaps.changeThemeStyle(null, 'symbols', 'filter:' + szFilter, 'set');
+				ixmaps.changeThemeStyle(null, 'curves', 'filter:' + szFilter, 'set');
+			}
+			var select = function(element) {
+				element.parent().children().children(".radio").html("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+				//$(".radio").html("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+				element.children(".radio").html("&bullet;");
+			}
+
+		</script>
+
+		<style>
+			table {
+				background: #F6F0E3;
+				border-radius: 0.3em;
+				padding: 0.4em 0.8em;
+			}
+
+			td {
+				border: dotted #888800 0.1px;
+			}
+
+			button {
+				background: #F6F0E3;
+				border: #dddddd solid 1px;
+				border-radius: 0.3em;
+				padding: 0.4em 0.8em;
+			}
+
+			button:hover {
+				cursor: pointer;
+			}
+
+			.left {
+				text-align: left;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+		</style>
+
+		<table>
+			<tr onclick="select($(this));ixmaps.newTheme(null,__incidenti,'replace');select($('#alle'));">
+				<td class="radio">&bullet;
+				</td>
+				<td class="left">
+					<button>Incidenti</button>
+				</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+			</tr>
+			<tr onclick="select($(this));ixmaps.newTheme(null,__persone,'replace');select($('#alle'));">
+				<td class="radio">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+				<td class="left">
+					<button>Gravità dell'Inc.</button>
+				</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+			</tr>
+			<tr onclick="select($(this));ixmaps.newTheme(null,__pericolosita,'replace');select($('#alle'));">
+				<td class="radio">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+				<td class="left">
+					<button>Indice di pericolo</button>
+				</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+			</tr>
+			<tr onclick="select($(this));ixmaps.newTheme(null,__natura_2,'replace');select($('#alle'));">
+				<td class="radio">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+				<td class="left">
+					<button>Natura dell'Inc.</button>
+				</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+			</tr>
+			<tr onclick="select($(this));ixmaps.newTheme(null,__incidenti_tutti,'replace');ixmaps.newTheme(null,__grid,'add');ixmaps.newTheme(null,__curves,'add');select($('#alle'));">
+				<td class="radio">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+				<td class="left">
+					<button>Incidenti x anni</button>
+				</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+			</tr>
+			<tr onclick="select($(this));ixmaps.newTheme(null,__peaks,'replace');select($('#alle'));">
+				<td class="radio">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+				<td class="left">
+					<button>Picchi</button>
+				</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+			</tr>
+		</table>
+
+		<table>
+			<tr id="alle" onclick="select($(this));filterCharts('WHERE ANNOINC BETWEEN 2019 AND 2022');">
+				<td class="radio">&bullet;
+				</td>
+				<td class="left">
+					<button>tutti</button>
+				</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+			</tr>
+			<tr onclick="select($(this));filterCharts('WHERE NR_PEDONI > 0');">
+				<td class="radio">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+				<td class="left">
+					<button>pedoni investiti</button>
+				</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+			</tr>
+			<tr onclick="select($(this));filterCharts('WHERE FERITI > 0');">
+				<td class="radio">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+				<td class="left">
+					<button>con feriti</button>
+				</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>
+					<button onclick="sizeCharts(0.90)">-</button>
+				</td>
+				<td>
+					<span style="font-size:0.8em"> &nbsp; chart size &nbsp;</span>
+				</td>
+				<td>
+					<button onclick="sizeCharts(1.1)">+</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button onclick="heightCharts(0.90)">-</button>
+				</td>
+				<td>
+					<span style="font-size:0.8em"> &nbsp; chart height &nbsp;</span>
+				</td>
+				<td>
+					<button onclick="heightCharts(1.1)">+</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button onclick="opacityCharts(0.75)">-</button>
+				</td>
+				<td>
+					<span style="font-size:0.8em"> &nbsp; opacity &nbsp;</span>
+				</td>
+				<td>
+					<button onclick="opacityCharts(1.5)">+</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+					<button onclick="ixmaps.changeThemeStyle(null,'curves','type:AGGREGATE','toggle');">aggregated y / n </button>
+				</td>
+				<td>
+				</td>
+			</tr>
+		</table>
+
+		<div style="font-family:open sans;text-align:left;margin-left:1em;margin-top:0.5em;max-width:200px">
+			<p>Fonte dati: Città di Bolzano</p>
+			<p>Link ai dati: dati recuperati più o meno da<a style="color:#0088dd" href="https://studio.foursquare.com/public/d7fbbd6d-5153-4a92-8ab9-cf1cc2831663?fbclid=IwAR1kOkDhmQyziBSloYJeKWVt8Ag8EvH2Ia1vCZvaKnSrSPV9JLFFZw0xGEg" target="_blank"> questa</a> mappa
+			</p>
+		</div>
+		<div style="font-family:open sans;text-align:left;margin-left:1em;margin-top:0.5em;max-width:200px">
+			<p>
+				<button onclick="ixmaps.popupShare()";>share</button>
+				<button onclick="ixmaps.popupThemeFacets()";>facets</button>
+				<button onclick="ixmaps.popOutView()";>fullscr.</button>
+			</p>
+		</div>
+
+</body>
+
+</html>

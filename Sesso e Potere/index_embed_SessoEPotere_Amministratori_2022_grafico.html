@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<!-- **********************************************************************
+
+index_only_map_embed.html
+
+$Comment: ixmaps map template; embedded version
+$Source : index_only_map_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:index_only_map_embed.html 1 2021-10-17 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:index_only_map_embed.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="ixmaps embed example">
+	<meta name="author" content="guenter richter">
+	<link rel="shortcut icon" href="https://gjrichter.github.io/ixmaps/ui/resources/images/ixmaps_logo.png">
+
+	<title>iXMaps test Api 2</title>
+
+</head>
+
+<body>
+
+    <!--========================================================================= -->
+
+	<script src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
+	
+    <!--========================================================================= -->
+
+	<script type="text/javascript" charset="utf-8"> 
+
+		var georef = 
+			ixmaps.layer("ITALIA_Comuni_2022")
+			  .data({
+				url: "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2022/Com01012022_s_WGS84.topojson.gz",
+				type: "topojson"
+			  })
+			  .binding({
+						id: "PRO_COM_T",
+				position: "geometry"
+			  })
+			  .type("FEATURES|NOLEGEND")
+			  .style({
+				colorscheme: ["none"],
+				linecolor: "none",
+				linewidth: "1",
+						sizefield: "Shape_Area"
+			  })
+			  .define();
+		
+		chart__grid = 
+			ixmaps.layer("ITALIA_Comuni_2022")
+			  .data({
+				url: "https://raw.githubusercontent.com/ondata/sesso-e-potere/main/dati/amministazioni-italiane/processing/ammcom.csv",
+				type: "csv"
+			  })
+			  .binding({
+						value: "sesso",
+				position: "CODICE_ISTAT"
+			  })
+			  .type("CHART|SYMBOL|GRIDSIZE|FAST|CATEGORICAL|COMPOSECOLOR|CENTER|AGGREGATE|RECT|SUM|DOPACITY")
+			  .style({
+				colorscheme: ["#1F77B4","#F54242","#E6E6E6"],
+						fillopacity: "0.7",
+						dopacitypow: "2",
+						dopacityscale: "3",
+						linecolor: ["white"],
+						symbols: ["circle"],
+						values: ["M","F"],
+						label: ["maschi","femmine"],
+						normalsizevalue: "20000000",
+						scale: "1.05",
+						linewidth: "3",
+						gridwidthpx: "12",
+						valuedecimals: "0",
+						titlefield: "denominazione_comune"
+			  })
+			  .meta({
+						title: "Amministratori per sesso",
+						snippet: "al 01.09.2022"	
+			  })
+			  .define();
+		
+		var chart__places = 
+			ixmaps.layer("ITALIA_Comuni_2022")
+			  .data({
+				url: "https://raw.githubusercontent.com/ondata/sesso-e-potere/main/dati/amministazioni-italiane/processing/ammcom.csv",
+				type: "csv"
+			  })
+			  .binding({
+						value: "sesso",
+				position: "CODICE_ISTAT"
+			  })
+			  .type("CHART|PIE|HALF|DONUT|SIZEP3|CATEGORICAL|AGGREGATE|HEX|COUNT")
+					.filter("WHERE \"popolazione_censita\" > 100000")
+			  .style({
+				colorscheme: ["#1F77B4","#F56282","#E6E6E6"],
+						fillopacity: "0.9",
+						linecolor: ["#ffffff"],
+						symbols: ["square"],
+						values: ["M","F"],
+						label: ["maschi","femmine"],
+						normalsizevalue: "5000000",
+						scale: "1",
+						linewidth: "1",
+						sizefield: "popolazione_censita",
+						titlefield: "denominazione_comune",
+						valuedecimals: "0",
+			  })
+			  .meta({
+						title: "Amministratori per sesso",
+						snippet: "al 01.09.2022"	
+			  })
+			  .define();
+		
+		var attribution = "dati: <a href='https://github.com/pcm-dpc/UKR-2022' target='_blank'>Dipartimento della Protezione Civile</a>, 	licenza: <a href='https://creativecommons.org/licenses/by/4.0/deed.it target='_blank'>CC-BY-4.0</a>"
+		
+		var legend = "<span style='color:#ff88dd'><h1>Amministratori locali in carica al<br> 5 Ottobre 2022</h1><h2>Parità di genere e non  nelle amministrazioni comunali di tutti comuni dell'Italia.</h2><h2>I cerchi in fonto rappresentono le quote femminile dei comuni aggregate per griglia rettangolare </h2><h2>i semicerchi rappresentano la parità di sesso nei consigli communali delle città con più di 100.000 abitanti</h2><h4>fonte: <a href='https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-in-carica' target='blank'>Eligendo</a> licenza: <a href='https://www.dati.gov.it/content/italian-open-data-license-v20' target='blank'>IODL v2.0</h4></span>";
+		
+		// ----------------------------------------
+		// create the map with DISS and earthquakes
+		// 	5 layer DISS
+		//  1 layer actual earthquakes
+		// ----------------------------------------
+
+		document.activeElement.appendChild(
+			
+			ixmaps.embed("map2", { 
+			  mapCdn: "https://gjrichter.github.io/ixmaps",
+				maptype: "white",
+			  width:  "90%",
+			  height: "800px",
+			  scrollsafesilent: "true",
+			  legend: 1,
+			  mode: "info",
+		      tools: "true"	
+			  },
+			  map => map
+			   .view([41.82824901518532,15.040283203125002],6)
+			   .attribution(attribution)
+			   .legend(legend)  
+			   .require("../../ui/js/tools/tooltip_basic.js")                
+			   .options({
+				 scrollSafeSilent: "true",
+				 objectscaling: "dynamic",
+				 normalsizescale: "10000000",
+				 panhidden: "false"             
+			   })
+			   .layer(georef)
+			   .layer(chart__grid)
+			   .layer(chart__places)          
+			 ) 					  
+		);
+
+	</script>	
+  </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<!-- **********************************************************************
+
+index_only_map_embed.html
+
+$Comment: ixmaps map template; embedded version
+$Source : index_only_map_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:index_only_map_embed.html 1 2021-10-17 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:index_only_map_embed.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="ixmaps map page">
+	<meta name="author" content="guenter richter">
+	<link rel="shortcut icon" href="https://gjrichter.github.io/ixmaps/ui/resources/images/ixmaps_logo.png">
+
+	<title>iXMaps</title>
+
+</head>
+
+<body>
+
+	<div id="tooltip"></div>
+    <!--========================================================================= -->
+
+	<script src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
+	
+    <!--========================================================================= -->
+
+	<script type="text/javascript" charset="utf-8"> 
+
+		// define the function to query the actual data (last week) from INGV
+		// this functiuon will be loaded (toString()) into the theme definition
+		
+		process_geo = function(data,options){
+			data.column('gem_code').map(function(value){
+				return (value.substring(0,5)+value.substring(9));
+			});
+		};
+		
+		process_data = function(data,options){
+			data.column('GKZ1220').map(function(value){
+				if( value.length < 8 ){
+					return ('0'+value);
+				}else{
+					return value;
+				}
+			});
+		};
+		
+		// ----------------------------------------
+		// 
+		// ----------------------------------------
+
+		document.activeElement.appendChild(
+			
+			ixmaps.embed("mymap", { 
+			  mapCdn: "https://gjrichter.github.io/ixmaps",
+			  mapType: "Stamen - toner-lite",	
+			  width:  "700px",
+			  height: "740px",
+			  legend: "true",
+			  align: "center",
+			  xxscrollsafe: "true",
+			  name: "map_1"	
+			  },
+			  map => map
+			   .options({objectscaling:"dynamic",normalSizeScale:"100000",panhidden:"false",basemapopacity:"0.9"})
+			   .view([42.030748560601424,12.432528287172318],6)
+			   .attribution("di <a href='https://twitter.com/grichter' target='_blank'>Guenter Richter</a> powered by iXMaps")  
+			   .require("../../ui/js/tools/tooltip_basic.js") 
+						 
+			   .layer(ixmaps.layer("ITALIA_Comuni_2022")
+				  .data({
+					url:"https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2022/Com01012022_g_WGS84.topojson.gz",
+					type:"topojson"
+				  })
+				  .binding({id: "PRO_COM_T"})
+				  .style({
+					"colorscheme": ["none"],
+					linecolor: ["black"],
+					linewidth: "0.3"
+					})
+				  .define()
+				)
+						 
+			   .layer(ixmaps.layer("ITALIA_Comuni_2022")
+					  
+				  .type("CHOROPLETH|QUANTILE|")	
+					  
+				  .data({
+					url:"https://raw.githubusercontent.com/ondata/elezioni-politiche-2022/main/affluenza-risultati/dati/affluenza/affluenzaComuni.csv",
+					type:"csv"
+				  })
+				  .binding({position: "CODICE ISTAT",value:"%h12",title:"comune"})
+					  
+				  .style({
+					colorscheme: [
+						"#E5A8BF",
+						"#EDDBEB",
+						"#82AFD2",
+						"#2C74BA",
+						"#235587"],
+					units: "%",
+				    valueupper: "1:500000",
+				    textcolor: "#000088",
+					showdata: "true",
+					opacity: "auto"
+					})
+				  .meta({
+					title: "Affluenza alle 12:00"
+					})	  
+				  .define()
+				)
+					  
+					  
+			   .layer(ixmaps.layer("ITALIA_Comuni_2022")
+					  
+				  .type("CHART|LABEL|VALUES|TEXTONLY")	
+					  
+				  .data({
+					url:"https://raw.githubusercontent.com/ondata/elezioni-politiche-2022/main/affluenza-risultati/dati/affluenza/affluenzaComuni.csv",
+					type:"csv"
+				  })
+				  .binding({position: "CODICE ISTAT",value:"%h12",title:"comune"})
+					  
+				  .style({
+					colorscheme: [
+						"white"],
+					units: "%",
+					normalsizevalue: "10",
+					valuedecimals: "1",
+				    chartupper: "1:500000"
+					})
+				  .meta({
+					title: "Affluenza alle 12:00"
+					})	  
+				  .define()
+				)
+						 
+
+			) 			
+		);
+
+	</script>	
+  </body>
+</html>

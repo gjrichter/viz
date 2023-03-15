@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<!-- **********************************************************************
+
+ixmaps map embed html
+
+$Comment: ixmaps map template; embedded version
+$Source : index_only_map_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:index_only_map_embed.html 1 2021-10-17 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:index_only_map_embed.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="ixmaps embed example">
+	<meta name="author" content="guenter richter">
+	<link rel="shortcut icon" href="https://gjrichter.github.io/ixmaps/ui/resources/images/ixmaps_logo.png">
+
+	<title>iXMaps really simple embed</title>
+
+</head>
+
+<body style='text-align:center'>
+
+	<!--========================================================================= -->
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
+
+	<!--========================================================================= -->
+
+	<script type="text/javascript" charset="utf-8">
+		ixmaps.tmp = ixmaps.tmp || {};
+
+		/**
+		 ** strings used by the map 	
+		 **/
+
+		attribution =
+			"powered by <a href=\"http://ixmaps.com\" target=\"_blank\">iXMaps</a>";
+
+		/**
+		 **
+		 ** define the themes 
+		 **
+		 **/
+
+		// conteggio aggregato degli incidenti 
+		// --------------------------------------
+		var __incidenti_blue =
+			ixmaps.layer("Mercator")
+			.data({
+				name: "themeDataObj",
+				url: "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.csv.gz",
+				type: "csv",
+				cache: "true",
+			})
+			.binding({
+				position: "geometry",
+				value: "$item$"
+			})
+			.filter("WHERE ANNOINC BETWEEN 2019 AND 2022")
+			.type("CHART|SYMBOL|GLOW|AGGREGATE|RECT|RELOCATE|SUM|SIZE|VALUES")
+			.style({
+				name: "test",
+				colorscheme: [
+					"15",
+					"#D2E3F4",
+					"#104482",
+					"3colors",
+					"#4A90E1"
+				],
+				opacity: "0.6",
+				shadow: "false",
+				symbols: [
+					"circle"
+				],
+				units: "",
+				scale: "1",
+				valuescale: "1",
+				valuedecimals: "0",
+				gridwidthpx: "10",
+				showdata: "true",
+				title: "Incidenti Bolzano 2019 - 2022"
+			})
+			.define();
+
+		/**
+		 ** *******************************************************
+		 ** *******************************************************
+		 ** *******************************************************
+		 **
+		 ** create the interactive map an append it to the document 
+		 **
+		 ** *******************************************************
+		 ** *******************************************************
+		 ** *******************************************************
+		 **/
+
+		document.activeElement.appendChild(
+
+			ixmaps.embed("mymap", {
+					mapService: "leaflet",
+					mapType: "Stamen - toner-lite",
+					map: "../../maps/svg/maps/generic/mercator.svg",
+					mode: "pan",
+					width: (window.innerWidth * 0.99) + "px",
+					height: (window.innerHeight * 0.98) + "px",
+					legend: "true",
+					align: "right"
+				},
+				map => map
+				.view([46.48669306753273, 11.336249572972105], 14)
+				.options({
+					objectscaling: "dynamic",
+					normalSizeScale: "27033",
+					dynamicScalePow: "3",
+					flushChartDraw: "1000000",
+					basemapopacity: "0.4",
+					panhidden: "false"
+				})
+				.local("aggregated", "")
+				.require("../../ui/js/tools/tooltip_basic.js")
+				.attribution(attribution)
+
+				// -----------------------------		 
+				// the data visualization layer 
+				// -----------------------------
+
+				.layer(__incidenti_blue)
+			)
+		);
+
+	</script>
+
+
+</body>
+
+</html>

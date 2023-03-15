@@ -40,11 +40,43 @@ $Log:index_only_map_embed.html,v $
 
 	<script type="text/javascript" charset="utf-8">
 
+		var query_data = function(theme, options) {
+			var broker = new Data.Broker()
+				.addSource("https://raw.githubusercontent.com/teamdigitale/padigitale2026-opendata/main/data/candidature_comuni_finanziate.csv", "csv")
+				.addSource("https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_12112022190714624.csv", "csv")
+				.realize(function(dataA) {
+					
+					var nameLookupA = dataA[1].lookupArray({
+						key: "Territorio",
+						value: "Value"
+					});
+					dataA[0].addColumn({
+						source: "comune",
+						destination: "pop_2022"
+					}, function(value) {
+						return (nameLookupA[value]);
+					});
+					var importoI = dataA[0].column("importo_finanziamento").index;
+					var popI = dataA[0].column("pop_2022").index;
+					dataA[0].addColumn({
+						destination: "importo_procapite"
+					}, function(row) {
+						return (row[importoI]/row[popI]);
+					});
+					
+					var date = new Date();
+					ixmaps.setTitle("<p style='font-family:open sans;color:#666666;font-size:18px;'>aggiornato: "+date.toLocaleDateString()+"</p>");
+					
+					options.type = "jsonDB";
+					ixmaps.setExternalData(dataA[0], options);
+				});
+		};
+		
 		var georef =
 			ixmaps.layer("ITALIA_Comuni_2022")
 			.data({
-				url: "https://raw.githubusercontent.com/aborruso/centroidiurbanfabric/master/output/ElencoUnitaAmministrative2011.geojson",
-				type: "geojson"
+				url: "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2022/Com01012022_s_WGS84.topojson.gz",
+				type: "topojson"
 			})
 			.binding({
 				id: "COMUNE",
@@ -55,22 +87,21 @@ $Log:index_only_map_embed.html,v $
 				colorscheme: ["none"],
 				linecolor: "none",
 				linewidth: "1",
-				scale: "0",
-				sizefield: "POP_2011"
+				sizefield: "Shape_Area"
 			})
 			.define();
 
 		var bubble_chart =
 			ixmaps.layer("ITALIA_Comuni_2022")
 			.data({
-				url: "https://raw.githubusercontent.com/teamdigitale/padigitale2026-opendata/main/data/candidature_comuni_finanziate.csv",
-				type: "csv"
+				query: query_data.toString(),
+				type: "ext"
 			})
 			.binding({
 				value: "avviso",
 				position: "comune"
 			})
-			.type("CHART|SYMBOL|SEQUENCE|MULTIPLE|UP|SORT|UP|AGGREGATE|RELOCATE|SUM|CATEGORICAL|VALUES|BOX|TITLE|COMPACTLEGEND")
+			.type("CHART|PIE|SORT|DOWN|SIZE|AGGREGATE|RELOCATE|SUM|CATEGORICAL|BOX|TITLE|COMPACTLEGEND")
 			.style({
 				colorscheme: [
 					"10",
@@ -78,14 +109,14 @@ $Log:index_only_map_embed.html,v $
 				fillopacity: "0.7",
 				shadow: "false",
 				symbols: [
-					"label"],
+					"circle"],
 				units: "€",
-				normalsizevalue: "5000000",
+				normalsizevalue: "10000000",
 				sizefield: "importo_finanziamento",
+				textcolor: "#666666",
 				textscale: "1.5",
 				linecolor: "white",
 				titlefield: "comune",
-				rangescale: "2",
 				valuescale: "1.3",
 				valuedecimals: "0",
 				showdata: "true",
@@ -101,6 +132,34 @@ $Log:index_only_map_embed.html,v $
 				title: "PA Digitale - Candidature finanziate Comuni"
 			})
 			.define();
+
+		var choropleth =
+			ixmaps.layer("ITALIA_Comuni_2022")
+			.data({
+				query: query_data.toString(),
+				type: "ext"
+			})
+			.binding({
+				value: "pop_2022",
+				position: "comune"
+			})
+			.type("CHOROPLETH|RANGES|NOLEGEND")
+			.style({
+				colorscheme: [
+					"6",
+					"#FEE5D9",
+					"#A50F15",
+					"3colors",
+					"#FB6A4A"],
+				ranges: "0,5000,20000,50000,100000,500000,10000000",
+				fillopacity: "0.2"
+			})
+			.meta({
+				title: "PA Digitale - Pop Comuni"
+			})
+			.define();
+		
+		
 		
 		var attribution = "dati: <a href='https://padigitale2026.gov.it/opendata/?fbclid=IwAR0XNJHx-ZdhE3OpQZKV8apN7yi_6Zftl9d-ZuRSxn4f6Qd94lJ36b9RZkA' target='_blank'>PA Digitale - Open Data</a>, 	licenza: <a href='https://creativecommons.org/licenses/by/4.0/deed.it target='_blank'>CC-BY-4.0</a>"
 
@@ -120,8 +179,7 @@ $Log:index_only_map_embed.html,v $
 					legend: 1,
 					align: "center",
 					mode: "pan",
-					tools: "true",
-					search: "Italy"
+					tools: "true"
 				},
 				map => map
 				.view([41.94314874732696, 12.656250000000002], 6)
@@ -136,6 +194,7 @@ $Log:index_only_map_embed.html,v $
 					basemapopacity: "0.3"
 				})
 				.layer(georef)
+				.layer(choropleth)
 				.layer(bubble_chart)
 			)
 		);

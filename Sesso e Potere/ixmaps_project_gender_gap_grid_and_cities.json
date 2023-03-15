@@ -1,0 +1,172 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"thumbnail": "",
+		"about": "",
+		"description": "",
+		"created": "Sat Oct 08 2022 18:33:29 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "white",
+		"legend": "<div style='font-family:serif;font-weight:light;color:#aaaaaa;'><h1>L'Itlia più o meno equo</h1><h2>Gender gap nelle amministrazioni comunali di tutti comuni dell'Italia.</h2><h2>I quadrati rappresentono comuni aggregati,<br>i cerchi città con più di 100.000 abitanti.</div>",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "50000",
+			"labelscaling": "dynamic",
+			"mapopacity": "1",
+			"basemapopacity": "0.2",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "41.3108238809182",
+			"lng": "15.161132812500002"
+			},
+		"zoom": "6"
+		},
+	"themes": [{
+			"layer": "ITALIA_Comuni_2022",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"dbtable": "DBTABLE36761236",
+				"dbtableUrl": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2022/Com01012022_s_WGS84.topojson.gz",
+				"dbtableType": "topojson",
+				"datacache": "true",
+				"itemfield": "PRO_COM_T",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"sizefield": "Shape_Area",
+				"linecolor": [
+					"none"],
+				"linewidth": "0.1",
+				"valuescale": "1",
+				"title": "layer"
+				}
+			},{
+			"layer": "ITALIA_Comuni_2022",
+			"field": "sesso",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|GRIDSIZE|FAST|CATEGORICAL|COMPOSECOLOR|CENTER|AGGREGATE|RECT|SUM|DOPACITY",
+				"colorscheme": [
+					"#1F77B4",
+					"#F54242",
+					"#E6E6E6"],
+				"fillopacity": "0.7",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/sesso-e-potere/main/dati/amministazioni-italiane/processing/ammcom.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "CODICE_ISTAT",
+				"symbols": [
+					"square"],
+				"values": [
+					"M",
+					"F"],
+				"label": [
+					"M",
+					"F"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1.25",
+				"dopacitypow": "2",
+				"dopacityscale": "1.3",
+				"linecolor": [
+					"white"],
+				"linewidth": "3",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridwidthpx": "12",
+				"titlefield": "denominazione_comune",
+				"title": "Amministratori per sesso",
+				"snippet": "al 01.09.2022"	
+				}
+			},{
+			"layer": "ITALIA_Comuni_2022",
+			"field": "sesso",
+			"field100": "",
+			"style": {
+				"type": "CHART|AURA|SYMBOL|SIZE|CATEGORICAL|COMPOSECOLOR|CENTER|AGGREGATE|HEX|COUNT|DOPACITY",
+				"colorscheme": [
+					"#1F77B4",
+					"#F54242",
+					"#E6E6E6"],
+				"fillopacity": "0.3",
+				"shadow": "false",
+				"filter": "WHERE \"popolazione_censita\" > 100000",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://raw.githubusercontent.com/ondata/sesso-e-potere/main/dati/amministazioni-italiane/processing/ammcom.csv",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "CODICE_ISTAT",
+				"symbols": [
+					"circle"],
+				"values": [
+					"M",
+					"F"],
+				"label": [
+					"maschi",
+					"femmine"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "20000000",
+				"scale": "0.8000000000000002",
+				"sizefield": "popolazione_censita",
+				"titlefield": "denominazione_comune",
+				"dopacitypow": "2",
+				"dopacityscale": "6.75",
+				"linecolor": [
+					"#ffffff"],
+				"linewidth": "10",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridwidthpx": "23.4375",
+				"title": "Amministratori per sesso",
+				"snippet": "al 01.09.2022"	
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

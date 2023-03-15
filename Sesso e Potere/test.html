@@ -1,0 +1,20 @@
+<html>
+
+<body style="margin:auto;max-width:1024px">
+	<div id="observablehq-map-067133eb"></div>
+	<p>Credit: <a href="https://observablehq.com/@gjrichter/ixmaps-parita-di-genere-citta-con-piu-di-100-000-abitanti">ixmaps - Parità di genere - città con più di 100.000 abitanti by gjrichter</a></p>
+
+	<script type="module">
+		import {
+			Runtime,
+			Inspector
+		} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+		import define from "https://api.observablehq.com/@gjrichter/ixmaps-parita-di-genere-citta-con-piu-di-100-000-abitanti.js?v=3";
+		new Runtime().module(define, name => {
+			if (name === "map") return new Inspector(document.querySelector("#observablehq-map-067133eb"));
+		});
+
+	</script>
+</body>	
+
+</html>

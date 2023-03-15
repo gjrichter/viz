@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<!-- **********************************************************************
+
+index_only_map_embed.html
+
+$Comment: ixmaps map template; embedded version
+$Source : index_only_map_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:index_only_map_embed.html 1 2021-10-17 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:index_only_map_embed.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="ixmaps embed example">
+	<meta name="author" content="guenter richter">
+	<link rel="shortcut icon" href="https://gjrichter.github.io/ixmaps/ui/resources/images/ixmaps_logo.png">
+
+	<title>iXMaps</title>
+
+</head>
+
+<body>
+
+	<!--========================================================================= -->
+
+	<script src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
+
+	<!--========================================================================= -->
+
+	<script type="text/javascript" charset="utf-8">
+		
+		var query_data = function(theme, options) {
+			var broker = new Data.Broker()
+				.addSource("https://raw.githubusercontent.com/teamdigitale/padigitale2026-opendata/main/data/candidature_comuni_finanziate.csv", "csv")
+				.addSource("https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/DCIS_POPRES1_12112022190714624.csv", "csv")
+				.realize(function(dataA) {
+					
+					var nameLookupA = dataA[1].lookupArray({
+						key: "Territorio",
+						value: "Value"
+					});
+					dataA[0].addColumn({
+						source: "comune",
+						destination: "pop_2022"
+					}, function(value) {
+						return (nameLookupA[value]);
+					});
+					var importoI = dataA[0].column("importo_finanziamento").index;
+					var popI = dataA[0].column("pop_2022").index;
+					dataA[0].addColumn({
+						destination: "importo_procapite"
+					}, function(row) {
+						return (row[importoI]/row[popI]);
+					});
+					
+					var date = new Date();
+					ixmaps.setTitle("<p style='font-family:open sans;color:#666666;font-size:18px;'>aggiornato: "+date.toLocaleDateString()+"</p>");
+					
+					options.type = "jsonDB";
+					ixmaps.setExternalData(dataA[0], options);
+				});
+		};
+		
+		
+		
+		
+		var attribution = "dati: <a href='https://padigitale2026.gov.it/opendata/?fbclid=IwAR0XNJHx-ZdhE3OpQZKV8apN7yi_6Zftl9d-ZuRSxn4f6Qd94lJ36b9RZkA' target='_blank'>PA Digitale - Open Data</a>, 	licenza: <a href='https://creativecommons.org/licenses/by/4.0/deed.it target='_blank'>CC-BY-4.0</a>"
+
+		// ----------------------------------------
+		// create the map with DISS and earthquakes
+		// 	5 layer DISS
+		//  1 layer actual earthquakes
+		// ----------------------------------------
+
+		document.activeElement.appendChild(
+
+			ixmaps.embed("map2", {
+					mapCdn: "https://gjrichter.github.io/ixmaps",
+					maptype: "Stamen - toner-lite",
+					width: "90%",
+					height: "800px",
+					legend: 1,
+					align: "center",
+					mode: "info",
+					tools: "true"
+				},
+				map => map
+				.view([41.94314874732696, 12.656250000000002], 6)
+				.attribution(attribution)
+				.require("../../ui/js/tools/tooltip_basic.js")
+				.options({
+					scrollSafeSilent: "true",
+					objectscaling: "dynamic",
+					normalSizeScale: "6920521",
+					dynamicScalePow: "1.7",
+					panhidden: "false",
+					basemapopacity: "0.3"
+				})
+						 
+				// load 2022 adminitrative boundaries
+
+				.layer(ixmaps.layer("ITALIA_Comuni_2022")
+					.data({
+						url: "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2022/Com01012022_s_WGS84.topojson.gz",
+						type: "topojson"
+					})
+					.binding({
+						id: "COMUNE",
+						position: "geometry"
+					})
+					.type("FEATURES|NOLEGEND")
+					.style({
+						colorscheme: ["none"],
+						linecolor: "none",
+						linewidth: "1",
+						sizefield: "Shape_Area"
+					})
+					.define()
+				)
+						 
+			   .layer(ixmaps.layer("ITALIA_Regioni_2022")
+				  .data({
+					url:"https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/regioni_2022/Reg01012022_s_WGS84.topojson.gz",
+					type:"topojson"
+				  })
+				  .binding({id: "COD_REG"})
+				  .style({
+					"colorscheme": ["none"],
+					linecolor: ["#888888"],
+					linewidth: "0.5"
+					})
+				  .define()
+				)
+						 
+				// make choropleth layer
+						 
+				.layer(ixmaps.layer("ITALIA_Comuni_2022")
+					.data({
+						query: query_data.toString(),
+						type: "ext"
+					})
+					.binding({
+						value: "avviso",
+						position: "comune"
+					})
+					.type("CHOROPLETH|DOMINANT|HORZ|AGGREGATE|SUM|CATEGORICAL|DOPACITYMAX|COMPACTLEGEND")
+					.style({
+						colorscheme: [
+							"5",
+							"tableau10"
+						],
+						fillopacity: "0.7",
+						shadow: "false",
+						symbols: [
+							"circle"
+						],
+						values: [
+							"1.2 Abilitazione al cloud - Comuni - Aprile 2022",
+							"1.4.1 Esperienza del Cittadino - Comuni - Aprile 2022",
+							"1.4.3 - app IO - Comuni - Aprile 2022",
+							"1.4.3 - pagoPA - Comuni - Aprile 2022",
+							"1.4.4 Adozione SPID CIE - Comuni - Aprile 2022"
+						],
+						units: "€",
+						sizefield: "importo_finanziamento",
+						textcolor: "#666666",
+						textscale: "1.5",
+						rangescale: "3",
+						linecolor: "white",
+						titlefield: "comune",
+						alphafield: "pop_2022",
+						alphafield100: "$density$",
+						dopacitypow: "3",
+						dopacityscale: "2",
+						valuescale: "1.3",
+						valuedecimals: "2",
+						boxopacity: "0",
+						showdata: "true",
+						datafield: "pop_2022",
+						aggregationfield: "comune"
+					})
+					.meta({
+						title: "PA Digitale - Candidature finanziate Comuni"
+					})
+					.define()
+
+				)
+			)
+		);
+
+	</script>
+</body>
+
+</html>

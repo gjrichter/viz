@@ -1,0 +1,164 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Tue Jan 14 2020 14:54:34 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "",
+		"attribution": "data: ISTAT",
+		"basemap": "CartoDB - Dark matter",
+		"legend": "<h1>Pendolari 2011</h1><h3>Saldo <span style='color:#B7F989'>arrivi</span>/<span style='color:#CF5A58'>partenze</span> in % degli spostamenti complessivi sul territorio del comune.</h3><br><p>Le percentuali indicati sono il saldo tra arrivi e partenze di persone che si spostano giornalieri per movitivi di lavoro o studio, in relazione alla somma di movimenti del comune (arrivi, partenze e movimenti entro il comune)</p><p>Il piu alto è la percentuale, il più importante sono i movimenti entra o fuori dal comune mentre il colore indica se il comune è un attrattore (verde) o no (rosso).</p><p>La percentuale e l'intensità del colore si potrebbe interpretare come la 'dipendenza' del comune o da arrivi (più verde) o da partenze (più rosso)</p><br><p>Fonte: ISTAT, dati rilevati al 15° Censimento generale della popolazione (9 ottobre 2011)</p>",
+		"scaleParam": {
+			"normalSizeScale": "100000"
+			},
+		"options": {
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "40.28109717490234",
+			"lng": "18.23112487792969"
+			},
+		"zoom": "10"
+		},
+	"themes": [{
+			"layer": "com2011_g",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND|LOCKED",
+				"colorscheme": [
+					"1",
+					"RGB(238,238,255)",
+					"RGB(0,0,221)"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "com2011_g",
+				"dbtableType": "ext",
+				"dbtableExt": "https://gjrichter.github.io/viz/IstatPendolari/databroker_centroidi_municipi.js",
+				"datacache": "true",
+				"itemfield": "PRO_COM",
+				"lookupfield": "geometry",
+				"child": "true",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"title": "posizioni comuni 2011"
+				}
+			},{
+			"layer": "com2011_g",
+			"field": "procom_lavoro",
+			"field100": "",
+			"style": {
+				"type": "CHART|CATEGORICAL|VECTOR|BEZIER|GRADIENT||DASH|SIZE|AGGREGATE|FAST|SUM",
+				"colorscheme": [
+					"8093",
+					"fruit"],
+				"linecolor":"#AFCEDA",
+				"fillopacity": "0.9",
+				"shadow": "false",
+				"dbtable": "pendolari_matrix",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/pendo2011_S_aggregato.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "procom_residenza",
+				"lookupfield2": "procom_lavoro",
+				"units": "persone",
+				"refreshtimeout": "0",
+				"normalsizevalue": "10000",
+				"scale": "1",
+				"rangescale": "5",
+				"sizepow": "1.4",
+				"sizefield": "Numero_di_individui",
+				"minvalue": "20",
+				"valuescale": "1",
+				"maxcharts": "1000",
+				"name": "pendolari_flussi",
+				"title": "Pendolari 2011",
+				"snippet": "<b>Flusso</b> degli spostamenti casa lavoro/studi per destinazione",
+				"splash": "... analizzando più di 500 000 righe ..."
+				}
+			},{
+			"layer": "com2011_g",
+			"field": "saldo",
+			"field100": "sum",
+			"style": {
+				"type": "CHART|GLOW|BUBBLE|NEGATIVEISVALUE|VALUES|SIZEP3|MEAN",
+				"colorscheme": [
+					"10",
+					"RGB(255,0,0)",
+					"RGB(255,255,10)",
+					"3colors",
+					"RGB(148,204,200)"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"dbtable": "pendolari",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ISTAT/pendolari_2011_in_out_self_sum.csv.gz",
+				"dbtableType": "csv",
+				"dbtableExt": "https://gjrichter.github.io/viz/IstatPendolari/process_legend.js",
+				"datacache": "true",
+				"lookupfield": "procom",
+				"ranges": [
+					"-100",
+					"-80",
+					"-60",
+					"-30",
+					"0",
+					"10",
+					"20",
+					"40",
+					"60",
+					"80",
+					"100"],
+				"units": "%",
+				"refreshtimeout": "0",
+				"scale": "3.125",
+				"sizefield": "sum",
+				"linewidth": "1",
+				"valueupper": "1:10000000",
+				"valuescale": "1",
+				"name": "pendolari_self",
+				"title": "Pendolari 2011",
+				"snippet": "<p>Dipendenza dal pendolarismo.</p><br><p>Il saldo delle entrate/uscite dal comune espresso in % degli spostamenti complessivi (entrate, uscite e movimenti entro il comune)<p>",
+				"splash": "<p>Dipendenza dei comuni dal pendolarismo</p>... caricando la tabella con i spostamenti, ci sono più di 500000 righe. Datemi un po' di tempo ... ",
+				"description": "<p>dati: Istat</p>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
