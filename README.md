@@ -32,5 +32,6 @@ featured:
 
 [City Move Map](https://gjrichter.github.io/viz/OSM Overpass/ixmaps_City_Move_Map.html)
 
-
 [Amministratori Comunali](https://gjrichter.github.io/viz/Amministratori/ixmaps_Amministratori.html)
+
+[ISTAT - Previsioni Demografiche](https://gjrichter.github.io/ixmaps/app/Viewer/?layout=right&title&false&sidebar=35%&sidebarbutton=0&story=https://gjrichter.github.io/viz/ISTAT/stories/Demografia_Previsioni - New/index.html)
