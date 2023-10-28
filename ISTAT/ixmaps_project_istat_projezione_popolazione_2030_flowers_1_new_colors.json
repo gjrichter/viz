@@ -1,0 +1,128 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Jun 05 2023 13:14:18 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": " visualizzazione: <a href=\"https://twitter.com/grichter\" target=\"_blank\">Guenter Richter</a><br> dati: ISTAT - <a href=\"https://www.istat.it/it/statistiche-sperimentali\" target=\"_blank\">Statistiche sperimentali</a>",
+		"basemap": "OpenStreetMap - FR",
+		"legend": " ",
+		"item": "html",
+		"scaleParam": {
+			"normalSizeScale": "5000000"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "100000",
+			"mapopacity": "1",
+			"basemapopacity": "0.3",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "40.87302619480761",
+			"lng": "14.357414245605469"
+			},
+		"zoom": "7"
+		},
+	"themes": [{
+			"layer": "Com2019_pro_com",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "FEATURES|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"shadow": "false",
+				"visible": "true",
+				"dbtable": "COMUNI",
+				"dbtableUrl": "https://gjrichter.github.io/viz/Amministratori/comuni_2019_U.geojson",
+				"dbtableType": "geojson",
+				"datacache": "true",
+				"itemfield": "PRO_COM",
+				"lookupfield": "geometry",
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0",
+				"valuescale": "1",
+				"title": "Italy Comuni 2019"
+				}
+			},{
+			"layer": "Com2019_pro_com",
+			"field": "Anno",
+			"field100": "",
+			"style": {
+				"type": "CHART|PIE|STARBURST|SIZE|XLRAYS|AGGREGATE|CATEGORICAL|BOX|TITLE|NEGATIVEISVALUE|ZEROISVALUE|MEAN|FORCE",
+				"colorscheme": [
+					"#f8f2ff"],
+				"fillopacity": "0.3",
+				"shadow": "true",
+				"filter": "WHERE Anno != 2020",
+				"visible": "true",
+				"dbtable": "indicatori_strutturali",
+				"dbtableUrl": "https://raw.githubusercontent.com/gjrichter/data/master/ISTAT/Statistiche_sperimentali/Tassi_generici_del_movimento_anagrafico.csv",
+				"dbtableType": "csv",
+				"dbtableProcess": "function(data,options){data.addColumn({destination:\"nettoMigNat\"},function(row){return(Number(row[5].replace(',','.'))+Number(row[7].replace(',','.')))});return data;}",
+				"datacache": "true",
+				"lookupfield": "Codice comune",
+				"showdata": "false",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "20",
+				"scale": "1",
+				"rangescale": "1",
+				"sizefield": "Tasso di mortalità",
+				"maxvalue": "10.6",
+				"textscale": "1.5",
+				"textcolor": "white",
+				"linecolor": [
+					"#440044"],
+				"linewidth": "0.1",
+				"boxopacity": "0.001",
+				"bordercolor": "none",
+				"boxmargin": "2",
+				"titlefield": "Comune",
+				"titleupper": "1:1000000",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"fadenegative": "0.1",
+				"title": "Tasso di mortalità (stimato)",
+				"snippet": "dal 2021 al 2030<br>in senso orario<br>per 1000 abitanti<br>"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
