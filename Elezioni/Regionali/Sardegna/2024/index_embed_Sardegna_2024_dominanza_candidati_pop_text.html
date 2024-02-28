@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<!-- **********************************************************************
+
+ion_only_map_embed.html
+
+$Comment: ixmaps map template; embedded version
+$Source : ion_only_map_embed.html,v $
+
+$InitialAuthor: guenter richter $
+$InitialDate: 2017/06/22 $
+$Author: guenter richter $
+$Id:ion_only_map_embed.html 1 2021-10-17 00:00:00Z Guenter Richter $
+
+licensed under CC-BY
+$Log:ion_only_map_embed.html,v $
+
+********************************************************************** -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="ixmaps embed example">
+	<meta name="author" content="guenter richter">
+	<link rel="shortcut icon" href="https://gjrichter.github.io/ixmaps/ui/resources/images/ixmaps_logo.png">
+
+	<title>iXMaps</title>
+	<link rel="stylesheet" href="https://gjrichter.github.io/pages/assets/material-design-select-dropdown/css/style.css">
+	<style>
+		label.field .psuedo_select {
+			color: white;
+		}
+
+		label.field.focused .psuedo_select ul {
+			background: #222222;
+		}
+
+	</style>
+</head>
+
+<body style='background:#ffffff;text-align:center'>
+
+	<!--========================================================================= -->
+
+	<script src="https://gjrichter.github.io/ixmaps/ui/js/htmlgui_api.js"></script>
+
+	<!--========================================================================= -->
+
+	<script type="text/javascript" charset="utf-8">
+		var attribution = "dati: <a href='https://www.transparency.org/en/cpi/2022' target='_blank'>Transparency International</a>, 	licenza: <a href='https://creativecommons.org/licenses/by/4.0/deed.it target='_blank'>CC-BY-4.0</a>"
+
+		/* 1. centroids of 2011, by curtesy of Andrea Borruso */
+		var __georef_urban =
+			ixmaps.layer("ITALIA_Comuni_2022", layer => layer
+				.data({
+					url: "https://raw.githubusercontent.com/aborruso/centroidiurbanfabric/master/output/ElencoUnitaAmministrative2011.geojson",
+					type: "geojson"
+				})
+				.binding({
+					id: "PRO_COM",
+					position: "geometry"
+				})
+				.type("FEATURES|NOLEGEND")
+				.style({
+					colorscheme: ["none"],
+					linecolor: "none",
+					linewidth: "1",
+					scale: "0.0001"
+				})
+			);
+
+		/* 2. last istat data (2022), for changes since 2011 */
+		var __georef =
+			ixmaps.layer("ITALIA_Comuni_2022", layer => layer
+				.data({
+					url: "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2022/Com01012022_s_WGS84.topojson.gz",
+					type: "topojson"
+				})
+				.filter("WHERE COD_REG = 20")
+				.binding({
+					id: "PRO_COM",
+					position: "geometry"
+				})
+				.type("FEATURES|NOLEGEND")
+				.style({
+					colorscheme: ["none"],
+					linecolor: "none",
+					linewidth: "0.3",
+					sizefield: "Shape_Area",
+					showdata: "true",
+					tooltip: "{{theme.item.data}}"
+				})
+			);
+
+		var __dominanza =
+			ixmaps.layer("ITALIA_Comuni_2022", layer => layer
+				.data({
+					url: "../../pages/Elections/sardegna_2024_candidati_pop.csv",
+					type: "csv"
+				})
+				.binding({
+					value: "Alessandra Todde|Paolo Truzzu",
+					position: "PRO_COM"
+				})
+				.type("CHOROPLETH|DOMINANT|DOPACITY|SIMPLELEGEND")
+				.style({
+					colorscheme: ["red","blue"],
+					label: ["Alessandra Todde","Paolo Truzzu"],
+					alphafield: "pop",
+					alphafield100: "$density$",
+					dopacitypow: "1.5",
+					dopacityscale: "3",
+					showdata: "true",
+					units: "%",
+					valuedecimals: "1",
+					title: "Sardegna 2024",
+					description: "Il colore incica il candidato con maggiore percentuale di voti nel comune. L'intensità del colore è pari alla densità della popolazione nel territorio del comune.<br><br>fonte dati: Regione Sardegna<br>(estratti grazie allo script pubblicato da Andrea Borruso in mancanza di una fonte istituzionale in open data)",
+					tooltip: "{{Comune}} ({{pop}} abitanti)<br><br>{{theme.item.chart}}"
+				})
+			);
+
+		var __dominanza_text =
+			ixmaps.layer("ITALIA_Comuni_2022", layer => layer
+				.data({
+					url: "../../pages/Elections/sardegna_2024_candidati_pop.csv",
+					type: "csv"
+				})
+				.binding({
+					value: "Alessandra Todde|Paolo Truzzu",
+					position: "PRO_COM"
+				})
+				.type("CHART|SYMBOL|TEXTONLY|DOMINANT|AGGREGATE|MAX|RELOCATE|SUM|NOLEGEND|SIZE|SILENT")
+				.style({
+					colorscheme: ["red","blue"],
+				symbols: "label",
+					normalsizevalue: "10000",
+					units: "%",
+					valuedecimals: "1",
+					clipparts: "10",
+					gridwidthpx: "25",
+					tooltip: "{{theme.item.data}}"
+				})
+			);
+
+
+
+		
+		document.activeElement.appendChild(
+
+			ixmaps.embed("map", {
+					mapService: "leaflet_vt",
+					mapType: "white",
+					width: "100%",
+					height: (window.innerHeight - 20) + "px",
+					legend: "true",
+					mode: "info"
+				},
+				map => map
+				.require("../../ui/js/tools/tooltip_mustache.js")
+				.view([40.019004387640344, 9.37093360381769], 8.3)
+				.options({
+					featurescaling: "dynamic",
+					objectscaling: "dynamic",
+					normalSizeScale: "10000000",
+					panhidden: "false",
+					flushPaintShape: "1000000",
+					flushChartDraw: "1000000"
+				})
+				.setScaleParam({
+					lineScaling: "0.008447027206420899",
+					normalSizeScale: "177165354",
+				})
+				.layer(__georef)
+				.layer(__dominanza)
+				.layer(__dominanza_text)
+			)
+
+		);
+
+		// ----------------------------
+		// U S E R   I N T E R F A C E
+		// ----------------------------
+
+	</script>
+
+</body>
+
+</html>
