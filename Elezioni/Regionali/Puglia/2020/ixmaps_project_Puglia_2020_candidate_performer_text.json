@@ -11,7 +11,7 @@
 	"map": {
 		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2020/italia_comuni_2020_g_pro_com_Puglia.svgz",
 		"attribution": "",
-		"basemap": "CartoDB - Positron",
+		"basemap": "Stamen - toner-lite",
 		"legend": "",
 		"layout": "minimal",
 		"info": "<h4>questa mappa parte di un set di visualizzazioni delle Elezioni Regionali Settembre 2020.</h4><h4>Si basa su dati pubblicati dalla asociazione OnData su GitHub, che rende accessibile i dati del sito Eligendo</h4>",
