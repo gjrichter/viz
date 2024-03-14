@@ -106,9 +106,9 @@
 				"name":"textual",
 				"type": "CHART|SYMBOL|TEXTONLY|DOMINANT|AGGREGATE|MAX|RELOCATE|SUM|NOLEGEND|SIZEP1",
 				"colorscheme": [
-					"#FF0000",
-					"#0000FF",
-					"#FFFF00"],
+					"#FF8888",
+					"#8888FF",
+					"#FFFF88"],
 				"fillopacity": "0.7",
 				"shadow": "false",
 				"dbtable": "themeDataObj",
