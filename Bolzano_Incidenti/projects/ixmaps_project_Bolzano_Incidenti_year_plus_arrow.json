@@ -1,0 +1,199 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Feb 13 2023 11:45:27 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "VT_DATAVIZ",
+		"legend": "Incidenti Bolzano 2013 - 2022",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "13516"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"dyamicScalePow": "1.2",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "46.490947203509485",
+			"lng": "11.342557668685913"
+			},
+		"zoom": "16"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|GLOW|AGGREGATE|RECT|RELOCATE|SUM|SIZE|DTEXT|VALUES|VALUEBACKGROUND|COMPACTLEGEND",
+				"colorscheme": [
+					"7",
+					"#FFEDA0",
+					"#800026",
+					"3colors",
+					"#FC5E2A"],
+				"opacity": "0.6",
+				"fillopacity": "0.1",
+				"autoopacity": "true",
+				"shadow": "false",
+				"visible": "true",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0.7",
+				"linewidth": "4",
+				"textcolor": "#800026",
+				"linecolor": "#800026",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridwidthpx": "10",
+				"name": "symbols",
+				"title": "Incidenti Bolzano dal 2013 al 2021"
+				}
+			},{
+				
+			"layer": "World Mercator",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SIZE|NOOUTLIER|ZEROISNOTVALUE|QUANTILE|AGGREGATE|RECT|MEAN|GRIDSIZE|NOLEGEND",
+				"colorscheme": [
+					"white"],
+				"fillopacity": "0.2",
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"symbols": [
+					"square"],
+				"units": "€",
+				"legendunits": "       €",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"textcolor": "#000000",
+				"linecolor": [
+					"black"],
+				"linewidth": [
+					"0.2"],
+				"valuescale": "0.9",
+				"valuedecimals": "3",
+				"gridwidthpx": "100"
+				}
+			},{
+				
+			"layer": "World Mercator",
+			"field": "year",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|PLOT|LINES|AREA|LASTARROW|SMOOTH|CATEGORICAL|FIXSIZE|GRIDSIZE|ZEROISNOTVALUE|AGGREGATE|RECT|SUM|NOSORT|NOLEGEND",
+				"colorscheme": [
+					"#800026"],
+				"fillopacity": "0.02",
+				"shadow": "true",
+				"visible": "true",
+				"dbtable": "themeDataObj_enhanced",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.csv.gz",
+				"dbtableType": "csv",
+				"dbtableProcess": "function(data) { data.addColumn({source:\"DATA\",destination:\"year\"},function(value){ return (value.split(\"/\")[2]); }); data.addColumn({source:\"DATA\",destination:\"month\"},function(value){ return (value.split(\"/\")[1]); }); data.addColumn({source:\"DATA\",destination:\"day\"},function(value){ var a = value.split(\"/\"); var date = new Date(a[2],a[1],a[0]); return (date.getDay()); }); var illesiIndex = data.column(\"ILLESI\").index; var feritiIndex = data.column(\"FERITI\").index; var mortiIndex = data.column(\"MORTI\").index; data.addColumn({destination:\"pericolo\"},function(row){ return ((row[illesiIndex]||0)*1+(row[feritiIndex]||0)*10+(row[mortiIndex]||0)*50); }); }",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"symbols": [
+					"circle"],
+				"values": [
+					"2013",
+					"2014",
+					"2015",
+					"2016",
+					"2017",
+					"2018",
+					"2019",
+					"2020",
+					"2021",
+					"2022"],
+				"label": [
+					"2013",
+					"2014",
+					"2015",
+					"2016",
+					"2017",
+					"2018",
+					"2019",
+					"2020",
+					"2021",
+					"2022"],
+				"xaxis": [
+					"2013",
+					"2014",
+					"2015",
+					"2016",
+					"2017",
+					"2018",
+					"2019",
+					"2020",
+					"2021",
+					"2022"],
+				"units": "",
+				"refreshtimeout": "0",
+				"normalsizevalue": "20",
+				"scale": "0.95",
+				"rangescale": "0.8",
+				"minvalue": "0",
+				"linewidth": "5",
+				"markersize": "2.2",
+				"boxopacity": "0.1",
+				"valuescale": "1",
+				"gridwidthpx": "100",
+				"name": "curves",
+				"title": "Incidenti Bolzano<br>2013 - 2022",
+				"snippet": "Incidenti per anno, aggregati per griglia rettangolare"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

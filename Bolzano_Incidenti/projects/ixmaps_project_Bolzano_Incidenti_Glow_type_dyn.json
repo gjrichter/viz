@@ -1,0 +1,108 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Tue May 07 2024 22:51:48 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "powered by <a href=\"http://ixmaps.com\" target=\"_blank\">iXMaps</a>",
+		"basemap": "VT_BRIGHT_LIGHT",
+		"legend": " ",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "259302"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "true",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"flushChartDraw": "1000000",
+			"mapopacity": "1",
+			"basemapopacity": "0.8",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "46.4867219768849",
+			"lng": "11.336216926574709"
+			},
+		"zoom": "14"
+		},
+	"require": [
+		"../../ui/js/tools/tooltip_basic.js"],
+	"themes": [{
+			"layer": "Esiti_2022",
+			"field": "NATURA",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|GLOW|SEQUENCE|STAR|SORT|DOWN|LINEAR|CATEGORICAL|AGGREGATE|RECT|RELOCATE|SUM|VALUES|COMPACTLEGEND",
+				"colorscheme": [
+					"objTheme => { for (i = 0; i < objTheme.szLabelA.length; i++) { if (objTheme.szLabelA[i].match(/investimento/i)) { objTheme.colorScheme[i] = \"#ff0088\"; } else if (objTheme.szLabelA[i].match(/tamponamento/i)) { objTheme.colorScheme[i] = \"#0066cc\"; } else if (objTheme.szLabelA[i].match(/scontro/i)) { objTheme.colorScheme[i] = \"#ddbb22\"; } else { objTheme.colorScheme[i] = \"#00aaaa\"; } } }"],
+				"opacity": "1",
+				"fillopacity": "0.9",
+				"linecolor": "white",
+				"linewidth": "2",
+				"shadow": "false",
+				"filter": "WHERE ANNOINC BETWEEN 2019 AND 2022",
+				"visible": "true",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.csv.gz",
+				"dbtableType": "csv",
+				"dbtableProcess": "function(data, options) { data.addColumn({source:\"DATA\",destination:\"year\"},function(value){ return (value.split(\"/\")[2]); }); data.addColumn({source:\"DATA\",destination:\"month\"},function(value){ return (value.split(\"/\")[1]); }); data.addColumn({source:\"DATA\",destination:\"day\"},function(value){ var a = value.split(\"/\"); var date = new Date(a[2],a[1],a[0]); return (date.getDay()); }); data.column(\"FERITI\").map(value =>{ return (value||0); }); var illesiIndex = data.column(\"ILLESI\").index; var feritiIndex = data.column(\"FERITI\").index; var mortiIndex = data.column(\"MORTI\").index; data.addColumn({destination:\"pericolo\"},function(row){ return ((row[illesiIndex]||0)*0.3+(row[feritiIndex]||0)*3+(row[mortiIndex]||0)*10); }); }",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"showdata": "true",
+				"symbols": [
+					"circle"],
+				"units": "feriti",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"sizepow": "1",
+				"sizefield": "FERITI",
+				"normalsizevalue": "10",
+				"titlefield": "NATURA",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"aggregationscale": [
+					"1:1",
+					"1",
+					"1:2500",
+					"50"],
+				"clipupper": "1:1000000",
+				"name": "chart",
+				"title": "Matera - incidenti 2023",
+				"splash": "scaricando dati ...",
+				"tooltip": "<h3>{{theme.title}}</h3></br></br>{{theme.item.chart}}{{theme.item.data}}"
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}

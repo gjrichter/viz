@@ -1,0 +1,187 @@
+{
+	"$schema": "https://gjrichter.github.io/ixmaps/schema/ixmaps/v1.json",
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Sat Jan 07 2023 10:42:12 GMT+0100 (Ora standard dell’Europa centrale)"
+		},
+	"map": {
+		"map": "../../maps/svg/maps/generic/mercator.svg",
+		"attribution": "iXMaps",
+		"basemap": "CartoDB - Positron",
+		"legend": "",
+		"item": "",
+		"scaleParam": {
+			"normalSizeScale": "13516"
+			},
+		"options": {
+			"": "undefined",
+			"featurescaling": "dynamic",
+			"objectscaling": "dynamic",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"dyamicScalePow": "1.2",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1",
+			"panHidden": "false"
+			},
+		"center": {
+			"lat": "46.484151223878264",
+			"lng": "11.35385513305664"
+			},
+		"zoom": "14"
+		},
+	"themes": [{
+			"layer": "World Mercator",
+			"field": "$item$",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|GLOW|AGGREGATE|RECT|RELOCATE|SUM|SIZE|DTEXT|VALUES|VALUEBACKGROUND|NOLEGEND",
+				"colorscheme": [
+					"7",
+					"#FFEDA0",
+					"#800026",
+					"3colors",
+					"#FC5E2A"],
+				"opacity": "0.6",
+				"fillopacity": "0.20172268694146536",
+				"autoopacity": "false",
+				"shadow": "false",
+				"visible": "true",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"filter": "WHERE NR_PEDONI > 0",
+				"lookupfield": "geometry",
+				"symbols": [
+					"circle"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "0.8",
+				"timefield": "DTINCID",
+				"linewidth": "3",
+				"valuescale": "1",
+				"valuedecimals": "0",
+				"gridwidthpx": "10",
+				"title": "Incidenti Bolzano<br>2021"
+				}	
+			},{
+			"layer": "AREU",
+			"field": "year",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|SIZE|NOOUTLIER|ZEROISNOTVALUE|QUANTILE|AGGREGATE|RECT|MEAN|GRIDSIZE|NOLEGEND",
+				"colorscheme": [
+					"none"],
+				"opacity": "0.6",
+				"shadow": "false",
+				"filter": "WHERE ANNOINC BETWEEN 2019 AND 2022",
+				"visible": "true",
+				"dbtable": "themeDataObj_enhanced",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.geojson.gz",
+				"dbtableType": "geojson",
+				"dbtableProcess": "function(data, options) { data.addColumn({source:\"DATA\",destination:\"year\"},function(value){ return (value.split(\"/\")[2]); }); data.addColumn({source:\"DATA\",destination:\"month\"},function(value){ return (value.split(\"/\")[1]); }); data.addColumn({source:\"DATA\",destination:\"day\"},function(value){ var a = value.split(\"/\"); var date = new Date(a[2],a[1],a[0]); return (date.getDay()); }); data.column(\"FERITI\").map(value =>{ return (value||0); }); var illesiIndex = data.column(\"ILLESI\").index; var feritiIndex = data.column(\"FERITI\").index; var mortiIndex = data.column(\"MORTI\").index; data.addColumn({destination:\"pericolo\"},function(row){ return ((row[illesiIndex]||0)*0.3+(row[feritiIndex]||0)*3+(row[mortiIndex]||0)*10); }); }",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"symbols": [
+					"square"],
+				"units": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"sizepow": "2",
+				"linecolor": [
+					"black"],
+				"linewidth": [
+					"0.2"],
+				"valuescale": "1",
+				"gridwidthpx": "100",
+				"name": "grid",
+				"title": "AREU - incidenti 2019 - 2022",
+				"splash": "scaricando dati ..."
+				}
+			},{
+			"layer": "AREU",
+			"field": "year",
+			"field100": "",
+			"style": {
+				"type": "CHART|SYMBOL|PLOT|LINES|AREA|LASTARROW|CATEGORICAL|BOX|XAXIS|FIXSIZE|GRIDSIZE|ZEROISVALUE|AGGREGATE|RECT|SUM|NOSORT|NOLEGEND",
+				"colorscheme": [
+					"#800026"],
+				"fillopacity": "0.02",
+				"shadow": "true",
+				"filter": "WHERE ANNOINC BETWEEN 2019 AND 2022",
+				"visible": "true",
+				"dbtable": "themeDataObj_enhanced",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/Bolzano/urban_accidents.geojson.gz",
+				"dbtableType": "geojson",
+				"dbtableProcess": "function(data, options) { data.addColumn({source:\"DATA\",destination:\"year\"},function(value){ return (value.split(\"/\")[2]); }); data.addColumn({source:\"DATA\",destination:\"month\"},function(value){ return (value.split(\"/\")[1]); }); data.addColumn({source:\"DATA\",destination:\"day\"},function(value){ var a = value.split(\"/\"); var date = new Date(a[2],a[1],a[0]); return (date.getDay()); }); data.column(\"FERITI\").map(value =>{ return (value||0); }); var illesiIndex = data.column(\"ILLESI\").index; var feritiIndex = data.column(\"FERITI\").index; var mortiIndex = data.column(\"MORTI\").index; data.addColumn({destination:\"pericolo\"},function(row){ return ((row[illesiIndex]||0)*0.3+(row[feritiIndex]||0)*3+(row[mortiIndex]||0)*10); }); }",
+				"datacache": "true",
+				"lookupfield": "geometry",
+				"symbols": [
+					"circle"],
+				"values": [
+					"2019",
+					"2020",
+					"2021",
+					"2022"],
+				"label": [
+					"2019",
+					"2020",
+					"2021",
+					"2022"],
+				"xaxis": [
+					"2019",
+					"2020",
+					"2021",
+					"2022"],
+				"units": "",
+				"offsetx": "-18",
+				"offsety": "0",
+				"refreshtimeout": "0",
+				"normalsizevalue": "20",
+				"scale": "1",
+				"rangescale": "1",
+				"sizepow": "2",
+				"sizefield": "FERITI",
+				"linewidth": "2",
+				"markersize": "2",
+				"bordercolor": "none",
+				"boxopacity": "0.001",
+				"valuescale": "1",
+				"gridwidthpx": "100",
+				"name": "curves",
+				"title": "AREU - incidenti 2019 - 2022",
+				"splash": "scaricando dati ..."
+				}
+			}],
+	"layerMask": {
+		"World Mercator": {
+			"display": "none"
+			}
+		}
+	}
