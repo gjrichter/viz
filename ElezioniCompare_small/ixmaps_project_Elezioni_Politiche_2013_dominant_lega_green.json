@@ -93,8 +93,6 @@
 				"units100": "",
 				"refreshtimeout": "0",
 				"scale": "1",
-				"alphafield": "Totale",
-				"alphafield100": "$density$",
 				"dopacitypow": "5",
 				"dopacityscale": "2.5",
 				"titlefield": "Comune",
