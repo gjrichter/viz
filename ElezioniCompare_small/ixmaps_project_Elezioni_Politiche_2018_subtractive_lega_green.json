@@ -1,0 +1,105 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Thu Oct 10 2019 17:14:31 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2018/italia_comuni_2018_s_pro_com.svgz",
+		"basemap": "white",
+		"localize" : {
+			"loading data ...":" ",
+			"... loading data ...":"&#x21E3;",
+			"... refreshing theme ...":" ",
+			"... creating theme ...":"..."
+			},
+		"scaleParam": {
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"flushPaintShape": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "41.89818843043047",
+			"lng": "12.661743164062502"
+			},
+		"zoom": "6"
+		},
+	"require": [
+		"https://raw.githubusercontent.com/gjrichter/viz/master/ElezioniCompare_small/tooltip.js"
+	],
+	"themes": [{
+			"layer": "Com2018_pro_com",
+			"field": "PARTITO DEMOCRATICO|MOVIMENTO 5 STELLE|FORZA ITALIA|LEGA|FRATELLI D'ITALIA CON GIORGIA MELONI",
+			"field100": "Total",
+			"style": {
+				"name": "compose",
+				"type": "CHOROPLETH|HORZ|SORT|COMPOSECOLOR|SUBTRACTIVE|DOPACITYMAX|SIMPLELEGEND",
+				"colorscheme": [
+					"#E41B22",
+					"RGB(238,217,36)",
+					"RGB(5,177,240)",
+					"#04c467",
+					"#0C416D"],
+				"nodatacolor":"#aaaaaa",
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "scrutiniCIComuni_voti",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ElezioniPolitiche2018/Camera2018_scrutini_pivot.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "pro_com",
+				"child": "true",
+				"label": [
+					"PARTITO DEMOCRATICO",
+					"MOVIMENTO 5 STELLE",
+					"FORZA ITALIA",
+					"LEGA",
+					"FRATELLI D'ITALIA"],
+				"units": "%",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"alphafield": "Total",
+				"alphafield100": "$density$",
+				"dopacitypow": "5",
+				"dopacityscale": "2.5",
+				"titlefield": "nome_lower",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "<b>2018</b> - Elezioni Politiche"
+				}
+			}],
+	"layerMask": {
+		}
+	}
