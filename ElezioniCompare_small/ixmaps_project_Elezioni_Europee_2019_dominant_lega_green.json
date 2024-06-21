@@ -1,0 +1,104 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Fri Oct 04 2019 23:20:43 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2019/italia_comuni_2019_g_nome_upper_noacc.svgz",
+		"basemap": "white",
+		"localize" : {
+			"loading data ...":" ",
+			"... loading data ...":"&#x21E3;",
+			"... refreshing theme ...":" ",
+			"... creating theme ...":"..."
+			},
+		"scaleParam": {
+			"normalSizeScale": "1528452",
+			"lineScaling": "0.1"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"flushPaintShape": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "41.89818843043047",
+			"lng": "12.661743164062502"
+			},
+		"zoom": "6"
+		},
+	"require": [
+		"../../ui/js/tools/tooltip_basic.js"
+	],
+	"themes": [{
+			"layer": "Com2019_name_upper",
+			"field": "PARTITO DEMOCRATICO|MOVIMENTO 5 STELLE|FORZA ITALIA|LEGA SALVINI PREMIER|FRATELLI D'ITALIA",
+			"field100": "Total",
+			"style": {
+				"name": "compose",
+				"type": "CHOROPLETH|DOMINANT|DOPACITYMAX|HORZ|SORT|SIMPLELEGEND",
+				"colorscheme": [
+					"#E41B22",
+					"RGB(238,217,36)",
+					"RGB(5,177,240)",
+					"#04c467",
+					"#0C416D"],
+				"shadow": "false",
+				"dbtable": "themeDataObj",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ElezioniEuropee2019/Scrutini_comuni_partiti.csv.gz",
+				"dbtableType": "csv",
+				"datacache": "true",
+				"lookupfield": "COMUNE",
+				"child": "true",
+				"label": [
+					"PARTITO DEMOCRATICO",
+					"MOVIMENTO 5 STELLE",
+					"FORZA ITALIA",
+					"LEGA",
+					"FRATELLI D'ITALIA"],
+				"units": "%",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"alphafield": "Total",
+				"alphafield100": "$density$",
+				"dopacitypow": "5",
+				"dopacityscale": "2.5",
+				"titlefield": "COMUNE",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "<b>2019</b> - Elezioni Europee"
+				}
+			}],
+	"layerMask": {
+		}
+	}

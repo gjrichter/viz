@@ -1,0 +1,108 @@
+{
+	"metadata": {
+		"title": "",
+		"snippet": "",
+		"description": "",
+		"thumbnail": "",
+		"about": "",
+		"created": "Mon Sep 02 2019 13:09:59 GMT+0200 (Ora legale dell’Europa centrale)"
+		},
+	"map": {
+		"map": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/Istat/comuni_2013/italia_comuni_2013_g_nome.svgz",
+		"basemap": "white",
+		"localize" : {
+			"loading data ...":" ",
+			"... loading data ...":"&#x21E3;",
+			"... refreshing theme ...":" ",
+			"... creating theme ...":"..."
+			},
+		"scaleParam": {
+			"normalSizeScale": "1528452"
+			},
+		"options": {
+			"featurescaling": "true",
+			"objectscaling": "true",
+			"clipmap": "true",
+			"clipmapdynamic": "true",
+			"dynamiclabel": "NOSIZE",
+			"labelspace": "1.0",
+			"checklabeloverlap": "NOSQUEEZE",
+			"dynamiclayer": "true",
+			"dynamictiles": "true",
+			"discardtiles": "false",
+			"loadmultitiles": "true",
+			"loadsilent": "false",
+			"loadexternaldata": "true",
+			"buttonsize": "15",
+			"fastpan": "false",
+			"panborder": "0",
+			"northarrow": "false",
+			"sidebarbuttons": "false",
+			"tooltipdelay": "250",
+			"popupdelay": "250",
+			"popupgridstyle": "firstright|firstitalic|firstbold|firstgray|firstsmall|background|alternate|full",
+			"popupalignment": "BOTTOM|LEFT",
+			"transparentbackground": "true",
+			"labelscaling": "dynamic",
+			"flushChartDraw": "50000",
+			"flushPaintShape": "50000",
+			"mapopacity": "1",
+			"basemapopacity": "1"
+			},
+		"center": {
+			"lat": "41.89818843043047",
+			"lng": "12.661743164062502"
+			},
+		"zoom": "6"
+		},
+	"require": [
+		"https://raw.githubusercontent.com/gjrichter/viz/master/ElezioniCompare_small/tooltip.js"
+	],
+	"themes": [{
+ 			"layer": "Com2013_nome",
+			"field": "Partito Democratico (Pd)|MoVimento 5 Stelle - beppegrillo.it|Il Popolo della liberta (Pdl)|Lega Nord|Fratelli dItalia",
+			"field100": "Totale",
+			"style": {
+				"name": "compose",
+				"type": "CHOROPLETH|DOMINANT|DOPACITYMAX|HORZ|SORT|SIMPLELEGEND",
+                "colorscheme": [
+ 					"#E41B22",
+					"RGB(238,217,36)",
+					"RGB(5,177,240)",
+					"#04c467",
+					"#0C416D"
+					],
+				"autoopacity": "true",
+				"shadow": "false",
+				"dbtable": "scrutiniCIComuni_voti",
+				"dbtableType": "jsondb",
+				"dbtableUrl": "https://s3.eu-west-1.amazonaws.com/data.ixmaps.com/ElezioniPolitiche2013/risultati_comuni_camera_2013.js",
+				"dbtableExt": "https://raw.githubusercontent.com/gjrichter/viz/master/ElezioniCompare_small/process_comuni_2013.js",
+				"datacache": "true",
+				"itemfield": "Comune",
+				"lookupfield": "Comune",
+				"child": "true",
+	            "label": [
+					"Partito Democratico",
+					"Movimento 5 Stelle",
+					"Il Popolo della liberta",
+					"Lega Nord",
+					"Fratelli dItalia"
+				],
+				"units": "%",
+				"units100": "",
+				"refreshtimeout": "0",
+				"scale": "1",
+				"alphafield": "Totale",
+				"alphafield100": "$density$",
+				"dopacitypow": "5",
+				"dopacityscale": "2.5",
+				"titlefield": "Comune",
+				"valuescale": "1",
+				"valuedecimals": "1",
+				"title": "<b>2013</b> - Elezioni Politiche"
+				}
+			}],
+	"layerMask": {
+		}
+	}
