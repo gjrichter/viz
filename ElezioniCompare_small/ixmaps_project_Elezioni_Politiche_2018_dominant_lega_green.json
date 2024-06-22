@@ -56,7 +56,7 @@
 		"zoom": "6"
 		},
 	"require": [
-		"https://raw.githubusercontent.com/gjrichter/viz/master/ElezioniCompare_small/tooltip.js"
+		"../../ui/js/tools/tooltip_basic.js"
 	],
 	"themes": [{
 			"layer": "Com2018_pro_com",
