@@ -61,18 +61,79 @@ window.ixmaps = window.ixmaps || {};
 
 				ixmaps.in_query = false;
 				ixmaps.setTitle("");
-				ixmaps.setExternalData(xgeo,{type:"geojson",name:options.name});
+				ixmaps.setExternalData(xgeo,{type:"geojson",name:option.name});
 
 			}
 
 		})
 		.error(function(e){
 			ixmaps.setTitleBox("error while loading","RGBA(128,0,0,0.5)");
-			ixmaps.setExternalData(null,{type:"geojson",name:options.name});
+			ixmaps.setExternalData(null,{type:"geojson",name:option.name});
 			ixmaps.in_query = false;
 		});
 
 	};
+
+
+	ixmaps.OSM_dataquery_stressmap_cycleway  = function(data,option){
+		
+		try {
+			ixmaps.htmlgui_onNewTheme(option.theme.szId);
+		} catch (e) {}
+		
+		ixmaps.setTitleBox("Overpass API &#8644;","RGBA(95, 185, 135,0.5)");
+		ixmaps.in_query = true;
+
+		var bounds = ixmaps.oldBounds = ixmaps.getBoundingBox();
+		var szBounds = bounds[0].lng+'/'+bounds[0].lat+'/'+bounds[1].lng+'/'+bounds[1].lat;
+
+		query = 
+		'[out:json][timeout:100][bbox:'+
+			   bounds[0].lat+','+
+			   bounds[0].lng+','+
+			   bounds[1].lat+','+
+			   bounds[1].lng+'];'+
+		'('+
+		  'way["barrier"];'+
+		  '(way["highway"="cycleway"]; - way[footway="sidewalk"];);'+
+		  '(way[footway="sidewalk"][bicycle]; - way[footway="sidewalk"][bicycle="no"];);'+
+		');'+
+		'out body center qt;'+
+		'>;'+
+		'out skel qt;';
+
+
+		var szUrl = "https://overpass-api.de/api/interpreter?data="+query;
+		var myfeed = Data.feed({"source":szUrl,"type":"json"}).load(function(mydata){
+
+			if ( myfeed.data.elements ){
+				
+				ixmaps.addStressLevel(myfeed.data);
+				
+				geo = osmtogeojson(myfeed.data);
+				
+				var xgeo = {type:"featurecollection",features:[]}
+				for (i in geo.features ){
+					if (!geo.features[i].geometry.type.match(/Point/) ){
+						xgeo.features.push(geo.features[i]);
+					}
+				}
+
+				ixmaps.in_query = false;
+				ixmaps.setTitle("");
+				ixmaps.setExternalData(xgeo,{type:"geojson",name:option.name});
+
+			}
+
+		})
+		.error(function(e){
+			ixmaps.setTitleBox("error while loading","RGBA(128,0,0,0.5)");
+			ixmaps.setExternalData(null,{type:"geojson",name:option.name});
+			ixmaps.in_query = false;
+		});
+
+	};
+	
 
 	// ---------------------------------------------------------------------
 	// helper
@@ -82,19 +143,9 @@ window.ixmaps = window.ixmaps || {};
 		ixmaps.setTitle("<span style='padding: 0.3em 1em;border:solid #ddd 1px;border-radius:0.2em;font-family:courier new,Raleway,arial,helvetica;background:"+(szColor||"rgba(255,255,255,0.9)")+";color:"+(szColor?"#fff":"#888")+"'>"+szTitle+"</span");
 	};
 	
-	ixmaps.htmlgui_colorScheme = function(objTheme){
+	ixmaps.colorScheme_speedmap = function(objTheme){
 		for ( i=0; i<objTheme.szLabelA.length; i++){
 			
-			if ( objTheme.szLabelA[i].match(/cycleway/i) ){
-				objTheme.colorScheme[i] = "#2233dd";
-			}else
-			if ( objTheme.szLabelA[i].match(/primary/i) ){
-				objTheme.colorScheme[i] = "#dd0000";
-			}else
-			if ( objTheme.szLabelA[i].match(/asphalt/i) ){
-				objTheme.colorScheme[i] = "#888888";
-			}else
-				
 			if ( objTheme.szLabelA[i].match(/45 mph|50 mph|55 mph|60 mph|65 mph|70 mph|75 mph/i) ){
 				objTheme.colorScheme[i] = "#CE517F";
 			}else
@@ -122,19 +173,20 @@ window.ixmaps = window.ixmaps || {};
 			if ( objTheme.szLabelA[i].match(/2 mph/i) ){
 				objTheme.colorScheme[i] = "#D2F111";
 			}else
-				
-			if ( objTheme.szLabelA[i].match(/walk/i) ){
-				objTheme.colorScheme[i] = "#0088dd";
-			}else
-				
 			if ( objTheme.szLabelA[i].match(/130/i) ){
 				objTheme.colorScheme[i] = "#aa4488";
 			}else
 			if ( objTheme.szLabelA[i].match(/110/i) ){
 				objTheme.colorScheme[i] = "#aa4488";
 			}else
+			if ( objTheme.szLabelA[i].match(/100/i) ){
+				objTheme.colorScheme[i] = "#aa4488";
+			}else
 			if ( objTheme.szLabelA[i].match(/90/i) ){
 				objTheme.colorScheme[i] = "#aa4488";
+			}else
+			if ( objTheme.szLabelA[i].match(/80/i) ){
+				objTheme.colorScheme[i] = "#dd4488";
 			}else
 			if ( objTheme.szLabelA[i].match(/70/i) ){
 				objTheme.colorScheme[i] = "#dd4488";
@@ -162,6 +214,37 @@ window.ixmaps = window.ixmaps || {};
 			}
 		}
 	};
+
+	ixmaps.colorScheme_speedmapxx = function(objTheme){
+		var defaultColor = ColorScheme.createColorScheme("#56A651","#794073","70","3colors","DDA729");
+		for ( i=0; i<objTheme.szLabelA.length; i++){
+			var speed = parseInt(objTheme.szLabelA[i]);
+			objTheme.colorScheme[i] = defaultColor[speed];
+		}
+	}
+	
+	ixmaps.colorScheme_surfacemap = function(objTheme){
+		
+		var defaultColor = ColorScheme.createColorScheme("tableau10","","100");
+		
+		for ( i=0; i<objTheme.szLabelA.length; i++){
+			
+			if ( objTheme.szLabelA[i].match(/cycleway/i) ){
+				objTheme.colorScheme[i] = "#2233dd";
+			}else
+			if ( objTheme.szLabelA[i].match(/primary/i) ){
+				objTheme.colorScheme[i] = "#dd0000";
+			}else
+			if ( objTheme.szLabelA[i].match(/asphalt/i) ){
+				objTheme.colorScheme[i] = "#888888";
+			}else
+			if ( objTheme.szLabelA[i].match(/walk/i) ){
+				objTheme.colorScheme[i] = "#0088dd";
+			}else{
+				objTheme.colorScheme[i] = defaultColor[i];
+			}
+		}
+	};
 	
 	// ---------------------------------------------------------------------
 	// listen to map zoom or pan event and query new data
@@ -173,7 +256,7 @@ window.ixmaps = window.ixmaps || {};
 	ixmaps.htmlgui_onZoomAndPan = function(nZoom){ 
 		
 		if (ixmaps.getZoom() < 14 ){
-			ixmaps.setTitleBox("OSM: please zoom in or <a style='pointer-events:all' href='javascript:ixmaps.refreshTheme(\"features\")'>refresh</a>");
+			ixmaps.setTitleBox("OSM: please zoom in or ask for <a style='pointer-events:all' href='javascript:ixmaps.refreshTheme(\"features\")'>refresh</a>");
 			ixmaps.htmlgui_onZoomAndPan_old(nZoom);
 			return;
 		}
