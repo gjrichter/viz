@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="ixmaps embed example">
+	<meta name="author" content="guenter richter">
+	<link rel="shortcut icon" href="https://gjrichter.github.io/ixmaps/ui/resources/images/ixmaps_logo.png">
+ 
+	<title>Created by Composer</title>
+</head>
+ 
+<body style="margin:0;padding:0;">
+ 
+	<!-- here goes the map -->
+	<div id="map-div"></div>
+ 
+	<!-- include the ixmaps API -->
+	<script src="https://gjrichter.github.io/ixmaps_flat/ui/js/htmlgui_flat.js"></script>
+ 
+	<script type="text/javascript" charset="utf-8">
+ 
+		// create and embed the map
+		// ! reference to "map-div", the hosting html div
+
+		ixmaps.Map("map-div", {
+			mapService: "leaflet_vt",
+			mapType: "white",
+			mapProjection: "equalearth",
+			name: "map_1",
+			mode: "pan",
+			legend: "true",
+			tools: "true",
+			search: "Europe",
+			about: "test"
+		},
+		map => map
+		.options({
+			featurescaling: "true",
+			objectscaling: "true",
+			normalSizeScale: "20000000",
+			flushChartDraw: "1000000",
+			flushPaintShape: "1000000",
+			basemapopacity: "0.5",
+			worksilent: "false",
+			loadsilent: "false",
+			hideOnPan:  "false",
+			freezeOnPan:"false",
+		})
+		.attribution("")
+		.view({
+			"center": {
+				"lat": "20.660441099980115",
+				"lng": "10.195312500000002"
+				},
+			"zoom": "2"
+			})
+		.layer(ixmaps.layer("world_grid", layer => layer
+			.data({
+				"url": "https://s3.tebi.io/geometries/world_graticules/ne_110m_graticules_5.topojson",
+				"type": "topojson",
+				"name": "DBTABLE86647491",
+				"cache": "true"
+				})
+			.binding({
+				"geo": "geometry",
+				"value": "$item$"
+				})
+			.type("FEATURE")
+			.style({
+				"colorscheme": [
+					"#ccddff"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"visible": "true",
+				"units": "",
+				"scale": "1",
+				"sizepow": "2",
+				"linecolor": [
+					"#ccddff"],
+				"linewidth": "1",
+				"valuescale": "1"
+				})
+			.meta({
+				"title": "world grid",
+				"snippet": "",
+				"description": "",
+				"name": "undefined",
+				"tooltip": ""
+				})
+		))
+		.layer(ixmaps.layer("WUP2025-DB-DEGURBA-Cities-Population-Surface-Data-filtered", layer => layer
+			.data({
+				"url": "https://s3.tebi.io/data/samples/WUP2025-DB-DEGURBA-Cities-Population-Surface-Data-filtered.csv",
+				"type": "csv",
+				"name": "data_1770199628870",
+				"cache": "true"
+				})
+			.filter("WHERE \"Year\" = 2050")
+			.binding({
+				"geo": "PWCent_Latitude|PWCent_Longitude",
+				"value": "Pop_1Jan"
+				})
+			.type("CHART|BUBBLE|SIZE|HEADTAIL")
+			.style({
+				"colorscheme": [
+					"7",
+					"#ffdddd",
+					"#ff0000"],
+				"fillopacity": "1",
+				"shadow": "false",
+				"visible": "true",
+				"showdata": "true",
+				"units": "",
+				"scale": "1",
+				"sizepow": "2",
+				"valuescale": "1"
+				})
+			.meta({
+				"title": "WUP2025-DB-DEGURBA-Cities-Population-Surface-Data-filtered",
+				"snippet": "",
+				"description": "",
+				"name": "WUP2025-DB-DEGURBA-Cities-Population-Surface-Data-filtered",
+				"tooltip": "{{theme.item.chart}}{{theme.item.data}}"
+				})
+		))
+		.layer(ixmaps.layer("CNTR_RG_10M_2020_4326", layer => layer
+			.data({
+				"url": "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/topojson/CNTR_RG_10M_2020_4326.json",
+				"type": "topojson",
+				"name": "data_1770200222106",
+				"cache": "true"
+				})
+			.binding({
+				"geo": "geometry",
+				"value": "$item$"
+				})
+			.type("FEATURE")
+			.style({
+				"colorscheme": [
+					"#eeeeee"],
+				"fillopacity": "0.1",
+				"shadow": "false",
+				"visible": "true",
+				"showdata": "true",
+				"units": "",
+				"scale": "1",
+				"sizepow": "2",
+				"linecolor": [
+					"#0088dd"],
+				"linewidth": "0.5",
+				"valuescale": "1"
+				})
+			.meta({
+				"title": "CNTR_RG_10M_2020_4326",
+				"snippet": "",
+				"description": "",
+				"name": "CNTR_RG_10M_2020_4326",
+				"tooltip": "{{theme.item.chart}}{{theme.item.data}}"
+				})
+		))
+	);
+	</script>
+</body>
+</html>
