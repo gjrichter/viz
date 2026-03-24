@@ -295,7 +295,7 @@ function buildMap() {
         })
         .meta({
             name:    "chart_si",
-            tooltip: "<h2 style='margin:0 0 0.5em 0'>{{desc_com}}</h2>{{theme.item.chart}}<br>voti in più Sì: {{margin_f}}"
+            tooltip: "<h2 style='margin:0 0 0.5em 0'>{{desc_com}}</h2>{{theme.item.chart}}<br>voti in più Sì: {{raw.margin_f}}"
         })
         .title("Voti in più — Sì vince")
         .define();
@@ -333,7 +333,7 @@ function buildMap() {
         })
         .meta({
             name:    "chart_no",
-            tooltip: "<h2 style='margin:0 0 0.5em 0'>{{desc_com}}</h2>{{theme.item.chart}}<br>voti in più No: {{margin_f}}"
+            tooltip: "<h2 style='margin:0 0 0.5em 0'>{{desc_com}}</h2>{{theme.item.chart}}<br>voti in più No: {{raw.margin_f}}"
         })
         .title("Voti in più — No vince")
         .define();
