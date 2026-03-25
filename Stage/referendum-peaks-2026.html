@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referendum 22 marzo 2026 – Vincitore e voti in più per comune</title>
+    <script src="https://cdn.jsdelivr.net/gh/gjrichter/ixmaps-flat@master/ixmaps.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <!-- USER chart dependencies (same as Marche map) -->
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gjrichter/ixmaps-flat@master/usercharts/d3/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gjrichter/ixmaps-flat@master/usercharts/d3/arrow_chart.js"></script>
+    <style>
+        html, body { width: 100%; height: 100%; overflow: hidden; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #e8e8e8; }
+        #map { width: 100%; height: 100%; }
+
+        #header {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: linear-gradient(135deg, rgba(20,20,20,0.88) 0%, rgba(30,30,30,0.88) 100%);
+            backdrop-filter: blur(8px);
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            height: 56px;
+            box-sizing: border-box;
+        }
+        #header h1 { color: #f0f0f0; font-size: 1.05rem; font-weight: 600; white-space: nowrap; margin: 0; }
+        #header p  { color: rgba(220,220,220,0.55); font-size: 0.72rem; margin: 2px 0 0; }
+
+        #app-loading {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2000;
+            background: rgba(255,255,255,0.97);
+            border-radius: 12px;
+            padding: 24px 36px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+        }
+        .spinner {
+            width: 36px; height: 36px;
+            border: 3px solid #d0eaea;
+            border-top-color: #00838f;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 10px;
+        }
+        #app-loading p { color: #555; font-size: 0.88rem; margin: 0; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        #legend {
+            position: absolute;
+            bottom: 30px; left: 14px;
+            z-index: 1000;
+            background: rgba(20,20,20,0.88);
+            border-radius: 10px;
+            padding: 11px 14px;
+            color: #e8e8e8;
+            font-size: 0.72rem;
+            box-shadow: 0 2px 14px rgba(0,0,0,0.35);
+            border: 1px solid rgba(255,255,255,0.08);
+            display: none;
+            min-width: 205px;
+            line-height: 1.7;
+        }
+        #legend b { display: block; font-size: 0.8rem; margin-bottom: 6px; color: #fff; }
+        .leg-row { display: flex; align-items: center; gap: 8px; }
+        .leg-bar  { height: 6px; border-radius: 3px; flex: 1; }
+        .leg-sep  { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0; }
+
+        #stats {
+            position: absolute;
+            bottom: 30px; right: 14px;
+            z-index: 1000;
+            background: rgba(20,20,20,0.88);
+            border-radius: 10px;
+            padding: 10px 14px;
+            font-size: 0.75rem;
+            box-shadow: 0 2px 14px rgba(0,0,0,0.35);
+            border: 1px solid rgba(255,255,255,0.08);
+            line-height: 1.9;
+            min-width: 185px;
+            display: none;
+        }
+        #stats b { display: block; font-size: 0.8rem; color: #fff; margin-bottom: 4px; }
+        .stat-row { display: flex; justify-content: space-between; gap: 12px; color: #bbb; }
+        .si-val  { color: #5ac8c8; font-weight: 700; }
+        .no-val  { color: #e07070; font-weight: 700; }
+        .neu-val { color: #ccc;    font-weight: 700; }
+        .stat-sep { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 5px 0; }
+    </style>
+</head>
+<body>
+
+
+<div id="app-loading">
+    <div class="spinner"></div>
+    <p id="loading-msg">Caricamento scrutini…</p>
+</div>
+
+<div id="map" style="max-width: 1024px; margin:auto"></div>
+
+<div id="legend">
+    <b>📖 Legenda</b>
+    <div class="leg-row">
+        <div class="leg-bar" style="background:linear-gradient(to right,#8b1a1a,#f0a8a8)"></div>
+        <span>← No vince (freccia sinistra)</span>
+    </div>
+    <div class="leg-row">
+        <div class="leg-bar" style="background:linear-gradient(to right,#a0d8d8,#005858)"></div>
+        <span>Sì vince (freccia destra) →</span>
+    </div>
+    <hr class="leg-sep">
+    <span style="color:rgba(200,200,200,0.5);font-size:0.65rem">Dimensione freccia ∝ √(voti in più)</span>
+</div>
+
+<script>
+const TOPO_URL      = "https://raw.githubusercontent.com/gjrichter/geo/main/italy/boundaries/italy_istat_municipalities_4326_500m.topojson";
+const DATA_URL      = "https://raw.githubusercontent.com/ondata/referendum-download/main/data/20260322/scrutini_flat.csv";
+const CENTROIDS_URL = "https://raw.githubusercontent.com/aborruso/centroidiurbanfabric/master/output/ElencoUnitaAmministrative2011.geojson";
+
+// 4 rossi + 4 teal, taglio netto a 50%
+const BG_COLORS = [
+    "#8b1a1a","#c04040","#e07070","#f0a8a8",
+    "#a0d8d8","#5ac8c8","#1a9696","#005858"
+];
+
+let DATA = [];
+
+function parsePct(s) {
+    return parseFloat((s || "0").replace(",", ".")) || 0;
+}
+
+async function loadData() {
+    // Solo CSV — i centroidi li carica ixmaps come layer
+    var csvText = await fetch(DATA_URL).then(function(r) {
+        if (!r.ok) throw new Error("scrutini HTTP " + r.status);
+        return r.text();
+    });
+
+    var rows = Papa.parse(csvText, { header: true, skipEmptyLines: true }).data;
+
+    DATA = rows
+        .filter(function(r) { return r.livello === "comune" && r.cod_istat; })
+        .map(function(r) {
+            var si  = parsePct(r.perc_si);
+            var no  = parsePct(r.perc_no);
+            var aff = parsePct(r.perc_vot);
+            var vsi = parseInt(r.voti_si)   || 0;
+            var vno = parseInt(r.voti_no)   || 0;
+            var vot = parseInt(r.votanti_t) || 0;
+            var ele = parseInt(r.elettori_t)|| 0;
+            var istat = r.cod_istat.trim().padStart(6, "0");
+            return {
+                cod_istat:  istat,
+                pro_com:    parseInt(istat),   // join con PRO_COM (intero) di Borruso
+                perc_si:    si,
+                perc_no:    no,
+                perc_vot:   aff,
+                voti_si:    vsi,
+                voti_no:    vno,
+                winner:     vsi >= vno ? "si" : "no",
+                desc_com:   r.desc_com  || "",
+                desc_prov:  r.desc_prov || "",
+                desc_reg:   r.desc_reg  || "",
+                si_f:       si.toFixed(1),
+                no_f:       no.toFixed(1),
+                aff_f:      aff.toFixed(1),
+                voti_si_f:  vsi.toLocaleString("it-IT"),
+                voti_no_f:  vno.toLocaleString("it-IT"),
+                margin_f:   Math.abs(vsi - vno).toLocaleString("it-IT"),
+                votanti_f:  vot.toLocaleString("it-IT"),
+                elettori_f: ele.toLocaleString("it-IT")
+            };
+        });
+}
+
+var TOOLTIP = [
+    '<b style="font-size:1.05em">{{desc_com}}</b>',
+    '<br><span style="color:#999;font-size:0.88em">{{desc_prov}} · {{desc_reg}}</span>',
+    '<hr style="border:none;border-top:1px solid #ddd;margin:5px 0">',
+    '<table>',
+    '<tr><td style="color:#888;padding:2px 4px">Sì</td>',
+    '    <td style="font-weight:600;padding:2px 4px;color:#009999">{{si_f}}%</td>',
+    '    <td style="color:#aaa;font-size:0.85em;padding:2px 4px">({{voti_si_f}} voti)</td></tr>',
+    '<tr><td style="color:#888;padding:2px 4px">No</td>',
+    '    <td style="font-weight:600;padding:2px 4px;color:#c03030">{{no_f}}%</td>',
+    '    <td style="color:#aaa;font-size:0.85em;padding:2px 4px">({{voti_no_f}} voti)</td></tr>',
+    '<tr><td style="color:#888;padding:2px 4px">Margine</td>',
+    '    <td style="font-weight:600;padding:2px 4px" colspan="2">{{margin_f}} voti</td></tr>',
+    '<tr><td style="color:#888;padding:2px 4px">Affluenza</td>',
+    '    <td style="font-weight:600;padding:2px 4px">{{aff_f}}%</td>',
+    '    <td style="color:#aaa;font-size:0.85em;padding:2px 4px">({{votanti_f}}/{{elettori_f}})</td></tr>',
+    '</table>'
+].join("");
+
+function buildMap() {
+    var myMap = ixmaps.Map("map", {
+        mapType: "VT_TONER_LITE",
+        mode:    "map",
+        legend:  "open",
+        tools:   true
+    })
+    .view({ center: { lat: 42.5, lng: 12.5 }, zoom: 6 })
+    .options({
+        objectscaling:   "dynamic",
+        normalSizeScale: "10000000",
+        basemapopacity:  0,
+        flushChartDraw:  1000000,
+        flushPaintShape: 1000000
+    });
+
+    // ── Layer 1: contorni comunali (polygon) ──────────────────────────────
+    myMap.layer("comuni")
+        .data({ url: TOPO_URL, type: "topojson" })
+        .binding({ geo: "geometry", id: "com_istat_code", title: "name" })
+        .type("FEATURE")
+        .style({
+            colorscheme: ["none"],
+            fillopacity: 0,
+            linecolor:   "#888888",
+            linewidth:   0.2,
+            showdata:    "true"
+        })
+        .define();
+
+    // ── Layer 2: sfondo divergente % Sì ───────────────────────────────────
+    myMap.layer("comuni")
+        .data({ obj: DATA, type: "json" })
+        .binding({ lookup: "cod_istat", value: "perc_si", title: "desc_com" })
+        .type("CHOROPLETH|EQUIDISTANT")
+        .style({
+            colorscheme:      BG_COLORS,
+            rangecentervalue: "50",
+            fillopacity:      0.1,
+            linecolor:        "#888888",
+            linewidth:        0.15,
+            showdata:         "true"
+        })
+        .meta({ name: "si_bg", tooltip: TOOLTIP, description: "Sfondo: % Sì (teal) vs % No (rosso) · Frecce: voti in più del vincitore · Dati: ondata (CC BY) · Geometrie: ISTAT" })
+        .title("<h2 style='margin:0 0 0.5em 0'>Referendum 22 marzo 2026 — Voti in più del vincitore per comune</h2>")
+        .define();
+
+    // ── Layer 3: centroidi urbani Borruso (posizionamento frecce) ─────────
+    myMap.layer("centroids")
+        .data({ url: CENTROIDS_URL, type: "geojson" })
+        .binding({ geo: "geometry", id: "PRO_COM", title: "PRO_COM" })
+        .type("FEATURE|NOLEGEND")
+        .style({
+            colorscheme: ["none"],
+            scale: 0,
+            fillopacity: 0,
+            linecolor:   "none",
+            linewidth:   0,
+            showdata:    "true"
+        })
+        .define();
+
+    // ── Layer 4: frecce Sì (→ destra, rotation 35) ────────────────────────
+    //   value: "voti_no|voti_si" + NONEGATIVE → solo dove Sì vince
+    myMap.layer("comuni")
+        .data({ obj: DATA, type: "json" })
+        .binding({ lookup: "cod_istat", value: "voti_no|voti_si", title: "desc_com" })
+        .type("CHART|USER|3D|DIFFERENCE|AGGREGATE|RECT|RELOCATE|SUM|VALUES|NONEGATIVE|BOX|BOTTOMTITLE|NOLEGEND")
+        .style({
+            name:            "chart_si",
+            userdraw:        "pinnacleChart",
+            colorscheme:     ["#1a8844"],
+            label:           ["Sì"],
+            fillopacity:     1,
+            sizepow:         2,
+            normalsizevalue: 1000000,
+            rangescale:      1,
+            shadow:          "false",
+            units:           "",
+            boxcolor:        "none",
+            bordercolor:     "none",
+            textscale:       "0.5",
+            boxupper:        "1:250000",
+            textcolor:       "black",
+            valuesupper:     "1:1000000",
+            valuedecimals:   "0",
+            minvaluesize:    "8",
+            aggregationfield:"desc_com",
+            titlefield:      "desc_com",
+            showdata:        "true",
+            datafields:      ["desc_com","desc_prov","voti_si_f","voti_no_f","margin_f"]
+        })
+        .meta({
+            name:    "chart_si",
+            tooltip: "<h2 style='margin:0 0 0.5em 0'>{{desc_com}}</h2>{{theme.item.chart}}<br>voti in più Sì: {{raw.margin_f}}"
+        })
+        .title("Voti in più — Sì vince")
+        .define();
+
+    // ── Layer 5: frecce No (← sinistra, rotation 325) ────────────────────
+    //   value: "voti_no|voti_si" + NONEGATIVE → solo dove No vince
+    myMap.layer("comuni")
+        .data({ obj: DATA, type: "json" })
+        .binding({ lookup: "cod_istat", value: "voti_si|voti_no", title: "desc_com" })
+        .type("CHART|USER|3D|DIFFERENCE|AGGREGATE|RECT|RELOCATE|SUM|VALUES|NONEGATIVE|NOLEGEND")
+        .style({
+            name:            "chart_no",
+            userdraw:        "pinnacleChart",
+            colorscheme:     ["#c04040"],
+            label:           ["No"],
+            fillopacity:     1,
+            sizepow:         2,
+            normalsizevalue: 1000000,
+            rangescale:      1,
+            shadow:          "false",
+            units:           "",
+            boxcolor:        "none",
+            bordercolor:     "none",
+            textscale:       "0.5",
+            boxupper:        "1:250000",
+            textcolor:       "black",
+            valuesupper:     "1:1000000",
+            valuedecimals:   "0",
+            minvaluesize:    "8",
+            aggregationfield:"desc_com",
+            titlefield:      "desc_com",
+            showdata:        "true",
+            datafields:      ["desc_com","desc_prov","voti_si_f","voti_no_f","margin_f"]
+        })
+        .meta({
+            name:    "chart_no",
+            tooltip: "<h2 style='margin:0 0 0.5em 0'>{{desc_com}}</h2>{{theme.item.chart}}<br>voti in più No: {{raw.margin_f}}"
+        })
+        .title("Voti in più — No vince")
+        .define();
+
+    // ── Zoom dynamics (come nel Marche map) ───────────────────────────────
+    ixmaps.htmlgui_onZoomAndPan = function() {
+        var z = ixmaps.getZoom();
+        var opacity = Math.max(0, Math.min(0.8, (z - 9) / 3));
+        var minSize = z > 10 ? 1 : z > 9 ? 6 : z > 8 ? 7 : z > 7 ? 8 : 18;
+
+        myMap.then(function(m) {
+            m.setBasemapOpacity(opacity, "absolute");
+            m.changeThemeStyle("chart_si", "minvaluesize:" + minSize);
+            m.changeThemeStyle("chart_no", "minvaluesize:" + minSize);
+        });
+    };
+}
+
+(async function() {
+    try {
+        await loadData();
+        document.getElementById("app-loading").style.display = "none";
+        buildMap();
+    } catch(err) {
+        document.getElementById("app-loading").innerHTML =
+            '<p style="color:#c0392b;padding:12px">⚠️ Errore: ' + err.message + '</p>';
+        console.error(err);
+    }
+})();
+</script>
+</body>
+</html>
