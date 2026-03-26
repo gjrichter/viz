@@ -130,6 +130,8 @@ const BG_COLORS = [
     "#8b1a1a","#c04040","#e07070","#f0a8a8",
     "#a0d8d8","#5ac8c8","#1a9696","#005858"
 ];
+const SI_COLORS = ["#eef9f9", "#c0eaea", "#88d8d8", "#5ac8c8", "#2aabab", "#008888", "#005f5f"];
+const NO_COLORS = ["#e05050","#c0392b","#8b1a1a","#5c0a0a"];
 
 let DATA = [];
 
@@ -203,7 +205,7 @@ var TOOLTIP = [
 function buildMap() {
     var myMap = ixmaps.Map("map", {
         mapType: "VT_TONER_LITE",
-        mode:    "map",
+        mode:    "info",
         legend:  "open",
         tools:   true
     })
@@ -215,6 +217,8 @@ function buildMap() {
         flushChartDraw:  1000000,
         flushPaintShape: 1000000
     });
+
+    myMap.legend("<div style='text-align:center;padding-top:20px'><span style='font-size:1.2em'>Referendum 22 marzo 2026</span><br>Voti in più del Si o del No per comune<br><br>Dati: ondata (CC BY) · Geometrie: ISTAT</div>");
 
     // ── Layer 1: contorni comunali (polygon) ──────────────────────────────
     myMap.layer("comuni")
@@ -271,12 +275,14 @@ function buildMap() {
         .style({
             name:            "chart_si",
             userdraw:        "pinnacleChart",
-            colorscheme:     ["#1a8844"],
+            colorscheme:     SI_COLORS,
             label:           ["Sì"],
-            fillopacity:     1,
+            fillopacity:     0.8,
+            linewidth:       0.1,
             sizepow:         2,
             normalsizevalue: 1000000,
-            rangescale:      1,
+            scale:           0.5,
+            rangescale:      1.2,
             shadow:          "false",
             units:           "",
             boxcolor:        "none",
@@ -304,16 +310,22 @@ function buildMap() {
     myMap.layer("comuni")
         .data({ obj: DATA, type: "json" })
         .binding({ lookup: "cod_istat", value: "voti_si|voti_no", title: "desc_com" })
-        .type("CHART|USER|3D|DIFFERENCE|AGGREGATE|RECT|RELOCATE|SUM|VALUES|NONEGATIVE|NOLEGEND")
+        .type("CHART|USER|3D|DIFFERENCE|HEADTAIL|AGGREGATE|RECT|RELOCATE|SUM|VALUES|NONEGATIVE|NOLEGEND")
         .style({
             name:            "chart_no",
             userdraw:        "pinnacleChart",
-            colorscheme:     ["#c04040"],
+            "colorscheme": [
+                "7",
+                "#ff8888",
+                "#880000",
+                "dynamic",
+                "cold"],
             label:           ["No"],
-            fillopacity:     1,
+            fillopacity:     0.7,
             sizepow:         2,
             normalsizevalue: 1000000,
-            rangescale:      1,
+            scale:           0.5,
+            rangescale:      1.2,
             shadow:          "false",
             units:           "",
             boxcolor:        "none",
