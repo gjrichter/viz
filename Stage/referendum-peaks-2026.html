@@ -98,32 +98,11 @@
 </head>
 <body>
 
-
-<div id="app-loading">
-    <div class="spinner"></div>
-    <p id="loading-msg">Caricamento scrutini…</p>
-</div>
-
 <div id="map" style="max-width: 1024px; margin:auto"></div>
-
-<div id="legend">
-    <b>📖 Legenda</b>
-    <div class="leg-row">
-        <div class="leg-bar" style="background:linear-gradient(to right,#8b1a1a,#f0a8a8)"></div>
-        <span>← No vince (freccia sinistra)</span>
-    </div>
-    <div class="leg-row">
-        <div class="leg-bar" style="background:linear-gradient(to right,#a0d8d8,#005858)"></div>
-        <span>Sì vince (freccia destra) →</span>
-    </div>
-    <hr class="leg-sep">
-    <span style="color:rgba(200,200,200,0.5);font-size:0.65rem">Dimensione freccia ∝ √(voti in più)</span>
-</div>
 
 <script>
 const TOPO_URL      = "https://raw.githubusercontent.com/gjrichter/geo/main/italy/boundaries/italy_istat_municipalities_4326_500m.topojson";
 const DATA_URL      = "https://raw.githubusercontent.com/ondata/referendum-download/main/data/20260322/scrutini_flat.csv";
-const CENTROIDS_URL = "https://raw.githubusercontent.com/aborruso/centroidiurbanfabric/master/output/ElencoUnitaAmministrative2011.geojson";
 
 // 4 rossi + 4 teal, taglio netto a 50%
 const BG_COLORS = [
@@ -133,72 +112,20 @@ const BG_COLORS = [
 const SI_COLORS = ["#eef9f9", "#c0eaea", "#88d8d8", "#5ac8c8", "#2aabab", "#008888", "#005f5f"];
 const NO_COLORS = ["#e05050","#c0392b","#8b1a1a","#5c0a0a"];
 
-let DATA = [];
-
-function parsePct(s) {
-    return parseFloat((s || "0").replace(",", ".")) || 0;
-}
-
-async function loadData() {
-    // Solo CSV — i centroidi li carica ixmaps come layer
-    var csvText = await fetch(DATA_URL).then(function(r) {
-        if (!r.ok) throw new Error("scrutini HTTP " + r.status);
-        return r.text();
-    });
-
-    var rows = Papa.parse(csvText, { header: true, skipEmptyLines: true }).data;
-
-    DATA = rows
-        .filter(function(r) { return r.livello === "comune" && r.cod_istat; })
-        .map(function(r) {
-            var si  = parsePct(r.perc_si);
-            var no  = parsePct(r.perc_no);
-            var aff = parsePct(r.perc_vot);
-            var vsi = parseInt(r.voti_si)   || 0;
-            var vno = parseInt(r.voti_no)   || 0;
-            var vot = parseInt(r.votanti_t) || 0;
-            var ele = parseInt(r.elettori_t)|| 0;
-            var istat = r.cod_istat.trim().padStart(6, "0");
-            return {
-                cod_istat:  istat,
-                pro_com:    parseInt(istat),   // join con PRO_COM (intero) di Borruso
-                perc_si:    si,
-                perc_no:    no,
-                perc_vot:   aff,
-                voti_si:    vsi,
-                voti_no:    vno,
-                winner:     vsi >= vno ? "si" : "no",
-                desc_com:   r.desc_com  || "",
-                desc_prov:  r.desc_prov || "",
-                desc_reg:   r.desc_reg  || "",
-                si_f:       si.toFixed(1),
-                no_f:       no.toFixed(1),
-                aff_f:      aff.toFixed(1),
-                voti_si_f:  vsi.toLocaleString("it-IT"),
-                voti_no_f:  vno.toLocaleString("it-IT"),
-                margin_f:   Math.abs(vsi - vno).toLocaleString("it-IT"),
-                votanti_f:  vot.toLocaleString("it-IT"),
-                elettori_f: ele.toLocaleString("it-IT")
-            };
-        });
-}
-
 var TOOLTIP = [
     '<b style="font-size:1.05em">{{desc_com}}</b>',
     '<br><span style="color:#999;font-size:0.88em">{{desc_prov}} · {{desc_reg}}</span>',
     '<hr style="border:none;border-top:1px solid #ddd;margin:5px 0">',
     '<table>',
     '<tr><td style="color:#888;padding:2px 4px">Sì</td>',
-    '    <td style="font-weight:600;padding:2px 4px;color:#009999">{{si_f}}%</td>',
-    '    <td style="color:#aaa;font-size:0.85em;padding:2px 4px">({{voti_si_f}} voti)</td></tr>',
+    '    <td style="font-weight:600;padding:2px 4px;color:#009999">{{perc_si}}%</td>',
+    '    <td style="color:#aaa;font-size:0.85em;padding:2px 4px">({{voti_si}} voti)</td></tr>',
     '<tr><td style="color:#888;padding:2px 4px">No</td>',
-    '    <td style="font-weight:600;padding:2px 4px;color:#c03030">{{no_f}}%</td>',
-    '    <td style="color:#aaa;font-size:0.85em;padding:2px 4px">({{voti_no_f}} voti)</td></tr>',
-    '<tr><td style="color:#888;padding:2px 4px">Margine</td>',
-    '    <td style="font-weight:600;padding:2px 4px" colspan="2">{{margin_f}} voti</td></tr>',
+    '    <td style="font-weight:600;padding:2px 4px;color:#c03030">{{perc_no}}%</td>',
+    '    <td style="color:#aaa;font-size:0.85em;padding:2px 4px">({{voti_no}} voti)</td></tr>',
     '<tr><td style="color:#888;padding:2px 4px">Affluenza</td>',
-    '    <td style="font-weight:600;padding:2px 4px">{{aff_f}}%</td>',
-    '    <td style="color:#aaa;font-size:0.85em;padding:2px 4px">({{votanti_f}}/{{elettori_f}})</td></tr>',
+    '    <td style="font-weight:600;padding:2px 4px">{{perc_vot}}%</td>',
+    '    <td style="color:#aaa;font-size:0.85em;padding:2px 4px">({{votanti_t}}/{{elettori_t}})</td></tr>',
     '</table>'
 ].join("");
 
@@ -235,8 +162,8 @@ function buildMap() {
         .define();
 
     // ── Layer 2: sfondo divergente % Sì ───────────────────────────────────
-    myMap.layer("comuni")
-        .data({ obj: DATA, type: "json" })
+    myMap.layer("comuni")   
+        .data({ url: DATA_URL, type: "csv" })
         .binding({ lookup: "cod_istat", value: "perc_si", title: "desc_com" })
         .type("CHOROPLETH|EQUIDISTANT")
         .style({
@@ -251,26 +178,11 @@ function buildMap() {
         .title("<h2 style='margin:0 0 0.5em 0'>Referendum 22 marzo 2026 — Voti in più del vincitore per comune</h2>")
         .define();
 
-    // ── Layer 3: centroidi urbani Borruso (posizionamento frecce) ─────────
-    myMap.layer("centroids")
-        .data({ url: CENTROIDS_URL, type: "geojson" })
-        .binding({ geo: "geometry", id: "PRO_COM", title: "PRO_COM" })
-        .type("FEATURE|NOLEGEND")
-        .style({
-            colorscheme: ["none"],
-            scale: 0,
-            fillopacity: 0,
-            linecolor:   "none",
-            linewidth:   0,
-            showdata:    "true"
-        })
-        .define();
-
     // ── Layer 4: frecce Sì (→ destra, rotation 35) ────────────────────────
     //   value: "voti_no|voti_si" + NONEGATIVE → solo dove Sì vince
     myMap.layer("comuni")
-        .data({ obj: DATA, type: "json" })
-        .binding({ lookup: "cod_istat", value: "voti_no|voti_si", title: "desc_com" })
+    .data({ url: DATA_URL, type: "csv" })
+    .binding({ lookup: "cod_istat", value: "voti_no|voti_si", title: "desc_com" })
         .type("CHART|USER|3D|DIFFERENCE|AGGREGATE|RECT|RELOCATE|SUM|VALUES|NONEGATIVE|BOX|BOTTOMTITLE|NOLEGEND")
         .style({
             name:            "chart_si",
@@ -308,7 +220,7 @@ function buildMap() {
     // ── Layer 5: frecce No (← sinistra, rotation 325) ────────────────────
     //   value: "voti_no|voti_si" + NONEGATIVE → solo dove No vince
     myMap.layer("comuni")
-        .data({ obj: DATA, type: "json" })
+        .data({ url: DATA_URL, type: "csv" })
         .binding({ lookup: "cod_istat", value: "voti_si|voti_no", title: "desc_com" })
         .type("CHART|USER|3D|DIFFERENCE|HEADTAIL|AGGREGATE|RECT|RELOCATE|SUM|VALUES|NONEGATIVE|NOLEGEND")
         .style({
@@ -361,18 +273,8 @@ function buildMap() {
         });
     };
 }
+buildMap();
 
-(async function() {
-    try {
-        await loadData();
-        document.getElementById("app-loading").style.display = "none";
-        buildMap();
-    } catch(err) {
-        document.getElementById("app-loading").innerHTML =
-            '<p style="color:#c0392b;padding:12px">⚠️ Errore: ' + err.message + '</p>';
-        console.error(err);
-    }
-})();
 </script>
 </body>
 </html>
