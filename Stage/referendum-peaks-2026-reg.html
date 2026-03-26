@@ -162,6 +162,13 @@
 <script>
 const TOPO_URL      = "https://raw.githubusercontent.com/gjrichter/geo/main/italy/boundaries/italy_istat_municipalities_4326_500m.topojson";
 const DATA_URL      = "https://raw.githubusercontent.com/ondata/referendum-download/main/data/20260322/scrutini_flat.csv";
+const LEGEND_TEXT   = [
+    "<div style='text-align:center;padding-top:20px'>",
+    "<span style='font-size:1.2em'>Referendum 22 marzo 2026</span><br>",
+    "<b>Voti in più</b> del <b>Si</b> o del <b>No</b> per comune<br><br>",
+    "Dati: ondata (CC BY) · Geometrie: ISTAT",
+    "</div>"
+].join("");
 
 // 4 rossi + 4 teal, taglio netto a 50%
 const BG_COLORS = [
@@ -248,7 +255,7 @@ function buildMap() {
         flushPaintShape: 1000000
     });
 
-    myMap.legend("<div style='text-align:center;padding-top:20px'><span style='font-size:1.2em'>Referendum 22 marzo 2026</span><br>Voti in più del Si o del No per comune<br><br>Dati: ondata (CC BY) · Geometrie: ISTAT</div>");
+    myMap.legend(LEGEND_TEXT);
 
     // ── Layer 1: contorni comunali (polygon) ──────────────────────────────
     myMap.layer("comuni")
