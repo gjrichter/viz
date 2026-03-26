@@ -261,7 +261,8 @@ function buildMap() {
         .define();
 
     // ── Zoom dynamics (come nel Marche map) ───────────────────────────────
-    ixmaps.htmlgui_onZoomAndPan = function() {
+
+    myMap.on("zoomend moveend", function() {
         var z = ixmaps.getZoom();
         var opacity = Math.max(0, Math.min(0.8, (z - 9) / 3));
         var minSize = z > 10 ? 1 : z > 9 ? 6 : z > 8 ? 7 : z > 7 ? 8 : 18;
@@ -271,8 +272,10 @@ function buildMap() {
             m.changeThemeStyle("chart_si", "minvaluesize:" + minSize);
             m.changeThemeStyle("chart_no", "minvaluesize:" + minSize);
         });
-    };
+    });
+
 }
+
 buildMap();
 
 </script>
