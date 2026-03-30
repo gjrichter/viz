@@ -376,7 +376,7 @@ function buildMap() {
     // ── Zoom dynamics (come nel Marche map) ───────────────────────────────
 
     var _zoomMoveTimer = null;
-    myMap.on("zoomend moveend", function() {
+    myMap.on("zoomend", function() {
         clearTimeout(_zoomMoveTimer);
         _zoomMoveTimer = setTimeout(function() {
             var z = ixmaps.getZoom();
