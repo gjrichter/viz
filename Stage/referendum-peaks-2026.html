@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referendum 22 marzo 2026 – Vincitore e voti in più per comune</title>
+    <script src="https://cdn.jsdelivr.net/gh/gjrichter/ixmaps-flat@master/ixmaps.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <!-- USER chart dependencies (same as Marche map) -->
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gjrichter/ixmaps-flat@master/usercharts/d3/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gjrichter/ixmaps-flat@master/usercharts/d3/arrow_chart.js"></script>
+    <style>
+        html, body { width: 100%; height: 100%; overflow: hidden; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #e8e8e8; }
+        #map { width: 100%; height: 100%; }
+
+        #header {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: linear-gradient(135deg, rgba(20,20,20,0.88) 0%, rgba(30,30,30,0.88) 100%);
+            backdrop-filter: blur(8px);
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            height: 56px;
+            box-sizing: border-box;
+        }
+        #header h1 { color: #f0f0f0; font-size: 1.05rem; font-weight: 600; white-space: nowrap; margin: 0; }
+        #header p  { color: rgba(220,220,220,0.55); font-size: 0.72rem; margin: 2px 0 0; }
+
+        #app-loading {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2000;
+            background: rgba(255,255,255,0.97);
+            border-radius: 12px;
+            padding: 24px 36px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+        }
+        .spinner {
+            width: 36px; height: 36px;
+            border: 3px solid #d0eaea;
+            border-top-color: #00838f;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 10px;
+        }
+        #app-loading p { color: #555; font-size: 0.88rem; margin: 0; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        #legend {
+            position: absolute;
+            bottom: 30px; left: 14px;
+            z-index: 1000;
+            background: rgba(20,20,20,0.88);
+            border-radius: 10px;
+            padding: 11px 14px;
+            color: #e8e8e8;
+            font-size: 0.72rem;
+            box-shadow: 0 2px 14px rgba(0,0,0,0.35);
+            border: 1px solid rgba(255,255,255,0.08);
+            display: none;
+            min-width: 205px;
+            line-height: 1.7;
+        }
+        #legend b { display: block; font-size: 0.8rem; margin-bottom: 6px; color: #fff; }
+        .leg-row { display: flex; align-items: center; gap: 8px; }
+        .leg-bar  { height: 6px; border-radius: 3px; flex: 1; }
+        .leg-sep  { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0; }
+
+        #stats {
+            position: absolute;
+            bottom: 30px; right: 14px;
+            z-index: 1000;
+            background: rgba(20,20,20,0.88);
+            border-radius: 10px;
+            padding: 10px 14px;
+            font-size: 0.75rem;
+            box-shadow: 0 2px 14px rgba(0,0,0,0.35);
+            border: 1px solid rgba(255,255,255,0.08);
+            line-height: 1.9;
+            min-width: 185px;
+            display: none;
+        }
+        #stats b { display: block; font-size: 0.8rem; color: #fff; margin-bottom: 4px; }
+        .stat-row { display: flex; justify-content: space-between; gap: 12px; color: #bbb; }
+        .si-val  { color: #5ac8c8; font-weight: 700; }
+        .no-val  { color: #e07070; font-weight: 700; }
+        .neu-val { color: #ccc;    font-weight: 700; }
+        .stat-sep { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 5px 0; }
+    </style>
+</head>
+<body>
+
+<div id="map" style="max-width: 1024px; margin:auto"></div>
+
+<script>
+const TOPO_URL      = "https://raw.githubusercontent.com/gjrichter/geo/main/italy/boundaries/italy_istat_municipalities_4326_500m.topojson";
+const DATA_URL      = "https://raw.githubusercontent.com/ondata/referendum-download/main/data/20260322/scrutini_flat.csv";
+
+// 4 rossi + 4 teal, taglio netto a 50%
+const BG_COLORS = [
+    "#8b1a1a","#c04040","#e07070","#f0a8a8",
+    "#a0d8d8","#5ac8c8","#1a9696","#005858"
+];
+const SI_COLORS = ["#eef9f9", "#c0eaea", "#88d8d8", "#5ac8c8", "#2aabab", "#008888", "#005f5f"];
+const NO_COLORS = ["#e05050","#c0392b","#8b1a1a","#5c0a0a"];
+
+var TOOLTIP = [
+    '<b style="font-size:1.05em">{{desc_com}}</b>',
+    '<br><span style="color:#999;font-size:0.88em">{{desc_prov}} · {{desc_reg}}</span>',
+    '<hr style="border:none;border-top:1px solid #ddd;margin:5px 0">',
+    '<table>',
+    '<tr><td style="color:#888;padding:2px 4px">Sì</td>',
+    '    <td style="font-weight:600;padding:2px 4px;color:#009999">{{perc_si}}%</td>',
+    '    <td style="color:#aaa;font-size:0.85em;padding:2px 4px">({{voti_si}} voti)</td></tr>',
+    '<tr><td style="color:#888;padding:2px 4px">No</td>',
+    '    <td style="font-weight:600;padding:2px 4px;color:#c03030">{{perc_no}}%</td>',
+    '    <td style="color:#aaa;font-size:0.85em;padding:2px 4px">({{voti_no}} voti)</td></tr>',
+    '<tr><td style="color:#888;padding:2px 4px">Affluenza</td>',
+    '    <td style="font-weight:600;padding:2px 4px">{{perc_vot}}%</td>',
+    '    <td style="color:#aaa;font-size:0.85em;padding:2px 4px">({{votanti_t}}/{{elettori_t}})</td></tr>',
+    '</table>'
+].join("");
+
+function buildMap() {
+    var myMap = ixmaps.Map("map", {
+        mapType: "VT_TONER_LITE",
+        mode:    "info",
+        legend:  "open",
+        tools:   true
+    })
+    .view({ center: { lat: 42.5, lng: 12.5 }, zoom: 6 })
+    .options({
+        objectscaling:   "dynamic",
+        normalSizeScale: "10000000",
+        basemapopacity:  0,
+        flushChartDraw:  1000000,
+        flushPaintShape: 1000000
+    });
+
+    myMap.legend("<div style='text-align:center;padding-top:20px'><span style='font-size:1.2em'>Referendum 22 marzo 2026</span><br>Voti in più del Si o del No per comune<br><br>Dati: ondata (CC BY) · Geometrie: ISTAT</div>");
+
+    // ── Layer 1: contorni comunali (polygon) ──────────────────────────────
+    myMap.layer("comuni")
+        .data({ url: TOPO_URL, type: "topojson" })
+        .binding({ geo: "geometry", id: "com_istat_code", title: "name" })
+        .type("FEATURE")
+        .style({
+            colorscheme: ["none"],
+            fillopacity: 0,
+            linecolor:   "#888888",
+            linewidth:   0.2,
+            showdata:    "true"
+        })
+        .define();
+
+    // ── Layer 2: sfondo divergente % Sì ───────────────────────────────────
+    myMap.layer("comuni")   
+        .data({ url: DATA_URL, type: "csv" })
+        .binding({ lookup: "cod_istat", value: "perc_si", title: "desc_com" })
+        .type("CHOROPLETH|EQUIDISTANT")
+        .style({
+            colorscheme:      BG_COLORS,
+            rangecentervalue: "50",
+            fillopacity:      0.1,
+            linecolor:        "#888888",
+            linewidth:        0.15,
+            showdata:         "true"
+        })
+        .meta({ name: "si_bg", tooltip: TOOLTIP, description: "Sfondo: % Sì (teal) vs % No (rosso) · Frecce: voti in più del vincitore · Dati: ondata (CC BY) · Geometrie: ISTAT" })
+        .title("<h2 style='margin:0 0 0.5em 0'>Referendum 22 marzo 2026 — Voti in più del vincitore per comune</h2>")
+        .define();
+
+    // ── Layer 4: frecce Sì (→ destra, rotation 35) ────────────────────────
+    //   value: "voti_no|voti_si" + NONEGATIVE → solo dove Sì vince
+    myMap.layer("comuni")
+    .data({ url: DATA_URL, type: "csv" })
+    .binding({ lookup: "cod_istat", value: "voti_no|voti_si", title: "desc_com" })
+        .type("CHART|USER|3D|DIFFERENCE|AGGREGATE|RECT|RELOCATE|SUM|VALUES|NONEGATIVE|BOX|BOTTOMTITLE|NOLEGEND")
+        .style({
+            name:            "chart_si",
+            userdraw:        "pinnacleChart",
+            colorscheme:     SI_COLORS,
+            label:           ["Sì"],
+            fillopacity:     0.8,
+            linewidth:       0.1,
+            sizepow:         2,
+            normalsizevalue: 1000000,
+            scale:           0.5,
+            rangescale:      1.2,
+            shadow:          "false",
+            units:           "",
+            boxcolor:        "none",
+            bordercolor:     "none",
+            textscale:       "0.5",
+            boxupper:        "1:250000",
+            textcolor:       "black",
+            valuesupper:     "1:1000000",
+            valuedecimals:   "0",
+            minvaluesize:    "8",
+            aggregationfield:"desc_com",
+            titlefield:      "desc_com",
+            showdata:        "true",
+            datafields:      ["desc_com","desc_prov","voti_si_f","voti_no_f","margin_f"]
+        })
+        .meta({
+            name:    "chart_si",
+            tooltip: "<h2 style='margin:0 0 0.5em 0'>{{desc_com}}</h2>{{theme.item.chart}}<br>voti in più Sì: {{raw.margin_f}}"
+        })
+        .title("Voti in più — Sì vince")
+        .define();
+
+    // ── Layer 5: frecce No (← sinistra, rotation 325) ────────────────────
+    //   value: "voti_no|voti_si" + NONEGATIVE → solo dove No vince
+    myMap.layer("comuni")
+        .data({ url: DATA_URL, type: "csv" })
+        .binding({ lookup: "cod_istat", value: "voti_si|voti_no", title: "desc_com" })
+        .type("CHART|USER|3D|DIFFERENCE|HEADTAIL|AGGREGATE|RECT|RELOCATE|SUM|VALUES|NONEGATIVE|NOLEGEND")
+        .style({
+            name:            "chart_no",
+            userdraw:        "pinnacleChart",
+            "colorscheme": [
+                "7",
+                "#ff8888",
+                "#880000",
+                "dynamic",
+                "cold"],
+            label:           ["No"],
+            fillopacity:     0.7,
+            sizepow:         2,
+            normalsizevalue: 1000000,
+            scale:           0.5,
+            rangescale:      1.2,
+            shadow:          "false",
+            units:           "",
+            boxcolor:        "none",
+            bordercolor:     "none",
+            textscale:       "0.5",
+            boxupper:        "1:250000",
+            textcolor:       "black",
+            valuesupper:     "1:1000000",
+            valuedecimals:   "0",
+            minvaluesize:    "8",
+            aggregationfield:"desc_com",
+            titlefield:      "desc_com",
+            showdata:        "true",
+            datafields:      ["desc_com","desc_prov","voti_si_f","voti_no_f","margin_f"]
+        })
+        .meta({
+            name:    "chart_no",
+            tooltip: "<h2 style='margin:0 0 0.5em 0'>{{desc_com}}</h2>{{theme.item.chart}}<br>voti in più No: {{raw.margin_f}}"
+        })
+        .title("Voti in più — No vince")
+        .define();
+
+    // ── Zoom dynamics (come nel Marche map) ───────────────────────────────
+
+    myMap.on("zoomend moveend", function() {
+        var z = ixmaps.getZoom();
+        var opacity = Math.max(0, Math.min(0.8, (z - 9) / 3));
+        var minSize = z > 10 ? 1 : z > 9 ? 6 : z > 8 ? 7 : z > 7 ? 8 : 18;
+
+        myMap.then(function(m) {
+            m.setBasemapOpacity(opacity, "absolute");
+            m.changeThemeStyle("chart_si", "minvaluesize:" + minSize);
+            m.changeThemeStyle("chart_no", "minvaluesize:" + minSize);
+        });
+    });
+
+}
+
+buildMap();
+
+</script>
+</body>
+</html>
