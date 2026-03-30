@@ -54,46 +54,26 @@
         #app-loading p { color: #555; font-size: 0.88rem; margin: 0; }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        #legend {
+        #stats {
             position: absolute;
             bottom: 30px; left: 14px;
             z-index: 1000;
-            background: rgba(20,20,20,0.88);
-            border-radius: 10px;
-            padding: 11px 14px;
-            color: #e8e8e8;
-            font-size: 0.72rem;
-            box-shadow: 0 2px 14px rgba(0,0,0,0.35);
-            border: 1px solid rgba(255,255,255,0.08);
-            display: none;
-            min-width: 205px;
-            line-height: 1.7;
-        }
-        #legend b { display: block; font-size: 0.8rem; margin-bottom: 6px; color: #fff; }
-        .leg-row { display: flex; align-items: center; gap: 8px; }
-        .leg-bar  { height: 6px; border-radius: 3px; flex: 1; }
-        .leg-sep  { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 6px 0; }
-
-        #stats {
-            position: absolute;
-            bottom: 30px; right: 14px;
-            z-index: 1000;
-            background: rgba(20,20,20,0.88);
+            background: rgba(255,255,255,0.93);
             border-radius: 10px;
             padding: 10px 14px;
             font-size: 0.75rem;
-            box-shadow: 0 2px 14px rgba(0,0,0,0.35);
-            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 2px 14px rgba(0,0,0,0.15);
+            border: 1px solid rgba(0,0,0,0.08);
             line-height: 1.9;
             min-width: 185px;
             display: none;
         }
-        #stats b { display: block; font-size: 0.8rem; color: #fff; margin-bottom: 4px; }
-        .stat-row { display: flex; justify-content: space-between; gap: 12px; color: #bbb; }
-        .si-val  { color: #5ac8c8; font-weight: 700; }
-        .no-val  { color: #e07070; font-weight: 700; }
-        .neu-val { color: #ccc;    font-weight: 700; }
-        .stat-sep { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 5px 0; }
+        #stats b { display: block; font-size: 0.8rem; color: #111; margin-bottom: 4px; }
+        .stat-row { display: flex; justify-content: space-between; gap: 12px; color: #555; }
+        .si-val  { color: #007a7a; font-weight: 700; }
+        .no-val  { color: #b03030; font-weight: 700; }
+        .neu-val { color: #444;    font-weight: 700; }
+        .stat-sep { border: none; border-top: 1px solid rgba(0,0,0,0.08); margin: 5px 0; }
     </style>
 </head>
 <body>
@@ -106,19 +86,17 @@
 
 <div id="map" style="max-width: 1024px; margin:auto"></div>
 
-<div id="legend">
-    <b>📖 Legenda</b>
-    <div class="leg-row">
-        <div class="leg-bar" style="background:linear-gradient(to right,#8b1a1a,#f0a8a8)"></div>
-        <span>← No vince (freccia sinistra)</span>
-    </div>
-    <div class="leg-row">
-        <div class="leg-bar" style="background:linear-gradient(to right,#a0d8d8,#005858)"></div>
-        <span>Sì vince (freccia destra) →</span>
-    </div>
-    <hr class="leg-sep">
-    <span style="color:rgba(200,200,200,0.5);font-size:0.65rem">Dimensione freccia ∝ √(voti in più)</span>
+<div id="stats">
+    <b>Risultato nazionale</b>
+    <div class="stat-row"><span>Comuni Sì</span><span class="si-val" id="s-nsi">–</span></div>
+    <div class="stat-row"><span>Voti in più (Sì)</span><span class="si-val" id="s-msi">–</span></div>
+    <hr class="stat-sep">
+    <div class="stat-row"><span>Comuni No</span><span class="no-val" id="s-nno">–</span></div>
+    <div class="stat-row"><span>Voti in più (No)</span><span class="no-val" id="s-mno">–</span></div>
+    <hr class="stat-sep">
+    <div class="stat-row"><span>Margine finale</span><span id="s-fin">–</span></div>
 </div>
+
 
 <script>
 const TOPO_URL      = "https://raw.githubusercontent.com/gjrichter/geo/main/italy/boundaries/italy_istat_municipalities_4326_500m.topojson";
@@ -200,6 +178,30 @@ var TOOLTIP = [
     '</table>'
 ].join("");
 
+function buildStats() {
+    var nSi = 0, nNo = 0, sumMSi = 0, sumMNo = 0;
+    DATA.forEach(function(r) {
+        var m = Math.abs(r.voti_si - r.voti_no);
+        if (r.winner === "si") { nSi++;  sumMSi += m; }
+        else                   { nNo++;  sumMNo += m; }
+    });
+    var finale = sumMSi - sumMNo;  // = Σvoti_si - Σvoti_no
+    var fmt = function(n) { return n.toLocaleString("it-IT"); };
+    var finStr = (finale >= 0 ? "Sì +" : "No +") + fmt(Math.abs(finale));
+    var finColor = finale >= 0 ? "#5ac8c8" : "#e07070";
+
+    document.getElementById("s-nsi").textContent  = fmt(nSi);
+    document.getElementById("s-msi").textContent  = fmt(sumMSi);
+    document.getElementById("s-nno").textContent  = fmt(nNo);
+    document.getElementById("s-mno").textContent  = fmt(sumMNo);
+    var fin = document.getElementById("s-fin");
+    fin.textContent = finStr;
+    fin.style.color = finColor;
+    fin.style.fontWeight = "700";
+
+    document.getElementById("stats").style.display = "block";
+}
+
 function buildMap() {
     var myMap = ixmaps.Map("map", {
         mapType: "VT_TONER_LITE",
@@ -211,6 +213,7 @@ function buildMap() {
     .options({
         objectscaling:   "dynamic",
         normalSizeScale: "10000000",
+        dynamicScalePow: "2.5",
         basemapopacity:  0,
         flushChartDraw:  1000000,
         flushPaintShape: 1000000
@@ -276,7 +279,8 @@ function buildMap() {
             fillopacity:     1,
             sizepow:         2,
             normalsizevalue: 100000,
-            rotation:        35,
+            rotation:        15,
+            scale:           0.6,
             rangescale:      1,
             shadow:          "false",
             units:           "",
@@ -288,16 +292,13 @@ function buildMap() {
             valuesupper:     "1:1000000",
             valuedecimals:   "0",
             minvaluesize:    "8",
-            gridwidth:       "20px",
+            aggregationscale: [
+                "1:1","1px",
+                "1:1500000","desc_prov",
+            ],
             titlefield:      "desc_com",
-            showdata:        "true",
-            datafields:      ["desc_com","desc_prov","voti_si_f","voti_no_f","margin_f"]
+            showdata:        "true"
         })
-        .meta({
-            name:    "chart_si",
-            tooltip: "<h2 style='margin:0 0 0.5em 0'>{{desc_com}}</h2>{{theme.item.chart}}<br>voti in più Sì: {{raw.margin_f}}"
-        })
-        .title("Voti in più — Sì vince")
         .define();
 
     // ── Layer 5: frecce No (← sinistra, rotation 325) ────────────────────
@@ -314,7 +315,8 @@ function buildMap() {
             fillopacity:     1,
             sizepow:         2,
             normalsizevalue: 100000,
-            rotation:        325,
+            rotation:        345,
+            scale:           0.6,
             rangescale:      1,
             shadow:          "false",
             units:           "",
@@ -326,7 +328,10 @@ function buildMap() {
             valuesupper:     "1:1000000",
             valuedecimals:   "0",
             minvaluesize:    "8",
-            gridwidth:       "20px",
+            aggregationscale: [
+                "1:1","1px",
+                "1:1500000","desc_prov",
+            ],
             titlefield:      "desc_com",
             showdata:        "true",
             datafields:      ["desc_com","desc_prov","voti_si_f","voti_no_f","margin_f"]
@@ -356,6 +361,7 @@ function buildMap() {
     try {
         await loadData();
         document.getElementById("app-loading").style.display = "none";
+        buildStats();
         buildMap();
     } catch(err) {
         document.getElementById("app-loading").innerHTML =

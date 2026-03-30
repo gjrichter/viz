@@ -252,7 +252,8 @@ function buildMap() {
         normalSizeScale: "10000000",
         basemapopacity:  0,
         flushChartDraw:  1000000,
-        flushPaintShape: 1000000
+        flushPaintShape: 1000000,
+        zoomAnimation:     false
     });
 
     myMap.legend(LEGEND_TEXT);
@@ -316,8 +317,8 @@ function buildMap() {
             textcolor:       "black",
             valuesupper:     "1:1000000",
             valuedecimals:   "0",
-            minvaluesize:    "8",
-            aggregationfield:"desc_com",
+            minvaluesize:    "15",
+            gridwidth:       "5px",
             titlefield:      "desc_com",
             showdata:        "true",
             datafields:      ["desc_com","desc_prov","voti_si_f","voti_no_f","margin_f"]
@@ -360,8 +361,8 @@ function buildMap() {
             textcolor:       "black",
             valuesupper:     "1:1000000",
             valuedecimals:   "0",
-            minvaluesize:    "8",
-            aggregationfield:"desc_com",
+            minvaluesize:    "15",
+            gridwidth:       "5px",
             titlefield:      "desc_com",
             showdata:        "true",
             datafields:      ["desc_com","desc_prov","voti_si_f","voti_no_f","margin_f"]
@@ -381,7 +382,7 @@ function buildMap() {
         _zoomMoveTimer = setTimeout(function() {
             var z = ixmaps.getZoom();
             var opacity = Math.max(0, Math.min(0.8, (z - 9) / 3));
-            var minSize = z > 10 ? 1 : z > 9 ? 6 : z > 8 ? 7 : z > 7 ? 8 : 18;
+            var minSize = z > 10 ? 1 : z > 9 ? 8 : z > 8 ? 9 : z > 7 ? 10 : 15;
 
             myMap.then(function(m) {
                 m.setBasemapOpacity(opacity, "absolute");

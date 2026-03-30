@@ -293,7 +293,7 @@ function buildMap() {
     //   value: "voti_no|voti_si" + NONEGATIVE → solo dove Sì vince
     myMap.layer("comuni")
     .data({ url: DATA_URL, type: "csv" })
-    .binding({ lookup: "cod_istat", value: "voti_no|voti_si", title: "desc_com" })
+    .binding({ lookup: "cod_istat", value: "perc_no|perc_si", title: "desc_com" })
         .type("CHART|USER|3D|DIFFERENCE|AGGREGATE|RECT|RELOCATE|SUM|VALUES|NONEGATIVE|BOX|BOTTOMTITLE|NOLEGEND")
 
         .style({
@@ -303,12 +303,12 @@ function buildMap() {
             label:           ["Sì"],
             fillopacity:     0.8,
             linewidth:       0.1,
-            sizepow:         2,
-            normalsizevalue: 1000000,
+            sizepow:         1,
+            normalsizevalue: 1000,
             scale:           0.5,
             rangescale:      1.2,
             shadow:          "false",
-            units:           "",
+            units:           "%",
             boxcolor:        "none",
             bordercolor:     "none",
             textscale:       "0.5",
@@ -316,7 +316,7 @@ function buildMap() {
             textcolor:       "black",
             valuesupper:     "1:1000000",
             valuedecimals:   "0",
-            minvaluesize:    "8",
+            minvaluesize:    "15",
             aggregationfield:"desc_com",
             titlefield:      "desc_com",
             showdata:        "true",
@@ -333,7 +333,7 @@ function buildMap() {
     //   value: "voti_no|voti_si" + NONEGATIVE → solo dove No vince
     myMap.layer("comuni")
         .data({ url: DATA_URL, type: "csv" })
-        .binding({ lookup: "cod_istat", value: "voti_si|voti_no", title: "desc_com" })
+        .binding({ lookup: "cod_istat", value: "perc_si|perc_no", title: "desc_com" })
         .type("CHART|USER|3D|DIFFERENCE|HEADTAIL|AGGREGATE|RECT|RELOCATE|SUM|VALUES|NONEGATIVE|NOLEGEND")
 
         .style({
@@ -347,12 +347,12 @@ function buildMap() {
                 "cold"],
             label:           ["No"],
             fillopacity:     0.7,
-            sizepow:         2,
-            normalsizevalue: 1000000,
+            sizepow:         1,
+            normalsizevalue: 1000,
             scale:           0.5,
             rangescale:      1.2,
             shadow:          "false",
-            units:           "",
+            units:           "%",
             boxcolor:        "none",
             bordercolor:     "none",
             textscale:       "0.5",
@@ -360,7 +360,7 @@ function buildMap() {
             textcolor:       "black",
             valuesupper:     "1:1000000",
             valuedecimals:   "0",
-            minvaluesize:    "8",
+            minvaluesize:    "15",
             aggregationfield:"desc_com",
             titlefield:      "desc_com",
             showdata:        "true",
@@ -381,7 +381,7 @@ function buildMap() {
         _zoomMoveTimer = setTimeout(function() {
             var z = ixmaps.getZoom();
             var opacity = Math.max(0, Math.min(0.8, (z - 9) / 3));
-            var minSize = z > 10 ? 1 : z > 9 ? 6 : z > 8 ? 7 : z > 7 ? 8 : 18;
+            var minSize = z > 10 ? 1 : z > 9 ? 8 : z > 8 ? 10 : z > 7 ? 12 : 15;
 
             myMap.then(function(m) {
                 m.setBasemapOpacity(opacity, "absolute");
