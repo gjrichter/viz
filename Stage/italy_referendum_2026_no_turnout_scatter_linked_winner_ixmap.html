@@ -291,9 +291,9 @@
     <div class="left">
       <div id="scatter-card" class="panel">
         <div>
-          <h1>No vs affluenza, comune per comune</h1>
+          <h1>Si/No vs affluenza, comune per comune</h1>
           <div class="sub">
-            Scatterplot per leggere la relazione tra quota di voti <b>No</b> e <b>affluenza</b>.
+            Scatterplot per leggere la relazione tra quota di voti <b>Si/No</b> e <b>affluenza</b>.
             La mappa a destra mostra dove si collocano i comuni selezionati.
           </div>
           <div class="section-copy">
@@ -612,12 +612,10 @@
         .filter("WHERE \"PRO_COM_T\" like \"__none__\"")
         .type("CHART|BUBBLE|SIZE|VALUES|SILENT")
         .style({
-          colorfield: "WINNER_SIDE",
-          colorscheme: ["#5ea36f", "#d77676", "#9ca3af"],
-          values: ["SI", "NO", "PARI"],
+          colorscheme: ["#475569"],
           fillopacity: 0.42,
-          linecolor: "#7f1d1d",
-          linewidth: 0.35,
+          linecolor: "#ffffff",
+          linewidth: 0.6,
           units: "%",
           scale: 0.9,
           sizepow: 2,
@@ -638,7 +636,7 @@
             "</div>" +
             "</div>"
         })
-        .title("Affluenza come bolle, colore = quota No")
+        .title("Affluenza come bolla selezionata")
         .define();
 
       // install hover hook
