@@ -81,8 +81,9 @@
     #scatter-card {
       min-height: 0;
       display: grid;
-      grid-template-rows: auto minmax(420px, 1.45fr) auto;
+      grid-template-rows: auto minmax(320px, 1fr) auto;
       padding: 14px 15px 12px;
+      overflow: auto;
     }
 
     .section-title {
@@ -93,9 +94,9 @@
     }
 
     .section-copy {
-      margin-top: 6px;
-      font-size: 12px;
-      line-height: 1.45;
+      margin-top: 4px;
+      font-size: 11px;
+      line-height: 1.35;
       color: #495a6e;
     }
 
@@ -166,17 +167,17 @@
     }
 
     .partition-legend {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
-      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      margin-top: 8px;
     }
 
     .partition-item {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 11px;
+      gap: 6px;
+      font-size: 10px;
       color: #4f6072;
     }
 
@@ -208,6 +209,8 @@
       margin-top: 4px;
       font-size: 11px;
       color: #5c6b7d;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
     }
 
     #detail .grid {
@@ -236,6 +239,7 @@
       font-size: 14px;
       font-weight: 800;
       color: #0f172a;
+      overflow-wrap: anywhere;
     }
 
     .metric .hint {
@@ -317,10 +321,8 @@
             Scatterplot per leggere la relazione tra quota di voti <b>No</b> e <b>affluenza</b>.
             La mappa a destra mostra dove si collocano i comuni selezionati.
           </div>
-          <div class="section-title">Relazione</div>
           <div class="section-copy">
-            Asse X = affluenza finale. Asse Y = quota di No sui voti validi.
-            Le linee tratteggiate segnano le medie nazionali del quesito 1. I colori distinguono le ripartizioni territoriali.
+            X = affluenza, Y = quota di No. Le linee tratteggiate segnano le medie nazionali; i colori distinguono le ripartizioni.
           </div>
           <div class="partition-legend">
             <div class="partition-item"><span class="partition-dot" style="background:var(--north);"></span><span>Nord</span></div>
@@ -683,6 +685,10 @@
         applyPlotPartitionFilter(row.RIPARTIZIONE);
         setActive(row, true);
       });
+
+      myMap.on("mouseout", function(evt) {
+        clearActive();
+      });
     }
 
     function setActive(row, keepPanel) {
@@ -727,8 +733,6 @@
         '<div class="grid">' +
           metric("Affluenza", fmtPct(row.TURNOUT_PCT), intro ? "media nazionale" : fmtInt(row.VOTANTI || 0) + " votanti") +
           metric("Quota No", fmtPct(row.NO_SHARE_PCT), intro ? "sui validi" : fmtInt(row.NO || 0) + " voti No") +
-          metric("Quota Sì", fmtPct(row.SI_SHARE_PCT), intro ? "sui validi" : fmtInt(row.SI || 0) + " voti Sì") +
-          metric("Voti validi", fmtInt(row.VALIDI || 0), intro ? "totale" : "q1") +
         '</div>';
     }
 
