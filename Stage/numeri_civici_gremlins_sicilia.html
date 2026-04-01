@@ -1,0 +1,260 @@
+
+<style>
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0) scaleX(1); }
+    40% { transform: translateY(-38px) scaleX(0.85); }
+    60% { transform: translateY(-42px) scaleX(0.85); }
+  }
+  @keyframes wobble {
+    0%, 100% { transform: rotate(-8deg); }
+    50% { transform: rotate(8deg); }
+  }
+  @keyframes run {
+    0% { left: -80px; }
+    100% { left: calc(100% + 80px); }
+  }
+  @keyframes shadow-pulse {
+    0%, 100% { transform: scaleX(1); opacity: 0.35; }
+    50% { transform: scaleX(0.5); opacity: 0.15; }
+  }
+  @keyframes transform-in {
+    0% { opacity: 0; transform: scale(0.2) rotate(-30deg); }
+    60% { transform: scale(1.2) rotate(8deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0deg); }
+  }
+  @keyframes street-scroll {
+    0% { background-position: 0 0; }
+    100% { background-position: -400px 0; }
+  }
+  @keyframes eye-blink {
+    0%, 90%, 100% { transform: scaleY(1); }
+    95% { transform: scaleY(0.1); }
+  }
+  @keyframes moon-glow {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+  @keyframes rain {
+    0% { top: -20px; }
+    100% { top: 100%; }
+  }
+  .gremlin-wrap {
+    position: absolute;
+    bottom: 62px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: run linear infinite, bounce ease-in-out infinite;
+  }
+  .shadow {
+    width: 36px;
+    height: 8px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 50%;
+    margin-top: 2px;
+    animation: shadow-pulse ease-in-out infinite;
+  }
+</style>
+
+<div id="scene" style="position:relative; width:100%; height:340px; background: linear-gradient(180deg, #0a0520 0%, #1a0a3a 45%, #2a1060 55%, #1a0830 100%); overflow:hidden; border-radius: 12px; font-family: var(--font-sans);">
+
+  <!-- Stars -->
+  <div id="stars"></div>
+
+  <!-- Moon -->
+  <div style="position:absolute; top:18px; right:60px; width:44px; height:44px; background:#fffde0; border-radius:50%; box-shadow: 0 0 18px 6px #ffe87a88; animation: moon-glow 3s ease-in-out infinite;"></div>
+
+  <!-- Rain drops container -->
+  <div id="rain"></div>
+
+  <!-- Buildings silhouette -->
+  <svg style="position:absolute;bottom:58px;left:0;width:100%;height:120px;" viewBox="0 0 800 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="40" width="70" height="80" fill="#0d0528"/>
+    <rect x="8" y="20" width="50" height="100" fill="#0d0528"/>
+    <rect x="20" y="10" width="28" height="110" fill="#0d0528"/>
+    <!-- windows -->
+    <rect x="24" y="20" width="7" height="7" fill="#ffe87a" opacity="0.7"/>
+    <rect x="35" y="20" width="7" height="7" fill="#ffe87a" opacity="0.4"/>
+    <rect x="24" y="35" width="7" height="7" fill="#ffe87a" opacity="0.9"/>
+    <rect x="35" y="35" width="7" height="7" fill="#2a1060" opacity="0.5"/>
+
+    <rect x="90" y="55" width="90" height="65" fill="#0d0528"/>
+    <rect x="100" y="30" width="65" height="90" fill="#100630"/>
+    <rect x="108" y="40" width="8" height="8" fill="#ffe87a" opacity="0.8"/>
+    <rect x="122" y="40" width="8" height="8" fill="#ffe87a" opacity="0.5"/>
+    <rect x="136" y="40" width="8" height="8" fill="#2a1060"/>
+    <rect x="108" y="55" width="8" height="8" fill="#2a1060"/>
+    <rect x="122" y="55" width="8" height="8" fill="#ffe87a" opacity="0.9"/>
+    <rect x="136" y="55" width="8" height="8" fill="#ffe87a" opacity="0.6"/>
+    <!-- church tower -->
+    <rect x="200" y="0" width="30" height="120" fill="#0d0528"/>
+    <polygon points="200,0 215,-15 230,0" fill="#0d0528"/>
+    <rect x="207" y="15" width="6" height="12" rx="3" fill="#ffe87a" opacity="0.6"/>
+
+    <rect x="260" y="50" width="100" height="70" fill="#100630"/>
+    <rect x="270" y="20" width="30" height="100" fill="#0d0528"/>
+    <rect x="314" y="25" width="40" height="95" fill="#0a0428"/>
+    <rect x="275" y="28" width="8" height="8" fill="#ffe87a" opacity="0.7"/>
+    <rect x="275" y="44" width="8" height="8" fill="#2a1060"/>
+    <rect x="320" y="35" width="8" height="8" fill="#ffe87a" opacity="0.8"/>
+    <rect x="334" y="35" width="8" height="8" fill="#ffe87a" opacity="0.3"/>
+    <rect x="320" y="50" width="8" height="8" fill="#ffe87a" opacity="0.6"/>
+
+    <rect x="400" y="45" width="80" height="75" fill="#0d0528"/>
+    <rect x="420" y="15" width="40" height="105" fill="#100630"/>
+    <rect x="426" y="25" width="8" height="8" fill="#2a1060"/>
+    <rect x="440" y="25" width="8" height="8" fill="#ffe87a" opacity="0.5"/>
+    <rect x="426" y="40" width="8" height="8" fill="#ffe87a" opacity="0.9"/>
+    <rect x="440" y="40" width="8" height="8" fill="#ffe87a" opacity="0.4"/>
+
+    <rect x="510" y="30" width="60" height="90" fill="#0d0528"/>
+    <rect x="524" y="42" width="8" height="8" fill="#ffe87a" opacity="0.7"/>
+    <rect x="540" y="42" width="8" height="8" fill="#2a1060"/>
+    <rect x="524" y="57" width="8" height="8" fill="#ffe87a" opacity="0.5"/>
+    <rect x="540" y="57" width="8" height="8" fill="#ffe87a" opacity="0.8"/>
+
+    <rect x="600" y="55" width="110" height="65" fill="#100630"/>
+    <rect x="620" y="25" width="70" height="95" fill="#0d0528"/>
+    <rect x="628" y="38" width="8" height="8" fill="#ffe87a" opacity="0.6"/>
+    <rect x="642" y="38" width="8" height="8" fill="#2a1060"/>
+    <rect x="656" y="38" width="8" height="8" fill="#ffe87a" opacity="0.9"/>
+    <rect x="628" y="54" width="8" height="8" fill="#ffe87a" opacity="0.4"/>
+    <rect x="642" y="54" width="8" height="8" fill="#ffe87a" opacity="0.8"/>
+    <rect x="700" y="10" width="25" height="110" fill="#0a0428"/>
+    <rect x="705" y="20" width="6" height="10" rx="3" fill="#ffe87a" opacity="0.5"/>
+
+    <rect x="750" y="40" width="60" height="80" fill="#0d0528"/>
+    <rect x="762" y="52" width="8" height="8" fill="#ffe87a" opacity="0.7"/>
+    <rect x="776" y="52" width="8" height="8" fill="#2a1060"/>
+  </svg>
+
+  <!-- Street -->
+  <div style="position:absolute;bottom:0;width:100%;height:62px;background:#1a0e3a;border-top:2px solid #3a1a6a;"></div>
+  <!-- cobblestones -->
+  <svg style="position:absolute;bottom:0;left:0;width:100%;height:60px;" viewBox="0 0 800 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#2a1a50" stroke-width="0.8" fill="none">
+      <path d="M0 20 Q40 15 80 20 Q120 25 160 20 Q200 15 240 20 Q280 25 320 20 Q360 15 400 20 Q440 25 480 20 Q520 15 560 20 Q600 25 640 20 Q680 15 720 20 Q760 25 800 20"/>
+      <path d="M0 38 Q30 33 60 38 Q90 43 120 38 Q150 33 180 38 Q210 43 240 38 Q270 33 300 38 Q330 43 360 38 Q390 33 420 38 Q450 43 480 38 Q510 33 540 38 Q570 43 600 38 Q630 33 660 38 Q690 43 720 38 Q750 33 780 38 Q800 41 800 38"/>
+      <line x1="80" y1="0" x2="72" y2="60"/><line x1="160" y1="0" x2="152" y2="60"/>
+      <line x1="240" y1="0" x2="232" y2="60"/><line x1="320" y1="0" x2="312" y2="60"/>
+      <line x1="400" y1="0" x2="392" y2="60"/><line x1="480" y1="0" x2="472" y2="60"/>
+      <line x1="560" y1="0" x2="552" y2="60"/><line x1="640" y1="0" x2="632" y2="60"/>
+      <line x1="720" y1="0" x2="712" y2="60"/>
+    </g>
+  </svg>
+
+  <!-- Title -->
+  <div style="position:absolute;top:12px;left:16px;color:#ffe87a;font-size:13px;font-weight:500;letter-spacing:0.05em;text-shadow:0 0 8px #ffe87a88;">
+    🏚 Numeri civici in libertà — Sicilia, ore 24
+  </div>
+
+  <!-- Gremlins container -->
+  <div id="gremlins"></div>
+</div>
+
+<script>
+const scene = document.getElementById('scene');
+const gremlinsContainer = document.getElementById('gremlins');
+const starsEl = document.getElementById('stars');
+const rainEl = document.getElementById('rain');
+
+// Stars
+for (let i = 0; i < 55; i++) {
+  const s = document.createElement('div');
+  const size = Math.random() * 2 + 1;
+  s.style.cssText = `position:absolute;width:${size}px;height:${size}px;background:#fff;border-radius:50%;top:${Math.random()*50}%;left:${Math.random()*100}%;opacity:${0.4+Math.random()*0.6}`;
+  starsEl.appendChild(s);
+}
+
+// Rain
+for (let i = 0; i < 30; i++) {
+  const r = document.createElement('div');
+  const dur = 0.6 + Math.random() * 0.8;
+  r.style.cssText = `position:absolute;width:1px;height:${8+Math.random()*10}px;background:rgba(180,200,255,0.35);left:${Math.random()*100}%;top:-20px;animation:rain ${dur}s linear ${Math.random()*2}s infinite;`;
+  rainEl.appendChild(r);
+}
+
+// Gremlin data: numero civico + colore
+const gremlinsData = [
+  { num: '7',  color: '#4de88a', accent: '#0a4a1a', delay: 0,    dur: 4.2,  bounceDur: 0.55, size: 34 },
+  { num: '13', color: '#e84d4d', accent: '#5a0808', delay: 1.1,  dur: 5.8,  bounceDur: 0.48, size: 38 },
+  { num: '24', color: '#c94df0', accent: '#3a0a5a', delay: 2.3,  dur: 3.6,  bounceDur: 0.62, size: 30 },
+  { num: '3',  color: '#4db8e8', accent: '#0a2a40', delay: 0.7,  dur: 6.1,  bounceDur: 0.42, size: 42 },
+  { num: '99', color: '#f0a04d', accent: '#5a2a00', delay: 1.8,  dur: 4.8,  bounceDur: 0.52, size: 36 },
+  { num: '11', color: '#e8e84d', accent: '#4a4a00', delay: 3.0,  dur: 5.2,  bounceDur: 0.58, size: 32 },
+  { num: '42', color: '#4de8b8', accent: '#003a28', delay: 0.3,  dur: 4.0,  bounceDur: 0.65, size: 40 },
+  { num: '66', color: '#e84da0', accent: '#5a0030', delay: 2.6,  dur: 6.5,  bounceDur: 0.44, size: 35 },
+];
+
+function makeFace(g, size) {
+  // SVG gremlin face
+  const hw = size;
+  const hh = size;
+  const svg = `<svg width="${hw}" height="${hh+10}" viewBox="0 0 ${hw} ${hh+14}" xmlns="http://www.w3.org/2000/svg">
+    <!-- ears -->
+    <ellipse cx="5" cy="${hh*0.4}" rx="7" ry="9" fill="${g.color}"/>
+    <ellipse cx="${hw-5}" cy="${hh*0.4}" rx="7" ry="9" fill="${g.color}"/>
+    <ellipse cx="5" cy="${hh*0.4}" rx="3" ry="5" fill="${g.accent}" opacity="0.6"/>
+    <ellipse cx="${hw-5}" cy="${hh*0.4}" rx="3" ry="5" fill="${g.accent}" opacity="0.6"/>
+    <!-- horns -->
+    <polygon points="${hw*0.3},2 ${hw*0.25},${hh*0.2} ${hw*0.38},${hh*0.18}" fill="${g.accent}"/>
+    <polygon points="${hw*0.7},2 ${hw*0.62},${hh*0.18} ${hw*0.75},${hh*0.2}" fill="${g.accent}"/>
+    <!-- head -->
+    <ellipse cx="${hw/2}" cy="${hh*0.52}" rx="${hw*0.42}" ry="${hh*0.46}" fill="${g.color}"/>
+    <!-- number embedded like targa civica -->
+    <rect x="${hw*0.2}" y="${hh*0.28}" width="${hw*0.6}" height="${hh*0.3}" rx="3" fill="#fffbea" stroke="#c8a820" stroke-width="1.2"/>
+    <text x="${hw/2}" y="${hh*0.49}" text-anchor="middle" dominant-baseline="middle" font-size="${g.num.length>2?10:13}" font-weight="700" fill="#7a4800" font-family="serif">${g.num}</text>
+    <!-- eyes -->
+    <ellipse cx="${hw*0.35}" cy="${hh*0.62}" rx="5.5" ry="5" fill="#fff" style="animation:eye-blink 3s ease-in-out infinite;transform-origin:${hw*0.35}px ${hh*0.62}px"/>
+    <ellipse cx="${hw*0.65}" cy="${hh*0.62}" rx="5.5" ry="5" fill="#fff" style="animation:eye-blink 3s ease-in-out 0.15s infinite;transform-origin:${hw*0.65}px ${hh*0.62}px"/>
+    <circle cx="${hw*0.35}" cy="${hh*0.62}" r="3" fill="${g.accent}"/>
+    <circle cx="${hw*0.65}" cy="${hh*0.62}" r="3" fill="${g.accent}"/>
+    <circle cx="${hw*0.37}" cy="${hh*0.60}" r="1" fill="#fff"/>
+    <circle cx="${hw*0.67}" cy="${hh*0.60}" r="1" fill="#fff"/>
+    <!-- nose -->
+    <ellipse cx="${hw/2}" cy="${hh*0.72}" rx="4" ry="3" fill="${g.accent}" opacity="0.7"/>
+    <circle cx="${hw*0.43}" cy="${hh*0.72}" r="1.2" fill="#fff" opacity="0.5"/>
+    <circle cx="${hw*0.57}" cy="${hh*0.72}" r="1.2" fill="#fff" opacity="0.5"/>
+    <!-- mouth grinning -->
+    <path d="M${hw*0.3} ${hh*0.82} Q${hw/2} ${hh*0.94} ${hw*0.7} ${hh*0.82}" fill="none" stroke="${g.accent}" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="${hw*0.38}" y1="${hh*0.86}" x2="${hw*0.36}" y2="${hh*0.92}" stroke="${g.accent}" stroke-width="1"/>
+    <line x1="${hw*0.5}" y1="${hh*0.88}" x2="${hw*0.5}" y2="${hh*0.95}" stroke="${g.accent}" stroke-width="1"/>
+    <line x1="${hw*0.62}" y1="${hh*0.86}" x2="${hw*0.64}" y2="${hh*0.92}" stroke="${g.accent}" stroke-width="1"/>
+    <!-- tiny legs -->
+    <line x1="${hw*0.38}" y1="${hh*0.94}" x2="${hw*0.30}" y2="${hh+8}" stroke="${g.color}" stroke-width="4" stroke-linecap="round"/>
+    <line x1="${hw*0.62}" y1="${hh*0.94}" x2="${hw*0.70}" y2="${hh+8}" stroke="${g.color}" stroke-width="4" stroke-linecap="round"/>
+    <ellipse cx="${hw*0.28}" cy="${hh+10}" rx="5" ry="3" fill="${g.color}"/>
+    <ellipse cx="${hw*0.72}" cy="${hh+10}" rx="5" ry="3" fill="${g.color}"/>
+  </svg>`;
+  return svg;
+}
+
+gremlinsData.forEach((g) => {
+  const wrap = document.createElement('div');
+  wrap.className = 'gremlin-wrap';
+  wrap.style.animationDuration = `${g.dur}s, ${g.bounceDur}s`;
+  wrap.style.animationDelay = `${g.delay}s, ${g.delay}s`;
+  wrap.style.animationTimingFunction = 'linear, ease-in-out';
+  wrap.style.animationIterationCount = 'infinite, infinite';
+  wrap.style.animationName = 'run, bounce';
+
+  const face = document.createElement('div');
+  face.innerHTML = makeFace(g, g.size);
+  face.style.cssText = `animation: wobble ${g.bounceDur * 1.2}s ease-in-out ${g.delay}s infinite;`;
+
+  // small name label: "Civico n.X"
+  const label = document.createElement('div');
+  label.textContent = `civico ${g.num}`;
+  label.style.cssText = `font-size:9px;color:#ffe87a99;margin-top:1px;white-space:nowrap;`;
+
+  const shadow = document.createElement('div');
+  shadow.className = 'shadow';
+  shadow.style.animationDuration = `${g.bounceDur}s`;
+  shadow.style.animationDelay = `${g.delay}s`;
+
+  wrap.appendChild(face);
+  wrap.appendChild(shadow);
+  wrap.appendChild(label);
+  gremlinsContainer.appendChild(wrap);
+});
+</script>
