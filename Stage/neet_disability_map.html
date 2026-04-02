@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEET e Disabilità — Europa 2024</title>
+<script src="https://cdn.jsdelivr.net/gh/gjrichter/ixmaps-flat@master/ixmaps.js"></script>
+<style>
+  html, body {
+    width: 100%; height: 100%;
+    overflow: hidden; margin: 0; padding: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #0f1117; color: #e0e0e0;
+  }
+
+  #top-bar {
+    position: absolute; top: 0; left: 0; right: 0; height: 58px;
+    background: rgba(12,13,22,0.96);
+    display: flex; align-items: center; padding: 0 20px; gap: 14px;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+  }
+
+  #top-bar h1 {
+    font-size: 0.88em; font-weight: 600; color: #f0f0f0; margin: 0;
+    white-space: nowrap; flex-shrink: 0;
+  }
+
+  .sep { width: 1px; height: 28px; background: rgba(255,255,255,0.12); flex-shrink: 0; }
+
+  .btn-group { display: flex; gap: 6px; }
+
+  .level-btn {
+    padding: 5px 14px; border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.22);
+    background: transparent; color: #bbb; cursor: pointer;
+    font-size: 0.78em; font-family: inherit;
+    transition: all 0.18s; white-space: nowrap;
+  }
+  .level-btn:hover { background: rgba(255,255,255,0.08); color: #fff; }
+  .level-btn.active-sev  { background: #c0392b; color: #fff; border-color: #c0392b; }
+  .level-btn.active-some { background: #e67e22; color: #fff; border-color: #e67e22; }
+  .level-btn.active-none { background: #2980b9; color: #fff; border-color: #2980b9; }
+
+  #map { position: absolute; top: 58px; left: 0; right: 0; bottom: 0; }
+
+  #info-panel {
+    position: absolute; bottom: 28px; left: 16px;
+    background: rgba(12,13,22,0.90);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px; padding: 14px 18px;
+    z-index: 900; min-width: 210px;
+    font-size: 0.82em;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+
+  #eu-avg-val {
+    font-size: 2.4em; font-weight: 700; line-height: 1;
+    margin-bottom: 2px;
+  }
+  #eu-avg-label { color: #888; font-size: 0.78em; margin-bottom: 12px; }
+
+  .extremes-block { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 10px; }
+  .extremes-section-label {
+    font-size: 0.72em; color: #666; text-transform: uppercase;
+    letter-spacing: 0.05em; margin-bottom: 4px;
+  }
+  .country-item {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 12px; padding: 2px 0;
+  }
+  .country-name { color: #bbb; }
+  .country-val { font-weight: 700; font-size: 1em; }
+  .val-high { color: #e74c3c; }
+  .val-low  { color: #27ae60; }
+  .val-mid  { color: #e67e22; }
+
+  .gap-note {
+    margin-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 10px;
+    font-size: 0.76em; color: #999;
+    line-height: 1.5;
+  }
+  .gap-note b { color: #e0e0e0; }
+
+  #source {
+    position: absolute; bottom: 6px; right: 12px;
+    font-size: 0.7em; color: #ddd; z-index: 900;
+    line-height: 1.5;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+  }
+  #source a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+  #source a:hover { color: #adf; }
+</style>
+</head>
+<body>
+
+<div id="top-bar">
+  <h1>🎓 NEET per livello di disabilità — Europa 2024 (15–29 anni)</h1>
+  <div class="sep"></div>
+  <div class="btn-group">
+    <button class="level-btn active-sev" data-level="SEV"  onclick="showLevel('SEV', this)">Disabilità severa</button>
+    <button class="level-btn"            data-level="SOME" onclick="showLevel('SOME',this)">Disabilità moderata</button>
+    <button class="level-btn"            data-level="NONE" onclick="showLevel('NONE',this)">Nessuna disabilità</button>
+  </div>
+</div>
+
+<div id="map"></div>
+
+<div id="info-panel">
+  <div id="eu-avg-val">54.7%</div>
+  <div id="eu-avg-label">Media EU27 — Disabilità severa</div>
+  <div class="extremes-block" id="country-extremes"></div>
+  <div class="gap-note" id="gap-note">
+    Gap EU27: <b>54.7% vs 10.0%</b> senza disabilità<br>
+    (+44.7 punti percentuali)
+  </div>
+</div>
+
+<div id="source">
+  Fonte: <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Disability_statistics_-_access_to_education_and_training" target="_blank">Eurostat — Disability statistics: access to education and training</a> (2024) &nbsp;|&nbsp;
+  Dataset: <a href="https://ec.europa.eu/eurostat/databrowser/view/EDAT_LFSE_39/default/table" target="_blank"><i>edat_lfse_39</i></a> — EU Labour Force Survey &nbsp;|&nbsp;
+  Indicatore disabilità: GALI (Global Activity Limitation Indicator) &nbsp;|&nbsp; Fascia d'età: 15–29 anni
+</div>
+
+<script>
+var DATA = {
+  SEV: [
+    {geo:"BE", value:62.0, name:"Belgio"},
+    {geo:"CZ", value:80.0, name:"Cechia"},
+    {geo:"DK", value:51.6, name:"Danimarca"},
+    {geo:"DE", value:41.6, name:"Germania"},
+    {geo:"EE", value:36.8, name:"Estonia"},
+    {geo:"EL", value:89.7, name:"Grecia"},
+    {geo:"ES", value:64.0, name:"Spagna"},
+    {geo:"FR", value:44.9, name:"Francia"},
+    {geo:"HR", value:80.2, name:"Croazia"},
+    {geo:"IT", value:64.6, name:"Italia"},
+    {geo:"CY", value:80.5, name:"Cipro"},
+    {geo:"LV", value:84.6, name:"Lettonia"},
+    {geo:"LT", value:88.2, name:"Lituania"},
+    {geo:"HU", value:83.0, name:"Ungheria"},
+    {geo:"NL", value:46.5, name:"Paesi Bassi"},
+    {geo:"AT", value:57.0, name:"Austria"},
+    {geo:"PL", value:67.1, name:"Polonia"},
+    {geo:"PT", value:67.6, name:"Portogallo"},
+    {geo:"RO", value:89.6, name:"Romania"},
+    {geo:"SI", value:47.3, name:"Slovenia"},
+    {geo:"SK", value:69.0, name:"Slovacchia"},
+    {geo:"FI", value:34.5, name:"Finlandia"},
+    {geo:"SE", value:34.8, name:"Svezia"},
+    {geo:"NO", value:42.4, name:"Norvegia"},
+    {geo:"CH", value:34.8, name:"Svizzera"},
+    {geo:"MK", value:78.7, name:"Macedonia del Nord"},
+    {geo:"RS", value:78.9, name:"Serbia"},
+    {geo:"TR", value:80.1, name:"Turchia"}
+  ],
+  SOME: [
+    {geo:"BE", value:19.0, name:"Belgio"},
+    {geo:"BG", value:50.0, name:"Bulgaria"},
+    {geo:"CZ", value:27.6, name:"Cechia"},
+    {geo:"DK", value:15.5, name:"Danimarca"},
+    {geo:"DE", value:15.2, name:"Germania"},
+    {geo:"EE", value:26.7, name:"Estonia"},
+    {geo:"IE", value:24.8, name:"Irlanda"},
+    {geo:"EL", value:63.4, name:"Grecia"},
+    {geo:"ES", value:45.2, name:"Spagna"},
+    {geo:"FR", value:20.9, name:"Francia"},
+    {geo:"HR", value:33.2, name:"Croazia"},
+    {geo:"IT", value:34.7, name:"Italia"},
+    {geo:"CY", value:40.6, name:"Cipro"},
+    {geo:"LV", value:36.1, name:"Lettonia"},
+    {geo:"LT", value:25.6, name:"Lituania"},
+    {geo:"LU", value:12.0, name:"Lussemburgo"},
+    {geo:"HU", value:70.0, name:"Ungheria"},
+    {geo:"MT", value:21.2, name:"Malta"},
+    {geo:"NL", value:19.7, name:"Paesi Bassi"},
+    {geo:"AT", value:19.0, name:"Austria"},
+    {geo:"PL", value:11.5, name:"Polonia"},
+    {geo:"PT", value:13.6, name:"Portogallo"},
+    {geo:"RO", value:11.8, name:"Romania"},
+    {geo:"SI", value:53.3, name:"Slovenia"},
+    {geo:"SK", value:10.4, name:"Slovacchia"},
+    {geo:"FI", value:39.4, name:"Finlandia"},
+    {geo:"SE", value:54.5, name:"Svezia"},
+    {geo:"NO", value:10.4, name:"Norvegia"},
+    {geo:"CH", value:11.5, name:"Svizzera"},
+    {geo:"MK", value:53.3, name:"Macedonia del Nord"},
+    {geo:"RS", value:54.5, name:"Serbia"},
+    {geo:"TR", value:70.0, name:"Turchia"}
+  ],
+  NONE: [
+    {geo:"BE", value:12.2, name:"Belgio"},
+    {geo:"BG", value:9.2,  name:"Bulgaria"},
+    {geo:"CZ", value:10.9, name:"Cechia"},
+    {geo:"DK", value:8.2,  name:"Danimarca"},
+    {geo:"DE", value:7.0,  name:"Germania"},
+    {geo:"EE", value:5.4,  name:"Estonia"},
+    {geo:"IE", value:6.0,  name:"Irlanda"},
+    {geo:"EL", value:13.2, name:"Grecia"},
+    {geo:"ES", value:10.2, name:"Spagna"},
+    {geo:"FR", value:11.2, name:"Francia"},
+    {geo:"HR", value:9.0,  name:"Croazia"},
+    {geo:"IT", value:14.4, name:"Italia"},
+    {geo:"CY", value:12.9, name:"Cipro"},
+    {geo:"LV", value:10.0, name:"Lettonia"},
+    {geo:"LT", value:10.1, name:"Lituania"},
+    {geo:"LU", value:11.2, name:"Lussemburgo"},
+    {geo:"HU", value:9.5,  name:"Ungheria"},
+    {geo:"MT", value:6.2,  name:"Malta"},
+    {geo:"NL", value:3.2,  name:"Paesi Bassi"},
+    {geo:"AT", value:7.6,  name:"Austria"},
+    {geo:"PL", value:7.9,  name:"Polonia"},
+    {geo:"PT", value:8.1,  name:"Portogallo"},
+    {geo:"RO", value:18.5, name:"Romania"},
+    {geo:"SI", value:6.9,  name:"Slovenia"},
+    {geo:"SK", value:9.1,  name:"Slovacchia"},
+    {geo:"FI", value:6.3,  name:"Finlandia"},
+    {geo:"SE", value:4.9,  name:"Svezia"},
+    {geo:"IS", value:4.5,  name:"Islanda"},
+    {geo:"NO", value:24.9, name:"Norvegia"},
+    {geo:"CH", value:21.7, name:"Svizzera"},
+    {geo:"BA", value:14.3, name:"Bosnia-Erzegovina"}
+  ]
+};
+
+var CONFIG = {
+  SEV:  {
+    label: "Disabilità severa",
+    eu: 54.7,
+    activeClass: "active-sev",
+    colorscheme: ["#ffffb2","#fecc5c","#fd8d3c","#f03b20","#bd0026"],
+    valClass: function(v) { return v >= 70 ? "val-high" : v >= 50 ? "val-mid" : "val-low"; }
+  },
+  SOME: {
+    label: "Disabilità moderata",
+    eu: 20.6,
+    activeClass: "active-some",
+    colorscheme: ["#fff7bc","#fec44f","#fe9929","#ec7014","#8c2d04"],
+    valClass: function(v) { return v >= 40 ? "val-high" : v >= 25 ? "val-mid" : "val-low"; }
+  },
+  NONE: {
+    label: "Nessuna disabilità",
+    eu: 10.0,
+    activeClass: "active-none",
+    colorscheme: ["#eff3ff","#bdd7e7","#6baed6","#2171b5","#084594"],
+    valClass: function(v) { return v >= 15 ? "val-high" : v >= 10 ? "val-mid" : "val-low"; }
+  }
+};
+
+var myMap = ixmaps.Map("map", {
+  mapType:  "CartoDB - Positron",
+  mode:     "info",
+  legend:   "closed",
+  tools:    true
+})
+.view({ center: { lat: 52, lng: 17 }, zoom: 4 })
+.options({
+  basemapopacity: 0.45,
+  flushChartDraw: 1000000
+});
+
+// Base FEATURE layer — geometry only
+myMap.layer("countries")
+  .data({ url: "https://gisco-services.ec.europa.eu/distribution/v2/countries/topojson/CNTR_RG_60M_2020_4326.json", type: "topojson" })
+  .binding({ geo: "geometry", id: "CNTR_ID", title: "NAME_ENGL" })
+  .type("FEATURE")
+  .style({ colorscheme: ["#2a2a3a"], fillopacity: 0.4, linecolor: "#555", linewidth: 0.4, showdata: "true" })
+  .define();
+
+function showLevel(level, btnEl) {
+  var cfg = CONFIG[level];
+
+  // Update button styles
+  document.querySelectorAll('.level-btn').forEach(function(b) {
+    b.classList.remove('active-sev','active-some','active-none');
+  });
+  if (btnEl) btnEl.classList.add(cfg.activeClass);
+
+  // Update info panel
+  document.getElementById('eu-avg-val').textContent = cfg.eu + '%';
+  document.getElementById('eu-avg-val').style.color =
+    level === 'SEV' ? '#e74c3c' : level === 'SOME' ? '#e67e22' : '#3498db';
+  document.getElementById('eu-avg-label').textContent = 'Media EU27 — ' + cfg.label;
+
+  // Compute extremes
+  var data = DATA[level].filter(function(d) { return d.value != null; });
+  var sorted = data.slice().sort(function(a,b) { return b.value - a.value; });
+  var top3 = sorted.slice(0, 3);
+  var bot3 = sorted.slice(-3).reverse();
+
+  var html = '<div class="extremes-section-label">▲ Più alto</div>';
+  top3.forEach(function(d) {
+    html += '<div class="country-item"><span class="country-name">' + d.name + '</span>' +
+            '<span class="country-val val-high">' + d.value + '%</span></div>';
+  });
+  html += '<div class="extremes-section-label" style="margin-top:8px">▼ Più basso</div>';
+  bot3.forEach(function(d) {
+    html += '<div class="country-item"><span class="country-name">' + d.name + '</span>' +
+            '<span class="country-val val-low">' + d.value + '%</span></div>';
+  });
+  document.getElementById('country-extremes').innerHTML = html;
+
+  // Update gap note
+  if (level === 'SEV') {
+    document.getElementById('gap-note').innerHTML =
+      'Gap EU27: <b>54.7% vs 10.0%</b> senza disabilità<br>(+44.7 punti percentuali)';
+  } else if (level === 'SOME') {
+    document.getElementById('gap-note').innerHTML =
+      'Gap EU27: <b>20.6% vs 10.0%</b> senza disabilità<br>(+10.6 punti percentuali)';
+  } else {
+    document.getElementById('gap-note').innerHTML =
+      'Riferimento: nessuna limitazione di attività (GALI=0)';
+  }
+
+  // Build CHOROPLETH theme and update map
+  var theme = ixmaps.layer("countries")
+    .data({ obj: DATA[level], type: "json" })
+    .binding({ lookup: "geo", value: "value", title: "name" })
+    .type("CHOROPLETH|QUANTILE")
+    .style({
+      colorscheme:  cfg.colorscheme,
+      fillopacity:  0.82,
+      showdata:     "true",
+      valuedecimals: 1
+    })
+    .meta({
+      name: "neet_choro",
+      tooltip: "<b>{{name}}</b><br>NEET: <b>{{value}}%</b><br><small style='color:#aaa'>" + cfg.label + "</small>"
+    })
+    .define();
+
+  myMap.layer(theme, "direct");
+}
+
+// Initialize with SEV
+showLevel('SEV', document.querySelector('[data-level="SEV"]'));
+</script>
+</body>
+</html>
