@@ -18,7 +18,7 @@
 	<div id="map-div"></div>
 
 	<!-- iXMaps API (flat / composer style) -->
-	<script src="https://gjrichter.github.io/ixmaps_flat/ui/js/htmlgui_flat.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/gjrichter/ixmaps-flat@master/ixmaps.js"></script>
 
 	<script type="text/javascript" charset="utf-8">
 
@@ -79,7 +79,7 @@
 		// layer 2: world city populations (CSV — bubble chart)
 		.layer(ixmaps.layer("cities", layer => layer
 			.data({
-				url:   "https://s3.tebi.io/data/samples/WUP2025-DB-DEGURBA-Cities-Population-Surface-Data-filtered.csv",
+				url:   "https://s3.fr-par.scw.cloud/ixmaps.data/test%20only/WUP2025-DB-DEGURBA-Cities-Population-Surface-Data-filtered.csv",
 				type:  "csv",
 				cache: "true"
 			})
