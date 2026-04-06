@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="iXMaps simple sample map">
+	<meta name="author" content="guenter richter">
+	<link rel="shortcut icon" href="https://gjrichter.github.io/ixmaps/ui/resources/images/ixmaps_logo.png">
+
+	<title>iXMaps Sample</title>
+</head>
+
+<body style="margin:0;padding:0;">
+
+	<!-- map container -->
+	<div id="map-div"></div>
+
+	<!-- iXMaps API (flat / composer style) -->
+	<script src="https://gjrichter.github.io/ixmaps_flat/ui/js/htmlgui_flat.js"></script>
+
+	<script type="text/javascript" charset="utf-8">
+
+		ixmaps.Map("map-div", {
+			mapService: "leaflet",
+			mapType:    "CartoDB - Positron",
+			name:       "sample_map",
+			mode:       "pan",
+			legend:     "true",
+			tools:      "true"
+		},
+
+		map => map
+
+		// map options
+		.options({
+			featurescaling:  "true",
+			objectscaling:   "true",
+			normalSizeScale: "50000000",
+			flushChartDraw:  "500000",
+			flushPaintShape: "500000",
+			basemapopacity:  "1",
+			loadsilent:      "false"
+		})
+
+		// initial view — centred on the world
+		.view({
+			center: { lat: "20", lng: "10" },
+			zoom:   "2"
+		})
+
+		// layer 1: country outlines (topojson from iXMaps CDN)
+		.layer(ixmaps.layer("countries", layer => layer
+			.data({
+				url:   "https://s3.eu-central-1.amazonaws.com/maps.ixmaps.com/topojson/CNTR_RG_10M_2020_4326.json",
+				type:  "topojson",
+				cache: "true"
+			})
+			.binding({
+				geo:   "geometry",
+				value: "$item$"
+			})
+			.type("FEATURE")
+			.style({
+				colorscheme:  ["#e8f4f8"],
+				fillopacity:  "0.8",
+				linecolor:    ["#aaccdd"],
+				linewidth:    "0.5",
+				shadow:       "false",
+				visible:      "true"
+			})
+			.meta({
+				title:   "Countries",
+				tooltip: "{{theme.item.data}}"
+			})
+		))
+
+		// layer 2: world city populations (CSV — bubble chart)
+		.layer(ixmaps.layer("cities", layer => layer
+			.data({
+				url:   "https://s3.tebi.io/data/samples/WUP2025-DB-DEGURBA-Cities-Population-Surface-Data-filtered.csv",
+				type:  "csv",
+				cache: "true"
+			})
+			// show only the 2025 snapshot
+			.filter("WHERE \"Year\" = 2025")
+			.binding({
+				geo:   "PWCent_Latitude|PWCent_Longitude",
+				value: "Pop_1Jan"
+			})
+			.type("CHART|BUBBLE|SIZE|HEADTAIL")
+			.style({
+				colorscheme:  ["7", "#ffe0b2", "#e65100"],
+				fillopacity:  "0.7",
+				shadow:       "false",
+				visible:      "true",
+				showdata:     "true",
+				scale:        "1",
+				sizepow:      "2",
+				valuescale:   "1"
+			})
+			.meta({
+				title:   "City Population 2025",
+				snippet: "Source: UN World Urbanization Prospects 2025",
+				tooltip: "{{theme.item.chart}}{{theme.item.data}}"
+			})
+		))
+
+		); // end ixmaps.Map
+
+	</script>
+
+</body>
+</html>
