@@ -235,6 +235,49 @@
 
         .footer-sep { color: #bbb; }
 
+        /* ── Panel toggle (mobile) ───────────────────────── */
+        .panel-toggle-btn {
+            position: absolute;
+            z-index: 1001;
+            top: 12px;
+            right: 12px;
+            width: 34px;
+            height: 34px;
+            border: 1px solid var(--panel-border);
+            border-radius: 8px;
+            background: var(--panel);
+            backdrop-filter: blur(14px);
+            box-shadow: 0 4px 12px rgba(44, 36, 24, 0.1);
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+            color: var(--ink);
+            padding: 0;
+        }
+
+        /* ── Responsive ──────────────────────────────────── */
+        @media (max-width: 640px) {
+            .embed-title { font-size: 14px; }
+            .embed-subtitle { display: none; }
+
+            .panel-toggle-btn { display: flex; }
+
+            .side-panel {
+                top: 12px;
+                right: 12px;
+                transform: translateX(calc(100% + 20px));
+                transition: transform 220ms ease;
+            }
+
+            .side-panel.is-open { transform: translateX(0); }
+
+            .footer-sources { display: none; }
+
+            .embed-footer { gap: 4px; }
+        }
+
         .btn-download {
             margin-left: auto;
             flex: 0 0 auto;
@@ -270,7 +313,9 @@
     <div class="map-wrapper">
         <div id="map"></div>
 
-        <div class="side-panel">
+        <button class="panel-toggle-btn" id="panel-toggle" aria-label="Mostra/nascondi pannello">&#8801;</button>
+
+        <div class="side-panel" id="side-panel">
             <div class="panel-section">
                 <p class="panel-label">Livelli</p>
                 <div class="layer-switch">
@@ -303,16 +348,20 @@
     </div>
 
     <footer class="embed-footer">
-        Fonti:
+        <span class="footer-sources">Fonti:
         <a href="https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b" target="_blank" rel="noopener">EEA Datahub</a>
         <span class="footer-sep">·</span>
         <a href="https://gisco-services.ec.europa.eu/distribution/v2/countries/geojson/CNTR_RG_20M_2020_4326.geojson" target="_blank" rel="noopener">GISCO confini nazionali</a>
         <span class="footer-sep">·</span>
-        UE-27 + Islanda + Norvegia &nbsp;·&nbsp; 2024 provvisorio
+        UE-27 + Islanda + Norvegia &nbsp;·&nbsp; 2024 provvisorio</span>
         <button class="btn-download" onclick="downloadCSV()">&#8595; CSV</button>
     </footer>
 
     <script>
+        document.getElementById("panel-toggle").addEventListener("click", () => {
+            document.getElementById("side-panel").classList.toggle("is-open");
+        });
+
         function downloadCSV() {
             const rows = window.evMarketEuropeSeries;
             if (!rows || !rows.length) return;
@@ -417,8 +466,9 @@
             myMap = ixmaps.Map("map", {
                 mapType: "white",
                 mapProjection: "lambert",
-                mode: "info",
-                zoomButtons: "top|left"
+                mode: "pan",
+                tools: "true",
+                zoomButtons: "false"
             })
             .view({ center: { lat: 52.5, lng: 18.0 }, zoom: 3.5 })
             .options({
