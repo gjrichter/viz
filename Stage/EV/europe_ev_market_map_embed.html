@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercato auto elettriche in Europa, 2015-2024</title>
+    <script src="https://cdn.jsdelivr.net/gh/gjrichter/ixmaps-flat@master/ixmaps.js"></script>
+    <script src="./europe_ev_market_2015_2024.js"></script>
+    <style>
+        :root {
+            --panel: rgba(245, 249, 242, 0.95);
+            --panel-border: rgba(70, 98, 69, 0.16);
+            --ink: #203126;
+            --muted: #597060;
+            --accent: #4d7a57;
+            --spark: #1f5a43;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+
+        html, body {
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+            color: var(--ink);
+            background: #f6faf4;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ── Title bar ───────────────────────────────────── */
+        .embed-header {
+            flex: 0 0 auto;
+            position: relative;
+            z-index: 2000;
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            padding: 10px 16px 9px;
+            background: #f6faf4;
+            border-bottom: 1px solid var(--panel-border);
+        }
+
+        .embed-title {
+            margin: 0;
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            color: var(--ink);
+        }
+
+        .embed-subtitle {
+            font-size: 12px;
+            color: var(--muted);
+            white-space: nowrap;
+        }
+
+        /* ── Map area ────────────────────────────────────── */
+        .map-wrapper {
+            flex: 1 1 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+            background: #f6faf4;
+        }
+
+        /* ── Overlaid side panel ─────────────────────────── */
+        .side-panel {
+            position: absolute;
+            z-index: 1000;
+            top: 12px;
+            right: 12px;
+            width: 200px;
+            background: var(--panel);
+            border: 1px solid var(--panel-border);
+            border-radius: 12px;
+            box-shadow: 0 8px 28px rgba(44, 36, 24, 0.11);
+            backdrop-filter: blur(14px);
+            padding: 12px 14px;
+        }
+
+        .panel-section {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--panel-border);
+        }
+
+        .panel-section:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .panel-label {
+            margin: 0 0 7px;
+            font-size: 10px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Layer toggles */
+        .layer-switch {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2px 0;
+            font-size: 11px;
+            color: var(--ink);
+        }
+
+        .switch-toggle {
+            position: relative;
+            width: 28px;
+            height: 16px;
+            flex: 0 0 auto;
+            cursor: pointer;
+        }
+
+        .switch-toggle input {
+            opacity: 0; width: 0; height: 0; position: absolute;
+        }
+
+        .switch-slider {
+            position: absolute;
+            inset: 0;
+            background: #c8d4c8;
+            border-radius: 999px;
+            transition: background 180ms;
+        }
+
+        .switch-slider::before {
+            content: "";
+            position: absolute;
+            width: 10px; height: 10px;
+            left: 3px; top: 3px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 180ms;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.18);
+        }
+
+        .switch-toggle input:checked + .switch-slider { background: var(--accent); }
+        .switch-toggle input:checked + .switch-slider::before { transform: translateX(12px); }
+
+        /* Legend */
+        .legend-list { display: grid; gap: 5px; }
+
+        .legend-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            color: var(--ink);
+            cursor: pointer;
+            border-radius: 6px;
+            padding: 1px 3px;
+            transition: transform 100ms ease;
+        }
+
+        .legend-row:hover { transform: translateX(2px); }
+        .legend-row.is-active { background: rgba(255,255,255,0.55); }
+
+        .legend-swatch {
+            width: 16px; height: 10px;
+            border-radius: 3px;
+            border: 1px solid rgba(63,86,69,0.12);
+            flex: 0 0 auto;
+            position: relative;
+        }
+
+        .legend-row.is-active .legend-swatch {
+            border-color: rgba(31,90,67,0.9);
+            box-shadow: 0 0 0 2px rgba(31,90,67,0.18);
+        }
+
+        .legend-row.is-active .legend-swatch::after {
+            content: "";
+            position: absolute;
+            top: 1px; right: 1px;
+            width: 4px; height: 4px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.95);
+        }
+
+        .legend-note {
+            margin-top: 7px;
+            font-size: 10px;
+            line-height: 1.35;
+            color: var(--muted);
+        }
+
+        /* Leaderboard */
+        .leader-list {
+            margin: 0;
+            padding-left: 16px;
+            font-size: 11px;
+            line-height: 1.6;
+            color: var(--ink);
+        }
+
+        /* ── Source footer ───────────────────────────────── */
+        .embed-footer {
+            flex: 0 0 auto;
+            position: relative;
+            z-index: 2000;
+            padding: 5px 16px;
+            background: #f6faf4;
+            border-top: 1px solid var(--panel-border);
+            font-size: 11px;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .embed-footer a {
+            color: var(--spark);
+            text-decoration: none;
+        }
+
+        .embed-footer a:hover { text-decoration: underline; }
+
+        .footer-sep { color: #bbb; }
+
+        .btn-download {
+            margin-left: auto;
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 10px;
+            border: 1px solid rgba(31, 90, 67, 0.35);
+            border-radius: 999px;
+            background: rgba(31, 90, 67, 0.07);
+            color: var(--spark);
+            font-size: 11px;
+            font-family: inherit;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 150ms, border-color 150ms;
+            white-space: nowrap;
+        }
+
+        .btn-download:hover {
+            background: rgba(31, 90, 67, 0.14);
+            border-color: rgba(31, 90, 67, 0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="embed-header">
+        <h1 class="embed-title">Quota mercato auto elettriche in Europa, 2015–2024</h1>
+        <span class="embed-subtitle">Coropleta · tendenza decennale</span>
+    </header>
+
+    <div class="map-wrapper">
+        <div id="map"></div>
+
+        <div class="side-panel">
+            <div class="panel-section">
+                <p class="panel-label">Livelli</p>
+                <div class="layer-switch">
+                    <span>Quota BEV 2024</span>
+                    <label class="switch-toggle">
+                        <input type="checkbox" id="toggle-choropleth" checked>
+                        <span class="switch-slider"></span>
+                    </label>
+                </div>
+                <div class="layer-switch">
+                    <span>Grafici tendenza</span>
+                    <label class="switch-toggle">
+                        <input type="checkbox" id="toggle-sparks" checked>
+                        <span class="switch-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="panel-section">
+                <p class="panel-label">Quota 2024</p>
+                <div id="legend" class="legend-list"></div>
+                <p class="legend-note">Classi quantili · clic per isolare</p>
+            </div>
+
+            <div class="panel-section">
+                <p class="panel-label">Paesi leader 2024</p>
+                <ol id="leaderboard" class="leader-list"></ol>
+            </div>
+        </div>
+    </div>
+
+    <footer class="embed-footer">
+        Fonti:
+        <a href="https://www.eea.europa.eu/en/datahub/datahubitem-view/fa8b1229-3db6-495d-b18e-9c9b3267c02b" target="_blank" rel="noopener">EEA Datahub</a>
+        <span class="footer-sep">·</span>
+        <a href="https://gisco-services.ec.europa.eu/distribution/v2/countries/geojson/CNTR_RG_20M_2020_4326.geojson" target="_blank" rel="noopener">GISCO confini nazionali</a>
+        <span class="footer-sep">·</span>
+        UE-27 + Islanda + Norvegia &nbsp;·&nbsp; 2024 provvisorio
+        <button class="btn-download" onclick="downloadCSV()">&#8595; CSV</button>
+    </footer>
+
+    <script>
+        function downloadCSV() {
+            const rows = window.evMarketEuropeSeries;
+            if (!rows || !rows.length) return;
+            const keys = Object.keys(rows[0]);
+            const escape = (v) => JSON.stringify(v ?? "");
+            const csv = [keys.join(","), ...rows.map((r) => keys.map((k) => escape(r[k])).join(","))].join("\n");
+            const a = Object.assign(document.createElement("a"), {
+                href: URL.createObjectURL(new Blob([csv], { type: "text/csv" })),
+                download: "europe_ev_market_2015_2024.csv"
+            });
+            a.click();
+            URL.revokeObjectURL(a.href);
+        }
+
+        const YEARS = ["2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"];
+        const CHOROPLETH_COLORS = ["#dcefd7","#bfe0b8","#93c993","#63aa74","#3f825e"];
+        let myMap;
+        const activeLegendClasses = new Set();
+        let clearLegendTimer = null;
+
+        function applyMarkedClasses(classIndexes) {
+            if (!myMap) return;
+            const classList = classIndexes.map((i) => `"${i}"`).join(",");
+            myMap.then((map) => {
+                map.changeThemeStyle("ev-share-2024", `markclasses:[${classList}]`, "set");
+            });
+        }
+
+        function renderLeaderboard() {
+            const target = document.getElementById("leaderboard");
+            const topFive = [...window.evMarketEuropeCurrent].slice(0, 5);
+            target.innerHTML = topFive
+                .map((item) => `<li>${item.country_name}: <strong>${item.share_label}</strong></li>`)
+                .join("");
+        }
+
+        function renderLegend() {
+            const target = document.getElementById("legend");
+            const values = window.evMarketEuropeCurrent
+                .map((item) => Number(item.share_pct))
+                .filter((v) => Number.isFinite(v))
+                .sort((a, b) => a - b);
+            if (!target || !values.length) return;
+
+            const classCount = CHOROPLETH_COLORS.length;
+            const ranges = [];
+            for (let i = 0; i < classCount; i++) {
+                const si = Math.floor((i * values.length) / classCount);
+                const ei = Math.min(values.length - 1, Math.floor((((i + 1) * values.length) / classCount) - 1));
+                ranges.push({ min: values[si], max: values[Math.max(si, ei)], color: CHOROPLETH_COLORS[i] });
+            }
+
+            target.innerHTML = ranges.map((item, index) => {
+                const min = item.min.toFixed(1), max = item.max.toFixed(1);
+                const label = min === max ? `${min}%` : `${min}%–${max}%`;
+                return `<div class="legend-row" data-class-index="${index}"><span class="legend-swatch" style="background:${item.color}"></span><span>${label}</span></div>`;
+            }).join("");
+
+            target.querySelectorAll(".legend-row").forEach((row) => {
+                const index = Number(row.dataset.classIndex);
+                row.addEventListener("mouseenter", () => previewLegendClass(index));
+                row.addEventListener("mouseleave", () => clearHoverPreview(index));
+                row.addEventListener("click",      () => toggleLegendClass(index));
+            });
+        }
+
+        function syncLegendActiveState() {
+            document.querySelectorAll(".legend-row").forEach((row) => {
+                row.classList.toggle("is-active", activeLegendClasses.has(Number(row.dataset.classIndex)));
+            });
+        }
+
+        function previewLegendClass(index) {
+            if (activeLegendClasses.size) return;
+            if (clearLegendTimer) { clearTimeout(clearLegendTimer); clearLegendTimer = null; }
+            applyMarkedClasses([index]);
+        }
+
+        function clearHoverPreview(index) {
+            if (activeLegendClasses.size) return;
+            if (clearLegendTimer) clearTimeout(clearLegendTimer);
+            clearLegendTimer = setTimeout(() => { applyMarkedClasses([]); clearLegendTimer = null; }, 90);
+        }
+
+        function toggleLegendClass(index) {
+            activeLegendClasses.has(index) ? activeLegendClasses.delete(index) : activeLegendClasses.add(index);
+            applyMarkedClasses([...activeLegendClasses].sort((a, b) => a - b));
+            syncLegendActiveState();
+        }
+
+        function toggleTheme(name, on) {
+            on ? ixmaps.showTheme(name) : ixmaps.hideTheme(name);
+        }
+
+        renderLeaderboard();
+        renderLegend();
+
+        document.getElementById("toggle-choropleth").addEventListener("change", (e) => toggleTheme("ev-share-2024", e.target.checked));
+        document.getElementById("toggle-sparks").addEventListener("change",     (e) => toggleTheme("ev-trend-sparks", e.target.checked));
+
+        try {
+            myMap = ixmaps.Map("map", {
+                mapType: "white",
+                mapProjection: "lambert",
+                mode: "info",
+                zoomButtons: "top|left"
+            })
+            .view({ center: { lat: 52.5, lng: 18.0 }, zoom: 3.5 })
+            .options({
+                objectscaling: "dynamic",
+                normalSizeScale: "15000000",
+                basemapopacity: 0,
+                flushChartDraw: 1000000
+            });
+
+            myMap.layer("countries")
+                .data({ url: "https://gisco-services.ec.europa.eu/distribution/v2/countries/geojson/CNTR_RG_20M_2020_4326.geojson", type: "geojson", cache: "true" })
+                .binding({ geo: "geometry", id: "CNTR_ID", title: "NAME_ENGL", value: "NAME_ENGL" })
+                .type("FEATURE")
+                .style({ colorscheme: ["#e8e8e8"], linewidth: "0.6", linecolor: "#ffffff", showdata: "true" })
+                .meta({ name: "country-bounds", tooltip: "{{theme.item.title}}" })
+                .define();
+
+            myMap.layer("countries")
+                .data({ obj: window.evMarketEuropeCurrent, type: "json", cache: "true" })
+                .binding({ lookup: "country", value: "share_pct", title: "country_name" })
+                .type("CHOROPLETH|QUANTILE")
+                .style({ colorscheme: CHOROPLETH_COLORS, fillopacity: "0.96", linecolor: "#f7fbf5", linewidth: "0.7", units: "%", decimals: "1" })
+                .meta({
+                    name: "ev-share-2024",
+                    tooltip: "<div style='min-width:190px;padding:10px 12px;background:rgba(250,253,249,0.97);border:1px solid rgba(86,118,87,0.18);border-radius:12px;box-shadow:0 10px 24px rgba(25,45,31,0.12);font-family:Georgia,serif;color:#203126;'><div style='font-size:17px;font-weight:700;line-height:1.15;margin-bottom:8px;'>{{country_name}}</div><div style='display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:4px;'><span style='font-size:12px;color:#5f7565;'>EV share</span><span style='font-size:22px;font-weight:700;color:#1f5a43;'>{{share_label}}</span></div><div style='font-size:12px;color:#5f7565;'>{{ev_sales}} of {{total_sales}} new cars</div></div>"
+                })
+                .define();
+
+            myMap.layer("sparks")
+                .data({ obj: window.evMarketEuropeSeries, type: "json", cache: "true" })
+                .binding({ geo: "lat|lon", position: "lat|lon", value: "year", size: "share_pct", title: "country_name" })
+                .type("CHART|SYMBOL|PLOT|LINES|AREA|FADE|LASTARROW|SMOOTH|BOX|XAXIS|CATEGORICAL|AGGREGATE|SUM|BOTTOMTITLE|NOLEGEND")
+                .style({
+                    colorscheme: ["#1f5a43"], symbols: "none", linecolor: "#1f5a43",
+                    boxcolor: "none", bordercolor: "none", fillopacity: "0.6", boxopacity: "0.05",
+                    align: "center|top", values: YEARS,
+                    xaxis: ["'15","","","'18","","","'21","","","'24"],
+                    label: ["'15","'16","'17","'18","'19","'20","'21","'22","'23","'24"],
+                    normalsizevalue: "100", scale: "0.42", textscale: "5",
+                    textcolor: "#1f5a43", linewidth: "5", markersize: "1"
+                })
+                .meta({
+                    name: "ev-trend-sparks",
+                    tooltip: "<div style='min-width:220px;max-width:260px;padding:10px 12px;background:rgba(250,253,249,0.97);border:1px solid rgba(86,118,87,0.18);border-radius:12px;box-shadow:0 10px 24px rgba(25,45,31,0.12);font-family:Georgia,serif;color:#203126;'><div style='font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#5f7565;margin-bottom:6px;'>EV Trend 2015–2024</div><div style='font-size:17px;font-weight:700;line-height:1.15;margin-bottom:8px;'>{{theme.item.title}}</div><div style='font-size:12px;color:#5f7565;margin-bottom:6px;'>Electric share by year</div><div style='padding:6px 0 2px 0;'>{{theme.item.chart}}</div></div>"
+                })
+                .define();
+
+        } catch (error) {
+            console.error("Map initialization failed:", error);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercato auto elettriche in Europa, 2015-2024 — Blog</title>
+    <style>
+        :root {
+            --spark: #1f5a43;
+            --blog-width: 780px;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #f5f4ef;
+            font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+            color: #1a1a1a;
+        }
+
+        /* ── Blog chrome ─────────────────────────────────── */
+        .blog-header {
+            background: #fff;
+            border-bottom: 1px solid #e0ddd6;
+            padding: 0 24px;
+        }
+
+        .blog-header-inner {
+            max-width: var(--blog-width);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            height: 52px;
+            font-size: 14px;
+            color: #888;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .blog-header-inner strong { color: #333; font-weight: 700; }
+
+        .blog-content {
+            max-width: var(--blog-width);
+            margin: 0 auto;
+            padding: 20px 24px 80px;
+        }
+
+        .blog-meta {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 6px;
+            letter-spacing: 0.04em;
+        }
+
+        .blog-title {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.08;
+            letter-spacing: -0.02em;
+            margin: 0 0 8px;
+            color: #111;
+        }
+
+        .blog-intro {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #666;
+            margin: 0;
+        }
+
+        /* ── Embedded map ────────────────────────────────── */
+        .map-frame {
+            display: block;
+            width: 100%;
+            min-height: 320px;
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 8px 40px rgba(20, 34, 24, 0.13);
+            margin: 10px 0 0;
+        }
+
+        /* ── Body text ───────────────────────────────────── */
+        .blog-body {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #333;
+            margin: 28px 0;
+        }
+
+        .italy-note {
+            font-size: 15px;
+            line-height: 1.65;
+            color: #333;
+            margin: 28px 0;
+            padding: 16px 20px;
+            border-left: 3px solid #63aa74;
+            background: rgba(99, 170, 116, 0.07);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .italy-note strong { color: #1f5a43; }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 36px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="blog-header">
+        <div class="blog-header-inner">
+            <strong>Il Laboratorio Dati</strong> &nbsp;·&nbsp; Analisi &nbsp;·&nbsp; Trasporti
+        </div>
+    </header>
+
+    <main class="blog-content">
+
+        <p class="blog-meta">8 aprile 2026 &nbsp;·&nbsp; 4 min di lettura</p>
+
+        <h1 class="blog-title">La Norvegia guida la rivoluzione elettrica europea — ma il divario si sta riducendo</h1>
+
+        <p class="blog-intro">Quota di mercato dei veicoli elettrici e tendenza decennale per UE-27 più Islanda e Norvegia, 2015–2024.</p>
+
+        <iframe
+            id="map-frame"
+            class="map-frame"
+            src="./europe_ev_market_map_embed.html"
+            title="Mercato auto elettriche in Europa, 2015-2024"
+            loading="lazy">
+        </iframe>
+
+        <hr>
+
+        <p class="blog-body">
+            I paesi nordici — Norvegia, Islanda, Finlandia e Svezia — dominano da tempo la classifica europea dei veicoli
+            elettrici, sostenuti da generosi incentivi e da un'elevata diffusione dell'energia rinnovabile. I dati del 2024
+            indicano tuttavia un cambiamento strutturale: Germania, Francia e Paesi Bassi stanno accelerando, mentre i
+            mercati dell'Europa centrale e orientale stanno avviando le proprie transizioni da basi quasi nulle.
+        </p>
+
+        <p class="italy-note">
+            <strong>Il caso Italia.</strong> Con una quota BEV intorno al 4% nel 2024, l'Italia si colloca
+            nella fascia bassa della classifica europea, al di sotto della media UE. La crescita c'è stata — da meno
+            dell'1% nel 2019 — ma rimane frenata da un parco circolante anziano, da infrastrutture di ricarica ancora
+            frammentate e da incentivi statali discontinui. Le vendite si concentrano nelle regioni settentrionali e
+            nelle grandi aree metropolitane, mentre il Mezzogiorno resta ampiamente indietro. Per raggiungere gli
+            obiettivi climatici europei al 2035, l'Italia dovrà accelerare significativamente il ritmo di adozione.
+        </p>
+
+        <p class="blog-body">
+            I mini grafici sovrapposti a ciascun paese raccontano la storia più completa: la maggior parte dei mercati
+            ha trascorso il periodo 2015–2018 su valori a una cifra, per poi accelerare bruscamente dopo il 2020 con
+            l'ampliamento dell'offerta di modelli e il calo dei costi delle batterie. Il rallentamento legato al COVID
+            nel 2020 è appena percettibile — la domanda di veicoli elettrici si è dimostrata straordinariamente resiliente.
+        </p>
+
+    </main>
+
+    <script>
+        function fitMapHeight() {
+            const frame = document.getElementById("map-frame");
+            const top = frame.getBoundingClientRect().top + window.scrollY;
+            frame.style.height = Math.max(320, window.innerHeight - top - 24) + "px";
+        }
+        document.addEventListener("DOMContentLoaded", fitMapHeight);
+        window.addEventListener("resize", fitMapHeight);
+    </script>
+</body>
+</html>
