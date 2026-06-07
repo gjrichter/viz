@@ -53,9 +53,11 @@
   <div id="origin-legend-items"></div>
 </div>
 <div id="dir-legend" class="panel legend-panel" style="display:none">
-  <h4>Direction</h4>
-  <div class="ol-row"><span class="ol-sw" style="background:#0b6fb8"></span>Outflows (from region)</div>
-  <div class="ol-row"><span class="ol-sw" style="background:#d2691e"></span>Inflows (into region)</div>
+  <h4 id="dir-legend-title">Direction</h4>
+  <div class="ol-row"><span class="ol-sw" style="background:#0b6fb8"></span>Outflows&nbsp;<b id="dir-out-sum"></b></div>
+  <div class="ol-row"><span class="ol-sw" style="background:#d2691e"></span>Inflows&nbsp;<b id="dir-in-sum"></b></div>
+  <div id="dir-net" style="font-size:11px; color:#667; margin-top:7px; padding-top:6px; border-top:1px solid #e6eaee;"></div>
+  <div style="font-size:9px; color:#9aa3ad; margin-top:5px;">inter-regional transfers · 2025</div>
 </div>
 <div id="source-bar" class="panel">Source: ISTAT — DCIS_MIGRAZIONI (28_185_DF_DCIS_MIGRAZIONI_1), 2025 (provisional)</div>
 
@@ -77,14 +79,14 @@ var NSV_MIN = 3000, NSV_MAX = 25000;
 function nsvFromSlider(t){ return Math.round(NSV_MAX - (t/100) * (NSV_MAX - NSV_MIN)); }
 function debounce(fn, ms){ var t; return function(){ clearTimeout(t); t = setTimeout(fn, ms); }; }
 
-var myMap = ixmaps.Map("map", {
+var myIXMap = ixmaps.Map("map", {
     mapType: "white", mode: "info", legend: "closed", tools: true
 })
 .view({ center: { lat: 41.9, lng: 12.4 }, zoom: 6 })
 .options({ objectscaling: "dynamic", normalSizeScale: "8000000",
            basemapopacity: 0.55, flushChartDraw: 1000000 });
 
-myMap.layer("regions")
+myIXMap.layer("regions")
     .data({ url: "https://gisco-services.ec.europa.eu/distribution/v2/nuts/topojson/NUTS_RG_20M_2021_4326_LEVL_2.json", type: "topojson" })
     .filter('WHERE CNTR_CODE == "IT"')
     .binding({ geo: "geometry" })
@@ -100,7 +102,7 @@ function defineFlow(name, data, opts){
                   normalsizevalue: String(NSV), rangescale: (opts.bow != null ? opts.bow : -7), showdata: "true" };
     if (opts.categorical) { style.colorscheme = PALETTE; style.values = ORDER_NAMES; binding.value = "origin"; }
     else { style.colorscheme = [opts.color]; }
-    myMap.layer("flowlayer")
+    myIXMap.layer("flowlayer")
         .data({ obj: data, type: "json" })
         .binding(binding)
         .type(type)
@@ -111,7 +113,7 @@ function defineFlow(name, data, opts){
 }
 
 function defineBubbles(data, color){
-    myMap.layer("bublayer")
+    myIXMap.layer("bublayer")
         .data({ obj: data, type: "json" })
         .binding({ geo: "lat|lon", value: "value", title: "name" })
         .type("CHART|BUBBLE|SIZE|VALUES|NOLEGEND")
@@ -127,7 +129,7 @@ var THEMES = ["regionFlows", "regionFlowsOut", "regionFlowsIn", "regionBubbles"]
 function render(regionName, dir, animate){
     var isAll = (regionName === "__ALL__");
 
-    myMap.then(function(api){
+    myIXMap.then(function(api){
         THEMES.forEach(function(n){ try { api.removeTheme(n); } catch(e){} });
 
         if (isAll){
@@ -137,6 +139,16 @@ function render(regionName, dir, animate){
             var inF  = FLOWS.filter(function(f){ return f.dest   === regionName; });
             defineFlow("regionFlowsOut", outF, { color: OUT_COLOR, bow: -7 });   // out: curve one way
             defineFlow("regionFlowsIn",  inF,  { color: IN_COLOR,  bow: -7 });   // in: same sign -> opposite side (reversed travel direction)
+            // totals into the Direction legend
+            var outSum = outF.reduce(function(a,f){ return a + f.value; }, 0);
+            var inSum  = inF.reduce(function(a,f){ return a + f.value; }, 0);
+            var net    = inSum - outSum;
+            document.getElementById("dir-legend-title").textContent = regionName;
+            document.getElementById("dir-out-sum").textContent = outSum.toLocaleString();
+            document.getElementById("dir-in-sum").textContent  = inSum.toLocaleString();
+            document.getElementById("dir-net").innerHTML =
+                "Net balance: <b style='color:" + (net >= 0 ? "#2e7d32" : "#c62828") + "'>"
+                + (net >= 0 ? "+" : "") + net.toLocaleString() + "</b>";
         } else {
             var color = (dir === "out") ? OUT_COLOR : IN_COLOR;
             var sel = (dir === "out")
