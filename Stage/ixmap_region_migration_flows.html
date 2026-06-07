@@ -17,10 +17,12 @@
                     letter-spacing:.05em; color:#556; margin:0 0 4px; }
   #controls select { width:100%; padding:6px 8px; font-size:13px; border:1px solid #ccd5dd;
                      border-radius:5px; margin-bottom:12px; background:#fff; }
+  #controls input[type=range] { width:100%; margin:2px 0 2px; accent-color:#0b6fb8; }
+  #controls .readout { font-size:10px; color:#778; margin:0 0 10px; }
   #controls .hint { font-size:10px; color:#889; line-height:1.4; margin-top:2px; }
-  #origin-legend { top:12px; right:12px; padding:10px 14px; width:180px; max-height:80vh; overflow:auto; }
-  #origin-legend h4 { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.05em;
-                      color:#556; margin:0 0 8px; }
+  .legend-panel { top:12px; right:12px; padding:10px 14px; width:180px; max-height:80vh; overflow:auto; }
+  .legend-panel h4 { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.05em;
+                     color:#556; margin:0 0 8px; }
   .ol-row { display:flex; align-items:center; gap:8px; margin-bottom:4px; font-size:12px; color:#334; }
   .ol-sw  { width:14px; height:14px; border-radius:3px; flex-shrink:0; border:1px solid rgba(0,0,0,.18); }
   #source-bar { bottom:6px; left:12px; padding:4px 12px; font-size:10px; color:#778899; }
@@ -39,12 +41,21 @@
   <select id="dir-select">
     <option value="out">Outflows — from this region →</option>
     <option value="in">Inflows — → into this region</option>
+    <option value="both">Both — in &amp; out</option>
   </select>
+  <label for="size-slider">Arrow thickness</label>
+  <input id="size-slider" type="range" min="0" max="100" step="1" value="68">
+  <div class="readout" id="size-readout">size reference ≈ 10,000</div>
   <div class="hint">Pick a region to trace its flows, or choose <b>All major flows</b> for the national overview (arrows colored by origin).</div>
 </div>
-<div id="origin-legend" class="panel" style="display:none">
+<div id="origin-legend" class="panel legend-panel" style="display:none">
   <h4>Origin region</h4>
   <div id="origin-legend-items"></div>
+</div>
+<div id="dir-legend" class="panel legend-panel" style="display:none">
+  <h4>Direction</h4>
+  <div class="ol-row"><span class="ol-sw" style="background:#0b6fb8"></span>Outflows (from region)</div>
+  <div class="ol-row"><span class="ol-sw" style="background:#d2691e"></span>Inflows (into region)</div>
 </div>
 <div id="source-bar" class="panel">Source: ISTAT — DCIS_MIGRAZIONI (28_185_DF_DCIS_MIGRAZIONI_1), 2025 (provisional)</div>
 
@@ -55,9 +66,16 @@ var FLOWS       = [{"origin": "Piemonte", "dest": "Valle d'Aosta", "olat": 45.05
 var ORDER_NAMES = ["Piemonte", "Valle d'Aosta", "Liguria", "Lombardia", "Bolzano/Bozen", "Trento", "Veneto", "Friuli-Venezia Giulia", "Emilia-Romagna", "Toscana", "Umbria", "Marche", "Lazio", "Abruzzo", "Molise", "Campania", "Puglia", "Basilicata", "Calabria", "Sicilia", "Sardegna"];
 var PALETTE     = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf", "#393b79", "#637939", "#8c6d31", "#843c39", "#7b4173", "#3182bd", "#e6550d", "#31a354", "#756bb1", "#636363", "#de9ed6"];
 
-var OUT_COLOR = "#0b6fb8";   // single-region outflows
-var IN_COLOR  = "#d2691e";   // single-region inflows
+var OUT_COLOR = "#0b6fb8";   // outflows
+var IN_COLOR  = "#d2691e";   // inflows
 var ALL_MIN   = 3000;        // threshold for "All major flows" overview
+var NSV       = 10000;       // vector normalsizevalue (driven by the slider)
+var FLOW_TIP  = "<div style='padding:7px 9px'><b>{{origin}}</b> &rarr; <b>{{dest}}</b>"
+              + "<br>{{value}} residence transfers (2025)</div>";
+
+var NSV_MIN = 3000, NSV_MAX = 25000;
+function nsvFromSlider(t){ return Math.round(NSV_MAX - (t/100) * (NSV_MAX - NSV_MIN)); }
+function debounce(fn, ms){ var t; return function(){ clearTimeout(t); t = setTimeout(fn, ms); }; }
 
 var myMap = ixmaps.Map("map", {
     mapType: "white", mode: "info", legend: "closed", tools: true
@@ -66,7 +84,6 @@ var myMap = ixmaps.Map("map", {
 .options({ objectscaling: "dynamic", normalSizeScale: "8000000",
            basemapopacity: 0.55, flushChartDraw: 1000000 });
 
-// region polygons — context backdrop only (no data join, silent so flows get the hovers)
 myMap.layer("regions")
     .data({ url: "https://gisco-services.ec.europa.eu/distribution/v2/nuts/topojson/NUTS_RG_20M_2021_4326_LEVL_2.json", type: "topojson" })
     .filter('WHERE CNTR_CODE == "IT"')
@@ -75,69 +92,72 @@ myMap.layer("regions")
     .style({ colorscheme: ["#e9eef2"], fillopacity: 0.45, linecolor: "#9fb0bc", linewidth: 0.5 })
     .define();
 
-function render(regionName, dir) {
+// define one vector flow theme; opts = {categorical} OR {color, bow}
+function defineFlow(name, data, opts){
+    var type = "CHART|VECTOR|BEZIER|POINTER" + (opts.categorical ? "|CATEGORICAL" : "") + "|FADEIN";
+    var binding = { position: "olat|olon", position2: "dlat|dlon", title: "dest" };
+    var style = { fillopacity: 0.9, sizefield: "value", scale: 1.0, sizepow: 1,
+                  normalsizevalue: String(NSV), rangescale: (opts.bow != null ? opts.bow : -7), showdata: "true" };
+    if (opts.categorical) { style.colorscheme = PALETTE; style.values = ORDER_NAMES; binding.value = "origin"; }
+    else { style.colorscheme = [opts.color]; }
+    myMap.layer("flowlayer")
+        .data({ obj: data, type: "json" })
+        .binding(binding)
+        .type(type)
+        .style(style)
+        .meta({ name: name, tooltip: FLOW_TIP })
+        .title(opts.categorical ? "Origin region" : "Flows")
+        .define();
+}
+
+function defineBubbles(data, color){
+    myMap.layer("bublayer")
+        .data({ obj: data, type: "json" })
+        .binding({ geo: "lat|lon", value: "value", title: "name" })
+        .type("CHART|BUBBLE|SIZE|VALUES|NOLEGEND")
+        .style({ colorscheme: [color], fillopacity: 0.55, linecolor: color, linewidth: 1.2,
+                 scale: 2.4, sizepow: 1, normalsizevalue: "30000", showdata: "true", units: " transfers" })
+        .meta({ name: "regionBubbles", tooltip: "<div style='padding:7px 9px'><b>{{name}}</b><br>{{value}} transfers</div>" })
+        .title("Volume")
+        .define();
+}
+
+var THEMES = ["regionFlows", "regionFlowsOut", "regionFlowsIn", "regionBubbles"];
+
+function render(regionName, dir, animate){
     var isAll = (regionName === "__ALL__");
-    var color = (dir === "out") ? OUT_COLOR : IN_COLOR;
-
-    var sel = isAll
-        ? FLOWS.filter(function(f){ return f.value >= ALL_MIN; })
-        : FLOWS.filter(function(f){ return dir === "out" ? f.origin === regionName : f.dest === regionName; });
-
-    var bub = sel.map(function(f){
-        return (dir === "out")
-            ? { name: f.dest,   lat: f.dlat, lon: f.dlon, value: f.value }
-            : { name: f.origin, lat: f.olat, lon: f.olon, value: f.value };
-    });
 
     myMap.then(function(api){
-        try { api.removeTheme("regionFlows"); } catch(e){}
-        try { api.removeTheme("regionBubbles"); } catch(e){}
+        THEMES.forEach(function(n){ try { api.removeTheme(n); } catch(e){} });
 
-        if (isAll) {
-            // overview: color each arrow by its ORIGIN region (categorical)
-            myMap.layer("flowlayer")
-                .data({ obj: sel, type: "json" })
-                .binding({ position: "olat|olon", position2: "dlat|dlon", value: "origin", title: "dest" })
-                .type("CHART|VECTOR|BEZIER|POINTER|CATEGORICAL|FADEIN")
-                .style({ colorscheme: PALETTE, values: ORDER_NAMES, fillopacity: 0.9,
-                         sizefield: "value", scale: 1.0, sizepow: 1, rangescale: -7, showdata: "true" })
-                .meta({ name: "regionFlows",
-                        tooltip: "<div style='padding:7px 9px'><b>{{origin}}</b> &rarr; <b>{{dest}}</b>"
-                               + "<br>{{value}} residence transfers (2025)</div>" })
-                .title("Origin region")
-                .define();
+        if (isAll){
+            defineFlow("regionFlows", FLOWS.filter(function(f){ return f.value >= ALL_MIN; }), { categorical: true });
+        } else if (dir === "both"){
+            var outF = FLOWS.filter(function(f){ return f.origin === regionName; });
+            var inF  = FLOWS.filter(function(f){ return f.dest   === regionName; });
+            defineFlow("regionFlowsOut", outF, { color: OUT_COLOR, bow: -7 });   // out: curve one way
+            defineFlow("regionFlowsIn",  inF,  { color: IN_COLOR,  bow: -7 });   // in: same sign -> opposite side (reversed travel direction)
         } else {
-            myMap.layer("flowlayer")
-                .data({ obj: sel, type: "json" })
-                .binding({ position: "olat|olon", position2: "dlat|dlon", title: "dest" })
-                .type("CHART|VECTOR|BEZIER|POINTER|FADEIN")
-                .style({ colorscheme: [color], fillopacity: 0.85, sizefield: "value",
-                         scale: 1.0, sizepow: 1, rangescale: -7, showdata: "true" })
-                .meta({ name: "regionFlows",
-                        tooltip: "<div style='padding:7px 9px'><b>{{origin}}</b> &rarr; <b>{{dest}}</b>"
-                               + "<br>{{value}} residence transfers (2025)</div>" })
-                .title("Flows")
-                .define();
-
-            myMap.layer("bublayer")
-                .data({ obj: bub, type: "json" })
-                .binding({ geo: "lat|lon", value: "value", title: "name" })
-                .type("CHART|BUBBLE|SIZE|VALUES|NOLEGEND")
-                .style({ colorscheme: [color], fillopacity: 0.55, linecolor: color, linewidth: 1.2,
-                         scale: 2.4, sizepow: 1, normalsizevalue: "30000", showdata: "true", units: " transfers" })
-                .meta({ name: "regionBubbles",
-                        tooltip: "<div style='padding:7px 9px'><b>{{name}}</b><br>{{value}} transfers</div>" })
-                .title("Volume")
-                .define();
+            var color = (dir === "out") ? OUT_COLOR : IN_COLOR;
+            var sel = (dir === "out")
+                ? FLOWS.filter(function(f){ return f.origin === regionName; })
+                : FLOWS.filter(function(f){ return f.dest   === regionName; });
+            var bub = sel.map(function(f){
+                return (dir === "out") ? { name: f.dest, lat: f.dlat, lon: f.dlon, value: f.value }
+                                       : { name: f.origin, lat: f.olat, lon: f.olon, value: f.value };
+            });
+            defineFlow("regionFlows", sel, { color: color, bow: -7 });
+            defineBubbles(bub, color);
         }
     });
 
-    var leg = document.getElementById("origin-legend");
-    if (leg) leg.style.display = isAll ? "block" : "none";
+    document.getElementById("origin-legend").style.display = isAll ? "block" : "none";
+    document.getElementById("dir-legend").style.display    = (!isAll && dir === "both") ? "block" : "none";
 }
 
-// build region selector
+// region selector
 var sel = document.getElementById("origin-select");
+var dirSel = document.getElementById("dir-select");
 var optAll = document.createElement("option");
 optAll.value = "__ALL__"; optAll.textContent = "— All major flows (≥ " + ALL_MIN.toLocaleString() + ") —";
 sel.appendChild(optAll);
@@ -146,7 +166,7 @@ REGIONS.forEach(function(r){
     o.value = r.name; o.textContent = r.name; sel.appendChild(o);
 });
 
-// build origin-color legend
+// origin-color legend
 var olItems = document.getElementById("origin-legend-items");
 ORDER_NAMES.forEach(function(nm, i){
     var row = document.createElement("div"); row.className = "ol-row";
@@ -154,13 +174,25 @@ ORDER_NAMES.forEach(function(nm, i){
     olItems.appendChild(row);
 });
 
-function update(){ render(sel.value, document.getElementById("dir-select").value); }
-sel.addEventListener("change", update);
-document.getElementById("dir-select").addEventListener("change", update);
+function update(animate){ render(sel.value, dirSel.value, animate); }
+sel.addEventListener("change", function(){ update(true); });
+dirSel.addEventListener("change", function(){ update(true); });
 
-// default view: national overview, arrows colored by origin
+// arrow-thickness slider -> vector normalsizevalue
+var slider  = document.getElementById("size-slider");
+var readout = document.getElementById("size-readout");
+function refreshReadout(){ readout.textContent = "size reference ≈ " + NSV.toLocaleString() + "  (drag right = thicker)"; }
+slider.addEventListener("input", debounce(function(){
+    NSV = nsvFromSlider(+slider.value);
+    refreshReadout();
+    update(false);
+}, 130));
+
+// init
+NSV = nsvFromSlider(+slider.value);
+refreshReadout();
 sel.value = "__ALL__";
-render("__ALL__", "out");
+render("__ALL__", "out", true);
 </script>
 </body>
 </html>
