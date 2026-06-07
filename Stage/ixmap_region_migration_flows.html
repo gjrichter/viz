@@ -20,11 +20,17 @@
   #controls input[type=range] { width:100%; margin:2px 0 2px; accent-color:#0b6fb8; }
   #controls .readout { font-size:10px; color:#778; margin:0 0 10px; }
   #controls .hint { font-size:10px; color:#889; line-height:1.4; margin-top:2px; }
-  .legend-panel { top:12px; right:12px; padding:10px 14px; width:180px; max-height:80vh; overflow:auto; }
+  .legend-panel { top:12px; right:12px; padding:10px 14px; width:218px; max-height:80vh; overflow:auto; }
   .legend-panel h4 { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.05em;
-                     color:#556; margin:0 0 8px; }
+                     color:#556; margin:0 0 2px; }
+  .legend-cap { font-size:9px; color:#9aa3ad; margin:0 0 8px; }
   .ol-row { display:flex; align-items:center; gap:8px; margin-bottom:4px; font-size:12px; color:#334; }
   .ol-sw  { width:14px; height:14px; border-radius:3px; flex-shrink:0; border:1px solid rgba(0,0,0,.18); }
+  .ol-name { flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .ol-row b { font-variant-numeric:tabular-nums; color:#445; }
+  #origin-legend { width:252px; }
+  .ol-out { min-width:46px; text-align:right; }
+  .ol-net { min-width:54px; text-align:right; }
   #source-bar { bottom:6px; left:12px; padding:4px 12px; font-size:10px; color:#778899; }
 </style>
 </head>
@@ -50,6 +56,7 @@
 </div>
 <div id="origin-legend" class="panel legend-panel" style="display:none">
   <h4>Origin region</h4>
+  <div class="legend-cap">out&nbsp;·&nbsp;saldo (in − out) · 2025</div>
   <div id="origin-legend-items"></div>
 </div>
 <div id="dir-legend" class="panel legend-panel" style="display:none">
@@ -181,8 +188,15 @@ REGIONS.forEach(function(r){
 // origin-color legend
 var olItems = document.getElementById("origin-legend-items");
 ORDER_NAMES.forEach(function(nm, i){
+    var outSum = FLOWS.reduce(function(a, f){ return f.origin === nm ? a + f.value : a; }, 0);
+    var inSum  = FLOWS.reduce(function(a, f){ return f.dest   === nm ? a + f.value : a; }, 0);
+    var net = inSum - outSum;
+    var netCol = net >= 0 ? "#2e7d32" : "#c62828";
     var row = document.createElement("div"); row.className = "ol-row";
-    row.innerHTML = '<span class="ol-sw" style="background:' + PALETTE[i] + '"></span>' + nm;
+    row.innerHTML = '<span class="ol-sw" style="background:' + PALETTE[i] + '"></span>'
+                  + '<span class="ol-name" title="' + nm + '">' + nm + '</span>'
+                  + '<b class="ol-out">' + outSum.toLocaleString() + '</b>'
+                  + '<b class="ol-net" style="color:' + netCol + '">' + (net >= 0 ? "+" : "") + net.toLocaleString() + '</b>';
     olItems.appendChild(row);
 });
 
