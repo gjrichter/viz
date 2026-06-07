@@ -240,7 +240,7 @@ ORDER_NAMES.forEach(function(nm, i){
     olItems.appendChild(row);
 });
 
-function update(animate){ render(sel.value, dirSel.value, animate); }
+function update(animate){ render(sel.value, dirSel.value, animate); syncURL(); }
 sel.addEventListener("change", function(){ update(true); });
 dirSel.addEventListener("change", function(){ update(true); });
 
@@ -261,11 +261,33 @@ uiToggle.addEventListener("click", function(){
     uiToggle.textContent = off ? "Show panels" : "Hide panels";
 });
 
-// init
+// ---- URL state (region · direction · thickness) ----
+function syncURL(){
+    var p = new URLSearchParams();
+    p.set("r", sel.value === "__ALL__" ? "all" : sel.value);
+    p.set("d", dirSel.value);
+    p.set("t", slider.value);
+    history.replaceState(null, "", location.pathname + "?" + p.toString());
+}
+function readState(){
+    var p = new URLSearchParams(location.search);
+    var r = p.get("r"), d = p.get("d"), t = parseInt(p.get("t"), 10);
+    var region = "__ALL__";
+    if (r && r !== "all" && REGIONS.some(function(x){ return x.name === r; })) region = r;
+    var dir = (d === "in" || d === "both") ? d : "out";
+    if (!isFinite(t) || t < 0 || t > 100) t = +slider.value;   // default slider position
+    return { region: region, dir: dir, t: t };
+}
+
+// init from URL (or defaults)
+var st = readState();
+sel.value    = st.region;
+dirSel.value = st.dir;
+slider.value = st.t;
 NSV = nsvFromSlider(+slider.value);
 refreshReadout();
-sel.value = "__ALL__";
-render("__ALL__", "out", true);
+syncURL();
+render(sel.value, dirSel.value, true);
 </script>
 </body>
 </html>
