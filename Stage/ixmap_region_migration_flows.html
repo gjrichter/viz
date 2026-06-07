@@ -32,6 +32,41 @@
   .ol-out { min-width:46px; text-align:right; }
   .ol-net { min-width:54px; text-align:right; }
   #source-bar { bottom:6px; left:12px; padding:4px 12px; font-size:10px; color:#778899; }
+
+  /* panel show/hide toggle (phone) */
+  #ui-toggle { display:none; position:fixed; bottom:10px; left:50%; transform:translateX(-50%);
+               z-index:1100; padding:7px 15px; border-radius:18px; background:rgba(255,255,255,0.95);
+               box-shadow:0 2px 8px rgba(0,0,0,.18); border:1px solid #ccd5dd; color:#334;
+               font-size:11px; font-weight:600; cursor:pointer; }
+  body.panels-off .panel { display:none !important; }
+
+  /* tablet */
+  @media (max-width: 900px) {
+    #controls { width:206px; }
+    .legend-panel { width:208px; }
+    #origin-legend { width:230px; }
+    #title-bar { max-width:300px; }
+  }
+  /* phone */
+  @media (max-width: 600px) {
+    #title-bar { top:8px; left:8px; right:8px; max-width:none; padding:8px 12px; }
+    #title-bar h2 { font-size:13px; }
+    #title-bar p { display:none; }
+    #controls { top:auto; bottom:8px; left:8px; width:calc(50% - 12px); padding:9px 10px; }
+    #controls label { font-size:9px; margin-bottom:3px; }
+    #controls select { font-size:12px; padding:5px 6px; margin-bottom:9px; }
+    #controls .hint { display:none; }
+    .legend-panel { top:auto; bottom:8px; right:8px; left:auto; width:calc(50% - 12px);
+                    max-height:58vh; padding:8px 10px; font-size:10.5px; }
+    #origin-legend { width:calc(50% - 12px); }
+    .legend-panel h4 { font-size:10px; }
+    .legend-cap { font-size:8px; }
+    .ol-row { font-size:10px; gap:5px; margin-bottom:3px; }
+    .ol-sw { width:11px; height:11px; }
+    .ol-out { min-width:38px; } .ol-net { min-width:44px; }
+    #source-bar { display:none; }
+    #ui-toggle { display:block; }
+  }
 </style>
 </head>
 <body>
@@ -67,6 +102,7 @@
   <div style="font-size:9px; color:#9aa3ad; margin-top:5px;">inter-regional transfers · 2025</div>
 </div>
 <div id="source-bar" class="panel">Source: ISTAT — DCIS_MIGRAZIONI (28_185_DF_DCIS_MIGRAZIONI_1), 2025 (provisional)</div>
+<button id="ui-toggle" type="button">Hide panels</button>
 
 <script src="https://cdn.jsdelivr.net/gh/gjrichter/ixmaps-flat@master/ixmaps.js"></script>
 <script>
@@ -213,6 +249,13 @@ slider.addEventListener("input", debounce(function(){
     refreshReadout();
     update(false);
 }, 130));
+
+// phone-only panel toggle
+var uiToggle = document.getElementById("ui-toggle");
+uiToggle.addEventListener("click", function(){
+    var off = document.body.classList.toggle("panels-off");
+    uiToggle.textContent = off ? "Show panels" : "Hide panels";
+});
 
 // init
 NSV = nsvFromSlider(+slider.value);
