@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crescita demografica per provincia – Italia 2011–2024</title>
+  <script src="https://cdn.jsdelivr.net/gh/gjrichter/ixmaps-flat@master/ixmaps.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; height: 100%; overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      background: #f0f2f5; color: #1a1a2e; }
+    #map { width: 100%; height: 100%; background: #f0f2f5; }
+
+    #app-loading {
+      position: fixed; inset: 0; z-index: 9999;
+      background: rgba(240,242,245,0.97);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 10px;
+    }
+    .spinner {
+      width: 40px; height: 40px;
+      border: 3px solid rgba(33,113,181,0.2);
+      border-top-color: #2171b5;
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    #loading-status  { font-size: 14px; font-weight: 600; color: #333; }
+    #loading-detail  { font-size: 11px; color: #999; max-width: 340px; text-align: center; line-height: 1.6; }
+    #loading-error   { display: none; font-size: 12px; color: #d73027; max-width: 340px; text-align: center; line-height: 1.5; }
+
+    .panel {
+      position: absolute; z-index: 800;
+      background: rgba(255,255,255,0.95);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+      backdrop-filter: blur(8px);
+      padding: 14px 18px;
+    }
+    .headline { top: 16px; left: 16px; width: min(360px, calc(100vw - 32px)); }
+    .kicker {
+      display: inline-block; padding: 3px 10px; margin-bottom: 8px;
+      background: rgba(33,113,181,0.1); color: #2171b5;
+      border-radius: 999px; font-size: 10px; letter-spacing: 0.12em;
+      text-transform: uppercase; font-weight: 700;
+    }
+    .headline h1 { font-size: 17px; font-weight: 700; line-height: 1.2; margin-bottom: 6px; }
+    .headline p  { font-size: 11px; color: #777; line-height: 1.5; }
+    .footnote    { font-size: 10px; color: #aaa; margin-top: 8px; border-top: 1px solid #eee; padding-top: 6px; }
+  </style>
+</head>
+<body>
+  <div id="app-loading">
+    <div class="spinner"></div>
+    <p id="loading-status">Caricamento confini province…</p>
+    <p id="loading-detail"></p>
+    <p id="loading-error"></p>
+  </div>
+  <div id="map"></div>
+
+  <div class="panel headline" id="info-panel" style="display:none">
+    <div class="kicker">Eurostat SDMX · Province NUTS3</div>
+    <h1>Crescita demografica <span id="years-label">2011–2024</span></h1>
+    <p>Variazione % della popolazione residente al 1° gennaio.<br>
+       Dati caricati via <strong>API SDMX Eurostat</strong> (DEMO_R_GIND3).</p>
+    <p class="footnote">Fonte: Eurostat – dati nazionali ISTAT. Confini: Eurostat GISCO NUTS3 2021 (CC BY 4.0).</p>
+  </div>
+
+  <script>
+    function setStatus(msg, detail) {
+      document.getElementById('loading-status').textContent = msg;
+      if (detail !== undefined) document.getElementById('loading-detail').textContent = detail;
+    }
+
+    function showError(msg) {
+      document.querySelector('.spinner').style.display = 'none';
+      document.getElementById('loading-status').textContent = 'Errore nel caricamento';
+      var el = document.getElementById('loading-error');
+      el.style.display = 'block';
+      el.textContent = msg;
+    }
+
+    // Step 1: fetch NUTS3 boundaries, filter to Italy, extract province codes
+    async function fetchItalyGeo() {
+      var url = 'https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/NUTS_RG_03M_2021_4326_LEVL_3.geojson';
+      var resp = await fetch(url);
+      if (!resp.ok) throw new Error('GISCO: HTTP ' + resp.status);
+      var geo = await resp.json();
+      var features = geo.features.filter(function(f) { return f.properties.CNTR_CODE === 'IT'; });
+      return {
+        geo:   { type: 'FeatureCollection', features: features },
+        codes: features.map(function(f) { return f.properties.NUTS_ID; })
+      };
+    }
+
+    // Step 2: query Eurostat NUTS3 population dataset with the province codes
+    async function fetchEurostatPop(nuts3Codes, signal) {
+      var geoParams = nuts3Codes.map(function(r) { return 'geo=' + r; }).join('&');
+      var url = 'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/DEMO_R_GIND3' +
+                '?indic_de=JAN&time=2011&time=2022&time=2023&time=2024&' +
+                geoParams + '&format=JSON&lang=en';
+      var resp = await fetch(url, { signal: signal });
+      if (!resp.ok) throw new Error('Eurostat HTTP ' + resp.status);
+      return resp.json();
+    }
+
+    // Parse Eurostat JSON-stat: { code: { years: {year: pop}, name: "..." } }
+    function parseEurostatPop(json) {
+      var ids   = json.id;
+      var sizes = json.size;
+      var dims  = json.dimension;
+      var vals  = json.value;
+
+      var timePos = ids.indexOf('time');
+      var geoPos  = ids.indexOf('geo');
+
+      var stride = new Array(ids.length).fill(1);
+      for (var i = ids.length - 2; i >= 0; i--) {
+        stride[i] = stride[i + 1] * sizes[i + 1];
+      }
+
+      var timeCat = dims.time.category;
+      var geoCat  = dims.geo.category;
+      var pop = {};
+
+      Object.entries(geoCat.index).forEach(function(entry) {
+        var code = entry[0], gI = entry[1];
+        var years = {};
+        Object.entries(timeCat.index).forEach(function(tEntry) {
+          var year = tEntry[0], tI = tEntry[1];
+          var flatIdx = tI * stride[timePos] + gI * stride[geoPos];
+          var val = vals[String(flatIdx)];
+          if (val !== null && val !== undefined) years[parseInt(year)] = val;
+        });
+        pop[code] = { years: years, name: geoCat.label[code] };
+      });
+
+      return pop;
+    }
+
+    function buildGrowthData(pop, italyGeo) {
+      var geoNameMap = {};
+      italyGeo.features.forEach(function(f) {
+        geoNameMap[f.properties.NUTS_ID] = f.properties.NAME_LATN;
+      });
+
+      var endYear = 2011;
+      Object.values(pop).forEach(function(r) {
+        var maxY = Math.max.apply(null, Object.keys(r.years).map(Number));
+        if (maxY > endYear) endYear = maxY;
+      });
+
+      var data = [];
+      Object.entries(pop).forEach(function(entry) {
+        var code = entry[0], r = entry[1];
+        var pop2011 = r.years[2011];
+        var popEnd  = r.years[endYear] || r.years[endYear - 1] || r.years[endYear - 2];
+        if (!pop2011 || !popEnd) return;
+        var actualEnd = r.years[endYear] ? endYear : (r.years[endYear - 1] ? endYear - 1 : endYear - 2);
+
+        var delta     = popEnd - pop2011;
+        var growthPct = (delta / pop2011) * 100;
+        var rounded   = Math.round(growthPct * 10) / 10;
+
+        data.push({
+          nuts_id:      code,
+          name:         geoNameMap[code] || r.name || code,
+          pop2011:      pop2011,
+          pop_end:      popEnd,
+          end_year:     actualEnd,
+          growth_pct:   rounded,
+          growth_str:   (rounded >= 0 ? '+' : '') + rounded.toFixed(1) + ' %',
+          pop2011_str:  Math.round(pop2011).toLocaleString('it-IT'),
+          pop_end_str:  Math.round(popEnd).toLocaleString('it-IT'),
+          delta_str:    (delta >= 0 ? '+' : '') + Math.round(delta).toLocaleString('it-IT'),
+          growth_color: rounded >= 0 ? '#2166ac' : '#d73027'
+        });
+      });
+
+      // Piecewise-linear display value: negatives → [-3, 0), positives → [0, 2]
+      // EQUIDISTANT 5 classes on [-3, 2] gives boundaries at -3,-2,-1,0,1,2
+      // so the warm/cool boundary lands exactly at growth_pct = 0
+      var negPcts = data.filter(function(d) { return d.growth_pct < 0; }).map(function(d) { return d.growth_pct; });
+      var posPcts = data.filter(function(d) { return d.growth_pct >= 0; }).map(function(d) { return d.growth_pct; });
+      var minNeg  = negPcts.length ? Math.min.apply(null, negPcts) : -1;
+      var maxPos  = posPcts.length ? Math.max.apply(null, posPcts) :  1;
+      data.forEach(function(d) {
+        d.growth_display = d.growth_pct < 0
+          ? -3.0 * d.growth_pct / minNeg
+          :  2.0 * d.growth_pct / maxPos;
+      });
+
+      return { data: data, endYear: endYear };
+    }
+
+    function buildMap(growthData, italyGeo, endYear) {
+      document.getElementById('info-panel').style.display = 'block';
+      document.getElementById('years-label').textContent = '2011–' + endYear;
+
+      var myMap = ixmaps.Map('map', {
+        mapType: 'CartoDB - Positron',
+        mode:    'info',
+        legend:  'open',
+        tools:   true
+      })
+      .view({ center: { lat: 42.3, lng: 12.7 }, zoom: 6 })
+      .options({
+        basemapopacity:  0.45,
+        flushChartDraw:  1000000,
+        flushPaintShape: 1000000
+      });
+
+      // Base layer: NUTS3 province boundaries
+      myMap.layer('province')
+        .data({ obj: italyGeo, type: 'geojson' })
+        .binding({ geo: 'geometry', id: 'NUTS_ID', title: 'NAME_LATN' })
+        .type('FEATURE')
+        .style({
+          colorscheme:  ['#dde4ea'],
+          fillopacity:  0.3,
+          linecolor:    '#8899aa',
+          linewidth:    0.3,
+          showdata:     'true'
+        })
+        .meta({ tooltip: '{{NAME_LATN}}' })
+        .define();
+
+      // Choropleth overlay: population growth (%)
+      myMap.layer('province')
+        .data({ obj: growthData, type: 'json' })
+        .binding({ lookup: 'nuts_id', value: 'growth_display' })
+        .type('CHOROPLETH|EQUIDISTANT')
+        .style({
+          colorscheme: ['#d73027', '#fc8d59', '#fee090', '#91bfdb', '#4575b4'],
+          fillopacity: 0.85,
+          linecolor:   '#ffffff',
+          linewidth:   0.5,
+          showdata:    'true'
+        })
+        .meta({
+          name: 'prov-growth',
+          tooltip:
+            '<div style="padding:13px 16px;font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Arial,sans-serif;' +
+            'font-size:13px;min-width:230px;max-width:290px;line-height:1.5;">' +
+              '<div style="font-size:16px;font-weight:700;color:#0d3b6e;margin-bottom:6px;' +
+                          'border-bottom:2px solid #e8f0fb;padding-bottom:5px;">{{name}}</div>' +
+              '<div style="display:flex;justify-content:space-between;margin:4px 0;">' +
+                '<span style="color:#666;">Var. 2011–{{end_year}}</span>' +
+                '<strong style="color:{{growth_color}};">{{growth_str}}</strong>' +
+              '</div>' +
+              '<div style="display:flex;justify-content:space-between;margin:3px 0;">' +
+                '<span style="color:#666;">Pop. 2011</span>' +
+                '<span>{{pop2011}}</span>' +
+              '</div>' +
+              '<div style="display:flex;justify-content:space-between;margin:3px 0;">' +
+                '<span style="color:#666;">Pop. {{end_year}}</span>' +
+                '<span>{{pop_end}}</span>' +
+              '</div>' +
+              '<div style="display:flex;justify-content:space-between;margin:3px 0;">' +
+                '<span style="color:#666;">Differenza</span>' +
+                '<span style="color:{{growth_color}};">{{raw.delta_str}}</span>' +
+              '</div>' +
+              '<div style="font-size:10px;color:#bbb;margin-top:8px;border-top:1px solid #eee;padding-top:5px;">' +
+                'Eurostat DEMO_R_GIND3 – pop. residente al 1° gennaio' +
+              '</div>' +
+            '</div>'
+        })
+        .title('Variazione pop. 2011–' + endYear + ' (%)')
+        .define();
+
+      myMap.then(function() {
+        document.getElementById('app-loading').style.display = 'none';
+      });
+    }
+
+    async function init() {
+      try {
+        // Step 1: geometry (also gives us province codes for the Eurostat query)
+        setStatus('Caricamento confini province (NUTS3)…', '');
+        var geoResult = await fetchItalyGeo();
+        setStatus('Caricamento dati Eurostat (' + geoResult.codes.length + ' province)…', '');
+
+        // Step 2: population data
+        var controller = new AbortController();
+        var timeoutId  = setTimeout(function() { controller.abort(); }, 30000);
+        var eurostatJson = await fetchEurostatPop(geoResult.codes, controller.signal);
+        clearTimeout(timeoutId);
+
+        setStatus('Elaborazione dati…', '');
+        var pop    = parseEurostatPop(eurostatJson);
+        var built  = buildGrowthData(pop, geoResult.geo);
+
+        if (built.data.length === 0) {
+          throw new Error('Nessun dato calcolato. Controllare la risposta Eurostat in console.');
+        }
+
+        setStatus('Rendering mappa…', '');
+        buildMap(built.data, geoResult.geo, built.endYear);
+
+      } catch (err) {
+        if (err.name === 'AbortError') {
+          showError('Timeout: nessuna risposta entro 30 secondi. Ricaricare la pagina.');
+        } else {
+          showError(err.message || 'Errore sconosciuto');
+        }
+        console.error('[italy_pop_growth]', err);
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
