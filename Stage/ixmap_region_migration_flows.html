@@ -66,6 +66,7 @@
     .ol-out { min-width:38px; } .ol-net { min-width:44px; }
     #source-bar { display:none; }
     #ui-toggle { display:block; }
+    #onmapbuttondivzoom { display:none !important; }   /* pinch-zoom on touch; frees the bottom-left corner */
   }
 </style>
 </head>
@@ -122,8 +123,11 @@ var NSV_MIN = 3000, NSV_MAX = 25000;
 function nsvFromSlider(t){ return Math.round(NSV_MAX - (t/100) * (NSV_MAX - NSV_MIN)); }
 function debounce(fn, ms){ var t; return function(){ clearTimeout(t); t = setTimeout(fn, ms); }; }
 
+// touch devices (coarse pointer) start in pan mode; mouse/desktop in info mode
+var MAP_MODE = (window.matchMedia && window.matchMedia("(pointer: coarse)").matches) ? "pan" : "info";
+
 var myIXMap = ixmaps.Map("map", {
-    mapType: "white", mode: "info", legend: "closed", tools: true
+    mapType: "white", mode: MAP_MODE, legend: "closed", tools: true
 })
 .view({ center: { lat: 41.9, lng: 12.4 }, zoom: 6 })
 .options({ objectscaling: "dynamic", normalSizeScale: "8000000",
